@@ -6,7 +6,7 @@ updatedDate: 2026-06-13
 cluster: "omega-3"
 relatedProducts:
   - "omega-3-fish-oil"
-draft: false
+draft: true
 ---
 
 Omega-3 fatty acids are one of the few supplements with a genuinely large body of mood research behind them. That makes them unusual — but "a lot of research" is not the same as "a strong, reliable effect." The honest picture is more interesting than either the hype or the dismissals: a small, real, but inconsistent signal, with the details (which fatty acid, how much, and for whom) mattering more than the marketing on the front of the bottle.
