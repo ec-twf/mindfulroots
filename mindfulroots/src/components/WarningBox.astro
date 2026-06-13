@@ -1,0 +1,8 @@
+---
+interface Props { title?: string }
+const { title = 'Important caution' } = Astro.props;
+---
+<aside class="border border-warn-border bg-warn-bg rounded-lg p-4 text-sm leading-relaxed" role="note">
+  <p class="font-mono text-xs uppercase tracking-wider text-saffron-deep mb-1.5">⚠ {title}</p>
+  <div class="text-ink"><slot /></div>
+</aside>

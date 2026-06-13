@@ -1,0 +1,119 @@
+---
+import Base from '../../layouts/Base.astro';
+import AffiliateButton from '../../components/AffiliateButton.astro';
+import EvidenceTag from '../../components/EvidenceTag.astro';
+import WarningBox from '../../components/WarningBox.astro';
+import SupportNotice from '../../components/SupportNotice.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const products = await getCollection('products');
+  return products.map((product) => ({
+    params: { slug: product.id },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+const { data } = product;
+const { Content } = await render(product);
+
+// Resolve related posts that exist
+const allPosts = await getCollection('blog');
+const related = data.relatedPosts
+  .map((slug) => allPosts.find((p) => p.id === slug))
+  .filter(Boolean);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: data.title,
+  category: data.category,
+  description: data.shortDescription,
+};
+---
+
+<Base title={data.title} description={data.shortDescription} schema={schema} ogType="product">
+  <div class="mx-auto max-w-5xl px-5 pt-8 pb-4 text-sm">
+    <a href="/products/" class="text-ink-soft hover:text-saffron-deep">← All supplements</a>
+  </div>
+
+  <article class="mx-auto max-w-5xl px-5 pb-6 grid lg:grid-cols-[1fr_320px] gap-10">
+    <!-- Main column -->
+    <div>
+      <p class="eyebrow mb-2">{data.category}</p>
+      <h1 class="font-display text-3xl sm:text-4xl text-moss-deep">{data.title}</h1>
+      {data.latinName && <p class="font-mono text-sm text-ink-soft italic mt-1">{data.latinName}</p>}
+
+      <div class="mt-4"><EvidenceTag level={data.evidence} /></div>
+
+      <p class="mt-5 text-lg text-ink leading-relaxed">{data.shortDescription}</p>
+
+      {data.interactionWarning && (
+        <div class="mt-6">
+          <WarningBox title="Medication interaction — read first">
+            <p set:html={data.interactionWarning.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')} />
+          </WarningBox>
+        </div>
+      )}
+
+      <hr class="specimen-rule my-7" />
+
+      <section class="prose-mr max-w-none">
+        <Content />
+      </section>
+    </div>
+
+    <!-- Sidebar: the buy box + at-a-glance -->
+    <aside class="lg:sticky lg:top-24 self-start space-y-5">
+      <div class="bg-card border border-mist rounded-lg p-5 space-y-4">
+        <div>
+          <p class="eyebrow mb-2">Where to buy</p>
+          <AffiliateButton keyword={data.iherbKeyword} />
+        </div>
+        <hr class="specimen-rule" />
+        <dl class="text-sm space-y-3">
+          <div>
+            <dt class="eyebrow">Typical use</dt>
+            <dd class="text-ink-soft mt-1 leading-relaxed">{data.typicalUse}</dd>
+          </div>
+          <div>
+            <dt class="eyebrow">Cautions</dt>
+            <dd class="text-ink-soft mt-1 leading-relaxed">{data.cautions}</dd>
+          </div>
+        </dl>
+      </div>
+
+      {data.benefits.length > 0 && (
+        <div class="bg-card border border-mist rounded-lg p-5">
+          <p class="eyebrow mb-2">May support</p>
+          <ul class="text-sm text-ink-soft space-y-1.5">
+            {data.benefits.map((b) => (
+              <li class="flex gap-2"><span class="text-moss mt-0.5">›</span><span>{b}</span></li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </aside>
+  </article>
+
+  <!-- Related reading: the hub → spoke links that power the SEO cluster -->
+  {related.length > 0 && (
+    <section class="mx-auto max-w-5xl px-5 py-8">
+      <p class="eyebrow mb-3">Keep reading</p>
+      <div class="grid gap-4 sm:grid-cols-2">
+        {related.map((post) => (
+          <a href={`/blog/${post!.id}/`} class="block bg-card border border-mist rounded-lg p-5 hover:shadow-[0_4px_18px_rgba(62,92,73,0.12)] transition-shadow">
+            <p class="eyebrow mb-1">{post!.data.cluster}</p>
+            <h3 class="text-lg text-moss-deep leading-snug">{post!.data.title}</h3>
+            <p class="text-sm text-ink-soft mt-1.5 leading-relaxed">{post!.data.description}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="mx-auto max-w-5xl px-5 py-6">
+    <SupportNotice />
+  </section>
+</Base>

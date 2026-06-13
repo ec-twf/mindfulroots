@@ -1,0 +1,25 @@
+---
+import EvidenceTag from './EvidenceTag.astro';
+interface Props {
+  slug: string; title: string; latinName?: string; category: string;
+  evidence: 'Emerging' | 'Moderate' | 'Well-studied'; shortDescription: string;
+}
+const { slug, title, latinName, category, evidence, shortDescription } = Astro.props;
+---
+<article class="group bg-card border border-mist rounded-lg p-5 flex flex-col gap-3 transition-shadow hover:shadow-[0_4px_18px_rgba(62,92,73,0.12)]">
+  <div class="flex items-start justify-between gap-3">
+    <p class="eyebrow">{category}</p>
+    <EvidenceTag level={evidence} />
+  </div>
+  <div>
+    <h3 class="text-xl text-moss-deep">
+      <a href={`/products/${slug}/`} class="hover:text-saffron-deep">{title}</a>
+    </h3>
+    {latinName && <p class="font-mono text-xs text-ink-soft italic mt-0.5">{latinName}</p>}
+  </div>
+  <hr class="specimen-rule" />
+  <p class="text-sm text-ink-soft leading-relaxed flex-1">{shortDescription}</p>
+  <a href={`/products/${slug}/`} class="text-sm font-medium text-saffron-deep group-hover:underline underline-offset-4">
+    Read the full profile →
+  </a>
+</article>

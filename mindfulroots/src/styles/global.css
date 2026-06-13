@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+/* ── MindfulRoots design tokens ─────────────────────────────────────────────
+   Palette: botanical apothecary — sage paper, moss ink, saffron accent.
+   Type: Fraunces (display) · Public Sans (body) · IBM Plex Mono (labels). */
+
+@theme {
+  --color-paper: #f3f6ee;
+  --color-card: #ffffff;
+  --color-ink: #20312a;
+  --color-ink-soft: #4c5e54;
+  --color-moss: #3e5c49;
+  --color-moss-deep: #2c4536;
+  --color-saffron: #d97a1f;
+  --color-saffron-deep: #b86212;
+  --color-mist: #d8e2d3;
+  --color-warn-bg: #fdf3e4;
+  --color-warn-border: #e3b878;
+
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "Public Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+::selection { background: var(--color-saffron); color: #fff; }
+
+h1, h2, h3 { font-family: var(--font-display); font-weight: 560; letter-spacing: -0.01em; }
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--color-saffron-deep);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Specimen-label eyebrow used across the site */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-moss);
+}
+
+/* Dotted "specimen card" rule */
+.specimen-rule {
+  border: none;
+  border-top: 2px dotted var(--color-mist);
+  margin: 0.75rem 0;
+}
+
+/* Long-form article typography */
+.prose-mr { max-width: 42rem; }
+.prose-mr p { margin: 1.1rem 0; line-height: 1.75; color: var(--color-ink); }
+.prose-mr h2 { font-size: 1.5rem; margin: 2.2rem 0 0.6rem; color: var(--color-moss-deep); }
+.prose-mr h3 { font-size: 1.15rem; margin: 1.8rem 0 0.4rem; color: var(--color-moss-deep); }
+.prose-mr ul, .prose-mr ol { margin: 1rem 0 1rem 1.4rem; line-height: 1.7; }
+.prose-mr ul { list-style: disc; }
+.prose-mr ol { list-style: decimal; }
+.prose-mr li { margin: 0.35rem 0; }
+.prose-mr a { color: var(--color-saffron-deep); text-decoration: underline; text-underline-offset: 3px; }
+.prose-mr a:hover { color: var(--color-moss-deep); }
+.prose-mr blockquote {
+  border-left: 3px solid var(--color-mist);
+  padding-left: 1rem;
+  color: var(--color-ink-soft);
+  font-style: italic;
+  margin: 1.4rem 0;
+}
+.prose-mr strong { color: var(--color-moss-deep); }

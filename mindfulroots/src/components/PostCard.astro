@@ -1,0 +1,15 @@
+---
+interface Props { slug: string; title: string; description: string; pubDate: Date; cluster: string }
+const { slug, title, description, pubDate, cluster } = Astro.props;
+const date = pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+---
+<article class="bg-card border border-mist rounded-lg p-5 flex flex-col gap-2">
+  <div class="flex items-center justify-between gap-3">
+    <p class="eyebrow">{cluster}</p>
+    <time class="font-mono text-xs text-ink-soft" datetime={pubDate.toISOString()}>{date}</time>
+  </div>
+  <h3 class="text-lg text-moss-deep leading-snug">
+    <a href={`/blog/${slug}/`} class="hover:text-saffron-deep">{title}</a>
+  </h3>
+  <p class="text-sm text-ink-soft leading-relaxed">{description}</p>
+</article>

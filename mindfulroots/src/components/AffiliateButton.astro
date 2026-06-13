@@ -1,0 +1,15 @@
+---
+import { iherbLink } from '../config';
+interface Props { keyword: string; label?: string }
+const { keyword, label = 'View on iHerb' } = Astro.props;
+---
+<div class="space-y-2">
+  <a href={iherbLink(keyword)} target="_blank" rel="nofollow sponsored noopener"
+     class="inline-flex items-center gap-2 bg-saffron hover:bg-saffron-deep text-white font-medium px-5 py-2.5 rounded-md transition-colors">
+    {label}
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+  <p class="text-xs text-ink-soft">Affiliate link — we may earn a commission. <a href="/disclosure/" class="underline">Details</a></p>
+</div>

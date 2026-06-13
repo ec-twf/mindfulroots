@@ -1,0 +1,116 @@
+---
+import Base from '../layouts/Base.astro';
+import ProductCard from '../components/ProductCard.astro';
+import PostCard from '../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+import { SITE } from '../config';
+
+const products = (await getCollection('products')).sort((a, b) => a.data.order - b.data.order);
+const featured = products.slice(0, 6);
+
+const posts = (await getCollection('blog'))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE.name,
+  description: SITE.description,
+  url: Astro.site?.href,
+};
+---
+
+<Base title={SITE.name} schema={schema}>
+  <!-- Hero: a specimen-shelf thesis rather than a generic gradient banner -->
+  <section class="relative overflow-hidden">
+    <div class="mx-auto max-w-5xl px-5 pt-16 pb-12 sm:pt-20">
+      <p class="eyebrow mb-4">Evidence-aware mood &amp; stress support</p>
+      <h1 class="font-display text-4xl sm:text-6xl leading-[1.05] text-moss-deep max-w-3xl">
+        Calm, honest write-ups of the supplements people reach for when their mood is low.
+      </h1>
+      <p class="mt-6 max-w-xl text-lg text-ink-soft leading-relaxed">
+        No miracle claims. Each profile rates the real strength of the evidence, names the cautions
+        plainly, and points you back to professional care where it belongs.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="/products/" class="bg-moss hover:bg-moss-deep text-white font-medium px-6 py-3 rounded-md transition-colors">
+          Browse the 10 supplements
+        </a>
+        <a href="/blog/" class="border border-moss text-moss-deep hover:bg-mist font-medium px-6 py-3 rounded-md transition-colors">
+          Read the journal
+        </a>
+      </div>
+
+      <!-- Trust strip: encodes what the site actually promises -->
+      <dl class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-px bg-mist border border-mist rounded-lg overflow-hidden text-sm">
+        {[
+          ['Evidence-rated', 'Every supplement carries an honest evidence tier'],
+          ['Cautions first', 'Interactions and risks stated up front, not buried'],
+          ['Not a treatment', 'We never frame supplements as a cure for depression'],
+          ['Care-forward', 'Professional &amp; crisis support signposted throughout'],
+        ].map(([term, def]) => (
+          <div class="bg-card p-4">
+            <dt class="font-display text-moss-deep">{term}</dt>
+            <dd class="text-ink-soft mt-1 leading-snug" set:html={def} />
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- Featured supplements -->
+  <section class="mx-auto max-w-5xl px-5 py-10">
+    <div class="flex items-end justify-between mb-6">
+      <div>
+        <p class="eyebrow mb-1">The shelf</p>
+        <h2 class="text-2xl text-moss-deep">Featured supplements</h2>
+      </div>
+      <a href="/products/" class="text-sm text-saffron-deep hover:underline underline-offset-4 whitespace-nowrap">See all 10 →</a>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {featured.map((p) => (
+        <ProductCard
+          slug={p.id}
+          title={p.data.title}
+          latinName={p.data.latinName}
+          category={p.data.category}
+          evidence={p.data.evidence}
+          shortDescription={p.data.shortDescription}
+        />
+      ))}
+    </div>
+  </section>
+
+  <!-- Featured journal posts -->
+  <section class="mx-auto max-w-5xl px-5 py-10">
+    <div class="flex items-end justify-between mb-6">
+      <div>
+        <p class="eyebrow mb-1">The journal</p>
+        <h2 class="text-2xl text-moss-deep">Latest reading</h2>
+      </div>
+      <a href="/blog/" class="text-sm text-saffron-deep hover:underline underline-offset-4 whitespace-nowrap">All posts →</a>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-3">
+      {posts.map((p) => (
+        <PostCard slug={p.id} title={p.data.title} description={p.data.description} pubDate={p.data.pubDate} cluster={p.data.cluster} />
+      ))}
+    </div>
+  </section>
+
+  <!-- Care-forward closing band -->
+  <section class="mx-auto max-w-5xl px-5 py-10">
+    <div class="bg-moss-deep text-[#e9f0e7] rounded-xl p-8 sm:p-10">
+      <p class="eyebrow !text-[#c8d8c4] mb-3">If you're struggling</p>
+      <h2 class="font-display text-2xl sm:text-3xl mb-3">A supplement is never the most important step.</h2>
+      <p class="opacity-90 max-w-xl leading-relaxed">
+        If low mood is getting in the way of your life, talking to a doctor or therapist will do more
+        than anything on our shelf. If you need support right now, help is free and confidential.
+      </p>
+      <a href="/get-help/" class="inline-block mt-5 bg-saffron hover:bg-saffron-deep text-white font-medium px-6 py-3 rounded-md transition-colors">
+        Find support
+      </a>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,85 @@
+# ─── Decap CMS configuration ────────────────────────────────────────────────
+# After deploying to Netlify, enable Identity + Git Gateway (or use the GitHub
+# backend) so you can log in at /admin and publish posts from a web form.
+#
+# Netlify Identity option (simplest):
+backend:
+  name: git-gateway
+  branch: main
+
+# If you'd rather connect GitHub directly, comment the block above and use:
+# backend:
+#   name: github
+#   repo: your-username/mindfulroots
+#   branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog posts"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description (SEO)", name: "description", widget: "text" }
+      - { label: "Publish date", name: "pubDate", widget: "datetime" }
+      - { label: "Updated date", name: "updatedDate", widget: "datetime", required: false }
+      - label: "Topic cluster"
+        name: "cluster"
+        widget: "select"
+        options:
+          - "Omega-3 & brain health"
+          - "Vitamin D & mood"
+          - "Magnesium & stress/sleep"
+          - "B vitamins & energy"
+          - "Adaptogens"
+          - "L-theanine & calm focus"
+          - "Saffron & mood research"
+          - "5-HTP & serotonin"
+          - "Gut–brain axis"
+          - "Lifestyle & foundations"
+      - label: "Related products (slugs)"
+        name: "relatedProducts"
+        widget: "select"
+        multiple: true
+        required: false
+        options:
+          - "omega-3-fish-oil"
+          - "vitamin-d3"
+          - "magnesium-glycinate"
+          - "b-complex"
+          - "ashwagandha"
+          - "l-theanine"
+          - "saffron-extract"
+          - "rhodiola-rosea"
+          - "5-htp"
+          - "probiotic-gut-brain"
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "products"
+    label: "Supplements"
+    folder: "src/content/products"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Latin / scientific name", name: "latinName", widget: "string", required: false }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Evidence tier", name: "evidence", widget: "select", options: ["Emerging", "Moderate", "Well-studied"] }
+      - { label: "Short description", name: "shortDescription", widget: "text" }
+      - { label: "Benefits", name: "benefits", widget: "list", field: { label: "Benefit", name: "benefit", widget: "string" } }
+      - { label: "Typical use", name: "typicalUse", widget: "text" }
+      - { label: "Cautions", name: "cautions", widget: "text" }
+      - { label: "Interaction warning (optional, shown in red box)", name: "interactionWarning", widget: "text", required: false }
+      - { label: "iHerb keyword or URL", name: "iherbKeyword", widget: "string" }
+      - { label: "Related post slugs", name: "relatedPosts", widget: "list", required: false, field: { label: "Post slug", name: "slug", widget: "string" } }
+      - { label: "Sort order", name: "order", widget: "number", default: 99 }
+      - { label: "Body", name: "body", widget: "markdown" }

@@ -1,0 +1,13 @@
+---
+interface Props { level: 'Emerging' | 'Moderate' | 'Well-studied' }
+const { level } = Astro.props;
+const dots = { 'Emerging': 1, 'Moderate': 2, 'Well-studied': 3 }[level];
+---
+<span class="inline-flex items-center gap-1.5 font-mono text-[0.68rem] uppercase tracking-wider text-moss border border-mist rounded-full px-2.5 py-0.5 bg-paper" title={`Evidence for mood/stress support: ${level.toLowerCase()}`}>
+  <span class="flex gap-0.5" aria-hidden="true">
+    {[1, 2, 3].map((i) => (
+      <span class={`w-1.5 h-1.5 rounded-full ${i <= dots ? 'bg-moss' : 'bg-mist'}`} />
+    ))}
+  </span>
+  {level} evidence
+</span>
