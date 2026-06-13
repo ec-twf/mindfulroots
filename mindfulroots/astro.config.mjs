@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   // TODO: change to your production domain before launch (used for sitemap + canonical URLs)
-  site: 'https://mindfulroots.thewisefoolstudio.com',
+  site: 'https://mindfulroots.example.com',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],

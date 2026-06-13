@@ -1,17 +1,22 @@
-# ─── Decap CMS configuration ────────────────────────────────────────────────
-# After deploying to Netlify, enable Identity + Git Gateway (or use the GitHub
-# backend) so you can log in at /admin and publish posts from a web form.
+# ─── Sveltia CMS configuration ──────────────────────────────────────────────
+# Sveltia CMS (the modern, actively-maintained successor to Decap/Netlify CMS)
+# talks to GitHub directly — no Netlify Identity / Git Gateway needed.
 #
-# Netlify Identity option (simplest):
+# Set "repo" below to YOUR repo, e.g. "ec-twf/mindfulroots".
+#
+# LOGIN: open https://your-site.netlify.app/admin/ and click "Sign In with Token".
+# Generate a GitHub Personal Access Token (classic) with the "repo" scope at
+# https://github.com/settings/tokens, paste it in, and you're in. This is the
+# simplest option for a solo owner/small team — no extra setup required.
+#
+# (Only if you later want non-technical collaborators to log in with their own
+# email/password instead of a GitHub token, set up the free Sveltia CMS
+# Authenticator on Cloudflare Workers — https://github.com/sveltia/sveltia-cms-auth
+# — and add `base_url: https://your-worker.workers.dev` below.)
 backend:
-  name: git-gateway
+  name: github
+  repo: ec-twf/mindfulroots
   branch: main
-
-# If you'd rather connect GitHub directly, comment the block above and use:
-# backend:
-#   name: github
-#   repo: your-username/mindfulroots
-#   branch: main
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
