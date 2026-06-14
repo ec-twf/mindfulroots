@@ -1,5 +1,7 @@
 ---
 title: "Omega-3 Fish Oil (EPA & DHA)"
+seoTitle: "High-EPA Omega-3 for Mood: Evidence and How to Choose"
+metaDescription: "What the research says about EPA-rich omega-3 for low mood, plus the concentration, EPA-ratio and IFOS purity checks that separate a good fish oil from a weak one."
 latinName: "EPA / DHA marine lipids"
 category: "Essential fatty acids"
 evidence: "Moderate"
@@ -12,6 +14,7 @@ typicalUse: "Mood-support research most often uses roughly 1,000–2,000 mg of c
 cautions: "May have a mild blood-thinning effect; talk to a clinician before combining with anticoagulant or antiplatelet medication, or before surgery. Choose oils with third-party oxidation testing — rancid fish oil is a real quality problem."
 iherbKeyword: "high EPA omega 3 fish oil"
 relatedPosts: ["omega-3-brain-mood-evidence"]
+relatedProducts: ["vitamin-d3", "magnesium-glycinate"]
 order: 1
 
 # ─── Evidence-first recommendation ──────────────────────────────────────────
@@ -46,7 +49,7 @@ This is why "more milligrams" isn't automatically better, and why the *ratio* ma
 
 ## What the evidence actually shows
 
-It's worth being honest about the size and consistency of the effect, because it's easy to overstate.
+It's worth being honest about the size and consistency of the effect, because it's easy to overstate. For a fuller walk-through of the trials, see our deeper review of [the omega-3 and mood research](/blog/omega-3-brain-mood-evidence/).
 
 On the supportive side, a 2019 meta-analysis in *Translational Psychiatry* pooled 26 trials and around 2,160 participants and found a small but statistically significant overall benefit of omega-3s on depressive symptoms. A 2016 meta-analysis and meta-regression focused specifically on diagnosed major depressive disorder pointed in a similar direction, while flagging how much the dose, EPA:DHA ratio, and study quality moved the results.
 
@@ -62,7 +65,7 @@ The number that matters is **combined EPA + DHA per serving**, not the headline 
 - **Concentration** — how much of the oil is genuinely EPA+DHA, so each softgel delivers an efficient dose. Codex labels oils above 50% EPA+DHA by weight "highly concentrated"; premium products commonly sit in the 60–80% range.
 - **Oxidation & purity testing** — independent verification such as an IFOS rating or a published TOTOX value within GOED limits. Rancid oil is the real quality problem, and it's the one with an actual standard behind it.
 
-Triglyceride-form or enteric-coated oils also help if fishy aftertaste bothers you.
+Triglyceride-form or enteric-coated oils also help if fishy aftertaste bothers you. Omega-3s also pair sensibly with the other foundational mood-support nutrients — notably [vitamin D](/products/vitamin-d3/) and [magnesium](/products/magnesium-glycinate/) — if your diet or bloodwork suggests you're low.
 
 ## FAQ
 

@@ -18,11 +18,21 @@ const { product } = Astro.props;
 const { data } = product;
 const { Content } = await render(product);
 
-// Resolve related posts that exist
+// Resolve related blog posts (the cluster "spokes")
 const allPosts = await getCollection('blog');
 const related = data.relatedPosts
   .map((slug) => allPosts.find((p) => p.id === slug))
   .filter(Boolean);
+
+// Resolve related product hubs (sibling internal links)
+const allProducts = await getCollection('products');
+const relatedProds = (data.relatedProducts ?? [])
+  .map((slug) => allProducts.find((p) => p.id === slug))
+  .filter(Boolean);
+
+// SEO: prefer explicit overrides, fall back to on-page copy
+const pageTitle = data.seoTitle ?? data.title;
+const pageDescription = data.metaDescription ?? data.shortDescription;
 
 // Recommended-product helpers (only when present)
 const rec = data.recommendedProduct;
@@ -47,7 +57,7 @@ const schema = {
 };
 ---
 
-<Base title={data.title} description={data.shortDescription} schema={schema} ogType="product">
+<Base title={pageTitle} description={pageDescription} schema={schema} ogType="product">
   <div class="mx-auto max-w-5xl px-5 pt-8 pb-4 text-sm">
     <a href="/products/" class="text-ink-soft hover:text-saffron-deep">← All supplements</a>
   </div>
@@ -153,6 +163,22 @@ const schema = {
           <ul class="text-sm text-ink-soft space-y-1.5">
             {data.benefits.map((b) => (
               <li class="flex gap-2"><span class="text-moss mt-0.5">›</span><span>{b}</span></li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {relatedProds.length > 0 && (
+        <div class="bg-card border border-mist rounded-lg p-5">
+          <p class="eyebrow mb-2">Related supplements</p>
+          <ul class="text-sm space-y-1.5">
+            {relatedProds.map((p) => (
+              <li class="flex gap-2">
+                <span class="text-moss mt-0.5">›</span>
+                <a href={`/products/${p!.id}/`} class="text-moss-deep hover:text-saffron-deep underline-offset-2 hover:underline">
+                  {p!.data.title}
+                </a>
+              </li>
             ))}
           </ul>
         </div>
