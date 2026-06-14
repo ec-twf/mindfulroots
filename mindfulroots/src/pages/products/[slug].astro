@@ -24,6 +24,12 @@ const related = data.relatedPosts
   .map((slug) => allPosts.find((p) => p.id === slug))
   .filter(Boolean);
 
+// Resolve related product hubs (sibling internal links)
+const allProducts = await getCollection('products');
+const relatedProds = (data.relatedProducts ?? [])
+  .map((slug) => allProducts.find((p) => p.id === slug))
+  .filter(Boolean);
+
 // Recommended-product helpers (only when present)
 const rec = data.recommendedProduct;
 const verifiedLabel = rec
@@ -47,7 +53,12 @@ const schema = {
 };
 ---
 
-<Base title={pageTitle} description={pageDescription} schema={schema} ogType="product">
+<Base
+  title={data.seoTitle ?? data.title}
+  description={data.metaDescription ?? data.shortDescription}
+  schema={schema}
+  ogType="product"
+>
   <div class="mx-auto max-w-5xl px-5 pt-8 pb-4 text-sm">
     <a href="/products/" class="text-ink-soft hover:text-saffron-deep">← All supplements</a>
   </div>
@@ -176,7 +187,6 @@ const schema = {
     </aside>
   </article>
 
-  <!-- Related reading: the hub → spoke links that power the SEO cluster -->
   {related.length > 0 && (
     <section class="mx-auto max-w-5xl px-5 py-8">
       <p class="eyebrow mb-3">Keep reading</p>
