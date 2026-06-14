@@ -24,16 +24,6 @@ const related = data.relatedPosts
   .map((slug) => allPosts.find((p) => p.id === slug))
   .filter(Boolean);
 
-// Resolve related product hubs (sibling internal links)
-const allProducts = await getCollection('products');
-const relatedProds = (data.relatedProducts ?? [])
-  .map((slug) => allProducts.find((p) => p.id === slug))
-  .filter(Boolean);
-
-// SEO: prefer explicit overrides, fall back to on-page copy
-const pageTitle = data.seoTitle ?? data.title;
-const pageDescription = data.metaDescription ?? data.shortDescription;
-
 // Recommended-product helpers (only when present)
 const rec = data.recommendedProduct;
 const verifiedLabel = rec

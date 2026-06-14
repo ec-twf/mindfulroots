@@ -17,18 +17,11 @@ const products = defineCollection({
     relatedPosts: z.array(z.string()).default([]),
     order: z.number().default(99),
 
-    // ─── SEO overrides (optional) ────────────────────────────────────────────
-    // When set, these drive the <title> tag and meta description independently
-    // of the visible H1 (data.title) and intro (data.shortDescription), so the
-    // page can target buyer-intent keywords without changing on-page copy.
-    seoTitle: z.string().optional(),
-    metaDescription: z.string().optional(),
-
-    // Sibling product hubs to cross-link (internal linking). Slugs of other
-    // products, e.g. ["vitamin-d3", "magnesium-glycinate"]. Optional.
-    relatedProducts: z.array(z.string()).default([]),
-
     // ─── Evidence-first product recommendation (all optional) ────────────────
+    // When present, the buy box shows the criterion + a verified specific
+    // product, and the CTA points at THAT product instead of the generic
+    // `iherbKeyword` search. Products without these fields fall back to the
+    // existing generic button, so this can be rolled out one product at a time.
     qualityCriterion: z.string().optional(),
     criterionRationale: z.string().optional(),
     criterionSourceUrl: z.string().url().optional(),
@@ -45,7 +38,8 @@ const products = defineCollection({
         sourceUrl: z.string().url().optional(),
         note: z.string().optional(),    // internal caveat, not rendered
 
-        // Use a LICENSED image only (own photo or affiliate-approved asset).
+        // Product image. Use an image you are LICENSED to use (your own photo or
+        // an affiliate-program-approved asset) — NOT a copied iHerb/brand photo.
         // Path is relative to /public, e.g. "/products/sports-research-omega3.jpg".
         image: z.string().optional(),
         imageAlt: z.string().optional(),
