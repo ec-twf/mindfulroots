@@ -5,6 +5,12 @@ const products = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/products' }),
   schema: z.object({
     title: z.string(),
+    // SEO overrides. If omitted, the page falls back to `title` /
+    // `shortDescription`. (These MUST be declared here — Zod strips any
+    // frontmatter key the schema doesn't know about, which is why an
+    // undeclared `seoTitle` never reached the <title> tag.)
+    seoTitle: z.string().optional(),
+    metaDescription: z.string().optional(),
     latinName: z.string().optional(),
     category: z.string(),            // e.g. "Adaptogen", "Mineral", "Amino acid"
     evidence: z.enum(['Emerging', 'Moderate', 'Well-studied']),
@@ -43,6 +49,31 @@ const products = defineCollection({
         // Path is relative to /public, e.g. "/products/sports-research-omega3.jpg".
         image: z.string().optional(),
         imageAlt: z.string().optional(),
+      })
+      .optional(),
+
+    // ─── "How the options compare" table (optional) ──────────────────────────
+    // A transparent, criterion-based comparison of 3–5 real products. This is
+    // the commercial answer to "best [supplement]" intent AND an E-E-A-T signal,
+    // because every row is scored pass/fail against `comparison.criterion`.
+    // IMPORTANT: only enter rows whose specs you have personally verified
+    // against the live iHerb/brand listing — never invent EPA %, IFOS ratings,
+    // or concentrations. Leave the field off entirely until you have real data.
+    comparison: z
+      .object({
+        criterion: z.string().optional(), // shown above the table; defaults to qualityCriterion
+        columns: z.array(z.string()).optional(), // header labels for the spec cells
+        rows: z.array(
+          z.object({
+            brand: z.string(),
+            productName: z.string(),
+            iherbKeyword: z.string(),       // specific product URL or precise keyword
+            cells: z.array(z.string()),     // spec values, same order/length as `columns`
+            pass: z.boolean().default(true),// meets the stated criterion?
+            pick: z.boolean().default(false),// our recommended pick (highlighted row)
+            verifiedDate: z.coerce.date().optional(),
+          }),
+        ),
       })
       .optional(),
   }),

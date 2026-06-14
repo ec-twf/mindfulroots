@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import SupportNotice from '../../components/SupportNotice.astro';
+import EvidenceTag from '../../components/EvidenceTag.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -19,6 +20,10 @@ const related = data.relatedProducts
   .map((slug) => products.find((p) => p.id === slug))
   .filter(Boolean);
 
+// Evidence tier shown in the header reflects the primary supplement this post
+// covers (the first related product). Undefined when a post has no product.
+const evidenceLevel = related[0]?.data.evidence;
+
 const date = data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
 const schema = {
@@ -36,7 +41,10 @@ const schema = {
   </div>
 
   <article class="mx-auto max-w-3xl px-5 pt-6 pb-4">
-    <p class="eyebrow mb-2">{data.cluster}</p>
+    <div class="flex flex-wrap items-center gap-3 mb-2">
+      <p class="eyebrow">{data.cluster}</p>
+      {evidenceLevel && <EvidenceTag level={evidenceLevel} />}
+    </div>
     <h1 class="font-display text-3xl sm:text-4xl text-moss-deep leading-tight">{data.title}</h1>
     <p class="mt-3 text-ink-soft">{data.description}</p>
     <time class="block mt-3 font-mono text-xs text-ink-soft" datetime={data.pubDate.toISOString()}>{date}</time>

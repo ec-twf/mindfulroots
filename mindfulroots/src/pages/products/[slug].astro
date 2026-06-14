@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import AffiliateButton from '../../components/AffiliateButton.astro';
 import EvidenceTag from '../../components/EvidenceTag.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
 import WarningBox from '../../components/WarningBox.astro';
 import SupportNotice from '../../components/SupportNotice.astro';
 import { getCollection, render } from 'astro:content';
@@ -87,28 +88,28 @@ const schema = {
       <section class="prose-mr max-w-none">
         <Content />
       </section>
+
+      {data.comparison && data.comparison.rows.length > 0 && (
+        <section class="mt-9">
+          <p class="eyebrow mb-2">How the options compare</p>
+          <h2 class="font-display text-2xl text-moss-deep mb-4">Picking a {data.title.toLowerCase()} on iHerb</h2>
+          <ComparisonTable
+            criterion={data.comparison.criterion ?? data.qualityCriterion}
+            columns={data.comparison.columns}
+            rows={data.comparison.rows}
+          />
+        </section>
+      )}
     </div>
 
     <!-- Sidebar: the buy box + at-a-glance -->
     <aside class="lg:sticky lg:top-24 self-start space-y-5">
       <div class="bg-card border border-mist rounded-lg p-5 space-y-4">
         <div>
-          <p class="eyebrow mb-2">Where to buy</p>
+          <p class="eyebrow mb-2">Our pick</p>
 
           {rec ? (
             <div class="space-y-3">
-              {rec.image && (
-                <div class="rounded-md border border-mist bg-paper p-3 flex justify-center">
-                  <img
-                    src={rec.image}
-                    alt={rec.imageAlt ?? `${rec.brand} — ${rec.productName}`}
-                    class="max-h-44 w-auto object-contain"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              )}
-
               <div class="text-sm">
                 <p class="font-medium text-moss-deep leading-snug">{rec.brand}</p>
                 <p class="text-ink-soft leading-snug">{rec.productName}</p>
