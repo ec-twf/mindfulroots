@@ -1,0 +1,80 @@
+---
+// Transparent, criterion-based product comparison.
+// Reusable across product hubs ("best X") and future VS / comparison posts.
+import { iherbLink } from '../config';
+
+interface Row {
+  brand: string;
+  productName: string;
+  iherbKeyword: string;
+  cells: string[];
+  pass?: boolean;
+  pick?: boolean;
+}
+interface Props {
+  criterion?: string;
+  columns?: string[];
+  rows: Row[];
+}
+const { criterion, columns = [], rows } = Astro.props;
+---
+<section class="not-prose" aria-label="Product comparison">
+  {criterion && (
+    <div class="text-xs text-ink-soft leading-relaxed border border-mist rounded-md bg-paper p-3 mb-3">
+      <p class="font-mono uppercase tracking-wider text-moss mb-1 text-[0.62rem]">How we judge these</p>
+      <p>{criterion}</p>
+    </div>
+  )}
+
+  <div class="overflow-x-auto border border-mist rounded-lg bg-card">
+    <table class="w-full text-sm border-collapse min-w-[34rem]">
+      <thead>
+        <tr class="bg-paper text-left">
+          <th class="font-mono uppercase tracking-wider text-moss text-[0.62rem] font-medium px-3 py-2.5 border-b border-mist">Product</th>
+          {columns.map((c) => (
+            <th class="font-mono uppercase tracking-wider text-moss text-[0.62rem] font-medium px-3 py-2.5 border-b border-mist whitespace-nowrap">{c}</th>
+          ))}
+          <th class="font-mono uppercase tracking-wider text-moss text-[0.62rem] font-medium px-3 py-2.5 border-b border-mist text-center">Meets it</th>
+          <th class="px-3 py-2.5 border-b border-mist"><span class="sr-only">Link</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((r) => (
+          <tr class={r.pick ? 'bg-[#f0f4ea]' : ''}>
+            <td class="px-3 py-3 border-b border-mist align-top">
+              <div class="flex items-start gap-2">
+                {r.pick && (
+                  <span class="font-mono text-[0.55rem] uppercase tracking-wider bg-saffron text-white rounded px-1.5 py-0.5 mt-0.5 whitespace-nowrap">Our pick</span>
+                )}
+                <span>
+                  <span class="block font-medium text-moss-deep leading-snug">{r.brand}</span>
+                  <span class="block text-ink-soft text-xs leading-snug">{r.productName}</span>
+                </span>
+              </div>
+            </td>
+            {r.cells.map((cell) => (
+              <td class="px-3 py-3 border-b border-mist align-top text-ink-soft leading-snug">{cell}</td>
+            ))}
+            <td class="px-3 py-3 border-b border-mist align-top text-center">
+              {r.pass !== false ? (
+                <span class="text-moss" title="Meets our criterion" aria-label="Yes">✓</span>
+              ) : (
+                <span class="text-ink-soft" title="Does not meet our criterion" aria-label="No">—</span>
+              )}
+            </td>
+            <td class="px-3 py-3 border-b border-mist align-top whitespace-nowrap">
+              <a href={iherbLink(r.iherbKeyword)} target="_blank" rel="nofollow sponsored noopener"
+                 class="text-saffron-deep hover:text-moss-deep underline underline-offset-2 text-xs">
+                iHerb →
+              </a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="text-[0.68rem] text-ink-soft mt-2">
+    Specs verified against live listings at time of writing and can change — confirm on the product page.
+    Links are affiliate links; <a href="/disclosure/" class="underline">details</a>.
+  </p>
+</section>

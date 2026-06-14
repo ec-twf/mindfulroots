@@ -43,20 +43,33 @@ const schema = {
         </a>
       </div>
 
-      <!-- Trust strip: encodes what the site actually promises -->
-      <dl class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-px bg-mist border border-mist rounded-lg overflow-hidden text-sm">
-        {[
-          ['Evidence-rated', 'Every supplement carries an honest evidence tier'],
-          ['Cautions first', 'Interactions and risks stated up front, not buried'],
-          ['Not a treatment', 'We never frame supplements as a cure for depression'],
-          ['Care-forward', 'Professional &amp; crisis support signposted throughout'],
-        ].map(([term, def]) => (
-          <div class="bg-card p-4">
-            <dt class="font-display text-moss-deep">{term}</dt>
-            <dd class="text-ink-soft mt-1 leading-snug" set:html={def} />
-          </div>
-        ))}
-      </dl>
+      <!-- Evidence-tier explainer: makes the core differentiator legible in seconds -->
+      <div class="mt-12">
+        <p class="eyebrow mb-3">How we rate the evidence</p>
+        <dl class="grid sm:grid-cols-3 gap-px bg-mist border border-mist rounded-lg overflow-hidden text-sm">
+          {[
+            ['Emerging', 1, 'Early or limited studies — promising, but not yet conclusive.'],
+            ['Moderate', 2, 'Consistent findings across several studies, with research ongoing.'],
+            ['Well-studied', 3, 'Multiple RCTs and at least one meta-analysis support this use.'],
+          ].map(([term, dots, def]) => (
+            <div class="bg-card p-4">
+              <dt class="flex items-center gap-2">
+                <span class="flex gap-0.5" aria-hidden="true">
+                  {[1, 2, 3].map((i) => (
+                    <span class={`w-1.5 h-1.5 rounded-full ${i <= (dots as number) ? 'bg-moss' : 'bg-mist'}`} />
+                  ))}
+                </span>
+                <span class="font-display text-moss-deep">{term}</span>
+              </dt>
+              <dd class="text-ink-soft mt-1.5 leading-snug">{def}</dd>
+            </div>
+          ))}
+        </dl>
+        <p class="mt-3 text-xs text-ink-soft">
+          Every supplement profile carries one of these tiers — and we say plainly when the research is thin.
+          <a href="/about/" class="underline underline-offset-2 hover:text-moss-deep">Our editorial &amp; evidence standards →</a>
+        </p>
+      </div>
     </div>
   </section>
 

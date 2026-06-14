@@ -5,7 +5,7 @@ metaDescription: "What the research says about EPA-rich omega-3 for low mood, pl
 latinName: "EPA / DHA marine lipids"
 category: "Essential fatty acids"
 evidence: "Moderate"
-shortDescription: "Long-chain omega-3 fatty acids (EPA and DHA) from marine oil, studied for a supportive role in mood and overall brain health alongside diet and lifestyle."
+shortDescription: "The marine fats your brain is partly built from. When mood runs low, an EPA-rich omega-3 is among the better-studied nutrients worth raising with your doctor — a supportive nutrient alongside diet and care, never a treatment on its own."
 benefits:
   - "Supplies EPA and DHA, the long-chain omega-3s most human research focuses on"
   - "EPA-predominant formulas are the most studied in the context of low mood"
@@ -27,8 +27,30 @@ recommendedProduct:
   concentrationNote: "~1 g EPA+DHA per 1,250 mg softgel (≈80% concentration); EPA ≈69% of EPA+DHA, triglyceride form"
   oxidationNote: "IFOS 5-star rated; reported TOTOX within GOED limit"
   verifiedDate: "2026-06-14"
-  image: "/products/sports-research-omega-3.jpg"
-  imageAlt: "Sports Research Triple Strength Omega-3 Fish Oil softgel bottle"
+comparison:
+  criterion: "EPA at ≥60% of total EPA+DHA, a high overall concentration (efficient per-softgel dose), and independent oxidation/purity testing (IFOS rating or published TOTOX within GOED limits)."
+  columns: ["EPA % of EPA+DHA", "Concentration", "Form", "Purity testing"]
+  rows:
+    - brand: "Sports Research"
+      productName: "Triple Strength Omega-3 (Wild Alaska Pollock) 1250 mg"
+      iherbKeyword: "Sports Research Omega-3 Wild Alaska Pollock"
+      cells: ["≈69%", "≈80% (1 g EPA+DHA / softgel)", "Triglyceride", "IFOS 5-star"]
+      pass: true
+      pick: true
+      verifiedDate: "2026-06-14"
+    # ── TODO: verify the two rows below against the live iHerb listing before
+    #    setting draft:false elsewhere. Replace every "— verify —" with a real,
+    #    checked figure, or delete the row. Do NOT publish unverified specs.
+    - brand: "Nordic Naturals"
+      productName: "Ultimate Omega"
+      iherbKeyword: "Nordic Naturals Ultimate Omega"
+      cells: ["— verify —", "— verify —", "— verify —", "— verify —"]
+      pass: true
+    - brand: "NOW Foods"
+      productName: "Ultra Omega-3"
+      iherbKeyword: "NOW Foods Ultra Omega-3"
+      cells: ["— verify —", "— verify —", "— verify —", "— verify —"]
+      pass: true
 ---
 
 Omega-3 fatty acids are structural building blocks of brain tissue, and the body cannot make the long-chain forms efficiently on its own. They're worth understanding as a *supportive* nutrient — reasonable to discuss with your doctor as a complement to professional care, and useful if your diet is low in oily fish — but not a replacement for treatment. If you're struggling, please see our [support resources](/get-help/) and [medical disclaimer](/disclaimer/).
