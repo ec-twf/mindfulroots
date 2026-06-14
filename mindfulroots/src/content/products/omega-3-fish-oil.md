@@ -1,120 +1,68 @@
 ---
-# ── existing schema fields (per project summary) ──────────────────────────────
 title: "Omega-3 Fish Oil (EPA & DHA)"
-latinName: ""                       # n/a for fish oil; left blank intentionally
+latinName: "EPA / DHA marine lipids"
 category: "Essential fatty acids"
-evidence: "Moderate"                # Emerging | Moderate | Well-studied
-shortDescription: >-
-  Long-chain omega-3 fatty acids (EPA and DHA) from marine oil, studied for a
-  supportive role in mood and overall brain health alongside diet and lifestyle.
+evidence: "Moderate"
+shortDescription: "Long-chain omega-3 fatty acids (EPA and DHA) from marine oil, studied for a supportive role in mood and overall brain health alongside diet and lifestyle."
 benefits:
   - "Supplies EPA and DHA, the long-chain omega-3s most human research focuses on"
-  - "Studied as supportive — not a treatment — for low mood, especially higher-EPA formulas"
+  - "EPA-predominant formulas are the most studied in the context of low mood"
   - "Higher-concentration oils deliver the same EPA+DHA in fewer softgels"
-typicalUse: >-
-  Common research doses for mood-support contexts supply roughly 1,000–2,000 mg
-  combined EPA+DHA per day, often with EPA ≥ DHA. Take with a meal containing
-  fat to aid absorption.
-cautions: >-
-  May have a mild blood-thinning effect; talk to a clinician before combining
-  with anticoagulant/antiplatelet medication or before surgery. Choose oils with
-  third-party oxidation testing — rancid fish oil is a real quality problem.
-interactionWarning: ""              # none specific to omega-3; (5-HTP uses this field)
-iherbKeyword: "omega-3 fish oil"
-relatedPosts:
-  - "omega-3-for-mood"              # adjust to real slug(s)
+typicalUse: "Mood-support research most often uses roughly 1,000–2,000 mg of combined EPA+DHA per day, weighted toward EPA, taken with a fat-containing meal. Start low and adjust with a clinician's input."
+cautions: "May have a mild blood-thinning effect; talk to a clinician before combining with anticoagulant or antiplatelet medication, or before surgery. Choose oils with third-party oxidation testing — rancid fish oil is a real quality problem."
+iherbKeyword: "high EPA omega 3 fish oil"
+relatedPosts: ["omega-3-brain-mood-evidence"]
 order: 1
 
-# ── NEW: quality-criterion + verified recommendation ──────────────────────────
-# qualityCriterion        : human-readable rule shown to the reader in the buy box.
-# criterionRationale      : one sentence on *why*, with a citable source URL.
-# criterionSourceUrl      : stable reference backing the criterion itself.
-# recommendedProduct      : the product the affiliate CTA points to BECAUSE it
-#                           meets the stated criterion (evidence-first, not best-seller).
-#   meetsCriterion        : must be true for the CTA to render as "recommended".
-#   verifiedDate          : when a human last checked the label/spec. Shown on page.
-#   sourceUrl             : where the spec was verified (label / brand page).
-#   note                  : optional caveat (e.g. SKU/count variation).
-qualityCriterion: >-
-  High EPA+DHA concentration (a meaningful share of total oil weight, so the
-  per-softgel dose is efficient) AND independent oxidation testing
-  (e.g. IFOS rating or a published TOTOX value within GOED limits).
-criterionRationale: >-
-  Concentration is a value/convenience signal — more EPA+DHA per softgel means
-  fewer pills for the same dose — while oxidation testing is the quality signal
-  with an actual industry standard behind it (GOED TOTOX < 26). Codex defines
-  "highly concentrated" fish oil as >50% EPA+DHA by weight; premium products
-  commonly fall in the 60–80% range.
-criterionSourceUrl: "https://goedomega3.com/"          # GOED standards; pair with Codex CXS 329-2017 in Sources
+# ─── Evidence-first recommendation ──────────────────────────────────────────
+qualityCriterion: "EPA at ≥60% of total EPA+DHA (the proportion most studied for mood), high overall concentration for an efficient per-softgel dose, and independent oxidation/purity testing (IFOS rating or a published TOTOX within GOED limits)."
+criterionRationale: "The ≥60%-EPA proportion is the one mood-focused meta-analyses converge on; concentration is a value/convenience signal; oxidation testing is the quality signal with an actual industry standard (GOED TOTOX < 26) behind it."
+criterionSourceUrl: "https://goedomega3.com/"
 recommendedProduct:
   brand: "Sports Research"
   productName: "Triple Strength Omega-3 Fish Oil (Wild Alaska Pollock), 1250 mg"
-  iherbKeyword: "sports research triple strength omega-3"
+  iherbKeyword: "Sports Research Omega-3 Wild Alaska Pollock"
   meetsCriterion: true
-  concentrationNote: "~1,000 mg EPA+DHA per 1,250 mg softgel (≈80% concentration), triglyceride form"
-  oxidationNote: "IFOS 5-star rated; brand-reported TOTOX under GOED limit"
-  verifiedDate: "2026-06-13"
-  sourceUrl: "https://www.sportsresearch.store/products/omega-3-fish-oil-from-wild-alaska-pollock-1250mg-90-softgels"
+  concentrationNote: "~1 g EPA+DHA per 1,250 mg softgel (≈80% concentration); EPA ≈69% of EPA+DHA, triglyceride form"
+  oxidationNote: "IFOS 5-star rated; reported TOTOX within GOED limit"
+  verifiedDate: 2026-06-14
+  image: "/products/sports-research-omega-3.jpg"
+  imageAlt: "Sports Research Triple Strength Omega-3 Fish Oil softgel bottle"
   note: >-
-    EPA/DHA split varies slightly by SKU/count (e.g. 690 EPA + 260–310 DHA);
-    keep the page claim at the rounded "~1 g EPA+DHA per softgel" level so it
-    survives minor formulation/label drift. Re-verify on each content review.
-draft: true
+    EPA/DHA split varies slightly by SKU (≈690 mg EPA / 260–310 mg DHA). Keep the
+    public claim at the rounded "~1 g EPA+DHA per softgel" level so it survives
+    minor label/formulation drift. Swap iherbKeyword for the exact verified iHerb
+    product URL once confirmed. Re-verify the spec on every content review, and
+    use only a LICENSED product image (own photo or affiliate-approved asset).
 ---
 
-## Why omega-3s for mood support
+Omega-3 fatty acids are structural building blocks of brain tissue, and the body cannot make the long-chain forms efficiently on its own. They're worth understanding as a *supportive* nutrient — reasonable to discuss with your doctor as a complement to professional care, and useful if your diet is low in oily fish — but not a replacement for treatment. If you're struggling, please see our [support resources](/get-help/) and [medical disclaimer](/disclaimer/).
 
-EPA and DHA are the two long-chain omega-3 fatty acids that most human research
-on mood concerns. The evidence here is **supportive, not curative**: omega-3s are
-studied as one input alongside diet, sleep, and professional care — never as a
-replacement for treatment of depression or any diagnosed condition. If you're
-struggling, please see [our support resources](/get-help) and
-[medical disclaimer](/disclaimer).
+## Why EPA, specifically
+
+Of the two main marine omega-3s, EPA is the one mood research keeps returning to. A 2011 meta-analysis by Sublette and colleagues found that supplements in which EPA made up at least 60% of total EPA+DHA were associated with benefit in depression, while DHA-predominant formulas were not — a threshold later meta-analyses have largely echoed. A 2023 systematic review of ten randomized trials reached a similar place: EPA-enriched formulas at ≥60% of total EPA+DHA, in the range of 1–2 g of EPA per day, showed a modest reduction in depression severity, while doses of 2 g/day or more did not add benefit.
+
+This is why "more milligrams" isn't automatically better, and why the *ratio* matters as much as the dose.
+
+## What the evidence actually shows
+
+It's worth being honest about the size and consistency of the effect, because it's easy to overstate.
+
+On the supportive side, a 2019 meta-analysis in *Translational Psychiatry* pooled 26 trials and around 2,160 participants and found a small but statistically significant overall benefit of omega-3s on depressive symptoms. A 2016 meta-analysis and meta-regression focused specifically on diagnosed major depressive disorder pointed in a similar direction, while flagging how much the dose, EPA:DHA ratio, and study quality moved the results.
+
+On the cautionary side, the 2021 Cochrane review — the most rigorous synthesis available — concluded the evidence is far from conclusive, with substantial heterogeneity between studies: little to no effect in people with mild symptoms, and possible benefit mainly in more severe depression. And the large VITAL-DEP trial (over five years of follow-up in older adults) found omega-3 supplements did not prevent depression or improve mood versus placebo. A 2025 meta-analysis landed in the middle: a longer course (more than eight weeks) of 1,000–1,500 mg/day at an EPA:DHA ratio between 1:1 and 2:1 looked most favorable, but omega-3s were not superior to placebo on response or remission rates.
+
+The fair summary: a genuine but modest signal, strongest for EPA-predominant formulas in people with established (not mild) low mood, and not a tool for *preventing* depression. That's why this product carries a **Moderate** evidence rating, not a higher one.
 
 ## How to read a fish oil label
 
-The number that matters is **combined EPA + DHA per serving**, not the headline
-"fish oil" milligram figure on the front. A "1,000 mg fish oil" softgel might
-contain only 300 mg of actual EPA+DHA. Two things separate a good oil from a
-weak one:
+The number that matters is **combined EPA + DHA per serving**, not the headline "fish oil" figure on the front — a "1,000 mg fish oil" softgel may contain only 300 mg of actual EPA+DHA. Three things separate a strong oil from a weak one:
 
-1. **Concentration** — how much of the oil is genuinely EPA+DHA. Higher means
-   fewer softgels for the same dose. Codex labels oils above 50% EPA+DHA by
-   weight as "highly concentrated"; premium products commonly sit in the 60–80%
-   range.
-2. **Oxidation / freshness** — fish oil goes rancid, and rancidity is the
-   quality problem with a real standard behind it. Look for independent testing
-   such as an **IFOS** rating or a published **TOTOX** value within GOED limits.
+- **EPA proportion** — for mood specifically, look for EPA at roughly ≥60% of total EPA+DHA.
+- **Concentration** — how much of the oil is genuinely EPA+DHA, so each softgel delivers an efficient dose. Codex labels oils above 50% EPA+DHA by weight "highly concentrated"; premium products commonly sit in the 60–80% range.
+- **Oxidation & purity testing** — independent verification such as an IFOS rating or a published TOTOX value within GOED limits. Rancid oil is the real quality problem, and it's the one with an actual standard behind it.
 
-This is why our pick below is chosen on *criteria*, not on best-seller rank —
-the two often disagree.
-
-## Our pick — and why
-
-> **[Sports Research Triple Strength Omega-3 (Wild Alaska Pollock)](#)**
-> *(rendered via the `AffiliateButton` component — `rel="nofollow sponsored"`)*
->
-> Meets the criterion: roughly **1 g of EPA+DHA per 1,250 mg softgel** (about
-> 80% concentration, in the triglyceride form), and **IFOS 5-star rated** with a
-> reported TOTOX within GOED limits. *Spec verified 13 Jun 2026 — re-checked each
-> content review.*
-
-We show you the rule and the check, not just a buy button.
-[See our affiliate disclosure](/disclosure).
-
-## Typical use
-
-Mood-support research contexts commonly use **~1,000–2,000 mg combined EPA+DHA
-per day**, frequently with EPA at or above DHA. Take with a fat-containing meal.
-Start at the lower end and adjust with a clinician's input.
-
-## Cautions
-
-- Mild blood-thinning effect — check with a clinician before combining with
-  anticoagulant or antiplatelet medication, or before surgery.
-- Choose oils with third-party oxidation testing; rancid oil is both unpleasant
-  and lower quality.
-- Omega-3s support mood; they do not treat depression. See [/get-help](/get-help).
+Triglyceride-form or enteric-coated oils also help if fishy aftertaste bothers you.
 
 ## FAQ
 
@@ -122,23 +70,19 @@ Start at the lower end and adjust with a clinician's input.
 Mood-related research typically runs over weeks to a few months, not days.
 
 **EPA or DHA — which matters for mood?**
-Trials skew toward formulas where EPA meets or exceeds DHA, but evidence is still
-evolving. This is general information, not a treatment recommendation.
+The trials that show benefit lean heavily on EPA-predominant formulas (EPA ≥60% of total EPA+DHA). DHA-dominant formulas have generally not shown the same effect. This is general information, not a treatment recommendation.
 
 **Is a higher "fish oil mg" number better?**
-Not necessarily — compare combined EPA+DHA, not total oil.
+Not necessarily — compare combined EPA+DHA and the EPA proportion, not the total oil figure. Past about 2 g of EPA per day, the research doesn't show added benefit for mood.
+
+**Can it replace my antidepressant or therapy?**
+No. Omega-3s are studied as a *supportive* nutrient alongside professional care, not a substitute for it. If you're struggling, please reach out via our [support resources](/get-help/).
 
 ## Sources
 
-1. Codex Alimentarius — Standard for Fish Oils (CXS 329-2017, amended 2021/2024).
-   Defines "highly concentrated" fish oil as >50% EPA+DHA by weight.
-   https://www.fao.org/fao-who-codexalimentarius/
-2. GOED (Global Organization for EPA and DHA Omega-3s) — voluntary monograph /
-   oxidation limits (PV < 5, TOTOX < 26). https://goedomega3.com/
-3. *(Add 3–5 mood-specific EPA/DHA citations per content-brief Step 2 — e.g. a
-   recent meta-analysis on omega-3s and depressive symptoms — before flipping
-   `draft: false`.)*
-
-## Supplements mentioned
-
-- [Omega-3 Fish Oil](/products/omega-3-fish-oil) — this product hub.
+1. Sublette ME, et al. Meta-analysis of the effects of eicosapentaenoic acid (EPA) in clinical trials in depression. *J Clin Psychiatry.* 2011;72(12):1577–1584. doi:10.4088/JCP.10m06634
+2. Liao Y, et al. Efficacy of omega-3 PUFAs in depression: a meta-analysis. *Transl Psychiatry.* 2019;9:190. https://www.nature.com/articles/s41398-019-0515-5
+3. Mocking RJT, et al. Meta-analysis and meta-regression of omega-3 polyunsaturated fatty acid supplementation for major depressive disorder. *Transl Psychiatry.* 2016;6:e756. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4872453/
+4. Appleton KM, et al. Omega-3 fatty acids for depression in adults. *Cochrane Database Syst Rev.* 2021;11:CD004692. doi:10.1002/14651858.CD004692.pub5
+5. Okereke OI, et al. Effect of long-term supplementation with marine omega-3 fatty acids vs placebo on risk of depression (VITAL-DEP). *JAMA.* 2021;326(23):2385–2394. doi:10.1001/jama.2021.21187
+6. Kong L, et al. Exploration of the optimized portrait of omega-3 polyunsaturated fatty acids in treating depression: a meta-analysis of randomized controlled trials. *J Affect Disord.* 2025. https://www.sciencedirect.com/science/article/abs/pii/S0165032725003441
