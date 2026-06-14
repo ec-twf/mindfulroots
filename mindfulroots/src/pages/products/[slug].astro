@@ -24,12 +24,26 @@ const related = data.relatedPosts
   .map((slug) => allPosts.find((p) => p.id === slug))
   .filter(Boolean);
 
+// Format the verified date for display, if we have a recommended product.
+const rec = data.recommendedProduct;
+const verifiedLabel = rec
+  ? rec.verifiedDate.toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    })
+  : null;
+
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Product',
   name: data.title,
   category: data.category,
   description: data.shortDescription,
+  ...(rec && {
+    brand: { '@type': 'Brand', name: rec.brand },
+    name: rec.productName,
+  }),
 };
 ---
 
@@ -69,7 +83,44 @@ const schema = {
       <div class="bg-card border border-mist rounded-lg p-5 space-y-4">
         <div>
           <p class="eyebrow mb-2">Where to buy</p>
-          <AffiliateButton keyword={data.iherbKeyword} />
+
+          {rec ? (
+            <div class="space-y-3">
+              {data.qualityCriterion && (
+                <div class="text-xs text-ink-soft leading-relaxed border border-mist rounded-md bg-paper p-3">
+                  <p class="font-mono uppercase tracking-wider text-moss mb-1 text-[0.62rem]">Our criterion</p>
+                  <p>{data.qualityCriterion}</p>
+                </div>
+              )}
+
+              <div class="text-sm">
+                <p class="font-medium text-moss-deep leading-snug">{rec.brand}</p>
+                <p class="text-ink-soft leading-snug">{rec.productName}</p>
+              </div>
+
+              {(rec.concentrationNote || rec.oxidationNote) && (
+                <ul class="text-xs text-ink-soft space-y-1">
+                  {rec.concentrationNote && (
+                    <li class="flex gap-1.5"><span class="text-moss" aria-hidden="true">✓</span><span>{rec.concentrationNote}</span></li>
+                  )}
+                  {rec.oxidationNote && (
+                    <li class="flex gap-1.5"><span class="text-moss" aria-hidden="true">✓</span><span>{rec.oxidationNote}</span></li>
+                  )}
+                </ul>
+              )}
+
+              <AffiliateButton keyword={rec.iherbKeyword} label={`View ${rec.brand} on iHerb`} />
+
+              <p class="text-[0.68rem] text-ink-soft">
+                Spec verified {verifiedLabel}
+                {data.criterionSourceUrl && (
+                  <> · <a href={data.criterionSourceUrl} target="_blank" rel="noopener" class="underline">why this criterion</a></>
+                )}
+              </p>
+            </div>
+          ) : (
+            <AffiliateButton keyword={data.iherbKeyword} />
+          )}
         </div>
         <hr class="specimen-rule" />
         <dl class="text-sm space-y-3">
