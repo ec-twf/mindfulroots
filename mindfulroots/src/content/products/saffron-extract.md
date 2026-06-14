@@ -1,5 +1,7 @@
 ---
 title: "Saffron Extract (affron®)"
+seoTitle: "Saffron Extract for Mood: Evidence and How to Choose"
+metaDescription: "A surprisingly well-studied mood botanical. What trials using standardized saffron extracts like affron show, typical 28-30 mg dosing, cautions, and how to choose one."
 latinName: "Crocus sativus stigma"
 category: "Botanical"
 evidence: "Moderate"

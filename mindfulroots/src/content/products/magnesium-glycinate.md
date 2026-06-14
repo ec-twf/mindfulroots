@@ -1,5 +1,7 @@
 ---
 title: "Magnesium Glycinate"
+seoTitle: "Magnesium Glycinate for Sleep & Stress: Evidence and How to Choose"
+metaDescription: "Why the glycinate form is the gentle, well-absorbed choice for evening wind-down. What the evidence shows for sleep and stress, elemental-magnesium dosing, and label tips."
 latinName: "Magnesium bisglycinate chelate"
 category: "Mineral"
 evidence: "Moderate"

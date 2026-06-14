@@ -1,5 +1,7 @@
 ---
 title: "Vitamin D3"
+seoTitle: "Vitamin D3 for Low Mood: Evidence and How to Choose"
+metaDescription: "Why low vitamin D status tracks with low mood, especially in winter. What the evidence shows, who's most likely to be low, sensible dosing, and how to choose a D3."
 latinName: "Cholecalciferol"
 category: "Vitamin"
 evidence: "Moderate"
