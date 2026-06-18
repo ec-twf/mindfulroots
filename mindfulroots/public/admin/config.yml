@@ -76,6 +76,8 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "SEO title (optional)", name: "seoTitle", widget: "string", required: false }
+      - { label: "Meta description (optional)", name: "metaDescription", widget: "text", required: false }
       - { label: "Latin / scientific name", name: "latinName", widget: "string", required: false }
       - { label: "Category", name: "category", widget: "string" }
       - { label: "Evidence tier", name: "evidence", widget: "select", options: ["Emerging", "Moderate", "Well-studied"] }
@@ -87,4 +89,24 @@ collections:
       - { label: "iHerb keyword or URL", name: "iherbKeyword", widget: "string" }
       - { label: "Related post slugs", name: "relatedPosts", widget: "list", required: false, field: { label: "Post slug", name: "slug", widget: "string" } }
       - { label: "Sort order", name: "order", widget: "number", default: 99 }
+      - label: "Comparison table (optional)"
+        name: "comparison"
+        widget: "object"
+        required: false
+        collapsed: true
+        fields:
+          - { label: "Criterion", name: "criterion", widget: "text", required: false }
+          - { label: "Column headers", name: "columns", widget: "list", required: false, field: { label: "Header", name: "header", widget: "string" } }
+          - label: "Rows"
+            name: "rows"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Brand", name: "brand", widget: "string" }
+              - { label: "Product name", name: "productName", widget: "string" }
+              - { label: "iHerb keyword or URL", name: "iherbKeyword", widget: "string" }
+              - { label: "Spec cells (same order as columns)", name: "cells", widget: "list", field: { label: "Cell", name: "cell", widget: "string" } }
+              - { label: "Meets criterion", name: "pass", widget: "boolean", default: true }
+              - { label: "Our pick (highlighted)", name: "pick", widget: "boolean", default: false }
+              - { label: "Verified date", name: "verifiedDate", widget: "datetime", required: false }
       - { label: "Body", name: "body", widget: "markdown" }

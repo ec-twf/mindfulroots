@@ -1,9 +1,11 @@
 ---
 title: "Omega-3 Fish Oil (EPA & DHA)"
+seoTitle: "High-EPA Omega-3 for Mood: Evidence and How to Choose"
+metaDescription: "What the research says about EPA-rich omega-3 for low mood, plus the concentration, EPA-ratio and IFOS purity checks that separate a good fish oil from a weak one."
 latinName: "EPA / DHA marine lipids"
 category: "Essential fatty acids"
 evidence: "Moderate"
-shortDescription: "Long-chain omega-3 fatty acids (EPA and DHA) from marine oil, studied for a supportive role in mood and overall brain health alongside diet and lifestyle."
+shortDescription: "The marine fats your brain is partly built from. When mood runs low, an EPA-rich omega-3 is among the better-studied nutrients worth raising with your doctor — a supportive nutrient alongside diet and care, never a treatment on its own."
 benefits:
   - "Supplies EPA and DHA, the long-chain omega-3s most human research focuses on"
   - "EPA-predominant formulas are the most studied in the context of low mood"
@@ -12,9 +14,8 @@ typicalUse: "Mood-support research most often uses roughly 1,000–2,000 mg of c
 cautions: "May have a mild blood-thinning effect; talk to a clinician before combining with anticoagulant or antiplatelet medication, or before surgery. Choose oils with third-party oxidation testing — rancid fish oil is a real quality problem."
 iherbKeyword: "high EPA omega 3 fish oil"
 relatedPosts: ["omega-3-brain-mood-evidence"]
+relatedProducts: ["vitamin-d3", "magnesium-glycinate"]
 order: 1
-
-# ─── Evidence-first recommendation ──────────────────────────────────────────
 qualityCriterion: "EPA at ≥60% of total EPA+DHA (the proportion most studied for mood), high overall concentration for an efficient per-softgel dose, and independent oxidation/purity testing (IFOS rating or a published TOTOX within GOED limits)."
 criterionRationale: "The ≥60%-EPA proportion is the one mood-focused meta-analyses converge on; concentration is a value/convenience signal; oxidation testing is the quality signal with an actual industry standard (GOED TOTOX < 26) behind it."
 criterionSourceUrl: "https://goedomega3.com/"
@@ -25,15 +26,31 @@ recommendedProduct:
   meetsCriterion: true
   concentrationNote: "~1 g EPA+DHA per 1,250 mg softgel (≈80% concentration); EPA ≈69% of EPA+DHA, triglyceride form"
   oxidationNote: "IFOS 5-star rated; reported TOTOX within GOED limit"
-  verifiedDate: 2026-06-14
-  image: "/products/sports-research-omega-3.jpg"
-  imageAlt: "Sports Research Triple Strength Omega-3 Fish Oil softgel bottle"
-  note: >-
-    EPA/DHA split varies slightly by SKU (≈690 mg EPA / 260–310 mg DHA). Keep the
-    public claim at the rounded "~1 g EPA+DHA per softgel" level so it survives
-    minor label/formulation drift. Swap iherbKeyword for the exact verified iHerb
-    product URL once confirmed. Re-verify the spec on every content review, and
-    use only a LICENSED product image (own photo or affiliate-approved asset).
+  verifiedDate: "2026-06-14"
+comparison:
+  criterion: "EPA at ≥60% of total EPA+DHA, a high overall concentration (efficient per-softgel dose), and independent oxidation/purity testing (IFOS rating or published TOTOX within GOED limits)."
+  columns: ["EPA % of EPA+DHA", "Concentration", "Form", "Purity testing"]
+  rows:
+    - brand: "Sports Research"
+      productName: "Triple Strength Omega-3 (Wild Alaska Pollock) 1250 mg"
+      iherbKeyword: "Sports Research Omega-3 Wild Alaska Pollock"
+      cells: ["≈69%", "≈80% (1 g EPA+DHA / softgel)", "Triglyceride", "IFOS 5-star"]
+      pass: true
+      pick: true
+      verifiedDate: "2026-06-14"
+    # ── TODO: verify the two rows below against the live iHerb listing before
+    #    setting draft:false elsewhere. Replace every "— verify —" with a real,
+    #    checked figure, or delete the row. Do NOT publish unverified specs.
+    - brand: "Nordic Naturals"
+      productName: "Ultimate Omega"
+      iherbKeyword: "Nordic Naturals Ultimate Omega"
+      cells: ["— verify —", "— verify —", "— verify —", "— verify —"]
+      pass: true
+    - brand: "NOW Foods"
+      productName: "Ultra Omega-3"
+      iherbKeyword: "NOW Foods Ultra Omega-3"
+      cells: ["— verify —", "— verify —", "— verify —", "— verify —"]
+      pass: true
 ---
 
 Omega-3 fatty acids are structural building blocks of brain tissue, and the body cannot make the long-chain forms efficiently on its own. They're worth understanding as a *supportive* nutrient — reasonable to discuss with your doctor as a complement to professional care, and useful if your diet is low in oily fish — but not a replacement for treatment. If you're struggling, please see our [support resources](/get-help/) and [medical disclaimer](/disclaimer/).
@@ -46,7 +63,7 @@ This is why "more milligrams" isn't automatically better, and why the *ratio* ma
 
 ## What the evidence actually shows
 
-It's worth being honest about the size and consistency of the effect, because it's easy to overstate.
+It's worth being honest about the size and consistency of the effect, because it's easy to overstate. For a fuller walk-through of the trials, see our deeper review of [the omega-3 and mood research](/blog/omega-3-brain-mood-evidence/).
 
 On the supportive side, a 2019 meta-analysis in *Translational Psychiatry* pooled 26 trials and around 2,160 participants and found a small but statistically significant overall benefit of omega-3s on depressive symptoms. A 2016 meta-analysis and meta-regression focused specifically on diagnosed major depressive disorder pointed in a similar direction, while flagging how much the dose, EPA:DHA ratio, and study quality moved the results.
 
@@ -62,7 +79,7 @@ The number that matters is **combined EPA + DHA per serving**, not the headline 
 - **Concentration** — how much of the oil is genuinely EPA+DHA, so each softgel delivers an efficient dose. Codex labels oils above 50% EPA+DHA by weight "highly concentrated"; premium products commonly sit in the 60–80% range.
 - **Oxidation & purity testing** — independent verification such as an IFOS rating or a published TOTOX value within GOED limits. Rancid oil is the real quality problem, and it's the one with an actual standard behind it.
 
-Triglyceride-form or enteric-coated oils also help if fishy aftertaste bothers you.
+Triglyceride-form or enteric-coated oils also help if fishy aftertaste bothers you. Omega-3s also pair sensibly with the other foundational mood-support nutrients — notably [vitamin D](/products/vitamin-d3/) and [magnesium](/products/magnesium-glycinate/) — if your diet or bloodwork suggests you're low.
 
 ## FAQ
 
