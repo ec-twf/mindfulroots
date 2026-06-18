@@ -1,6 +1,22 @@
 # MindfulRoots — Session Handoff Log
 
-## How to start a new session
+## 🚨 Hotfix needed — push to main separately BEFORE final deploy
+
+The `site` value in `astro.config.mjs` is still the placeholder `https://mindfulroots.example.com`.
+This means every live page has the wrong canonical tag and sitemap URL.
+
+Fix:
+1. Open `astro.config.mjs`, change `site` to `https://mindfulroots.thewisefoolstudio.com`
+2. Check `public/robots.txt` for the same placeholder and fix it
+3. `git checkout main && git add astro.config.mjs public/robots.txt`
+4. `git commit -m "hotfix: set real site URL for canonical tags and sitemap"`
+5. `git push` → this triggers one Netlify build (worth the credit)
+
+Status: ⬜ not yet done
+
+---
+
+
 
 Paste the block under **"Opening message template"** as your very first message.
 Update the SESSION GOAL and TODO list before pasting.
