@@ -65,6 +65,11 @@ collections:
           - "5-htp"
           - "probiotic-gut-brain"
       - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - label: "Post type"
+        name: "postType"
+        widget: "select"
+        required: false
+        options: ["pillar", "buying-guide", "comparison", "explainer"]
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "products"
@@ -96,6 +101,7 @@ collections:
         collapsed: true
         fields:
           - { label: "Criterion", name: "criterion", widget: "text", required: false }
+          - { label: "Verdict (why our pick wins)", name: "verdict", widget: "text", required: false }
           - { label: "Column headers", name: "columns", widget: "list", required: false, field: { label: "Header", name: "header", widget: "string" } }
           - label: "Rows"
             name: "rows"

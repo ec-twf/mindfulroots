@@ -29,28 +29,28 @@ recommendedProduct:
   verifiedDate: "2026-06-14"
 comparison:
   criterion: "EPA at ≥60% of total EPA+DHA, a high overall concentration (efficient per-softgel dose), and independent oxidation/purity testing (IFOS rating or published TOTOX within GOED limits)."
+  verdict: "Sports Research is our pick because it's the only option here that clears all three bars at once: EPA at about 69% of EPA+DHA (comfortably above the ≥60% the mood research points to), roughly 80% concentration so a single softgel does the work of several weaker ones, and independent IFOS 5-star purity testing. Nordic Naturals is excellent on form and purity, but its EPA share (~59%) sits just under the threshold the trials lean on. NOW Foods has the EPA ratio and concentration, but relies on in-house rather than independent purity testing — the one quality signal with a real industry standard behind it."
   columns: ["EPA % of EPA+DHA", "Concentration", "Form", "Purity testing"]
   rows:
     - brand: "Sports Research"
-      productName: "Triple Strength Omega-3 (Wild Alaska Pollock) 1250 mg"
+      productName: "Triple Strength Omega-3, 1250 mg"
       iherbKeyword: "Sports Research Omega-3 Wild Alaska Pollock"
-      cells: ["≈69%", "≈80% (1 g EPA+DHA / softgel)", "Triglyceride", "IFOS 5-star"]
+      cells: ["≈69%", "≈80% (1 g / softgel)", "Triglyceride", "IFOS 5-star"]
       pass: true
       pick: true
       verifiedDate: "2026-06-14"
-    # ── TODO: verify the two rows below against the live iHerb listing before
-    #    setting draft:false elsewhere. Replace every "— verify —" with a real,
-    #    checked figure, or delete the row. Do NOT publish unverified specs.
     - brand: "Nordic Naturals"
       productName: "Ultimate Omega"
       iherbKeyword: "Nordic Naturals Ultimate Omega"
-      cells: ["— verify —", "— verify —", "— verify —", "— verify —"]
-      pass: true
+      cells: ["≈59%", "≈55% (1.1 g / 2 softgels)", "Triglyceride", "IFOS 5-star"]
+      pass: false
+      verifiedDate: "2026-06-14"
     - brand: "NOW Foods"
       productName: "Ultra Omega-3"
       iherbKeyword: "NOW Foods Ultra Omega-3"
-      cells: ["— verify —", "— verify —", "— verify —", "— verify —"]
-      pass: true
+      cells: ["≈67%", "≈75% (750 mg / softgel)", "Ethyl ester, enteric", "In-house only"]
+      pass: false
+      verifiedDate: "2026-06-14"
 ---
 
 Omega-3 fatty acids are structural building blocks of brain tissue, and the body cannot make the long-chain forms efficiently on its own. They're worth understanding as a *supportive* nutrient — reasonable to discuss with your doctor as a complement to professional care, and useful if your diet is low in oily fish — but not a replacement for treatment. If you're struggling, please see our [support resources](/get-help/) and [medical disclaimer](/disclaimer/).

@@ -62,6 +62,7 @@ const products = defineCollection({
     comparison: z
       .object({
         criterion: z.string().optional(), // shown above the table; defaults to qualityCriterion
+        verdict: z.string().optional(),   // prose paragraph: why the pick wins and the others fall short
         columns: z.array(z.string()).optional(), // header labels for the spec cells
         rows: z.array(
           z.object({
@@ -87,6 +88,10 @@ const blog = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     cluster: z.string(),             // topic cluster, e.g. "magnesium"
+    // Distinguishes the pillar/cluster posts from the new SEO formats:
+    // "buying-guide" (iHerb-anchored), "comparison" (X vs Y), "explainer".
+    // Optional — existing posts default to undefined (treated as a pillar).
+    postType: z.enum(['pillar', 'buying-guide', 'comparison', 'explainer']).optional(),
     relatedProducts: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
   }),

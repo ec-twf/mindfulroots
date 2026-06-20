@@ -19,6 +19,13 @@ export function iherbLink(productUrlOrKeyword: string): string {
   const base = productUrlOrKeyword.startsWith('http')
     ? productUrlOrKeyword
     : `https://www.iherb.com/search?kw=${encodeURIComponent(productUrlOrKeyword)}`;
+  // Until a real affiliate code is set, return clean links (no rcode) so the
+  // site can go live without publishing a placeholder tracking code. Once
+  // IHERB_AFFILIATE_CODE is set to your real code, every link picks it up
+  // automatically on the next build — no per-page edits.
+  if (!IHERB_AFFILIATE_CODE || IHERB_AFFILIATE_CODE === 'YOUR_CODE_HERE') {
+    return base;
+  }
   const sep = base.includes('?') ? '&' : '?';
   return `${base}${sep}rcode=${IHERB_AFFILIATE_CODE}`;
 }

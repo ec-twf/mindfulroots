@@ -1,5 +1,7 @@
 ---
 title: "5-HTP"
+seoTitle: "5-HTP for Mood: What the Evidence Says (and the Safety Catch)"
+metaDescription: "5-HTP is a direct serotonin precursor with emerging mood evidence — and a real interaction risk. What the research shows, typical doses, and the serotonin-syndrome warning to read first."
 latinName: "5-Hydroxytryptophan"
 category: "Amino acid derivative"
 evidence: "Emerging"

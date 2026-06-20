@@ -1,5 +1,7 @@
 ---
 title: "Gut–Brain Probiotic"
+seoTitle: "Gut-Brain Probiotics for Mood: What the Early Evidence Shows"
+metaDescription: "Psychobiotic strains are an emerging frontier in mood and stress research. What the early studies suggest, which strains are studied, and how to read a probiotic label."
 latinName: "Lactobacillus & Bifidobacterium 'psychobiotic' strains"
 category: "Probiotic"
 evidence: "Emerging"

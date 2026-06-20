@@ -83,16 +83,13 @@ const schema = {
         </div>
       )}
 
-      <hr class="specimen-rule my-7" />
-
-      <section class="prose-mr max-w-none">
-        <Content />
-      </section>
-
       {data.comparison && data.comparison.rows.length > 0 && (
-        <section class="mt-9">
-          <p class="eyebrow mb-2">How the options compare</p>
-          <h2 class="font-display text-2xl text-moss-deep mb-4">Picking a {data.title.toLowerCase()} on iHerb</h2>
+        <section class="mt-7">
+          <p class="eyebrow mb-2">Our pick, and why</p>
+          <h2 class="font-display text-2xl text-moss-deep mb-3">Choosing a {data.title.toLowerCase()} on iHerb</h2>
+          {data.comparison.verdict && (
+            <p class="text-ink leading-relaxed mb-4">{data.comparison.verdict}</p>
+          )}
           <ComparisonTable
             criterion={data.comparison.criterion ?? data.qualityCriterion}
             columns={data.comparison.columns}
@@ -100,6 +97,12 @@ const schema = {
           />
         </section>
       )}
+
+      <hr class="specimen-rule my-7" />
+
+      <section class="prose-mr max-w-none">
+        <Content />
+      </section>
     </div>
 
     <!-- Sidebar: the buy box + at-a-glance -->
