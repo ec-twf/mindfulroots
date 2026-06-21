@@ -5,7 +5,7 @@ pubDate: 2026-06-20
 cluster: "Vitamin D & mood"
 relatedProducts:
   - vitamin-d3
-draft: true
+draft: false
 ---
 
 When the light gets short and your energy goes with it, vitamin D is one of the first things people reach for. The story is intuitive: sunlight makes vitamin D, winter takes the sunlight away, and low vitamin D is found alongside low mood — so topping it up should help. Parts of that story are well supported. One important part isn't. This post walks through what the research genuinely shows, so you can decide where vitamin D fits into your own winter routine with clear eyes rather than wishful thinking.
