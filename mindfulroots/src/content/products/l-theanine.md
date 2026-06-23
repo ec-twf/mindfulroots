@@ -1,5 +1,7 @@
 ---
 title: "L-Theanine"
+seoTitle: "L-Theanine for Calm Focus: Evidence and How to Choose"
+metaDescription: "The amino acid behind green tea's relaxed alertness. What research shows for stress and focus, typical 200 mg dosing, and how to choose an L-theanine supplement."
 latinName: "γ-glutamylethylamide"
 category: "Amino acid"
 evidence: "Moderate"
@@ -13,6 +15,43 @@ cautions: "Very well tolerated with a strong safety profile. If you take blood-p
 iherbKeyword: "l-theanine 200mg"
 relatedPosts: ["l-theanine-calm-focus"]
 order: 6
+qualityCriterion: "Dose at the trialed level (100–200 mg); ideally Suntheanine® — the enzymatically produced, branded form used in most published trials; no added caffeine unless clearly labeled."
+criterionRationale: "Most RCT evidence uses Suntheanine® specifically. Generic L-theanine may be equivalent, but Suntheanine has the independent trial record behind it. The 100–200 mg range covers both the acute relaxation and sleep-support applications studied."
+criterionSourceUrl: "https://pubmed.ncbi.nlm.nih.gov/22214254/"
+recommendedProduct:
+  brand: "Doctor's Best"
+  productName: "L-Theanine with Suntheanine®"
+  iherbKeyword: "Doctor's Best L-Theanine Suntheanine"
+  meetsCriterion: true
+  concentrationNote: "150 mg Suntheanine® per capsule — the only option in this comparison to state the branded, trialed source on the label"
+  verifiedDate: "2026-06-23"
+comparison:
+  criterion: "Suntheanine® branded form stated on label, dose 100–200 mg, no unstated caffeine."
+  verdict: "Doctor's Best is our pick: it's the only one here that explicitly names Suntheanine® on the label — the branded form with its own published trial record — at 150 mg, within the studied range. NOW Foods delivers 200 mg and is a highly reputable manufacturer, but neither the label nor the iHerb listing names the source of its L-theanine, so we cannot confirm it matches the trialed form. Jarrow is in the same position. Both are likely fine in practice, but on a site that takes evidence transparency seriously we can only highlight the one that states its pedigree. Honest caveat: if dose matters more to you than brand pedigree, 200 mg from NOW or Jarrow is a reasonable, lower-cost choice."
+  columns: ["Branded form", "Dose / serving", "Added caffeine", "Other actives"]
+  rows:
+    - brand: "Doctor's Best"
+      productName: "L-Theanine with Suntheanine®"
+      iherbKeyword: "Doctor's Best L-Theanine Suntheanine"
+      cells: ["Suntheanine®", "150 mg", "No", "None"]
+      pass: true
+      pick: true
+      verifiedDate: "2026-06-23" 
+    - brand: "NOW Foods"
+      productName: "L-Theanine 200 mg"
+      iherbKeyword: "NOW Foods L-Theanine Suntheanine 200"
+      cells: ["Not stated", "200 mg", "No", "Inositol 100 mg"]
+      pass: true
+      pick: false
+      verifiedDate: "2026-06-23" 
+    - brand: "Jarrow Formulas"
+      productName: "Theanine 200"
+      iherbKeyword: "Jarrow Theanine 200"
+      cells: ["Not stated", "200 mg", "No", "None"]
+      pass: true
+      pick: false
+      verifiedDate: "2026-06-23" 
+
 ---
 
 L-theanine is the reason a cup of green tea feels calmer than a cup of coffee, despite both containing caffeine. It increases alpha-wave activity — the brain rhythm associated with relaxed, wakeful states — and unlike most calming compounds it does this without making you sleepy.
