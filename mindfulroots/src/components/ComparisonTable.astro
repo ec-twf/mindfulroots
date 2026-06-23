@@ -27,10 +27,10 @@ const { criterion, columns = [], rows } = Astro.props;
   )}
 
   <div class="overflow-x-auto border border-mist rounded-lg bg-card">
-    <table class="w-full text-sm border-collapse min-w-[34rem]">
+    <table class="w-full text-sm border-collapse min-w-[28rem]">
       <thead>
         <tr class="bg-paper text-left">
-          <th class="font-mono uppercase tracking-wider text-moss text-[0.62rem] font-medium px-3 py-2.5 border-b border-mist">Product</th>
+          <th class="font-mono uppercase tracking-wider text-moss text-[0.62rem] font-medium px-3 py-2.5 border-b border-mist w-[32%] min-w-[9rem]">Product</th>
           {columns.map((c) => (
             <th class="font-mono uppercase tracking-wider text-moss text-[0.62rem] font-medium px-3 py-2.5 border-b border-mist whitespace-nowrap">{c}</th>
           ))}
@@ -46,9 +46,9 @@ const { criterion, columns = [], rows } = Astro.props;
                 {r.pick && (
                   <span class="font-mono text-[0.55rem] uppercase tracking-wider bg-saffron text-white rounded px-1.5 py-0.5 mt-0.5 whitespace-nowrap">Our pick</span>
                 )}
-                <span>
+                <span class="min-w-0">
                   <span class="block font-medium text-moss-deep leading-snug">{r.brand}</span>
-                  <span class="block text-ink-soft text-xs leading-snug">{r.productName}</span>
+                  <span class="block text-ink-soft text-xs leading-snug line-clamp-2">{r.productName}</span>
                 </span>
               </div>
             </td>

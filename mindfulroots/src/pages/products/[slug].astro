@@ -64,7 +64,7 @@ const schema = {
     <a href="/products/" class="text-ink-soft hover:text-saffron-deep">← All supplements</a>
   </div>
 
-  <article class="mx-auto max-w-5xl px-5 pb-6 grid lg:grid-cols-[1fr_320px] gap-10">
+  <article class="mx-auto max-w-5xl px-5 pb-6 grid md:grid-cols-[1fr_300px] gap-10">
     <!-- Main column -->
     <div>
       <p class="eyebrow mb-2">{data.category}</p>
@@ -83,16 +83,13 @@ const schema = {
         </div>
       )}
 
-      <hr class="specimen-rule my-7" />
-
-      <section class="prose-mr max-w-none">
-        <Content />
-      </section>
-
       {data.comparison && data.comparison.rows.length > 0 && (
-        <section class="mt-9">
-          <p class="eyebrow mb-2">How the options compare</p>
-          <h2 class="font-display text-2xl text-moss-deep mb-4">Picking a {data.title.toLowerCase()} on iHerb</h2>
+        <section class="mt-7">
+          <p class="eyebrow mb-2">Our pick, and why</p>
+          <h2 class="font-display text-2xl text-moss-deep mb-3">Choosing a {data.title.toLowerCase()} on iHerb</h2>
+          {data.comparison.verdict && (
+            <p class="text-ink leading-relaxed mb-4">{data.comparison.verdict}</p>
+          )}
           <ComparisonTable
             criterion={data.comparison.criterion ?? data.qualityCriterion}
             columns={data.comparison.columns}
@@ -100,10 +97,16 @@ const schema = {
           />
         </section>
       )}
+
+      <hr class="specimen-rule my-7" />
+
+      <section class="prose-mr max-w-none">
+        <Content />
+      </section>
     </div>
 
     <!-- Sidebar: the buy box + at-a-glance -->
-    <aside class="lg:sticky lg:top-24 self-start space-y-5">
+    <aside class="md:sticky md:top-24 self-start space-y-5">
       <div class="bg-card border border-mist rounded-lg p-5 space-y-4">
         <div>
           <p class="eyebrow mb-2">Our pick</p>
