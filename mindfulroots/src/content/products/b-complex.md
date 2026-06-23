@@ -15,6 +15,43 @@ cautions: "Very high-dose B6 taken for long periods can cause nerve tingling —
 iherbKeyword: "b complex methylated"
 relatedPosts: ["b-vitamins-energy-mood"]
 order: 4
+qualityCriterion: "B12 as methylcobalamin, folate as methylfolate or 5-MTHF, B6 in an active form — these are the forms the body uses directly without conversion, important for anyone with impaired methylation."
+criterionRationale: "Up to 15% of people carry MTHFR variants that impair conversion of folic acid to active 5-MTHF. Cyanocobalamin requires conversion steps that some people handle poorly. Active forms bypass these bottlenecks."
+criterionSourceUrl: "https://pubmed.ncbi.nlm.nih.gov/22992437/"
+recommendedProduct:
+  brand: "Thorne"
+  productName: "Basic B Complex"
+  iherbKeyword: "Thorne Basic B Complex"
+  meetsCriterion: true
+  concentrationNote: "Methylcobalamin B12, Quatrefolic® 5-MTHF, Pyridoxal 5'-Phosphate B6 — all active forms, full spectrum in one capsule"
+  verifiedDate: "2026-06-23"
+comparison:
+  criterion: "B12 as methylcobalamin (not cyanocobalamin), folate as methylfolate/5-MTHF (not folic acid), B6 in active form."
+  verdict: "This is the table where form matters most. Thorne Basic B is our pick: methylcobalamin, Quatrefolic® methylfolate (the benchmark 5-MTHF form), and Pyridoxal 5'-Phosphate — all active, nothing to convert. Jarrow B-Right is a strong second: also methylcobalamin and 5-MTHF, with the bonus of pantethine and inositol — it only partially passes on B6 (a mix of active P5P and standard HCl). NOW B-50 fails on both critical forms: cyanocobalamin B12 and folic acid rather than methylfolate — the conventional forms that a subset of people struggle to convert, which is precisely what this criterion is designed to screen for."
+  columns: ["B12 form", "Folate form", "B6 form", "Full spectrum"]
+  rows:
+    - brand: "Thorne"
+      productName: "Basic B Complex"
+      iherbKeyword: "Thorne Basic B Complex"
+      cells: ["Methylcobalamin", "Quatrefolic® 5-MTHF", "Pyridoxal 5'-Phosphate", "Yes"]
+      pass: true
+      pick: true
+      verifiedDate: "2026-06-23" 
+    - brand: "Jarrow Formulas"
+      productName: "B-Right"
+      iherbKeyword: "Jarrow B-Right"
+      cells: ["Methylcobalamin", "5-MTHF (6S form)", "P5P + HCl mix", "Yes + pantethine"]
+      pass: true
+      pick: false
+      verifiedDate: "2026-06-23" 
+    - brand: "NOW Foods"
+      productName: "B-50"
+      iherbKeyword: "NOW Foods B-50"
+      cells: ["Cyanocobalamin", "Folic acid", "Pyridoxine HCl", "Yes"]
+      pass: false
+      pick: false
+      verifiedDate: "2026-06-23" 
+
 ---
 
 If neurotransmitters are the brain's messages, B vitamins are part of the machinery that prints them. Folate and B12 in particular drive the methylation cycle that produces serotonin, dopamine and norepinephrine precursors — which is why a true B12 or folate deficiency can show up first as flat mood and fatigue rather than anything dramatic.

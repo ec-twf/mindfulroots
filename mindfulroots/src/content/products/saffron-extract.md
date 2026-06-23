@@ -15,6 +15,43 @@ cautions: "Generally well tolerated at supplement doses. Avoid high doses in pre
 iherbKeyword: "saffron extract affron"
 relatedPosts: ["saffron-mood-research"]
 order: 7
+qualityCriterion: "A named, HPLC-standardized extract used in published RCTs — affron® (≥3.5% lepticrosalides, ~28–30 mg/day) or Satiereal® (0.3% safranal, ~88 mg/day) — dosed at the trial-matched level."
+criterionRationale: "Saffron's active compounds vary widely by harvest and processing. Both affron® and Satiereal® have standardized their marker compounds and conducted independent human trials specifically on mood and stress outcomes, making them verifiable against the evidence base."
+criterionSourceUrl: "https://pubmed.ncbi.nlm.nih.gov/30029994/"
+recommendedProduct:
+  brand: "Sports Research"
+  productName: "Saffron Extract (affron®)"
+  iherbKeyword: "Sports Research Saffron affron"
+  meetsCriterion: true
+  concentrationNote: "affron® 30 mg per softgel — trial-matched dose, HPLC-standardized to ≥3.5% lepticrosalides, softgel format"
+  verifiedDate: "2026-06-23"
+comparison:
+  criterion: "Named branded extract (affron® or Satiereal®), HPLC-standardized, dosed at trial-matched level."
+  verdict: "Unusually, all three products pass — each contains a named standardized extract with genuine trial evidence. Sports Research and California Gold Nutrition both use affron® at the 28–30 mg studied dose; they're effectively interchangeable on the criterion. Sports Research is our pick by a slim margin: the softgel format offers slightly better bioavailability than a dry capsule for botanical extracts. Life Extension's Satiereal® at 78 mg is a different branded extract with its own valid trial record — it's dosed higher because Satiereal is less concentrated per mg. This is the rare table where any of the three is a genuinely good choice; we're highlighting a preference, not a clear winner."
+  columns: ["Branded extract", "Standardization", "Dose / serving", "Trial-matched"]
+  rows:
+    - brand: "Sports Research"
+      productName: "Saffron Extract (affron®)"
+      iherbKeyword: "Sports Research Saffron affron"
+      cells: ["affron®", "≥3.5% lepticrosalides", "30 mg", "Yes (28–30 mg)"]
+      pass: true
+      pick: true
+      verifiedDate: "2026-06-23" 
+    - brand: "California Gold Nutrition"
+      productName: "Saffron (affron®)"
+      iherbKeyword: "California Gold Nutrition Saffron affron"
+      cells: ["affron®", "≥3.5% lepticrosalides", "28 mg", "Yes (28–30 mg)"]
+      pass: true
+      pick: false
+      verifiedDate: "2026-06-23" 
+    - brand: "Life Extension"
+      productName: "Optimized Saffron (Satiereal®)"
+      iherbKeyword: "Life Extension Optimized Saffron"
+      cells: ["Satiereal®", "0.3% safranal", "78 mg", "Yes (Satiereal trials)"]
+      pass: true
+      pick: false
+      verifiedDate: "2026-06-23" 
+
 ---
 
 Saffron is an unlikely entry on a supplement shelf, but standardized extracts have accumulated a genuinely interesting body of randomized trials for mood support — some comparing favorably to reference treatments in mild cases. The active compounds, crocin and safranal, are thought to influence serotonin handling.

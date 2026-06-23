@@ -67,7 +67,9 @@ const year = new Date().getFullYear();
           </svg>
           <span class="font-display text-xl text-moss-deep">{SITE.name}</span>
         </a>
-        <nav class="flex items-center gap-5 text-sm" aria-label="Main">
+
+        {/* Desktop nav — hidden on mobile */}
+        <nav class="hidden sm:flex items-center gap-5 text-sm" aria-label="Main">
           {nav.map((item) => (
             <a
               href={item.href}
@@ -77,8 +79,47 @@ const year = new Date().getFullYear();
             </a>
           ))}
         </nav>
+
+        {/* Mobile hamburger — visible only on small screens */}
+        <button
+          id="nav-toggle"
+          class="sm:hidden flex flex-col justify-center gap-[5px] w-8 h-8 p-1 rounded focus:outline-none focus:ring-2 focus:ring-moss"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <span class="block h-0.5 w-full bg-moss-deep rounded transition-all" id="bar1"></span>
+          <span class="block h-0.5 w-full bg-moss-deep rounded transition-all" id="bar2"></span>
+          <span class="block h-0.5 w-full bg-moss-deep rounded transition-all" id="bar3"></span>
+        </button>
       </div>
+
+      {/* Mobile nav drawer */}
+      <nav
+        id="mobile-nav"
+        class="sm:hidden hidden flex-col border-t border-mist bg-paper/95"
+        aria-label="Mobile navigation"
+      >
+        {nav.map((item) => (
+          <a
+            href={item.href}
+            class={`px-5 py-3.5 text-sm border-b border-mist last:border-0 hover:text-saffron-deep hover:bg-[#edf1e8] ${Astro.url.pathname.startsWith(item.href) ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
     </header>
+
+    <script>
+      const toggle = document.getElementById('nav-toggle');
+      const mobileNav = document.getElementById('mobile-nav');
+      toggle?.addEventListener('click', () => {
+        const isOpen = mobileNav?.classList.toggle('hidden') === false;
+        mobileNav?.classList.toggle('flex', isOpen);
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+    </script>
 
     <main id="main" class="flex-1">
       <slot />

@@ -27,10 +27,14 @@ const { criterion, columns = [], rows } = Astro.props;
   )}
 
   <div class="overflow-x-auto border border-mist rounded-lg bg-card">
-    <table class="w-full text-sm border-collapse min-w-[34rem]">
+    <table class="w-full text-sm border-collapse min-w-[28rem]">
       <thead>
         <tr class="bg-paper text-left">
+<<<<<<< HEAD
           <th class="font-mono uppercase tracking-wider text-moss text-[0.62rem] font-medium px-3 py-2.5 border-b border-mist w-[38%] min-w-[11rem]">Product</th>
+=======
+          <th class="font-mono uppercase tracking-wider text-moss text-[0.62rem] font-medium px-3 py-2.5 border-b border-mist w-[32%] min-w-[9rem]">Product</th>
+>>>>>>> staging
           {columns.map((c) => (
             <th class="font-mono uppercase tracking-wider text-moss text-[0.62rem] font-medium px-3 py-2.5 border-b border-mist whitespace-nowrap">{c}</th>
           ))}
