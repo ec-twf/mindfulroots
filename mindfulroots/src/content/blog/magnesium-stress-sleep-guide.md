@@ -3,10 +3,11 @@ title: "Magnesium for Stress and Sleep: Glycinate vs. Citrate vs. Oxide"
 description: "Why chronic stress depletes magnesium, what the trials show for sleep and stress, and — the part that actually changes your purchase — how glycinate, citrate and oxide differ in absorption and tolerance."
 pubDate: 2026-01-24
 updatedDate: 2026-06-18
-cluster: "Magnesium & stress/sleep"
+cluster: "magnesium"
 relatedProducts:
   - "magnesium-glycinate"
-
+draft: false
+---
 
 If you've stood in the supplement aisle holding two bottles both labelled "magnesium" and wondered why one costs three times the other, you've run into the single most practical question in this category: **the form matters more than the milligrams.** Magnesium glycinate, citrate and oxide are not interchangeable. They differ in how much magnesium your body actually absorbs, how gentle they are on your gut, and — for stress and sleep specifically — how well they suit taking something in the evening to wind down.
 
