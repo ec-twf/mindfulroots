@@ -61,7 +61,10 @@ a:focus-visible, button:focus-visible {
 }
 
 /* Long-form article typography */
-.prose-mr { max-width: 42rem; }
+.prose-mr { max-width: 42rem; overflow-wrap: break-word; }
+.prose-mr table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 1.4rem 0; font-size: 0.95rem; }
+.prose-mr th, .prose-mr td { border: 1px solid var(--color-mist); padding: 0.5rem 0.75rem; text-align: left; vertical-align: top; }
+.prose-mr thead th { background: var(--color-paper); color: var(--color-moss-deep); }
 .prose-mr p { margin: 1.1rem 0; line-height: 1.75; color: var(--color-ink); }
 .prose-mr h2 { font-size: 1.5rem; margin: 2.2rem 0 0.6rem; color: var(--color-moss-deep); }
 .prose-mr h3 { font-size: 1.15rem; margin: 1.8rem 0 0.4rem; color: var(--color-moss-deep); }
