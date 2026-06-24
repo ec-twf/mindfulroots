@@ -30,19 +30,15 @@ const { criterion, columns = [], rows } = Astro.props;
     <table class="w-full text-sm border-collapse min-w-[28rem]">
       <thead>
         <tr class="bg-paper text-left">
-<<<<<<< HEAD
           <th class="font-mono uppercase tracking-wider text-moss text-[0.62rem] font-medium px-3 py-2.5 border-b border-mist w-[38%] min-w-[11rem]">Product</th>
-=======
           <th class="font-mono uppercase tracking-wider text-moss text-[0.62rem] font-medium px-3 py-2.5 border-b border-mist w-[32%] min-w-[9rem]">Product</th>
->>>>>>> staging
           {columns.map((c) => (
             <th class="font-mono uppercase tracking-wider text-moss text-[0.62rem] font-medium px-3 py-2.5 border-b border-mist whitespace-nowrap">{c}</th>
           ))}
           <th class="font-mono uppercase tracking-wider text-moss text-[0.62rem] font-medium px-3 py-2.5 border-b border-mist text-center">Meets it</th>
           <th class="px-3 py-2.5 border-b border-mist"><span class="sr-only">Link</span></th>
         </tr>
-      </thead>
-      <tbody>
+      </thead>      <tbody>
         {rows.map((r) => (
           <tr class={r.pick ? 'bg-[#f0f4ea]' : ''}>
             <td class="px-3 py-3 border-b border-mist align-top">
@@ -67,7 +63,7 @@ const { criterion, columns = [], rows } = Astro.props;
               )}
             </td>
             <td class="px-3 py-3 border-b border-mist align-top whitespace-nowrap">
-              <a href={iherbLink(r.iherbKeyword)} target="_blank" rel="nofollow sponsored noopener"
+             <a href={iherbLink(r.iherbKeyword)} target="_blank" rel="nofollow sponsored noopener"
                  class="text-saffron-deep hover:text-moss-deep underline underline-offset-2 text-xs">
                 iHerb →
               </a>
