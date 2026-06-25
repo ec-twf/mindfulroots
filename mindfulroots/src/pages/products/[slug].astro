@@ -64,9 +64,9 @@ const schema = {
     <a href="/products/" class="text-ink-soft hover:text-saffron-deep">← All supplements</a>
   </div>
 
-  <article class="mx-auto max-w-5xl px-5 pb-6 grid md:grid-cols-[1fr_300px] gap-10">
-    <!-- Main column -->
-    <div class="min-w-0">
+  <article class="mx-auto max-w-5xl px-5 pb-6 grid md:grid-cols-[1fr_300px] gap-x-10">
+    <!-- Intro block — stays first on mobile and desktop -->
+    <div class="min-w-0 order-1 md:col-start-1 md:row-start-1">
       <p class="eyebrow mb-2">{data.category}</p>
       <h1 class="font-display text-3xl sm:text-4xl text-moss-deep">{data.title}</h1>
       {data.latinName && <p class="font-mono text-sm text-ink-soft italic mt-1">{data.latinName}</p>}
@@ -82,7 +82,10 @@ const schema = {
           </WarningBox>
         </div>
       )}
+    </div>
 
+    <!-- Body block — sits after the buy box on mobile, left column on desktop -->
+    <div class="min-w-0 order-3 md:col-start-1 md:row-start-2">
       {data.comparison && data.comparison.rows.length > 0 && (
         <section class="mt-7">
           <p class="eyebrow mb-2">Our pick, and why</p>
@@ -106,7 +109,7 @@ const schema = {
     </div>
 
     <!-- Sidebar: the buy box + at-a-glance -->
-    <aside class="md:sticky md:top-24 self-start space-y-5">
+    <aside class="order-2 md:col-start-2 md:row-start-1 md:row-span-2 md:sticky md:top-24 self-start space-y-5 mt-8 md:mt-0">
       <div class="bg-card border border-mist rounded-lg p-5 space-y-4">
         <div>
           <p class="eyebrow mb-2">Our pick</p>
