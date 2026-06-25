@@ -1,6 +1,8 @@
 ---
 // Transparent, criterion-based product comparison.
 // Reusable across product hubs ("best X") and future VS / comparison posts.
+// Desktop (md+): a scan-by-column table. Mobile (<md): one stacked card per
+// product — same data, two presentations, no horizontal scroll on phones.
 import { iherbLink } from '../config';
 
 interface Row {
@@ -26,7 +28,8 @@ const { criterion, columns = [], rows } = Astro.props;
     </div>
   )}
 
-  <div class="overflow-x-auto overscroll-x-contain border border-mist rounded-lg bg-card">
+  {/* Desktop: table (md and up). Hidden on phones, so its min-width never forces a scroll there. */}
+  <div class="hidden md:block overflow-x-auto overscroll-x-contain border border-mist rounded-lg bg-card">
     <table class="w-full text-sm border-collapse min-w-[28rem]">
       <thead>
         <tr class="bg-paper text-left">
@@ -73,6 +76,48 @@ const { criterion, columns = [], rows } = Astro.props;
       </tbody>
     </table>
   </div>
+
+  {/* Mobile: stacked cards (below md). One product per block, label -> value pairs. */}
+  <ul role="list" class="md:hidden space-y-3">
+    {rows.map((r) => (
+      <li class={`border border-mist rounded-lg p-4 ${r.pick ? 'bg-[#f0f4ea]' : 'bg-card'}`}>
+        <div class="flex items-start justify-between gap-3">
+          <div class="min-w-0">
+            <span class="block font-medium text-moss-deep leading-snug">{r.brand}</span>
+            <span class="block text-ink-soft text-xs leading-snug">{r.productName}</span>
+          </div>
+          {r.pick && (
+            <span class="shrink-0 font-mono text-[0.55rem] uppercase tracking-wider bg-saffron text-white rounded px-1.5 py-0.5 whitespace-nowrap">Our pick</span>
+          )}
+        </div>
+
+        <dl class="mt-3 border-t border-mist pt-3 space-y-2.5">
+          {columns.map((c, i) => (
+            <div>
+              <dt class="font-mono uppercase tracking-wider text-moss text-[0.62rem]">{c}</dt>
+              <dd class="text-ink text-sm leading-snug">{r.cells[i]}</dd>
+            </div>
+          ))}
+          <div class="flex items-center gap-2 pt-0.5">
+            <dt class="font-mono uppercase tracking-wider text-moss text-[0.62rem]">Meets our criterion</dt>
+            <dd class="text-sm">
+              {r.pass !== false ? (
+                <span class="text-moss" title="Meets our criterion" aria-label="Yes">✓</span>
+              ) : (
+                <span class="text-ink-soft" title="Does not meet our criterion" aria-label="No">—</span>
+              )}
+            </dd>
+          </div>
+        </dl>
+
+        <a href={iherbLink(r.iherbKeyword)} target="_blank" rel="nofollow sponsored noopener"
+           class="mt-4 flex items-center justify-center gap-1 rounded-md border border-mist bg-paper py-2.5 text-sm font-medium text-saffron-deep hover:text-moss-deep">
+          View on iHerb <span aria-hidden="true">→</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+
   <p class="text-[0.68rem] text-ink-soft mt-2">
     Specs verified against live listings at time of writing and can change — confirm on the product page.
     Links are affiliate links; <a href="/disclosure/" class="underline">details</a>.
