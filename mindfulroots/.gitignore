@@ -4,3 +4,9 @@ dist/
 .DS_Store
 *.log
 .env
+
+# Claude skill outputs — keep these out of the repo
+*-audit/
+claude-outputs/
+claude-seo/
+*.pdf
