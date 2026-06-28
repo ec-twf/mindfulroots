@@ -28,6 +28,7 @@ const clusters = [...new Set(posts.map((p) => p.data.cluster))];
   </section>
 
   <section class="mx-auto max-w-5xl px-5 pb-12">
+    <h2 class="sr-only">All posts</h2>
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {posts.map((p) => (
         <PostCard slug={p.id} title={p.data.title} description={p.data.description} pubDate={p.data.pubDate} cluster={p.data.cluster} />

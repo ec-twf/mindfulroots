@@ -1,4 +1,4 @@
-# MindfulRoots
+# MoodSupplement
 
 An SEO-focused affiliate site (Astro + Tailwind v4 + Decap CMS) for evidence-aware
 mood / stress / sleep supplements, linking out to iHerb. Two sections: a Shopify-style
@@ -18,7 +18,7 @@ npm run build      # static output in ./dist
    and update the sitemap URL in `public/robots.txt`.
 3. **Real content** — replace the placeholder copy in About, Contact, Disclosure,
    Disclaimer, and Get help. Verify the crisis-helpline numbers for your audience.
-4. **Brand** — "MindfulRoots" is a placeholder; change it in `src/config.ts`.
+4. **Brand** — "MoodSupplement" is a placeholder; change it in `src/config.ts`.
 
 ## Editing content
 - **No-code:** deploy to Netlify, enable Identity + Git Gateway, then log in at

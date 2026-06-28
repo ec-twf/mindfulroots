@@ -2,10 +2,10 @@
 // Update these values once your iHerb affiliate account is approved.
 
 export const SITE = {
-  name: 'MindfulRoots',
+  name: 'MoodSupplement',
   tagline: 'Evidence-aware mood & stress support, explained calmly.',
   description:
-    'MindfulRoots reviews mood, stress and sleep-support supplements with an evidence-aware, no-hype approach — plus honest guidance on when supplements are not the answer.',
+    'MoodSupplement reviews mood, stress and sleep-support supplements with an evidence-aware, no-hype approach — plus honest guidance on when supplements are not the answer.',
 };
 
 // Your iHerb affiliate / rewards code. Leave as-is until you have one.

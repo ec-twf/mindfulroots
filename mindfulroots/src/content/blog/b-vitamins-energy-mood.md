@@ -1,5 +1,5 @@
 ---
-title: "B Vitamins, Energy and Mood: What's Established and What's Extrapolated"
+title: "B Vitamins and Mood: What's Established vs Extrapolated"
 description: "A low B12 or folate level can genuinely flatten mood and energy — but does a B-complex lift them if you're not deficient, and are the 'methylated' forms really an upgrade? An honest, citation-backed look, plus the B6 caution most labels skip."
 pubDate: 2026-01-30
 updatedDate: 2026-06-21

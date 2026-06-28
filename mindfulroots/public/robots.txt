@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://mindfulroots.thewisefoolstudio.com/sitemap-index.xml
+Sitemap: https://www.moodsupplement.net/sitemap-index.xml

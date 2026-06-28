@@ -1,11 +1,24 @@
 ---
-title: "Saffron for Mood: What the Research Actually Shows — and How to Avoid a Fake"
+title: "Saffron for Mood: What Research Shows and How to Spot Fakes"
 description: "Saffron has surprisingly strong human research for low mood and stress. Here's what the trials really found, the honest caveats, and how to buy a standardized extract that isn't adulterated."
 pubDate: 2026-06-22
 cluster: saffron
 relatedProducts:
   - saffron-extract
 draft: false
+faq:
+  - q: "How long does saffron take to work for mood?"
+    a: "Plan for weeks, not days. Most trials assessed benefits at four to six weeks of daily use, with some early signal around week five in the largest study. If a properly dosed extract does nothing after six to eight consistent weeks, it's reasonable to stop."
+  - q: "What's the right dose?"
+    a: "The research clusters tightly around 28–30 mg per day of a standardized extract, often split into two doses. Higher amounts haven't been shown to work better for mood."
+  - q: "Is saffron really as effective as antidepressants?"
+    a: "In short trials in people with mild-to-moderate symptoms, standardized saffron has performed comparably to SSRIs with fewer side effects, and a 2025 meta-analysis found no significant difference between them. That's a genuine finding, but it's not evidence that saffron can replace prescribed treatment — especially for moderate-to-severe depression — and you should never change medication based on it without your prescriber."
+  - q: "Can I take saffron with my antidepressant?"
+    a: "Only after talking to the clinician who prescribes it. Saffron is serotonergic, so combining it carries a theoretical interaction risk; the trials that combined them were medically supervised."
+  - q: "How do I know my saffron supplement is real?"
+    a: "For capsules you can't use the visual tests meant for loose threads. Rely instead on a named, trialed extract (affron® or Safr'Inside™), a stated 28–30 mg standardized dose, declared active markers, and third-party testing or a Certificate of Analysis — adulteration is common enough that verification is worth insisting on."
+  - q: "Does the affron® branding actually matter, or is that marketing?"
+    a: "A bit of both. The branding matters only because that specific extract is what most of the modern human trials used — so you're buying a known quantity at a known dose. A generic, untested saffron extract might be fine, but you have no trial evidence and no standardization to lean on."
 ---
 
 Most of the botanicals sold for mood rest on thin evidence — a handful of small studies, a plausible-sounding mechanism, and a lot of optimism. Saffron is the unusual exception. The dried stigmas of the *Crocus sativus* flower have been through more controlled human trials for low mood than almost any other supplement on this site, and the results are genuinely interesting.

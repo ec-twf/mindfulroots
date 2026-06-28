@@ -58,7 +58,7 @@ The most recent supporting evidence comes from a 2025 double-blind, placebo-cont
 
 A 2025 systematic review and meta-analysis covering 49 randomized trials (Nutrition Reviews, Oxford Academic — covering data through August 2023) found that L-theanine plus caffeine produced the most consistent positive effects on attention, working memory, and mood among the three conditions tested (tea, theanine alone, or theanine plus caffeine).
 
-**Evidence-tier note:** The product page for [L-theanine at MindfulRoots](/products/l-theanine) is classified as *Moderate* evidence. That classification holds: the caffeine-synergy data and the stress-response data are well-replicated, but the evidence for L-theanine alone as a standalone cognitive enhancer is less consistent, and the trials remain relatively small. Describing L-theanine's evidence as "well-studied" would overstate the current literature.
+**Evidence-tier note:** The product page for [L-theanine at MoodSupplement](/products/l-theanine) is classified as *Moderate* evidence. That classification holds: the caffeine-synergy data and the stress-response data are well-replicated, but the evidence for L-theanine alone as a standalone cognitive enhancer is less consistent, and the trials remain relatively small. Describing L-theanine's evidence as "well-studied" would overstate the current literature.
 
 ---
 

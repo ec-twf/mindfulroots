@@ -1,4 +1,4 @@
-# MindfulRoots — Session Handoff Log
+# MoodSupplement — Session Handoff Log
 
 ## 🚨 Hotfix needed — push to main separately BEFORE final deploy
 
@@ -27,7 +27,7 @@ The repo clone gives the model the working files — no conversation history nee
 ## Opening message template
 
 ```
-MindfulRoots project — session N
+MoodSupplement project — session N
 
 Repo: https://github.com/ec-twf/mindfulroots (public)
 Working branch: feat/gap-integration-omega3-preview

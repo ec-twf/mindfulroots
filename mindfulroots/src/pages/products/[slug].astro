@@ -43,14 +43,26 @@ const verifiedLabel = rec
 
 const schema = {
   '@context': 'https://schema.org',
-  '@type': 'Product',
-  name: rec ? rec.productName : data.title,
-  category: data.category,
-  description: data.shortDescription,
-  ...(rec && {
-    brand: { '@type': 'Brand', name: rec.brand },
-    ...(rec.image && { image: new URL(rec.image, Astro.site).toString() }),
-  }),
+  '@graph': [
+    {
+      '@type': 'Product',
+      name: rec ? rec.productName : data.title,
+      category: data.category,
+      description: data.shortDescription,
+      ...(rec && {
+        brand: { '@type': 'Brand', name: rec.brand },
+        ...(rec.image && { image: new URL(rec.image, Astro.site).toString() }),
+      }),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: String(Astro.site) },
+        { '@type': 'ListItem', position: 2, name: 'Supplements', item: new URL('/products/', Astro.site).toString() },
+        { '@type': 'ListItem', position: 3, name: data.title, item: new URL(`/products/${product.id}/`, Astro.site).toString() },
+      ],
+    },
+  ],
 };
 ---
 
