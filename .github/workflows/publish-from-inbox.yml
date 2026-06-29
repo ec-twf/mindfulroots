@@ -5,8 +5,12 @@ name: Publish MindfulRoots post from inbox
 # pop the matching topic off the queue, and commit. Netlify deploys on push.
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "content-inbox/**"   # publish as soon as a draft is pushed
   schedule:
-    - cron: "30 13 * * *"   # 13:30 UTC daily — adjust to taste
+    - cron: "30 13 * * *"   # 13:30 UTC daily — safety net
   workflow_dispatch: {}      # allow manual runs from the Actions tab
 
 # Same-repo commits only need the built-in token. No PAT required.
