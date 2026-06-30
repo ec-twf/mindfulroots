@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import mdx from '@astrojs/mdx';
 import tailwindcss from '@tailwindcss/vite';
 import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
@@ -12,9 +13,9 @@ function buildLastmodMap(baseUrl) {
   const blogDir = join(import.meta.dirname, 'src/content/blog');
 
   for (const file of readdirSync(blogDir)) {
-    if (!file.endsWith('.md')) continue;
+    if (!file.endsWith('.md') && !file.endsWith('.mdx')) continue;
     const raw = readFileSync(join(blogDir, file), 'utf8');
-    const slug = file.replace('.md', '');
+    const slug = file.replace(/\.mdx?$/, '');
     const updated = raw.match(/^updatedDate:\s*["']?([^"'\r\n]+)/m);
     const pub = raw.match(/^pubDate:\s*["']?([^"'\r\n]+)/m);
     const dateStr = (updated?.[1] ?? pub?.[1] ?? '').trim();
@@ -34,6 +35,7 @@ export default defineConfig({
   // TODO: change to your production domain before launch (used for sitemap + canonical URLs)
   site: SITE,
   integrations: [
+    mdx(),
     sitemap({
       serialize(item) {
         item.lastmod = lastmodMap.get(item.url) ?? buildDate;
