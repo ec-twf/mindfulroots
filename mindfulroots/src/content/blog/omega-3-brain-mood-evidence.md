@@ -24,7 +24,7 @@ faq:
     a: "Yes — algae-derived (algal) oil provides EPA and DHA directly, with no fish involved."
 ---
 
-Omega-3 fatty acids are one of the few supplements with a genuinely large body of mood research behind them. That makes them unusual — but "a lot of research" is not the same as "a strong, reliable effect." The honest picture is more interesting than either the hype or the dismissals: a small, real, but inconsistent signal, with the details (which fatty acid, how much, and for whom) mattering more than the marketing on the front of the bottle.
+Omega-3 fatty acids — specifically EPA (eicosapentaenoic acid) and DHA (docosahexaenoic acid) — are essential long-chain fats found in oily fish and algae that become structural components of brain cell membranes and are involved in inflammation, neurotransmitter signalling, and neuroplasticity. They are one of the few supplements with a genuinely large body of mood research behind them. That makes them unusual — but "a lot of research" is not the same as "a strong, reliable effect." The honest picture is more interesting than either the hype or the dismissals: a small, real, but inconsistent signal, with the details (which fatty acid, how much, and for whom) mattering more than the marketing on the front of the bottle.
 
 Here's what the better-quality evidence supports, where it falls apart, and how to think about omega-3s as *support* rather than a fix.
 
