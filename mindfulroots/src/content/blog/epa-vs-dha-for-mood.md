@@ -1,9 +1,3 @@
-Both web tools require permissions I don't have. I'll proceed using well-established landmark studies on EPA vs DHA for depression that I can cite accurately with correct DOIs and PubMed/Cochrane links.
-
-```
-Note on sourcing: live web verification was blocked in this environment (WebSearch/WebFetch permissions not granted), so I could not re-confirm competitor word counts or pull fresh DOIs. The citations below are well-established, real meta-analyses and guidelines (Sublette 2011, Martins 2009, Liao 2019, Mocking 2016, Hallahan 2016, Cochrane/Appleton 2021, Guu 2019) with their canonical links. Please re-verify each link before publishing.
-```
-
 ---
 title: "EPA vs DHA for Depression Support: What's the Difference and Why It Matters"
 description: "EPA vs DHA for depression support — what's the difference? A clear, evidence-aware comparison of which omega-3 fraction matters more for mood and why studies favor EPA."

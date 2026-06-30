@@ -1,0 +1,39 @@
+# MoodSupplement.net
+
+> Evidence-graded reviews of mood and stress supplements. Each product is rated Emerging, Moderate, or Well-studied based on published research. Includes interaction warnings, dose guidance, and iHerb affiliate links.
+
+MoodSupplement.net is a research-and-translation resource, not medical advice. No clinical claims are made beyond what the peer-reviewed evidence supports. All pages include explicit uncertainty language and sourced cautions.
+
+## Product reviews
+
+- [5-HTP](https://www.moodsupplement.net/products/5-htp/): Evidence and safety for 5-hydroxytryptophan, the direct serotonin precursor. Includes serotonin-syndrome interaction warning.
+- [Ashwagandha](https://www.moodsupplement.net/products/ashwagandha/): KSH-66 extract research on cortisol, stress adaptation, and anxiety.
+- [B-Complex](https://www.moodsupplement.net/products/b-complex/): B-vitamin roles in mood regulation, methylation, and energy metabolism.
+- [L-Theanine](https://www.moodsupplement.net/products/l-theanine/): Calm-focus evidence, anxiety reduction, and caffeine synergy.
+- [Magnesium Glycinate](https://www.moodsupplement.net/products/magnesium-glycinate/): Sleep, stress, and anxiety research for the glycinate form specifically.
+- [Omega-3 Fish Oil](https://www.moodsupplement.net/products/omega-3-fish-oil/): EPA vs DHA brain and mood evidence; IFOS-certified product selection guide.
+- [Probiotic (Gut-Brain)](https://www.moodsupplement.net/products/probiotic-gut-brain/): Gut-brain axis research and psychobiotic strains with clinical evidence.
+- [Rhodiola Rosea](https://www.moodsupplement.net/products/rhodiola-rosea/): Adaptogen evidence for fatigue resistance and stress resilience.
+- [Saffron Extract](https://www.moodsupplement.net/products/saffron-extract/): Emerging mood research on saffron standardised to safranal/crocin.
+- [Vitamin D3](https://www.moodsupplement.net/products/vitamin-d3/): Winter mood, depression risk, and testing and dosing guidance.
+
+## Research guides
+
+- [5-HTP Safety and Serotonin](https://www.moodsupplement.net/blog/5-htp-serotonin-safety/): Why the interaction risk matters more than the mood evidence.
+- [Adaptogens: Ashwagandha vs Rhodiola](https://www.moodsupplement.net/blog/adaptogens-ashwagandha-rhodiola/): How the two main adaptogens compare across use cases.
+- [B-Vitamins and Energy/Mood](https://www.moodsupplement.net/blog/b-vitamins-energy-mood/): Which B vitamins matter for mood and when supplementation makes sense.
+- [EPA vs DHA for Mood](https://www.moodsupplement.net/blog/epa-vs-dha-for-mood/): Why EPA dominates the depression research.
+- [Gut-Brain Axis and Probiotics](https://www.moodsupplement.net/blog/gut-brain-axis-probiotics/): How gut bacteria influence mood and which strains are studied.
+- [L-Theanine: Calm and Focus](https://www.moodsupplement.net/blog/l-theanine-calm-focus/): Evidence for anxiety reduction and sustained attention.
+- [Magnesium for Stress and Sleep](https://www.moodsupplement.net/blog/magnesium-stress-sleep-guide/): Why form matters and what the research shows.
+- [Natural Mood Support Basics](https://www.moodsupplement.net/blog/natural-mood-support-basics/): Foundational overview of evidence-based mood supplements.
+- [Omega-3 and Brain/Mood Evidence](https://www.moodsupplement.net/blog/omega-3-brain-mood-evidence/): Summary of the omega-3 mood and depression research base.
+- [Saffron and Mood Research](https://www.moodsupplement.net/blog/saffron-mood-research/): Detailed look at the clinical trials for saffron extract.
+- [Vitamin D and Winter Mood](https://www.moodsupplement.net/blog/vitamin-d-winter-mood/): Seasonal depression and the vitamin D connection.
+
+## Key pages
+
+- [About](https://www.moodsupplement.net/about/): Editorial process, evidence-tier methodology, and team background.
+- [Products Index](https://www.moodsupplement.net/products/): All supplement reviews.
+- [Blog Index](https://www.moodsupplement.net/blog/): All research guides.
+- [Get Help](https://www.moodsupplement.net/get-help/): Guidance on next steps and professional support resources.
