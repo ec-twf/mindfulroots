@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+/* Self-hosted fonts — latin subsets only, weights used on the site */
+@import "@fontsource/fraunces/latin-400.css";
+@import "@fontsource/fraunces/latin-500.css";
+@import "@fontsource/fraunces/latin-600.css";
+@import "@fontsource/fraunces/latin-700.css";
+@import "@fontsource/ibm-plex-mono/latin-400.css";
+@import "@fontsource/ibm-plex-mono/latin-500.css";
+@import "@fontsource/public-sans/latin-400.css";
+@import "@fontsource/public-sans/latin-500.css";
+@import "@fontsource/public-sans/latin-600.css";
+
 /* ── MindfulRoots design tokens ─────────────────────────────────────────────
    Palette: botanical apothecary — sage paper, moss ink, saffron accent.
    Type: Fraunces (display) · Public Sans (body) · IBM Plex Mono (labels). */

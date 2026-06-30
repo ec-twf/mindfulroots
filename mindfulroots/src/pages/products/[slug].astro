@@ -53,6 +53,12 @@ const schema = {
       ...(rec && {
         brand: { '@type': 'Brand', name: rec.brand },
         ...(rec.image && { image: new URL(rec.image, Astro.site).toString() }),
+        review: {
+          '@type': 'Review',
+          datePublished: rec.verifiedDate.toISOString().split('T')[0],
+          reviewBody: data.shortDescription,
+          author: { '@type': 'Organization', name: 'MoodSupplement' },
+        },
         offers: {
           '@type': 'Offer',
           availability: 'https://schema.org/InStock',
@@ -95,6 +101,15 @@ const schema = {
       {data.latinName && <p class="font-mono text-sm text-ink-soft italic mt-1">{data.latinName}</p>}
 
       <div class="mt-4"><EvidenceTag level={data.evidence} /></div>
+
+      {rec && (
+        <p class="mt-2 font-mono text-xs text-ink-soft">
+          Last reviewed{' '}
+          <time datetime={rec.verifiedDate.toISOString()}>
+            {rec.verifiedDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+          </time>
+        </p>
+      )}
 
       <p class="mt-5 text-lg text-ink leading-relaxed">{data.shortDescription}</p>
 

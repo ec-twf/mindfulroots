@@ -2,6 +2,9 @@
 
 > Implements the paced rollout decided 2026-06-30. Replaces the "2 posts/day, bulk
 > publish all 65" plan, which is risky for a new YMYL domain.
+>
+> **Updated 2026-06-30:** queue deduplicated against published posts — 9 overlapping
+> topics removed, 9 buyer-intent (BOFU) topics added. Active batch now ~19 remaining.
 
 ## The model
 
