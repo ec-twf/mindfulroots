@@ -1,5 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Byline from '../../components/Byline.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import AffiliateButton from '../../components/AffiliateButton.astro';
 import EvidenceTag from '../../components/EvidenceTag.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
@@ -89,9 +91,11 @@ const schema = {
   schema={schema}
   ogType="product"
 >
-  <div class="mx-auto max-w-5xl px-5 pt-8 pb-4 text-sm">
-    <a href="/products/" class="text-ink-soft hover:text-saffron-deep">← All supplements</a>
-  </div>
+  <Breadcrumb crumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Supplements', href: '/products/' },
+    { label: data.title },
+  ]} />
 
   <article class="mx-auto max-w-5xl px-5 pb-6 grid md:grid-cols-[1fr_300px] gap-x-10">
     <!-- Intro block — stays first on mobile and desktop -->
@@ -112,6 +116,8 @@ const schema = {
       )}
 
       <p class="mt-5 text-lg text-ink leading-relaxed">{data.shortDescription}</p>
+
+      <Byline type="product" />
 
       {data.interactionWarning && (
         <div class="mt-6">

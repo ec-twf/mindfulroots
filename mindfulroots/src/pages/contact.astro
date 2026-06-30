@@ -1,14 +1,89 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title="Contact" description="Get in touch with the MoodSupplement team.">
+<Base title="Contact | MoodSupplement" description="Questions, corrections, or feedback on a supplement profile? Get in touch with the MoodSupplement team.">
   <section class="mx-auto max-w-3xl px-5 pt-12 pb-16">
     <p class="eyebrow mb-3">Contact</p>
     <h1 class="font-display text-3xl sm:text-4xl text-moss-deep">Get in touch</h1>
-    <div class="prose-mr mt-6">
-      <p>Questions, corrections, or feedback on a supplement profile? We'd like to hear from you. Accuracy matters to us, so if you spot something that needs fixing, please let us know.</p>
-      <p>Email: <a href="mailto:hello@moodsupplement.net">hello@moodsupplement.net</a></p>
-      <p class="text-sm text-ink-soft"><em>Placeholder address — replace with your real contact email, or wire up a form provider (e.g. Formspree, Netlify Forms) before launch.</em></p>
-    </div>
+    <p class="mt-4 text-ink-soft leading-relaxed max-w-xl">
+      Questions, corrections, or feedback on a supplement profile? Accuracy matters — if you spot
+      something that needs fixing, or a study we've missed, please let us know.
+    </p>
+
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="mt-8 space-y-5 max-w-xl"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <p class="hidden">
+        <label>Don't fill this out: <input name="bot-field" /></label>
+      </p>
+
+      <div>
+        <label for="name" class="eyebrow block mb-1.5">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          autocomplete="name"
+          class="w-full rounded-md border border-mist bg-card px-4 py-2.5 text-sm text-ink placeholder:text-ink-soft focus:outline-none focus:ring-2 focus:ring-moss focus:border-transparent"
+          placeholder="Your name"
+        />
+      </div>
+
+      <div>
+        <label for="email" class="eyebrow block mb-1.5">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          autocomplete="email"
+          class="w-full rounded-md border border-mist bg-card px-4 py-2.5 text-sm text-ink placeholder:text-ink-soft focus:outline-none focus:ring-2 focus:ring-moss focus:border-transparent"
+          placeholder="you@example.com"
+        />
+      </div>
+
+      <div>
+        <label for="subject" class="eyebrow block mb-1.5">Subject</label>
+        <select
+          id="subject"
+          name="subject"
+          class="w-full rounded-md border border-mist bg-card px-4 py-2.5 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-moss focus:border-transparent"
+        >
+          <option value="correction">Correction or factual error</option>
+          <option value="question">General question</option>
+          <option value="product-feedback">Product profile feedback</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="message" class="eyebrow block mb-1.5">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          rows="5"
+          class="w-full rounded-md border border-mist bg-card px-4 py-2.5 text-sm text-ink placeholder:text-ink-soft focus:outline-none focus:ring-2 focus:ring-moss focus:border-transparent resize-y"
+          placeholder="What's on your mind?"
+        ></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="inline-flex items-center gap-2 rounded-md bg-moss-deep px-6 py-2.5 text-sm font-medium text-paper hover:bg-moss transition-colors"
+      >
+        Send message
+      </button>
+    </form>
+
+    <p class="mt-8 text-xs text-ink-soft font-mono">
+      Prefer email? <a href="mailto:hello@moodsupplement.net" class="underline underline-offset-2 hover:text-saffron-deep">hello@moodsupplement.net</a>
+    </p>
   </section>
 </Base>

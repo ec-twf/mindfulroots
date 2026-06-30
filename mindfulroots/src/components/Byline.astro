@@ -1,0 +1,37 @@
+---
+interface Props {
+  type: 'article' | 'product';
+}
+const { type } = Astro.props;
+
+const AUTHOR = {
+  name: 'Enoch C.',
+  credential: 'MSc',
+  role: 'Research & Editorial',
+  slug: 'enoch-c',
+  avatar: '/images/authors/enoch-c.png',
+};
+---
+
+<div class="flex items-center gap-2.5 mt-3 text-xs text-ink-soft font-mono">
+  <a href={`/authors/${AUTHOR.slug}/`} class="shrink-0" tabindex="-1" aria-hidden="true">
+    <img
+      src={AUTHOR.avatar}
+      alt=""
+      width="24"
+      height="24"
+      class="rounded-full w-6 h-6 object-cover object-top"
+    />
+  </a>
+  <span>
+    {type === 'product' ? 'Written and reviewed by' : 'By'}
+    {' '}
+    <a
+      href={`/authors/${AUTHOR.slug}/`}
+      class="text-moss-deep hover:text-saffron-deep underline-offset-2 hover:underline"
+    >
+      {AUTHOR.name}, {AUTHOR.credential}
+    </a>
+    {type === 'article' && <span> — {AUTHOR.role}</span>}
+  </span>
+</div>

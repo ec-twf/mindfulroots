@@ -8,9 +8,25 @@ const products = (await getCollection('products')).sort((a, b) => a.data.order -
 
 const schema = {
   '@context': 'https://schema.org',
-  '@type': 'CollectionPage',
-  name: 'Mood & stress support supplements',
-  description: 'Ten evidence-aware mood, stress and sleep-support supplements, each with an honest evidence rating.',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      name: 'Mood & stress support supplements',
+      description: 'Ten evidence-aware mood, stress and sleep-support supplements, each with an honest evidence rating.',
+      url: new URL('/products/', Astro.site).toString(),
+    },
+    {
+      '@type': 'ItemList',
+      name: 'Mood & stress support supplements',
+      itemListElement: products.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: p.data.title,
+        url: new URL(`/products/${p.id}/`, Astro.site).toString(),
+        description: p.data.shortDescription,
+      })),
+    },
+  ],
 };
 ---
 
