@@ -49,9 +49,20 @@ const schema = {
       name: rec ? rec.productName : data.title,
       category: data.category,
       description: data.shortDescription,
+      url: new URL(`/products/${product.id}/`, Astro.site).toString(),
       ...(rec && {
         brand: { '@type': 'Brand', name: rec.brand },
         ...(rec.image && { image: new URL(rec.image, Astro.site).toString() }),
+        offers: {
+          '@type': 'Offer',
+          availability: 'https://schema.org/InStock',
+          priceCurrency: 'USD',
+          seller: {
+            '@type': 'Organization',
+            name: 'iHerb',
+            url: 'https://www.iherb.com',
+          },
+        },
       }),
     },
     {

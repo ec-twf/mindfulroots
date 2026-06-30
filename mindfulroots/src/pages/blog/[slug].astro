@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import SupportNotice from '../../components/SupportNotice.astro';
 import EvidenceTag from '../../components/EvidenceTag.astro';
 import { getCollection, render } from 'astro:content';
+import { SITE } from '../../config';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -33,6 +34,16 @@ const graphItems: Array<Record<string, unknown>> = [
     description: data.description,
     datePublished: data.pubDate.toISOString(),
     ...(data.updatedDate && { dateModified: data.updatedDate.toISOString() }),
+    url: new URL(`/blog/${post.id}/`, Astro.site).toString(),
+    publisher: {
+      '@type': 'Organization',
+      name: SITE.name,
+      url: String(Astro.site),
+      logo: {
+        '@type': 'ImageObject',
+        url: new URL('/favicon.svg', Astro.site).toString(),
+      },
+    },
   },
   {
     '@type': 'BreadcrumbList',

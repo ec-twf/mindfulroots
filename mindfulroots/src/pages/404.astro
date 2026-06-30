@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Page Not Found | MoodSupplement" description="The page you were looking for doesn't exist. Browse our supplement reviews and research guides.">
+  <section class="mx-auto max-w-3xl px-5 py-24 text-center">
+    <p class="font-mono text-xs uppercase tracking-widest text-moss mb-4">404</p>
+    <h1 class="font-display text-3xl sm:text-4xl text-moss-deep mb-4">Page not found</h1>
+    <p class="text-ink-soft leading-relaxed max-w-md mx-auto mb-10">
+      That page doesn't exist or may have moved. Here's where to go instead:
+    </p>
+
+    <nav aria-label="Recovery links" class="grid gap-3 sm:grid-cols-2 max-w-sm mx-auto">
+      <a
+        href="/products/"
+        class="block bg-card border border-mist rounded-lg px-5 py-4 hover:shadow-[0_4px_18px_rgba(62,92,73,0.12)] transition-shadow text-left"
+      >
+        <p class="font-medium text-moss-deep">Supplement reviews</p>
+        <p class="text-sm text-ink-soft mt-0.5">Ten evidence-rated profiles</p>
+      </a>
+      <a
+        href="/blog/"
+        class="block bg-card border border-mist rounded-lg px-5 py-4 hover:shadow-[0_4px_18px_rgba(62,92,73,0.12)] transition-shadow text-left"
+      >
+        <p class="font-medium text-moss-deep">Research guides</p>
+        <p class="text-sm text-ink-soft mt-0.5">Calm, citation-backed writing</p>
+      </a>
+      <a
+        href="/about/"
+        class="block bg-card border border-mist rounded-lg px-5 py-4 hover:shadow-[0_4px_18px_rgba(62,92,73,0.12)] transition-shadow text-left"
+      >
+        <p class="font-medium text-moss-deep">About</p>
+        <p class="text-sm text-ink-soft mt-0.5">Our process and evidence approach</p>
+      </a>
+      <a
+        href="/get-help/"
+        class="block bg-card border border-mist rounded-lg px-5 py-4 hover:shadow-[0_4px_18px_rgba(62,92,73,0.12)] transition-shadow text-left"
+      >
+        <p class="font-medium text-moss-deep">Get help</p>
+        <p class="text-sm text-ink-soft mt-0.5">Professional support resources</p>
+      </a>
+    </nav>
+
+    <a href="/" class="inline-block mt-10 text-sm text-ink-soft hover:text-saffron-deep">← Back to home</a>
+  </section>
+</Base>

@@ -2,10 +2,24 @@
 title: "EPA vs DHA for Depression Support: What's the Difference and Why It Matters"
 description: "EPA vs DHA for depression support — what's the difference? A clear, evidence-aware comparison of which omega-3 fraction matters more for mood and why studies favor EPA."
 pubDate: 2026-06-28
+updatedDate: 2026-06-30
 cluster: "omega-3-fish-oil"
 relatedProducts:
   - omega-3-fish-oil
 draft: false
+faq:
+  - q: "Is EPA or DHA better for depression?"
+    a: "For mood-focused support, the research more consistently favours EPA. Meta-analyses repeatedly find that EPA-predominant formulas (EPA ≥60% of total EPA+DHA) are associated with benefit, while DHA-only formulas generally are not. DHA remains important for overall brain structure and health — it's just less prominent in mood trial outcomes."
+  - q: "What EPA-to-DHA ratio should I look for?"
+    a: "A commonly referenced target is at least 60% EPA relative to total EPA+DHA. Many mood-oriented products are formulated with EPA well above DHA for this reason. Always total the EPA milligrams rather than relying on the headline 'fish oil' number."
+  - q: "How much EPA did the studies use?"
+    a: "Mood-focused trials and the ISNPR guidelines generally centred on about 1 to 2 grams of net EPA per day, taken for several weeks. This is higher than typical general-wellness doses, which is one reason professional guidance is recommended."
+  - q: "Why do most studies focus on EPA rather than DHA?"
+    a: "Largely because of how each fatty acid behaves in the body. EPA is closely tied to inflammation-related signalling, an area of strong interest in mood research, while DHA is mainly a structural fat in the brain. When researchers compared formulations, EPA-led ones produced the more reliable signal."
+  - q: "Can I just eat fish instead of taking a supplement?"
+    a: "Oily fish (salmon, sardines, mackerel, anchovies) are excellent natural sources of both EPA and DHA. However, reaching the concentrated EPA amounts used in mood research through food alone is difficult, which is why trials used supplements. Diet first is a sound principle; discuss whether more is appropriate with a professional."
+  - q: "Are algae-based omega-3s a good option?"
+    a: "They're a great plant-based choice for sustainability and for those avoiding fish — but be aware most algal oils are DHA-dominant. If EPA-led support is your aim, check the label specifically for adequate EPA content."
 ---
 
 If you've ever stood in the supplement aisle squinting at a fish oil label, you've met the two names that do most of the work: **EPA** and **DHA**. They're often listed side by side, lumped together as "omega-3s," as if they were interchangeable. When it comes to mood support, they aren't.
