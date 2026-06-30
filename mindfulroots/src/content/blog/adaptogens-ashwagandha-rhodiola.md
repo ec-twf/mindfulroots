@@ -7,6 +7,19 @@ cluster: "Adaptogens"
 postType: "pillar"
 relatedProducts: ["ashwagandha", "rhodiola-rosea"]
 draft: false
+faq:
+  - q: "Which adaptogen is better for anxiety?"
+    a: "Ashwagandha has the more anxiety-specific evidence — several trials measured anxiety-scale scores directly, and it's the better fit for the wired, tense kind of stress. Rhodiola's research is centred on fatigue and mental performance, not anxiety, so it's the less obvious choice if anxiety is your main complaint."
+  - q: "Can I take ashwagandha and rhodiola together?"
+    a: "Some people stack them — rhodiola in the morning for energy, ashwagandha in the evening for calm — and the idea isn't unreasonable given their opposite tendencies. But the trial evidence is for each herb on its own, not the combination, so it's worth a conversation with a clinician first, especially if you take any medication."
+  - q: "How long until adaptogens work?"
+    a: "Longer than most people expect. In the trials that showed an effect, benefits emerged over about four to eight weeks of consistent daily use, not in the first few days. Give either herb a six-to-eight-week trial before judging it."
+  - q: "Do adaptogens help with depression?"
+    a: "This research is about stress and fatigue in healthy adults, not depression. Neither ashwagandha nor rhodiola is a treatment for a mood disorder. If low mood is affecting your life, please speak to a doctor or therapist."
+  - q: "Should I take ashwagandha in the morning or at night?"
+    a: "Rhodiola in the morning, because it can be mildly stimulating and may interfere with sleep if taken late. Ashwagandha is more flexible and is often taken in the evening, partly because some people find it helps them wind down."
+  - q: "Are adaptogens safe?"
+    a: "In the trials, both were generally well tolerated over the study periods, with mostly mild side effects. The cautions listed — no ashwagandha in pregnancy, thyroid medication interactions, rare liver injury cases — are real, and the long-term safety data is limited. A clinician's input is worthwhile before starting either herb alongside any medication."
 ---
 
 "Adaptogen" is one of the most over-used words on a supplement shelf — a vague promise that a herb will help your body "adapt to stress," applied to almost anything. Strip away the marketing, though, and two plants have earned a real place in the clinical literature: ashwagandha and rhodiola. They're worth taking seriously, but not for the reasons the labels usually suggest — and the most useful thing to know is that they pull in *opposite directions*. One tends to settle you; the other tends to lift you. Picking the right one starts not with the bottle but with naming the kind of stress you're actually carrying.
