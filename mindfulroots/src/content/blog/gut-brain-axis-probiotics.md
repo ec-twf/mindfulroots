@@ -6,6 +6,17 @@ updatedDate: 2026-06-22
 cluster: "gut-brain probiotics"
 relatedProducts: ["probiotic-gut-brain"]
 draft: false
+faq:
+  - q: "Can probiotics improve your mood?"
+    a: "Some specific strains have shown mood or stress benefits in trials, but the effect is modest, strain-specific, and clearest in people who already have a clinical diagnosis. In generally healthy people the evidence is weaker. We rate it as emerging."
+  - q: "What is a psychobiotic?"
+    a: "A psychobiotic is a specific probiotic strain that has been shown to influence mood, stress or anxiety. The key is that the effect is tied to the named strain and dose studied — not to probiotics in general."
+  - q: "Which probiotic strains are best for mood?"
+    a: "The most-studied are the Lactobacillus helveticus R0052 plus Bifidobacterium longum R0175 combination and the multi-strain Ecologic Barrier blend. These are simply the ones with the most human data, and even there the results are mixed."
+  - q: "How long do probiotics take to affect mood?"
+    a: "Most mood trials ran for around four weeks, so that is a reasonable window to allow before drawing any conclusion."
+  - q: "Does a higher CFU count mean a better mood probiotic?"
+    a: "No. The evidence is about specific strains at the doses studied, not about maximising CFUs. A very high CFU count of an unstudied strain tells you nothing about mood."
 ---
 
 The idea that the bacteria in your gut could nudge your mood sounds like a stretch — until you look at how much signalling actually runs between the two. The gut–brain axis is real and well established as a communication system; the open question is how far we can usefully steer it with a daily capsule. This is the most *emerging* topic on the site, and we want to be honest about that: the science is genuinely promising and biologically plausible, but the human trial base is still thin, and much of it is in people with a clinical diagnosis rather than in the general population. Here is what is actually known.
