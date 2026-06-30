@@ -6,6 +6,17 @@ updatedDate: 2026-06-22
 cluster: "5-HTP"
 relatedProducts: ["5-htp"]
 draft: false
+faq:
+  - q: "Does 5-HTP work for depression?"
+    a: "The honest answer is that the evidence is limited and inconclusive. A 2002 Cochrane review found a signal of benefit but judged the trials too few and too low in quality to recommend 5-HTP, advising conventional treatments instead. We rate its mood evidence as emerging."
+  - q: "Can I take 5-HTP with my antidepressant?"
+    a: "The answer is no — not without explicit guidance from your prescriber. Combining 5-HTP with SSRIs, SNRIs, MAOIs or tricyclics can cause serotonin syndrome, a potentially fatal reaction."
+  - q: "How long does 5-HTP take to work?"
+    a: "There is no reliable answer, partly because the evidence for a mood effect is weak to begin with. Its short half-life means any effect would not be long-lasting through the day, which is why studied regimens used divided doses."
+  - q: "Is 5-HTP safe?"
+    a: "At low doses, on its own, in people not taking serotonergic medication, short-term use has generally been well tolerated in trials, with mild gastrointestinal side effects most common. The interaction risk and the historical EMS contamination concern are real, which is why a clinician's input matters."
+  - q: "Can I use 5-HTP for sleep or anxiety instead of mood?"
+    a: "The evidence base for sleep and anxiety is even thinner than for mood, and every safety caution above still applies. If sleep or anxiety is the real issue, that is worth raising with a clinician, who can point you to better-supported options."
 ---
 
 Most articles about 5-HTP open with a list of benefits. This one opens with a warning, because for this particular supplement that is the responsible order. 5-HTP is the most direct over-the-counter serotonin precursor available, and the same property that makes it interesting for mood also makes it the supplement on this site we treat with the most caution. If you take anything away from this page, let it be the safety section below and the recommendation to talk to a clinician first.

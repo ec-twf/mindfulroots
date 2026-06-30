@@ -36,6 +36,10 @@ const graphItems: Array<Record<string, unknown>> = [
     description: data.description,
     datePublished: data.pubDate.toISOString(),
     ...(data.updatedDate && { dateModified: data.updatedDate.toISOString() }),
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.prose-mr > p:first-child', '.prose-mr > h2:last-of-type + p'],
+    },
     url: new URL(`/blog/${post.id}/`, Astro.site).toString(),
     author: {
       '@type': 'Person',
@@ -94,6 +98,9 @@ const schema = {
     <h1 class="font-display text-3xl sm:text-4xl text-moss-deep leading-tight">{data.title}</h1>
     <p class="mt-3 text-ink-soft">{data.description}</p>
     <time class="block mt-3 font-mono text-xs text-ink-soft" datetime={data.pubDate.toISOString()}>{date}</time>
+    {data.updatedDate && (
+      <p class="font-mono text-xs text-ink-soft mt-0.5">Updated {data.updatedDate.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}</p>
+    )}
     <Byline type="article" />
     <hr class="specimen-rule my-6" />
     <div class="prose-mr"><Content /></div>

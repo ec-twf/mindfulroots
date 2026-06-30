@@ -1,0 +1,63 @@
+---
+// Evidence/study comparison table for blog posts.
+// Desktop (md+): scan-by-column table. Mobile (<md): one stacked card per row.
+// Same two-presentation pattern as ComparisonTable.astro — no horizontal scroll
+// on phones.
+
+interface Row {
+  label: string;
+  cells: string[];
+}
+interface Props {
+  columns: string[];
+  rows: Row[];
+  caption?: string;
+}
+const { columns, rows, caption } = Astro.props;
+---
+<div class="not-prose my-6">
+  {/* Desktop: table (md and up) */}
+  <div class="hidden md:block overflow-x-auto overscroll-x-contain border border-mist rounded-lg bg-card">
+    <table class="w-full text-sm border-collapse">
+      <thead>
+        <tr class="bg-paper text-left">
+          <th class="font-mono uppercase tracking-wider text-moss text-[0.62rem] font-medium px-3 py-2.5 border-b border-mist w-[22%] min-w-[8rem]">Study</th>
+          {columns.map((c) => (
+            <th class="font-mono uppercase tracking-wider text-moss text-[0.62rem] font-medium px-3 py-2.5 border-b border-mist whitespace-nowrap">{c}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((r) => (
+          <tr>
+            <td class="px-3 py-3 border-b border-mist align-top font-medium text-moss-deep leading-snug">{r.label}</td>
+            {r.cells.map((cell) => (
+              <td class="px-3 py-3 border-b border-mist align-top text-ink-soft leading-snug">{cell}</td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  {/* Mobile: stacked cards (below md) */}
+  <ul role="list" class="md:hidden space-y-3">
+    {rows.map((r) => (
+      <li class="border border-mist rounded-lg p-4 bg-card">
+        <p class="font-medium text-moss-deep leading-snug">{r.label}</p>
+        <dl class="mt-3 border-t border-mist pt-3 space-y-2.5">
+          {columns.map((c, i) => (
+            <div>
+              <dt class="font-mono uppercase tracking-wider text-moss text-[0.62rem]">{c}</dt>
+              <dd class="text-ink text-sm leading-snug">{r.cells[i]}</dd>
+            </div>
+          ))}
+        </dl>
+      </li>
+    ))}
+  </ul>
+
+  {caption && (
+    <p class="text-[0.68rem] text-ink-soft mt-2">{caption}</p>
+  )}
+</div>
