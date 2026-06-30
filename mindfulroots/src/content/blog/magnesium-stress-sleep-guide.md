@@ -7,6 +7,19 @@ cluster: "magnesium"
 relatedProducts:
   - "magnesium-glycinate"
 draft: false
+faq:
+  - q: "Which magnesium is best for sleep?"
+    a: "For sleep and evening wind-down, glycinate (bisglycinate) is the usual recommendation: it's well absorbed, gentle on the stomach, and the form used in the most relevant recent sleep trial. Citrate also works and is often cheaper; oxide is the least suitable because much of it isn't absorbed."
+  - q: "Is magnesium glycinate really better than citrate?"
+    a: "Its clearest advantage is tolerability — it's the gentlest on digestion, with little laxative effect, which matters for nightly use. In healthy people, glycinate doesn't always beat citrate on blood-magnesium measures, so citrate remains a perfectly reasonable, budget-friendly choice if your stomach tolerates it."
+  - q: "Why is magnesium oxide so cheap?"
+    a: "Because it's mostly poorly-absorbed filler from a supplementation standpoint: oxide carries a lot of elemental magnesium per pill but only a small fraction is absorbed (around 4% in some estimates), with the rest acting as a laxative. It's better thought of as an occasional constipation remedy than a daily magnesium top-up."
+  - q: "How much magnesium should I take for stress or sleep?"
+    a: "Studies and general guidance cluster around 200 to 400 mg of elemental magnesium, often in the evening. The right amount for you depends on your diet, health and medications, so confirm it with a clinician."
+  - q: "How long until magnesium helps with sleep?"
+    a: "In the 2025 glycinate trial, most of the improvement showed up within the first two weeks of consistent nightly use — not the first night."
+  - q: "Can magnesium treat my anxiety or insomnia?"
+    a: "No. The evidence points to modest support, mainly in people who are low in magnesium or vulnerable to anxiety, and the study quality is limited. Persistent anxiety or insomnia is worth discussing with a professional, who can help you build a plan magnesium might support."
 ---
 
 If you've stood in the supplement aisle holding two bottles both labelled "magnesium" and wondered why one costs three times the other, you've run into the single most practical question in this category: **the form matters more than the milligrams.** Magnesium glycinate, citrate and oxide are not interchangeable. They differ in how much magnesium your body actually absorbs, how gentle they are on your gut, and — for stress and sleep specifically — how well they suit taking something in the evening to wind down.
