@@ -7,6 +7,21 @@ cluster: "omega-3"
 relatedProducts:
   - "omega-3-fish-oil"
 draft: false
+faq:
+  - q: "Does fish oil actually help with depression?"
+    a: "The honest answer is modestly, and inconsistently. The most cautious high-quality review (Cochrane, 2021) found a small effect that's probably below the threshold people would notice, with low-certainty evidence. Other meta-analyses are more positive when they focus on EPA-rich formulas in people who are already depressed. It is best thought of as possible support alongside professional care, not a standalone treatment."
+  - q: "EPA or DHA — which one matters for mood?"
+    a: "The mood evidence consistently points to EPA. Several meta-analyses found that EPA-predominant supplements drove the benefit while DHA-only preparations didn't, with a signal when EPA made up at least 60% of the EPA plus DHA total."
+  - q: "How much omega-3 should I take for mood?"
+    a: "In the trials that showed an effect, roughly 1 to 2 grams of EPA per day was the useful range — and higher doses didn't clearly do better. Your appropriate dose depends on your health and medications, so confirm it with a clinician."
+  - q: "How long until omega-3s work for mood?"
+    a: "Where benefits appeared, they generally built up over about 8 to 12 weeks of consistent daily use, not overnight."
+  - q: "Can I take omega-3s with antidepressants?"
+    a: "Much of the supportive research used omega-3s as an add-on to standard treatment, but this is exactly the kind of decision to make with the doctor managing your medication rather than on your own."
+  - q: "Should I take omega-3s to prevent low mood if I feel fine?"
+    a: "The largest prevention trial (VITAL-DEP, 18,353 adults, 5 to 7 years) found no benefit for preventing depression in the general population. Eating oily fish a couple of times a week is a reasonable choice; supplementing solely to prevent low mood isn't well supported."
+  - q: "Is there a vegan version of omega-3?"
+    a: "Yes — algae-derived (algal) oil provides EPA and DHA directly, with no fish involved."
 ---
 
 Omega-3 fatty acids are one of the few supplements with a genuinely large body of mood research behind them. That makes them unusual — but "a lot of research" is not the same as "a strong, reliable effect." The honest picture is more interesting than either the hype or the dismissals: a small, real, but inconsistent signal, with the details (which fatty acid, how much, and for whom) mattering more than the marketing on the front of the bottle.
