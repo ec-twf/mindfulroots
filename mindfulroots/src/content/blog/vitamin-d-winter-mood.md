@@ -2,6 +2,7 @@
 title: "Vitamin D and Winter Mood: What the Evidence Actually Supports"
 description: "An evidence-aware look at vitamin D for low winter mood: where the deficiency link is real, where supplementation actually helps, the D3 vs D2 question, and how to use it sensibly."
 pubDate: 2026-06-20
+updatedDate: 2026-06-30
 cluster: "Vitamin D & mood"
 relatedProducts:
   - vitamin-d3

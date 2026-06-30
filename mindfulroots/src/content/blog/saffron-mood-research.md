@@ -2,6 +2,7 @@
 title: "Saffron for Mood: What Research Shows and How to Spot Fakes"
 description: "Saffron has surprisingly strong human research for low mood and stress. Here's what the trials really found, the honest caveats, and how to buy a standardized extract that isn't adulterated."
 pubDate: 2026-06-22
+updatedDate: 2026-06-30
 cluster: saffron
 relatedProducts:
   - saffron-extract
