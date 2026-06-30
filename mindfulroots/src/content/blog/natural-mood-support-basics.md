@@ -10,7 +10,7 @@ relatedProducts:
 draft: false
 ---
 
-There is a particular kind of exhaustion that sets in when you've tried everything — the sleep hygiene checklist, the meditation apps, the supplements — and still feel like you're running slightly behind yourself. Some of that is genuinely difficult, and some of it comes down to sequence. Supplements work best as additions to a stable foundation, not substitutes for one.
+Natural mood support refers to evidence-based lifestyle practices — and, secondarily, dietary supplements — that may contribute to mood stability, stress resilience, and psychological wellbeing, distinct from clinical treatment for diagnosed conditions. There is a particular kind of exhaustion that sets in when you've tried everything — the sleep hygiene checklist, the meditation apps, the supplements — and still feel like you're running slightly behind yourself. Some of that is genuinely difficult, and some of it comes down to sequence. Supplements work best as additions to a stable foundation, not substitutes for one.
 
 This post is about that foundation. Five practices — sleep, movement, food, light, and connection — have the strongest and most consistent evidence for supporting mood, stress resilience, and psychological wellbeing. They're not glamorous, and they're genuinely difficult to maintain. But they're also the practices that make everything else work better, supplements included.
 

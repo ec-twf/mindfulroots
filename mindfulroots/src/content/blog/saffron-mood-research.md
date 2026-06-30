@@ -22,7 +22,7 @@ faq:
     a: "A bit of both. The branding matters only because that specific extract is what most of the modern human trials used — so you're buying a known quantity at a known dose. A generic, untested saffron extract might be fine, but you have no trial evidence and no standardization to lean on."
 ---
 
-Most of the botanicals sold for mood rest on thin evidence — a handful of small studies, a plausible-sounding mechanism, and a lot of optimism. Saffron is the unusual exception. The dried stigmas of the *Crocus sativus* flower have been through more controlled human trials for low mood than almost any other supplement on this site, and the results are genuinely interesting.
+Saffron (*Crocus sativus*) is a culinary spice derived from the dried stigmas of the crocus flower, standardised in supplement form to its active compounds safranal and crocin — the constituents most studied for mood effects. Most of the botanicals sold for mood rest on thin evidence — a handful of small studies, a plausible-sounding mechanism, and a lot of optimism. Saffron is the unusual exception. The dried stigmas of the *Crocus sativus* flower have been through more controlled human trials for low mood than almost any other supplement on this site, and the results are genuinely interesting.
 
 But saffron comes with a second, less flattering distinction: it is one of the most counterfeited foods on earth. The same scarcity that makes "red gold" expensive also makes it worth faking, and a meaningful share of what's sold as saffron isn't saffron at all. So this post does two jobs — it walks through what the research honestly supports, and it explains how to tell a real, properly dosed extract from an underdosed or adulterated one.
 

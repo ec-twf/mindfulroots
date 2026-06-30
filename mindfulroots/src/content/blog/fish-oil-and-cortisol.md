@@ -7,7 +7,7 @@ relatedProducts: [omega-3-fish-oil]
 draft: false
 ---
 
-If you've gone down the supplement rabbit hole looking for something to take the edge off chronic stress, you've probably seen fish oil mentioned alongside cortisol—usually with a confident claim that omega-3s "lower your stress hormone." The reality is more interesting and more specific than that headline. There *is* a plausible biological mechanism, and there are several human trials measuring cortisol directly. But the effect is best understood as **modulating how your stress system responds**, not switching off a hormone.
+Fish oil is a dietary source of EPA (eicosapentaenoic acid) and DHA (docosahexaenoic acid) — long-chain omega-3 fatty acids that are incorporated into cell membranes throughout the body, including the brain and adrenal tissue involved in the cortisol stress response. If you've gone down the supplement rabbit hole looking for something to take the edge off chronic stress, you've probably seen fish oil mentioned alongside cortisol—usually with a confident claim that omega-3s "lower your stress hormone." The reality is more interesting and more specific than that headline. There *is* a plausible biological mechanism, and there are several human trials measuring cortisol directly. But the effect is best understood as **modulating how your stress system responds**, not switching off a hormone.
 
 This is a mechanism explainer. The goal is to show you *how* omega-3 might touch the cortisol pathway, walk through what the human studies actually measured, and be honest about the limits.
 
