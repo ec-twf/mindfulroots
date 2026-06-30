@@ -19,7 +19,7 @@ faq:
     a: "No. The evidence is about specific strains at the doses studied, not about maximising CFUs. A very high CFU count of an unstudied strain tells you nothing about mood."
 ---
 
-The idea that the bacteria in your gut could nudge your mood sounds like a stretch — until you look at how much signalling actually runs between the two. The gut–brain axis is real and well established as a communication system; the open question is how far we can usefully steer it with a daily capsule. This is the most *emerging* topic on the site, and we want to be honest about that: the science is genuinely promising and biologically plausible, but the human trial base is still thin, and much of it is in people with a clinical diagnosis rather than in the general population. Here is what is actually known.
+The gut–brain axis is a bidirectional communication network linking the enteric nervous system of the digestive tract with the central nervous system via the vagus nerve, immune signals, and gut-derived chemical messengers including serotonin. The idea that the bacteria in your gut could nudge your mood sounds like a stretch — until you look at how much signalling actually runs between the two. The gut–brain axis is real and well established as a communication system; the open question is how far we can usefully steer it with a daily capsule. This is the most *emerging* topic on the site, and we want to be honest about that: the science is genuinely promising and biologically plausible, but the human trial base is still thin, and much of it is in people with a clinical diagnosis rather than in the general population. Here is what is actually known.
 
 ## A two-way conversation
 

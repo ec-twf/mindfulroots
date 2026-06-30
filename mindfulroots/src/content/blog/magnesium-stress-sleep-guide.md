@@ -22,7 +22,7 @@ faq:
     a: "No. The evidence points to modest support, mainly in people who are low in magnesium or vulnerable to anxiety, and the study quality is limited. Persistent anxiety or insomnia is worth discussing with a professional, who can help you build a plan magnesium might support."
 ---
 
-If you've stood in the supplement aisle holding two bottles both labelled "magnesium" and wondered why one costs three times the other, you've run into the single most practical question in this category: **the form matters more than the milligrams.** Magnesium glycinate, citrate and oxide are not interchangeable. They differ in how much magnesium your body actually absorbs, how gentle they are on your gut, and — for stress and sleep specifically — how well they suit taking something in the evening to wind down.
+Magnesium is an essential mineral that acts as a cofactor in more than 300 enzymatic reactions, including those governing nerve conduction, muscle relaxation, and the regulation of the body's stress axis — which is why it appears in research on both sleep quality and anxiety. If you've stood in the supplement aisle holding two bottles both labelled "magnesium" and wondered why one costs three times the other, you've run into the single most practical question in this category: **the form matters more than the milligrams.** Magnesium glycinate, citrate and oxide are not interchangeable. They differ in how much magnesium your body actually absorbs, how gentle they are on your gut, and — for stress and sleep specifically — how well they suit taking something in the evening to wind down.
 
 None of this is a treatment for anxiety, insomnia or depression — magnesium is best thought of as gentle *support*, and we'll keep that framing honest throughout.
 

@@ -22,6 +22,8 @@ faq:
     a: "In the trials, both were generally well tolerated over the study periods, with mostly mild side effects. The cautions listed — no ashwagandha in pregnancy, thyroid medication interactions, rare liver injury cases — are real, and the long-term safety data is limited. A clinician's input is worthwhile before starting either herb alongside any medication."
 ---
 
+Adaptogens are plant extracts defined by their ability to help the body resist a broad range of stressors without pushing physiology in a single direction. Of the dozens marketed under the label, two have accumulated enough controlled human trials to take seriously: ashwagandha (*Withania somnifera*) and rhodiola (*Rhodiola rosea*).
+
 "Adaptogen" is one of the most over-used words on a supplement shelf — a vague promise that a herb will help your body "adapt to stress," applied to almost anything. Strip away the marketing, though, and two plants have earned a real place in the clinical literature: ashwagandha and rhodiola. They're worth taking seriously, but not for the reasons the labels usually suggest — and the most useful thing to know is that they pull in *opposite directions*. One tends to settle you; the other tends to lift you. Picking the right one starts not with the bottle but with naming the kind of stress you're actually carrying.
 
 Here's what the better-quality evidence supports for each, where it's thinner than the hype implies, and how to think about both as *support* rather than a fix.

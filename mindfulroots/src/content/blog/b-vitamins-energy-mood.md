@@ -22,7 +22,7 @@ faq:
     a: "With breakfast or earlier in the day. Some people find B vitamins mildly energising, which can disrupt sleep if taken late."
 ---
 
-B vitamins sit in an awkward spot on the supplement shelf. The link between a genuine deficiency and low mood is one of the better-established facts in nutritional psychiatry — a real B12 or folate shortfall can leave you flat, foggy and tired long before anything more dramatic appears. But that established fact gets stretched, on a lot of labels, into a much bigger promise: that topping up B vitamins lifts mood in general, and that the newer "methylated" forms are a meaningful upgrade for how you feel.
+The B vitamins are a family of eight water-soluble nutrients — including folate (B9), B12, and B6 — that act as cofactors in energy metabolism, DNA repair, and the synthesis of neurotransmitters such as serotonin and dopamine. B vitamins sit in an awkward spot on the supplement shelf. The link between a genuine deficiency and low mood is one of the better-established facts in nutritional psychiatry — a real B12 or folate shortfall can leave you flat, foggy and tired long before anything more dramatic appears. But that established fact gets stretched, on a lot of labels, into a much bigger promise: that topping up B vitamins lifts mood in general, and that the newer "methylated" forms are a meaningful upgrade for how you feel.
 
 The honest picture separates cleanly into what's well-established, what's modest but real, and what's been extrapolated well past the evidence. Here's where each line sits, and the one safety caution worth taking more seriously than most labels suggest.
 
