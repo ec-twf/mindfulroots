@@ -7,6 +7,19 @@ cluster: "Vitamin D & mood"
 relatedProducts:
   - vitamin-d3
 draft: false
+faq:
+  - q: "Does vitamin D help with depression?"
+    a: "For people who are already low in vitamin D and experiencing depressive symptoms, trials suggest a modest benefit from correcting the deficiency. For people with adequate levels, the largest prevention trial (VITAL-DEP, 18,353 adults) found no effect on mood. It's most useful as a corrective for a deficiency rather than a general mood booster."
+  - q: "Can vitamin D treat seasonal affective disorder?"
+    a: "The evidence for vitamin D alone in SAD is inconsistent, and it's not considered an established treatment. Light therapy and cognitive behavioral therapy adapted for SAD have stronger support. Addressing a vitamin D deficiency can be part of a broader plan, but shouldn't be the whole plan."
+  - q: "How much vitamin D should I take for mood?"
+    a: "There's no special mood dose. General maintenance intakes typically fall between 600 and 2,000 IU of D3 daily. If you're correcting a deficiency, the right dose depends on your blood level and should be set with a clinician. Don't routinely exceed the 4,000 IU per day adult upper limit on your own."
+  - q: "Should I get tested before supplementing vitamin D?"
+    a: "It's the single most useful step. A 25-hydroxyvitamin D blood test shows whether you're actually low — which is the situation where supplementing is most likely to matter for mood, and where the dose decision is most informed."
+  - q: "How long until vitamin D works for mood?"
+    a: "Blood levels rise over weeks, not days, and any mood-related changes tend to be gradual rather than sudden. If you're supplementing to correct a deficiency, re-testing after a couple of months is a reasonable way to confirm you've actually moved the number."
+  - q: "D3 or D2 — which is better for mood?"
+    a: "D3 raises and maintains blood levels more effectively at the same dose, so it's the more reliable choice for most people. D2 remains an option for those wanting a non-animal source, though vegan D3 (from lichen) also exists."
 ---
 
 When the light gets short and your energy goes with it, vitamin D is one of the first things people reach for. The story is intuitive: sunlight makes vitamin D, winter takes the sunlight away, and low vitamin D is found alongside low mood — so topping it up should help. Parts of that story are well supported. One important part isn't. This post walks through what the research genuinely shows, so you can decide where vitamin D fits into your own winter routine with clear eyes rather than wishful thinking.
