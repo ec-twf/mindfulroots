@@ -1,4 +1,3 @@
-CLUSTER:omega-3-fish-oil | KEYWORD:fish oil and cortisol — does omega-3 reduce stress hormones | ANGLE:Mechanism explainer: HPA axis, cortisol blunting studies | SLUG:fish-oil-and-cortisol | PRODUCTS:omega-3-fish-oil
 CLUSTER:vitamin-d3 | KEYWORD:vitamin D deficiency symptoms — mood swings, fatigue, low motivation | ANGLE:Symptom explainer: low D3 and serotonin synthesis, epidemiological data | SLUG:vitamin-d-deficiency-mood-symptoms | PRODUCTS:vitamin-d3
 CLUSTER:magnesium-glycinate | KEYWORD:magnesium glycinate vs magnesium citrate for sleep — which is better | ANGLE:Head-to-head: GI tolerance, glycine's separate sleep role, bioavailability | SLUG:magnesium-glycinate-vs-citrate-sleep | PRODUCTS:magnesium-glycinate
 CLUSTER:b-complex | KEYWORD:B vitamins for stress — how the B complex supports adrenal function | ANGLE:Mechanism: B5 and cortisol production, B6 and neurotransmitter synthesis | SLUG:b-vitamins-stress-adrenal | PRODUCTS:b-complex
