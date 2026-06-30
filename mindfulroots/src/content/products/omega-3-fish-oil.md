@@ -13,7 +13,7 @@ benefits:
 typicalUse: "Mood-support research most often uses roughly 1,000–2,000 mg of combined EPA+DHA per day, weighted toward EPA, taken with a fat-containing meal. Start low and adjust with a clinician's input."
 cautions: "May have a mild blood-thinning effect; talk to a clinician before combining with anticoagulant or antiplatelet medication, or before surgery. Choose oils with third-party oxidation testing — rancid fish oil is a real quality problem."
 iherbKeyword: "high EPA omega 3 fish oil"
-relatedPosts: ["omega-3-brain-mood-evidence"]
+relatedPosts: ["omega-3-brain-mood-evidence", "epa-vs-dha-for-mood", "natural-mood-support-basics"]
 relatedProducts: ["vitamin-d3", "magnesium-glycinate"]
 order: 1
 qualityCriterion: "EPA at ≥60% of total EPA+DHA (the proportion most studied for mood), high overall concentration for an efficient per-softgel dose, and independent oxidation/purity testing (IFOS rating or a published TOTOX within GOED limits)."

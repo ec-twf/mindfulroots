@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.moodsupplement.generate</string>
+
+  <!-- What to run. Points at the generation script in the repo. -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/ejc/mindfulroots/scripts/generate-post.sh</string>
+  </array>
+
+  <!-- 3x/week: Monday, Wednesday, Friday at 09:00 local time.
+       Weekday: 1=Mon, 3=Wed, 5=Fri (0/7=Sun). One <dict> per fire time. -->
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict>
+      <key>Weekday</key><integer>1</integer>
+      <key>Hour</key><integer>9</integer>
+      <key>Minute</key><integer>0</integer>
+    </dict>
+    <dict>
+      <key>Weekday</key><integer>3</integer>
+      <key>Hour</key><integer>9</integer>
+      <key>Minute</key><integer>0</integer>
+    </dict>
+    <dict>
+      <key>Weekday</key><integer>5</integer>
+      <key>Hour</key><integer>9</integer>
+      <key>Minute</key><integer>0</integer>
+    </dict>
+  </array>
+
+  <!-- If the Mac was asleep/off at 09:00, run once on next wake. -->
+  <key>RunAtLoad</key>
+  <false/>
+
+  <!-- claude CLI + git need a real PATH and HOME; launchd starts with neither. -->
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>HOME</key>
+    <string>/Users/ejc</string>
+  </dict>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/ejc/mindfulroots</string>
+
+  <!-- Logs to inspect after each run. -->
+  <key>StandardOutPath</key>
+  <string>/Users/ejc/mindfulroots/scripts/generate.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/ejc/mindfulroots/scripts/generate.error.log</string>
+</dict>
+</plist>

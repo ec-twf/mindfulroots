@@ -13,7 +13,7 @@ benefits:
 typicalUse: "Commonly taken as 200–400 mg of elemental magnesium in the evening. Check the label for *elemental* magnesium, which is the number that matters."
 cautions: "High doses of any magnesium can loosen stools (glycinate less than oxide or citrate). People with kidney disease should not supplement magnesium without medical guidance."
 iherbKeyword: "magnesium glycinate"
-relatedPosts: ["magnesium-stress-sleep-guide"]
+relatedPosts: ["magnesium-stress-sleep-guide", "natural-mood-support-basics"]
 order: 3
 qualityCriterion: "Bioavailable chelate form (glycinate or bisglycinate, not oxide), elemental magnesium clearly stated, from a named chelate supplier such as Albion®, and minimal fillers."
 criterionRationale: "Magnesium oxide has poor bioavailability (~4%); glycinate and bisglycinate chelates are substantially better absorbed and gentler on digestion. Elemental mg must be stated so the dose is comparable across products."

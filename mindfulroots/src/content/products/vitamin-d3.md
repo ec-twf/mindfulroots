@@ -13,7 +13,7 @@ benefits:
 typicalUse: "Common maintenance intakes are 1,000–2,000 IU daily with a meal containing fat. Ideally, get your blood level tested first — supplementing to correct a measured deficiency is where the evidence is strongest."
 cautions: "Fat-soluble and stored in the body, so very high doses over long periods can cause toxicity. Stay within label guidance unless a doctor advises otherwise."
 iherbKeyword: "vitamin d3 2000 iu"
-relatedPosts: ["vitamin-d-winter-mood"]
+relatedPosts: ["vitamin-d-winter-mood", "natural-mood-support-basics"]
 order: 2
 qualityCriterion: "D3 (cholecalciferol), not D2; dose in the 1,000–5,000 IU supplementation range; ideally combined with K2; delivered in an oil or fat base for absorption."
 criterionRationale: "D3 raises serum 25(OH)D roughly 87% more effectively than D2 per IU. K2 (particularly MK-7) directs calcium to bone and away from arteries. Fat-based delivery improves absorption of this fat-soluble vitamin."
