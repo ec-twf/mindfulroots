@@ -7,6 +7,19 @@ cluster: "B vitamins"
 relatedProducts:
   - "b-complex"
 draft: false
+faq:
+  - q: "Do B vitamins help with depression?"
+    a: "Mostly only if you're deficient. Correcting a genuine B12 or folate shortfall can lift mood and energy, and supplementation may help prevent depressive symptoms in at-risk groups. If your levels are normal, B vitamins haven't been shown to treat depression. The one strong mood result — for L-methylfolate — was in diagnosed depression, at a prescription dose, alongside antidepressant medication."
+  - q: "Are methylated B vitamins better for mood?"
+    a: "Not in the way they're marketed. Methylfolate and methylcobalamin are well-absorbed active forms and a sensible choice if you have absorption concerns, but no good trial shows a methylated B-complex lifts mood better than an ordinary one in people who aren't deficient. Choosing the methylated form is a bioavailability decision, not a proven mood upgrade."
+  - q: "What about my MTHFR gene — do I need methylfolate?"
+    a: "This is widely claimed and thinly supported. MTHFR variants are common and can modestly slow folate conversion, but trials haven't shown that genotype predicts who benefits from methylfolate over folic acid for mood in the general population. If you're concerned, that's a discussion for a clinician."
+  - q: "Can B vitamins help with stress or energy?"
+    a: "There's a small, real signal for stress: high-dose B-complex modestly reduced subjective stress and strain in several trials of healthy adults. Energy is more nuanced — B vitamins are essential for energy metabolism, so correcting a deficiency can relieve fatigue, but they're not a stimulant and won't create energy if your levels are already fine."
+  - q: "How much B6 is too much?"
+    a: "Less than people think. Peripheral neuropathy has been reported below 50 mg per day, and the EFSA tolerable upper limit for adults is now 12 mg per day. Watch the combined B6 across every supplement and energy drink you take, and stop and see a doctor if you get tingling or numbness in your hands or feet."
+  - q: "When should I take a B-complex?"
+    a: "With breakfast or earlier in the day. Some people find B vitamins mildly energising, which can disrupt sleep if taken late."
 ---
 
 B vitamins sit in an awkward spot on the supplement shelf. The link between a genuine deficiency and low mood is one of the better-established facts in nutritional psychiatry — a real B12 or folate shortfall can leave you flat, foggy and tired long before anything more dramatic appears. But that established fact gets stretched, on a lot of labels, into a much bigger promise: that topping up B vitamins lifts mood in general, and that the newer "methylated" forms are a meaningful upgrade for how you feel.
