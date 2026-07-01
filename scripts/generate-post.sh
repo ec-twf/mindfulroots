@@ -39,7 +39,10 @@ echo "$STAMP  generating: $SLUG  [$CLUSTER]"
 PROMPT="Write a complete blog post for the MoodSupplement site (evidence-aware iHerb mood/stress/sleep
 affiliate). Topic keyword: \"$KEYWORD\". Angle: \"$ANGLE\". Cluster: $CLUSTER. Related products: $PRODUCTS.
 
-Output ONLY the raw Markdown file content, nothing else. Start with YAML frontmatter exactly in this shape:
+Output ONLY the file content. Your response MUST begin with the '---' of the YAML
+frontmatter and end with the last line of the article. Do NOT write any preamble, planning,
+reasoning, or commentary before or after it, and do NOT wrap it in code fences. Use this
+frontmatter shape exactly:
 ---
 title: <compelling, keyword-aware title>
 description: <150-160 char meta description>
@@ -65,14 +68,20 @@ fi
 # rejects auth errors / empty output (e.g. "403 Request not allowed") that would
 # otherwise be committed as a post AND pop the topic off the queue.
 TMP="$(mktemp)"
-claude --model claude-opus-4-8 --print "$PROMPT" > "$TMP" || true
+claude --model claude-opus-4-8 --print "$PROMPT" > "$TMP.raw" || true
+
+# The CLI sometimes prefixes a line of reasoning before the file. Keep only from the
+# first frontmatter fence onward so a chatty preamble can't invalidate the post.
+sed -n '/^---[[:space:]]*$/,$p' "$TMP.raw" > "$TMP"
 
 if [[ "$(head -c 3 "$TMP")" == "---" ]] && [[ "$(wc -c < "$TMP")" -ge 500 ]]; then
   mv "$TMP" "$OUT"
+  rm -f "$TMP.raw"
   tail -n +2 "$QUEUE" > "$QUEUE.tmp" && mv "$QUEUE.tmp" "$QUEUE"
   echo "$STAMP  wrote $OUT and popped queue ($(wc -l < "$QUEUE" | tr -d ' ') topics left)."
 else
-  echo "$STAMP  ERROR: invalid output ($(wc -c < "$TMP") bytes; first line: $(head -1 "$TMP")) — kept topic in queue." >&2
-  rm -f "$TMP"
+  cp "$TMP.raw" /tmp/moodsupplement-last-rejected.txt 2>/dev/null || true
+  echo "$STAMP  ERROR: invalid output ($(wc -c < "$TMP.raw") bytes; first line: $(head -1 "$TMP.raw")) — raw saved to /tmp/moodsupplement-last-rejected.txt, kept topic in queue." >&2
+  rm -f "$TMP" "$TMP.raw"
   exit 1
 fi
