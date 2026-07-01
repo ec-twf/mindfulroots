@@ -28,8 +28,8 @@ CLUSTER="$(get CLUSTER)"; KEYWORD="$(get KEYWORD)"; ANGLE="$(get ANGLE)"
 SLUG="$(get SLUG)";       PRODUCTS="$(get PRODUCTS)"
 
 OUT="$BLOG/$SLUG.md"
-if [[ -e "$OUT" ]]; then
-  echo "$STAMP  $SLUG already exists — popping without regenerating."
+if [[ -s "$OUT" ]] && head -1 "$OUT" | grep -q '^---'; then
+  echo "$STAMP  $SLUG already exists (valid post) — popping without regenerating."
   tail -n +2 "$QUEUE" > "$QUEUE.tmp" && mv "$QUEUE.tmp" "$QUEUE"
   exit 0
 fi
@@ -54,14 +54,25 @@ studies (not aggregators). Keep evidence-tier language consistent. If the cluste
 serotonin-syndrome <WarningBox/> caution. End with a 'Supplements mentioned' section linking the related
 product hub(s)."
 
-claude --model claude-opus-4-8 --print "$PROMPT" > "$OUT"
+# Fail loudly if the CLI is missing (launchd PATH problems) instead of writing an
+# empty file and silently popping the queue.
+if ! command -v claude >/dev/null 2>&1; then
+  echo "$STAMP  ERROR: claude CLI not found on PATH ($PATH) — kept topic in queue." >&2
+  exit 1
+fi
 
-# Pop the topic only after a successful write
-if [[ -s "$OUT" ]]; then
+# Generate to a temp file and only accept it if it looks like a real post. This
+# rejects auth errors / empty output (e.g. "403 Request not allowed") that would
+# otherwise be committed as a post AND pop the topic off the queue.
+TMP="$(mktemp)"
+claude --model claude-opus-4-8 --print "$PROMPT" > "$TMP" || true
+
+if [[ "$(head -c 3 "$TMP")" == "---" ]] && [[ "$(wc -c < "$TMP")" -ge 500 ]]; then
+  mv "$TMP" "$OUT"
   tail -n +2 "$QUEUE" > "$QUEUE.tmp" && mv "$QUEUE.tmp" "$QUEUE"
   echo "$STAMP  wrote $OUT and popped queue ($(wc -l < "$QUEUE" | tr -d ' ') topics left)."
 else
-  rm -f "$OUT"
-  echo "$STAMP  ERROR: empty output, kept topic in queue." >&2
+  echo "$STAMP  ERROR: invalid output ($(wc -c < "$TMP") bytes; first line: $(head -1 "$TMP")) — kept topic in queue." >&2
+  rm -f "$TMP"
   exit 1
 fi
