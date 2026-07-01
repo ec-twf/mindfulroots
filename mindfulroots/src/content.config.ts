@@ -95,6 +95,10 @@ const blog = defineCollection({
     relatedProducts: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
     faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
+    // Per-post share/hero image (path relative to /public). Feeds og:image,
+    // twitter:image and the Article schema `image`. Falls back to /og-default.png.
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
   }),
 });
 

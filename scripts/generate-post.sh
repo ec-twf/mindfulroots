@@ -16,6 +16,15 @@ QUEUE="$PROJECT/mindfulroots-topic-queue.txt"
 BLOG="$PROJECT/src/content/blog"
 STAMP="$(date -u +%FT%TZ)"
 
+# Editorial + SEO/GEO conventions, injected into the prompt below. Single source of
+# truth for post quality — edit scripts/writing-guide.md, not this script.
+GUIDE_FILE="$REPO_ROOT/scripts/writing-guide.md"
+if [[ ! -s "$GUIDE_FILE" ]]; then
+  echo "$STAMP  ERROR: writing guide missing at $GUIDE_FILE — aborting." >&2
+  exit 1
+fi
+GUIDE="$(cat "$GUIDE_FILE")"
+
 # --- The gate: stop if the active queue is empty or missing ---
 if [[ ! -s "$QUEUE" ]]; then
   echo "$STAMP  active queue empty — generation paused (measurement gate). Nothing to do."
@@ -36,26 +45,36 @@ fi
 
 echo "$STAMP  generating: $SLUG  [$CLUSTER]"
 
-PROMPT="Write a complete blog post for the MoodSupplement site (evidence-aware iHerb mood/stress/sleep
-affiliate). Topic keyword: \"$KEYWORD\". Angle: \"$ANGLE\". Cluster: $CLUSTER. Related products: $PRODUCTS.
+PROMPT="You are the staff writer for MoodSupplement, an evidence-aware iHerb mood/stress/sleep
+affiliate site. Write ONE complete, publish-ready blog post as a single Markdown (.md) file.
 
-Output ONLY the file content. Your response MUST begin with the '---' of the YAML
-frontmatter and end with the last line of the article. Do NOT write any preamble, planning,
-reasoning, or commentary before or after it, and do NOT wrap it in code fences. Use this
-frontmatter shape exactly:
+TOPIC
+- Keyword: \"$KEYWORD\"
+- Angle: \"$ANGLE\"
+- Cluster: $CLUSTER
+- Related product IDs: $PRODUCTS
+- Today: $(date +%Y-%m-%d)
+
+Your response MUST begin with the '---' of the YAML frontmatter and end with the last line of the
+article. No preamble, planning, commentary, or code fences. Plain Markdown only — no MDX
+components or import statements. Fill this frontmatter shape exactly:
 ---
-title: <compelling, keyword-aware title>
-description: <150-160 char meta description>
+title: \"<=45 chars, keyword near the front>\"
+description: \"<150-158 char meta description, keyword-first>\"
 pubDate: $(date +%Y-%m-%d)
+updatedDate: $(date +%Y-%m-%d)
 cluster: $CLUSTER
 relatedProducts: [$PRODUCTS]
 draft: false
+faq:
+  - q: \"<question>\"
+    a: \"<concise answer>\"
+  # 4-6 items, mirroring the visible FAQ section
 ---
 
-Rules: YMYL/E-E-A-T — frame supplements as *support*, never treatment for depression. Cite primary
-studies (not aggregators). Keep evidence-tier language consistent. If the cluster is 5-htp, include a
-serotonin-syndrome <WarningBox/> caution. End with a 'Supplements mentioned' section linking the related
-product hub(s)."
+Follow this writing guide in full:
+
+$GUIDE"
 
 # Fail loudly if the CLI is missing (launchd PATH problems) instead of writing an
 # empty file and silently popping the queue.

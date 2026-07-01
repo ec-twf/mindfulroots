@@ -29,11 +29,18 @@ const evidenceLevel = related[0]?.data.evidence;
 
 const date = data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
+const pageUrl = new URL(`/blog/${post.id}/`, Astro.site).toString();
+const articleId = new URL(`/blog/${post.id}/#article`, Astro.site).toString();
+const ogImage = new URL(data.image ?? '/og-default.png', Astro.site).toString();
+const logoUrl = new URL('/logo.png', Astro.site).toString();
+
 const graphItems: Array<Record<string, unknown>> = [
   {
     '@type': 'Article',
+    '@id': articleId,
     headline: data.title,
     description: data.description,
+    image: { '@type': 'ImageObject', url: ogImage, width: 1200, height: 630 },
     datePublished: data.pubDate.toISOString(),
     ...(data.updatedDate && { dateModified: data.updatedDate.toISOString() }),
     speakable: {
@@ -53,7 +60,9 @@ const graphItems: Array<Record<string, unknown>> = [
       url: String(Astro.site),
       logo: {
         '@type': 'ImageObject',
-        url: new URL('/favicon.svg', Astro.site).toString(),
+        url: logoUrl,
+        width: 600,
+        height: 60,
       },
     },
   },
@@ -78,12 +87,30 @@ if (data.faq && data.faq.length > 0) {
   });
 }
 
+// MedicalWebPage signals YMYL/health-content intent to Google. `reviewedBy`
+// reflects editorial review by Enoch C.; when a clinical reviewer is engaged,
+// point this at that person instead.
+graphItems.push({
+  '@type': 'MedicalWebPage',
+  '@id': new URL(`/blog/${post.id}/#webpage`, Astro.site).toString(),
+  url: pageUrl,
+  name: data.title,
+  description: data.description,
+  lastReviewed: (data.updatedDate ?? data.pubDate).toISOString(),
+  reviewedBy: {
+    '@type': 'Person',
+    name: 'Enoch C.',
+    url: new URL('/authors/enoch-c/', Astro.site).toString(),
+  },
+  mainContentOfPage: { '@id': articleId },
+});
+
 const schema = {
   '@context': 'https://schema.org',
   '@graph': graphItems,
 };
 ---
-<Base title={data.title} description={data.description} schema={schema} ogType="article">
+<Base title={data.title} description={data.description} schema={schema} ogType="article" image={data.image}>
   <Breadcrumb crumbs={[
     { label: 'Home', href: '/' },
     { label: 'Journal', href: '/blog/' },

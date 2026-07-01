@@ -54,7 +54,12 @@ const year = new Date().getFullYear();
       "@type": "Organization",
       "name": SITE.name,
       "url": String(Astro.site),
-      "logo": String(ogImage),
+      "logo": {
+        "@type": "ImageObject",
+        "url": new URL('/logo.png', Astro.site).toString(),
+        "width": 600,
+        "height": 60,
+      },
       "sameAs": ["https://www.linkedin.com/in/enoch-cheung-ec/"],
     })} />
     {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
