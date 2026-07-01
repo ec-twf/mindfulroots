@@ -94,6 +94,24 @@ claude --model claude-opus-4-8 --print "$PROMPT" > "$TMP.raw" || true
 sed -n '/^---[[:space:]]*$/,$p' "$TMP.raw" > "$TMP"
 
 if [[ "$(head -c 3 "$TMP")" == "---" ]] && [[ "$(wc -c < "$TMP")" -ge 500 ]]; then
+  # --- Humanizer pass ---
+  HUMANIZER_GUIDE="$REPO_ROOT/scripts/humanizer-guide.md"
+  if [[ -s "$HUMANIZER_GUIDE" ]]; then
+    HUM_PROMPT="$(cat "$HUMANIZER_GUIDE")
+$(cat "$TMP")"
+    TMP2="$(mktemp)"
+    claude --model claude-sonnet-4-6 --print "$HUM_PROMPT" > "$TMP2" 2>/dev/null || true
+    ORIG_SIZE="$(wc -c < "$TMP")"
+    HUM_SIZE="$(wc -c < "$TMP2")"
+    if [[ "$HUM_SIZE" -ge $(( ORIG_SIZE * 80 / 100 )) ]] && \
+       [[ "$(head -c 3 "$TMP2")" == "---" ]]; then
+      mv "$TMP2" "$TMP"
+      echo "$STAMP  humanizer pass accepted ($HUM_SIZE bytes)."
+    else
+      rm -f "$TMP2"
+      echo "$STAMP  WARN: humanizer output rejected ($HUM_SIZE bytes vs $ORIG_SIZE) — using raw generated output." >&2
+    fi
+  fi
   mv "$TMP" "$OUT"
   rm -f "$TMP.raw"
   tail -n +2 "$QUEUE" > "$QUEUE.tmp" && mv "$QUEUE.tmp" "$QUEUE"
