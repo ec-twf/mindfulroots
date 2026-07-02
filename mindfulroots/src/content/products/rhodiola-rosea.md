@@ -21,10 +21,10 @@ criterionSourceUrl: "https://pubmed.ncbi.nlm.nih.gov/19016404/"
 recommendedProduct:
   brand: "NOW Foods"
   productName: "Rhodiola 500 mg"
-  iherbKeyword: "NOW Foods Rhodiola 500"
+  iherbKeyword: "https://www.amazon.com/dp/B005P0U7TY"
   meetsCriterion: true
   concentrationNote: "500 mg R. rosea root, explicitly standardized to min. 3% rosavins and min. 1% salidroside — the SHR-5 trial ratio"
-  verifiedDate: "2026-06-23"
+  verifiedDate: "2026-07-02"
 comparison:
   criterion: "Standardized to 3% rosavins / 1% salidroside (SHR-5 ratio), R. rosea species, 200–500 mg dose."
   verdict: "NOW Foods is the clear pick: it's the only one here that explicitly states both markers — min. 3% rosavins and min. 1% salidroside — in the exact SHR-5 trial ratio, at 500 mg of verified R. rosea. Gaia Herbs states rosavins (6 mg from 120 mg = ~5%, above the 3% threshold) but doesn't disclose salidroside at all, and 120 mg is at the low end of the studied range — it partially passes but leaves half the criterion unconfirmed. Thorne lists Rhodiola rosea root extract at 100 mg with no standardization stated — there's no way to confirm it matches the trialed extract ratio, and 100 mg is below the studied dose range. Thorne is a rigorous manufacturer, but this is a label transparency issue the criterion is specifically designed to catch."
@@ -32,25 +32,25 @@ comparison:
   rows:
     - brand: "NOW Foods"
       productName: "Rhodiola 500 mg"
-      iherbKeyword: "NOW Foods Rhodiola 500"
+      iherbKeyword: "https://www.amazon.com/dp/B005P0U7TY"
       cells: ["Min. 3% rosavins / 1% salidroside", "15 mg / 5 mg per capsule", "500 mg", "R. rosea ✓"]
       pass: true
       pick: true
-      verifiedDate: "2026-06-23" 
+      verifiedDate: "2026-07-02"
     - brand: "Gaia Herbs"
       productName: "Rhodiola Rosea"
-      iherbKeyword: "Gaia Herbs Rhodiola Rosea"
+      iherbKeyword: "https://www.amazon.com/dp/B0036THNA2"
       cells: ["Rosavins only (~5%)", "6 mg rosavins / not stated", "120 mg", "R. rosea ✓"]
       pass: true
       pick: false
-      verifiedDate: "2026-06-23" 
+      verifiedDate: "2026-07-02"
     - brand: "Thorne"
       productName: "Rhodiola"
-      iherbKeyword: "Thorne Rhodiola"
+      iherbKeyword: "https://www.amazon.com/dp/B0009DTKJU"
       cells: ["Not stated", "Not stated", "100 mg", "R. rosea ✓"]
       pass: false
       pick: false
-      verifiedDate: "2026-06-23" 
+      verifiedDate: "2026-07-02"
 
 ---
 

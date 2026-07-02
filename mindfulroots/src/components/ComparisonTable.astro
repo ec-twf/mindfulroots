@@ -3,7 +3,7 @@
 // Reusable across product hubs ("best X") and future VS / comparison posts.
 // Desktop (md+): a scan-by-column table. Mobile (<md): one stacked card per
 // product — same data, two presentations, no horizontal scroll on phones.
-import { iherbLink } from '../config';
+import { retailerLink, RETAILER_NAME } from '../config';
 
 interface Row {
   brand: string;
@@ -66,9 +66,9 @@ const { criterion, columns = [], rows } = Astro.props;
               )}
             </td>
             <td class="px-3 py-3 border-b border-mist align-top whitespace-nowrap">
-             <a href={iherbLink(r.iherbKeyword)} target="_blank" rel="nofollow sponsored noopener"
+             <a href={retailerLink(r.iherbKeyword)} target="_blank" rel="nofollow sponsored noopener"
                  class="text-saffron-deep hover:text-moss-deep underline underline-offset-2 text-xs">
-                iHerb →
+                {RETAILER_NAME} →
               </a>
             </td>
           </tr>
@@ -110,9 +110,9 @@ const { criterion, columns = [], rows } = Astro.props;
           </div>
         </dl>
 
-        <a href={iherbLink(r.iherbKeyword)} target="_blank" rel="nofollow sponsored noopener"
+        <a href={retailerLink(r.iherbKeyword)} target="_blank" rel="nofollow sponsored noopener"
            class="mt-4 flex items-center justify-center gap-1 rounded-md border border-mist bg-paper py-2.5 text-sm font-medium text-saffron-deep hover:text-moss-deep">
-          View on iHerb <span aria-hidden="true">→</span>
+          View on {RETAILER_NAME} <span aria-hidden="true">→</span>
         </a>
       </li>
     ))}

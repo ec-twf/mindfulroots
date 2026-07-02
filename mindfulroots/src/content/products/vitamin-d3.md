@@ -20,37 +20,38 @@ criterionRationale: "D3 raises serum 25(OH)D roughly 87% more effectively than D
 criterionSourceUrl: "https://pubmed.ncbi.nlm.nih.gov/22414584/"
 recommendedProduct:
   brand: "Sports Research"
-  productName: "Vitamin D3 + K2 (VEGADELIGHT®)"
-  iherbKeyword: "Sports Research Vitamin D3 K2"
+  productName: "Vitamin D3 + K2 (vegan, plant-based)"
+  iherbKeyword: "https://www.amazon.com/dp/B07NXW4GW7"
   meetsCriterion: true
   concentrationNote: "5,000 IU D3 from lichen (vegan) + 100 mcg MK-7 K2; softgel with oil base for absorption"
-  verifiedDate: "2026-06-23"
+  verifiedDate: "2026-07-02"
+  note: "Amazon listing (verified 2026-07-02) confirms 5,000 IU, plant-based/vegan D3, and K2 — but the 'VEGADELIGHT®' sub-brand name and exact 100 mcg MK-7 K2 dose weren't visible in title/meta (JS-rendered bullet content wasn't scrapeable); removed the VEGADELIGHT® claim, kept the K2 dose since nothing contradicts it. Re-check the full listing before publishing."
 comparison:
   criterion: "D3 not D2, dose 1,000–5,000 IU, K2 included, oil/fat base."
   verdict: "All three are D3 — the more effective form — so all clear the first bar. Sports Research is our pick: 5,000 IU with K2 as MK-7 (the longer-acting form), in a softgel with an oil carrier, and vegan-sourced from lichen. Thorne's liquid drops are excellent for precise dose control at 1,000 IU per 2 drops with K2 (as MK-4, a shorter-acting form), and the liquid format suits those who have difficulty swallowing capsules. NOW's 400 IU softgel fails the criterion: 400 IU is below the 1,000 IU floor supported by supplementation research, with no K2 and no stated oil base."
   columns: ["Form", "IU / serving", "K2 included", "Oil/fat base"]
   rows:
     - brand: "Sports Research"
-      productName: "Vitamin D3 + K2 (VEGADELIGHT®)"
-      iherbKeyword: "Sports Research Vitamin D3 K2"
+      productName: "Vitamin D3 + K2 (vegan, plant-based)"
+      iherbKeyword: "https://www.amazon.com/dp/B07NXW4GW7"
       cells: ["D3 cholecalciferol (lichen)", "5,000 IU", "Yes — MK-7 100 mcg", "Softgel (oil base)"]
       pass: true
       pick: true
-      verifiedDate: "2026-06-23" 
+      verifiedDate: "2026-07-02"
     - brand: "Thorne"
       productName: "Vitamin D/K2 Liquid"
-      iherbKeyword: "Thorne Vitamin D K2 liquid"
+      iherbKeyword: "https://www.amazon.com/dp/B0038NF8MG"
       cells: ["D3 cholecalciferol", "1,000 IU / 2 drops", "Yes — K2 MK-4 200 mcg", "Liquid (oil-based drops)"]
       pass: true
       pick: false
-      verifiedDate: "2026-06-23" 
+      verifiedDate: "2026-07-02"
     - brand: "NOW Foods"
       productName: "Vitamin D-3 400 IU"
-      iherbKeyword: "NOW Foods Vitamin D-3 softgels"
+      iherbKeyword: "https://www.amazon.com/dp/B000V7EIH8"
       cells: ["D3 cholecalciferol (lanolin)", "400 IU", "No", "Softgel (no stated oil)"]
       pass: false
       pick: false
-      verifiedDate: "2026-06-23" 
+      verifiedDate: "2026-07-02"
 
 ---
 

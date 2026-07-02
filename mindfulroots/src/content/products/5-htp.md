@@ -22,10 +22,10 @@ criterionSourceUrl: "https://pubmed.ncbi.nlm.nih.gov/9727088/"
 recommendedProduct:
   brand: "NOW Foods"
   productName: "5-HTP 100 mg"
-  iherbKeyword: "NOW Foods 5-HTP 100"
+  iherbKeyword: "https://www.amazon.com/dp/B0013OXB58"
   meetsCriterion: true
   concentrationNote: "100 mg from Griffonia simplicifolia seed, just rice flour and a cellulose capsule — the cleanest, most titratable option in this comparison"
-  verifiedDate: "2026-06-23"
+  verifiedDate: "2026-07-02"
 comparison:
   criterion: "100 mg from Griffonia seed, minimal fillers, no co-formulation that complicates interactions or dose titration."
   verdict: "5-HTP is the one product on this site where the 'Our Pick' framing stays deliberately conservative — the criterion is safety and clarity, not efficacy. NOW Foods is our pick: the cleanest label of the three, just 5-HTP from Griffonia seed plus rice flour and a cellulose capsule. No added cofactors that could complicate interactions, nothing to make careful dose titration harder. Doctor's Best adds Vitamin C and B6 (claimed to support serotonin conversion) — a reasonable formulation, but extra actives add variables when you're introducing 5-HTP carefully. Natrol's time-release tablet adds calcium and a modified-release mechanism, making the dose curve harder to control — the opposite of what careful introduction requires. Important: please read the interaction warning on this page and discuss 5-HTP with a clinician before starting, regardless of which product you choose."
@@ -33,25 +33,25 @@ comparison:
   rows:
     - brand: "NOW Foods"
       productName: "5-HTP 100 mg"
-      iherbKeyword: "NOW Foods 5-HTP 100"
+      iherbKeyword: "https://www.amazon.com/dp/B0013OXB58"
       cells: ["100 mg", "Griffonia simplicifolia seed", "None", "Veg capsule"]
       pass: true
       pick: true
-      verifiedDate: "2026-06-23" 
+      verifiedDate: "2026-07-02"
     - brand: "Doctor's Best"
       productName: "5-HTP Enhanced (B6 + Vitamin C)"
-      iherbKeyword: "Doctor's Best 5-HTP B6"
+      iherbKeyword: "https://www.amazon.com/dp/B000NRXNO0"
       cells: ["100 mg", "Griffonia simplicifolia seed", "B6 15 mg, Vit C 200 mg", "Veg capsule"]
       pass: true
       pick: false
-      verifiedDate: "2026-06-23" 
+      verifiedDate: "2026-07-02"
     - brand: "Natrol"
       productName: "5-HTP 100 mg Time Release"
-      iherbKeyword: "Natrol 5-HTP time release"
+      iherbKeyword: "https://www.amazon.com/dp/B001JD9DMI"
       cells: ["100 mg", "Griffonia simplicifolia seed", "Calcium 32 mg", "Time-release tablet"]
       pass: true
       pick: false
-      verifiedDate: "2026-06-23" 
+      verifiedDate: "2026-07-02"
 
 ---
 

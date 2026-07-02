@@ -8,6 +8,7 @@ import ComparisonTable from '../../components/ComparisonTable.astro';
 import WarningBox from '../../components/WarningBox.astro';
 import SupportNotice from '../../components/SupportNotice.astro';
 import { getCollection, render } from 'astro:content';
+import { RETAILER_NAME } from '../../config';
 
 export async function getStaticPaths() {
   const products = await getCollection('products');
@@ -65,11 +66,9 @@ const schema = {
           '@type': 'Offer',
           availability: 'https://schema.org/InStock',
           priceCurrency: 'USD',
-          seller: {
-            '@type': 'Organization',
-            name: 'iHerb',
-            url: 'https://www.iherb.com',
-          },
+          // No named seller: the actual merchant varies by Amazon listing
+          // (Amazon-fulfilled vs. third-party), so a fixed seller name would
+          // sometimes misstate who's actually selling/fulfilling the item.
         },
       }),
     },
@@ -133,7 +132,7 @@ const schema = {
       {data.comparison && data.comparison.rows.length > 0 && (
         <section class="mt-7">
           <p class="eyebrow mb-2">Our pick, and why</p>
-          <h2 class="font-display text-2xl text-moss-deep mb-3">Choosing a {data.title.toLowerCase()} on iHerb</h2>
+          <h2 class="font-display text-2xl text-moss-deep mb-3">Choosing a {data.title.toLowerCase()} on {RETAILER_NAME}</h2>
           {data.comparison.verdict && (
             <p class="text-ink leading-relaxed mb-4">{data.comparison.verdict}</p>
           )}
@@ -183,7 +182,7 @@ const schema = {
                 </ul>
               )}
 
-              <AffiliateButton keyword={rec.iherbKeyword} label={`View ${rec.brand} on iHerb`} />
+              <AffiliateButton keyword={rec.iherbKeyword} label={`View ${rec.brand} on ${RETAILER_NAME}`} />
 
               <p class="text-[0.68rem] text-ink-soft">
                 Spec verified {verifiedLabel}

@@ -91,7 +91,7 @@ collections:
       - { label: "Typical use", name: "typicalUse", widget: "text" }
       - { label: "Cautions", name: "cautions", widget: "text" }
       - { label: "Interaction warning (optional, shown in red box)", name: "interactionWarning", widget: "text", required: false }
-      - { label: "iHerb keyword or URL", name: "iherbKeyword", widget: "string" }
+      - { label: "Amazon keyword or URL", name: "iherbKeyword", widget: "string" }
       - { label: "Related post slugs", name: "relatedPosts", widget: "list", required: false, field: { label: "Post slug", name: "slug", widget: "string" } }
       - { label: "Sort order", name: "order", widget: "number", default: 99 }
       - label: "Comparison table (optional)"
@@ -110,7 +110,7 @@ collections:
             fields:
               - { label: "Brand", name: "brand", widget: "string" }
               - { label: "Product name", name: "productName", widget: "string" }
-              - { label: "iHerb keyword or URL", name: "iherbKeyword", widget: "string" }
+              - { label: "Amazon keyword or URL", name: "iherbKeyword", widget: "string" }
               - { label: "Spec cells (same order as columns)", name: "cells", widget: "list", field: { label: "Cell", name: "cell", widget: "string" } }
               - { label: "Meets criterion", name: "pass", widget: "boolean", default: true }
               - { label: "Our pick (highlighted)", name: "pick", widget: "boolean", default: false }

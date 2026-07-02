@@ -21,10 +21,10 @@ criterionSourceUrl: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12242034/"
 recommendedProduct:
   brand: "Sports Research"
   productName: "Ashwagandha Broad-Spectrum Complex (Shoden® + BioPerine®)"
-  iherbKeyword: "Sports Research Ashwagandha Shoden"
+  iherbKeyword: "https://www.amazon.com/dp/B0CTYQT78S"
   meetsCriterion: true
   concentrationNote: "Contains Shoden® — a clinically-trialed standardized extract (120 mg, ~35% withanolide glycosides), plus BioPerine to aid absorption"
-  verifiedDate: "2026-06-14"
+  verifiedDate: "2026-07-02"
 comparison:
   criterion: "A named, clinically-trialed standardized extract (KSM-66, Sensoril or Shoden) with the withanolide content stated, dosed in its studied range. Generic, unbranded 'root powder' is not the extract the trials used."
   verdict: "The trials that produced ashwagandha's stress and cortisol results used specific standardized extracts, not generic powder — so that's what we screen for. Among these three, only the Sports Research complex contains a named, clinically-trialed extract (Shoden®, 120 mg at ~35% withanolide glycosides) at a dose used in studies, which is why it's our pick. The NOW Foods extract at least discloses its standardization (2.5% withanolides, 11 mg), but it's a generic, unbranded extract rather than one with its own trial evidence. The Jarrow extract states no withanolide content at all, so there's no way to confirm it matches what the research tested. One honest caveat: our pick is a blend — if you want the single most-studied option, a dedicated KSM-66 600 mg root extract is the textbook choice."
@@ -32,23 +32,23 @@ comparison:
   rows:
     - brand: "Sports Research"
       productName: "Ashwagandha Broad-Spectrum Complex"
-      iherbKeyword: "Sports Research Ashwagandha Shoden"
+      iherbKeyword: "https://www.amazon.com/dp/B0CTYQT78S"
       cells: ["Shoden®", "≈48 mg (Shoden 35% + 1.5% blend)", "Root & leaf", "500 mg (120 mg Shoden)"]
       pass: true
       pick: true
-      verifiedDate: "2026-06-14"
+      verifiedDate: "2026-07-02"
     - brand: "NOW Foods"
       productName: "Ashwagandha Extract"
-      iherbKeyword: "NOW Foods Ashwagandha extract root leaf"
+      iherbKeyword: "https://www.amazon.com/dp/B0013OQIJY"
       cells: ["Generic (unbranded)", "2.5% (11 mg)", "Root & leaf", "450 mg"]
       pass: false
-      verifiedDate: "2026-06-14"
+      verifiedDate: "2026-07-02"
     - brand: "Jarrow Formulas"
       productName: "Ashwagandha Extract"
-      iherbKeyword: "Jarrow Formulas Ashwagandha 300 mg"
+      iherbKeyword: "https://www.amazon.com/dp/B0013OQEO8"
       cells: ["Generic (unbranded)", "Not stated", "Root", "300 mg"]
       pass: false
-      verifiedDate: "2026-06-14"
+      verifiedDate: "2026-07-02"
 ---
 
 Ashwagandha has moved from Ayurvedic tradition to the clinical-trial literature more successfully than almost any other herb. Standardized root extracts have a respectable stack of randomized, placebo-controlled studies behind them showing reductions in perceived stress, anxiety-scale scores, and morning cortisol in chronically stressed adults.

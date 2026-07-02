@@ -21,10 +21,10 @@ criterionSourceUrl: "https://pubmed.ncbi.nlm.nih.gov/22992437/"
 recommendedProduct:
   brand: "Thorne"
   productName: "Basic B Complex"
-  iherbKeyword: "Thorne Basic B Complex"
+  iherbKeyword: "https://www.amazon.com/dp/B00HST919C"
   meetsCriterion: true
   concentrationNote: "Methylcobalamin B12, Quatrefolic® 5-MTHF, Pyridoxal 5'-Phosphate B6 — all active forms, full spectrum in one capsule"
-  verifiedDate: "2026-06-23"
+  verifiedDate: "2026-07-02"
 comparison:
   criterion: "B12 as methylcobalamin (not cyanocobalamin), folate as methylfolate/5-MTHF (not folic acid), B6 in active form."
   verdict: "This is the table where form matters most. Thorne Basic B is our pick: methylcobalamin, Quatrefolic® methylfolate (the benchmark 5-MTHF form), and Pyridoxal 5'-Phosphate — all active, nothing to convert. Jarrow B-Right is a strong second: also methylcobalamin and 5-MTHF, with the bonus of pantethine and inositol — it only partially passes on B6 (a mix of active P5P and standard HCl). NOW B-50 fails on both critical forms: cyanocobalamin B12 and folic acid rather than methylfolate — the conventional forms that a subset of people struggle to convert, which is precisely what this criterion is designed to screen for."
@@ -32,25 +32,25 @@ comparison:
   rows:
     - brand: "Thorne"
       productName: "Basic B Complex"
-      iherbKeyword: "Thorne Basic B Complex"
+      iherbKeyword: "https://www.amazon.com/dp/B00HST919C"
       cells: ["Methylcobalamin", "Quatrefolic® 5-MTHF", "Pyridoxal 5'-Phosphate", "Yes"]
       pass: true
       pick: true
-      verifiedDate: "2026-06-23" 
+      verifiedDate: "2026-07-02"
     - brand: "Jarrow Formulas"
       productName: "B-Right"
-      iherbKeyword: "Jarrow B-Right"
+      iherbKeyword: "https://www.amazon.com/dp/B0016003Z0"
       cells: ["Methylcobalamin", "5-MTHF (6S form)", "P5P + HCl mix", "Yes + pantethine"]
       pass: true
       pick: false
-      verifiedDate: "2026-06-23" 
+      verifiedDate: "2026-07-02"
     - brand: "NOW Foods"
       productName: "B-50"
-      iherbKeyword: "NOW Foods B-50"
+      iherbKeyword: "https://www.amazon.com/dp/B000MGR0WS"
       cells: ["Cyanocobalamin", "Folic acid", "Pyridoxine HCl", "Yes"]
       pass: false
       pick: false
-      verifiedDate: "2026-06-23" 
+      verifiedDate: "2026-07-02"
 
 ---
 

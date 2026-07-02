@@ -19,38 +19,39 @@ qualityCriterion: "Named psychobiotic strains specifically studied for mood and 
 criterionRationale: "The Messaoudi 2011 RCT and subsequent studies on gut-brain probiotics used these two specific Lallemand strains at this specific ratio. Strain ID matters: L. helveticus R0052 and L. helveticus without a strain ID are not interchangeable in an evidence context."
 criterionSourceUrl: "https://pubmed.ncbi.nlm.nih.gov/20974015/"
 recommendedProduct:
-  brand: "Natural Factors"
-  productName: "Calm Biotic™ 3 Billion"
-  iherbKeyword: "Natural Factors Calm Biotic 3 Billion"
+  brand: "InnovixLabs"
+  productName: "Mood Probiotic"
+  iherbKeyword: "https://www.amazon.com/dp/B00ZMO7UKW"
   meetsCriterion: true
-  concentrationNote: "Exactly L. helveticus R0052 (2.68B CFU) and B. longum R0175 (0.32B CFU) in the trial ratio — shelf-stable, one capsule daily"
-  verifiedDate: "2026-06-23"
+  concentrationNote: "Contains L. helveticus Rosell-52 and B. longum Rosell-175 — Lallemand's trade names for the same strains published as R0052/R0175 in the trial literature — formulated to 15 billion CFU at manufacture, guaranteed ≥3 billion CFU through expiry"
+  verifiedDate: "2026-07-02"
+  note: "Manufacturer/Amazon listing (verified 2026-07-02) confirms strain IDs and the ≥3B-at-expiry CFU guarantee and shelf-stability, but does not publish a per-strain CFU ratio — do not restate the old Natural Factors 89.4%/10.6% figures, they belong to a discontinued pick."
 comparison:
   criterion: "Named strains L. helveticus R0052 + B. longum R0175, strain IDs stated, CFU at expiry, shelf-stable."
-  verdict: "Natural Factors Calm Biotic is our pick — and it's the only product here that precisely meets the criterion. It contains exactly the two trial strains: L. helveticus R0052 (2.68 billion CFU, 89.4%) and B. longum R0175 (0.32 billion CFU, 10.6%), in the same ratio used in the published studies, shelf-stable, one capsule daily. Garden of Life Mood+ also contains both R0052 and R0175 within a broader 16-strain blend at 50 billion CFU. The CFU count is impressive, but the trial evidence is for these two strains at a specific ratio — diluting them into 16 strains is a different product. NOW Probiotic-10 is a general-purpose probiotic with no named psychobiotic strains. The honest note: 3 billion CFU sounds low next to 50 billion, but CFU count is not what the mood research optimised for — strain identity and ratio are the variables that matter."
+  verdict: "Our previous pick, Natural Factors Calm Biotic, isn't reliably sold on Amazon, so we moved to InnovixLabs Mood Probiotic. It uses the identical trial strains — L. helveticus Rosell-52 and B. longum Rosell-175, Lallemand's trade names for the R0052/R0175 strains in the published research — guaranteed at 3 billion CFU through expiry and shelf-stable at room temperature. The one gap: InnovixLabs doesn't publish the exact strain-to-strain ratio the original trials used, so we can confirm strain identity but not that it matches the studied split as precisely as our previous pick did. Garden of Life Mood+ also contains both Rosell strains, within a broader 16-strain, 50-billion-CFU blend — more CFU, but the two studied strains are diluted among fourteen others. NOW Probiotic-10 is a solid general-purpose probiotic with no named psychobiotic strains at all."
   columns: ["Named strains (R0052 + R0175)", "CFU / serving", "Strain ratio stated", "Shelf-stable"]
   rows:
-    - brand: "Natural Factors"
-      productName: "Calm Biotic™ 3 Billion"
-      iherbKeyword: "Natural Factors Calm Biotic 3 Billion"
-      cells: ["Yes — both, strain IDs stated", "3 billion (at expiry)", "Yes — 89.4% / 10.6%", "Yes"]
+    - brand: "InnovixLabs"
+      productName: "Mood Probiotic"
+      iherbKeyword: "https://www.amazon.com/dp/B00ZMO7UKW"
+      cells: ["Yes — both, strain IDs stated", "3 billion (at expiry)", "Not disclosed", "Yes"]
       pass: true
       pick: true
-      verifiedDate: "2026-06-23" 
+      verifiedDate: "2026-07-02"
     - brand: "Garden of Life"
       productName: "Dr. Formulated Mood+"
-      iherbKeyword: "Garden of Life Mood Probiotic"
-      cells: ["Yes — both, in 16-strain blend", "50 billion (at expiry)", "No — diluted in blend", "Refrigerated"]
+      iherbKeyword: "https://www.amazon.com/dp/B01LVYJK6U"
+      cells: ["Yes — both, in 16-strain blend", "50 billion (at expiry)", "No — diluted in blend", "Yes — shelf-stable SKU"]
       pass: true
       pick: false
-      verifiedDate: "2026-06-23" 
+      verifiedDate: "2026-07-02"
     - brand: "NOW Foods"
       productName: "Probiotic-10"
-      iherbKeyword: "NOW Foods Probiotic-10"
+      iherbKeyword: "https://www.amazon.com/dp/B002S1U7RU"
       cells: ["No named psychobiotic strains", "25 billion", "No", "Refrigerated"]
       pass: false
       pick: false
-      verifiedDate: "2026-06-23" 
+      verifiedDate: "2026-07-02"
 
 ---
 

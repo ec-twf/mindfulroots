@@ -21,36 +21,36 @@ criterionSourceUrl: "https://pubmed.ncbi.nlm.nih.gov/30029994/"
 recommendedProduct:
   brand: "Sports Research"
   productName: "Saffron Extract (affron®)"
-  iherbKeyword: "Sports Research Saffron affron"
+  iherbKeyword: "https://www.amazon.com/dp/B0FY497SJJ"
   meetsCriterion: true
   concentrationNote: "affron® 30 mg per softgel — trial-matched dose, HPLC-standardized to ≥3.5% lepticrosalides, softgel format"
-  verifiedDate: "2026-06-23"
+  verifiedDate: "2026-07-02"
 comparison:
   criterion: "Named branded extract (affron® or Satiereal®), HPLC-standardized, dosed at trial-matched level."
-  verdict: "Unusually, all three products pass — each contains a named standardized extract with genuine trial evidence. Sports Research and California Gold Nutrition both use affron® at the 28–30 mg studied dose; they're effectively interchangeable on the criterion. Sports Research is our pick by a slim margin: the softgel format offers slightly better bioavailability than a dry capsule for botanical extracts. Life Extension's Satiereal® at 78 mg is a different branded extract with its own valid trial record — it's dosed higher because Satiereal is less concentrated per mg. This is the rare table where any of the three is a genuinely good choice; we're highlighting a preference, not a clear winner."
+  verdict: "Unusually, all three products pass — each contains a named, standardized extract with genuine trial evidence behind it. Sports Research is our pick: affron® at the 30 mg studied dose, HPLC-standardized to ≥3.5% lepticrosalides, in an easily-absorbed softgel. Solaray also uses affron® (marketed under its Lepticrosalides® marker compound), standardized to the same ≥3.5% level — a close second. Life Extension's Satiereal® at 78 mg is a different branded extract with its own valid trial record — it's dosed higher because Satiereal is less concentrated per mg than affron®. All three are genuinely good choices; we're highlighting a preference, not a clear winner. (We previously listed a California Gold Nutrition affron® product here; we couldn't confirm an active Amazon.com listing for it, so we replaced it with the verified Solaray option.)"
   columns: ["Branded extract", "Standardization", "Dose / serving", "Trial-matched"]
   rows:
     - brand: "Sports Research"
       productName: "Saffron Extract (affron®)"
-      iherbKeyword: "Sports Research Saffron affron"
+      iherbKeyword: "https://www.amazon.com/dp/B0FY497SJJ"
       cells: ["affron®", "≥3.5% lepticrosalides", "30 mg", "Yes (28–30 mg)"]
       pass: true
       pick: true
-      verifiedDate: "2026-06-23" 
-    - brand: "California Gold Nutrition"
-      productName: "Saffron (affron®)"
-      iherbKeyword: "California Gold Nutrition Saffron affron"
-      cells: ["affron®", "≥3.5% lepticrosalides", "28 mg", "Yes (28–30 mg)"]
+      verifiedDate: "2026-07-02"
+    - brand: "Solaray"
+      productName: "Saffron Extract (affron®)"
+      iherbKeyword: "https://www.amazon.com/dp/B0DLYDL7HX"
+      cells: ["affron® (Lepticrosalides®)", "≥3.5% lepticrosalides", "Standardized to 1 mg Lepticrosalides®/serving", "Yes"]
       pass: true
       pick: false
-      verifiedDate: "2026-06-23" 
+      verifiedDate: "2026-07-02"
     - brand: "Life Extension"
       productName: "Optimized Saffron (Satiereal®)"
-      iherbKeyword: "Life Extension Optimized Saffron"
+      iherbKeyword: "https://www.amazon.com/dp/B0848R8797"
       cells: ["Satiereal®", "0.3% safranal", "78 mg", "Yes (Satiereal trials)"]
       pass: true
       pick: false
-      verifiedDate: "2026-06-23" 
+      verifiedDate: "2026-07-02"
 
 ---
 
