@@ -1,13 +1,14 @@
 #!/bin/bash
 # One-time batch humanizer for existing MoodSupplement blog posts.
-# Rewrites prose bodies through claude-sonnet-4-6, preserving YAML frontmatter
-# and MDX import/component lines verbatim.
+# Passes the full post (frontmatter + body) to claude-sonnet-4-6.
+# Claude preserves frontmatter/imports and rewrites only prose.
 #
 # Usage:
 #   bash humanize-posts.sh            # process all un-humanized posts
 #   bash humanize-posts.sh --dry-run  # list files that would be processed
 #
-# Idempotent: already-humanized files are skipped (sentinel: <!-- humanized -->).
+# Idempotent: already-humanized files are skipped.
+# Sentinels: <!-- humanized --> for .md, {/* humanized */} for .mdx
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -48,36 +49,16 @@ for POST in "$BLOG"/*.md "$BLOG"/*.mdx; do
 
   echo "$STAMP  [START] $FNAME"
 
-  # --- Split file into parts ---
-
-  # 1. FRONTMATTER: from line 1 to the closing --- (second fence)
-  #    awk: print from start, stop after we've seen the second --- line.
-  FRONTMATTER="$(awk 'BEGIN{n=0} /^---/{n++; print; if(n==2) exit; next} {print}' "$POST")"
-
-  # 2. IMPORT lines: lines immediately after frontmatter that start with "import "
-  #    Count the line number of the closing --- then check subsequent lines.
-  FM_END_LINE="$(awk 'BEGIN{n=0} /^---/{n++; if(n==2){print NR; exit}}' "$POST")"
-  IMPORTS="$(awk -v start="$FM_END_LINE" 'NR > start && /^import / {print}' "$POST")"
-
-  # 3. BODY: everything after frontmatter and imports (skip blank lines between)
-  if [[ -n "$IMPORTS" ]]; then
-    IMPORT_COUNT="$(echo "$IMPORTS" | wc -l | tr -d ' ')"
-    BODY_START=$(( FM_END_LINE + IMPORT_COUNT + 1 ))
-  else
-    BODY_START=$(( FM_END_LINE + 1 ))
-  fi
-  BODY="$(awk -v start="$BODY_START" 'NR >= start' "$POST")"
-
   ORIG_SIZE="$(wc -c < "$POST")"
 
-  # --- Build prompt ---
+  # --- Build prompt: guide instructions + full post ---
   PROMPT="$(cat "$GUIDE")
-$BODY"
+
+$(cat "$POST")"
 
   # --- Call claude ---
   # < /dev/null suppresses the "no stdin data" warning.
-  # After capture, strip any CLI warning/info lines that pollute the output
-  # (lines starting with "Warning:", "Ignoring", "Error:") before size check.
+  # Strip CLI warning/info lines that can pollute stdout.
   TMP="$(mktemp)"
   TRAW="$(mktemp)"
   claude --model claude-sonnet-4-6 --print "$PROMPT" < /dev/null > "$TRAW" 2>/dev/null || true
@@ -87,35 +68,28 @@ $BODY"
   HUM_SIZE="$(wc -c < "$TMP")"
   MIN_SIZE=$(( ORIG_SIZE * 75 / 100 ))
 
-  if [[ "$HUM_SIZE" -lt "$MIN_SIZE" ]] || [[ "$HUM_SIZE" -lt 200 ]]; then
-    echo "$STAMP  [ERROR] $FNAME — humanized output too small ($HUM_SIZE bytes vs $ORIG_SIZE original); skipping." >&2
+  # Reject if output doesn't start with --- (preamble leak) or is too small
+  if [[ "$(head -c 3 "$TMP")" != "---" ]] || \
+     [[ "$HUM_SIZE" -lt "$MIN_SIZE" ]] || \
+     [[ "$HUM_SIZE" -lt 200 ]]; then
+    echo "$STAMP  [ERROR] $FNAME — rejected (${HUM_SIZE} bytes, starts: '$(head -c 20 "$TMP" | tr '\n' ' ')'); kept original." >&2
     rm -f "$TMP"
     (( errors++ )) || true
     continue
   fi
 
-  # --- Reconstruct file ---
-  # Use MDX-safe JSX comment for .mdx files; HTML comment for plain .md
+  # --- Inject sentinel after the closing --- of frontmatter ---
   if [[ "$POST" == *.mdx ]]; then
     SENTINEL="{/* humanized */}"
   else
     SENTINEL="<!-- humanized -->"
   fi
-  {
-    echo "$FRONTMATTER"
-    echo "$SENTINEL"
-    if [[ -n "$IMPORTS" ]]; then
-      echo ""
-      echo "$IMPORTS"
-    fi
-    echo ""
-    cat "$TMP"
-  } > "$POST.new"
+  awk -v s="$SENTINEL" 'BEGIN{n=0} /^---/{n++; print; if(n==2){print s}; next} {print}' "$TMP" > "$POST"
 
   rm -f "$TMP"
-  mv "$POST.new" "$POST"
 
-  echo "$STAMP  [OK] $FNAME — $ORIG_SIZE → $HUM_SIZE bytes"
+  FINAL_SIZE="$(wc -c < "$POST")"
+  echo "$STAMP  [OK] $FNAME — $ORIG_SIZE → $FINAL_SIZE bytes"
   (( processed++ )) || true
 done
 
