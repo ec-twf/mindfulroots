@@ -34,8 +34,8 @@ for POST in "$BLOG"/*.md "$BLOG"/*.mdx; do
   [[ -f "$POST" ]] || continue
   FNAME="$(basename "$POST")"
 
-  # Skip if already humanized
-  if grep -q "<!-- humanized -->" "$POST" 2>/dev/null; then
+  # Skip if already humanized (HTML comment for .md, JSX comment for .mdx)
+  if grep -qE "(<!-- humanized -->|\{/\* humanized \*/\})" "$POST" 2>/dev/null; then
     echo "$STAMP  [SKIP] $FNAME — already humanized"
     (( skipped++ )) || true
     continue
@@ -95,9 +95,15 @@ $BODY"
   fi
 
   # --- Reconstruct file ---
+  # Use MDX-safe JSX comment for .mdx files; HTML comment for plain .md
+  if [[ "$POST" == *.mdx ]]; then
+    SENTINEL="{/* humanized */}"
+  else
+    SENTINEL="<!-- humanized -->"
+  fi
   {
     echo "$FRONTMATTER"
-    echo "<!-- humanized -->"
+    echo "$SENTINEL"
     if [[ -n "$IMPORTS" ]]; then
       echo ""
       echo "$IMPORTS"
