@@ -75,8 +75,14 @@ for POST in "$BLOG"/*.md "$BLOG"/*.mdx; do
 $BODY"
 
   # --- Call claude ---
+  # < /dev/null suppresses the "no stdin data" warning.
+  # After capture, strip any CLI warning/info lines that pollute the output
+  # (lines starting with "Warning:", "Ignoring", "Error:") before size check.
   TMP="$(mktemp)"
-  claude --model claude-sonnet-4-6 --print "$PROMPT" > "$TMP" 2>/dev/null || true
+  TRAW="$(mktemp)"
+  claude --model claude-sonnet-4-6 --print "$PROMPT" < /dev/null > "$TRAW" 2>/dev/null || true
+  grep -v -E '^(Warning:|Ignoring |Error: )' "$TRAW" > "$TMP" || true
+  rm -f "$TRAW"
 
   HUM_SIZE="$(wc -c < "$TMP")"
   MIN_SIZE=$(( ORIG_SIZE * 75 / 100 ))
