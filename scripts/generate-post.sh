@@ -87,7 +87,17 @@ fi
 # rejects auth errors / empty output (e.g. "403 Request not allowed") that would
 # otherwise be committed as a post AND pop the topic off the queue.
 TMP="$(mktemp)"
-claude --model claude-opus-4-8 --print "$PROMPT" > "$TMP.raw" || true
+
+# Transient API blips (e.g. "Connection closed mid-response") shouldn't cost a
+# whole scheduled slot — retry a few times with backoff before giving up.
+for attempt in 1 2 3; do
+  claude --model claude-opus-4-8 --print "$PROMPT" > "$TMP.raw" || true
+  if [[ "$(wc -c < "$TMP.raw")" -ge 500 ]]; then
+    break
+  fi
+  echo "$STAMP  WARN: generation attempt $attempt produced $(wc -c < "$TMP.raw") bytes ($(head -1 "$TMP.raw")) — retrying." >&2
+  sleep $(( attempt * 5 ))
+done
 
 # The CLI sometimes prefixes a line of reasoning before the file. Keep only from the
 # first frontmatter fence onward so a chatty preamble can't invalidate the post.
