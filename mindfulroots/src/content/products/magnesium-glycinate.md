@@ -13,7 +13,7 @@ benefits:
 typicalUse: "Commonly taken as 200–400 mg of elemental magnesium in the evening. Check the label for *elemental* magnesium, which is the number that matters."
 cautions: "High doses of any magnesium can loosen stools (glycinate less than oxide or citrate). People with kidney disease should not supplement magnesium without medical guidance."
 iherbKeyword: "magnesium glycinate"
-relatedPosts: ["magnesium-stress-sleep-guide", "natural-mood-support-basics"]
+relatedPosts: ["magnesium-glycinate-vs-citrate", "magnesium-glycinate-dosage-for-anxiety", "magnesium-stress-sleep-guide", "natural-mood-support-basics"]
 order: 3
 qualityCriterion: "Bioavailable chelate form (glycinate or bisglycinate, not oxide), elemental magnesium clearly stated, from a named chelate supplier such as Albion®, and minimal fillers."
 criterionRationale: "Magnesium oxide has poor bioavailability (~4%); glycinate and bisglycinate chelates are substantially better absorbed and gentler on digestion. Elemental mg must be stated so the dose is comparable across products."
@@ -56,7 +56,7 @@ comparison:
 
 Magnesium sits at the center of the body's "calm down" chemistry: it regulates the stress axis, supports GABA signalling, and modern diets are frequently short of it. Surveys suggest a large share of adults don't reach recommended intakes — and chronic stress itself increases magnesium loss, creating an unhelpful loop.
 
-The **glycinate** form pairs magnesium with glycine, an amino acid with its own calming reputation, and is the form most people tolerate best for daily evening use.
+The **glycinate** form pairs magnesium with glycine, an amino acid with its own calming reputation, and is the form most people tolerate best for daily evening use. If you're looking for the best magnesium for sleep, glycinate is the usual recommendation for one practical reason: it delivers well-absorbed magnesium without the laxative effect of forms like citrate or oxide, so an evening dose is unlikely to disturb your night. It isn't a sleeping pill, but it's the gentlest way to keep your magnesium topped up when relaxation and sleep are the goal.
 
 ## What to look for
 
