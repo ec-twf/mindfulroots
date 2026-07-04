@@ -21,7 +21,7 @@ faq:
   - q: "Can I take too much?"
     a: "Yes. High doses of supplemental magnesium can cause diarrhoea and, in people with impaired kidney function, more serious problems. Health authorities set an upper limit of 350 mg per day for magnesium from supplements specifically (food magnesium isn't counted). Stay within commonly used doses unless a clinician has advised otherwise, and don't supplement magnesium at all with kidney disease without medical guidance."
 ---
-{/* humanized */}
+<!-- humanized -->
 
 If you're searching for a magnesium glycinate dose for anxiety, you probably already know the general idea that magnesium has a calming reputation, and you just want a number. This page gives you the range the research actually uses, but it leads with an honest frame, because the dose only makes sense alongside it: magnesium is gentle, supportive nutrition, not a treatment for an anxiety disorder. The evidence is modest, and it matters most for people who were low in magnesium to begin with.
 

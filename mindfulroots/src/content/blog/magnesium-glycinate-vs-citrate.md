@@ -19,7 +19,7 @@ faq:
   - q: "Can I take both?"
     a: "Some people use glycinate in the evening and citrate earlier in the day if regularity is a concern, but there's rarely a need to combine them, and stacking doses raises the total load on your gut and kidneys. If you're unsure, keep it to one form and check with a pharmacist, especially if you have kidney issues."
 ---
-{/* humanized */}
+<!-- humanized -->
 
 If you've narrowed your magnesium choice down to glycinate and citrate, the good news is you've already eliminated the weak option. Both are well-absorbed forms, both are a real step up from cheap magnesium oxide, and either one will do the basic job of topping up your magnesium. So this isn't a case of one being right and the other wrong. It's a case of matching the form to your gut and your goal.
 
