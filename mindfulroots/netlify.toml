@@ -1,0 +1,5 @@
+# Added for the Threads approval webhook function. Only declares the functions
+# directory + bundler — build command / publish dir stay configured in the Netlify dashboard.
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
