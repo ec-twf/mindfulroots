@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { SITE } from '../config';
+import { CATEGORY_GROUPS } from '../lib/taxonomy';
 
 interface Props {
   title: string;
@@ -17,12 +18,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL(image, Astro.site);
 const fullTitle = title === SITE.name ? `${SITE.name} — ${SITE.tagline}` : `${title} · ${SITE.name}`;
 
-const nav = [
-  { href: '/products/', label: 'Supplements' },
-  { href: '/blog/', label: 'Journal' },
-  { href: '/about/', label: 'About' },
-  { href: '/get-help/', label: 'Get help' },
-];
 const year = new Date().getFullYear();
 ---
 
@@ -98,14 +93,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         {/* Desktop nav — hidden on mobile */}
         <nav class="hidden sm:flex items-center gap-5 text-sm" aria-label="Main">
-          {nav.map((item) => (
+          {/* Supplements: anchor navigates to /products/ (works with JS off);
+              adjacent chevron button toggles the categories dropdown */}
+          <div class="relative flex items-center gap-0.5">
             <a
-              href={item.href}
-              class={`hover:text-saffron-deep ${Astro.url.pathname.startsWith(item.href) ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
+              href="/products/"
+              class={`hover:text-saffron-deep ${Astro.url.pathname.startsWith('/products/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
+            >Supplements</a>
+            <button
+              type="button"
+              id="supplements-toggle"
+              class="p-1 -m-0.5 rounded text-ink-soft hover:text-saffron-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-moss"
+              aria-label="Browse supplement categories"
+              aria-expanded="false"
+              aria-controls="supplements-menu"
             >
-              {item.label}
-            </a>
-          ))}
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div
+              id="supplements-menu"
+              class="hidden absolute left-0 top-full mt-2 w-60 rounded-lg border border-mist bg-card shadow-[0_8px_28px_rgba(62,92,73,0.16)] py-2 z-30"
+            >
+              {CATEGORY_GROUPS.map((g) => (
+                <a
+                  href={`/products/#${g.id}`}
+                  class="block px-4 py-2 text-sm text-ink-soft hover:text-saffron-deep hover:bg-[#edf1e8]"
+                >{g.label}</a>
+              ))}
+              <hr class="my-1.5 border-mist" />
+              <a
+                href="/products/"
+                class="block px-4 py-2 text-sm font-medium text-moss-deep hover:text-saffron-deep hover:bg-[#edf1e8]"
+              >All supplements →</a>
+            </div>
+          </div>
+
+          <a
+            href="/blog/"
+            class={`hover:text-saffron-deep ${Astro.url.pathname.startsWith('/blog/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
+          >Journal</a>
+          <a
+            href="/about/"
+            class={`hover:text-saffron-deep ${Astro.url.pathname.startsWith('/about/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
+          >About</a>
+
+          {/* Get help — kept in header for YMYL, visually secondary */}
+          <a
+            href="/get-help/"
+            class={`text-xs pl-4 border-l border-mist hover:text-saffron-deep ${Astro.url.pathname.startsWith('/get-help/') ? 'text-saffron-deep font-medium' : 'text-ink-soft/80'}`}
+          >Get help</a>
         </nav>
 
         {/* Mobile hamburger — visible only on small screens */}
@@ -128,14 +166,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         class="sm:hidden hidden flex-col border-t border-mist bg-paper/95"
         aria-label="Mobile navigation"
       >
-        {nav.map((item) => (
+        <a
+          href="/products/"
+          class={`px-5 py-3.5 text-sm border-b border-mist hover:text-saffron-deep hover:bg-[#edf1e8] ${Astro.url.pathname.startsWith('/products/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
+        >Supplements</a>
+        {CATEGORY_GROUPS.map((g) => (
           <a
-            href={item.href}
-            class={`px-5 py-3.5 text-sm border-b border-mist last:border-0 hover:text-saffron-deep hover:bg-[#edf1e8] ${Astro.url.pathname.startsWith(item.href) ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
-          >
-            {item.label}
-          </a>
+            href={`/products/#${g.id}`}
+            class="pl-9 pr-5 py-2.5 text-sm border-b border-mist text-ink-soft hover:text-saffron-deep hover:bg-[#edf1e8]"
+          >{g.label}</a>
         ))}
+        <a
+          href="/blog/"
+          class={`px-5 py-3.5 text-sm border-b border-mist hover:text-saffron-deep hover:bg-[#edf1e8] ${Astro.url.pathname.startsWith('/blog/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
+        >Journal</a>
+        <a
+          href="/about/"
+          class={`px-5 py-3.5 text-sm border-b border-mist hover:text-saffron-deep hover:bg-[#edf1e8] ${Astro.url.pathname.startsWith('/about/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
+        >About</a>
+        <a
+          href="/contact/"
+          class={`px-5 py-3.5 text-sm border-b border-mist hover:text-saffron-deep hover:bg-[#edf1e8] ${Astro.url.pathname.startsWith('/contact/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
+        >Contact</a>
+        <a
+          href="/get-help/"
+          class={`px-5 py-3.5 text-sm border-b border-mist last:border-0 hover:text-saffron-deep hover:bg-[#edf1e8] ${Astro.url.pathname.startsWith('/get-help/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
+        >Get help</a>
       </nav>
     </header>
 
@@ -147,6 +203,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         mobileNav?.classList.toggle('flex', isOpen);
         toggle.setAttribute('aria-expanded', String(isOpen));
       });
+    </script>
+
+    <script>
+      const supToggle = document.getElementById('supplements-toggle');
+      const supMenu = document.getElementById('supplements-menu');
+
+      function closeSupMenu() {
+        supMenu?.classList.add('hidden');
+        supToggle?.setAttribute('aria-expanded', 'false');
+      }
+
+      supToggle?.addEventListener('click', () => {
+        const isOpen = supMenu?.classList.toggle('hidden') === false;
+        supToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      // Escape closes and returns focus to the toggle button
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && supToggle?.getAttribute('aria-expanded') === 'true') {
+          closeSupMenu();
+          supToggle.focus();
+        }
+      });
+
+      // Click outside closes
+      document.addEventListener('click', (e) => {
+        const target = e.target as Node | null;
+        if (
+          supToggle?.getAttribute('aria-expanded') === 'true' &&
+          target &&
+          !supMenu?.contains(target) &&
+          !supToggle.contains(target)
+        ) {
+          closeSupMenu();
+        }
+      });
+
+      // Selecting a category closes the menu (matters on /products/ hash links)
+      supMenu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeSupMenu));
     </script>
 
     <script>

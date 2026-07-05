@@ -1,10 +1,20 @@
 ---
 import Base from '../../layouts/Base.astro';
 import ProductCard from '../../components/ProductCard.astro';
+import FilterPills from '../../components/FilterPills.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import SupportNotice from '../../components/SupportNotice.astro';
+import { CATEGORY_GROUPS } from '../../lib/taxonomy';
 import { getCollection } from 'astro:content';
 
 const products = (await getCollection('products')).sort((a, b) => a.data.order - b.data.order);
+
+// Group products under the 4 shopper-facing taxonomy groups, preserving the
+// global `order` sort within each group.
+const grouped = CATEGORY_GROUPS.map((group) => ({
+  ...group,
+  items: products.filter((p) => group.products.includes(p.id)),
+})).filter((g) => g.items.length > 0);
 
 const schema = {
   '@context': 'https://schema.org',
@@ -35,7 +45,12 @@ const schema = {
   description="Ten mood, stress and sleep-support supplements reviewed honestly — each rated Emerging, Moderate or Well-studied based on the human research, with plain-spoken cautions."
   schema={schema}
 >
-  <section class="mx-auto max-w-5xl px-5 pt-12 pb-6">
+  <Breadcrumb crumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Supplements' },
+  ]} />
+
+  <section class="mx-auto max-w-5xl px-5 pt-6 pb-6">
     <p class="eyebrow mb-3">The full shelf</p>
     <h1 class="font-display text-3xl sm:text-4xl text-moss-deep max-w-2xl">
       Ten supplements, rated by how strong the evidence really is
@@ -48,21 +63,29 @@ const schema = {
     </p>
   </section>
 
-  <section class="mx-auto max-w-5xl px-5 pb-6">
-    <h2 class="sr-only">All supplements</h2>
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {products.map((p) => (
-        <ProductCard
-          slug={p.id}
-          title={p.data.title}
-          latinName={p.data.latinName}
-          category={p.data.category}
-          evidence={p.data.evidence}
-          shortDescription={p.data.shortDescription}
-        />
-      ))}
-    </div>
+  <section class="mx-auto max-w-5xl px-5 pb-4">
+    <FilterPills total={products.length} noun="supplement" />
   </section>
+
+  {grouped.map((group) => (
+    <section data-group={group.id} class="mx-auto max-w-5xl px-5 pb-8">
+      <h2 id={group.id} class="scroll-mt-24 font-display text-2xl text-moss-deep mb-4">{group.label}</h2>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {group.items.map((p) => (
+          <div data-card data-evidence={p.data.evidence} class="h-full">
+            <ProductCard
+              slug={p.id}
+              title={p.data.title}
+              latinName={p.data.latinName}
+              category={p.data.category}
+              evidence={p.data.evidence}
+              shortDescription={p.data.shortDescription}
+            />
+          </div>
+        ))}
+      </div>
+    </section>
+  ))}
 
   <section class="mx-auto max-w-5xl px-5 py-8">
     <SupportNotice />

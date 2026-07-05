@@ -1,12 +1,18 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Base
   title="Enoch C., MSc — Research & Editorial | MoodSupplement"
   description="Enoch C. is the research and editorial lead at MoodSupplement. MSc Business Administration (Health), University of Groningen, 2025. Evidence-based supplement reviews."
 >
-  <section class="mx-auto max-w-3xl px-5 pt-12 pb-16">
+  <Breadcrumb crumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about/' },
+    { label: 'Enoch C., MSc' },
+  ]} />
+  <section class="mx-auto max-w-3xl px-5 pt-6 pb-16">
 
     <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-8">
       <img

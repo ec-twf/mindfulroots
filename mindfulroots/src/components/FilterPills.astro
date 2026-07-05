@@ -1,0 +1,63 @@
+---
+interface Props {
+  /** Total number of filterable cards (for the no-filter default count) */
+  total: number;
+  /** Singular/plural noun for the result count, e.g. "supplement" */
+  noun?: string;
+}
+const { total, noun = 'supplement' } = Astro.props;
+const tiers = ['All', 'Emerging', 'Moderate', 'Well-studied'] as const;
+---
+
+<div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+  <div role="group" aria-label="Filter supplements by evidence tier" class="flex flex-wrap gap-2">
+    {tiers.map((tier, i) => (
+      <button
+        type="button"
+        data-filter-pill
+        data-filter={tier === 'All' ? 'all' : tier}
+        aria-pressed={i === 0 ? 'true' : 'false'}
+        class="font-mono text-xs uppercase tracking-wider rounded-full px-3 py-1.5 border border-mist bg-card text-moss transition-colors hover:border-moss focus:outline-none focus-visible:ring-2 focus-visible:ring-moss aria-pressed:bg-moss-deep aria-pressed:text-paper aria-pressed:border-moss-deep"
+      >
+        {tier}
+      </button>
+    ))}
+  </div>
+  <p
+    data-filter-count
+    data-noun={noun}
+    aria-live="polite"
+    class="font-mono text-xs text-ink-soft"
+  >{total} {total === 1 ? noun : `${noun}s`} shown</p>
+</div>
+
+<script>
+  const pills = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-filter-pill]'));
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-card]'));
+  const groups = Array.from(document.querySelectorAll<HTMLElement>('[data-group]'));
+  const count = document.querySelector<HTMLElement>('[data-filter-count]');
+  const noun = count?.dataset.noun ?? 'supplement';
+
+  function apply(filter: string) {
+    let visible = 0;
+    for (const card of cards) {
+      const match = filter === 'all' || card.dataset.evidence === filter;
+      card.hidden = !match;
+      if (match) visible++;
+    }
+    for (const group of groups) {
+      group.hidden = !group.querySelector('[data-card]:not([hidden])');
+    }
+    if (count) {
+      count.textContent = `${visible} ${visible === 1 ? noun : noun + 's'} shown`;
+    }
+  }
+
+  for (const pill of pills) {
+    pill.addEventListener('click', () => {
+      for (const p of pills) p.setAttribute('aria-pressed', 'false');
+      pill.setAttribute('aria-pressed', 'true');
+      apply(pill.dataset.filter ?? 'all');
+    });
+  }
+</script>

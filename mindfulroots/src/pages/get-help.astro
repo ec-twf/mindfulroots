@@ -1,8 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 ---
 <Base title="Get help" description="Free, confidential mental-health support and crisis resources. If you are struggling, reaching out is the strongest move you can make.">
-  <section class="mx-auto max-w-3xl px-5 pt-12 pb-16">
+  <Breadcrumb crumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Get help' },
+  ]} />
+  <section class="mx-auto max-w-3xl px-5 pt-6 pb-16">
     <p class="eyebrow mb-3">Get help</p>
     <h1 class="font-display text-3xl sm:text-4xl text-moss-deep">You don't have to manage this alone</h1>
     <div class="prose-mr mt-6">
