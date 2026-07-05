@@ -93,6 +93,26 @@ b-vitamins posts. Every automated post must follow it.
 - Where mood/mental-health framing appears, link `/get-help/` and `/disclaimer/`.
 - Link to a genuinely relevant sibling cluster post where it helps the reader.
 - End with a short italic medical-disclaimer line pointing to `/disclaimer/` and `/get-help/`.
+- **Affiliate-funnel rule:** every buy-intent post (comparison, "best X", dosage/safety) must link
+  the relevant product page(s) **high in the article** — first couple hundred words, not just the
+  closing section. The product page carries the Amazon link and the criterion-based comparison
+  table; the post's job is to route interested readers there fast, not to hold the affiliate link
+  itself.
+
+## 8. Comparison posts (TYPE:comparison)
+
+- **Verdict-first structure:** open with a short paragraph naming who each option suits, before
+  the mechanism deep-dive. Readers of "X vs Y" queries want the answer fast; make them earn the
+  detail, not wait for it.
+- Include one head-to-head Markdown table (mechanism, onset/timeline, typical dose, best-for) —
+  this is the single highest-value table type for AI-citation on comparison queries.
+- If the honest answer is "it depends on use case" or "they're often stacked together," say that
+  plainly instead of forcing an artificial single winner — false-certainty verdicts undermine the
+  evidence-honest voice and don't hold up to a reader's own research.
+- If the two things being compared are actually the same compound under different label names
+  (e.g. an ingredient sold under both a generic and an industry shorthand name), say so directly
+  in the opening paragraph — this is a stronger trust signal than pretending a real difference
+  exists.
 
 ---
 
@@ -103,4 +123,6 @@ b-vitamins posts. Every automated post must follow it.
 - [ ] 5–8 verified sources, **every one hyperlinked**; no invented citations.
 - [ ] FAQ section + matching `faq:` frontmatter; evidence table if comparing ≥3 items.
 - [ ] Product hub + `/get-help/` + `/disclaimer/` links present; author referred to as "Enoch C."
+- [ ] Product link appears high in the article (first couple hundred words), not only at the end.
 - [ ] 5-HTP posts include the serotonin-syndrome caution.
+- [ ] Comparison posts: verdict-first opener, head-to-head table, no false-certainty winner.

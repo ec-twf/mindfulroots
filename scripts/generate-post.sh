@@ -35,6 +35,29 @@ line="$(head -n 1 "$QUEUE")"
 get() { printf '%s' "$line" | sed -E "s/.*${1}:[[:space:]]*([^|]*).*/\1/" | sed -E 's/[[:space:]]+$//'; }
 CLUSTER="$(get CLUSTER)"; KEYWORD="$(get KEYWORD)"; ANGLE="$(get ANGLE)"
 SLUG="$(get SLUG)";       PRODUCTS="$(get PRODUCTS)"
+TYPE="$(get TYPE)"
+
+# Skip non-blog queue entries (product-section/pillar work lives in product-page-tasks.txt,
+# handled manually — never by unattended generation). Pop and move on without writing a post.
+if [[ "$TYPE" == "product-section" || "$TYPE" == "pillar" ]]; then
+  echo "$STAMP  $SLUG is TYPE:$TYPE (not a blog post) — popping without generating. See product-page-tasks.txt."
+  tail -n +2 "$QUEUE" > "$QUEUE.tmp" && mv "$QUEUE.tmp" "$QUEUE"
+  exit 0
+fi
+
+# Type-specific structure hint, folded into the prompt below. Keeps the one-shot
+# generation call cheap — no extra API round-trip, just a few extra lines of guidance.
+case "$TYPE" in
+  comparison)
+    TYPE_HINT="This is a COMPARISON post. Open with a one-paragraph verdict (who should pick which, and why) before the deep dive. Include a head-to-head Markdown table (mechanism, onset, typical dose, best-for) comparing the two things named in the keyword. Avoid declaring a single universal winner if the honest answer is 'depends on use case' — say so plainly."
+    ;;
+  explainer)
+    TYPE_HINT="This is an EXPLAINER post answering one specific question directly in the first paragraph, then building out mechanism, evidence, and caveats. If the keyword involves a drug/supplement interaction, treat it as YMYL: state the theoretical risk mechanism, cite real interaction-checker-style sources, and end with an unambiguous 'talk to your prescriber' line — never imply the interaction is safe just because evidence is thin."
+    ;;
+  *)
+    TYPE_HINT=""
+    ;;
+esac
 
 OUT="$BLOG/$SLUG.md"
 if [[ -s "$OUT" ]] && head -1 "$OUT" | grep -q '^---'; then
@@ -45,7 +68,7 @@ fi
 
 echo "$STAMP  generating: $SLUG  [$CLUSTER]"
 
-PROMPT="You are the staff writer for MoodSupplement, an evidence-aware iHerb mood/stress/sleep
+PROMPT="You are the staff writer for MoodSupplement, an evidence-aware Amazon Associates mood/stress/sleep
 affiliate site. Write ONE complete, publish-ready blog post as a single Markdown (.md) file.
 
 TOPIC
@@ -53,7 +76,10 @@ TOPIC
 - Angle: \"$ANGLE\"
 - Cluster: $CLUSTER
 - Related product IDs: $PRODUCTS
+- Post type: ${TYPE:-explainer}
 - Today: $(date +%Y-%m-%d)
+
+$TYPE_HINT
 
 Your response MUST begin with the '---' of the YAML frontmatter and end with the last line of the
 article. No preamble, planning, commentary, or code fences. Plain Markdown only — no MDX
