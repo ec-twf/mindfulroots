@@ -1,12 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
 import ProductCard from '../components/ProductCard.astro';
+import BestPickCard from '../components/BestPickCard.astro';
 import PostCard from '../components/PostCard.astro';
 import { getCollection } from 'astro:content';
 import { SITE } from '../config';
 
 const products = (await getCollection('products')).sort((a, b) => a.data.order - b.data.order);
 const featured = products.slice(0, 6);
+const topPicks = products.filter((p) => p.data.recommendedProduct).slice(0, 3);
 
 const posts = (await getCollection('blog'))
   .filter((p) => !p.data.draft)
@@ -25,7 +27,7 @@ const schema = {
 <Base title={SITE.name} schema={schema}>
   <!-- Hero: a specimen-shelf thesis rather than a generic gradient banner -->
   <section class="relative overflow-hidden">
-    <div class="mx-auto max-w-5xl px-5 pt-16 pb-12 sm:pt-20">
+    <div class="mx-auto max-w-5xl px-5 pt-10 pb-8 sm:pt-14">
       <p class="eyebrow mb-4">Evidence-aware mood &amp; stress support</p>
       <h1 class="font-display text-4xl sm:text-6xl leading-[1.05] text-moss-deep max-w-3xl">
         Calm, honest write-ups of the supplements people reach for when their mood is low.
@@ -42,35 +44,59 @@ const schema = {
           Read the journal
         </a>
       </div>
+    </div>
+  </section>
 
-      <!-- Evidence-tier explainer: makes the core differentiator legible in seconds -->
-      <div class="mt-12">
-        <p class="eyebrow mb-3">How we rate the evidence</p>
-        <dl class="grid sm:grid-cols-3 gap-px bg-mist border border-mist rounded-lg overflow-hidden text-sm">
+  <!-- Top picks: highest-conviction recommendations, straight under the hero -->
+  <section class="mx-auto max-w-5xl px-5 pt-4 pb-10">
+    <div class="flex items-end justify-between mb-6">
+      <div>
+        <p class="eyebrow mb-1">Where most people start</p>
+        <h2 class="text-2xl text-moss-deep">Our top picks</h2>
+      </div>
+      <a href="/products/" class="text-sm text-saffron-deep hover:underline underline-offset-4 whitespace-nowrap">See all 10 →</a>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {topPicks.map((p) => (
+        <BestPickCard
+          slug={p.id}
+          title={p.data.title}
+          category={p.data.category}
+          evidence={p.data.evidence}
+          rec={p.data.recommendedProduct!}
+        />
+      ))}
+    </div>
+
+    <!-- Evidence-tier explainer: compressed to a slim horizontal strip below the picks -->
+    <div class="mt-8 border border-mist rounded-lg bg-card p-4 sm:p-5">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+        <p class="eyebrow shrink-0 sm:w-40">How we rate the evidence</p>
+        <dl class="grid gap-x-6 gap-y-2 sm:grid-cols-3 text-sm flex-1">
           {[
-            ['Emerging', 1, 'Early or limited studies — promising, but not yet conclusive.'],
-            ['Moderate', 2, 'Consistent findings across several studies, with research ongoing.'],
-            ['Well-studied', 3, 'Multiple RCTs and at least one meta-analysis support this use.'],
+            ['Emerging', 1, 'Early or limited studies.'],
+            ['Moderate', 2, 'Consistent across several studies.'],
+            ['Well-studied', 3, 'Multiple RCTs and a meta-analysis.'],
           ].map(([term, dots, def]) => (
-            <div class="bg-card p-4">
-              <dt class="flex items-center gap-2">
-                <span class="flex gap-0.5" aria-hidden="true">
-                  {[1, 2, 3].map((i) => (
-                    <span class={`w-1.5 h-1.5 rounded-full ${i <= (dots as number) ? 'bg-moss' : 'bg-mist'}`} />
-                  ))}
-                </span>
-                <span class="font-display text-moss-deep">{term}</span>
-              </dt>
-              <dd class="text-ink-soft mt-1.5 leading-snug">{def}</dd>
+            <div class="flex items-baseline gap-2">
+              <span class="flex gap-0.5 translate-y-[1px]" aria-hidden="true">
+                {[1, 2, 3].map((i) => (
+                  <span class={`w-1.5 h-1.5 rounded-full ${i <= (dots as number) ? 'bg-moss' : 'bg-mist'}`} />
+                ))}
+              </span>
+              <span><span class="font-display text-moss-deep">{term}</span> <span class="text-ink-soft">— {def}</span></span>
             </div>
           ))}
         </dl>
-        <p class="mt-3 text-xs text-ink-soft">
-          Every supplement profile carries one of these tiers — and we say plainly when the research is thin.
-          <a href="/about/" class="underline underline-offset-2 hover:text-moss-deep">Our editorial &amp; evidence standards →</a>
-        </p>
       </div>
     </div>
+
+    <!-- E-E-A-T strip -->
+    <p class="mt-3 text-xs text-ink-soft leading-relaxed">
+      <a href="/authors/enoch-c/" class="underline underline-offset-2 hover:text-moss-deep">Reviewed by Enoch C., MSc</a>
+      · Specs hand-verified · No sponsored placements ·
+      <a href="/about/" class="underline underline-offset-2 hover:text-moss-deep">Our editorial &amp; evidence standards →</a>
+    </p>
   </section>
 
   <!-- Featured supplements -->
@@ -121,7 +147,7 @@ const schema = {
         If low mood is getting in the way of your life, talking to a doctor or therapist will do more
         than anything on our shelf. If you need support right now, help is free and confidential.
       </p>
-      <a href="/get-help/" class="inline-block mt-5 bg-saffron hover:bg-saffron-deep text-white font-medium px-6 py-3 rounded-md transition-colors">
+      <a href="/get-help/" class="inline-block mt-5 border border-[#e9f0e7]/60 text-[#e9f0e7] hover:bg-[#e9f0e7]/10 font-medium px-6 py-3 rounded-md transition-colors">
         Find support
       </a>
     </div>
