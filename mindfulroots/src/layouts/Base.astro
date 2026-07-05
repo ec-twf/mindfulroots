@@ -149,6 +149,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
     </script>
 
+    <script>
+      declare global {
+        interface Window { dataLayer: Record<string, unknown>[] }
+      }
+      window.dataLayer = window.dataLayer || [];
+      document.addEventListener('click', (e) => {
+        const el = (e.target as Element | null)?.closest?.('[data-affiliate]');
+        if (!(el instanceof HTMLElement)) return;
+        window.dataLayer.push({
+          event: 'affiliate_click',
+          product: el.dataset.product,
+          placement: el.dataset.placement,
+        });
+      });
+    </script>
+
     <main id="main" class="flex-1">
       <slot />
     </main>
