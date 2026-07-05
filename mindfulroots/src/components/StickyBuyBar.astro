@@ -1,0 +1,52 @@
+---
+import AffiliateButton from './AffiliateButton.astro';
+import { RETAILER_NAME } from '../config';
+
+interface Props {
+  rec: any;
+}
+const { rec } = Astro.props;
+---
+<div
+  id="sticky-buy-bar"
+  class="fixed bottom-0 inset-x-0 z-40 md:hidden bg-paper border-t border-mist translate-y-full transition-transform"
+  style="padding-bottom: env(safe-area-inset-bottom);"
+>
+  <div class="flex items-center gap-3 px-4 py-2.5">
+    <div class="min-w-0 flex-1">
+      <p class="text-sm font-medium text-moss-deep truncate">{rec.brand}</p>
+      {rec.priceDisplay && (
+        <p class="text-xs text-ink-soft truncate">{rec.priceDisplay}</p>
+      )}
+      <p class="text-[0.6rem] text-ink-soft leading-tight">
+        Affiliate link · <a href="/disclosure/" class="underline">details</a>
+      </p>
+    </div>
+    <div class="shrink-0">
+      <AffiliateButton
+        keyword={rec.iherbKeyword}
+        label={`View on ${RETAILER_NAME}`}
+        placement="sticky-bar"
+        compact
+        showDisclosure={false}
+      />
+    </div>
+  </div>
+</div>
+
+<script>
+  const bar = document.getElementById('sticky-buy-bar');
+  const buy = document.getElementById('buy');
+  if (bar && buy && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      const e = entries[0];
+      const scrolledPast = e.boundingClientRect.top < 0;
+      if (!e.isIntersecting && scrolledPast) {
+        bar.classList.remove('translate-y-full');
+      } else {
+        bar.classList.add('translate-y-full');
+      }
+    }, { threshold: 0 });
+    io.observe(buy);
+  }
+</script>

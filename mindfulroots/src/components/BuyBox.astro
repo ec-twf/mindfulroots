@@ -1,0 +1,116 @@
+---
+import AffiliateButton from './AffiliateButton.astro';
+import EvidenceTag from './EvidenceTag.astro';
+import { RETAILER_NAME } from '../config';
+
+interface Props {
+  data: any;
+  rec: any;
+  verifiedLabel: string | null;
+  relatedProds: any[];
+}
+const { data, rec, verifiedLabel, relatedProds } = Astro.props;
+---
+<div id="buy" class="bg-card border border-mist rounded-lg p-5 space-y-4">
+  <div>
+    <p class="eyebrow mb-2">Our pick</p>
+
+    {rec ? (
+      <div class="space-y-3">
+        <div class="text-sm">
+          <p class="font-medium text-moss-deep leading-snug">{rec.brand}</p>
+          <p class="text-ink-soft leading-snug">{rec.productName}</p>
+        </div>
+
+        {rec.priceDisplay && (
+          <p class="text-sm font-medium text-moss-deep">{rec.priceDisplay}</p>
+        )}
+
+        <div><EvidenceTag level={data.evidence} /></div>
+
+        <AffiliateButton
+          keyword={rec.iherbKeyword}
+          label={`View ${rec.brand} on ${RETAILER_NAME}`}
+          placement="buybox"
+          fullWidth
+        />
+
+        {data.qualityCriterion && (
+          <div class="text-xs text-ink-soft leading-relaxed border border-mist rounded-md bg-paper p-3">
+            <p class="font-mono uppercase tracking-wider text-moss mb-1 text-[0.62rem]">Our criterion</p>
+            <p>{data.qualityCriterion}</p>
+          </div>
+        )}
+
+        {(rec.concentrationNote || rec.oxidationNote) && (
+          <ul class="text-xs text-ink-soft space-y-1">
+            {rec.concentrationNote && (
+              <li class="flex gap-1.5"><span class="text-moss" aria-hidden="true">✓</span><span>{rec.concentrationNote}</span></li>
+            )}
+            {rec.oxidationNote && (
+              <li class="flex gap-1.5"><span class="text-moss" aria-hidden="true">✓</span><span>{rec.oxidationNote}</span></li>
+            )}
+          </ul>
+        )}
+
+        <p class="text-[0.68rem] text-ink-soft">
+          Spec verified {verifiedLabel}
+          {data.criterionSourceUrl && (
+            <> · <a href={data.criterionSourceUrl} target="_blank" rel="noopener" class="underline">why this criterion</a></>
+          )}
+        </p>
+      </div>
+    ) : (
+      <div class="space-y-3">
+        <div><EvidenceTag level={data.evidence} /></div>
+
+        <AffiliateButton keyword={data.iherbKeyword} placement="buybox" fullWidth />
+
+        {data.qualityCriterion && (
+          <div class="text-xs text-ink-soft leading-relaxed border border-mist rounded-md bg-paper p-3">
+            <p class="font-mono uppercase tracking-wider text-moss mb-1 text-[0.62rem]">Our criterion</p>
+            <p>{data.qualityCriterion}</p>
+          </div>
+        )}
+      </div>
+    )}
+  </div>
+  <hr class="specimen-rule" />
+  <dl class="text-sm space-y-3">
+    <div>
+      <dt class="eyebrow">Typical use</dt>
+      <dd class="text-ink-soft mt-1 leading-relaxed">{data.typicalUse}</dd>
+    </div>
+    <div>
+      <dt class="eyebrow">Cautions</dt>
+      <dd class="text-ink-soft mt-1 leading-relaxed">{data.cautions}</dd>
+    </div>
+  </dl>
+</div>
+
+{data.benefits.length > 0 && (
+  <div class="bg-card border border-mist rounded-lg p-5">
+    <p class="eyebrow mb-2">May support</p>
+    <ul class="text-sm text-ink-soft space-y-1.5">
+      {data.benefits.map((b: string) => (
+        <li class="flex gap-2"><span class="text-moss mt-0.5">›</span><span>{b}</span></li>
+      ))}
+    </ul>
+  </div>
+)}
+
+{relatedProds.length > 0 && (
+  <div class="bg-card border border-mist rounded-lg p-5">
+    <p class="eyebrow mb-2">Related supplements</p>
+    <ul class="text-sm space-y-1.5">
+      {relatedProds.map((p: any) => (
+        <li class="flex gap-2">
+          <span class="text-moss mt-0.5">›</span>
+          <a href={`/products/${p!.id}/`} class="text-moss-deep hover:text-saffron-deep underline-offset-2 hover:underline">
+            {p!.data.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}

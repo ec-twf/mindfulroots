@@ -15,6 +15,7 @@
    Palette: botanical apothecary — sage paper, moss ink, saffron accent.
    Type: Fraunces (display) · Public Sans (body) · IBM Plex Mono (labels). */
 
+/* CTA rule: saffron = money (affiliate), moss = navigation */
 @theme {
   --color-paper: #f3f6ee;
   --color-card: #ffffff;

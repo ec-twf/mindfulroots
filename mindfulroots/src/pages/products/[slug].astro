@@ -2,8 +2,9 @@
 import Base from '../../layouts/Base.astro';
 import Byline from '../../components/Byline.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
-import AffiliateButton from '../../components/AffiliateButton.astro';
 import EvidenceTag from '../../components/EvidenceTag.astro';
+import BuyBox from '../../components/BuyBox.astro';
+import StickyBuyBar from '../../components/StickyBuyBar.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import WarningBox from '../../components/WarningBox.astro';
 import SupportNotice from '../../components/SupportNotice.astro';
@@ -126,6 +127,12 @@ const schema = {
 
       <p class="mt-5 text-lg text-ink leading-relaxed">{data.shortDescription}</p>
 
+      {data.comparison && data.comparison.rows.length > 0 && (
+        <p class="mt-3">
+          <a href="#comparison" class="text-moss-deep hover:text-saffron-deep underline underline-offset-2 text-sm font-medium">How the options compare ↓</a>
+        </p>
+      )}
+
       <Byline type="product" />
 
       {data.interactionWarning && (
@@ -140,7 +147,7 @@ const schema = {
     <!-- Body block — sits after the buy box on mobile, left column on desktop -->
     <div class="min-w-0 order-3 md:col-start-1 md:row-start-2">
       {data.comparison && data.comparison.rows.length > 0 && (
-        <section class="mt-7">
+        <section id="comparison" class="mt-7 scroll-mt-24">
           <p class="eyebrow mb-2">Our pick, and why</p>
           <h2 class="font-display text-2xl text-moss-deep mb-3">Choosing a {data.title.toLowerCase()} on {RETAILER_NAME}</h2>
           {data.comparison.verdict && (
@@ -163,91 +170,7 @@ const schema = {
 
     <!-- Sidebar: the buy box + at-a-glance -->
     <aside class="order-2 md:col-start-2 md:row-start-1 md:row-span-2 md:sticky md:top-24 self-start space-y-5 mt-8 md:mt-0">
-      <div class="bg-card border border-mist rounded-lg p-5 space-y-4">
-        <div>
-          <p class="eyebrow mb-2">Our pick</p>
-
-          {rec ? (
-            <div class="space-y-3">
-              <div class="text-sm">
-                <p class="font-medium text-moss-deep leading-snug">{rec.brand}</p>
-                <p class="text-ink-soft leading-snug">{rec.productName}</p>
-              </div>
-
-              {data.qualityCriterion && (
-                <div class="text-xs text-ink-soft leading-relaxed border border-mist rounded-md bg-paper p-3">
-                  <p class="font-mono uppercase tracking-wider text-moss mb-1 text-[0.62rem]">Our criterion</p>
-                  <p>{data.qualityCriterion}</p>
-                </div>
-              )}
-
-              {(rec.concentrationNote || rec.oxidationNote) && (
-                <ul class="text-xs text-ink-soft space-y-1">
-                  {rec.concentrationNote && (
-                    <li class="flex gap-1.5"><span class="text-moss" aria-hidden="true">✓</span><span>{rec.concentrationNote}</span></li>
-                  )}
-                  {rec.oxidationNote && (
-                    <li class="flex gap-1.5"><span class="text-moss" aria-hidden="true">✓</span><span>{rec.oxidationNote}</span></li>
-                  )}
-                </ul>
-              )}
-
-              {rec.priceDisplay && (
-                <p class="text-sm font-medium text-moss-deep">{rec.priceDisplay}</p>
-              )}
-
-              <AffiliateButton keyword={rec.iherbKeyword} label={`View ${rec.brand} on ${RETAILER_NAME}`} />
-
-              <p class="text-[0.68rem] text-ink-soft">
-                Spec verified {verifiedLabel}
-                {data.criterionSourceUrl && (
-                  <> · <a href={data.criterionSourceUrl} target="_blank" rel="noopener" class="underline">why this criterion</a></>
-                )}
-              </p>
-            </div>
-          ) : (
-            <AffiliateButton keyword={data.iherbKeyword} />
-          )}
-        </div>
-        <hr class="specimen-rule" />
-        <dl class="text-sm space-y-3">
-          <div>
-            <dt class="eyebrow">Typical use</dt>
-            <dd class="text-ink-soft mt-1 leading-relaxed">{data.typicalUse}</dd>
-          </div>
-          <div>
-            <dt class="eyebrow">Cautions</dt>
-            <dd class="text-ink-soft mt-1 leading-relaxed">{data.cautions}</dd>
-          </div>
-        </dl>
-      </div>
-
-      {data.benefits.length > 0 && (
-        <div class="bg-card border border-mist rounded-lg p-5">
-          <p class="eyebrow mb-2">May support</p>
-          <ul class="text-sm text-ink-soft space-y-1.5">
-            {data.benefits.map((b) => (
-              <li class="flex gap-2"><span class="text-moss mt-0.5">›</span><span>{b}</span></li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {relatedProds.length > 0 && (
-        <div class="bg-card border border-mist rounded-lg p-5">
-          <p class="eyebrow mb-2">Related supplements</p>
-          <ul class="text-sm space-y-1.5">
-            {relatedProds.map((p) => (
-              <li class="flex gap-2">
-                <span class="text-moss mt-0.5">›</span>
-                <a href={`/products/${p!.id}/`} class="text-moss-deep hover:text-saffron-deep underline-offset-2 hover:underline">
-                  {p!.data.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <BuyBox data={data} rec={rec} verifiedLabel={verifiedLabel} relatedProds={relatedProds} />
     </aside>
   </article>
 
@@ -266,7 +189,9 @@ const schema = {
     </section>
   )}
 
-  <section class="mx-auto max-w-5xl px-5 py-6">
+  <section class="mx-auto max-w-5xl px-5 py-6 pb-24 md:pb-6">
     <SupportNotice />
   </section>
+
+  {rec && <StickyBuyBar rec={rec} />}
 </Base>

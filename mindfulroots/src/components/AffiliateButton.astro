@@ -1,17 +1,38 @@
 ---
 import { retailerLink, RETAILER_NAME } from '../config';
 type Placement = 'buybox' | 'sticky-bar' | 'home-pick' | 'in-article' | 'generic';
-interface Props { keyword: string; label?: string; placement?: Placement }
-const { keyword, label = `View on ${RETAILER_NAME}`, placement = 'generic' } = Astro.props;
+interface Props {
+  keyword: string;
+  label?: string;
+  placement?: Placement;
+  fullWidth?: boolean;      // buy-box: full-width, taller CTA
+  compact?: boolean;        // sticky-bar: smaller CTA
+  showDisclosure?: boolean; // hide built-in microcopy where it rides elsewhere
+}
+const {
+  keyword,
+  label = `View on ${RETAILER_NAME}`,
+  placement = 'generic',
+  fullWidth = false,
+  compact = false,
+  showDisclosure = true,
+} = Astro.props;
+
+const base = 'inline-flex items-center gap-2 bg-saffron hover:bg-saffron-deep text-white font-medium rounded-md transition-colors';
+const sizing = compact ? 'px-4 py-2 text-sm' : fullWidth ? 'px-5 py-3' : 'px-5 py-2.5';
+const width = fullWidth ? 'w-full justify-center' : '';
+const btnClass = [base, sizing, width].filter(Boolean).join(' ');
 ---
 <div class="space-y-2">
   <a href={retailerLink(keyword)} target="_blank" rel="nofollow sponsored noopener"
      data-affiliate data-product={keyword} data-placement={placement}
-     class="inline-flex items-center gap-2 bg-saffron hover:bg-saffron-deep text-white font-medium px-5 py-2.5 rounded-md transition-colors">
+     class={btnClass}>
     {label}
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </a>
-  <p class="text-xs text-ink-soft">Affiliate link — we may earn a commission. <a href="/disclosure/" class="underline">Details</a></p>
+  {showDisclosure && (
+    <p class="text-xs text-ink-soft">Affiliate link — we may earn a commission. <a href="/disclosure/" class="underline">Details</a></p>
+  )}
 </div>
