@@ -1,4 +1,3 @@
-CLUSTER:l-theanine | KEYWORD:L-theanine and caffeine — the focus and calm combination explained | ANGLE:Stack guide: 2:1 theanine:caffeine ratio, alpha wave studies, why it pairs with coffee | SLUG:l-theanine-caffeine-stack | PRODUCTS:l-theanine
 CLUSTER:rhodiola-rosea | KEYWORD:rhodiola rosea for burnout — evidence and how to use it | ANGLE:Burnout angle: occupational stress studies, fatigue vs mood endpoints, SHR-5 extract | SLUG:rhodiola-for-burnout | PRODUCTS:rhodiola-rosea
 CLUSTER:5-htp | KEYWORD:5-HTP and serotonin — how the precursor pathway works | ANGLE:Mechanism explainer: tryptophan → 5-HTP → serotonin, blood-brain barrier crossing | SLUG:5-htp-serotonin-pathway | PRODUCTS:5-htp
 CLUSTER:lifestyle-foundations | KEYWORD:sleep hygiene for mood support — habits that actually work | ANGLE:Evidence-based guide: light exposure, sleep timing, cortisol curves | SLUG:sleep-hygiene-mood-support | PRODUCTS:magnesium-glycinate,l-theanine,5-htp
