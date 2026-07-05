@@ -8,7 +8,7 @@ import ComparisonTable from '../../components/ComparisonTable.astro';
 import WarningBox from '../../components/WarningBox.astro';
 import SupportNotice from '../../components/SupportNotice.astro';
 import { getCollection, render } from 'astro:content';
-import { RETAILER_NAME } from '../../config';
+import { RETAILER_NAME, retailerLink } from '../../config';
 
 export async function getStaticPaths() {
   const products = await getCollection('products');
@@ -44,34 +44,44 @@ const verifiedLabel = rec
     })
   : null;
 
+// This page is a third-party affiliate comparison (no direct sale, no
+// site-controlled real-time price) — not a page that sells one product at a
+// fixed price, so Product+Offer schema is the wrong fit (and Google's Offer
+// validation requires a `price` this site can't honestly provide). Instead:
+// an ItemList for the compared products (plain reference links, no
+// price/offers) plus a Review scoped to just the "our pick" item.
+const comparisonRows = data.comparison?.rows ?? [];
+const itemListElements = comparisonRows.length > 0
+  ? [rec, ...comparisonRows].filter(Boolean).map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: `${item.brand} ${item.productName}`,
+      url: retailerLink(item.iherbKeyword),
+    }))
+  : [];
+
 const schema = {
   '@context': 'https://schema.org',
   '@graph': [
-    {
-      '@type': 'Product',
-      name: rec ? rec.productName : data.title,
-      category: data.category,
-      description: data.shortDescription,
-      url: new URL(`/products/${product.id}/`, Astro.site).toString(),
-      ...(rec && {
-        brand: { '@type': 'Brand', name: rec.brand },
+    ...(itemListElements.length > 0 ? [{
+      '@type': 'ItemList',
+      itemListElement: itemListElements,
+    }] : []),
+    ...(rec ? [{
+      '@type': 'Review',
+      itemReviewed: {
+        '@type': 'Product',
+        name: rec.productName,
         ...(rec.image && { image: new URL(rec.image, Astro.site).toString() }),
-        review: {
-          '@type': 'Review',
-          datePublished: rec.verifiedDate.toISOString().split('T')[0],
-          reviewBody: data.shortDescription,
-          author: { '@type': 'Organization', name: 'MoodSupplement' },
-        },
-        offers: {
-          '@type': 'Offer',
-          availability: 'https://schema.org/InStock',
-          priceCurrency: 'USD',
-          // No named seller: the actual merchant varies by Amazon listing
-          // (Amazon-fulfilled vs. third-party), so a fixed seller name would
-          // sometimes misstate who's actually selling/fulfilling the item.
-        },
+      },
+      ...(rec.rating && {
+        reviewRating: { '@type': 'Rating', ratingValue: rec.rating, bestRating: 5 },
       }),
-    },
+      reviewBody: data.comparison?.verdict
+        ?? [rec.concentrationNote, rec.oxidationNote].filter(Boolean).join(' '),
+      datePublished: rec.verifiedDate.toISOString().split('T')[0],
+      author: { '@type': 'Organization', name: 'MoodSupplement' },
+    }] : []),
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
@@ -180,6 +190,10 @@ const schema = {
                     <li class="flex gap-1.5"><span class="text-moss" aria-hidden="true">✓</span><span>{rec.oxidationNote}</span></li>
                   )}
                 </ul>
+              )}
+
+              {rec.priceDisplay && (
+                <p class="text-sm font-medium text-moss-deep">{rec.priceDisplay}</p>
               )}
 
               <AffiliateButton keyword={rec.iherbKeyword} label={`View ${rec.brand} on ${RETAILER_NAME}`} />

@@ -49,6 +49,14 @@ const products = defineCollection({
         // Path is relative to /public, e.g. "/products/sports-research-omega3.jpg".
         image: z.string().optional(),
         imageAlt: z.string().optional(),
+
+        // Feeds the Review schema's reviewRating.ratingValue (1-5). Omitted
+        // from JSON-LD entirely when unset — do not fabricate.
+        rating: z.number().min(1).max(5).optional(),
+        // Plain display text near the buy-box CTA, e.g. "$24.99" or "Check
+        // price on Amazon". Manually entered, never scraped. Display-only —
+        // never fed into structured data (see schema notes in [slug].astro).
+        priceDisplay: z.string().optional(),
       })
       .optional(),
 
