@@ -4,28 +4,42 @@ interface Props {
   total: number;
   /** Singular/plural noun for the result count, e.g. "supplement" */
   noun?: string;
+  /** Filter option values (the implicit "All" pill is prepended automatically).
+   *  Defaults to the evidence tiers so the original products-index call is unchanged. */
+  values?: readonly string[];
+  /** dataset key on each [data-card] to match against, e.g. "evidence" or "cluster". */
+  attr?: string;
+  /** aria-label for the pill group. */
+  groupLabel?: string;
 }
-const { total, noun = 'supplement' } = Astro.props;
-const tiers = ['All', 'Emerging', 'Moderate', 'Well-studied'] as const;
+const {
+  total,
+  noun = 'supplement',
+  values = ['Emerging', 'Moderate', 'Well-studied'],
+  attr = 'evidence',
+  groupLabel = 'Filter supplements by evidence tier',
+} = Astro.props;
+const pills = ['All', ...values];
 ---
 
 <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-  <div role="group" aria-label="Filter supplements by evidence tier" class="flex flex-wrap gap-2">
-    {tiers.map((tier, i) => (
+  <div role="group" aria-label={groupLabel} class="flex flex-wrap gap-2">
+    {pills.map((val, i) => (
       <button
         type="button"
         data-filter-pill
-        data-filter={tier === 'All' ? 'all' : tier}
+        data-filter={val === 'All' ? 'all' : val}
         aria-pressed={i === 0 ? 'true' : 'false'}
         class="font-mono text-xs uppercase tracking-wider rounded-full px-3 py-1.5 border border-mist bg-card text-moss transition-colors hover:border-moss focus:outline-none focus-visible:ring-2 focus-visible:ring-moss aria-pressed:bg-moss-deep aria-pressed:text-paper aria-pressed:border-moss-deep"
       >
-        {tier}
+        {val}
       </button>
     ))}
   </div>
   <p
     data-filter-count
     data-noun={noun}
+    data-attr={attr}
     aria-live="polite"
     class="font-mono text-xs text-ink-soft"
   >{total} {total === 1 ? noun : `${noun}s`} shown</p>
@@ -37,11 +51,12 @@ const tiers = ['All', 'Emerging', 'Moderate', 'Well-studied'] as const;
   const groups = Array.from(document.querySelectorAll<HTMLElement>('[data-group]'));
   const count = document.querySelector<HTMLElement>('[data-filter-count]');
   const noun = count?.dataset.noun ?? 'supplement';
+  const attr = count?.dataset.attr ?? 'evidence';
 
   function apply(filter: string) {
     let visible = 0;
     for (const card of cards) {
-      const match = filter === 'all' || card.dataset.evidence === filter;
+      const match = filter === 'all' || card.dataset[attr] === filter;
       card.hidden = !match;
       if (match) visible++;
     }

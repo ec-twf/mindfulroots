@@ -4,6 +4,8 @@ import SupportNotice from '../../components/SupportNotice.astro';
 import EvidenceTag from '../../components/EvidenceTag.astro';
 import Byline from '../../components/Byline.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+import ProductCTA from '../../components/ProductCTA.astro';
 import { getCollection, render } from 'astro:content';
 import { SITE } from '../../config';
 
@@ -16,7 +18,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { data } = post;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
 
 const products = await getCollection('products');
 const related = data.relatedProducts
@@ -26,6 +28,11 @@ const related = data.relatedProducts
 // Evidence tier shown in the header reflects the primary supplement this post
 // covers (the first related product). Undefined when a post has no product.
 const evidenceLevel = related[0]?.data.evidence;
+
+// In-article conversion card: auto-placed after the prose when the primary
+// related product carries a verified recommendedProduct. Zero content edits.
+const ctaProduct = related[0];
+const ctaRec = ctaProduct?.data.recommendedProduct;
 
 const date = data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
@@ -129,8 +136,17 @@ const schema = {
       <p class="font-mono text-xs text-ink-soft mt-0.5">Updated {data.updatedDate.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}</p>
     )}
     <Byline type="article" />
+    <TableOfContents headings={headings} />
     <hr class="specimen-rule my-6" />
     <div class="prose-mr"><Content /></div>
+    {ctaProduct && ctaRec && (
+      <ProductCTA
+        slug={ctaProduct.id}
+        title={ctaProduct.data.title}
+        evidence={ctaProduct.data.evidence}
+        rec={ctaRec}
+      />
+    )}
   </article>
 
   {related.length > 0 && (
@@ -141,8 +157,11 @@ const schema = {
           {related.map((p) => (
             <li>
               <a href={`/products/${p!.id}/`} class="flex items-center justify-between gap-3 group">
-                <span class="text-moss-deep font-medium group-hover:text-saffron-deep">{p!.data.title}</span>
-                <span class="text-saffron-deep text-sm group-hover:underline underline-offset-4">View profile →</span>
+                <span class="flex flex-wrap items-center gap-2">
+                  <span class="text-moss-deep font-medium group-hover:text-saffron-deep">{p!.data.title}</span>
+                  <EvidenceTag level={p!.data.evidence} />
+                </span>
+                <span class="text-saffron-deep text-sm group-hover:underline underline-offset-4 shrink-0">View profile →</span>
               </a>
             </li>
           ))}

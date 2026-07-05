@@ -2,14 +2,22 @@
 import Base from '../../layouts/Base.astro';
 import PostCard from '../../components/PostCard.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import FilterPills from '../../components/FilterPills.astro';
+import { normalizeCluster } from '../../lib/taxonomy';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog'))
   .filter((p) => !p.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-// Group clusters for a topical-authority overview
-const clusters = [...new Set(posts.map((p) => p.data.cluster))];
+// Canonical cluster labels present, for the interactive filter pills.
+const clusters = [...new Set(posts.map((p) => normalizeCluster(p.data.cluster)))].sort();
+
+// "Start here" pins only posts EXPLICITLY marked postType: pillar. The schema
+// leaves postType undefined for legacy posts (documented as "treated as a
+// pillar"), but we intentionally feature only the explicit ones to keep the
+// slot focused. If none are explicit the slot is skipped.
+const featured = posts.filter((p) => p.data.postType === 'pillar');
 ---
 <Base title="Mood Supplement Research & Guides | MoodSupplement Journal" description="Evidence-aware guides on mood, stress and sleep supplements — what the research shows, where it falls short, and when to see a professional instead.">
   <Breadcrumb crumbs={[
@@ -25,18 +33,35 @@ const clusters = [...new Set(posts.map((p) => p.data.cluster))];
       Each piece links back to the relevant supplement profile so you can go from "how does this
       work" to "what should I look for" in a click — and every one keeps professional care in view.
     </p>
-    <div class="mt-5 flex flex-wrap gap-2">
-      {clusters.map((c) => (
-        <span class="font-mono text-xs uppercase tracking-wider text-moss border border-mist bg-card rounded-full px-3 py-1">{c}</span>
-      ))}
+    <div class="mt-6">
+      <FilterPills
+        total={posts.length}
+        noun="post"
+        values={clusters}
+        attr="cluster"
+        groupLabel="Filter posts by topic"
+      />
     </div>
   </section>
+
+  {featured.length > 0 && (
+    <section class="mx-auto max-w-5xl px-5 pb-8">
+      <p class="eyebrow mb-3">Start here</p>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {featured.map((p) => (
+          <PostCard slug={p.id} title={p.data.title} description={p.data.description} pubDate={p.data.pubDate} cluster={normalizeCluster(p.data.cluster)} />
+        ))}
+      </div>
+    </section>
+  )}
 
   <section class="mx-auto max-w-5xl px-5 pb-12">
     <h2 class="sr-only">All posts</h2>
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {posts.map((p) => (
-        <PostCard slug={p.id} title={p.data.title} description={p.data.description} pubDate={p.data.pubDate} cluster={p.data.cluster} />
+        <div data-card data-cluster={normalizeCluster(p.data.cluster)} class="h-full">
+          <PostCard slug={p.id} title={p.data.title} description={p.data.description} pubDate={p.data.pubDate} cluster={normalizeCluster(p.data.cluster)} />
+        </div>
       ))}
     </div>
   </section>
