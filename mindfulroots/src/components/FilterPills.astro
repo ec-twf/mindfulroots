@@ -48,6 +48,8 @@ const pills = ['All', ...values];
 <script>
   const pills = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-filter-pill]'));
   const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-card]'));
+  // Sections outside the filterable grid (e.g. pinned "Start here") hide whenever a filter is active.
+  const pinned = Array.from(document.querySelectorAll<HTMLElement>('[data-filter-pinned]'));
   const groups = Array.from(document.querySelectorAll<HTMLElement>('[data-group]'));
   const count = document.querySelector<HTMLElement>('[data-filter-count]');
   const noun = count?.dataset.noun ?? 'supplement';
@@ -55,6 +57,7 @@ const pills = ['All', ...values];
 
   function apply(filter: string) {
     let visible = 0;
+    for (const el of pinned) el.hidden = filter !== 'all';
     for (const card of cards) {
       const match = filter === 'all' || card.dataset[attr] === filter;
       card.hidden = !match;
