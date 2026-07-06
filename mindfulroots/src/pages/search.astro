@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Search from 'astro-pagefind/components/Search.astro';
+---
+<Base
+  title="Search"
+  description="Search MoodSupplement's supplement profiles and journal articles."
+>
+  <Breadcrumb crumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Search' },
+  ]} />
+  <section class="mx-auto max-w-3xl px-5 pt-6 pb-16">
+    <p class="eyebrow mb-3">Search</p>
+    <h1 class="font-display text-3xl sm:text-4xl text-moss-deep">Search MoodSupplement</h1>
+    <p class="mt-4 text-ink-soft leading-relaxed">
+      Find supplement profiles and journal articles. Results cover our product
+      write-ups and everything in the Journal.
+    </p>
+
+    <div class="mt-8 mr-search">
+      <Search className="pagefind-ui" searchboxOptions={{ showImages: false }} />
+    </div>
+  </section>
+</Base>
+
+<style is:global>
+  /* Map the Pagefind component-ui variables onto the site's design tokens so
+     the widget inherits the apothecary palette — and dark mode for free, since
+     the tokens are overridden under [data-theme=dark] in global.css.
+     (astro-pagefind v2 ships @pagefind/component-ui, which uses --pf-* vars —
+     the older --pagefind-ui-* names in the plan predate that component.) */
+  .mr-search {
+    --pf-font: var(--font-body);
+    --pf-text: var(--color-ink);
+    --pf-text-secondary: var(--color-ink-soft);
+    --pf-text-muted: var(--color-ink-soft);
+    --pf-background: var(--color-card);
+    --pf-border: var(--color-mist);
+    --pf-border-focus: var(--color-moss);
+    --pf-hover: var(--color-paper-hover);
+    --pf-mark: var(--color-moss-deep);
+    --pf-outline-focus: var(--color-moss);
+    --pf-border-radius: 0.5rem; /* matches rounded-lg */
+  }
+</style>

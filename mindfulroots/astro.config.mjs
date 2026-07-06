@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
+import pagefind from 'astro-pagefind';
 import tailwindcss from '@tailwindcss/vite';
 import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
@@ -36,6 +37,7 @@ export default defineConfig({
   site: SITE,
   integrations: [
     mdx(),
+    pagefind(),
     sitemap({
       serialize(item) {
         item.lastmod = lastmodMap.get(item.url) ?? buildDate;

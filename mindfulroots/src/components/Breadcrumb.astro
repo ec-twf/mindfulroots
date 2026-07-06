@@ -9,7 +9,7 @@ interface Props {
 const { crumbs } = Astro.props;
 ---
 
-<nav aria-label="Breadcrumb" class="mx-auto max-w-5xl px-5 pt-7 pb-0">
+<nav data-pagefind-ignore aria-label="Breadcrumb" class="mx-auto max-w-5xl px-5 pt-7 pb-0">
   <ol class="flex items-center flex-wrap gap-x-1.5 gap-y-1 font-mono text-xs text-ink-soft">
     {crumbs.map((crumb, i) => (
       <li class="flex items-center gap-1.5">

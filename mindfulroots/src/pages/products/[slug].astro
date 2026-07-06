@@ -107,7 +107,11 @@ const schema = {
     { label: data.title },
   ]} />
 
-  <article class="mx-auto max-w-5xl px-5 pb-6 grid md:grid-cols-[1fr_300px] gap-x-10">
+  <article
+    class="mx-auto max-w-5xl px-5 pb-6 grid md:grid-cols-[1fr_300px] gap-x-10"
+    data-pagefind-body
+    data-pagefind-meta={`category:${data.category}`}
+  >
     <!-- Intro block — stays first on mobile and desktop -->
     <div class="min-w-0 order-1 md:col-start-1 md:row-start-1">
       <p class="eyebrow mb-2">{data.category}</p>
