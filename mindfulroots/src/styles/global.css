@@ -29,9 +29,62 @@
   --color-warn-bg: #fdf3e4;
   --color-warn-border: #e3b878;
 
+  /* Text/borders that always sit on deep-moss surfaces (footer, care band) —
+     constant across themes because the surface stays green in both. */
+  --color-paper-on-dark: #e9f0e7;
+  --color-mist-on-dark: #c8d8c4;
+
+  /* Subtle hover fill for nav/menu items (light value; dark override below). */
+  --color-paper-hover: #edf1e8;
+
+  /* "Our pick" comparison-row highlight (light value; dark override below). */
+  --color-pick-row: #f0f4ea;
+
+  /* Text on saffron CTAs — white in light; dark ink in dark (WCAG on lighter
+     dark-mode saffron). */
+  --color-on-saffron: #ffffff;
+
+  /* Moss used as a *surface* (backgrounds with content on top). Stays deep
+     green in both themes so text-on-them tokens stay correct — distinct from
+     bg-moss/bg-moss-deep which invert to light in dark mode. */
+  --color-moss-surface: #3e5c49;
+  --color-moss-deep-surface: #2c4536;
+
+  /* Card + dropdown elevation shadows. */
+  --shadow-card: 0 4px 18px rgba(62, 92, 73, 0.12);
+  --shadow-dropdown: 0 8px 28px rgba(62, 92, 73, 0.16);
+
   --font-display: "Fraunces", "Georgia", serif;
   --font-body: "Public Sans", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+/* ── Dark theme ─────────────────────────────────────────────────────────────
+   Theme = token override, not a class sweep: every utility already reads
+   these variables. `data-theme` is set on <html> by the no-FOUC script in
+   Base.astro <head>. Note: moss/moss-deep invert roles — they are used as
+   *text* site-wide, so their dark values are light greens. Backgrounds use
+   the *-surface tokens above, which stay deep green in both themes. */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+:root { color-scheme: light; }
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-paper: #141c17;
+  --color-card: #1c2721;
+  --color-ink: #e6ede4;
+  --color-ink-soft: #a8b8ab;
+  --color-moss: #7fa98d;
+  --color-moss-deep: #a9c7b3;
+  --color-mist: #33443a;
+  --color-saffron: #e08a35;
+  --color-saffron-deep: #eda049;
+  --color-warn-bg: #3a2f1c;
+  --color-warn-border: #9d7b40;
+  --color-paper-hover: #22302a;
+  --color-pick-row: #243428;
+  --color-on-saffron: #141c17;
 }
 
 html {
@@ -48,7 +101,7 @@ body { overflow-x: clip; overscroll-behavior-x: none; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
-::selection { background: var(--color-saffron); color: #fff; }
+::selection { background: var(--color-saffron); color: var(--color-on-saffron); }
 
 h1, h2, h3 { font-family: var(--font-display); font-weight: 560; letter-spacing: -0.01em; }
 

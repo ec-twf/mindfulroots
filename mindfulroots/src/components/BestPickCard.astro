@@ -19,7 +19,7 @@ interface Props {
 }
 const { slug, title, category, evidence, rec } = Astro.props;
 ---
-<article class="group bg-card border border-mist rounded-lg flex flex-col overflow-hidden transition-shadow hover:shadow-[0_4px_18px_rgba(62,92,73,0.12)]">
+<article class="group bg-card border border-mist rounded-lg flex flex-col overflow-hidden transition-shadow hover:shadow-card">
   {/* Image, or branded botanical placeholder keyed to rec.image */}
   <div class="aspect-[16/10] bg-mist/40 border-b border-mist flex items-center justify-center overflow-hidden">
     {rec.image ? (

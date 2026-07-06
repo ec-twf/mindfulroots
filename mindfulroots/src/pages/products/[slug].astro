@@ -179,7 +179,7 @@ const schema = {
       <p class="eyebrow mb-3">Keep reading</p>
       <div class="grid gap-4 sm:grid-cols-2">
         {related.map((post) => (
-          <a href={`/blog/${post!.id}/`} class="block bg-card border border-mist rounded-lg p-5 hover:shadow-[0_4px_18px_rgba(62,92,73,0.12)] transition-shadow">
+          <a href={`/blog/${post!.id}/`} class="block bg-card border border-mist rounded-lg p-5 hover:shadow-card transition-shadow">
             <p class="eyebrow mb-1">{post!.data.cluster}</p>
             <h3 class="text-lg text-moss-deep leading-snug">{post!.data.title}</h3>
             <p class="text-sm text-ink-soft mt-1.5 leading-relaxed">{post!.data.description}</p>

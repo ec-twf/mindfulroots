@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { SITE } from '../config';
 import { CATEGORY_GROUPS } from '../lib/taxonomy';
+import ThemeToggle from '../components/ThemeToggle.astro';
 
 interface Props {
   title: string;
@@ -26,6 +27,17 @@ const year = new Date().getFullYear();
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f3f6ee" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141c17" />
+    {/* No-FOUC theme init — must run before the stylesheet applies */}
+    <script is:inline>
+      let theme = 'light';
+      try {
+        theme = localStorage.theme ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      } catch (e) {}
+      document.documentElement.dataset.theme = theme;
+    </script>
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -91,6 +103,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="font-display text-xl text-moss-deep">{SITE.name}</span>
         </a>
 
+        <div class="flex items-center gap-3 sm:gap-5">
         {/* Desktop nav — hidden on mobile */}
         <nav class="hidden sm:flex items-center gap-5 text-sm" aria-label="Main">
           {/* Supplements: anchor navigates to /products/ (works with JS off);
@@ -114,18 +127,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </button>
             <div
               id="supplements-menu"
-              class="hidden absolute left-0 top-full mt-2 w-60 rounded-lg border border-mist bg-card shadow-[0_8px_28px_rgba(62,92,73,0.16)] py-2 z-30"
+              class="hidden absolute left-0 top-full mt-2 w-60 rounded-lg border border-mist bg-card shadow-dropdown py-2 z-30"
             >
               {CATEGORY_GROUPS.map((g) => (
                 <a
                   href={`/products/#${g.id}`}
-                  class="block px-4 py-2 text-sm text-ink-soft hover:text-saffron-deep hover:bg-[#edf1e8]"
+                  class="block px-4 py-2 text-sm text-ink-soft hover:text-saffron-deep hover:bg-paper-hover"
                 >{g.label}</a>
               ))}
               <hr class="my-1.5 border-mist" />
               <a
                 href="/products/"
-                class="block px-4 py-2 text-sm font-medium text-moss-deep hover:text-saffron-deep hover:bg-[#edf1e8]"
+                class="block px-4 py-2 text-sm font-medium text-moss-deep hover:text-saffron-deep hover:bg-paper-hover"
               >All supplements →</a>
             </div>
           </div>
@@ -146,6 +159,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           >Get help</a>
         </nav>
 
+        {/* Theme toggle — visible on desktop and the mobile header bar */}
+        <ThemeToggle />
+
         {/* Mobile hamburger — visible only on small screens */}
         <button
           id="nav-toggle"
@@ -158,6 +174,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="block h-0.5 w-full bg-moss-deep rounded transition-all" id="bar2"></span>
           <span class="block h-0.5 w-full bg-moss-deep rounded transition-all" id="bar3"></span>
         </button>
+        </div>
       </div>
 
       {/* Mobile nav drawer */}
@@ -168,29 +185,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       >
         <a
           href="/products/"
-          class={`px-5 py-3.5 text-sm border-b border-mist hover:text-saffron-deep hover:bg-[#edf1e8] ${Astro.url.pathname.startsWith('/products/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
+          class={`px-5 py-3.5 text-sm border-b border-mist hover:text-saffron-deep hover:bg-paper-hover ${Astro.url.pathname.startsWith('/products/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
         >Supplements</a>
         {CATEGORY_GROUPS.map((g) => (
           <a
             href={`/products/#${g.id}`}
-            class="pl-9 pr-5 py-2.5 text-sm border-b border-mist text-ink-soft hover:text-saffron-deep hover:bg-[#edf1e8]"
+            class="pl-9 pr-5 py-2.5 text-sm border-b border-mist text-ink-soft hover:text-saffron-deep hover:bg-paper-hover"
           >{g.label}</a>
         ))}
         <a
           href="/blog/"
-          class={`px-5 py-3.5 text-sm border-b border-mist hover:text-saffron-deep hover:bg-[#edf1e8] ${Astro.url.pathname.startsWith('/blog/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
+          class={`px-5 py-3.5 text-sm border-b border-mist hover:text-saffron-deep hover:bg-paper-hover ${Astro.url.pathname.startsWith('/blog/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
         >Journal</a>
         <a
           href="/about/"
-          class={`px-5 py-3.5 text-sm border-b border-mist hover:text-saffron-deep hover:bg-[#edf1e8] ${Astro.url.pathname.startsWith('/about/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
+          class={`px-5 py-3.5 text-sm border-b border-mist hover:text-saffron-deep hover:bg-paper-hover ${Astro.url.pathname.startsWith('/about/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
         >About</a>
         <a
           href="/contact/"
-          class={`px-5 py-3.5 text-sm border-b border-mist hover:text-saffron-deep hover:bg-[#edf1e8] ${Astro.url.pathname.startsWith('/contact/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
+          class={`px-5 py-3.5 text-sm border-b border-mist hover:text-saffron-deep hover:bg-paper-hover ${Astro.url.pathname.startsWith('/contact/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
         >Contact</a>
         <a
           href="/get-help/"
-          class={`px-5 py-3.5 text-sm border-b border-mist last:border-0 hover:text-saffron-deep hover:bg-[#edf1e8] ${Astro.url.pathname.startsWith('/get-help/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
+          class={`px-5 py-3.5 text-sm border-b border-mist last:border-0 hover:text-saffron-deep hover:bg-paper-hover ${Astro.url.pathname.startsWith('/get-help/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
         >Get help</a>
       </nav>
     </header>
@@ -264,14 +281,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <slot />
     </main>
 
-    <footer class="mt-16 border-t border-mist bg-moss-deep text-[#e9f0e7]">
+    <footer class="mt-16 border-t border-mist bg-moss-deep-surface text-paper-on-dark">
       <div class="mx-auto max-w-5xl px-5 py-10 grid gap-8 sm:grid-cols-3 text-sm">
         <div>
           <p class="font-display text-lg mb-2">{SITE.name}</p>
           <p class="opacity-80 leading-relaxed">{SITE.tagline}</p>
         </div>
         <div>
-          <p class="eyebrow !text-[#c8d8c4] mb-2">Site</p>
+          <p class="eyebrow !text-mist-on-dark mb-2">Site</p>
           <ul class="space-y-1.5 opacity-90">
             <li><a href="/products/" class="hover:underline">All supplements</a></li>
             <li><a href="/blog/" class="hover:underline">Journal</a></li>
@@ -280,7 +297,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </ul>
         </div>
         <div>
-          <p class="eyebrow !text-[#c8d8c4] mb-2">Trust</p>
+          <p class="eyebrow !text-mist-on-dark mb-2">Trust</p>
           <ul class="space-y-1.5 opacity-90">
             <li><a href="/disclosure/" class="hover:underline">Affiliate disclosure</a></li>
             <li><a href="/disclaimer/" class="hover:underline">Medical disclaimer</a></li>

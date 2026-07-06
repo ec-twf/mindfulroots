@@ -43,11 +43,11 @@ const { criterion, columns = [], rows } = Astro.props;
         </tr>
       </thead>      <tbody>
         {rows.map((r) => (
-          <tr class={r.pick ? 'bg-[#f0f4ea]' : ''}>
+          <tr class={r.pick ? 'bg-pick-row' : ''}>
             <td class="px-3 py-3 border-b border-mist align-top">
               <div class="flex items-start gap-2">
                 {r.pick && (
-                  <span class="font-mono text-[0.55rem] uppercase tracking-wider bg-saffron text-white rounded px-1.5 py-0.5 mt-0.5 whitespace-nowrap">Our pick</span>
+                  <span class="font-mono text-[0.55rem] uppercase tracking-wider bg-saffron text-on-saffron rounded px-1.5 py-0.5 mt-0.5 whitespace-nowrap">Our pick</span>
                 )}
                 <span class="min-w-0">
                   <span class="block font-medium text-moss-deep leading-snug">{r.brand}</span>
@@ -80,14 +80,14 @@ const { criterion, columns = [], rows } = Astro.props;
   {/* Mobile: stacked cards (below md). One product per block, label -> value pairs. */}
   <ul role="list" class="md:hidden space-y-3">
     {rows.map((r) => (
-      <li class={`border border-mist rounded-lg p-4 ${r.pick ? 'bg-[#f0f4ea]' : 'bg-card'}`}>
+      <li class={`border border-mist rounded-lg p-4 ${r.pick ? 'bg-pick-row' : 'bg-card'}`}>
         <div class="flex items-start justify-between gap-3">
           <div class="min-w-0">
             <span class="block font-medium text-moss-deep leading-snug">{r.brand}</span>
             <span class="block text-ink-soft text-xs leading-snug">{r.productName}</span>
           </div>
           {r.pick && (
-            <span class="shrink-0 font-mono text-[0.55rem] uppercase tracking-wider bg-saffron text-white rounded px-1.5 py-0.5 whitespace-nowrap">Our pick</span>
+            <span class="shrink-0 font-mono text-[0.55rem] uppercase tracking-wider bg-saffron text-on-saffron rounded px-1.5 py-0.5 whitespace-nowrap">Our pick</span>
           )}
         </div>
 

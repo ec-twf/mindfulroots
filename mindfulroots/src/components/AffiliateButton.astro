@@ -18,7 +18,7 @@ const {
   showDisclosure = true,
 } = Astro.props;
 
-const base = 'inline-flex items-center gap-2 bg-saffron hover:bg-saffron-deep text-white font-medium rounded-md transition-colors';
+const base = 'inline-flex items-center gap-2 bg-saffron hover:bg-saffron-deep text-on-saffron font-medium rounded-md transition-colors';
 const sizing = compact ? 'px-4 py-2 text-sm' : fullWidth ? 'px-5 py-3' : 'px-5 py-2.5';
 const width = fullWidth ? 'w-full justify-center' : '';
 const btnClass = [base, sizing, width].filter(Boolean).join(' ');
