@@ -70,8 +70,14 @@ const schema = {
     }] : []),
     ...(rec ? [{
       '@type': 'Review',
+      // itemReviewed is intentionally typed as `Thing`, not `Product`: this
+      // site has no real price/offer data and no genuine aggregate rating to
+      // report, and Google flags any `Product` entity lacking offers/review/
+      // aggregateRating as invalid in Search Console's Product snippets
+      // report. `Thing` keeps the Review block valid schema without being
+      // picked up by that Product-specific validation.
       itemReviewed: {
-        '@type': 'Product',
+        '@type': 'Thing',
         name: rec.productName,
         ...(rec.image && { image: new URL(rec.image, Astro.site).toString() }),
       },
