@@ -48,9 +48,12 @@ const verifiedLabel = rec
 // This page is a third-party affiliate comparison (no direct sale, no
 // site-controlled real-time price) — not a page that sells one product at a
 // fixed price, so Product+Offer schema is the wrong fit (and Google's Offer
-// validation requires a `price` this site can't honestly provide). Instead:
-// an ItemList for the compared products (plain reference links, no
-// price/offers) plus a Review scoped to just the "our pick" item.
+// validation requires a `price` this site can't honestly provide). A Review
+// node was tried too, but Review.itemReviewed only accepts a fixed Google
+// whitelist (Product, Organization, etc.) — Product re-triggers the Product
+// snippet checks, and no other type on the list fits an editorial pick with
+// no real user reviews. Simplest correct fix: no Review/Rating markup here,
+// just the ItemList for the compared products (plain reference links).
 const comparisonRows = data.comparison?.rows ?? [];
 const itemListElements = comparisonRows.length > 0
   ? [rec, ...comparisonRows].filter(Boolean).map((item, i) => ({
@@ -67,27 +70,6 @@ const schema = {
     ...(itemListElements.length > 0 ? [{
       '@type': 'ItemList',
       itemListElement: itemListElements,
-    }] : []),
-    ...(rec ? [{
-      '@type': 'Review',
-      // itemReviewed is intentionally typed as `Thing`, not `Product`: this
-      // site has no real price/offer data and no genuine aggregate rating to
-      // report, and Google flags any `Product` entity lacking offers/review/
-      // aggregateRating as invalid in Search Console's Product snippets
-      // report. `Thing` keeps the Review block valid schema without being
-      // picked up by that Product-specific validation.
-      itemReviewed: {
-        '@type': 'Thing',
-        name: rec.productName,
-        ...(rec.image && { image: new URL(rec.image, Astro.site).toString() }),
-      },
-      ...(rec.rating && {
-        reviewRating: { '@type': 'Rating', ratingValue: rec.rating, bestRating: 5 },
-      }),
-      reviewBody: data.comparison?.verdict
-        ?? [rec.concentrationNote, rec.oxidationNote].filter(Boolean).join(' '),
-      datePublished: rec.verifiedDate.toISOString().split('T')[0],
-      author: { '@type': 'Organization', name: 'MoodSupplement' },
     }] : []),
     {
       '@type': 'BreadcrumbList',
