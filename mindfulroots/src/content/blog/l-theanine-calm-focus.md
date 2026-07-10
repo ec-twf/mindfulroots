@@ -102,34 +102,6 @@ Stacking multiple nootropics without professional guidance adds complexity that 
 
 ---
 
-## FAQ
-
-### How quickly does L-theanine work?
-
-Most EEG and subjective-effect studies show measurable changes within 30–60 minutes of a single oral dose. Stress-response benefits appear to be acute (single-dose); sleep and mood improvements in the Hidese 2019 trial emerged over four weeks of daily use, suggesting that some benefits may build with consistent use.
-
-### Can I get enough L-theanine from tea?
-
-A cup of green tea contains roughly 20–40 mg; high-quality matcha can be higher. The doses used in most positive trials (100–200 mg) correspond to roughly 3–5 cups of green tea, which is achievable through diet but may be impractical for those who don't drink tea regularly or who are sensitive to caffeine. Supplements provide a more controlled, consistent dose without the accompanying caffeine if you prefer to manage the two separately.
-
-### Does L-theanine make you sleepy?
-
-No. This is one of L-theanine's distinguishing features compared to most calming supplements. The alpha-wave signature it produces is specifically associated with relaxed wakefulness rather than sedation. Participants in trials consistently describe the effect as calm clarity rather than drowsiness. That said, if you are already fatigued, reducing tension can allow tiredness to surface; this is a normal effect rather than a pharmacological sedative action.
-
-### Is L-theanine safe to take every day?
-
-Daily use for up to four weeks has been tested in at least one well-designed RCT without safety concerns. Longer-term data in humans is limited. Given its natural presence in tea (a beverage consumed daily by billions of people), the long-term safety profile is generally considered favorable, but concentrated supplement doses over many months have not been formally studied in clinical trials.
-
-### Can L-theanine replace anxiety medication?
-
-No. L-theanine supports general stress resilience and relaxed alertness; it is not a treatment for anxiety disorders, depression, or any diagnosed condition. If you are managing significant anxiety or a mental health condition, please work with a qualified professional. Our [Get Help page](/get-help) has crisis and professional support resources if you need them.
-
-### Does L-theanine interact with caffeine?
-
-Yes, and in a useful way for most people. Rather than blocking caffeine's effects, L-theanine appears to smooth them: reducing some of caffeine's blood-pressure and jitteriness effects while preserving or improving its attention-supporting properties. Multiple controlled trials support this pairing, making it one of the better-evidenced supplement combinations available.
-
----
-
 ## Supplements mentioned
 
 - [L-Theanine](/products/l-theanine) — our full product overview, including evidence tier, sourcing notes, and affiliate links.

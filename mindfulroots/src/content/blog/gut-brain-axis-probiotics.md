@@ -63,23 +63,6 @@ The practical guidance for trying a studied formulation is straightforward. Matc
 
 Probiotics are generally well tolerated in healthy people; the most common complaints are short-lived bloating or digestive changes as your gut adjusts. The important exception is anyone who is immunocompromised, seriously ill, or has a central venous line: for them, live-organism supplements can carry real risk, and a doctor should be consulted first. If you are pregnant, breastfeeding or managing a chronic condition, check with a clinician before starting. And if low mood is the reason you are here, a probiotic is not a substitute for professional support. See our [crisis and professional support resources](/get-help/).
 
-## Frequently asked questions
-
-**Can probiotics improve your mood?**
-Some specific strains have shown mood or stress benefits in trials, but the effect is modest, strain-specific, and clearest in people who already have a clinical diagnosis. In generally healthy people the evidence is weaker. We rate it as emerging.
-
-**What is a psychobiotic?**
-A psychobiotic is a specific probiotic strain that has been shown to influence mood, stress or anxiety. The effect is tied to the named strain and dose studied, not to probiotics in general.
-
-**Which probiotic strains are best for mood?**
-The most-studied are the *Lactobacillus helveticus* R0052 + *Bifidobacterium longum* R0175 combination and the multi-strain Ecologic Barrier blend. "Best" overstates it; these are simply the ones with the most human data, and even there the results are mixed.
-
-**How long do probiotics take to affect mood?**
-Most mood trials ran for around four weeks, so that is a reasonable window to allow before drawing any conclusion.
-
-**Does a higher CFU count mean a better mood probiotic?**
-No. The evidence is about specific strains at the doses studied, not about maximising CFUs. A very high CFU count of an unstudied strain tells you nothing about mood.
-
 ## Supplements mentioned
 
 - **[Gut-brain probiotic: full profile, studied strains and evidence tier](/products/probiotic-gut-brain/).** Our product page covers strain selection and labels in more detail.

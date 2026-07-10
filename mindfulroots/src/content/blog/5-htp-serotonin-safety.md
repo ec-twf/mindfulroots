@@ -69,23 +69,6 @@ Avoid 5-HTP if you take any SSRI, SNRI, MAOI, tricyclic, triptan, tramadol, line
 
 If low mood, anxiety or sleep problems are pushing you toward a supplement like this, that is a meaningful signal in itself. A better next step than self-experimentation is a conversation with a clinician who can look at the whole picture, including interactions, and help you weigh the options safely. Our [crisis and professional support resources](/get-help/) page lists free and confidential places to start. None of the information here is medical advice; please also read our [medical disclaimer](/disclaimer/).
 
-## Frequently asked questions
-
-**Does 5-HTP work for depression?**
-The evidence is limited and inconclusive. A 2002 Cochrane review found a signal of benefit but judged the trials too few and too low in quality to recommend 5-HTP, advising conventional treatments instead. We rate its mood evidence as *emerging*.
-
-**Can I take 5-HTP with my antidepressant?**
-This is the single most important question on this page, and the answer is no, not without explicit guidance from your prescriber. Combining 5-HTP with SSRIs, SNRIs, MAOIs or tricyclics can cause serotonin syndrome, a potentially fatal reaction.
-
-**How long does 5-HTP take to work?**
-There is no reliable answer, partly because the evidence for a mood effect is weak to begin with. Its short half-life means any effect would not last through the day, which is why studied regimens used divided doses.
-
-**Is 5-HTP safe?**
-At low doses, on its own, in people not taking serotonergic medication, short-term use has generally been well tolerated in trials, with mild gastrointestinal side effects most common. But "generally well tolerated" is not the same as "safe for you." The interaction risk and the historical EMS concern are real, which is why a clinician's input matters.
-
-**Can I use 5-HTP for sleep or anxiety instead?**
-The evidence base for sleep and anxiety is even thinner than for mood, and every safety caution above still applies. If sleep or anxiety is the real issue, that is worth raising with a clinician, who can point you to better-supported options.
-
 ## Supplements mentioned
 
 - [5-HTP: full profile, evidence tier and cautions](/products/5-htp/). Our product page repeats these interaction warnings in full and carries the serotonin-syndrome notice.

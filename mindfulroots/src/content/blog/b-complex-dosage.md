@@ -64,23 +64,6 @@ Take a B-complex in the morning with food. The B vitamins support energy metabol
 
 Daily use makes most sense for people more likely to run low: vegans and vegetarians, older adults, people on long-term acid-reducing medication, and heavy drinkers. If you eat a varied diet and feel well, you may not need a supplement at all, and a simple blood test for B12 and folate can settle the question before you start.
 
-## Frequently asked questions
-
-**What is a normal B-complex dosage?**
-There is no single figure, because a B-complex holds eight vitamins each with its own target. A balanced product meets or modestly exceeds the RDA for each, for example around 1.2 mg B1, 1.3 mg B6, 400 mcg folate and 2.4 mcg B12. B-50 and B-100 formulas run far higher.
-
-**Can you take too much B-complex?**
-The vitamins with real limits are B6, niacin and folic acid. Long-term high B6 can cause reversible nerve tingling, hence the 100 mg per day adult ceiling. Niacin can flush, and high folic acid can mask a B12 deficiency. Most other excess is excreted.
-
-**When should I take a B-complex?**
-Morning, with food. B vitamins can feel mildly stimulating, so earlier avoids disturbing sleep, and a meal aids comfort and B12 absorption.
-
-**Should I take a B-complex every day?**
-Daily use suits people at higher risk of low status, such as vegans, older adults and those on acid-reducing medication. Others may already get enough from diet. A B12 and folate blood test can guide the choice.
-
-**How long until a B-complex works?**
-If you are correcting a real deficiency, energy and mood may lift over several weeks. If your levels are already adequate, you may notice little, because the surplus is largely excreted.
-
 ## Supplements mentioned
 
 A well-formulated [B-complex](/products/b-complex/) delivers the full spectrum at sensible doses in active forms, with methylcobalamin B12 and 5-MTHF folate. The product page covers what to look for and why the forms often matter more than the potency number.

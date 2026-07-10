@@ -76,26 +76,6 @@ Pregnancy is the clearest contraindication: ashwagandha has a traditional reputa
 
 Rare reports of liver injury have also been associated with ashwagandha supplements; stop and seek care if you notice jaundice, dark urine, or unusual fatigue. Ashwagandha can add to the effect of sedatives and may interact with thyroid, immunosuppressant, and blood-sugar or blood-pressure medications. If you take any prescription drug or manage a health condition, talk to your doctor before starting. For the bigger picture on building a stress-support routine, see our overview of [the lifestyle foundations of mood support](/blog/natural-mood-support-basics/).
 
-## Frequently asked questions
-
-**How much does ashwagandha lower cortisol?**
-In the KSM-66 trials, morning or serum cortisol fell by roughly 23–28% versus placebo over eight weeks in chronically stressed adults. The most-cited figure, ~27.9%, comes from the 2012 Chandrasekhar study at 600 mg/day. These are group averages in stressed people, not a promise for any individual, and cortisol is only one of several markers the trials tracked.
-
-**What dose of ashwagandha is used in the cortisol research?**
-Most positive trials used a standardized root extract at 240–600 mg per day, usually KSM-66, taken for eight weeks or more. The 300 mg twice-daily (600 mg/day) schedule is the most studied. There's no good evidence that larger doses lower cortisol further.
-
-**How long before ashwagandha affects cortisol?**
-The trials measured cortisol at eight weeks, not after a single dose. Treat ashwagandha as a daily, take-it-and-reassess supplement rather than a same-day stress fix, and give it about two months of consistent use before judging it.
-
-**Is the ashwagandha–cortisol evidence actually strong?**
-It's Moderate, not conclusive. Several randomized placebo-controlled trials agree, and meta-analyses are cautiously positive, but the studies are small, mostly short, largely from one region, and many were funded by the extract's manufacturer. That's a real signal worth respecting, not the same as well-established fact.
-
-**Does KSM-66 matter, or will any ashwagandha work?**
-KSM-66 matters mainly because it's the specific extract most of the cortisol trials used, so you're buying a known quantity at a studied dose. A generic extract may be fine, but you have no trial data behind it and no guarantee of the same standardization.
-
-**Who should not take ashwagandha for stress?**
-Avoid it in pregnancy, and be cautious with thyroid conditions, autoimmune disease, or sedative and thyroid medications. Rare reports of liver injury exist. Talk to your clinician first if you take any prescription medication or manage a health condition.
-
 ## Supplements mentioned
 
 - **[Ashwagandha (standardized root extract)](/products/ashwagandha/)**: the evergreen-shrub adaptogen covered above, studied at 240–600 mg/day for stress and cortisol support. Evidence tier: **Moderate**.

@@ -5,6 +5,7 @@ import pagefind from 'astro-pagefind';
 import tailwindcss from '@tailwindcss/vite';
 import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
+import seoGuard from './src/integrations/seo-guard.ts';
 
 // Build a URL → lastmod map at config time by reading frontmatter directly.
 // Blog posts use updatedDate if present, otherwise pubDate.
@@ -36,6 +37,7 @@ export default defineConfig({
   // TODO: change to your production domain before launch (used for sitemap + canonical URLs)
   site: SITE,
   integrations: [
+    seoGuard(),
     mdx(),
     pagefind(),
     sitemap({

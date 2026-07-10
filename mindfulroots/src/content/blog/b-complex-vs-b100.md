@@ -53,23 +53,6 @@ The vitamin worth respecting at high potency is B6. Taking large amounts of pyri
 
 For everyday support, none of this argues against B vitamins. It argues for matching the potency to the purpose. If you want a daily baseline, a moderate B-complex covers it comfortably. If you want a high-potency stretch during a demanding period, a B-100 is fine for a while, ideally in active forms and with an eye on how long you stay there. Our [B vitamins for energy and mood](/blog/b-vitamins-energy-mood/) guide walks through where the benefit actually comes from.
 
-## Frequently asked questions
-
-**Is B-100 a different vitamin from a B-complex?**
-No. A B-100 is a type of B-complex. The 100 signals potency, roughly 100 mg or 100 mcg of each B vitamin, not a different formula. Every B-100 is a B-complex; not every B-complex is dosed that high.
-
-**What does the 100 in B-100 mean?**
-It is shorthand for a high-potency B-complex where most vitamins are set near 100 units: about 100 mg of B1, B2, B3, B5 and B6, and about 100 mcg of B7, B9 and B12. Brands adjust some vitamins, so check the panel.
-
-**Is a B-100 too strong for daily use?**
-For many people it is more than needed, since the doses run far above the RDA. B vitamins are water-soluble and the excess is mostly excreted, but long-term high B6 carries a nerve-tingling risk. A lower-dose B-complex is often enough.
-
-**Is B-50 or B-100 better?**
-Neither wins outright. B-50 supplies about half as much and suits general daily use; B-100 is a high-potency option for a purpose. Bigger is not automatically better, so match the dose to the goal.
-
-**Does a higher number work better?**
-Not reliably. Beyond correcting a deficiency, extra B vitamins stop adding benefit and get excreted. The form of the vitamins often matters more than the milligrams.
-
 ## Supplements mentioned
 
 Whether labelled B-50, B-100 or simply "B-complex," the fundamentals are the same: look for a full spectrum in active forms, with methylcobalamin B12 and 5-MTHF folate. The [B-complex product page](/products/b-complex/) explains why the forms usually matter more than the potency number.

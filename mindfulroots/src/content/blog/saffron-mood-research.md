@@ -100,26 +100,6 @@ Our overview of [the lifestyle foundations of mood support](/blog/natural-mood-s
 
 Supporting your mood is not the same as treating an illness. If your low mood is persistent, worsening, or interfering with daily life, that's a sign to involve a professional rather than reach for a supplement. Our [get-help page](/get-help/) lists where to turn.
 
-## Frequently asked questions
-
-**How long does saffron take to work for mood?**
-Plan for weeks, not days. Most trials assessed benefits at four to six weeks of daily use, with some early signal around week five in the largest study. If a properly dosed extract does nothing after six to eight consistent weeks, it's reasonable to stop.
-
-**What's the right dose?**
-The research clusters tightly around 28–30 mg per day of a *standardized* extract, often split into two doses. Higher amounts haven't been shown to work better for mood.
-
-**Is saffron really as effective as antidepressants?**
-In short trials of people with *mild-to-moderate* symptoms, standardized saffron has performed comparably to SSRIs with fewer side effects, and a 2025 meta-analysis found no significant difference between them. That's a genuine finding, but it's not evidence that saffron can replace prescribed treatment (especially for moderate-to-severe depression), and you should never change medication based on it without your prescriber.
-
-**Can I take saffron with my antidepressant?**
-Only after talking to the clinician who prescribes it. Saffron is serotonergic, so combining it carries a theoretical interaction risk; the trials that combined them were medically supervised.
-
-**How do I know my saffron supplement is real?**
-For capsules you can't use the visual tests meant for loose threads. Rely instead on a named, trialed extract (affron® or Safr'Inside™), a stated 28–30 mg standardized dose, declared active markers, and third-party testing or a Certificate of Analysis. Adulteration is common enough (about 43% of market samples in one study) that verification is worth insisting on.
-
-**Does the affron® branding actually matter, or is that marketing?**
-A bit of both. The branding matters because that specific extract is what most of the modern human trials used. You're buying a known quantity at a known dose. A generic, untested "saffron extract" might be fine, but you have no trial evidence and no standardization to lean on.
-
 ---
 
 *This article is for general information and mood **support** only. It is not medical advice and does not diagnose, treat, or cure any condition. Read our full [medical disclaimer](/disclaimer/), and speak with a qualified healthcare professional before starting any supplement, especially if you are pregnant, taking medication, or managing a health condition.*

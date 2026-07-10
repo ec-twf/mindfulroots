@@ -62,23 +62,6 @@ Do not combine 5-HTP with Adderall, other stimulants, SSRIs, SNRIs, MAOIs, tript
 
 If low mood, focus problems, or fatigue are what led you here, our [get help](/get-help/) page points to real support, and a prescriber can look at whether your medication needs adjusting rather than adding a supplement on top.
 
-## Frequently asked questions
-
-**Can you take 5-HTP with Adderall?**
-This is not a combination to self-prescribe. 5-HTP raises serotonin and Adderall raises serotonin along with dopamine and norepinephrine, so taking them together adds two serotonin-boosting effects on top of each other. That overlap is the theoretical basis for serotonin syndrome, a rare but serious reaction. If you take Adderall, clear any 5-HTP use with your prescriber first.
-
-**What is the actual risk of mixing them?**
-The main concern is serotonin syndrome, caused by too much serotonin activity in the nervous system. Early signs include agitation, sweating, a fast heartbeat, tremor, and shivering. Severe cases involve high fever and confusion and are a medical emergency. Adderall on its own rarely causes it, but stacking a serotonin precursor like 5-HTP on top raises the theoretical risk.
-
-**How long should I wait between 5-HTP and Adderall?**
-Spacing the doses does not remove the risk, because both are active in the body for hours and the concern is their combined serotonin effect, not a stomach-level clash. Timing tricks are not a substitute for medical advice here. Ask your prescriber before using both at all.
-
-**Are there safer ways to support mood while on Adderall?**
-Yes, and most of them do not involve a direct serotonin precursor. Sleep, protein-containing meals, and reviewing your Adderall dose with your prescriber are first steps. If you want to add a supplement for mood or stress, your prescriber or pharmacist can point you to options that do not stack serotonin activity.
-
-**Does the risk apply to other stimulants too?**
-The same caution applies to other serotonergic stimulants and medications, including some antidepressants, tramadol, and certain migraine drugs. 5-HTP is best avoided with any of these unless a clinician is supervising. The pattern to watch for is two or more drugs or supplements that each raise serotonin.
-
 ## Supplements mentioned
 
 - [5-HTP](/products/5-htp/), a direct serotonin precursor derived from the Griffonia seed, carrying real interaction cautions with serotonergic medications.

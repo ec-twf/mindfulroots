@@ -69,23 +69,6 @@ Probiotics are generally safe for healthy people, but anyone who is immunocompro
 
 For the mood and stress side of gut health, our [gut-brain axis overview](/blog/gut-brain-axis-probiotics/) goes deeper on the science, and our [get help](/get-help/) page points to real support if low mood is part of the picture.
 
-## Frequently asked questions
-
-**What is the difference between a probiotic and a digestive enzyme?**
-A probiotic is a live microorganism that adds to the community of bacteria in your gut. A digestive enzyme is a protein that breaks food down into absorbable pieces during a meal. Enzymes act on the food in front of you within minutes; probiotics work slowly by shaping the microbiome over weeks. They target different problems and are not interchangeable.
-
-**Can you take probiotics and digestive enzymes together?**
-Yes, and many people do, because they do separate jobs. Enzymes help you break down and absorb a specific meal, while probiotics support the longer-term balance of gut bacteria. There is no known conflict between them for healthy people. If you have a medical gut condition, check the plan with your doctor first.
-
-**Which one helps with mood and the gut-brain axis?**
-Probiotics are the relevant option here. Specific strains, sometimes called psychobiotics, have been studied for stress and mood markers through the gut-brain axis. Digestive enzymes act only on food breakdown and have no researched role in mood. If your interest is the gut-brain connection, look at studied probiotic strains, not enzymes.
-
-**Which is better for bloating after meals?**
-It depends on the cause. If bloating follows specific foods you struggle to digest, such as dairy in lactose intolerance, a targeted enzyme like lactase can help with that meal. If bloating is tied to a broader imbalance in gut bacteria, a probiotic may be the better fit over time. A doctor can help you tell the two apart.
-
-**Do I need both?**
-Not necessarily. Most people do not need either as a default. Enzymes make sense for a specific digestion problem, and probiotics make sense for microbiome or gut-brain support. Match the tool to the actual issue rather than taking both out of habit, and keep any high CFU or high-dose plan under a clinician's eye if you have a health condition.
-
 ## Supplements mentioned
 
 - [Gut-brain probiotic](/products/probiotic-gut-brain/), psychobiotic strains studied for stress and mood via the gut-brain axis, taken daily for microbiome support.

@@ -66,23 +66,6 @@ If you were recently started on levothyroxine or are still titrating, hold off o
 
 Thin evidence for this specific pairing is not proof it is safe for you. If you take levothyroxine plus any other medication, are pregnant or nursing, or manage a mood condition, treat rhodiola as a conversation for your prescriber or pharmacist. If low energy or low mood is the reason you are reaching for rhodiola, our [get help](/get-help/) page points to real support, and our [ashwagandha and rhodiola overview](/blog/adaptogens-ashwagandha-rhodiola/) compares the two common adaptogens.
 
-## Frequently asked questions
-
-**Can you take rhodiola rosea with levothyroxine?**
-There is no formally documented interaction between rhodiola and levothyroxine, and many people take both. The sensible cautions are practical, not chemical: separate the two doses by about four hours, and ask your prescriber about checking thyroid labs a little sooner after you start, since rhodiola's effects on stress hormones can shift how you feel on a stable dose.
-
-**How long should I wait between levothyroxine and rhodiola?**
-Levothyroxine is absorbed best on an empty stomach, and food, coffee, and several supplements blunt that absorption. A four-hour gap after your morning levothyroxine is a safe default for rhodiola, which mirrors the spacing advised for calcium and iron.
-
-**Can rhodiola affect thyroid hormone levels?**
-There is no good human evidence that rhodiola raises or lowers thyroid hormone directly. Its adaptogenic activity centers on the stress-hormone (cortisol) axis, which sits alongside the thyroid system. That indirect overlap is why closer lab monitoring, rather than avoidance, is the usual advice.
-
-**Will rhodiola make hypothyroid fatigue better or worse?**
-Some people on stable thyroid treatment use rhodiola for residual tiredness, and small trials support its use for stress-related fatigue. It will not correct an under-treated thyroid, so persistent fatigue should prompt a lab check rather than a higher rhodiola dose.
-
-**Who should avoid combining them without medical advice?**
-Anyone recently started on levothyroxine, still titrating a dose, pregnant, or managing bipolar disorder or an anxiety condition should clear rhodiola with a prescriber first. Dose changes and rhodiola's stimulating quality can otherwise muddy each other's signals.
-
 ## Supplements mentioned
 
 - [Rhodiola rosea](/products/rhodiola-rosea/), an adaptogenic herb used for stress-related fatigue and low energy, standardized to rosavins and salidroside.

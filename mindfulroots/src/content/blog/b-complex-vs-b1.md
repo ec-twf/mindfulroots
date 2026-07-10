@@ -59,23 +59,6 @@ If you decide a B-complex covers you, check its thiamine content before adding a
 
 The reverse also holds. If a clinician has you on high-dose thiamine, a B-complex sitting underneath it does no harm and keeps the rest of the group topped up. Just make sure the total is deliberate rather than accidental.
 
-## Frequently asked questions
-
-**Is B1 the same as a B-complex?**
-No. B1 (thiamine) is one vitamin. A B-complex contains all eight B vitamins, so thiamine is already inside it along with B2, B3, B5, B6, B7, folate and B12. Buying both usually doubles your thiamine.
-
-**Should I take B1 on its own or a B-complex?**
-For general energy, mood and stress support, a B-complex covers more ground, because the B vitamins work together in shared pathways. A standalone B1 fits when something specific points at thiamine, such as heavy alcohol use or a clinician's advice.
-
-**Can I take B1 and a B-complex together?**
-You can, but read both labels. Most B-complex products already supply thiamine well above the RDA, so a separate high-dose B1 stacks on top. Thiamine has no set upper limit and low toxicity, but there is rarely a reason to combine them without a goal.
-
-**Why do some people take high-dose B1?**
-High-dose thiamine, sometimes as benfotiamine, is used for situations tied to poor thiamine status, including alcohol use disorder and specific nerve concerns, under clinical guidance rather than as a routine daily habit.
-
-**Which is better for energy and mood?**
-A B-complex has the broader evidence for mood and stress, because folate, B6 and B12 support neurotransmitter synthesis alongside B1. Thiamine alone helps mainly when you are genuinely low in it.
-
 ## Supplements mentioned
 
 A quality [B-complex](/products/b-complex/) supplies thiamine alongside the rest of the group, ideally with B12 as methylcobalamin and folate as 5-MTHF so the active forms are ready to use. If you are weighing B vitamins for mood or stress, the product page lays out what to look for.

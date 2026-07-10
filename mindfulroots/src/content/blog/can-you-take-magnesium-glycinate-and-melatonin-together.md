@@ -68,23 +68,6 @@ The pairing is low-risk for healthy adults, but each ingredient has separate int
 
 Thin evidence for the pairing is not the same as proof it's safe for *you*. If you take any prescription medication, are pregnant or nursing, or have kidney or heart conditions, treat this as a conversation for your prescriber or pharmacist. They can check your specific medication list against both ingredients. If sleep trouble is tangled up with low mood or anxiety, our [get help](/get-help/) page points to real support.
 
-## Frequently asked questions
-
-**Can you take magnesium glycinate and melatonin together?**
-For most healthy adults there's no known direct interaction, and the two are often combined in sleep formulas. Both can cause daytime grogginess or slightly lower blood pressure, so start low and clear it with your prescriber if you take other medication.
-
-**How long before bed should I take them?**
-Magnesium glycinate is usually taken 30–60 minutes before bed; melatonin works best 30–90 minutes before your target sleep time. Taking them together in that window is common practice.
-
-**Can taking both make you too drowsy?**
-It can. Both nudge you toward sleep, so stacking them may deepen next-morning grogginess, especially at higher melatonin doses. Lower the melatonin dose first if you feel hungover.
-
-**Does magnesium reduce how much melatonin I need?**
-Possibly. Magnesium is involved in the body's own melatonin production, and one combination trial paired low-dose melatonin with magnesium and zinc. Many people find a modest melatonin dose is enough alongside magnesium.
-
-**Who should not combine them without medical advice?**
-Anyone on blood thinners, blood-pressure or diabetes medication, immunosuppressants, anticonvulsants, or with kidney disease should talk to a prescriber first, mainly because of melatonin's and magnesium's separate drug interactions.
-
 ## Supplements mentioned
 
 - [Magnesium glycinate](/products/magnesium-glycinate/) — a gentle, well-absorbed chelated form often used for evening calm and sleep support.

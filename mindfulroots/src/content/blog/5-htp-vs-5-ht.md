@@ -63,23 +63,6 @@ Do not combine 5-HTP with SSRIs, SNRIs, MAOIs, triptans, tramadol, stimulants li
 
 If low mood is the reason you are exploring serotonin support, our [get help](/get-help/) page points to real resources, and for a related question our post on whether you can [take 5-HTP with Adderall](/blog/can-you-take-5-htp-with-adderall/) walks through that specific interaction.
 
-## Frequently asked questions
-
-**Are 5-HTP and 5-HT the same thing?**
-No, but they are close relatives. 5-HTP (5-hydroxytryptophan) is the precursor. Your body converts it into 5-HT (5-hydroxytryptamine), which is the proper chemical name for serotonin. So 5-HTP is one step before serotonin, and 5-HT is serotonin itself. They are two points on the same production line, not two competing products.
-
-**Can you buy 5-HT (serotonin) as a supplement?**
-Not in a form that would help mood. Serotonin taken by mouth cannot cross the blood-brain barrier, so swallowing serotonin would not raise it in the brain. This is the practical reason supplements use 5-HTP instead: 5-HTP does cross into the brain and is then converted into serotonin on site. When a product mentions 5-HT, it is almost always describing the pathway, not selling serotonin.
-
-**Which one should I take for mood?**
-If you and your prescriber decide a serotonin precursor is worth trying, the answer is 5-HTP, because it is the form that can actually reach the brain. There is no oral 5-HT product that does the job. That said, 5-HTP carries real interaction cautions with serotonergic medications, so it is not a casual purchase.
-
-**Why does the difference matter?**
-It matters because the marketing around serotonin can be misleading. You cannot supplement serotonin directly and expect a brain effect, so any product implying it delivers serotonin to your brain is overstating things. Understanding that 5-HTP is the precursor, and 5-HT is what your body makes from it, helps you read labels honestly.
-
-**Does 5-HTP raise serotonin too much?**
-It can contribute to excess serotonin activity when combined with serotonergic drugs, which is the basis for serotonin syndrome. On its own at typical doses it is usually well tolerated, but the interaction risk is real. This is why 5-HTP is best used only with medical guidance if you take any mood, migraine, or pain medication.
-
 ## Supplements mentioned
 
 - [5-HTP](/products/5-htp/), a direct serotonin precursor from the Griffonia seed, used for mood and sleep support with real interaction cautions.

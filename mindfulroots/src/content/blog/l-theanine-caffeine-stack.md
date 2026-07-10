@@ -64,28 +64,6 @@ If you take medication for blood pressure or for the central nervous system, inc
 
 This pairing supports focus and steady alertness for everyday demands. It is not a treatment for anxiety, ADHD, or any diagnosed condition. If stress or attention problems are affecting your life, our [Get Help page](/get-help) has professional resources, and our [medical disclaimer](/disclaimer) explains the limits of educational content like this.
 
-## Frequently asked questions
-
-### What is the best ratio of L-theanine to caffeine?
-
-Most controlled trials used roughly 2:1, meaning about 200 mg of L-theanine to 100 mg of caffeine. Some studies used 1:1 (100 mg each) and still saw benefits. The 2:1 ratio is a reasonable starting point because it gives enough theanine to smooth caffeine's edge while keeping the alertness.
-
-### Can I just add L-theanine to my morning coffee?
-
-Yes. A standard cup of drip coffee has roughly 95 mg of caffeine, so pairing it with a 200 mg L-theanine capsule lands close to the 2:1 ratio used in research. L-theanine is odourless and nearly tasteless, so it does not change how the coffee tastes.
-
-### Does L-theanine cancel out caffeine's energy?
-
-No. In the trials, L-theanine did not blunt caffeine's alertness or attention benefits. It reduced some of the side effects, such as the rise in blood pressure and the jittery feeling, while the focus and reaction-time gains stayed or improved. The two work together rather than against each other.
-
-### How long before it works and how long does it last?
-
-L-theanine crosses the blood-brain barrier quickly, and combination studies measured effects within 30 to 60 minutes. Caffeine's half-life is roughly 4 to 6 hours, so taking the stack in the morning or early afternoon avoids disrupting sleep.
-
-### Is the L-theanine and caffeine stack safe every day?
-
-For most healthy adults, the doses used in research are well tolerated. Keep total daily caffeine under about 400 mg, the amount the FDA cites as generally safe. If you are pregnant, take medication for blood pressure or the nervous system, or are sensitive to stimulants, check with a clinician first.
-
 ## Supplements mentioned
 
 - [L-Theanine](/products/l-theanine) — our full product overview, including evidence tier, sourcing notes, and affiliate links.
