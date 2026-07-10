@@ -31,8 +31,9 @@ b-vitamins posts. Every automated post must follow it.
 - `cluster` — the topic cluster (provided).
 - `relatedProducts` — the product ID(s) (provided).
 - `draft: false`.
-- `faq:` — a 4–6 item `q`/`a` array (see §4). Its presence auto-emits **FAQPage** structured
-  data, so it is required whenever the post has an FAQ section — and it always should.
+- `faq:` — a 4–6 item `q`/`a` array (see §4). This is the **only** place the FAQ lives. The
+  template renders it into the page *and* emits the **FAQPage** structured data from the same
+  array, so the two can never disagree. Always include it.
 
 ## 2. Voice & compliance (YMYL / E-E-A-T)
 
@@ -56,15 +57,18 @@ b-vitamins posts. Every automated post must follow it.
 - Single `H1` (the title); `H2`/`H3` only, no skipped levels.
 - Set the length floor by the top ~5 ranking pages for the keyword; match or exceed, never pad.
 - Mandatory sections: definitional intro → mechanism/body → **evidence summary** → **typical use**
-  → **cautions/interactions** → **frequently asked questions** → **supplements mentioned** →
-  **sources**.
+  → **cautions/interactions** → **sources**. The FAQ and "supplements mentioned" blocks are
+  rendered by the template from frontmatter — do **not** write them as body sections.
 
-## 4. FAQ section (required)
+## 4. FAQ (frontmatter only — never in the body)
 
-- Add a visible `## Frequently asked questions` section with **4–6** real People-Also-Ask
-  questions, each answered concisely (2–4 sentences).
-- Mirror the same Q&A into the `faq:` frontmatter array so the FAQPage schema matches the visible
-  content.
+- Put **4–6** real People-Also-Ask questions in the `faq:` frontmatter array, each answered
+  concisely (2–4 sentences).
+- **Never write a `## Frequently asked questions` or `## FAQ` heading in the body.** The blog
+  template renders the `faq:` array as a visible section automatically, and emits the FAQPage
+  structured data from that same array. Writing it in the body too produces a duplicated FAQ and
+  desynchronised schema. **The build now fails if a body FAQ heading is present.**
+- Answers may contain inline Markdown links (`[text](url)`); they render as real links.
 
 ## 5. Evidence tables
 
@@ -121,7 +125,8 @@ b-vitamins posts. Every automated post must follow it.
 - [ ] `title` ≤ 45 chars; `description` 150–158 chars; `updatedDate` set; `faq:` array present.
 - [ ] Definitional opener in first ~60 words; support-not-treatment throughout.
 - [ ] 5–8 verified sources, **every one hyperlinked**; no invented citations.
-- [ ] FAQ section + matching `faq:` frontmatter; evidence table if comparing ≥3 items.
+- [ ] `faq:` frontmatter present; **no `## Frequently asked questions` / `## FAQ` body heading**.
+- [ ] Evidence table if comparing ≥3 items.
 - [ ] Product hub + `/get-help/` + `/disclaimer/` links present; author referred to as "Enoch C."
 - [ ] Product link appears high in the article (first couple hundred words), not only at the end.
 - [ ] 5-HTP posts include the serotonin-syndrome caution.

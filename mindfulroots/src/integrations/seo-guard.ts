@@ -9,11 +9,16 @@ const DESCRIPTION_LIMIT = 160;
 
 interface Violation {
   file: string;
-  kind: 'title' | 'description';
+  kind: 'title' | 'description' | 'body-faq';
   length: number;
   limit: number;
   text: string;
 }
+
+// The blog template renders `faq` frontmatter into a visible section AND emits the
+// FAQPage JSON-LD from it. A body FAQ heading duplicates that section and desyncs
+// the schema. Posts are machine-generated, so catch a prompt regression at build.
+const BODY_FAQ_HEADING = /^##\s+(Frequently asked questions|FAQ)\s*$/im;
 
 // Reads a single quoted frontmatter scalar, e.g. `title: "Foo's Bar"`. Values in
 // this codebase are always wrapped in double quotes and never span multiple
@@ -54,6 +59,20 @@ function checkFile(dir: string, file: string, kind: 'blog' | 'product'): Violati
       limit: DESCRIPTION_LIMIT,
       text: effectiveDescription,
     });
+  }
+
+  if (kind === 'blog') {
+    const body = raw.replace(/^---[\s\S]*?\n---/, '');
+    const heading = body.match(BODY_FAQ_HEADING);
+    if (heading) {
+      violations.push({
+        file,
+        kind: 'body-faq',
+        length: 0,
+        limit: 0,
+        text: `${heading[0].trim()} — put the FAQ in \`faq:\` frontmatter only; the template renders it`,
+      });
+    }
   }
 
   return violations;
@@ -140,15 +159,17 @@ export default function seoGuard(): AstroIntegration {
         }
 
         if (violations.length > 0) {
-          const lines = violations.map(
-            (v) => `  [${v.kind}] ${v.file}: ${v.length}/${v.limit} chars — "${v.text}"`,
+          const lines = violations.map((v) =>
+            v.kind === 'body-faq'
+              ? `  [body-faq] ${v.file}: ${v.text}`
+              : `  [${v.kind}] ${v.file}: ${v.length}/${v.limit} chars — "${v.text}"`,
           );
           throw new Error(
-            `seo-guard: ${violations.length} SEO length violation(s) found:\n${lines.join('\n')}`,
+            `seo-guard: ${violations.length} content violation(s) found:\n${lines.join('\n')}`,
           );
         }
 
-        logger.info('seo-guard: all titles ≤60 chars (rendered) and descriptions ≤160 chars. ✔');
+        logger.info('seo-guard: titles ≤60, descriptions ≤160, no body FAQ headings. ✔');
       },
     },
   };
