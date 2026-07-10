@@ -1,6 +1,8 @@
 ---
 title: "Magnesium Glycinate Dosage for Anxiety: What the Research Actually Uses"
 description: "How much magnesium glycinate people take for anxiety, what the trials actually used, why glycinate is the usual form, and the safety points that matter before you start."
+seoTitle: "Magnesium Glycinate Dosage for Anxiety: How Much?"
+metaDescription: "How much magnesium glycinate people take for anxiety, the doses trials actually used, and the safety points worth reviewing before you start."
 pubDate: 2026-07-04
 cluster: "magnesium"
 postType: "explainer"

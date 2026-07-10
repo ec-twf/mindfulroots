@@ -93,6 +93,12 @@ const blog = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    // SEO overrides. If omitted, the page falls back to `title` /
+    // `description`. (These MUST be declared here — Zod strips any
+    // frontmatter key the schema doesn't know about, which is why an
+    // undeclared `seoTitle` never reached the <title> tag.)
+    seoTitle: z.string().optional(),
+    metaDescription: z.string().optional(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     cluster: z.string(),             // topic cluster, e.g. "magnesium"

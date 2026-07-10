@@ -1,7 +1,7 @@
 ---
 title: "Rhodiola Rosea"
-seoTitle: "Rhodiola Rosea for Fatigue & Burnout: Evidence and How to Choose"
-metaDescription: "The northern adaptogen traditionally used for fatigue and mental stamina. What the trials show for stress and burnout, typical dosing, and how to pick a standardized extract."
+seoTitle: "Rhodiola Rosea for Fatigue & Burnout: Evidence"
+metaDescription: "The northern adaptogen traditionally used for fatigue and mental stamina. What the trials show for stress and burnout, plus typical dosing."
 latinName: "Rhodiola rosea (golden root)"
 category: "Adaptogen"
 evidence: "Moderate"

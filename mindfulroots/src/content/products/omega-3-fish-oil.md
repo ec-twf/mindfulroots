@@ -1,7 +1,7 @@
 ---
 title: "Omega-3 Fish Oil (EPA & DHA)"
 seoTitle: "High-EPA Omega-3 for Mood: Evidence and How to Choose"
-metaDescription: "What the research says about EPA-rich omega-3 for low mood, plus the concentration, EPA-ratio and IFOS purity checks that separate a good fish oil from a weak one."
+metaDescription: "What the research says about EPA-rich omega-3 for low mood, plus the concentration and purity checks that separate a good fish oil from a weak one."
 latinName: "EPA / DHA marine lipids"
 category: "Essential fatty acids"
 evidence: "Moderate"

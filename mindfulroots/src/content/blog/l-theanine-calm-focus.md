@@ -1,6 +1,7 @@
 ---
 title: "L-Theanine and Calm Focus: What the Science Actually Says"
 description: "L-theanine, the amino acid behind tea's distinctive calm, has one of the cleaner evidence stories in the supplement world. Here's how it works, what the research supports, and how to use it well."
+metaDescription: "L-theanine, the amino acid behind tea's calm, has one of the cleaner evidence stories in supplements. How it works and how to use it well."
 pubDate: 2025-10-14
 updatedDate: 2026-06-30
 cluster: l-theanine

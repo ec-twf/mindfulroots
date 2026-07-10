@@ -1,6 +1,6 @@
 ---
 title: "Ashwagandha (KSM-66 / Sensoril)"
-seoTitle: "Ashwagandha for Stress: Evidence and How to Choose an Extract"
+seoTitle: "Ashwagandha for Stress: Evidence and How to Choose"
 metaDescription: "What the trials actually show for ashwagandha and everyday stress, why standardized root extracts like KSM-66 matter, plus dosing, cautions and how to pick one."
 latinName: "Withania somnifera"
 category: "Adaptogen"

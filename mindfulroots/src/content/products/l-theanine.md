@@ -1,7 +1,7 @@
 ---
 title: "L-Theanine"
 seoTitle: "L-Theanine for Calm Focus: Evidence and How to Choose"
-metaDescription: "The amino acid behind green tea's relaxed alertness. What research shows for stress and focus, typical 200 mg dosing, and how to choose an L-theanine supplement."
+metaDescription: "The amino acid behind green tea's relaxed alertness. What research shows for stress and focus, typical dosing, and how to choose an L-theanine supplement."
 latinName: "γ-glutamylethylamide"
 category: "Amino acid"
 evidence: "Moderate"

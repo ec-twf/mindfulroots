@@ -1,7 +1,7 @@
 ---
 title: "Vitamin B-Complex"
 seoTitle: "B-Complex for Energy & Mood: Evidence and How to Choose"
-metaDescription: "How B vitamins support the brain's neurotransmitter pathways, why B12 and folate matter most for low mood and fatigue, and what to look for in a methylated B-complex."
+metaDescription: "How B vitamins support the brain's neurotransmitter pathways. Why B12 and folate matter most for low mood and fatigue, and what to look for in a B-complex."
 latinName: "B6 · B9 (folate) · B12 and co-factors"
 category: "Vitamin"
 evidence: "Moderate"

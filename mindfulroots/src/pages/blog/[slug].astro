@@ -117,7 +117,7 @@ const schema = {
   '@graph': graphItems,
 };
 ---
-<Base title={data.title} description={data.description} schema={schema} ogType="article" image={data.image}>
+<Base title={data.seoTitle ?? data.title} description={data.metaDescription ?? data.description} schema={schema} ogType="article" image={data.image}>
   <Breadcrumb crumbs={[
     { label: 'Home', href: '/' },
     { label: 'Journal', href: '/blog/' },

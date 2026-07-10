@@ -1,6 +1,7 @@
 ---
 title: "The Five Foundations of Natural Mood Support"
 description: "Before any supplement earns its place in your routine, five lifestyle practices do most of the heavy lifting for mood, stress resilience, and sleep. Here's what the evidence actually says about each."
+metaDescription: "Before any supplement earns its place in your routine, five lifestyle practices do most of the heavy lifting for mood and sleep — what the evidence says."
 pubDate: 2025-10-14
 cluster: lifestyle-foundations
 relatedProducts:

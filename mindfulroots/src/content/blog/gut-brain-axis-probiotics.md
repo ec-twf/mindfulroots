@@ -1,6 +1,7 @@
 ---
 title: "The Gut–Brain Axis: Can Probiotics Really Affect Mood?"
 description: "How the gut talks to the brain, what 'psychobiotics' are, which strains have actually been studied in people, and an honest read on how early this promising research still is."
+metaDescription: "How the gut talks to the brain, what 'psychobiotics' are, and which strains have been studied in people — an honest read on how early this research still is."
 pubDate: 2026-03-01
 updatedDate: 2026-06-22
 cluster: "gut-brain probiotics"

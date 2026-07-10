@@ -17,7 +17,13 @@ interface Props {
 const { title, description = SITE.description, schema, ogType = 'website', image = '/og-default.png' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL(image, Astro.site);
-const fullTitle = title === SITE.name ? `${SITE.name} — ${SITE.tagline}` : `${title} · ${SITE.name}`;
+const suffixedTitle = `${title} · ${SITE.name}`;
+const fullTitle =
+  title === SITE.name
+    ? `${SITE.name} — ${SITE.seoTagline}`
+    : suffixedTitle.length <= 60
+      ? suffixedTitle
+      : title;
 
 const year = new Date().getFullYear();
 ---

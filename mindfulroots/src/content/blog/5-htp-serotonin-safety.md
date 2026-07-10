@@ -1,6 +1,7 @@
 ---
 title: "5-HTP and Serotonin: Why the Safety Conversation Comes First"
 description: "5-HTP is the most direct serotonin precursor you can buy over the counter — which is exactly why the interaction risk matters more than the mood evidence. Read this before you consider it."
+metaDescription: "5-HTP is the most direct serotonin precursor sold over the counter — which is why the interaction risk deserves more attention than the mood evidence."
 pubDate: 2026-02-23
 updatedDate: 2026-06-22
 cluster: "5-HTP"

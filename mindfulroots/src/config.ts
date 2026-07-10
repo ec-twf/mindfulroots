@@ -4,8 +4,10 @@
 export const SITE = {
   name: 'MoodSupplement',
   tagline: 'Evidence-aware mood & stress support, explained calmly.',
+  /** Short form used in the homepage <title>; `tagline` is too long for a SERP. */
+  seoTagline: 'Evidence-Aware Mood & Stress Support',
   description:
-    'MoodSupplement reviews mood, stress and sleep-support supplements with an evidence-aware, no-hype approach — plus honest guidance on when supplements are not the answer.',
+    'Mood, stress and sleep supplements reviewed with an evidence-aware, no-hype approach — plus honest guidance on when supplements are not the answer.',
 };
 
 // Your iHerb affiliate / rewards code. Leave as-is until you have one.
