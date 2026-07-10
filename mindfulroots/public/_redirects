@@ -1,0 +1,5 @@
+# Canonical host: force https + www.
+# GSC indexed http://moodsupplement.net/ separately from https://www.moodsupplement.net/
+http://moodsupplement.net/*      https://www.moodsupplement.net/:splat  301!
+http://www.moodsupplement.net/*  https://www.moodsupplement.net/:splat  301!
+https://moodsupplement.net/*     https://www.moodsupplement.net/:splat  301!
