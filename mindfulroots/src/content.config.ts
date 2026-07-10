@@ -113,6 +113,16 @@ const blog = defineCollection({
     // twitter:image and the Article schema `image`. Falls back to /og-default.png.
     image: z.string().optional(),
     imageAlt: z.string().optional(),
+
+    // ─── Keyword ownership (cannibalization guard) ────────────────────────────
+    // The one head keyword this page owns, e.g. "magnesium glycinate vs
+    // citrate". Cross-checked at build time (seo-guard) against every other
+    // blog/product file and against src/lib/keyword-map.ts so two pages never
+    // silently compete for the same query.
+    headTerm: z.string().optional(),
+    // Additional long-tail variants this same page owns (e.g. close phrasing
+    // of the head term). Also uniqueness- and registry-checked.
+    ownsKeywords: z.array(z.string()).default([]),
   }),
 });
 

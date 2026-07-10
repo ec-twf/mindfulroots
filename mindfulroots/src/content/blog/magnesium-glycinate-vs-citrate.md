@@ -8,7 +8,7 @@ cluster: "magnesium"
 postType: "comparison"
 relatedProducts:
   - magnesium-glycinate
-draft: false
+draft: true
 faq:
   - q: "Is magnesium glycinate or citrate better for sleep?"
     a: "For sleep and evening wind-down, glycinate is usually the better fit. It's gentle on digestion and pairs magnesium with glycine, a calming amino acid, so it's less likely to send you to the bathroom overnight. Citrate can also help with sleep, but its mild laxative effect makes it less comfortable for that purpose in some people."

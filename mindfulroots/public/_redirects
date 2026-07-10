@@ -3,3 +3,10 @@
 http://moodsupplement.net/*      https://www.moodsupplement.net/:splat  301!
 http://www.moodsupplement.net/*  https://www.moodsupplement.net/:splat  301!
 https://moodsupplement.net/*     https://www.moodsupplement.net/:splat  301!
+
+# Keyword-cannibalization cleanup: magnesium-glycinate-vs-citrate was a thin
+# duplicate of the magnesium-stress-sleep-guide pillar (Google was showing the
+# weaker page for the shared queries). Retired (draft: true) and merged into
+# the pillar; this must fire before the canonical-host rules above would
+# otherwise 404 it post-build.
+/blog/magnesium-glycinate-vs-citrate/  /blog/magnesium-stress-sleep-guide/  301

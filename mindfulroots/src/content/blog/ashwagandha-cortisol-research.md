@@ -6,6 +6,7 @@ updatedDate: 2026-07-03
 cluster: ashwagandha
 relatedProducts: [ashwagandha]
 draft: false
+headTerm: "ashwagandha cortisol"
 faq:
   - q: "How much does ashwagandha lower cortisol?"
     a: "In the KSM-66 trials, morning or serum cortisol fell by roughly 23–28% versus placebo over 8 weeks in chronically stressed adults. The most-cited figure, ~27.9%, comes from the 2012 Chandrasekhar study at 600 mg/day. These are group averages in stressed people, not a promise for any individual, and cortisol is only one marker among several the trials tracked."

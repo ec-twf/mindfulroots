@@ -49,7 +49,7 @@ The honest reading: there's a real signal, it's modest, and it's not a substitut
 
 The trial evidence isn't strongly tied to one form of magnesium, so glycinate isn't chosen for anxiety because studies prove it's uniquely effective. It's chosen because it makes *daily* use comfortable. Glycinate is well absorbed and gentle on digestion, so it avoids the laxative effect that citrate can have, which is exactly the problem you'd hit taking magnesium every day for weeks. The glycine it's paired with also has its own calming associations, which is part of why it's the form people reach for in the evening.
 
-If you're weighing glycinate against citrate more broadly, we've written a [short comparison](/blog/magnesium-glycinate-vs-citrate/) on choosing between the two.
+If you're weighing glycinate against citrate more broadly, our [magnesium forms guide](/blog/magnesium-stress-sleep-guide/) covers choosing between the two (and oxide) in depth.
 
 ## Timing and consistency
 

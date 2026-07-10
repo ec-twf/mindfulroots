@@ -2,6 +2,7 @@ import { readFileSync, readdirSync } from 'fs';
 import { join, relative } from 'path';
 import { fileURLToPath } from 'url';
 import type { AstroIntegration } from 'astro';
+import { KEYWORD_MAP } from '../lib/keyword-map.ts';
 
 const TITLE_SUFFIX_LEN = 17; // " · MoodSupplement" — mirrors the Base.astro rule
 const TITLE_LIMIT = 60;
@@ -9,7 +10,7 @@ const DESCRIPTION_LIMIT = 160;
 
 interface Violation {
   file: string;
-  kind: 'title' | 'description' | 'body-faq';
+  kind: 'title' | 'description' | 'body-faq' | 'keyword-duplicate' | 'keyword-registry';
   length: number;
   limit: number;
   text: string;
@@ -27,6 +28,43 @@ const BODY_FAQ_HEADING = /^##\s+(Frequently asked questions|FAQ)\s*$/im;
 function readFrontmatterField(raw: string, key: string): string | undefined {
   const match = raw.match(new RegExp(`^${key}:\\s*"(.*)"\\s*$`, 'm'));
   return match?.[1];
+}
+
+// Reads an unquoted frontmatter boolean, e.g. `draft: true`.
+function readFrontmatterBoolean(raw: string, key: string): boolean {
+  const match = raw.match(new RegExp(`^${key}:\\s*(true|false)\\s*$`, 'm'));
+  return match?.[1] === 'true';
+}
+
+// Reads a frontmatter array field in either of the two styles used in this repo:
+// inline (`key: ["a", "b"]`) or block-list (`key:` followed by `  - "a"` lines).
+// Items may or may not be quoted. Returns [] if the key is absent, matching the
+// Zod schema's `.default([])`.
+function readFrontmatterArray(raw: string, key: string): string[] {
+  const keyLine = raw.match(new RegExp(`^${key}:\\s*(.*)$`, 'm'));
+  if (!keyLine) return [];
+
+  const inline = keyLine[1].trim();
+  if (inline.startsWith('[')) {
+    const bracketed = inline.match(/\[(.*)\]/);
+    if (!bracketed) return [];
+    return bracketed[1]
+      .split(',')
+      .map((s) => s.trim().replace(/^["']|["']$/g, ''))
+      .filter(Boolean);
+  }
+
+  const lines = raw.split('\n');
+  const keyIdx = lines.findIndex((l) => new RegExp(`^${key}:\\s*$`).test(l));
+  if (keyIdx === -1) return [];
+
+  const items: string[] = [];
+  for (let i = keyIdx + 1; i < lines.length; i++) {
+    const itemMatch = lines[i].match(/^\s*-\s*(.+?)\s*$/);
+    if (!itemMatch) break;
+    items.push(itemMatch[1].replace(/^["']|["']$/g, ''));
+  }
+  return items;
 }
 
 function checkFile(dir: string, file: string, kind: 'blog' | 'product'): Violation[] {
@@ -71,6 +109,116 @@ function checkFile(dir: string, file: string, kind: 'blog' | 'product'): Violati
         length: 0,
         limit: 0,
         text: `${heading[0].trim()} — put the FAQ in \`faq:\` frontmatter only; the template renders it`,
+      });
+    }
+  }
+
+  return violations;
+}
+
+// ─── Keyword cannibalization guard ──────────────────────────────────────────
+// Two live GSC-proven cases (magnesium, omega-3) showed Google unable to pick
+// an owner between near-duplicate pages, tanking both. `headTerm` /
+// `ownsKeywords` frontmatter declares a single owner per query; this checks
+// (a) no two files claim the same term, and (b) every claim is reflected in
+// KEYWORD_MAP (src/lib/keyword-map.ts) in both directions, so the registry
+// can't silently drift from the content.
+
+interface KeywordClaim {
+  term: string;
+  file: string;
+  url: string; // site-absolute path this file renders at, e.g. "/blog/foo/"
+  source: 'headTerm' | 'ownsKeywords';
+}
+
+function slugFor(file: string): string {
+  return file.replace(/\.mdx?$/, '');
+}
+
+function collectKeywordClaims(dir: string, files: string[], kind: 'blog' | 'product'): KeywordClaim[] {
+  const claims: KeywordClaim[] = [];
+  const base = kind === 'blog' ? '/blog/' : '/products/';
+
+  for (const file of files) {
+    const raw = readFileSync(join(dir, file), 'utf8');
+    // Draft posts are retired (dropped from getStaticPaths + sitemap) — they
+    // don't render, so they can't own a live query.
+    if (kind === 'blog' && readFrontmatterBoolean(raw, 'draft')) continue;
+
+    const url = `${base}${slugFor(file)}/`;
+
+    const headTerm = readFrontmatterField(raw, 'headTerm');
+    if (headTerm) claims.push({ term: headTerm, file, url, source: 'headTerm' });
+
+    for (const term of readFrontmatterArray(raw, 'ownsKeywords')) {
+      claims.push({ term, file, url, source: 'ownsKeywords' });
+    }
+  }
+
+  return claims;
+}
+
+function checkKeywordUniqueness(claims: KeywordClaim[]): Violation[] {
+  const byTerm = new Map<string, KeywordClaim[]>();
+  for (const claim of claims) {
+    const norm = claim.term.trim().toLowerCase();
+    if (!byTerm.has(norm)) byTerm.set(norm, []);
+    byTerm.get(norm)!.push(claim);
+  }
+
+  const violations: Violation[] = [];
+  for (const group of byTerm.values()) {
+    const files = [...new Set(group.map((c) => c.file))];
+    if (files.length > 1) {
+      violations.push({
+        file: files.join(' AND '),
+        kind: 'keyword-duplicate',
+        length: 0,
+        limit: 0,
+        text: `"${group[0].term}" is claimed by both ${files.join(' AND ')} — a keyword must have exactly one owner`,
+      });
+    }
+  }
+  return violations;
+}
+
+function checkKeywordRegistry(claims: KeywordClaim[]): Violation[] {
+  const violations: Violation[] = [];
+
+  for (const claim of claims) {
+    const norm = claim.term.trim().toLowerCase();
+    const row = KEYWORD_MAP.find((r) => r.headTerm.trim().toLowerCase() === norm);
+    if (!row) {
+      violations.push({
+        file: claim.file,
+        kind: 'keyword-registry',
+        length: 0,
+        limit: 0,
+        text: `claims "${claim.term}" (via ${claim.source}) but no KEYWORD_MAP row exists for it — add a row to src/lib/keyword-map.ts`,
+      });
+      continue;
+    }
+    if (row.owner !== claim.url) {
+      violations.push({
+        file: claim.file,
+        kind: 'keyword-registry',
+        length: 0,
+        limit: 0,
+        text: `claims "${claim.term}" but KEYWORD_MAP lists its owner as "${row.owner}", not "${claim.url}" — update the frontmatter or src/lib/keyword-map.ts so they agree`,
+      });
+    }
+  }
+
+  const claimedPairs = new Set(claims.map((c) => `${c.term.trim().toLowerCase()}|||${c.url}`));
+  for (const row of KEYWORD_MAP) {
+    const key = `${row.headTerm.trim().toLowerCase()}|||${row.owner}`;
+    if (!claimedPairs.has(key)) {
+      violations.push({
+        file: row.owner,
+        kind: 'keyword-registry',
+        length: 0,
+        limit: 0,
+        text: `KEYWORD_MAP claims "${row.headTerm}" is owned by "${row.owner}", but no page at that URL declares it via headTerm/ownsKeywords — remove the row or add the frontmatter`,
       });
     }
   }
@@ -147,29 +295,39 @@ export default function seoGuard(): AstroIntegration {
         const violations: Violation[] = [];
 
         const blogDir = join(process.cwd(), 'src/content/blog');
-        for (const file of readdirSync(blogDir)) {
-          if (!file.endsWith('.md') && !file.endsWith('.mdx')) continue;
+        const blogFiles = readdirSync(blogDir).filter((f) => f.endsWith('.md') || f.endsWith('.mdx'));
+        for (const file of blogFiles) {
           violations.push(...checkFile(blogDir, file, 'blog'));
         }
 
         const productsDir = join(process.cwd(), 'src/content/products');
-        for (const file of readdirSync(productsDir)) {
-          if (!file.endsWith('.md')) continue;
+        const productFiles = readdirSync(productsDir).filter((f) => f.endsWith('.md'));
+        for (const file of productFiles) {
           violations.push(...checkFile(productsDir, file, 'product'));
         }
 
+        const claims = [
+          ...collectKeywordClaims(blogDir, blogFiles, 'blog'),
+          ...collectKeywordClaims(productsDir, productFiles, 'product'),
+        ];
+        violations.push(...checkKeywordUniqueness(claims));
+        violations.push(...checkKeywordRegistry(claims));
+
         if (violations.length > 0) {
-          const lines = violations.map((v) =>
-            v.kind === 'body-faq'
-              ? `  [body-faq] ${v.file}: ${v.text}`
-              : `  [${v.kind}] ${v.file}: ${v.length}/${v.limit} chars — "${v.text}"`,
-          );
+          const lines = violations.map((v) => {
+            if (v.kind === 'body-faq' || v.kind === 'keyword-duplicate' || v.kind === 'keyword-registry') {
+              return `  [${v.kind}] ${v.file}: ${v.text}`;
+            }
+            return `  [${v.kind}] ${v.file}: ${v.length}/${v.limit} chars — "${v.text}"`;
+          });
           throw new Error(
             `seo-guard: ${violations.length} content violation(s) found:\n${lines.join('\n')}`,
           );
         }
 
-        logger.info('seo-guard: titles ≤60, descriptions ≤160, no body FAQ headings. ✔');
+        logger.info(
+          `seo-guard: titles ≤60, descriptions ≤160, no body FAQ headings, ${claims.length} keyword claim(s) unique + registry-consistent. ✔`,
+        );
       },
     },
   };

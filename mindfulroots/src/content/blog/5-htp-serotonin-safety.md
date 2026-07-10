@@ -7,6 +7,7 @@ updatedDate: 2026-06-22
 cluster: "5-HTP"
 relatedProducts: ["5-htp"]
 draft: false
+headTerm: "5-htp serotonin syndrome"
 faq:
   - q: "Does 5-HTP work for depression?"
     a: "The honest answer is that the evidence is limited and inconclusive. A 2002 Cochrane review found a signal of benefit but judged the trials too few and too low in quality to recommend 5-HTP, advising conventional treatments instead. We rate its mood evidence as emerging."
