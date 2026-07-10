@@ -31,8 +31,13 @@ MoodSupplement.net is a research-and-translation resource, not medical advice. N
 - [Saffron and Mood Research](https://www.moodsupplement.net/blog/saffron-mood-research/): Detailed look at the clinical trials for saffron extract.
 - [Vitamin D and Winter Mood](https://www.moodsupplement.net/blog/vitamin-d-winter-mood/): Seasonal depression and the vitamin D connection.
 
+## Condition guides
+
+- [Best Supplements for Stress](https://www.moodsupplement.net/guides/stress/): What the human evidence supports across ashwagandha, rhodiola, magnesium glycinate and L-theanine, and how to match one to your stress pattern.
+
 ## Key pages
 
+- [Guides Index](https://www.moodsupplement.net/guides/): Condition-first guides organised by goal rather than ingredient.
 - [About](https://www.moodsupplement.net/about/): Editorial process, evidence-tier methodology, and team background.
 - [Products Index](https://www.moodsupplement.net/products/): All supplement reviews.
 - [Blog Index](https://www.moodsupplement.net/blog/): All research guides.

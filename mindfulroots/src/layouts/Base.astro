@@ -150,6 +150,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           <a
+            href="/guides/"
+            class={`hover:text-saffron-deep ${Astro.url.pathname.startsWith('/guides/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
+          >Guides</a>
+          <a
             href="/blog/"
             class={`hover:text-saffron-deep ${Astro.url.pathname.startsWith('/blog/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
           >Journal</a>
@@ -221,6 +225,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             class="pl-9 pr-5 py-2.5 text-sm border-b border-mist text-ink-soft hover:text-saffron-deep hover:bg-paper-hover"
           >{g.label}</a>
         ))}
+        <a
+          href="/guides/"
+          class={`px-5 py-3.5 text-sm border-b border-mist hover:text-saffron-deep hover:bg-paper-hover ${Astro.url.pathname.startsWith('/guides/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
+        >Guides</a>
         <a
           href="/blog/"
           class={`px-5 py-3.5 text-sm border-b border-mist hover:text-saffron-deep hover:bg-paper-hover ${Astro.url.pathname.startsWith('/blog/') ? 'text-saffron-deep font-medium' : 'text-ink-soft'}`}
@@ -319,6 +327,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="eyebrow !text-mist-on-dark mb-2">Site</p>
           <ul class="space-y-1.5 opacity-90">
             <li><a href="/products/" class="hover:underline">All supplements</a></li>
+            <li><a href="/guides/" class="hover:underline">Guides</a></li>
             <li><a href="/blog/" class="hover:underline">Journal</a></li>
             <li><a href="/about/" class="hover:underline">About &amp; editorial standards</a></li>
             <li><a href="/contact/" class="hover:underline">Contact</a></li>

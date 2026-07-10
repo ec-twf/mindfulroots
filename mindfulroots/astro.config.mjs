@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import pagefind from 'astro-pagefind';
 import tailwindcss from '@tailwindcss/vite';
-import { readFileSync, readdirSync } from 'fs';
+import { existsSync, readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 import seoGuard from './src/integrations/seo-guard.ts';
 
@@ -12,17 +12,25 @@ import seoGuard from './src/integrations/seo-guard.ts';
 // Products and all other pages fall back to the current build date.
 function buildLastmodMap(baseUrl) {
   const map = new Map();
-  const blogDir = join(import.meta.dirname, 'src/content/blog');
+  // Both collections share the updatedDate ?? pubDate convention.
+  const sources = [
+    { dir: 'src/content/blog', path: 'blog' },
+    { dir: 'src/content/hubs', path: 'guides' },
+  ];
 
-  for (const file of readdirSync(blogDir)) {
-    if (!file.endsWith('.md') && !file.endsWith('.mdx')) continue;
-    const raw = readFileSync(join(blogDir, file), 'utf8');
-    const slug = file.replace(/\.mdx?$/, '');
-    const updated = raw.match(/^updatedDate:\s*["']?([^"'\r\n]+)/m);
-    const pub = raw.match(/^pubDate:\s*["']?([^"'\r\n]+)/m);
-    const dateStr = (updated?.[1] ?? pub?.[1] ?? '').trim();
-    if (dateStr) {
-      map.set(`${baseUrl}/blog/${slug}/`, new Date(dateStr).toISOString().split('T')[0]);
+  for (const { dir, path } of sources) {
+    const absDir = join(import.meta.dirname, dir);
+    if (!existsSync(absDir)) continue;
+    for (const file of readdirSync(absDir)) {
+      if (!file.endsWith('.md') && !file.endsWith('.mdx')) continue;
+      const raw = readFileSync(join(absDir, file), 'utf8');
+      const slug = file.replace(/\.mdx?$/, '');
+      const updated = raw.match(/^updatedDate:\s*["']?([^"'\r\n]+)/m);
+      const pub = raw.match(/^pubDate:\s*["']?([^"'\r\n]+)/m);
+      const dateStr = (updated?.[1] ?? pub?.[1] ?? '').trim();
+      if (dateStr) {
+        map.set(`${baseUrl}/${path}/${slug}/`, new Date(dateStr).toISOString().split('T')[0]);
+      }
     }
   }
 

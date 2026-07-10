@@ -42,4 +42,9 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   // Adaptogens
   { headTerm: 'ashwagandha vs rhodiola', owner: '/blog/adaptogens-ashwagandha-rhodiola/', intent: 'comparison' },
   { headTerm: 'ashwagandha cortisol', owner: '/blog/ashwagandha-cortisol-research/', intent: 'informational' },
+
+  // Condition hubs (/guides/*) — commercial-intent middle layer. Each owns a
+  // "best supplements for <condition>" head term; the underlying evidence posts
+  // own the informational terms, so the two layers don't cannibalize.
+  { headTerm: 'best supplements for stress', owner: '/guides/stress/', intent: 'commercial' },
 ];

@@ -126,4 +126,33 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { products, blog };
+const hubs = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/hubs' }),
+  schema: z.object({
+    title: z.string(),
+    seoTitle: z.string().optional(),
+    description: z.string(),
+    metaDescription: z.string().optional(),
+    condition: z.string(),          // canonical slug-like id, e.g. "stress"
+    conditionLabel: z.string(),     // display label, e.g. "Stress"
+    // Head keyword this hub owns, cross-checked by seo-guard against
+    // src/lib/keyword-map.ts (same cannibalization guard as blog/products).
+    headTerm: z.string(),
+    ownsKeywords: z.array(z.string()).default([]),
+    intent: z.enum(['best', 'how-to-choose', 'comparison-roundup', 'where-to-buy']).default('best'),
+    pubDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+    // Product collection slugs, in recommendation-rank order.
+    products: z.array(z.string()).min(1),
+    // Blog collection slugs whose evidence backs the picks above.
+    supportingPosts: z.array(z.string()).default([]),
+    // Sibling hub slugs (under src/content/hubs) for "Related guides".
+    relatedHubs: z.array(z.string()).default([]),
+    faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
+    draft: z.boolean().default(false),
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
+  }),
+});
+
+export const collections = { products, blog, hubs };

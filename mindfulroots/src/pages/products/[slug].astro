@@ -9,6 +9,7 @@ import ComparisonTable from '../../components/ComparisonTable.astro';
 import WarningBox from '../../components/WarningBox.astro';
 import SupportNotice from '../../components/SupportNotice.astro';
 import { getCollection, render } from 'astro:content';
+import { hubsForProduct } from '../../lib/hubs';
 import { RETAILER_NAME, retailerLink } from '../../config';
 
 export async function getStaticPaths() {
@@ -34,6 +35,9 @@ const allProducts = await getCollection('products');
 const relatedProds = (data.relatedProducts ?? [])
   .map((slug) => allProducts.find((p) => p.id === slug))
   .filter(Boolean);
+
+// L3 → L2: condition guides that recommend this product.
+const parentHubs = await hubsForProduct(product.id);
 
 // Recommended-product helpers (only when present)
 const rec = data.recommendedProduct;
@@ -165,6 +169,20 @@ const schema = {
       <BuyBox data={data} rec={rec} verifiedLabel={verifiedLabel} relatedProds={relatedProds} />
     </aside>
   </article>
+
+  {parentHubs.length > 0 && (
+    <section class="mx-auto max-w-5xl px-5 pt-8">
+      <p class="eyebrow mb-3">Best for</p>
+      <div class="flex flex-wrap gap-3">
+        {parentHubs.map((hub) => (
+          <a href={`/guides/${hub.id}/`} class="inline-flex items-center gap-2 bg-card border border-mist rounded-full px-4 py-2 text-sm text-moss-deep hover:border-saffron-deep transition-colors">
+            <span class="font-medium">{hub.data.conditionLabel}</span>
+            <span class="text-ink-soft">guide →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
 
   {related.length > 0 && (
     <section class="mx-auto max-w-5xl px-5 py-8">

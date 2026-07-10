@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync } from 'fs';
+import { existsSync, readFileSync, readdirSync } from 'fs';
 import { join, relative } from 'path';
 import { fileURLToPath } from 'url';
 import type { AstroIntegration } from 'astro';
@@ -67,14 +67,15 @@ function readFrontmatterArray(raw: string, key: string): string[] {
   return items;
 }
 
-function checkFile(dir: string, file: string, kind: 'blog' | 'product'): Violation[] {
+function checkFile(dir: string, file: string, kind: 'blog' | 'product' | 'hub'): Violation[] {
   const raw = readFileSync(join(dir, file), 'utf8');
   const violations: Violation[] = [];
 
   const title = readFrontmatterField(raw, 'title');
   const seoTitle = readFrontmatterField(raw, 'seoTitle');
+  // Products carry the SERP copy in shortDescription; blog and hubs use description.
   const description =
-    kind === 'blog' ? readFrontmatterField(raw, 'description') : readFrontmatterField(raw, 'shortDescription');
+    kind === 'product' ? readFrontmatterField(raw, 'shortDescription') : readFrontmatterField(raw, 'description');
   const metaDescription = readFrontmatterField(raw, 'metaDescription');
 
   const effectiveTitle = seoTitle ?? title;
@@ -99,7 +100,7 @@ function checkFile(dir: string, file: string, kind: 'blog' | 'product'): Violati
     });
   }
 
-  if (kind === 'blog') {
+  if (kind !== 'product') {
     const body = raw.replace(/^---[\s\S]*?\n---/, '');
     const heading = body.match(BODY_FAQ_HEADING);
     if (heading) {
@@ -135,15 +136,15 @@ function slugFor(file: string): string {
   return file.replace(/\.mdx?$/, '');
 }
 
-function collectKeywordClaims(dir: string, files: string[], kind: 'blog' | 'product'): KeywordClaim[] {
+function collectKeywordClaims(dir: string, files: string[], kind: 'blog' | 'product' | 'hub'): KeywordClaim[] {
   const claims: KeywordClaim[] = [];
-  const base = kind === 'blog' ? '/blog/' : '/products/';
+  const base = kind === 'blog' ? '/blog/' : kind === 'hub' ? '/guides/' : '/products/';
 
   for (const file of files) {
     const raw = readFileSync(join(dir, file), 'utf8');
-    // Draft posts are retired (dropped from getStaticPaths + sitemap) — they
-    // don't render, so they can't own a live query.
-    if (kind === 'blog' && readFrontmatterBoolean(raw, 'draft')) continue;
+    // Draft posts/hubs are retired (dropped from getStaticPaths + sitemap) —
+    // they don't render, so they can't own a live query.
+    if (kind !== 'product' && readFrontmatterBoolean(raw, 'draft')) continue;
 
     const url = `${base}${slugFor(file)}/`;
 
@@ -306,9 +307,18 @@ export default function seoGuard(): AstroIntegration {
           violations.push(...checkFile(productsDir, file, 'product'));
         }
 
+        const hubsDir = join(process.cwd(), 'src/content/hubs');
+        const hubFiles = existsSync(hubsDir)
+          ? readdirSync(hubsDir).filter((f) => f.endsWith('.md') || f.endsWith('.mdx'))
+          : [];
+        for (const file of hubFiles) {
+          violations.push(...checkFile(hubsDir, file, 'hub'));
+        }
+
         const claims = [
           ...collectKeywordClaims(blogDir, blogFiles, 'blog'),
           ...collectKeywordClaims(productsDir, productFiles, 'product'),
+          ...collectKeywordClaims(hubsDir, hubFiles, 'hub'),
         ];
         violations.push(...checkKeywordUniqueness(claims));
         violations.push(...checkKeywordRegistry(claims));
