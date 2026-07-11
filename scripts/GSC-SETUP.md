@@ -23,12 +23,27 @@ verify it first (DNS TXT record or HTML file upload) — everything below depend
 
 ## 3. Grant the service account read access in Search Console
 
-1. In Search Console, open the `moodsupplement.net` property → **Settings → Users and
-   permissions → Add user**.
-2. Enter the service account's email (looks like
+**Warning: property strings must match exactly.** Search Console treats
+`https://www.moodsupplement.net` (URL-prefix), `https://moodsupplement.net` (URL-prefix,
+non-www), and `sc-domain:moodsupplement.net` (Domain property) as three *different* properties,
+each with its own user list. Granting the service account on one does **not** grant it on the
+others — querying a property the service account wasn't added to returns a 403
+("User does not have sufficient permission for site ..."), not a helpful "wrong property" error.
+
+1. In Search Console, open the property you actually want to query — check the property picker
+   in the top-left; if you're not sure which one has real data, prefer the Domain property
+   (`sc-domain:moodsupplement.net`) since it covers http/https and all subdomains.
+2. **Settings → Users and permissions → Add user**.
+3. Enter the service account's email (looks like
    `gsc-reader@your-project.iam.gserviceaccount.com` — find it in the Cloud Console credentials
    page or inside the downloaded JSON under `client_email`).
-3. Permission level: **Restricted** (read-only) is sufficient.
+4. Permission level: **Restricted** (read-only) is sufficient.
+5. `scripts/gsc-pull.py` must query the *same exact* property string the service account was
+   granted on. It defaults to `sc-domain:moodsupplement.net`; override with `--property` or the
+   `GSC_PROPERTY` env var if you granted access on a different property variant instead. To find
+   out which property strings the service account can actually see, run a quick
+   `service.sites().list().execute()` diagnostic with the same key/scopes as the pull script —
+   its `siteEntry` list is ground truth.
 
 ## 4. Store the key outside the repo
 
