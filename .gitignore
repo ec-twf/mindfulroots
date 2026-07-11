@@ -1,3 +1,8 @@
 # macOS Finder metadata — never useful in git
 .DS_Store
 **/.DS_Store
+
+# Generated data snapshots — regenerated each optimize-content run, not source
+data/gsc/*.csv
+data/discovery/*.csv
+data/keyword-harvest-raw.csv

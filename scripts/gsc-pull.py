@@ -11,7 +11,13 @@ One-time setup (see scripts/GSC-SETUP.md):
 
 Usage:
   pip install google-api-python-client google-auth
-  python3 scripts/gsc-pull.py [--days 28] [--out data/gsc/YYYY-MM-DD.csv]
+  python3 scripts/gsc-pull.py [--days 28] [--out data/gsc/YYYY-MM-DD.csv] \
+      [--property sc-domain:moodsupplement.net]
+
+  The property queried must exactly match a property string the service
+  account is granted on in Search Console (see GSC-SETUP.md). Override via
+  --property or the GSC_PROPERTY env var; defaults to the Domain property
+  sc-domain:moodsupplement.net.
 """
 import argparse
 import csv
@@ -20,7 +26,11 @@ import os
 import sys
 
 KEY_PATH = os.path.expanduser("~/.config/moodsupplement/gsc-key.json")
-SITE_URL = "https://www.moodsupplement.net"
+# Must exactly match a property string the service account is granted on in
+# Search Console (Settings -> Users and permissions). URL-prefix properties
+# ("https://www.example.com") and Domain properties ("sc-domain:example.com")
+# are different properties even for the same site -- see GSC-SETUP.md.
+DEFAULT_SITE_URL = "sc-domain:moodsupplement.net"
 SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"]
 
 
@@ -28,7 +38,17 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--days", type=int, default=28)
     parser.add_argument("--out", default=None)
+    parser.add_argument(
+        "--property",
+        default=os.environ.get("GSC_PROPERTY", DEFAULT_SITE_URL),
+        help=(
+            "GSC property string to query, e.g. 'sc-domain:moodsupplement.net' "
+            "or 'https://www.moodsupplement.net'. Defaults to $GSC_PROPERTY "
+            f"or {DEFAULT_SITE_URL!r}."
+        ),
+    )
     args = parser.parse_args()
+    SITE_URL = args.property
 
     if not os.path.isfile(KEY_PATH):
         print(f"ERROR: service account key not found at {KEY_PATH}", file=sys.stderr)
