@@ -23,7 +23,7 @@ recommendedProduct:
   productName: "Saffron Extract (affron®)"
   iherbKeyword: "https://www.amazon.com/dp/B0FY497SJJ"
   meetsCriterion: true
-  concentrationNote: "affron® 30 mg per softgel — trial-matched dose, HPLC-standardized to ≥3.5% lepticrosalides, softgel format"
+  concentrationNote: "affron® 30 mg per softgel - trial-matched dose, HPLC-standardized to ≥3.5% lepticrosalides, softgel format"
   verifiedDate: "2026-07-02"
 comparison:
   criterion: "Named branded extract (affron® or Satiereal®), HPLC-standardized, dosed at trial-matched level."

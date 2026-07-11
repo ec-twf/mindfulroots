@@ -23,7 +23,7 @@ recommendedProduct:
   productName: "L-Theanine with Suntheanine®"
   iherbKeyword: "https://www.amazon.com/dp/B001OXTGVG"
   meetsCriterion: true
-  concentrationNote: "150 mg Suntheanine® per capsule — the only option in this comparison to state the branded, trialed source on the label"
+  concentrationNote: "150 mg Suntheanine® per capsule - the only option in this comparison to state the branded, trialed source on the label"
   verifiedDate: "2026-07-02"
 comparison:
   criterion: "Suntheanine® branded form stated on label, dose 100–200 mg, no unstated caffeine."

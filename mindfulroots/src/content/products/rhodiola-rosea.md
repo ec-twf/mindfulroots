@@ -23,7 +23,7 @@ recommendedProduct:
   productName: "Rhodiola 500 mg"
   iherbKeyword: "https://www.amazon.com/dp/B005P0U7TY"
   meetsCriterion: true
-  concentrationNote: "500 mg R. rosea root, explicitly standardized to min. 3% rosavins and min. 1% salidroside — the SHR-5 trial ratio"
+  concentrationNote: "500 mg R. rosea root, explicitly standardized to min. 3% rosavins and min. 1% salidroside - the SHR-5 trial ratio"
   verifiedDate: "2026-07-02"
 comparison:
   criterion: "Standardized to 3% rosavins / 1% salidroside (SHR-5 ratio), R. rosea species, 200–500 mg dose."

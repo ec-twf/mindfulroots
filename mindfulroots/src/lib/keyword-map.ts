@@ -47,4 +47,13 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   // "best supplements for <condition>" head term; the underlying evidence posts
   // own the informational terms, so the two layers don't cannibalize.
   { headTerm: 'best supplements for stress', owner: '/guides/stress/', intent: 'commercial' },
+  { headTerm: 'best supplements for low mood', owner: '/guides/low-mood/', intent: 'commercial' },
+  { headTerm: 'best supplements for sleep', owner: '/guides/sleep/', intent: 'commercial' },
+  { headTerm: 'best supplements for anxiety', owner: '/guides/anxiety/', intent: 'commercial' },
+  { headTerm: 'best supplements for energy and fatigue', owner: '/guides/energy/', intent: 'commercial' },
+  { headTerm: 'best supplements for focus', owner: '/guides/focus/', intent: 'commercial' },
+  { headTerm: 'best supplements for gut health and mood', owner: '/guides/gut-brain/', intent: 'commercial' },
+  // Distinct from the blog's informational 'vitamin d seasonal depression'
+  // (owned by /blog/vitamin-d-winter-mood/) — this is the buy-intent variant.
+  { headTerm: 'vitamin d supplement for seasonal depression', owner: '/guides/winter-mood/', intent: 'commercial' },
 ];

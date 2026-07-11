@@ -23,7 +23,7 @@ recommendedProduct:
   productName: "Ashwagandha Broad-Spectrum Complex (Shoden® + BioPerine®)"
   iherbKeyword: "https://www.amazon.com/dp/B0CTYQT78S"
   meetsCriterion: true
-  concentrationNote: "Contains Shoden® — a clinically-trialed standardized extract (120 mg, ~35% withanolide glycosides), plus BioPerine to aid absorption"
+  concentrationNote: "Contains Shoden® - a clinically-trialed standardized extract (120 mg, ~35% withanolide glycosides), plus BioPerine to aid absorption"
   verifiedDate: "2026-07-02"
 comparison:
   criterion: "A named, clinically-trialed standardized extract (KSM-66, Sensoril or Shoden) with the withanolide content stated, dosed in its studied range. Generic, unbranded 'root powder' is not the extract the trials used."

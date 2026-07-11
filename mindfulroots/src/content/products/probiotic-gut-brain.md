@@ -23,7 +23,7 @@ recommendedProduct:
   productName: "Mood Probiotic"
   iherbKeyword: "https://www.amazon.com/dp/B00ZMO7UKW"
   meetsCriterion: true
-  concentrationNote: "Contains L. helveticus Rosell-52 and B. longum Rosell-175 — Lallemand's trade names for the same strains published as R0052/R0175 in the trial literature — formulated to 15 billion CFU at manufacture, guaranteed ≥3 billion CFU through expiry"
+  concentrationNote: "Contains L. helveticus Rosell-52 and B. longum Rosell-175 - Lallemand's trade names for the same strains published as R0052/R0175 in the trial literature - formulated to 15 billion CFU at manufacture, guaranteed ≥3 billion CFU through expiry"
   verifiedDate: "2026-07-02"
   note: "Manufacturer/Amazon listing (verified 2026-07-02) confirms strain IDs and the ≥3B-at-expiry CFU guarantee and shelf-stability, but does not publish a per-strain CFU ratio — do not restate the old Natural Factors 89.4%/10.6% figures, they belong to a discontinued pick."
 comparison:

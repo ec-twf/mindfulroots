@@ -24,7 +24,7 @@ recommendedProduct:
   productName: "5-HTP 100 mg"
   iherbKeyword: "https://www.amazon.com/dp/B0013OXB58"
   meetsCriterion: true
-  concentrationNote: "100 mg from Griffonia simplicifolia seed, just rice flour and a cellulose capsule — the cleanest, most titratable option in this comparison"
+  concentrationNote: "100 mg from Griffonia simplicifolia seed, just rice flour and a cellulose capsule - the cleanest, most titratable option in this comparison"
   verifiedDate: "2026-07-02"
 comparison:
   criterion: "100 mg from Griffonia seed, minimal fillers, no co-formulation that complicates interactions or dose titration."

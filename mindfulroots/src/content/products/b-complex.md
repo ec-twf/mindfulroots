@@ -23,7 +23,7 @@ recommendedProduct:
   productName: "Basic B Complex"
   iherbKeyword: "https://www.amazon.com/dp/B00HST919C"
   meetsCriterion: true
-  concentrationNote: "Methylcobalamin B12, Quatrefolic® 5-MTHF, Pyridoxal 5'-Phosphate B6 — all active forms, full spectrum in one capsule"
+  concentrationNote: "Methylcobalamin B12, Quatrefolic® 5-MTHF, Pyridoxal 5'-Phosphate B6 - all active forms, full spectrum in one capsule"
   verifiedDate: "2026-07-02"
 comparison:
   criterion: "B12 as methylcobalamin (not cyanocobalamin), folate as methylfolate/5-MTHF (not folic acid), B6 in active form."
