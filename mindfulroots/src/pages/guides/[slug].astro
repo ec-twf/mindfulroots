@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 import Byline from '../../components/Byline.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import BestPickCard from '../../components/BestPickCard.astro';
-import GuideHeroBox from '../../components/GuideHeroBox.astro';
+import GuideHeroSlot from '../../components/GuideHeroSlot.astro';
 import StickyBuyBar from '../../components/StickyBuyBar.astro';
 import EvidenceTag from '../../components/EvidenceTag.astro';
 import SupportNotice from '../../components/SupportNotice.astro';
@@ -36,9 +36,6 @@ const picks = data.products
 // actually carries a recommendedProduct. Otherwise everything stays in the grid.
 const hero = picks[0]?.data.recommendedProduct ? picks[0] : undefined;
 const gridPicks = hero ? picks.slice(1) : picks;
-const heroPitch = hero
-  ? (data.heroPitch ?? hero.data.shortDescription)
-  : undefined;
 
 const allPosts = await getCollection('blog');
 const supportingPosts = data.supportingPosts
@@ -130,25 +127,21 @@ const schema = {
     <p class="eyebrow mb-2">{data.conditionLabel} guide</p>
     <h1 class="font-display text-3xl sm:text-4xl text-moss-deep leading-tight">{data.title}</h1>
     <p class="mt-3 text-ink-soft">{data.description}</p>
+    {hero && (
+      <a href="#buy" class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-saffron-deep hover:underline underline-offset-4">
+        Our top pick: {hero.data.recommendedProduct.brand}
+        <span aria-hidden="true">↓</span>
+      </a>
+    )}
     <time class="block mt-3 font-mono text-xs text-ink-soft" datetime={data.pubDate.toISOString()}>{date}</time>
     {data.updatedDate && (
       <p class="font-mono text-xs text-ink-soft mt-0.5">Updated {data.updatedDate.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}</p>
     )}
     <Byline type="article" />
-    {hero && heroPitch && (
-      <div class="mt-6">
-        <GuideHeroBox
-          slug={hero.id}
-          title={hero.data.title}
-          conditionLabel={data.conditionLabel}
-          evidence={hero.data.evidence}
-          pitch={heroPitch}
-          rec={hero.data.recommendedProduct}
-        />
-      </div>
-    )}
     <hr class="specimen-rule my-6" />
-    <div class="prose-mr"><Content /></div>
+    {/* Hero buy box is placed inline by the MDX body (<HeroCTA />), right after
+        the top pick's reasoning, so the reader gets context before the CTA. */}
+    <div class="prose-mr"><Content components={{ HeroCTA: GuideHeroSlot }} /></div>
   </article>
 
   {gridPicks.length > 0 && (

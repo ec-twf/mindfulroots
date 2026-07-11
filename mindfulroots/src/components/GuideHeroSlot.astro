@@ -1,0 +1,31 @@
+---
+import GuideHeroBox from './GuideHeroBox.astro';
+import { getCollection } from 'astro:content';
+
+// Bridges an inline `<HeroCTA />` in a hub's MDX body to the GuideHeroBox.
+// Resolves the product here (build time) so the hub body only names its hero
+// slug via frontmatter — no product data duplicated into the content. Renders
+// nothing if the slug is missing or the product has no recommendedProduct,
+// matching the route's `hero` guard.
+interface Props {
+  slug: string;
+  label: string;   // conditionLabel, e.g. "Stress"
+  pitch?: string;  // hub heroPitch; falls back to the product shortDescription
+}
+const { slug, label, pitch } = Astro.props;
+
+const product = (await getCollection('products')).find((p) => p.id === slug);
+const rec = product?.data.recommendedProduct;
+---
+{product && rec && (
+  <div class="my-6">
+    <GuideHeroBox
+      slug={product.id}
+      title={product.data.title}
+      conditionLabel={label}
+      evidence={product.data.evidence}
+      pitch={pitch ?? product.data.shortDescription}
+      rec={rec}
+    />
+  </div>
+)}

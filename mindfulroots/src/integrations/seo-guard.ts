@@ -10,7 +10,7 @@ const DESCRIPTION_LIMIT = 160;
 
 interface Violation {
   file: string;
-  kind: 'title' | 'description' | 'body-faq' | 'keyword-duplicate' | 'keyword-registry';
+  kind: 'title' | 'description' | 'body-faq' | 'keyword-duplicate' | 'keyword-registry' | 'hero-cta';
   length: number;
   limit: number;
   text: string;
@@ -111,6 +111,29 @@ function checkFile(dir: string, file: string, kind: 'blog' | 'product' | 'hub'):
         limit: 0,
         text: `${heading[0].trim()} — put the FAQ in \`faq:\` frontmatter only; the template renders it`,
       });
+    }
+  }
+
+  // A hub whose top pick (products[0]) has a recommendedProduct must place the
+  // hero buy box inline via exactly one <HeroCTA /> in its body. Without it the
+  // box silently doesn't render and the guide loses its primary affiliate CTA.
+  if (kind === 'hub' && !readFrontmatterBoolean(raw, 'draft')) {
+    const heroSlug = readFrontmatterArray(raw, 'products')[0];
+    const heroFile = heroSlug && join(process.cwd(), 'src/content/products', `${heroSlug}.md`);
+    const heroHasRec =
+      heroFile && existsSync(heroFile) && /^recommendedProduct:/m.test(readFileSync(heroFile, 'utf8'));
+    if (heroHasRec) {
+      const body = raw.replace(/^---[\s\S]*?\n---/, '');
+      const count = (body.match(/<HeroCTA\b/g) ?? []).length;
+      if (count !== 1) {
+        violations.push({
+          file,
+          kind: 'hero-cta',
+          length: 0,
+          limit: 0,
+          text: `top pick "${heroSlug}" has a recommendedProduct, so the body must contain exactly one <HeroCTA .../> (found ${count})`,
+        });
+      }
     }
   }
 
@@ -325,7 +348,7 @@ export default function seoGuard(): AstroIntegration {
 
         if (violations.length > 0) {
           const lines = violations.map((v) => {
-            if (v.kind === 'body-faq' || v.kind === 'keyword-duplicate' || v.kind === 'keyword-registry') {
+            if (v.kind !== 'title' && v.kind !== 'description') {
               return `  [${v.kind}] ${v.file}: ${v.text}`;
             }
             return `  [${v.kind}] ${v.file}: ${v.length}/${v.limit} chars — "${v.text}"`;
