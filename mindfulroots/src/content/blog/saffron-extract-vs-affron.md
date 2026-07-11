@@ -69,22 +69,6 @@ Saffron trials commonly use 28–30 mg per day of a standardized extract, often 
 
 Saffron is generally well tolerated at these supplement doses. High doses should be avoided in pregnancy. Because it has been studied for mood, talk to your doctor before combining it with a prescribed antidepressant or other serotonergic medication. If you have a bleeding disorder or take blood thinners, raise it with a pharmacist first.
 
-## Frequently asked questions
-
-**Is affron the same as saffron extract?**
-Yes, in the way that matters. affron is a saffron extract, specifically a standardized, HPLC-verified one made to contain at least 3.5% lepticrosalides. The comparison is really "generic saffron extract vs this particular standardized one," not two different herbs.
-
-**Why do some brands charge more for affron?**
-Because it carries its own published trials and a guaranteed marker level. You're paying for a form that matches the research, not a generic extract whose active content isn't stated.
-
-**What dose of affron did studies use?**
-Usually 28–30 mg per day, sometimes split in two, for four to eight weeks. That's a low milligram amount, made possible by the concentration and standardization.
-
-**Is a generic saffron extract useless then?**
-No, but it's harder to verify. Without a stated crocin or safranal level you can't check it against the evidence, and adulteration is a real issue with an ingredient this expensive.
-
-**Can I take saffron extract with an antidepressant?**
-Clear it with your prescriber first. Saffron has been studied for mood, which is exactly why the combination is worth a professional's input.
 
 ## Supplements mentioned
 

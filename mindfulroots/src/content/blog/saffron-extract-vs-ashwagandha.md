@@ -65,22 +65,6 @@ Saffron: 28–30 mg per day of a standardized extract, often split into two dose
 
 Both are generally well tolerated at studied doses. Ashwagandha is not recommended in pregnancy, warrants caution with thyroid conditions or thyroid medication (it can nudge thyroid hormones), and has rare reports of liver reactions, so buy reputable tested brands. Saffron should be kept to supplement doses and avoided at high doses in pregnancy. Because both have been studied for mental-health outcomes, clear either one with your prescriber before combining it with an antidepressant or other psychiatric medication.
 
-## Frequently asked questions
-
-**Is saffron or ashwagandha better for mood?**
-For low mood specifically, saffron has the more on-target trial record. Ashwagandha's evidence is really about stress and anxiety. If flat or low mood is the main problem, saffron fits better.
-
-**Is saffron or ashwagandha better for stress and anxiety?**
-Ashwagandha. It's the more established option for perceived stress and cortisol, backed by several randomized trials in stressed adults.
-
-**Can you take saffron and ashwagandha together?**
-There's no well-known direct interaction, and some people stack a mood botanical with an adaptogen. But more supplements means more load and more side-effect risk, and neither should go on top of prescribed medication without professional input.
-
-**Which works faster?**
-Neither is fast. Ashwagandha trials run about 6–8 weeks, saffron 4–8 weeks. These are slow-build supports, not same-day calmatives.
-
-**Which is safer?**
-Both are generally well tolerated. Ashwagandha has specific thyroid, pregnancy, and rare-liver cautions; saffron should stay at supplement doses. Match the caution to your own health picture and check with a clinician.
 
 ## Supplements mentioned
 

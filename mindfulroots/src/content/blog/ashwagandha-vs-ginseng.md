@@ -66,22 +66,6 @@ Ashwagandha: 300–600 mg per day of a standardized root extract (such as KSM-66
 
 Ashwagandha is not recommended in pregnancy, warrants caution with thyroid conditions or thyroid medication, and has rare reports of liver reactions, so choose reputable tested brands. Ginseng can affect blood sugar and may interact with blood thinners and some medications, and its stimulating effect doesn't suit everyone. Because both can interact with prescription drugs, clear either one with a pharmacist or doctor if you take medication, and don't combine either with psychiatric medication without professional input.
 
-## Frequently asked questions
-
-**Is ashwagandha or ginseng better for stress?**
-Ashwagandha, with the more direct stress-and-cortisol trial record. Ginseng's stress data is lighter.
-
-**Is ashwagandha or ginseng better for energy?**
-Ginseng. It's the more stimulating adaptogen and has a systematic-review record for fatigue. Ashwagandha helps energy only indirectly, by easing stress and improving sleep.
-
-**Can you take ashwagandha and ginseng together?**
-Some people combine a calming and an energizing adaptogen, and there's no well-known direct interaction. But stacking adds risk, ginseng affects blood sugar and blood thinners, ashwagandha affects thyroid hormones, so check with a pharmacist first.
-
-**Which is better for sleep?**
-Ashwagandha. It's calming and has some sleep-quality support. Ginseng is stimulating and better kept to earlier in the day.
-
-**Are they the same kind of herb?**
-Both are adaptogens, but they're unrelated plants pulling in opposite directions: ashwagandha toward calm, ginseng toward stimulation.
 
 ## Supplements mentioned
 
