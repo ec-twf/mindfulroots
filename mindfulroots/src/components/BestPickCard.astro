@@ -3,11 +3,15 @@ import AffiliateButton from './AffiliateButton.astro';
 import EvidenceTag from './EvidenceTag.astro';
 import { RETAILER_NAME } from '../config';
 
+type Placement = 'buybox' | 'sticky-bar' | 'home-pick' | 'in-article' | 'guide-hero' | 'guide-pick' | 'generic';
+
 interface Props {
   slug: string;
   title: string;
   category: string;
   evidence: 'Emerging' | 'Moderate' | 'Well-studied';
+  placement?: Placement; // affiliate-analytics tag; defaults to the homepage context
+  rank?: number;         // when set, shows a "#N" ordinal (used on guide pages)
   rec: {
     brand: string;
     productName: string;
@@ -17,7 +21,7 @@ interface Props {
     imageAlt?: string;
   };
 }
-const { slug, title, category, evidence, rec } = Astro.props;
+const { slug, title, category, evidence, placement = 'home-pick', rank, rec } = Astro.props;
 ---
 <article class="group bg-card border border-mist rounded-lg flex flex-col overflow-hidden transition-shadow hover:shadow-card">
   {/* Image, or branded botanical placeholder keyed to rec.image */}
@@ -34,7 +38,10 @@ const { slug, title, category, evidence, rec } = Astro.props;
 
   <div class="p-5 flex flex-col gap-3 flex-1">
     <div class="flex items-start justify-between gap-3">
-      <p class="eyebrow">{category}</p>
+      <p class="eyebrow">
+        {rank && <span class="font-mono text-[0.68rem] text-ink-soft mr-1.5">#{rank}</span>}
+        {category}
+      </p>
       <EvidenceTag level={evidence} />
     </div>
 
@@ -57,7 +64,7 @@ const { slug, title, category, evidence, rec } = Astro.props;
       <AffiliateButton
         keyword={rec.iherbKeyword}
         label={`View ${rec.brand} on ${RETAILER_NAME}`}
-        placement="home-pick"
+        placement={placement}
         fullWidth
       />
       <a href={`/products/${slug}/`} class="inline-block text-sm font-medium text-moss-deep group-hover:underline underline-offset-4">

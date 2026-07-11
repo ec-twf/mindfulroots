@@ -1,0 +1,72 @@
+---
+import AffiliateButton from './AffiliateButton.astro';
+import EvidenceTag from './EvidenceTag.astro';
+import { RETAILER_NAME } from '../config';
+
+// The guide's #1 pick, with a direct affiliate CTA — the primary conversion
+// point on a condition hub. Owns id="buy" so StickyBuyBar's IntersectionObserver
+// reveals the mobile bar once this scrolls off. Emits NO Product/Offer/Review
+// JSON-LD (see the rationale in pages/products/[slug].astro); it is a plain,
+// evidence-tagged buy box, not a schema entity.
+interface Props {
+  slug: string;
+  title: string;
+  conditionLabel: string;
+  evidence: 'Emerging' | 'Moderate' | 'Well-studied';
+  pitch: string;
+  rec: {
+    brand: string;
+    productName: string;
+    iherbKeyword: string;
+    priceDisplay?: string;
+    concentrationNote?: string;
+    oxidationNote?: string;
+    verifiedDate?: string;
+  };
+}
+const { slug, title, conditionLabel, evidence, pitch, rec } = Astro.props;
+const proofNotes = [rec.concentrationNote, rec.oxidationNote].filter(Boolean);
+const verified = rec.verifiedDate
+  ? new Date(rec.verifiedDate).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })
+  : undefined;
+---
+<aside id="buy" data-pagefind-ignore class="bg-card border border-mist rounded-lg p-5 sm:p-6 space-y-3">
+  <div class="flex items-start justify-between gap-3">
+    <p class="eyebrow">Our top pick for {conditionLabel.toLowerCase()}</p>
+    <EvidenceTag level={evidence} />
+  </div>
+
+  <div>
+    <h2 class="font-display text-xl text-moss-deep leading-snug">{rec.brand}</h2>
+    <p class="text-sm text-ink-soft leading-snug">{rec.productName}</p>
+  </div>
+
+  <p class="text-sm text-ink-soft leading-relaxed">{pitch}</p>
+
+  {rec.priceDisplay && <p class="text-sm font-medium text-moss-deep">{rec.priceDisplay}</p>}
+
+  <AffiliateButton
+    keyword={rec.iherbKeyword}
+    label={`View ${rec.brand} on ${RETAILER_NAME}`}
+    placement="guide-hero"
+    fullWidth
+  />
+
+  {proofNotes.length > 0 && (
+    <ul class="space-y-1.5 border border-mist rounded-md bg-paper p-3">
+      {proofNotes.map((note) => (
+        <li class="text-xs text-ink-soft leading-relaxed flex gap-2">
+          <span class="text-moss shrink-0" aria-hidden="true">✓</span>
+          <span>{note}</span>
+        </li>
+      ))}
+    </ul>
+  )}
+
+  <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 pt-1">
+    <a href={`/products/${slug}/`} class="text-sm font-medium text-moss-deep hover:text-saffron-deep hover:underline underline-offset-4">
+      Read the full {title} review →
+    </a>
+    {verified && <p class="text-[0.68rem] text-ink-soft">Spec verified {verified}</p>}
+  </div>
+</aside>

@@ -142,8 +142,12 @@ const hubs = defineCollection({
     intent: z.enum(['best', 'how-to-choose', 'comparison-roundup', 'where-to-buy']).default('best'),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    // Product collection slugs, in recommendation-rank order.
+    // Product collection slugs, in recommendation-rank order. products[0] is
+    // the hero pick surfaced in the GuideHeroBox with a direct affiliate CTA.
     products: z.array(z.string()).min(1),
+    // One-line, condition-framed reason the hero pick leads (shown in the hero
+    // box). Falls back to the product's shortDescription if omitted.
+    heroPitch: z.string().optional(),
     // Blog collection slugs whose evidence backs the picks above.
     supportingPosts: z.array(z.string()).default([]),
     // Sibling hub slugs (under src/content/hubs) for "Related guides".

@@ -3,6 +3,8 @@ import Base from '../../layouts/Base.astro';
 import Byline from '../../components/Byline.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import BestPickCard from '../../components/BestPickCard.astro';
+import GuideHeroBox from '../../components/GuideHeroBox.astro';
+import StickyBuyBar from '../../components/StickyBuyBar.astro';
 import EvidenceTag from '../../components/EvidenceTag.astro';
 import SupportNotice from '../../components/SupportNotice.astro';
 import { getCollection, render } from 'astro:content';
@@ -29,6 +31,14 @@ const allProducts = await getCollection('products');
 const picks = data.products
   .map((slug) => allProducts.find((p) => p.id === slug))
   .filter((p): p is NonNullable<typeof p> => Boolean(p));
+
+// The #1 pick becomes the hero buy box (direct affiliate CTA), but only when it
+// actually carries a recommendedProduct. Otherwise everything stays in the grid.
+const hero = picks[0]?.data.recommendedProduct ? picks[0] : undefined;
+const gridPicks = hero ? picks.slice(1) : picks;
+const heroPitch = hero
+  ? (data.heroPitch ?? hero.data.shortDescription)
+  : undefined;
 
 const allPosts = await getCollection('blog');
 const supportingPosts = data.supportingPosts
@@ -125,21 +135,35 @@ const schema = {
       <p class="font-mono text-xs text-ink-soft mt-0.5">Updated {data.updatedDate.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}</p>
     )}
     <Byline type="article" />
+    {hero && heroPitch && (
+      <div class="mt-6">
+        <GuideHeroBox
+          slug={hero.id}
+          title={hero.data.title}
+          conditionLabel={data.conditionLabel}
+          evidence={hero.data.evidence}
+          pitch={heroPitch}
+          rec={hero.data.recommendedProduct}
+        />
+      </div>
+    )}
     <hr class="specimen-rule my-6" />
     <div class="prose-mr"><Content /></div>
   </article>
 
-  {picks.length > 0 && (
+  {gridPicks.length > 0 && (
     <section class="mx-auto max-w-5xl px-5 py-6">
-      <p class="eyebrow mb-3">Our picks for {data.conditionLabel.toLowerCase()}</p>
+      <p class="eyebrow mb-3">{hero ? `More picks for ${data.conditionLabel.toLowerCase()}` : `Our picks for ${data.conditionLabel.toLowerCase()}`}</p>
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {picks.map((p) => (
+        {gridPicks.map((p, i) => (
           p.data.recommendedProduct ? (
             <BestPickCard
               slug={p.id}
               title={p.data.title}
               category={p.data.category}
               evidence={p.data.evidence}
+              placement="guide-pick"
+              rank={hero ? i + 2 : i + 1}
               rec={p.data.recommendedProduct}
             />
           ) : (
@@ -215,4 +239,6 @@ const schema = {
   <section class="mx-auto max-w-3xl px-5 py-6">
     <SupportNotice />
   </section>
+
+  {hero && <StickyBuyBar rec={hero.data.recommendedProduct} />}
 </Base>

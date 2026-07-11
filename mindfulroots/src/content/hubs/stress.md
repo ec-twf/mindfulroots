@@ -14,6 +14,7 @@ products:
   - rhodiola-rosea
   - magnesium-glycinate
   - l-theanine
+heroPitch: "The most-trialed adaptogen for everyday stress, and the pick with the most direct human evidence for lowering cortisol over several weeks."
 supportingPosts:
   - ashwagandha-cortisol-research
   - adaptogens-ashwagandha-rhodiola
