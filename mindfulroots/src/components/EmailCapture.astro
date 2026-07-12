@@ -1,0 +1,66 @@
+---
+// Email capture v1 (growth-audit Phase 1.5). Submits to Netlify Forms as a $0
+// stopgap — export subscribers from the Netlify dashboard and import into
+// Buttondown once that account exists; only the `action`/form wiring changes
+// then, not the placements. Base.astro pushes a GTM `email_signup` dataLayer
+// event on submit (mirrors the `affiliate_click` listener).
+interface Props {
+  /** Where this form sits — flows into GTM + the Netlify submission. */
+  source: string;
+  /** Tighter spacing for sidebars/end-of-post slots. */
+  compact?: boolean;
+}
+const { source, compact = false } = Astro.props;
+---
+<aside
+  data-pagefind-ignore
+  class={`not-prose bg-card border border-mist rounded-lg ${compact ? 'p-5' : 'p-6 sm:p-7'} my-8`}
+>
+  <p class="eyebrow mb-2">Free download</p>
+  <h2 class={`font-display text-moss-deep leading-snug ${compact ? 'text-lg' : 'text-xl'}`}>
+    The Supplement × Medication Interaction Cheat Sheet
+  </h2>
+  <p class="mt-2 text-sm text-ink-soft leading-relaxed">
+    One printable page: the 10 pairings we get asked about most, what the evidence says, and
+    which ones need a prescriber conversation first. Fact-checked against primary sources —
+    no hype, same as everything else here.
+  </p>
+
+  <form
+    name="newsletter"
+    method="POST"
+    action="/cheat-sheet/"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    data-email-form
+    data-source={source}
+    class="mt-4 flex flex-col sm:flex-row gap-2.5"
+  >
+    <input type="hidden" name="form-name" value="newsletter" />
+    <input type="hidden" name="source" value={source} />
+    <p class="hidden" aria-hidden="true">
+      <label>Don't fill this out: <input name="bot-field" /></label>
+    </p>
+    <label for={`email-${source}`} class="sr-only">Email address</label>
+    <input
+      type="email"
+      id={`email-${source}`}
+      name="email"
+      required
+      autocomplete="email"
+      placeholder="you@example.com"
+      class="flex-1 rounded-md border border-mist bg-paper px-4 py-2.5 text-sm text-ink placeholder:text-ink-soft focus:outline-none focus:ring-2 focus:ring-moss focus:border-transparent"
+    />
+    <button
+      type="submit"
+      class="inline-flex items-center justify-center gap-2 rounded-md bg-moss-deep px-5 py-2.5 text-sm font-medium text-paper hover:bg-moss transition-colors"
+    >
+      Get the cheat sheet
+    </button>
+  </form>
+
+  <p class="mt-3 text-xs text-ink-soft leading-relaxed">
+    Occasional evidence notes, no more than weekly. Unsubscribe anytime. Never medical advice —
+    the sheet tells you what to ask your prescriber, not what to take.
+  </p>
+</aside>

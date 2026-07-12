@@ -6,6 +6,7 @@ import Byline from '../../components/Byline.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 import ProductCTA from '../../components/ProductCTA.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
 import { getCollection, render } from 'astro:content';
 import { hubsForPost } from '../../lib/hubs';
 import { SITE } from '../../config';
@@ -243,6 +244,7 @@ const schema = {
   )}
 
   <section class="mx-auto max-w-3xl px-5 py-6">
+    <EmailCapture source="blog-end" compact />
     <SupportNotice />
   </section>
 </Base>
