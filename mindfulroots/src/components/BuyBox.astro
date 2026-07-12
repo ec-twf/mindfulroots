@@ -4,12 +4,14 @@ import EvidenceTag from './EvidenceTag.astro';
 import { RETAILER_NAME } from '../config';
 
 interface Props {
+  /** Product content-collection slug — routes CTAs through the /go/ router. */
+  slug: string;
   data: any;
   rec: any;
   verifiedLabel: string | null;
   relatedProds: any[];
 }
-const { data, rec, verifiedLabel, relatedProds } = Astro.props;
+const { slug, data, rec, verifiedLabel, relatedProds } = Astro.props;
 ---
 <div id="buy" class="bg-card border border-mist rounded-lg p-5 space-y-4">
   <div>
@@ -30,6 +32,7 @@ const { data, rec, verifiedLabel, relatedProds } = Astro.props;
 
         <AffiliateButton
           keyword={rec.iherbKeyword}
+          goSlug={slug}
           label={`View ${rec.brand} on ${RETAILER_NAME}`}
           placement="buybox"
           fullWidth
@@ -64,7 +67,7 @@ const { data, rec, verifiedLabel, relatedProds } = Astro.props;
       <div class="space-y-3">
         <div><EvidenceTag level={data.evidence} /></div>
 
-        <AffiliateButton keyword={data.iherbKeyword} placement="buybox" fullWidth />
+        <AffiliateButton keyword={data.iherbKeyword} goSlug={slug} placement="buybox" fullWidth />
 
         {data.qualityCriterion && (
           <div class="text-xs text-ink-soft leading-relaxed border border-mist rounded-md bg-paper p-3">

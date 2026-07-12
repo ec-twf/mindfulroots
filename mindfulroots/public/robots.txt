@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
+Disallow: /go/
 
 # Explicit opt-in for AI crawlers
 User-agent: GPTBot

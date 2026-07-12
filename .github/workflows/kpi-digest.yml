@@ -1,0 +1,46 @@
+# Weekly KPI digest -> Telegram. Mechanical/network-heavy step, so it lives in
+# GitHub Actions (free cron), not a claude.ai Routine — no judgment involved.
+#
+# Required repo secrets:
+#   GSC_SA_KEY           full JSON of the Search Console service-account key
+#   TELEGRAM_BOT_TOKEN   same bot the approval dispatcher uses
+#   TELEGRAM_CHAT_ID     your chat with that bot
+# Optional (lines show "n/a" until set):
+#   NETLIFY_AUTH_TOKEN, NETLIFY_SITE_ID   -> /go/ affiliate click counts
+#   BUTTONDOWN_API_KEY                    -> email subscriber count
+name: kpi-digest
+
+on:
+  schedule:
+    - cron: '0 1 * * 1' # Monday 01:00 UTC = 09:00 HKT
+  workflow_dispatch: {}
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install --quiet google-api-python-client google-auth
+
+      - name: Write GSC service-account key
+        run: |
+          mkdir -p ~/.config/moodsupplement
+          printf '%s' "$GSC_SA_KEY" > ~/.config/moodsupplement/gsc-key.json
+        env:
+          GSC_SA_KEY: ${{ secrets.GSC_SA_KEY }}
+
+      - name: Send digest
+        run: python3 scripts/kpi-digest.py
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}

@@ -1,0 +1,162 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import EmailCapture from '../components/EmailCapture.astro';
+
+// Lead-magnet + linkable asset (growth-audit Phase 1.5). Every row restates a
+// claim already published on this site (product `cautions` or an interaction
+// post) — no new medical claims live here. Print-friendly on purpose: the
+// "PDF" is this page via the print dialog, which keeps it always in sync.
+
+type Verdict = 'Do not combine' | 'Ask your prescriber first' | 'Usually fine — with caveats';
+
+const rows: { pair: string; verdict: Verdict; known: string; action: string; link: string }[] = [
+  {
+    pair: '5-HTP × SSRIs, SNRIs, MAOIs, tricyclics, triptans, tramadol, linezolid, St John’s wort',
+    verdict: 'Do not combine',
+    known: '5-HTP is a direct serotonin precursor. Stacking it with anything else that raises serotonin is the classic setup for serotonin syndrome, a rare but potentially life-threatening reaction.',
+    action: 'Do not combine. If you take any mood or serotonin-affecting prescription, talk to your prescriber before even considering 5-HTP.',
+    link: '/blog/5-htp-serotonin-safety/',
+  },
+  {
+    pair: '5-HTP × Adderall (amphetamines)',
+    verdict: 'Ask your prescriber first',
+    known: 'Amphetamines release some serotonin alongside dopamine and norepinephrine; 5-HTP supplies the raw material for more. The effects point the same way.',
+    action: 'Not a self-experiment — raise it with the prescriber who manages your ADHD medication.',
+    link: '/blog/can-you-take-5-htp-with-adderall/',
+  },
+  {
+    pair: 'Ashwagandha × thyroid medication',
+    verdict: 'Ask your prescriber first',
+    known: 'Ashwagandha can nudge thyroid hormone levels, which matters when your dose is titrated to lab results.',
+    action: 'Discuss before starting; your doctor may want earlier thyroid labs.',
+    link: '/products/ashwagandha/',
+  },
+  {
+    pair: 'Ashwagandha × sedatives or immunosuppressants',
+    verdict: 'Ask your prescriber first',
+    known: 'Possible additive sedation; theoretical immune-system effects. Rare liver reactions have been reported with poor-quality products.',
+    action: 'Discuss with your doctor, and buy reputable, third-party-tested brands. Avoid entirely in pregnancy.',
+    link: '/products/ashwagandha/',
+  },
+  {
+    pair: 'Rhodiola rosea × levothyroxine',
+    verdict: 'Usually fine — with caveats',
+    known: 'No formally documented chemical interaction. Levothyroxine is fussy about absorption, so timing is the practical issue.',
+    action: 'Space the doses about four hours apart and consider checking thyroid labs a little sooner after starting.',
+    link: '/blog/can-you-take-rhodiola-rosea-with-levothyroxine/',
+  },
+  {
+    pair: 'Rhodiola rosea × antidepressants or stimulants',
+    verdict: 'Ask your prescriber first',
+    known: 'Rhodiola can feel stimulating and touches the same stress-and-energy systems those medications act on.',
+    action: 'Discuss with your doctor — especially with bipolar disorder, where stimulating supplements need care.',
+    link: '/products/rhodiola-rosea/',
+  },
+  {
+    pair: 'Omega-3 fish oil × anticoagulants or antiplatelets',
+    verdict: 'Ask your prescriber first',
+    known: 'Fish oil may have a mild blood-thinning effect that can add to prescription blood thinners.',
+    action: 'Talk to a clinician before combining, and mention fish oil before any surgery.',
+    link: '/products/omega-3-fish-oil/',
+  },
+  {
+    pair: 'Saffron extract × prescribed antidepressants',
+    verdict: 'Ask your prescriber first',
+    known: 'Saffron has been studied for mood in its own right, so combining it with prescribed antidepressants deserves a professional opinion.',
+    action: 'Raise it with the prescriber managing your antidepressant.',
+    link: '/products/saffron-extract/',
+  },
+  {
+    pair: 'L-theanine × blood-pressure medication',
+    verdict: 'Usually fine — with caveats',
+    known: 'Very well tolerated overall; theanine may have a mild blood-pressure-lowering effect that could add to medication.',
+    action: 'Mention it to your doctor so readings that drift lower aren’t a mystery.',
+    link: '/products/l-theanine/',
+  },
+  {
+    pair: 'Magnesium glycinate × melatonin',
+    verdict: 'Usually fine — with caveats',
+    known: 'No well-documented direct interaction; they’re combined in commercial sleep blends. Main caution is additive drowsiness — and each ingredient’s separate medication interactions.',
+    action: 'Fine for most healthy adults; check with your prescriber if you take other medications. Kidney disease: no magnesium without medical guidance.',
+    link: '/blog/can-you-take-magnesium-glycinate-and-melatonin-together/',
+  },
+];
+
+const verdictStyle: Record<Verdict, string> = {
+  'Do not combine': 'bg-red-50 text-red-800 border-red-200 dark:bg-red-950 dark:text-red-200 dark:border-red-900',
+  'Ask your prescriber first': 'bg-saffron/10 text-saffron-deep border-saffron/30',
+  'Usually fine — with caveats': 'bg-moss/10 text-moss-deep border-moss/30',
+};
+---
+<Base
+  title="Supplement–Medication Interaction Cheat Sheet"
+  description="The 10 supplement–medication pairings we get asked about most — serotonin risks, thyroid timing, blood thinners — and what to ask your prescriber. Printable."
+>
+  <div class="print:hidden">
+    <Breadcrumb crumbs={[{ label: 'Home', href: '/' }, { label: 'Interaction cheat sheet' }]} />
+  </div>
+
+  <section class="mx-auto max-w-4xl px-5 pt-6 pb-16">
+    <p class="eyebrow mb-3">Reference</p>
+    <h1 class="font-display text-3xl sm:text-4xl text-moss-deep">
+      The Supplement × Medication Interaction Cheat Sheet
+    </h1>
+    <p class="mt-4 text-ink-soft leading-relaxed max-w-2xl">
+      The ten pairings readers ask us about most, in one printable page. Every row is
+      fact-checked against primary sources and links to the full write-up. This sheet tells you
+      what to <em>ask your prescriber or pharmacist</em> — it is not medical advice and never a
+      substitute for that conversation.
+    </p>
+
+    <div class="mt-4 flex flex-wrap items-center gap-3 print:hidden">
+      <button
+        onclick="window.print()"
+        class="inline-flex items-center gap-2 rounded-md bg-moss-deep px-5 py-2.5 text-sm font-medium text-paper hover:bg-moss transition-colors"
+      >
+        Print / save as PDF
+      </button>
+      <p class="text-xs text-ink-soft">Updated with the site — the printed sheet is always current.</p>
+    </div>
+
+    <div class="mt-8 space-y-4">
+      {rows.map((row) => (
+        <article class="bg-card border border-mist rounded-lg p-5 break-inside-avoid">
+          <div class="flex flex-wrap items-start justify-between gap-2">
+            <h2 class="font-medium text-moss-deep leading-snug text-base max-w-xl">{row.pair}</h2>
+            <span class={`text-xs font-mono uppercase tracking-wide border rounded-full px-3 py-1 ${verdictStyle[row.verdict]}`}>
+              {row.verdict}
+            </span>
+          </div>
+          <p class="mt-2 text-sm text-ink-soft leading-relaxed">{row.known}</p>
+          <p class="mt-2 text-sm leading-relaxed"><span class="font-medium text-moss-deep">What to do:</span> <span class="text-ink-soft">{row.action}</span></p>
+          <a href={row.link} class="mt-2 inline-block text-sm font-medium text-moss-deep hover:text-saffron-deep hover:underline underline-offset-4 print:hidden">
+            Full write-up →
+          </a>
+        </article>
+      ))}
+    </div>
+
+    <div class="mt-8 text-xs text-ink-soft leading-relaxed border border-mist rounded-md bg-card p-4">
+      <p class="font-mono uppercase tracking-wider text-moss mb-1 text-[0.62rem]">Sources & scope</p>
+      <p>
+        Compiled from the interaction write-ups and product cautions on this site, which cite the
+        <a href="https://ods.od.nih.gov/" target="_blank" rel="noopener" class="underline">NIH Office of Dietary Supplements</a>,
+        <a href="https://www.nccih.nih.gov/" target="_blank" rel="noopener" class="underline">NCCIH</a>, and peer-reviewed
+        literature. Supplements are never a treatment for depression or anxiety — if your mood is
+        the reason you're here, our <a href="/get-help/" class="underline">professional-support page</a> matters more
+        than any row above.
+      </p>
+    </div>
+
+    <div class="print:hidden">
+      <EmailCapture source="cheat-sheet" />
+    </div>
+  </section>
+</Base>
+
+<style>
+  @media print {
+    :global(header), :global(footer), :global(#sticky-buy-bar) { display: none !important; }
+  }
+</style>

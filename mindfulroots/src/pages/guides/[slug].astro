@@ -7,6 +7,7 @@ import GuideHeroSlot from '../../components/GuideHeroSlot.astro';
 import StickyBuyBar from '../../components/StickyBuyBar.astro';
 import EvidenceTag from '../../components/EvidenceTag.astro';
 import SupportNotice from '../../components/SupportNotice.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
 import { getCollection, render } from 'astro:content';
 import { SITE } from '../../config';
 
@@ -230,8 +231,9 @@ const schema = {
   )}
 
   <section class="mx-auto max-w-3xl px-5 py-6">
+    <EmailCapture source="guide-end" compact />
     <SupportNotice />
   </section>
 
-  {hero && <StickyBuyBar rec={hero.data.recommendedProduct} />}
+  {hero && <StickyBuyBar slug={hero.id} rec={hero.data.recommendedProduct} />}
 </Base>

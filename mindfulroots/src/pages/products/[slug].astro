@@ -166,7 +166,7 @@ const schema = {
 
     <!-- Sidebar: the buy box + at-a-glance -->
     <aside class="order-2 md:col-start-2 md:row-start-1 md:row-span-2 md:sticky md:top-24 self-start space-y-5 mt-8 md:mt-0">
-      <BuyBox data={data} rec={rec} verifiedLabel={verifiedLabel} relatedProds={relatedProds} />
+      <BuyBox slug={product.id} data={data} rec={rec} verifiedLabel={verifiedLabel} relatedProds={relatedProds} />
     </aside>
   </article>
 
@@ -203,5 +203,5 @@ const schema = {
     <SupportNotice />
   </section>
 
-  {rec && <StickyBuyBar rec={rec} />}
+  {rec && <StickyBuyBar slug={product.id} rec={rec} />}
 </Base>

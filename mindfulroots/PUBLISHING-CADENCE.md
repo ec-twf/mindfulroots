@@ -15,22 +15,33 @@
 >
 > **Updated 2026-07-07:** generation moved off the local `launchd` agent onto a
 > cloud **claude.ai Routine** (`RemoteTrigger` `trig_01WwJ2NwCxg9ABveQqhJ5aK2`, name
-> `moodsupplement-generate`) — no laptop needs to be awake. Cadence changed to **Mon+Fri,
-> batch of 3 posts per fire** (6 posts/week from 2 Netlify deploys/week — batching keeps
-> deploy count down while raising output; see the deploy-cost note below). Selection is no
-> longer strict FIFO: the Routine is now **coverage-floor + buy-intent aware** (below).
+> `moodsupplement-generate`) — no laptop needs to be awake. Selection is not strict FIFO:
+> the Routine is **coverage-floor + buy-intent aware** (below).
 > The old `launchd` plists are retired to `~/Library/LaunchAgents/_retired/`; the local
 > `scripts/generate-post.sh` is superseded (kept as rollback reference only).
+>
+> **Updated 2026-07-12 (growth-audit velocity cut):** batch dropped from 3 new posts per
+> fire to **1 new post + 1 refresh of an existing post per fire** (2 new + 2 refreshes/week).
+> Rationale: 6 AI posts/week on a one-month-old YMYL domain is the Helpful-Content-Update
+> casualty profile; GSC shows the constraint is authority/indexation, not content volume.
+> Freed capacity now deepens existing posts (citations, tables, FAQ top-ups) via
+> `refresh-queue.txt`. Refreshes carry a byte-count truncation guard (`AFTER >= BEFORE`
+> or revert) because the pipeline once truncated a live ranking post to zero.
 
 ## The model
 
-- **Cadence: Mon + Fri, 3 posts per fire = 6 posts/week.** Cron `0 1 * * 1,5`
-  (01:00 UTC = 09:00 HKT). Generation is a cloud Routine, not anything in this repo or on
-  the Mac. Each fire writes up to 3 posts then does **one** combined `git commit`/push, so
-  the week costs only **2 Netlify deploys** — the site is plain `astro build` (full static
-  rebuild every push, no incremental/ISR), so batching is how post volume scales without
-  scaling deploy cost. Steady cadence is still what a young health-adjacent domain wants; if
-  `/optimize-content` signals are weak, drop the batch size back rather than pushing higher.
+- **Cadence: Mon + Fri, 1 new post + 1 refresh per fire = 2 new + 2 refreshes/week.**
+  Cron `0 1 * * 1,5` (01:00 UTC = 09:00 HKT). Generation is a cloud Routine, not anything
+  in this repo or on the Mac. Each fire does **one** combined `git commit`/push, so the week
+  still costs only **2 Netlify deploys** (plain `astro build`, full static rebuild every
+  push). New-post count is a **ceiling, not a KPI** — if `/optimize-content` signals are
+  weak, pause new posts entirely and let refreshes run alone.
+- **Refresh pass.** Each fire also pops the head of `refresh-queue.txt` and deepens that
+  existing post: ≥2 primary-source citations (PubMed/NIH/ODS/NCCIH), one missing high-value
+  section (comparison table / dosing-timing / who-should-skip), FAQ top-up to 4–6 items,
+  `updatedDate` bump. Title/slug/cluster/relatedProducts/headTerm are immutable. A byte-count
+  truncation guard (`wc -c` before vs after; `AFTER >= BEFORE` else `git checkout --`) makes
+  a refresh strictly additive.
 - **Coverage-floor selection (not strict FIFO).** Each fire computes per-product published
   post counts (by scanning blog frontmatter `relatedProducts`, the reliable field — *not*
   `cluster`, which is fragmented), and fills its 3 slots from products **under a FLOOR of 3
@@ -60,7 +71,8 @@
 
 | File | Role |
 |---|---|
-| `mindfulroots-topic-queue.txt` | **Active queue** — blog topics only, priority-ordered. The Routine selects up to 3 lines per fire (coverage-floor + buy-intent aware, not `head -1`) and removes only what it consumes; file order is otherwise untouched. |
+| `mindfulroots-topic-queue.txt` | **Active queue** — blog topics only, priority-ordered. The Routine selects 1 line per fire (coverage-floor + buy-intent aware, not `head -1`) and removes only what it consumes; file order is otherwise untouched. |
+| `refresh-queue.txt` | **Refresh queue** — existing-post deepening backlog, `SLUG:… \| FOCUS:…` per line, oldest posts first. The Routine pops the head each fire, applies the additive refresh pass, and removes only lines that pass the truncation guard. |
 | `product-page-tasks.txt` | **Product-page work** — dosage/safety sections, buying-guide angles, pillar-hub backlog. Handled manually, never by the unattended generator. |
 | `../data/keyword-universe.csv` | Durable keyword research asset — own-scored superset of the original xlsx research, SERP-evidence notes per keyword. `/optimize-content` appends newly GSC-validated keywords here over time. |
 | `../data/gsc/*.csv` | Search Console snapshots pulled by `scripts/gsc-pull.py`, one per optimize run. |

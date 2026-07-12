@@ -311,6 +311,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           placement: el.dataset.placement,
         });
       });
+      document.addEventListener('submit', (e) => {
+        const form = e.target as HTMLElement | null;
+        if (!(form instanceof HTMLFormElement) || !form.hasAttribute('data-email-form')) return;
+        window.dataLayer.push({
+          event: 'email_signup',
+          source: form.dataset.source,
+        });
+      });
     </script>
 
     <main id="main" class="flex-1">

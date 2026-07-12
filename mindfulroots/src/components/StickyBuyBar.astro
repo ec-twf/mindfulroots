@@ -3,9 +3,11 @@ import AffiliateButton from './AffiliateButton.astro';
 import { RETAILER_NAME } from '../config';
 
 interface Props {
+  /** Product content-collection slug — routes the CTA through the /go/ router. */
+  slug: string;
   rec: any;
 }
-const { rec } = Astro.props;
+const { slug, rec } = Astro.props;
 ---
 <div
   id="sticky-buy-bar"
@@ -26,6 +28,7 @@ const { rec } = Astro.props;
     <div class="shrink-0">
       <AffiliateButton
         keyword={rec.iherbKeyword}
+        goSlug={slug}
         label={`View on ${RETAILER_NAME}`}
         placement="sticky-bar"
         compact
