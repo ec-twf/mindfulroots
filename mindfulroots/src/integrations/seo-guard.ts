@@ -10,7 +10,14 @@ const DESCRIPTION_LIMIT = 160;
 
 interface Violation {
   file: string;
-  kind: 'title' | 'description' | 'body-faq' | 'keyword-duplicate' | 'keyword-registry' | 'hero-cta';
+  kind:
+    | 'title'
+    | 'description'
+    | 'body-faq'
+    | 'keyword-duplicate'
+    | 'keyword-registry'
+    | 'hero-cta'
+    | 'affiliate-link';
   length: number;
   limit: number;
   text: string;
@@ -271,10 +278,54 @@ function walkHtml(dir: string, out: string[] = []): string[] {
   return out;
 }
 
-function checkBuiltPage(path: string, root: string): Violation[] {
+// ─── Affiliate link guard ───────────────────────────────────────────────────
+// Product CTAs must route through the first-party /go/ router (click logging +
+// per-product retailer switching). Two regressions this catches in built HTML:
+// (a) an `amazon.com/s?k=` search-link CTA — converts far worse than a /dp/ASIN
+//     link because the user lands on a competitor-filled SERP; the search-keyword
+//     fallback only exists for future products without a recommendedProduct, and
+//     shipping one silently is a revenue bug;
+// (b) a `/go/<slug>` href whose slug has no row in src/data/affiliate-links.json —
+//     the router would 404 the money click.
+function loadAffiliateSlugs(): Set<string> {
+  const path = join(process.cwd(), 'src/data/affiliate-links.json');
+  return new Set(Object.keys(JSON.parse(readFileSync(path, 'utf8'))));
+}
+
+function checkAffiliateLinks(html: string, file: string, knownSlugs: Set<string>): Violation[] {
+  const violations: Violation[] = [];
+
+  for (const m of html.matchAll(/<a\s[^>]*href="([^"]*amazon\.com\/s\?k=[^"]*)"/g)) {
+    violations.push({
+      file,
+      kind: 'affiliate-link',
+      length: 0,
+      limit: 0,
+      text: `Amazon search-link CTA shipped ("${decode(m[1]).slice(0, 80)}…") — give the product a recommendedProduct /dp/ URL or an affiliate-links.json row so the CTA is an ASIN/go link`,
+    });
+  }
+
+  for (const m of html.matchAll(/<a\s[^>]*href="\/go\/([^"?]+)[^"]*"/g)) {
+    if (!knownSlugs.has(m[1])) {
+      violations.push({
+        file,
+        kind: 'affiliate-link',
+        length: 0,
+        limit: 0,
+        text: `/go/${m[1]} has no row in src/data/affiliate-links.json — the router would 404 this money click`,
+      });
+    }
+  }
+
+  return violations;
+}
+
+function checkBuiltPage(path: string, root: string, knownSlugs: Set<string>): Violation[] {
   const html = readFileSync(path, 'utf8');
   const violations: Violation[] = [];
   const file = relative(root, path);
+
+  violations.push(...checkAffiliateLinks(html, file, knownSlugs));
 
   const title = html.match(/<title>([\s\S]*?)<\/title>/)?.[1];
   if (title) {
@@ -301,18 +352,23 @@ export default function seoGuard(): AstroIntegration {
     hooks: {
       'astro:build:done': ({ dir, logger }) => {
         const root = fileURLToPath(dir);
-        const violations = walkHtml(root).flatMap((p) => checkBuiltPage(p, root));
+        const knownSlugs = loadAffiliateSlugs();
+        const violations = walkHtml(root).flatMap((p) => checkBuiltPage(p, root, knownSlugs));
 
         if (violations.length > 0) {
-          const lines = violations.map(
-            (v) => `  [${v.kind}] ${v.file}: ${v.length}/${v.limit} chars — "${v.text}"`,
+          const lines = violations.map((v) =>
+            v.kind === 'affiliate-link'
+              ? `  [${v.kind}] ${v.file}: ${v.text}`
+              : `  [${v.kind}] ${v.file}: ${v.length}/${v.limit} chars — "${v.text}"`,
           );
           throw new Error(
-            `seo-guard: ${violations.length} rendered SEO length violation(s):\n${lines.join('\n')}`,
+            `seo-guard: ${violations.length} rendered-page violation(s):\n${lines.join('\n')}`,
           );
         }
 
-        logger.info(`seo-guard: ${walkHtml(root).length} rendered pages within title/description limits. ✔`);
+        logger.info(
+          `seo-guard: ${walkHtml(root).length} rendered pages within title/description limits; affiliate CTAs routed + resolvable. ✔`,
+        );
       },
 
       'astro:build:start': ({ logger }) => {

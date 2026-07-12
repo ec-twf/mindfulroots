@@ -233,5 +233,5 @@ const schema = {
     <SupportNotice />
   </section>
 
-  {hero && <StickyBuyBar rec={hero.data.recommendedProduct} />}
+  {hero && <StickyBuyBar slug={hero.id} rec={hero.data.recommendedProduct} />}
 </Base>

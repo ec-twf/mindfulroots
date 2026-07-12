@@ -1,0 +1,62 @@
+{
+  "5-htp": {
+    "amazon": "https://www.amazon.com/dp/B0013OXB58",
+    "iherb": null,
+    "direct": null,
+    "active": "amazon"
+  },
+  "ashwagandha": {
+    "amazon": "https://www.amazon.com/dp/B0CTYQT78S",
+    "iherb": null,
+    "direct": null,
+    "active": "amazon"
+  },
+  "b-complex": {
+    "amazon": "https://www.amazon.com/dp/B00HST919C",
+    "iherb": null,
+    "direct": null,
+    "active": "amazon"
+  },
+  "l-theanine": {
+    "amazon": "https://www.amazon.com/dp/B001OXTGVG",
+    "iherb": null,
+    "direct": null,
+    "active": "amazon"
+  },
+  "magnesium-glycinate": {
+    "amazon": "https://www.amazon.com/dp/B000BD0RT0",
+    "iherb": null,
+    "direct": null,
+    "active": "amazon"
+  },
+  "omega-3-fish-oil": {
+    "amazon": "https://www.amazon.com/dp/B07M9H5JGM",
+    "iherb": null,
+    "direct": null,
+    "active": "amazon"
+  },
+  "probiotic-gut-brain": {
+    "amazon": "https://www.amazon.com/dp/B00ZMO7UKW",
+    "iherb": null,
+    "direct": null,
+    "active": "amazon"
+  },
+  "rhodiola-rosea": {
+    "amazon": "https://www.amazon.com/dp/B005P0U7TY",
+    "iherb": null,
+    "direct": null,
+    "active": "amazon"
+  },
+  "saffron-extract": {
+    "amazon": "https://www.amazon.com/dp/B0FY497SJJ",
+    "iherb": null,
+    "direct": null,
+    "active": "amazon"
+  },
+  "vitamin-d3": {
+    "amazon": "https://www.amazon.com/dp/B07NXW4GW7",
+    "iherb": null,
+    "direct": null,
+    "active": "amazon"
+  }
+}

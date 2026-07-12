@@ -50,6 +50,7 @@ const { slug, title, evidence, rec } = Astro.props;
     <div class="mt-auto flex flex-col gap-2 pt-1">
       <AffiliateButton
         keyword={rec.iherbKeyword}
+        goSlug={slug}
         label={`View ${rec.brand} on ${RETAILER_NAME}`}
         placement="in-article"
         compact

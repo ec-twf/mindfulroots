@@ -57,3 +57,13 @@ export function amazonLink(productUrlOrKeyword: string): string {
 export function retailerLink(productUrlOrKeyword: string): string {
   return ACTIVE_RETAILER === 'amazon' ? amazonLink(productUrlOrKeyword) : iherbLink(productUrlOrKeyword);
 }
+
+/**
+ * First-party affiliate router URL for a product slug (see netlify/functions/go.mjs).
+ * Destination + retailer live in src/data/affiliate-links.json; the function logs the
+ * click server-side (ad-blocker-proof) and 302s to the active retailer with the tag
+ * attached. Prefer this over `retailerLink()` wherever the product slug is known.
+ */
+export function goLink(productSlug: string, placement?: string): string {
+  return placement ? `/go/${productSlug}?p=${encodeURIComponent(placement)}` : `/go/${productSlug}`;
+}

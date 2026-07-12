@@ -1,8 +1,12 @@
 ---
-import { retailerLink, RETAILER_NAME } from '../config';
+import { retailerLink, goLink, RETAILER_NAME } from '../config';
 type Placement = 'buybox' | 'sticky-bar' | 'home-pick' | 'in-article' | 'guide-hero' | 'guide-pick' | 'generic';
 interface Props {
   keyword: string;
+  /** Product content-collection slug. When set, the button routes through the
+   *  first-party /go/ router (server-side click log + per-product retailer
+   *  switching via src/data/affiliate-links.json) instead of a direct link. */
+  goSlug?: string;
   label?: string;
   placement?: Placement;
   fullWidth?: boolean;      // buy-box: full-width, taller CTA
@@ -11,12 +15,14 @@ interface Props {
 }
 const {
   keyword,
+  goSlug,
   label = `View on ${RETAILER_NAME}`,
   placement = 'generic',
   fullWidth = false,
   compact = false,
   showDisclosure = true,
 } = Astro.props;
+const href = goSlug ? goLink(goSlug, placement) : retailerLink(keyword);
 
 const base = 'inline-flex items-center gap-2 bg-saffron hover:bg-saffron-deep text-on-saffron font-medium rounded-md transition-colors';
 const sizing = compact ? 'px-4 py-2 text-sm' : fullWidth ? 'px-5 py-3' : 'px-5 py-2.5';
@@ -24,8 +30,8 @@ const width = fullWidth ? 'w-full justify-center' : '';
 const btnClass = [base, sizing, width].filter(Boolean).join(' ');
 ---
 <div class="space-y-2">
-  <a href={retailerLink(keyword)} target="_blank" rel="nofollow sponsored noopener"
-     data-affiliate data-product={keyword} data-placement={placement}
+  <a href={href} target="_blank" rel="nofollow sponsored noopener"
+     data-affiliate data-product={goSlug ?? keyword} data-placement={placement}
      class={btnClass}>
     {label}
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
