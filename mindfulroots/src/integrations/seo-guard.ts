@@ -17,7 +17,8 @@ interface Violation {
     | 'keyword-duplicate'
     | 'keyword-registry'
     | 'hero-cta'
-    | 'affiliate-link';
+    | 'affiliate-link'
+    | 'citations';
   length: number;
   limit: number;
   text: string;
@@ -74,6 +75,29 @@ function readFrontmatterArray(raw: string, key: string): string[] {
   return items;
 }
 
+// ─── Citations gate (YMYL) ──────────────────────────────────────────────────
+// Every NEW blog post must link at least MIN_CITATIONS primary sources. Applies
+// only to posts dated on/after the gate's introduction so the 4 legacy posts
+// with zero outbound citations (queued at the head of refresh-queue.txt) don't
+// block builds while the refresh pass fixes them.
+const CITATIONS_GATE_FROM = '2026-07-12';
+const MIN_CITATIONS = 2;
+const PRIMARY_SOURCE = /https?:\/\/(?:[a-z0-9.-]*\.)?(?:nih\.gov|ncbi\.nlm\.nih\.gov|pubmed\.ncbi\.nlm\.nih\.gov|doi\.org|examine\.com|cochranelibrary\.com|mskcc\.org)\//g;
+
+function checkCitations(raw: string, file: string): Violation[] {
+  const pubDate = raw.match(/^pubDate:\s*(\S+)/m)?.[1];
+  if (!pubDate || pubDate < CITATIONS_GATE_FROM) return [];
+  const count = (raw.match(PRIMARY_SOURCE) ?? []).length;
+  if (count >= MIN_CITATIONS) return [];
+  return [{
+    file,
+    kind: 'citations',
+    length: count,
+    limit: MIN_CITATIONS,
+    text: `post dated ${pubDate} has ${count} primary-source citation link(s) (need ≥${MIN_CITATIONS}: NIH/PubMed/DOI/Examine/Cochrane/MSKCC) — YMYL posts must cite evidence`,
+  }];
+}
+
 function checkFile(dir: string, file: string, kind: 'blog' | 'product' | 'hub'): Violation[] {
   const raw = readFileSync(join(dir, file), 'utf8');
   const violations: Violation[] = [];
@@ -105,6 +129,10 @@ function checkFile(dir: string, file: string, kind: 'blog' | 'product' | 'hub'):
       limit: DESCRIPTION_LIMIT,
       text: effectiveDescription,
     });
+  }
+
+  if (kind === 'blog') {
+    violations.push(...checkCitations(raw, file));
   }
 
   if (kind !== 'product') {
