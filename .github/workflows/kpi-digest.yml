@@ -32,7 +32,14 @@ jobs:
       - name: Write GSC service-account key
         run: |
           mkdir -p ~/.config/moodsupplement
-          printf '%s' "$GSC_SA_KEY" > ~/.config/moodsupplement/gsc-key.json
+          KEY=~/.config/moodsupplement/gsc-key.json
+          printf '%s' "$GSC_SA_KEY" > "$KEY"
+          # Accept either raw JSON or a base64-encoded key (common paste format)
+          if ! python3 -c "import json,sys; json.load(open(sys.argv[1]))" "$KEY" 2>/dev/null; then
+            base64 -d "$KEY" > "$KEY.dec" && mv "$KEY.dec" "$KEY"
+            python3 -c "import json,sys; json.load(open(sys.argv[1]))" "$KEY" \
+              || { echo "::error::GSC_SA_KEY secret is neither valid JSON nor base64-encoded JSON — re-paste the raw service-account .json file contents"; exit 1; }
+          fi
         env:
           GSC_SA_KEY: ${{ secrets.GSC_SA_KEY }}
 
