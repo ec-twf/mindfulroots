@@ -1,4 +1,3 @@
-SLUG:fish-oil-and-cortisol | FOCUS:citations-critical,table,faq-audit
 SLUG:gut-brain-axis-probiotics | FOCUS:citations-critical,table,faq-audit
 SLUG:magnesium-glycinate-dosage-for-anxiety | FOCUS:citations-critical,table,faq-audit
 SLUG:magnesium-glycinate-vs-citrate | FOCUS:citations-critical,table,faq-audit
