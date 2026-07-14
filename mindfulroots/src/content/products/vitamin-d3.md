@@ -25,6 +25,8 @@ recommendedProduct:
   meetsCriterion: true
   concentrationNote: "5,000 IU D3 from lichen (vegan) + 100 mcg MK-7 K2; softgel with oil base for absorption"
   verifiedDate: "2026-07-02"
+  image: "/products/sports-research-vitamin-d3-k2.png"
+  imageAlt: "Sports Research Vegan Vitamin D3 + K2 softgel bottle"
   note: "Amazon listing (verified 2026-07-02) confirms 5,000 IU, plant-based/vegan D3, and K2 — but the 'VEGADELIGHT®' sub-brand name and exact 100 mcg MK-7 K2 dose weren't visible in title/meta (JS-rendered bullet content wasn't scrapeable); removed the VEGADELIGHT® claim, kept the K2 dose since nothing contradicts it. Re-check the full listing before publishing."
 comparison:
   criterion: "D3 not D2, dose 1,000–5,000 IU, K2 included, oil/fat base."

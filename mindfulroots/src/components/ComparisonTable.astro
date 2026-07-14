@@ -3,7 +3,7 @@
 // Reusable across product hubs ("best X") and future VS / comparison posts.
 // Desktop (md+): a scan-by-column table. Mobile (<md): one stacked card per
 // product — same data, two presentations, no horizontal scroll on phones.
-import { retailerLink, RETAILER_NAME } from '../config';
+import { retailerLink, goLink, retailerNameFor, RETAILER_NAME } from '../config';
 
 interface Row {
   brand: string;
@@ -17,8 +17,17 @@ interface Props {
   criterion?: string;
   columns?: string[];
   rows: Row[];
+  /** Product slug. Sends the `pick` row through the /go/ router so it lands on
+   *  whichever program that product is currently on; the other rows are
+   *  reference brands we have no program for, so they stay on the marketplace. */
+  goSlug?: string;
 }
-const { criterion, columns = [], rows } = Astro.props;
+const { criterion, columns = [], rows, goSlug } = Astro.props;
+
+const rowHref = (r: Row) =>
+  r.pick && goSlug ? goLink(goSlug, 'comparison') : retailerLink(r.iherbKeyword);
+const rowRetailer = (r: Row) =>
+  r.pick && goSlug ? retailerNameFor(goSlug) : RETAILER_NAME;
 ---
 <section class="not-prose" aria-label="Product comparison">
   {criterion && (
@@ -66,9 +75,9 @@ const { criterion, columns = [], rows } = Astro.props;
               )}
             </td>
             <td class="px-3 py-3 border-b border-mist align-top whitespace-nowrap">
-             <a href={retailerLink(r.iherbKeyword)} target="_blank" rel="nofollow sponsored noopener"
+             <a href={rowHref(r)} target="_blank" rel="nofollow sponsored noopener"
                  class="text-saffron-deep hover:text-moss-deep underline underline-offset-2 text-xs">
-                {RETAILER_NAME} →
+                {rowRetailer(r)} →
               </a>
             </td>
           </tr>
@@ -110,9 +119,9 @@ const { criterion, columns = [], rows } = Astro.props;
           </div>
         </dl>
 
-        <a href={retailerLink(r.iherbKeyword)} target="_blank" rel="nofollow sponsored noopener"
+        <a href={rowHref(r)} target="_blank" rel="nofollow sponsored noopener"
            class="mt-4 flex items-center justify-center gap-1 rounded-md border border-mist bg-paper py-2.5 text-sm font-medium text-saffron-deep hover:text-moss-deep">
-          View on {RETAILER_NAME} <span aria-hidden="true">→</span>
+          View on {rowRetailer(r)} <span aria-hidden="true">→</span>
         </a>
       </li>
     ))}

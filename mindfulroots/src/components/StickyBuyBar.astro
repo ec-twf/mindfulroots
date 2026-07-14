@@ -1,6 +1,6 @@
 ---
 import AffiliateButton from './AffiliateButton.astro';
-import { RETAILER_NAME } from '../config';
+import { ctaLabel } from '../config';
 
 interface Props {
   /** Product content-collection slug — routes the CTA through the /go/ router. */
@@ -29,7 +29,7 @@ const { slug, rec } = Astro.props;
       <AffiliateButton
         keyword={rec.iherbKeyword}
         goSlug={slug}
-        label={`View on ${RETAILER_NAME}`}
+        label={ctaLabel(slug)}
         placement="sticky-bar"
         compact
         showDisclosure={false}

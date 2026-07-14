@@ -20,23 +20,25 @@ criterionRationale: "Across the RCT literature the stress and cortisol effects c
 criterionSourceUrl: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12242034/"
 recommendedProduct:
   brand: "Sports Research"
-  productName: "Ashwagandha Broad-Spectrum Complex (Shoden® + BioPerine®)"
+  productName: "Ashwagandha, 500 mg (Shoden®)"
   iherbKeyword: "https://www.amazon.com/dp/B0CTYQT78S"
   meetsCriterion: true
-  concentrationNote: "Contains Shoden® - a clinically-trialed standardized extract (120 mg, ~35% withanolide glycosides), plus BioPerine to aid absorption"
-  verifiedDate: "2026-07-02"
+  concentrationNote: "500 mg ashwagandha per serving, built on Shoden® — a clinically-trialed extract standardized to 35% withanolides — from root and leaf, in a coconut-MCT softgel"
+  verifiedDate: "2026-07-14"
+  image: "/products/sports-research-ashwagandha.png"
+  imageAlt: "Sports Research Ashwagandha 500 mg with Shoden, veggie softgel bottle"
 comparison:
   criterion: "A named, clinically-trialed standardized extract (KSM-66, Sensoril or Shoden) with the withanolide content stated, dosed in its studied range. Generic, unbranded 'root powder' is not the extract the trials used."
-  verdict: "The trials that produced ashwagandha's stress and cortisol results used specific standardized extracts, not generic powder — so that's what we screen for. Among these three, only the Sports Research complex contains a named, clinically-trialed extract (Shoden®, 120 mg at ~35% withanolide glycosides) at a dose used in studies, which is why it's our pick. The NOW Foods extract at least discloses its standardization (2.5% withanolides, 11 mg), but it's a generic, unbranded extract rather than one with its own trial evidence. The Jarrow extract states no withanolide content at all, so there's no way to confirm it matches what the research tested. One honest caveat: our pick is a blend — if you want the single most-studied option, a dedicated KSM-66 600 mg root extract is the textbook choice."
+  verdict: "The trials that produced ashwagandha's stress and cortisol results used specific standardized extracts, not generic powder — so that's what we screen for. Among these three, only the Sports Research product is built on a named, clinically-trialed extract: Shoden®, standardized to 35% withanolides, which is why it's our pick. The NOW Foods extract at least discloses its standardization (2.5% withanolides, 11 mg), but it's a generic, unbranded extract rather than one with its own trial evidence. The Jarrow extract states no withanolide content at all, so there's no way to confirm it matches what the research tested. Two honest caveats on our pick: Sports Research states the 500 mg total and the Shoden® standardization, but not how many milligrams of Shoden® that 500 mg contains — so we can't check it against the 120–240 mg used in the Shoden trials. And if you want the single most-studied option, a dedicated KSM-66 600 mg root extract remains the textbook choice."
   columns: ["Named extract", "Withanolides", "Plant part", "Dose / serving"]
   rows:
     - brand: "Sports Research"
-      productName: "Ashwagandha Broad-Spectrum Complex"
+      productName: "Ashwagandha, 500 mg (Shoden®)"
       iherbKeyword: "https://www.amazon.com/dp/B0CTYQT78S"
-      cells: ["Shoden®", "≈48 mg (Shoden 35% + 1.5% blend)", "Root & leaf", "500 mg (120 mg Shoden)"]
+      cells: ["Shoden®", "35% (Shoden® standardization)", "Root & leaf", "500 mg"]
       pass: true
       pick: true
-      verifiedDate: "2026-07-02"
+      verifiedDate: "2026-07-14"
     - brand: "NOW Foods"
       productName: "Ashwagandha Extract"
       iherbKeyword: "https://www.amazon.com/dp/B0013OQIJY"

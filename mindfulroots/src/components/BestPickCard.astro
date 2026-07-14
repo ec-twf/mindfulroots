@@ -1,7 +1,7 @@
 ---
 import AffiliateButton from './AffiliateButton.astro';
 import EvidenceTag from './EvidenceTag.astro';
-import { RETAILER_NAME } from '../config';
+import { ctaLabel } from '../config';
 
 type Placement = 'buybox' | 'sticky-bar' | 'home-pick' | 'in-article' | 'guide-hero' | 'guide-pick' | 'generic';
 
@@ -64,7 +64,7 @@ const { slug, title, category, evidence, placement = 'home-pick', rank, rec } = 
       <AffiliateButton
         keyword={rec.iherbKeyword}
         goSlug={slug}
-        label={`View ${rec.brand} on ${RETAILER_NAME}`}
+        label={ctaLabel(slug, rec.brand)}
         placement={placement}
         fullWidth
       />

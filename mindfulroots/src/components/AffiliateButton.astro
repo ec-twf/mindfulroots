@@ -1,5 +1,5 @@
 ---
-import { retailerLink, goLink, RETAILER_NAME } from '../config';
+import { retailerLink, goLink, ctaLabel } from '../config';
 type Placement = 'buybox' | 'sticky-bar' | 'home-pick' | 'in-article' | 'guide-hero' | 'guide-pick' | 'generic';
 interface Props {
   keyword: string;
@@ -16,7 +16,7 @@ interface Props {
 const {
   keyword,
   goSlug,
-  label = `View on ${RETAILER_NAME}`,
+  label = ctaLabel(goSlug),
   placement = 'generic',
   fullWidth = false,
   compact = false,

@@ -27,6 +27,8 @@ recommendedProduct:
   concentrationNote: "~1 g EPA+DHA per 1,250 mg softgel (≈80% concentration); EPA ≈69% of EPA+DHA, triglyceride form"
   oxidationNote: "IFOS 5-star rated; reported TOTOX within GOED limit"
   verifiedDate: "2026-07-02"
+  image: "/products/sports-research-omega-3.png"
+  imageAlt: "Sports Research Triple Strength Omega-3 Fish Oil from Wild Alaska Pollock, 1250 mg softgel bottle"
 comparison:
   criterion: "EPA at ≥60% of total EPA+DHA, a high overall concentration (efficient per-softgel dose), and independent oxidation/purity testing (IFOS rating or published TOTOX within GOED limits)."
   verdict: "Sports Research is our pick because it's the only option here that clears all three bars at once: EPA at about 69% of EPA+DHA (comfortably above the ≥60% the mood research points to), roughly 80% concentration so a single softgel does the work of several weaker ones, and independent IFOS 5-star purity testing. Nordic Naturals is excellent on form and purity, but its EPA share (~59%) sits just under the threshold the trials lean on. NOW Foods has the EPA ratio and concentration, but relies on in-house rather than independent purity testing — the one quality signal with a real industry standard behind it."

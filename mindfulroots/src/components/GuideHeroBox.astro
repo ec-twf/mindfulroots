@@ -1,7 +1,7 @@
 ---
 import AffiliateButton from './AffiliateButton.astro';
 import EvidenceTag from './EvidenceTag.astro';
-import { RETAILER_NAME } from '../config';
+import { ctaLabel } from '../config';
 
 // The guide's #1 pick, with a direct affiliate CTA — the primary conversion
 // point on a condition hub. Owns id="buy" so StickyBuyBar's IntersectionObserver
@@ -48,7 +48,7 @@ const verified = rec.verifiedDate
   <AffiliateButton
     keyword={rec.iherbKeyword}
     goSlug={slug}
-    label={`View ${rec.brand} on ${RETAILER_NAME}`}
+    label={ctaLabel(slug, rec.brand)}
     placement="guide-hero"
     fullWidth
   />

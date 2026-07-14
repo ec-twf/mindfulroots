@@ -24,7 +24,9 @@ recommendedProduct:
   iherbKeyword: "https://www.amazon.com/dp/B0FY497SJJ"
   meetsCriterion: true
   concentrationNote: "affron® 30 mg per softgel - trial-matched dose, HPLC-standardized to ≥3.5% lepticrosalides, softgel format"
-  verifiedDate: "2026-07-02"
+  verifiedDate: "2026-07-14"
+  image: "/products/sports-research-saffron.png"
+  imageAlt: "Sports Research Saffron Extract with affron, 30 mg softgel bottle"
 comparison:
   criterion: "Named branded extract (affron® or Satiereal®), HPLC-standardized, dosed at trial-matched level."
   verdict: "Unusually, all three products pass — each contains a named, standardized extract with genuine trial evidence behind it. Sports Research is our pick: affron® at the 30 mg studied dose, HPLC-standardized to ≥3.5% lepticrosalides, in an easily-absorbed softgel. Solaray also uses affron® (marketed under its Lepticrosalides® marker compound), standardized to the same ≥3.5% level — a close second. Life Extension's Satiereal® at 78 mg is a different branded extract with its own valid trial record — it's dosed higher because Satiereal is less concentrated per mg than affron®. All three are genuinely good choices; we're highlighting a preference, not a clear winner. (We previously listed a California Gold Nutrition affron® product here; we couldn't confirm an active Amazon.com listing for it, so we replaced it with the verified Solaray option.)"

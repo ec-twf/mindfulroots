@@ -58,6 +58,55 @@ export function retailerLink(productUrlOrKeyword: string): string {
   return ACTIVE_RETAILER === 'amazon' ? amazonLink(productUrlOrKeyword) : iherbLink(productUrlOrKeyword);
 }
 
+// ─── Per-product retailer resolution ────────────────────────────────────────
+// `RETAILER_NAME` above is the site-wide default. Individual products can be on
+// a different program (e.g. omega-3 and vitamin-d3 go direct to Sports Research
+// via Rakuten instead of Amazon), so any CTA that routes through /go/ must take
+// its label from that product's row in affiliate-links.json — otherwise a button
+// reading "on Amazon" would send the click to a different store, which is both
+// dishonest to the reader and an Amazon Associates ToS breach.
+import affiliateLinks from './data/affiliate-links.json';
+
+interface AffiliateEntry {
+  amazon?: string | null;
+  iherb?: string | null;
+  direct?: string | null;
+  /** Display name for the `direct` program's store, e.g. "SportsResearch.com". */
+  directName?: string | null;
+  active?: string;
+}
+const LINKS = affiliateLinks as Record<string, AffiliateEntry>;
+
+/** Display name of the retailer a product's /go/ link actually lands on. */
+export function retailerNameFor(slug?: string): string {
+  const entry = slug ? LINKS[slug] : undefined;
+  if (!entry) return RETAILER_NAME;
+  switch (entry.active) {
+    case 'direct':
+      return entry.directName || 'the brand store';
+    case 'iherb':
+      return 'iHerb';
+    default:
+      return 'Amazon';
+  }
+}
+
+/** True when the product sells through the brand's own store rather than a marketplace. */
+export function isDirectRetailer(slug?: string): boolean {
+  return Boolean(slug && LINKS[slug]?.active === 'direct');
+}
+
+/**
+ * Full CTA label for a product. On a marketplace the brand and the store are
+ * different things ("View Sports Research on Amazon"); on a direct program they
+ * are the same, so naming the brand twice reads as a stutter.
+ */
+export function ctaLabel(slug?: string, brand?: string): string {
+  const retailer = retailerNameFor(slug);
+  if (isDirectRetailer(slug)) return `View at ${retailer}`;
+  return brand ? `View ${brand} on ${retailer}` : `View on ${retailer}`;
+}
+
 /**
  * First-party affiliate router URL for a product slug (see netlify/functions/go.mjs).
  * Destination + retailer live in src/data/affiliate-links.json; the function logs the

@@ -8,8 +8,9 @@
   "ashwagandha": {
     "amazon": "https://www.amazon.com/dp/B0CTYQT78S",
     "iherb": null,
-    "direct": null,
-    "active": "amazon"
+    "direct": "https://click.linksynergy.com/link?id=BnfmyQScUVU&offerid=1663588.5341216784658173065071060&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fashwagandha%3fvariant%3d43226456752328",
+    "directName": "SportsResearch.com",
+    "active": "direct"
   },
   "b-complex": {
     "amazon": "https://www.amazon.com/dp/B00HST919C",
@@ -32,8 +33,9 @@
   "omega-3-fish-oil": {
     "amazon": "https://www.amazon.com/dp/B07M9H5JGM",
     "iherb": null,
-    "direct": null,
-    "active": "amazon"
+    "direct": "https://click.linksynergy.com/link?id=BnfmyQScUVU&offerid=1663588.5341210396934340002756970&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fomega-3-fish-oil-alaskaomegar-1250mg%3fvariant%3d42500113662152",
+    "directName": "SportsResearch.com",
+    "active": "direct"
   },
   "probiotic-gut-brain": {
     "amazon": "https://www.amazon.com/dp/B00ZMO7UKW",
@@ -50,13 +52,15 @@
   "saffron-extract": {
     "amazon": "https://www.amazon.com/dp/B0FY497SJJ",
     "iherb": null,
-    "direct": null,
-    "active": "amazon"
+    "direct": "https://click.linksynergy.com/link?id=BnfmyQScUVU&offerid=1663588.5341211627051067813994974&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fsaffron%3fvariant%3d62225097523571",
+    "directName": "SportsResearch.com",
+    "active": "direct"
   },
   "vitamin-d3": {
     "amazon": "https://www.amazon.com/dp/B07NXW4GW7",
     "iherb": null,
-    "direct": null,
-    "active": "amazon"
+    "direct": "https://click.linksynergy.com/link?id=BnfmyQScUVU&offerid=1663588.5341211792662606800138071&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fvitamin-d3-k2%3fvariant%3d42500109172936",
+    "directName": "SportsResearch.com",
+    "active": "direct"
   }
 }
