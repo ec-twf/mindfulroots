@@ -2,6 +2,7 @@
 import AffiliateButton from './AffiliateButton.astro';
 import EvidenceTag from './EvidenceTag.astro';
 import { ctaLabel } from '../config';
+import { priceLabel } from '../lib/prices';
 
 interface Props {
   /** Product content-collection slug (for the "Full review →" link) */
@@ -42,8 +43,8 @@ const { slug, title, evidence, rec } = Astro.props;
     <div>
       <p class="font-medium text-moss-deep leading-snug">{rec.brand}</p>
       <p class="text-sm text-ink-soft leading-snug">{rec.productName}</p>
-      {rec.priceDisplay && (
-        <p class="mt-1 text-sm font-medium text-moss-deep">{rec.priceDisplay}</p>
+      {(priceLabel(slug) ?? rec.priceDisplay) && (
+        <p class="mt-1 text-sm font-medium text-moss-deep">{priceLabel(slug) ?? rec.priceDisplay}</p>
       )}
     </div>
 

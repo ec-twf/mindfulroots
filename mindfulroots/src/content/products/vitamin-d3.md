@@ -24,10 +24,10 @@ recommendedProduct:
   iherbKeyword: "https://www.amazon.com/dp/B07NXW4GW7"
   meetsCriterion: true
   concentrationNote: "5,000 IU D3 from lichen (vegan) + 100 mcg MK-7 K2; softgel with oil base for absorption"
-  verifiedDate: "2026-07-02"
+  verifiedDate: "2026-07-14"
   image: "/products/sports-research-vitamin-d3-k2.png"
   imageAlt: "Sports Research Vegan Vitamin D3 + K2 softgel bottle"
-  note: "Amazon listing (verified 2026-07-02) confirms 5,000 IU, plant-based/vegan D3, and K2 — but the 'VEGADELIGHT®' sub-brand name and exact 100 mcg MK-7 K2 dose weren't visible in title/meta (JS-rendered bullet content wasn't scrapeable); removed the VEGADELIGHT® claim, kept the K2 dose since nothing contradicts it. Re-check the full listing before publishing."
+  note: "Confirmed 2026-07-14 against the Sports Research store listing we now link to: the variant is '125 MCG (5000 IU) D3 / 100 MCG K2 / 120 Plantgel™ Capsules', which settles the 100 mcg K2 dose that the Amazon listing left unverifiable."
 comparison:
   criterion: "D3 not D2, dose 1,000–5,000 IU, K2 included, oil/fat base."
   verdict: "All three are D3 — the more effective form — so all clear the first bar. Sports Research is our pick: 5,000 IU with K2 as MK-7 (the longer-acting form), in a softgel with an oil carrier, and vegan-sourced from lichen. Thorne's liquid drops are excellent for precise dose control at 1,000 IU per 2 drops with K2 (as MK-4, a shorter-acting form), and the liquid format suits those who have difficulty swallowing capsules. NOW's 400 IU softgel fails the criterion: 400 IU is below the 1,000 IU floor supported by supplementation research, with no K2 and no stated oil base."

@@ -1,0 +1,30 @@
+{
+  "ashwagandha": {
+    "price": "$34.95",
+    "variantTitle": "500 MG / 120 Veggie Softgels",
+    "available": true,
+    "checkedAt": "2026-07-14",
+    "source": "store.sportsresearch.com/products/ashwagandha"
+  },
+  "omega-3-fish-oil": {
+    "price": "$53.95",
+    "variantTitle": "1250 MG / 180 Softgels",
+    "available": true,
+    "checkedAt": "2026-07-14",
+    "source": "store.sportsresearch.com/products/omega-3-fish-oil-alaskaomegar-1250mg"
+  },
+  "saffron-extract": {
+    "price": "$29.95",
+    "variantTitle": "30 mg / 60 Softgels",
+    "available": true,
+    "checkedAt": "2026-07-14",
+    "source": "store.sportsresearch.com/products/saffron"
+  },
+  "vitamin-d3": {
+    "price": "$43.95",
+    "variantTitle": "125 MCG (5000 IU) D3 / 100 MCG K2 / 120 Plantgel™ Capsules",
+    "available": true,
+    "checkedAt": "2026-07-14",
+    "source": "store.sportsresearch.com/products/vitamin-d3-k2"
+  }
+}

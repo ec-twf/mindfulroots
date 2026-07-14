@@ -1,6 +1,7 @@
 ---
 import AffiliateButton from './AffiliateButton.astro';
 import { ctaLabel } from '../config';
+import { priceLabel } from '../lib/prices';
 
 interface Props {
   /** Product content-collection slug — routes the CTA through the /go/ router. */
@@ -18,8 +19,8 @@ const { slug, rec } = Astro.props;
   <div class="flex items-center gap-3 px-4 py-2.5">
     <div class="min-w-0 flex-1">
       <p class="text-sm font-medium text-moss-deep truncate">{rec.brand}</p>
-      {rec.priceDisplay && (
-        <p class="text-xs text-ink-soft truncate">{rec.priceDisplay}</p>
+      {(priceLabel(slug) ?? rec.priceDisplay) && (
+        <p class="text-xs text-ink-soft truncate">{priceLabel(slug) ?? rec.priceDisplay}</p>
       )}
       <p class="text-[0.6rem] text-ink-soft leading-tight">
         Affiliate link · <a href="/disclosure/" class="underline">details</a>

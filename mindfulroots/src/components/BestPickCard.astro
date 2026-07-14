@@ -2,6 +2,7 @@
 import AffiliateButton from './AffiliateButton.astro';
 import EvidenceTag from './EvidenceTag.astro';
 import { ctaLabel } from '../config';
+import { priceLabel } from '../lib/prices';
 
 type Placement = 'buybox' | 'sticky-bar' | 'home-pick' | 'in-article' | 'guide-hero' | 'guide-pick' | 'generic';
 
@@ -55,8 +56,8 @@ const { slug, title, category, evidence, placement = 'home-pick', rank, rec } = 
       <p class="eyebrow mb-1">Our pick</p>
       <p class="font-medium text-moss-deep leading-snug">{rec.brand}</p>
       <p class="text-ink-soft leading-snug">{rec.productName}</p>
-      {rec.priceDisplay && (
-        <p class="mt-2 text-sm font-medium text-moss-deep">{rec.priceDisplay}</p>
+      {(priceLabel(slug) ?? rec.priceDisplay) && (
+        <p class="mt-2 text-sm font-medium text-moss-deep">{priceLabel(slug) ?? rec.priceDisplay}</p>
       )}
     </div>
 

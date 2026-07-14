@@ -2,6 +2,7 @@
 import AffiliateButton from './AffiliateButton.astro';
 import EvidenceTag from './EvidenceTag.astro';
 import { ctaLabel } from '../config';
+import { priceFor } from '../lib/prices';
 
 interface Props {
   /** Product content-collection slug — routes CTAs through the /go/ router. */
@@ -12,6 +13,13 @@ interface Props {
   relatedProds: any[];
 }
 const { slug, data, rec, verifiedLabel, relatedProds } = Astro.props;
+
+// Live price for direct-program products; Amazon picks fall back to whatever the
+// frontmatter declares (usually nothing). See src/lib/prices.ts.
+const livePrice = priceFor(slug);
+const priceCheckedLabel = livePrice
+  ? new Date(livePrice.checkedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })
+  : null;
 ---
 <div id="buy" class="bg-card border border-mist rounded-lg p-5 space-y-4">
   <div>
@@ -36,7 +44,14 @@ const { slug, data, rec, verifiedLabel, relatedProds } = Astro.props;
           <p class="text-ink-soft leading-snug">{rec.productName}</p>
         </div>
 
-        {rec.priceDisplay && (
+        {livePrice ? (
+          <div>
+            <p class="text-sm font-medium text-moss-deep">
+              {livePrice.price} <span class="font-normal text-ink-soft">· {livePrice.variantTitle}</span>
+            </p>
+            <p class="text-[0.68rem] text-ink-soft">Price checked {priceCheckedLabel} — set by the retailer, and it can change.</p>
+          </div>
+        ) : rec.priceDisplay && (
           <p class="text-sm font-medium text-moss-deep">{rec.priceDisplay}</p>
         )}
 

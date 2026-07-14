@@ -2,6 +2,7 @@
 import AffiliateButton from './AffiliateButton.astro';
 import EvidenceTag from './EvidenceTag.astro';
 import { ctaLabel } from '../config';
+import { priceLabel } from '../lib/prices';
 
 // The guide's #1 pick, with a direct affiliate CTA — the primary conversion
 // point on a condition hub. Owns id="buy" so StickyBuyBar's IntersectionObserver
@@ -43,7 +44,7 @@ const verified = rec.verifiedDate
 
   <p class="text-sm text-ink-soft leading-relaxed">{pitch}</p>
 
-  {rec.priceDisplay && <p class="text-sm font-medium text-moss-deep">{rec.priceDisplay}</p>}
+  {(priceLabel(slug) ?? rec.priceDisplay) && <p class="text-sm font-medium text-moss-deep">{priceLabel(slug) ?? rec.priceDisplay}</p>}
 
   <AffiliateButton
     keyword={rec.iherbKeyword}
