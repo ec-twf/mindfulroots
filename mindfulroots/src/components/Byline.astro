@@ -24,7 +24,7 @@ const AUTHOR = {
     />
   </a>
   <span>
-    {'Fact-checked by'}
+    {'Reviewed by'}
     {' '}
     <a
       href={`/authors/${AUTHOR.slug}/`}
@@ -33,6 +33,5 @@ const AUTHOR = {
       {AUTHOR.name}, {AUTHOR.credential}
     </a>
     {type === 'article' && <span> — {AUTHOR.role}</span>}
-    <span> · AI-assisted draft, human-edited</span>
   </span>
 </div>
