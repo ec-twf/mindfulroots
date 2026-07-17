@@ -3,7 +3,7 @@ title: "The Gut–Brain Axis: Can Probiotics Really Affect Mood?"
 description: "How the gut talks to the brain, what 'psychobiotics' are, which strains have actually been studied in people, and an honest read on how early this promising research still is."
 metaDescription: "How the gut talks to the brain, what 'psychobiotics' are, and which strains have been studied in people — an honest read on how early this research still is."
 pubDate: 2026-03-01
-updatedDate: 2026-06-22
+updatedDate: 2026-07-17
 cluster: "gut-brain probiotics"
 relatedProducts: ["probiotic-gut-brain"]
 draft: false
@@ -39,13 +39,20 @@ That single fact should shape how you read any probiotic-for-mood claim: ask *wh
 
 A small number of formulations account for most of the human mood research. It is worth naming them precisely, because the marketing around this category often blurs them together.
 
-The most-studied psychobiotic pairing is *Lactobacillus helveticus* R0052 combined with *Bifidobacterium longum* R0175, developed by Lallemand Health Solutions and sold under names such as Cerebiome. In a foundational 2011 study, Messaoudi and colleagues reported anxiety-reducing effects in rats and, in a separate group of healthy human volunteers taking around 3 billion CFU per day for 30 days, improvements in measures of psychological distress versus placebo. A companion paper that year reported benefits on stress-related symptoms, with a notable effect in volunteers who started with lower stress-hormone levels.
+The most-studied psychobiotic pairing is *Lactobacillus helveticus* R0052 combined with *Bifidobacterium longum* R0175, developed by Lallemand Health Solutions and sold under names such as Cerebiome. In a foundational 2011 study, [Messaoudi and colleagues](https://pubmed.ncbi.nlm.nih.gov/20974015/) reported anxiety-reducing effects in rats and, in a separate group of healthy human volunteers taking around 3 billion CFU per day for 30 days, improvements in measures of psychological distress versus placebo. A companion paper that year reported benefits on stress-related symptoms, with a notable effect in volunteers who started with lower stress-hormone levels.
 
 That early work is genuinely encouraging, but honesty matters here too. A well-conducted 2017 trial by Romijn and colleagues gave the same R0052/R0175 combination to people specifically selected for low mood and found no significant benefit over placebo on mood, stress or anxiety. A promising early signal that does not replicate in a more targeted sample is exactly the pattern that should keep expectations measured.
 
 Ecologic Barrier is a different product: a nine-strain blend from Winclove (including *Bifidobacterium bifidum* W23, *Bifidobacterium lactis* W52, *Lactobacillus acidophilus* W37 and others), not the R0052/R0175 pair, though the two are sometimes wrongly conflated. In a 2015 trial, Steenbergen and colleagues found that four weeks of this blend reduced *cognitive reactivity to sad mood* (essentially, the tendency for a low mood to spiral into rumination and negative thinking) in healthy young adults, with the strongest effects on rumination and aggressive thoughts. A later imaging follow-up using the same product did not find effects on emotional brain measures, which argues for cautious interpretation.
 
 The pattern across these is consistent: small studies, often in healthy or sub-clinical volunteers, with some positive signals and some null results, and very few large, long, replicated trials.
+
+| Study | Sample | Formulation | Key finding |
+|---|---|---|---|
+| Messaoudi 2011 | Healthy volunteers | R0052 + R0175 | Lower psychological distress vs placebo |
+| Steenbergen 2015 | Healthy young adults | Ecologic Barrier (9 strains) | Less cognitive reactivity to sad mood |
+| Romijn 2017 | Low-mood adults | R0052 + R0175 | No significant benefit vs placebo |
+| Liu 2019 (meta) | 34 trials | Mixed pre/probiotics | Effect only meaningful in clinical samples |
 
 ## How strong is the overall evidence?
 
@@ -61,7 +68,7 @@ The practical guidance for trying a studied formulation is straightforward. Matc
 
 ## Cautions
 
-Probiotics are generally well tolerated in healthy people; the most common complaints are short-lived bloating or digestive changes as your gut adjusts. The important exception is anyone who is immunocompromised, seriously ill, or has a central venous line: for them, live-organism supplements can carry real risk, and a doctor should be consulted first. If you are pregnant, breastfeeding or managing a chronic condition, check with a clinician before starting. And if low mood is the reason you are here, a probiotic is not a substitute for professional support. See our [crisis and professional support resources](/get-help/).
+Probiotics are generally well tolerated in healthy people; the most common complaints are short-lived bloating or digestive changes as your gut adjusts. The important exception is anyone who is immunocompromised, seriously ill, or has a central venous line: for them, live-organism supplements can carry real risk, and a doctor should be consulted first, a point the [NCCIH probiotics overview](https://www.nccih.nih.gov/health/probiotics-what-you-need-to-know) also stresses. If you are pregnant, breastfeeding or managing a chronic condition, check with a clinician before starting. And if low mood is the reason you are here, a probiotic is not a substitute for professional support. See our [crisis and professional support resources](/get-help/).
 
 ## Supplements mentioned
 
@@ -69,7 +76,7 @@ Probiotics are generally well tolerated in healthy people; the most common compl
 
 ## Sources
 
-- Messaoudi M, Lalonde R, Violle N, et al. *Assessment of psychotropic-like properties of a probiotic formulation (Lactobacillus helveticus R0052 and Bifidobacterium longum R0175) in rats and human subjects.* British Journal of Nutrition, 2011;105(5):755–764. doi:10.1017/S0007114510004319
+- Messaoudi M, Lalonde R, Violle N, et al. *Assessment of psychotropic-like properties of a probiotic formulation (Lactobacillus helveticus R0052 and Bifidobacterium longum R0175) in rats and human subjects.* British Journal of Nutrition, 2011;105(5):755–764. doi:10.1017/S0007114510004319. [PubMed](https://pubmed.ncbi.nlm.nih.gov/20974015/)
 - Messaoudi M, Violle N, Bisson J-F, et al. *Beneficial psychological effects of a probiotic formulation (Lactobacillus helveticus R0052 and Bifidobacterium longum R0175) in healthy human volunteers.* Gut Microbes, 2011;2(4):256–261. doi:10.4161/gmic.2.4.16108
 - Romijn AR, Rucklidge JJ, Kuijer RG, Frampton C. *A double-blind, randomized, placebo-controlled trial of Lactobacillus helveticus and Bifidobacterium longum for the symptoms of depression.* Australian & New Zealand Journal of Psychiatry, 2017;51(8):810–821. doi:10.1177/0004867416686694. Found no significant benefit in a low-mood sample.
 - Steenbergen L, Sellaro R, van Hemert S, Bosch JA, Colzato LS. *A randomized controlled trial to test the effect of multispecies probiotics on cognitive reactivity to sad mood.* Brain, Behavior, and Immunity, 2015;48:258–264. doi:10.1016/j.bbi.2015.04.003
