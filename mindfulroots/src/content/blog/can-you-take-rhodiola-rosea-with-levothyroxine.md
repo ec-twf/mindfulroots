@@ -3,7 +3,9 @@ title: "Rhodiola Rosea With Levothyroxine"
 description: "Can you take rhodiola rosea with levothyroxine? No documented interaction, but timing, cortisol effects, and thyroid lab monitoring are worth reviewing first."
 pubDate: 2026-07-06
 updatedDate: 2026-07-06
-cluster: rhodiola-rosea
+cluster: "rhodiola-rosea"
+postType: "interaction"
+buyIntentTerm: "best rhodiola rosea supplement for thyroid patients"
 relatedProducts: [rhodiola-rosea]
 draft: false
 faq:

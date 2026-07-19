@@ -4,7 +4,9 @@ description: "How the gut talks to the brain, what 'psychobiotics' are, which st
 metaDescription: "How the gut talks to the brain, what 'psychobiotics' are, and which strains have been studied in people — an honest read on how early this research still is."
 pubDate: 2026-03-01
 updatedDate: 2026-07-17
-cluster: "gut-brain probiotics"
+cluster: "probiotic-gut-brain"
+postType: "explainer"
+buyIntentTerm: "best probiotic for gut brain axis"
 relatedProducts: ["probiotic-gut-brain"]
 draft: false
 faq:

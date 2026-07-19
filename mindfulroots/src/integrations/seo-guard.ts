@@ -1,4 +1,5 @@
 import { existsSync, readFileSync, readdirSync } from 'fs';
+import { execFileSync } from 'child_process';
 import { join, relative } from 'path';
 import { fileURLToPath } from 'url';
 import type { AstroIntegration } from 'astro';
@@ -18,7 +19,9 @@ interface Violation {
     | 'keyword-registry'
     | 'hero-cta'
     | 'affiliate-link'
-    | 'citations';
+    | 'citations'
+    | 'body-shrink'
+    | 'buy-intent';
   length: number;
   limit: number;
   text: string;
@@ -96,6 +99,162 @@ function checkCitations(raw: string, file: string): Violation[] {
     limit: MIN_CITATIONS,
     text: `post dated ${pubDate} has ${count} primary-source citation link(s) (need ≥${MIN_CITATIONS}: NIH/PubMed/DOI/Examine/Cochrane/MSKCC) — YMYL posts must cite evidence`,
   }];
+}
+
+// ─── Truncation guard ───────────────────────────────────────────────────────
+// The generation pipeline once truncated a live ranking post to zero bytes; the
+// page then 404'd and lost ~100 impressions/week until it was restored by hand.
+// The Routine's refresh pass has its own `AFTER >= BEFORE` byte check, but that
+// only covers refreshes — this catches ANY path that shrinks a published post,
+// including a bad rewrite, before the build ships it.
+const SHRINK_FLOOR = 0.5; // fail if a post keeps less than this share of its committed body
+const MIN_BODY_CHARS = 1200; // absolute floor, so a brand-new stub can't ship either
+
+function bodyOf(raw: string): string {
+  return raw.replace(/^---[\s\S]*?\n---/, '').trim();
+}
+
+// Path of the Astro project relative to the git root ("mindfulroots/"), so the
+// git lookups below work from a repo whose root is one level above cwd.
+function gitPrefix(): string | null {
+  try {
+    return execFileSync('git', ['rev-parse', '--show-prefix'], {
+      cwd: process.cwd(),
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim();
+  } catch {
+    return null; // not a git checkout (e.g. a tarball deploy) — skip the diff check
+  }
+}
+
+function committedBody(prefix: string, relPath: string): string | null {
+  try {
+    const raw = execFileSync('git', ['show', `HEAD:${prefix}${relPath}`], {
+      cwd: process.cwd(),
+      encoding: 'utf8',
+      maxBuffer: 10 * 1024 * 1024,
+      stdio: ['ignore', 'pipe', 'ignore'],
+    });
+    return bodyOf(raw);
+  } catch {
+    return null; // new file, or blob missing from a shallow clone — nothing to compare
+  }
+}
+
+function checkBodyShrink(
+  raw: string,
+  file: string,
+  prefix: string | null,
+  dirRel: string,
+): Violation[] {
+  if (readFrontmatterBoolean(raw, 'draft')) return [];
+
+  const body = bodyOf(raw);
+  const violations: Violation[] = [];
+
+  if (body.length < MIN_BODY_CHARS) {
+    violations.push({
+      file,
+      kind: 'body-shrink',
+      length: body.length,
+      limit: MIN_BODY_CHARS,
+      text: `published post body is ${body.length} chars — below the ${MIN_BODY_CHARS}-char floor. A generation or refresh run probably truncated it; restore with \`git checkout -- <file>\``,
+    });
+    return violations;
+  }
+
+  if (!prefix) return violations;
+  const before = committedBody(prefix, `${dirRel}/${file}`);
+  if (before === null || before.length === 0) return violations;
+
+  if (body.length < before.length * SHRINK_FLOOR) {
+    violations.push({
+      file,
+      kind: 'body-shrink',
+      length: body.length,
+      limit: Math.round(before.length * SHRINK_FLOOR),
+      text: `body shrank from ${before.length} to ${body.length} chars vs HEAD (kept ${Math.round(
+        (body.length / before.length) * 100,
+      )}%) — refuse to ship a truncated live post; restore with \`git checkout -- <file>\` or commit the cut deliberately`,
+    });
+  }
+
+  return violations;
+}
+
+// ─── Buy-intent affordance ──────────────────────────────────────────────────
+// Every new post must be able to satisfy a long-tail COMMERCIAL variant as well
+// as its informational head term, and must give the reader somewhere to buy.
+// Rationale from GSC: informational longtails rank at position 8-13 on this
+// domain while the commercial hubs sit at 80-95, so the money intent has to
+// ride on the pages that can actually rank.
+const BUY_INTENT_GATE_FROM = '2026-07-19';
+const COMMERCIAL_LINK = /href="\/(?:products|guides)\/[^"]*"|\]\(\/(?:products|guides)\/[^)]*\)/;
+
+function checkBuyIntent(raw: string, file: string): { violations: Violation[]; legacy: boolean } {
+  if (readFrontmatterBoolean(raw, 'draft')) return { violations: [], legacy: false };
+
+  const pubDate = raw.match(/^pubDate:\s*(\S+)/m)?.[1];
+  const term = readFrontmatterField(raw, 'buyIntentTerm');
+  const gated = Boolean(pubDate && pubDate >= BUY_INTENT_GATE_FROM);
+
+  if (!term) {
+    if (!gated) return { violations: [], legacy: true }; // legacy post — reported as a warning, queued for refresh
+    return {
+      violations: [{
+        file,
+        kind: 'buy-intent',
+        length: 0,
+        limit: 0,
+        text: `post dated ${pubDate} declares no buyIntentTerm — every new post must also target a long-tail buy-intent variant (e.g. "best magnesium glycinate for anxiety")`,
+      }],
+      legacy: false,
+    };
+  }
+
+  // A declared buy-intent term with no route to a product page is a dead end.
+  if (!COMMERCIAL_LINK.test(bodyOf(raw))) {
+    return {
+      violations: [{
+        file,
+        kind: 'buy-intent',
+        length: 0,
+        limit: 0,
+        text: `declares buyIntentTerm "${term}" but links to no /products/ or /guides/ page — the buy intent has nowhere to land`,
+      }],
+      legacy: false,
+    };
+  }
+
+  return { violations: [], legacy: false };
+}
+
+function checkBuyIntentUniqueness(dir: string, files: string[]): Violation[] {
+  const byTerm = new Map<string, string[]>();
+  for (const file of files) {
+    const raw = readFileSync(join(dir, file), 'utf8');
+    if (readFrontmatterBoolean(raw, 'draft')) continue;
+    const term = readFrontmatterField(raw, 'buyIntentTerm');
+    if (!term) continue;
+    const norm = term.trim().toLowerCase();
+    if (!byTerm.has(norm)) byTerm.set(norm, []);
+    byTerm.get(norm)!.push(file);
+  }
+
+  const violations: Violation[] = [];
+  for (const [term, files_] of byTerm) {
+    if (files_.length > 1) {
+      violations.push({
+        file: files_.join(' AND '),
+        kind: 'buy-intent',
+        length: 0,
+        limit: 0,
+        text: `"${term}" is the buyIntentTerm of ${files_.join(' AND ')} — two posts chasing one commercial query is the cannibalization pattern headTerm already guards against`,
+      });
+    }
+  }
+  return violations;
 }
 
 function checkFile(dir: string, file: string, kind: 'blog' | 'product' | 'hub'): Violation[] {
@@ -404,9 +563,19 @@ export default function seoGuard(): AstroIntegration {
 
         const blogDir = join(process.cwd(), 'src/content/blog');
         const blogFiles = readdirSync(blogDir).filter((f) => f.endsWith('.md') || f.endsWith('.mdx'));
+        const prefix = gitPrefix();
+        const legacyBuyIntent: string[] = [];
         for (const file of blogFiles) {
           violations.push(...checkFile(blogDir, file, 'blog'));
+
+          const raw = readFileSync(join(blogDir, file), 'utf8');
+          violations.push(...checkBodyShrink(raw, file, prefix, 'src/content/blog'));
+
+          const buyIntent = checkBuyIntent(raw, file);
+          violations.push(...buyIntent.violations);
+          if (buyIntent.legacy) legacyBuyIntent.push(file);
         }
+        violations.push(...checkBuyIntentUniqueness(blogDir, blogFiles));
 
         const productsDir = join(process.cwd(), 'src/content/products');
         const productFiles = readdirSync(productsDir).filter((f) => f.endsWith('.md'));
@@ -442,8 +611,18 @@ export default function seoGuard(): AstroIntegration {
           );
         }
 
+        // Legacy posts predate the buy-intent gate. They are queued for the
+        // additive refresh pass rather than failing the build, but the count is
+        // surfaced every build so the backlog can't quietly sit at 29 forever.
+        if (legacyBuyIntent.length > 0) {
+          logger.warn(
+            `seo-guard: ${legacyBuyIntent.length} post(s) predate the buy-intent gate and declare no buyIntentTerm — ` +
+              `queued in refresh-queue.txt for the additive buy-intent pass: ${legacyBuyIntent.join(', ')}`,
+          );
+        }
+
         logger.info(
-          `seo-guard: titles ≤60, descriptions ≤160, no body FAQ headings, ${claims.length} keyword claim(s) unique + registry-consistent. ✔`,
+          `seo-guard: titles ≤60, descriptions ≤160, no body FAQ headings, ${claims.length} keyword claim(s) unique + registry-consistent, no truncated bodies. ✔`,
         );
       },
     },

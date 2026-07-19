@@ -3,7 +3,9 @@ title: "Ashwagandha vs Ginseng: Which to Take?"
 description: "Ashwagandha vs ginseng: ashwagandha calms stress and cortisol, ginseng leans energizing for fatigue and focus. A guide to which adaptogen suits you."
 pubDate: 2026-07-10
 updatedDate: 2026-07-10
-cluster: ashwagandha
+cluster: "ashwagandha"
+postType: "comparison"
+buyIntentTerm: "ashwagandha or ginseng supplement which to buy"
 relatedProducts: [ashwagandha]
 draft: false
 faq:

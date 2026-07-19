@@ -3,9 +3,10 @@ title: "L-Theanine and Caffeine: The Focus Stack"
 description: "L-theanine and caffeine together give steady focus without the jitters. Here is the 2:1 ratio the research used and how to pair the stack with coffee."
 pubDate: 2026-07-05
 updatedDate: 2026-07-05
-cluster: l-theanine
-relatedProducts:
-  - l-theanine
+cluster: "l-theanine"
+postType: "explainer"
+buyIntentTerm: "best l-theanine and caffeine supplement"
+relatedProducts: ["l-theanine"]
 draft: false
 faq:
   - q: "What is the best ratio of L-theanine to caffeine?"

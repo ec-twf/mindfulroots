@@ -3,7 +3,9 @@ title: "Saffron Extract vs Ashwagandha: Which?"
 description: "Saffron extract vs ashwagandha: saffron leans toward low mood, ashwagandha toward stress and cortisol. A verdict-first guide to which one fits your goal."
 pubDate: 2026-07-10
 updatedDate: 2026-07-10
-cluster: saffron-extract
+cluster: "saffron-extract"
+postType: "comparison"
+buyIntentTerm: "saffron or ashwagandha supplement for mood"
 relatedProducts: [saffron-extract]
 draft: false
 faq:

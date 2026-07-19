@@ -4,10 +4,10 @@ description: "Both glycinate and citrate are well-absorbed magnesium forms, so t
 seoTitle: "Magnesium Glycinate vs Citrate: Which to Take?"
 metaDescription: "Glycinate and citrate are both well-absorbed forms of magnesium. The real choice comes down to your gut and your goal — a short, practical guide to picking one."
 pubDate: 2026-07-04
-cluster: "magnesium"
+cluster: "magnesium-glycinate"
 postType: "comparison"
-relatedProducts:
-  - magnesium-glycinate
+buyIntentTerm: "best magnesium glycinate supplement to buy"
+relatedProducts: ["magnesium-glycinate"]
 draft: true
 faq:
   - q: "Is magnesium glycinate or citrate better for sleep?"

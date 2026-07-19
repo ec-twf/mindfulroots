@@ -28,7 +28,17 @@ b-vitamins posts. Every automated post must follow it.
 - `updatedDate` — today's date. This drives the visible "Updated" line, the Article
   `dateModified` schema, and the sitemap `lastmod`. Recency is a major citation factor — always
   set it.
-- `cluster` — the topic cluster (provided).
+- `cluster` — the topic cluster (provided). **Must be the product slug** (`magnesium-glycinate`,
+  not `magnesium`; `5-htp`, not `5-HTP`). GSC results are rolled up by this field, and a
+  fragmented value silently splits one topic across two buckets in the scoreboard.
+- `postType` — copy the queue line's `TYPE:` verbatim (`interaction`, `dosage`, `timing`,
+  `safety`, `duration`, `comparison`, `explainer`, `pillar`). This is the unit of the publishing
+  experiment; a wrong or missing value makes the post unmeasurable.
+- `buyIntentTerm` — **required.** The long-tail *commercial* variant this post should also be
+  able to satisfy, at **ingredient level**: "best magnesium glycinate for anxiety", "which b
+  complex supplement to buy". Never a condition-level term ("best supplements for anxiety") —
+  those belong to the `/guides/` hubs and the build fails if you take one. It must also be
+  unique across every post; the build fails if two posts declare the same one.
 - `relatedProducts` — the product ID(s) (provided).
 - `draft: false`.
 - `faq:` — a 4–6 item `q`/`a` array (see §4). This is the **only** place the FAQ lives. The
@@ -118,6 +128,47 @@ b-vitamins posts. Every automated post must follow it.
   in the opening paragraph — this is a stronger trust signal than pretending a real difference
   exists.
 
+## 9. Buy-intent section (every post, informational ones included)
+
+Every post carries a `buyIntentTerm`, so every post needs one short section that actually
+answers it — not a CTA bolted on, a real answer to "which one should I buy". Why: GSC shows
+informational long-tails on this domain rank at position 9–22 while the commercial hubs sit at
+80–95. The domain is too young to rank for commercial queries directly, so the commercial intent
+has to ride on pages that can already rank.
+
+- Place it **after** the evidence, before the safety section. Heading should read naturally and
+  contain the buy-intent phrasing, e.g. `## What to look for in a magnesium glycinate supplement`.
+- 100–180 words. Give **selection criteria** (elemental dose per serving, standardised extract
+  and %, third-party testing, form) — not brand hype. Criteria are what make the section
+  genuinely useful and what AI assistants cite.
+- Link the relevant `/products/<id>/` page and, where a condition frame fits, the `/guides/<x>/`
+  hub. The build fails if a post declares `buyIntentTerm` and links to neither.
+- Add one `faq:` entry phrased as the buy-intent query itself.
+- Never invent prices, ratings, or specs. The product page owns verified specs; this section
+  owns the criteria that lead there.
+
+## 10. Refresh pass (`refresh-queue.txt`)
+
+Refreshes are **strictly additive** — `wc -c` after must be ≥ before, else `git checkout --` the
+file. The build now enforces this too: any published post whose body drops below half its
+committed length, or under 1200 chars, fails `seo-guard`.
+
+`FOCUS:` flags on the queue line:
+
+- `buy-intent` — add the §9 section and its FAQ entry; set `buyIntentTerm` if absent.
+- `buy-intent-additive-only` + `ranking-winner` — **the page already ranks (position < 15).**
+  Append the buy-intent section and FAQ entry only. Do **not** touch `title`, `seoTitle`, `slug`,
+  the opening paragraph, or existing headings. Re-ranking a winner is a real risk and the upside
+  is small; the whole point is to add commercial reach without disturbing what works.
+- `recovery-critical` — page lost rankings after an outage and is being rebuilt: refresh
+  citations, strengthen the section that matches its head term, and add internal links **to** it
+  from sibling posts in the same cluster.
+- `citations-critical` — post has fewer than 2 primary sources and would fail the citations gate.
+- `table`, `faq-audit` — add the missing evidence table / top FAQ up to 4–6 items.
+
+Title, slug, `cluster`, `relatedProducts` and `headTerm` are immutable in a refresh. Always bump
+`updatedDate`.
+
 ---
 
 ### Quick pre-publish checklist
@@ -131,3 +182,7 @@ b-vitamins posts. Every automated post must follow it.
 - [ ] Product link appears high in the article (first couple hundred words), not only at the end.
 - [ ] 5-HTP posts include the serotonin-syndrome caution.
 - [ ] Comparison posts: verdict-first opener, head-to-head table, no false-certainty winner.
+- [ ] `cluster` is the product slug; `postType` matches the queue `TYPE:`.
+- [ ] `buyIntentTerm` set, ingredient-level, not already used by another post.
+- [ ] Buy-intent section present (§9) with selection criteria + a `/products/` or `/guides/` link.
+- [ ] Refreshes: body did not shrink; `ranking-winner` posts kept their title and opener.

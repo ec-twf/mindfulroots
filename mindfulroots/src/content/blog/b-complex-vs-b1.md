@@ -3,7 +3,9 @@ title: "B-Complex vs B1: Which Do You Need?"
 description: "B-complex vs B1 (thiamine): a B-complex already contains B1 plus the full B-vitamin group, so here is when a standalone thiamine supplement is worth taking."
 pubDate: 2026-07-07
 updatedDate: 2026-07-07
-cluster: b-complex
+cluster: "b-complex"
+postType: "comparison"
+buyIntentTerm: "which b complex supplement to buy"
 relatedProducts: [b-complex]
 draft: false
 faq:

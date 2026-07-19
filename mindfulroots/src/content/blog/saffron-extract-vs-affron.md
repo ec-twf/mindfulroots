@@ -3,7 +3,9 @@ title: "Saffron Extract vs affron®: Same Thing?"
 description: "Saffron extract vs affron: affron is a branded, standardized saffron extract, not a rival herb. What the label difference means and how to choose one."
 pubDate: 2026-07-10
 updatedDate: 2026-07-10
-cluster: saffron-extract
+cluster: "saffron-extract"
+postType: "comparison"
+buyIntentTerm: "best affron saffron extract supplement"
 relatedProducts: [saffron-extract]
 draft: false
 faq:

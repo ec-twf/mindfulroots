@@ -3,7 +3,9 @@ title: "Probiotic vs Digestive Enzymes: Which One?"
 description: "Probiotic vs digestive enzymes: they do different jobs. Enzymes break down your meal now; probiotics support the gut microbiome over weeks. How to choose."
 pubDate: 2026-07-07
 updatedDate: 2026-07-07
-cluster: probiotic
+cluster: "probiotic-gut-brain"
+postType: "comparison"
+buyIntentTerm: "probiotic or digestive enzyme supplement which to buy"
 relatedProducts: [probiotic-gut-brain]
 draft: false
 faq:

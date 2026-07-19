@@ -3,7 +3,9 @@ title: "B-Complex Dosage: A Simple Guide"
 description: "B-complex dosage explained: how much of each B vitamin you actually need, the RDA and safe upper limits, plus when and how to take it for best results."
 pubDate: 2026-07-07
 updatedDate: 2026-07-07
-cluster: b-complex
+cluster: "b-complex"
+postType: "dosage"
+buyIntentTerm: "best b complex supplement for daily use"
 relatedProducts: [b-complex]
 draft: false
 faq:

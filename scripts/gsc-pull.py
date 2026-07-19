@@ -23,6 +23,7 @@ import argparse
 import csv
 import datetime
 import os
+import re
 import sys
 
 KEY_PATH = os.path.expanduser("~/.config/moodsupplement/gsc-key.json")
@@ -32,6 +33,75 @@ KEY_PATH = os.path.expanduser("~/.config/moodsupplement/gsc-key.json")
 # are different properties even for the same site -- see GSC-SETUP.md.
 DEFAULT_SITE_URL = "sc-domain:moodsupplement.net"
 SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"]
+
+
+# ─── Pattern rollups ────────────────────────────────────────────────────────
+# The queue is an experiment: each post is tagged with a cluster and a longtail
+# TYPE (interaction / dosage / timing / safety / duration / comparison). Rolling
+# GSC up by those tags is what turns publishing into a measurable test — it
+# answers "which longtail pattern earns impressions at our authority level",
+# which per-URL rows alone cannot.
+BLOG_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                        "mindfulroots", "src", "content", "blog")
+
+
+def _frontmatter_field(raw, key):
+    m = re.search(rf'^{key}:\s*"?(.*?)"?\s*$', raw, re.M)
+    return m.group(1) if m else ""
+
+
+def post_metadata():
+    """Map site path ('/blog/<slug>/') -> {cluster, postType, buyIntentTerm, pubDate}."""
+    meta = {}
+    if not os.path.isdir(BLOG_DIR):
+        return meta
+    for fname in os.listdir(BLOG_DIR):
+        if not fname.endswith((".md", ".mdx")):
+            continue
+        raw = open(os.path.join(BLOG_DIR, fname), encoding="utf-8").read()
+        slug = re.sub(r"\.mdx?$", "", fname)
+        meta[f"/blog/{slug}/"] = {
+            "cluster": _frontmatter_field(raw, "cluster") or "unclassified",
+            "postType": _frontmatter_field(raw, "postType") or "untyped",
+            "buyIntentTerm": _frontmatter_field(raw, "buyIntentTerm"),
+            "pubDate": _frontmatter_field(raw, "pubDate"),
+        }
+    return meta
+
+
+def write_patterns(rows, out_path):
+    """Aggregate page-level rows by cluster and by postType."""
+    meta = post_metadata()
+    buckets = {}
+    for r in rows:
+        path = re.sub(r"^https?://[^/]+", "", r["page"])
+        m = meta.get(path)
+        if not m:
+            continue  # non-blog URL (product, guide, static page) — not part of the test
+        for dim, value in (("cluster", m["cluster"]), ("type", m["postType"])):
+            key = (dim, value)
+            b = buckets.setdefault(key, {"pages": set(), "impressions": 0, "clicks": 0,
+                                         "pos_weighted": 0.0, "has_buy_intent": 0})
+            if path not in b["pages"]:
+                b["pages"].add(path)
+                if m["buyIntentTerm"]:
+                    b["has_buy_intent"] += 1
+            b["impressions"] += r["impressions"]
+            b["clicks"] += r["clicks"]
+            b["pos_weighted"] += r["position"] * r["impressions"]
+
+    with open(out_path, "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["dimension", "value", "pages", "pages_with_buy_intent",
+                    "impressions", "clicks", "impressions_per_page", "avg_position"])
+        for (dim, value), b in sorted(buckets.items(), key=lambda kv: -kv[1]["impressions"]):
+            pages = len(b["pages"])
+            w.writerow([
+                dim, value, pages, b["has_buy_intent"], b["impressions"], b["clicks"],
+                round(b["impressions"] / pages, 1) if pages else 0,
+                round(b["pos_weighted"] / b["impressions"], 1) if b["impressions"] else "",
+            ])
+    return len(buckets)
 
 
 def main():
@@ -105,6 +175,29 @@ def main():
         w.writerows(rows)
 
     print(f"Wrote {len(rows)} query/page rows ({start} to {end}) to {out_path}")
+
+    # Daily series. The impression dip that prompted this loop was only legible
+    # as a per-day curve — 28-day totals hid a 45% drop because they average the
+    # pre-drop peak back in. Always write it alongside the query/page pull.
+    daily_path = out_path.replace(".csv", "-daily.csv")
+    daily = service.searchanalytics().query(siteUrl=SITE_URL, body={
+        "startDate": start.isoformat(),
+        "endDate": end.isoformat(),
+        "dimensions": ["date"],
+        "rowLimit": 1000,
+    }).execute().get("rows", [])
+    with open(daily_path, "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["date", "impressions", "clicks", "ctr", "position"])
+        for r in daily:
+            w.writerow([r["keys"][0], int(r.get("impressions", 0)), int(r.get("clicks", 0)),
+                        round(r.get("ctr", 0.0), 4), round(r.get("position", 0.0), 2)])
+    print(f"Wrote {len(daily)} daily rows to {daily_path}")
+
+    # Per-cluster / per-longtail-type rollup — the experiment scoreboard.
+    patterns_path = out_path.replace(".csv", "-patterns.csv")
+    n = write_patterns(rows, patterns_path)
+    print(f"Wrote {n} cluster/type buckets to {patterns_path}")
 
 
 if __name__ == "__main__":

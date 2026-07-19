@@ -3,7 +3,9 @@ title: "B-Complex vs B100: Same Thing?"
 description: "B-complex vs B100: a B-100 is simply a high-potency B-complex dosed at 100 mg or mcg of each B vitamin, so here is what the number really means for you."
 pubDate: 2026-07-07
 updatedDate: 2026-07-07
-cluster: b-complex
+cluster: "b-complex"
+postType: "comparison"
+buyIntentTerm: "best b100 complex supplement"
 relatedProducts: [b-complex]
 draft: false
 faq:

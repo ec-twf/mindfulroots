@@ -4,7 +4,9 @@ seoTitle: "Fish Oil and Cortisol: Does It Lower Stress?"
 description: "A mechanism-first look at how omega-3 fish oil may influence cortisol and the HPA axis—what the cortisol-blunting trials show, and where the evidence stops."
 pubDate: 2026-06-30
 updatedDate: 2026-07-13
-cluster: omega-3-fish-oil
+cluster: "omega-3-fish-oil"
+postType: "explainer"
+buyIntentTerm: "best fish oil supplement for cortisol"
 relatedProducts: [omega-3-fish-oil]
 headTerm: "fish oil cortisol"
 draft: false

@@ -3,3 +3,8 @@
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
+
+[build]
+  # Skip the deploy when a push only touched data/, scripts/ or .github/ — the
+  # weekly GSC report commits CSVs that change nothing the site renders.
+  ignore = "bash ../scripts/netlify-should-build.sh"

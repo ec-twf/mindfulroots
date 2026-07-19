@@ -3,7 +3,9 @@ title: "5-HTP vs 5-HT: What's the Difference?"
 description: "5-HTP vs 5-HT: they sound alike but are two steps in the same pathway. One is a supplement, the other is serotonin itself. Here is the real difference."
 pubDate: 2026-07-07
 updatedDate: 2026-07-07
-cluster: 5-htp
+cluster: "5-htp"
+postType: "comparison"
+buyIntentTerm: "which 5-htp supplement to buy"
 relatedProducts: [5-htp]
 draft: false
 faq:

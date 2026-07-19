@@ -3,7 +3,9 @@ title: "Ashwagandha and Cortisol: The Evidence"
 description: "Ashwagandha and cortisol: KSM-66 RCTs show ~23–28% cortisol drops in stressed adults. Here's what the trials actually found — and the study-quality caveats."
 pubDate: 2026-07-03
 updatedDate: 2026-07-03
-cluster: ashwagandha
+cluster: "ashwagandha"
+postType: "explainer"
+buyIntentTerm: "best ashwagandha supplement for cortisol"
 relatedProducts: [ashwagandha]
 draft: false
 headTerm: "ashwagandha cortisol"

@@ -4,7 +4,9 @@ description: "5-HTP is the most direct serotonin precursor you can buy over the 
 metaDescription: "5-HTP is the most direct serotonin precursor sold over the counter — which is why the interaction risk deserves more attention than the mood evidence."
 pubDate: 2026-02-23
 updatedDate: 2026-06-22
-cluster: "5-HTP"
+cluster: "5-htp"
+postType: "safety"
+buyIntentTerm: "best 5-htp supplement for beginners"
 relatedProducts: ["5-htp"]
 draft: false
 headTerm: "5-htp serotonin syndrome"

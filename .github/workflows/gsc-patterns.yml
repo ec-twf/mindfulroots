@@ -1,0 +1,61 @@
+# Weekly Search Console pull -> commits the experiment scoreboard to data/gsc/.
+# Mechanical + network-heavy, so it lives in Actions (free cron), not a Routine.
+# The judgment half — reprioritising the queue from these numbers — is the
+# separate biweekly optimizer Routine, which reads the CSVs this job writes.
+#
+# Commits here only touch data/, so scripts/netlify-should-build.sh skips the
+# Netlify deploy they would otherwise trigger.
+#
+# Required repo secret: GSC_SA_KEY (same one kpi-digest.yml uses).
+name: gsc-patterns
+
+on:
+  schedule:
+    - cron: '0 2 * * 1' # Monday 02:00 UTC = 10:00 HKT, an hour after kpi-digest
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  patterns:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install --quiet google-api-python-client google-auth
+
+      - name: Write GSC service-account key
+        run: |
+          mkdir -p ~/.config/moodsupplement
+          KEY=~/.config/moodsupplement/gsc-key.json
+          printf '%s' "$GSC_SA_KEY" > "$KEY"
+          # Accept either raw JSON or a base64-encoded key (common paste format)
+          if ! python3 -c "import json,sys; json.load(open(sys.argv[1]))" "$KEY" 2>/dev/null; then
+            base64 -d "$KEY" > "$KEY.dec" && mv "$KEY.dec" "$KEY"
+            python3 -c "import json,sys; json.load(open(sys.argv[1]))" "$KEY" \
+              || { echo "::error::GSC_SA_KEY secret is neither valid JSON nor base64-encoded JSON — re-paste the raw service-account .json file contents"; exit 1; }
+          fi
+        env:
+          GSC_SA_KEY: ${{ secrets.GSC_SA_KEY }}
+
+      - name: Pull GSC data + roll up by cluster/type
+        run: python3 scripts/gsc-pull.py --days 28
+
+      - name: Commit scoreboard
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/gsc/
+          if git diff --cached --quiet; then
+            echo "no new GSC data"
+            exit 0
+          fi
+          git commit -m "data(gsc): weekly pattern scoreboard $(date -u +%Y-%m-%d)"
+          git push

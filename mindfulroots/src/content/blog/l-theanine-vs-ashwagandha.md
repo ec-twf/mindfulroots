@@ -3,7 +3,9 @@ title: "L-Theanine vs Ashwagandha for Stress"
 description: "L-theanine vs ashwagandha: theanine calms within an hour for acute stress, ashwagandha lowers cortisol over weeks. Which fits your goal and how to stack them."
 pubDate: 2026-07-13
 updatedDate: 2026-07-13
-cluster: l-theanine
+cluster: "l-theanine"
+postType: "comparison"
+buyIntentTerm: "l-theanine or ashwagandha which to buy"
 relatedProducts: [l-theanine]
 draft: false
 faq:

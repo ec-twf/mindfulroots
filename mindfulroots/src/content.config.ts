@@ -102,10 +102,23 @@ const blog = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     cluster: z.string(),             // topic cluster, e.g. "magnesium"
-    // Distinguishes the pillar/cluster posts from the new SEO formats:
-    // "buying-guide" (iHerb-anchored), "comparison" (X vs Y), "explainer".
-    // Optional — existing posts default to undefined (treated as a pillar).
-    postType: z.enum(['pillar', 'buying-guide', 'comparison', 'explainer']).optional(),
+    // The longtail pattern this post is testing. Beyond routing the template,
+    // this is the unit of the publishing experiment: gsc-pull.py rolls GSC up
+    // by postType so we can see which patterns earn impressions at our current
+    // authority. Keep in sync with the TYPE: field in mindfulroots-topic-queue.txt.
+    //   pillar / buying-guide / explainer — legacy formats
+    //   interaction  "can you take X with Y"      (proven: position 9-16)
+    //   dosage       "how much X per day"          (proven: position 13-44)
+    //   comparison   "X vs Y"
+    //   timing       "when to take X"
+    //   safety       "X side effects"
+    //   duration     "how long does X take to work"
+    postType: z
+      .enum([
+        'pillar', 'buying-guide', 'explainer',
+        'interaction', 'dosage', 'comparison', 'timing', 'safety', 'duration',
+      ])
+      .optional(),
     relatedProducts: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
     faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
@@ -123,6 +136,19 @@ const blog = defineCollection({
     // Additional long-tail variants this same page owns (e.g. close phrasing
     // of the head term). Also uniqueness- and registry-checked.
     ownsKeywords: z.array(z.string()).default([]),
+
+    // ─── Buy-intent affordance ────────────────────────────────────────────────
+    // The long-tail commercial variant this post should ALSO be able to satisfy,
+    // e.g. "best magnesium glycinate for anxiety" on an evidence post about
+    // magnesium and sleep. Informational longtails are what actually rank at
+    // zero authority (GSC-proven: interaction + dosage posts sit at position
+    // 8-13 while the commercial hubs sit at 80-95), so the commercial term
+    // rides on a page that can already rank rather than one that cannot yet.
+    //
+    // Deliberately NOT part of KEYWORD_MAP: this is a secondary intent the page
+    // competes for, not a head term it owns. seo-guard only enforces that no
+    // two posts declare the same one, so the layers still cannot cannibalize.
+    buyIntentTerm: z.string().optional(),
   }),
 });
 

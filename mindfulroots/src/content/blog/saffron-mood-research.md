@@ -4,9 +4,10 @@ description: "Saffron has surprisingly strong human research for low mood and st
 metaDescription: "Saffron has surprisingly strong human research behind it for low mood and stress. The trials, the honest caveats, and how to buy a genuine standardized extract."
 pubDate: 2026-06-22
 updatedDate: 2026-06-30
-cluster: saffron
-relatedProducts:
-  - saffron-extract
+cluster: "saffron-extract"
+postType: "explainer"
+buyIntentTerm: "best saffron extract supplement for mood"
+relatedProducts: ["saffron-extract"]
 draft: false
 faq:
   - q: "How long does saffron take to work for mood?"

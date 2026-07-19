@@ -3,7 +3,9 @@ title: "Can You Take 5-HTP With Adderall?"
 description: "Can you take 5-HTP with Adderall? Both raise serotonin, so combining them risks serotonin syndrome. What the pharmacology actually says and who to ask first."
 pubDate: 2026-07-07
 updatedDate: 2026-07-07
-cluster: 5-htp
+cluster: "5-htp"
+postType: "interaction"
+buyIntentTerm: "5-htp supplement safe with adderall"
 relatedProducts: [5-htp]
 draft: false
 faq:
