@@ -3,7 +3,9 @@ title: "Probiotic vs Fiber: Which Does More?"
 description: "Probiotic vs fiber isn't a real contest: probiotics add live bacteria, fiber feeds the ones you have. Here is how they differ and why most guts want both."
 pubDate: 2026-07-17
 updatedDate: 2026-07-17
-cluster: probiotic
+cluster: "probiotic-gut-brain"
+postType: "comparison"
+buyIntentTerm: "best probiotic or fiber supplement for gut health"
 relatedProducts: [probiotic-gut-brain]
 draft: false
 faq:
