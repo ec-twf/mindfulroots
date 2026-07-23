@@ -1,4 +1,3 @@
-SLUG:b-complex-dosage | FOCUS:buy-intent,citations,table,faq-audit
 SLUG:ashwagandha-cortisol-research | FOCUS:buy-intent,citations,table,faq-audit
 SLUG:vitamin-d-winter-mood | FOCUS:buy-intent,citations,table,faq-audit
 SLUG:adaptogens-ashwagandha-rhodiola | FOCUS:buy-intent,citations,table,faq-audit
