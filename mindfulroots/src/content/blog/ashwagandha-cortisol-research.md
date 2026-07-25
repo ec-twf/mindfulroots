@@ -2,7 +2,7 @@
 title: "Ashwagandha and Cortisol: The Evidence"
 description: "Ashwagandha and cortisol: KSM-66 RCTs show ~23–28% cortisol drops in stressed adults. Here's what the trials actually found — and the study-quality caveats."
 pubDate: 2026-07-03
-updatedDate: 2026-07-03
+updatedDate: 2026-07-25
 cluster: "ashwagandha"
 postType: "explainer"
 buyIntentTerm: "best ashwagandha supplement for cortisol"
@@ -22,6 +22,8 @@ faq:
     a: "KSM-66 matters mainly because it's the specific extract most of the cortisol trials used, so you're buying a known quantity at a studied dose. A generic extract may be fine, but you have no trial data behind it and no guarantee of the same standardization."
   - q: "Who should not take ashwagandha for stress?"
     a: "Avoid it in pregnancy, and be cautious with thyroid conditions, autoimmune disease, or sedative and thyroid medications. Rare reports of liver injury exist. Talk to your clinician first if you take any prescription medication or manage a health condition."
+  - q: "What is the best ashwagandha supplement for cortisol?"
+    a: "Match the trials: look for a standardized root extract, ideally the KSM-66 form the cortisol studies used, at a dose in the 240–600 mg per day range, with the withanolide percentage stated on the label and third-party testing for purity. Root-only extracts are preferable to root-and-leaf blends, which were not what the cortisol research tested. Our ashwagandha page covers the specific extract and how to read a label."
 ---
 
 Ashwagandha (*Withania somnifera*) is an evergreen shrub used in Ayurvedic tradition as an adaptogen, standardized in supplement form to its active withanolides and studied mainly for its effect on the stress hormone cortisol. Of all the claims made for it, the cortisol one is the most testable: cortisol is a number you can measure in blood or saliva, so it's the right place to look if you want to know whether the herb does anything measurable rather than just feels calming.
@@ -70,6 +72,10 @@ On our evidence scale, this puts ashwagandha at **Moderate**: multiple randomize
 Across the positive trials, the studied dose is a standardized root extract at 240–600 mg per day, most often KSM-66, with the 300 mg twice-daily (600 mg/day) schedule being the most tested. More does not appear to be better; there's no evidence that pushing past 600 mg lowers cortisol further, and higher doses raise the odds of side effects like drowsiness or stomach upset.
 
 The cortisol changes in the trials were measured at eight weeks, so treat ashwagandha as a daily supplement you take consistently and reassess after roughly two months, not a same-day calming aid. Many people take it with food; some prefer the evening dose given its mild sedating tendency, which is also why it's sometimes used for [sleep and evening wind-down](/blog/l-theanine-calm-focus/). If you'd like to see the specific standardized extract we profile, our [ashwagandha product hub](/products/ashwagandha/) lays out what to look for on a label.
+
+## What to look for in an ashwagandha supplement for cortisol
+
+If the trial results are what drew you in, the sensible move is to buy something close to what those trials actually used rather than the cheapest capsule on the shelf. Start with the **form**: most of the cortisol research used **KSM-66**, a standardized full-spectrum root extract, so choosing that form buys you a known quantity at a studied dose. Check that the label states a **withanolide percentage** (the compounds extracts are measured against) and that the **dose falls in the 240–600 mg per day range** the studies tested; more is not better. Prefer a **root-only extract** over a root-and-leaf blend, since the leaf material was not part of the cortisol trials, and favour a product with **third-party testing** for purity. Our [ashwagandha page](/products/ashwagandha/) profiles a specific standardized extract, and our [stress support guide](/guides/stress/) shows where it fits alongside other options. Buy on the stated form, standardization, and dose, not on the calming imagery on the box.
 
 ## Cautions and who should be careful
 
