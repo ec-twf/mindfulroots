@@ -1,4 +1,3 @@
-SLUG:vitamin-d-winter-mood | FOCUS:buy-intent,citations,table,faq-audit
 SLUG:adaptogens-ashwagandha-rhodiola | FOCUS:buy-intent,citations,table,faq-audit
 SLUG:omega-3-brain-mood-evidence | FOCUS:buy-intent,citations,table,faq-audit
 SLUG:b-vitamins-stress-adrenal | FOCUS:buy-intent,citations,table,faq-audit
