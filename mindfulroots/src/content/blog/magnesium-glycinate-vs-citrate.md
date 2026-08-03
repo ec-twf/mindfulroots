@@ -4,6 +4,7 @@ description: "Both glycinate and citrate are well-absorbed magnesium forms, so t
 seoTitle: "Magnesium Glycinate vs Citrate: Which to Take?"
 metaDescription: "Glycinate and citrate are both well-absorbed forms of magnesium. The real choice comes down to your gut and your goal — a short, practical guide to picking one."
 pubDate: 2026-07-04
+updatedDate: 2026-08-03
 cluster: "magnesium-glycinate"
 postType: "comparison"
 buyIntentTerm: "best magnesium glycinate supplement to buy"
@@ -20,6 +21,8 @@ faq:
     a: "Not necessarily. The number that matters is elemental magnesium per serving, not the total weight of the compound. A '1,000 mg magnesium citrate' capsule may deliver far less elemental magnesium than a smaller glycinate dose. Always compare the elemental figure on the Supplement Facts panel."
   - q: "Can I take both?"
     a: "Some people use glycinate in the evening and citrate earlier in the day if regularity is a concern, but there's rarely a need to combine them, and stacking doses raises the total load on your gut and kidneys. If you're unsure, keep it to one form and check with a pharmacist, especially if you have kidney issues."
+  - q: "What is the best magnesium glycinate supplement to buy?"
+    a: "Look for a Supplement Facts panel that names magnesium glycinate or bisglycinate specifically, states the elemental magnesium per serving (often 100 to 200 mg), is not padded with cheap magnesium oxide, and carries third-party testing (USP or NSF). Our magnesium glycinate hub walks through the criteria and typical doses so you can buy on the label, not the front-of-bottle number."
 ---
 <!-- humanized -->
 
@@ -33,7 +36,14 @@ Here's the short version before the detail: choose **glycinate** if your aim is 
 
 Both glycinate and citrate are absorbed reasonably well. Glycinate is magnesium bound to the amino acid glycine; citrate is magnesium bound to citric acid. In both cases the pairing helps the mineral survive digestion and get across the gut wall more effectively than magnesium oxide, which is poorly absorbed (a commonly cited figure is around 4%).
 
-So for the simple purpose of raising your magnesium intake, neither is a bad choice. The differences that matter are downstream of absorption: what each one does to your digestion, and what secondary job it happens to do well.
+So for the simple purpose of raising your magnesium intake, neither is a bad choice. The [NIH Office of Dietary Supplements magnesium fact sheet](https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/) notes that forms which dissolve well in fluid are absorbed more completely than the poorly soluble oxide, and a 2019 comparison of supplement forms in *Nutrients* found organic salts and chelates outperformed inorganic oxide on absorption ([Blancquaert et al., 2019](https://doi.org/10.3390/nu11071663)). The differences that matter between glycinate and citrate are downstream of absorption: what each one does to your digestion, and what secondary job it happens to do well.
+
+| Feature | Glycinate | Citrate |
+| --- | --- | --- |
+| Bound to | Glycine (amino acid) | Citric acid |
+| Gut effect | Gentle, low laxative | Mild laxative pull |
+| Best for | Sleep, stress, daily use | Regularity plus magnesium |
+| Cost | Higher per serving | Usually cheaper |
 
 ## Where they diverge: your gut
 
@@ -61,6 +71,10 @@ One trap catches people comparing these two: the number on the front of the bott
 
 Ignore the headline number. Find **elemental magnesium** on the Supplement Facts panel and compare that. It's the only figure that lets you line up two products fairly, and it's how you'd check that a glycinate and a citrate are actually delivering comparable doses.
 
+## What to look for in a magnesium glycinate supplement
+
+If you have landed on glycinate for calm and sleep, the label is where the useful information sits. Check the **Supplement Facts panel names magnesium glycinate or bisglycinate**, not a vague "chelate" or "magnesium complex." Confirm the **elemental magnesium per serving** (often 100 to 200 mg), which is the amount your body actually sees, rather than the heavier compound weight on the front. Watch for **blends padded with magnesium oxide** that feature glycinate on the label but cut the cost with the poorly absorbed form. Favour **third-party testing** (USP or NSF) for identity and contaminants. Our [magnesium glycinate hub](/products/magnesium-glycinate/) maps these criteria onto specific choices, and the [sleep guide](/guides/sleep/) frames where the form fits among other supports. Buy on the panel, not the packaging.
+
 ## A quick decision guide
 
 - **Sleep, stress, daily use, sensitive stomach** → glycinate
@@ -69,3 +83,10 @@ Ignore the headline number. Find **elemental magnesium** on the Supplement Facts
 - **Not sure** → glycinate is the safer default, because the failure mode (loose stools) is the thing most people are trying to avoid
 
 Whichever you choose, check the elemental magnesium figure, keep the dose in the commonly used 200–400 mg elemental range unless a clinician has said otherwise, and don't supplement magnesium at all without medical guidance if you have kidney disease.
+
+*This article is for general education and is not medical advice. See our [disclaimer](/disclaimer/), and if you are struggling, our [get help](/get-help/) page lists support.*
+
+## Sources
+
+- NIH Office of Dietary Supplements. *Magnesium — Health Professional Fact Sheet.* [ods.od.nih.gov](https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/)
+- Blancquaert L, et al. *Predicting and Testing Bioavailability of Magnesium Supplements.* Nutrients. 2019. [doi:10.3390/nu11071663](https://doi.org/10.3390/nu11071663)
