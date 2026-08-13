@@ -1,4 +1,3 @@
-SLUG:l-theanine-calm-focus | FOCUS:buy-intent,citations,table,faq-audit
 SLUG:l-theanine-caffeine-stack | FOCUS:buy-intent,citations,table,faq-audit
 SLUG:l-theanine-vs-ashwagandha | FOCUS:buy-intent,citations,table,faq-audit
 SLUG:saffron-mood-research | FOCUS:buy-intent,citations,table,faq-audit
