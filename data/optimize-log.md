@@ -23,3 +23,22 @@ Then re-run the gsc-patterns workflow (workflow_dispatch) to backfill. Until the
 optimizer fire is a no-op.
 
 Next action: fix `.gitignore`, dispatch `gsc-patterns.yml`, confirm a `*-patterns.csv` lands.
+
+## 2026-08-15 — NO_DATA (still broken, 2nd optimizer no-op, queue untouched)
+
+NO_DATA again: `data/gsc/` still holds only `.gitkeep`; no `*-patterns.csv` exists, so Parts
+B–D did not run and the topic queue was left byte-for-byte unchanged. This is the second
+consecutive optimizer fire (after 2026-08-01) that no-op'd for the same reason.
+
+Nothing has changed since the 08-01 diagnosis. The root cause is still live:
+`.gitignore:6` = `data/gsc/*.csv` matches the scoreboard the weekly `gsc-patterns.yml` job
+writes (`git check-ignore` confirms `data/gsc/2026-07-24-patterns.csv` → ignored). The job
+runs GREEN, `git add data/gsc/` stages nothing, prints "no new GSC data", exits 0 — so the
+CSVs never land in the repo. `git log -- data/gsc/` shows no commit has ever touched it.
+
+Owner action (still NOT taken, out of this Routine's scope): after `.gitignore:6` add
+`!data/gsc/*-patterns.csv` (keep ignoring the raw daily pull), then dispatch
+`gsc-patterns.yml` (workflow_dispatch) to backfill. Until that lands, every optimizer fire
+stays a no-op — ~4 weeks and counting.
+
+Next action: fix `.gitignore`, dispatch `gsc-patterns.yml`, confirm a `*-patterns.csv` commits.
