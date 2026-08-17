@@ -28,6 +28,15 @@ elsewhere, and GA4 drops absent parameters.
 The bucket is also persisted to `sessionStorage.ms_src` for the session's lifetime. That is what
 Step 3 reads, and it is the single most important detail in this document.
 
+**Ordering guarantee.** Classification runs in an `is:inline` script in `<head>`, placed *above*
+the GTM snippet, so `sessionStorage` is already written before GTM initialises. This matters
+because the base Google Tag fires on **Initialization - All Pages** — the earliest trigger GTM
+has. A deferred module would lose that race, and the entry pageview would report an empty bucket
+on the session's first page. Verified in the built HTML: the classifier's `traffic_source` push
+is the first entry in `dataLayer`, ahead of GTM's own `gtm.js` event.
+
+Consequence: **every** GA4 event carries the bucket, including the landing `page_view`.
+
 ---
 
 ## Step 0 — Unblock, then audit what already exists

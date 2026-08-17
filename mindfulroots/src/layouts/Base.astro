@@ -77,6 +77,72 @@ const year = new Date().getFullYear();
     })} />
     {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
 
+    {/* Traffic-source classification. Deliberately inline and ahead of the GTM
+        snippet: the classifier must win the race against GTM's Initialization
+        trigger, or the entry pageview reports an empty bucket. A deferred module
+        would lose that race on the session's first pageview. */}
+    <script is:inline>
+      (function () {
+        var AI = /(chatgpt\.com|chat\.openai\.com|perplexity\.ai|claude\.ai|copilot\.microsoft\.com|gemini\.google\.com|you\.com|poe\.com)/i;
+        // Anchored to real search hosts. A bare `google\.` substring also matches
+        // mail./docs./tagassistant.google.com, which would silently inflate the
+        // search bucket with Gmail and Docs referrals.
+        var SEARCH = /^(www\.)?google\.[a-z.]{2,}$|^news\.google\.[a-z.]{2,}$|(^|\.)bing\.com$|(^|\.)duckduckgo\.com$|(^|\.)search\.yahoo\.|(^|\.)ecosia\.org$|(^|\.)search\.brave\.com$/i;
+        var SOCIAL = /(^|\.)(threads\.net|threads\.com|instagram\.com|facebook\.com|t\.co|x\.com|twitter\.com|reddit\.com|linkedin\.com|pinterest\.[a-z.]{2,})$/i;
+        // In-app browsers send an empty referrer but stamp the host app into the
+        // UA. This is what separates social-app traffic from an LLM desktop app,
+        // which has no positive fingerprint of its own.
+        var INAPP = /(Instagram|Threads|Barcelona|FBAV|FBAN|Line\/|TikTok)/i;
+
+        function hostOf(ref) {
+          try { return ref ? new URL(ref).hostname : ''; } catch (e) { return ''; }
+        }
+
+        function classify() {
+          var host = hostOf(document.referrer);
+          var utm = '';
+          try { utm = new URLSearchParams(location.search).get('utm_source') || ''; } catch (e) {}
+          var operator = false;
+          try { operator = localStorage.getItem('ms_op') === '1'; } catch (e) {}
+          // Operator wins over every other signal: our own visits must never land
+          // in the residual bucket we are trying to measure.
+          if (operator) return { bucket: 'operator', host: host || '(none)' };
+          // Report whichever signal matched, so raw_referrer names the AI source
+          // even when the referrer is stripped but utm_source survives.
+          if (AI.test(host)) return { bucket: 'ai_assistant', host: host };
+          if (AI.test(utm)) return { bucket: 'ai_assistant', host: utm };
+          if (host && host === location.hostname) return { bucket: 'internal', host: host };
+          if (SEARCH.test(host)) return { bucket: 'search', host: host };
+          if (SOCIAL.test(host)) return { bucket: 'social', host: host };
+          if (!host && INAPP.test(navigator.userAgent)) return { bucket: 'social_inapp', host: '(in-app)' };
+          if (host) return { bucket: 'referral', host: host };
+          // Empty referrer, ordinary UA. Inferred by elimination, not detected —
+          // with operator and social_inapp split out, LLM app traffic lands here.
+          return { bucket: 'direct_unattributed', host: '(none)' };
+        }
+
+        // One-time operator tag: visiting /?ms_op=1 marks this browser as ours for
+        // good, so our own visits stop inflating direct_unattributed.
+        try {
+          if (new URLSearchParams(location.search).get('ms_op') === '1') localStorage.setItem('ms_op', '1');
+        } catch (e) {}
+
+        // Classify only on the session's first pageview, so the entry source —
+        // not the last internal hop — is what gets attributed.
+        var seen = '';
+        try { seen = sessionStorage.getItem('ms_src') || ''; } catch (e) {}
+        if (!seen) {
+          var c = classify();
+          try {
+            sessionStorage.setItem('ms_src', c.bucket);
+            sessionStorage.setItem('ms_ref', c.host);
+          } catch (e) {}
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'traffic_source', source_bucket: c.bucket, raw_referrer: c.host });
+        }
+      })();
+    </script>
+
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -303,83 +369,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
       window.dataLayer = window.dataLayer || [];
 
-      // ---- First-party traffic-source classification ------------------------
-      // GA4 collapses every session it cannot resolve into a single "Direct"
-      // bucket and throws the referrer string away, so it cannot distinguish
-      // "no referrer" from "referrer we didn't recognise". We classify once per
-      // session ourselves and carry the result through to the affiliate click.
-      // That is the only way to answer whether the direct majority is LLM
-      // assistant traffic (empty referrer, clean UA) or our own browsing.
-      const AI_SRC = /(chatgpt\.com|chat\.openai\.com|perplexity\.ai|claude\.ai|copilot\.microsoft\.com|gemini\.google\.com|you\.com|poe\.com)/i;
-      const SEARCH_SRC = /(google\.|bing\.com|duckduckgo\.com|search\.yahoo|ecosia\.org|search\.brave\.com)/i;
-      const SOCIAL_SRC = /(threads\.|instagram\.com|facebook\.com|t\.co|x\.com|twitter\.com|reddit\.com|linkedin\.com|pinterest\.)/i;
-      // In-app browsers send an empty referrer but stamp the host app into the UA.
-      // This is what separates social-app traffic from an LLM desktop app, which
-      // has no positive fingerprint of its own.
-      const INAPP_UA = /(Instagram|Threads|Barcelona|FBAV|FBAN|Line\/|TikTok)/i;
-
-      function classifySource(): { bucket: string; host: string } {
-        let host = '';
-        try {
-          host = document.referrer ? new URL(document.referrer).hostname : '';
-        } catch {
-          host = '';
-        }
-        const utm = new URLSearchParams(location.search).get('utm_source') ?? '';
-        let operator = false;
-        try {
-          operator = localStorage.getItem('ms_op') === '1';
-        } catch {
-          operator = false;
-        }
-        // Operator wins over every other signal: our own visits must never land
-        // in the residual bucket we are trying to measure.
-        if (operator) return { bucket: 'operator', host: host || '(none)' };
-        // Report whichever signal actually matched, so raw_referrer names the AI
-        // source even when the referrer itself is internal (ChatGPT strips the
-        // referrer on some clients but still appends utm_source).
-        if (AI_SRC.test(host)) return { bucket: 'ai_assistant', host };
-        if (AI_SRC.test(utm)) return { bucket: 'ai_assistant', host: utm };
-        if (host && host === location.hostname) return { bucket: 'internal', host };
-        if (SEARCH_SRC.test(host)) return { bucket: 'search', host };
-        if (SOCIAL_SRC.test(host)) return { bucket: 'social', host };
-        if (!host && INAPP_UA.test(navigator.userAgent)) return { bucket: 'social_inapp', host: '(in-app)' };
-        if (host) return { bucket: 'referral', host };
-        // Empty referrer, clean UA. Inferred by elimination, not detected — with
-        // `operator` and `social_inapp` split out, this is where LLM app traffic lands.
-        return { bucket: 'direct_unattributed', host: '(none)' };
-      }
-
-      // One-time operator tag: visiting /?ms_op=1 marks this browser as ours for
-      // good, so our own visits stop inflating direct_unattributed.
+      // The session's entry channel is classified by the inline script in <head>
+      // (it has to run before GTM initialises). Here we only read the result.
+      let sourceBucket = 'unknown';
       try {
-        if (new URLSearchParams(location.search).get('ms_op') === '1') localStorage.setItem('ms_op', '1');
+        sourceBucket = sessionStorage.getItem('ms_src') || 'unknown';
       } catch {
-        // storage blocked — nothing to persist, fall through
-      }
-
-      // Classify only on the session's first pageview so the entry source, not
-      // the last internal hop, is what gets attributed.
-      let sourceBucket = '';
-      try {
-        sourceBucket = sessionStorage.getItem('ms_src') ?? '';
-      } catch {
-        sourceBucket = '';
-      }
-      if (!sourceBucket) {
-        const c = classifySource();
-        sourceBucket = c.bucket;
-        try {
-          sessionStorage.setItem('ms_src', c.bucket);
-          sessionStorage.setItem('ms_ref', c.host);
-        } catch {
-          // best-effort: classification still fires, it just won't persist
-        }
-        window.dataLayer.push({
-          event: 'traffic_source',
-          source_bucket: c.bucket,
-          raw_referrer: c.host,
-        });
+        sourceBucket = 'unavailable';
       }
 
       // Stamp the session's entry channel onto every /go/ link so the server-side
