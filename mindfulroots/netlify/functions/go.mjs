@@ -11,7 +11,11 @@
 // The destination map is bundled at deploy time from src/data/affiliate-links.json
 // (single source of truth, also consumed by the seo-guard build gate). Click logs
 // are written to Netlify Blobs as one key per click (no read-modify-write races):
-//   clicks/<YYYY-MM-DD>/<epoch-ms>-<rand>  ->  { slug, placement, ua }
+//   clicks/<YYYY-MM-DD>/<epoch-ms>-<rand>
+//     -> { slug, placement, retailer, ua, source, referer }
+// `source` is the session's entry channel (?s=, stamped onto the href by the
+// classifier in src/layouts/Base.astro) and `referer` is the on-site page the
+// click came from — the first attributes revenue by channel, the second by page.
 // Logging is best-effort: a Blobs failure must never break the money path.
 //
 // Amazon ToS note: the button label ("View … on Amazon") and the adjacent
@@ -51,12 +55,15 @@ export default async function handler(request, context) {
     const store = getStore('affiliate-clicks');
     const day = new Date().toISOString().slice(0, 10);
     const key = `clicks/${day}/${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-    const placement = new URL(request.url).searchParams.get('p') ?? 'unknown';
+    const params = new URL(request.url).searchParams;
+    const placement = params.get('p') ?? 'unknown';
     await store.setJSON(key, {
       slug,
       placement,
       retailer: entry.active || 'amazon',
       ua: request.headers.get('user-agent')?.slice(0, 120) ?? '',
+      source: params.get('s') ?? 'unknown',
+      referer: request.headers.get('referer')?.slice(0, 200) ?? '(none)',
     });
   } catch {
     // best-effort only — never block the redirect

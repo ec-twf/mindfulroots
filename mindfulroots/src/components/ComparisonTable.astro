@@ -76,6 +76,7 @@ const rowRetailer = (r: Row) =>
             </td>
             <td class="px-3 py-3 border-b border-mist align-top whitespace-nowrap">
              <a href={rowHref(r)} target="_blank" rel="nofollow sponsored noopener"
+                 data-affiliate data-product={goSlug ?? r.brand} data-variant={r.brand} data-placement="comparison"
                  class="text-saffron-deep hover:text-moss-deep underline underline-offset-2 text-xs">
                 {rowRetailer(r)} →
               </a>
@@ -120,6 +121,7 @@ const rowRetailer = (r: Row) =>
         </dl>
 
         <a href={rowHref(r)} target="_blank" rel="nofollow sponsored noopener"
+           data-affiliate data-product={goSlug ?? r.brand} data-variant={r.brand} data-placement="comparison"
            class="mt-4 flex items-center justify-center gap-1 rounded-md border border-mist bg-paper py-2.5 text-sm font-medium text-saffron-deep hover:text-moss-deep">
           View on {rowRetailer(r)} <span aria-hidden="true">→</span>
         </a>

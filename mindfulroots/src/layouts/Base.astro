@@ -302,6 +302,100 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         interface Window { dataLayer: Record<string, unknown>[] }
       }
       window.dataLayer = window.dataLayer || [];
+
+      // ---- First-party traffic-source classification ------------------------
+      // GA4 collapses every session it cannot resolve into a single "Direct"
+      // bucket and throws the referrer string away, so it cannot distinguish
+      // "no referrer" from "referrer we didn't recognise". We classify once per
+      // session ourselves and carry the result through to the affiliate click.
+      // That is the only way to answer whether the direct majority is LLM
+      // assistant traffic (empty referrer, clean UA) or our own browsing.
+      const AI_SRC = /(chatgpt\.com|chat\.openai\.com|perplexity\.ai|claude\.ai|copilot\.microsoft\.com|gemini\.google\.com|you\.com|poe\.com)/i;
+      const SEARCH_SRC = /(google\.|bing\.com|duckduckgo\.com|search\.yahoo|ecosia\.org|search\.brave\.com)/i;
+      const SOCIAL_SRC = /(threads\.|instagram\.com|facebook\.com|t\.co|x\.com|twitter\.com|reddit\.com|linkedin\.com|pinterest\.)/i;
+      // In-app browsers send an empty referrer but stamp the host app into the UA.
+      // This is what separates social-app traffic from an LLM desktop app, which
+      // has no positive fingerprint of its own.
+      const INAPP_UA = /(Instagram|Threads|Barcelona|FBAV|FBAN|Line\/|TikTok)/i;
+
+      function classifySource(): { bucket: string; host: string } {
+        let host = '';
+        try {
+          host = document.referrer ? new URL(document.referrer).hostname : '';
+        } catch {
+          host = '';
+        }
+        const utm = new URLSearchParams(location.search).get('utm_source') ?? '';
+        let operator = false;
+        try {
+          operator = localStorage.getItem('ms_op') === '1';
+        } catch {
+          operator = false;
+        }
+        // Operator wins over every other signal: our own visits must never land
+        // in the residual bucket we are trying to measure.
+        if (operator) return { bucket: 'operator', host: host || '(none)' };
+        // Report whichever signal actually matched, so raw_referrer names the AI
+        // source even when the referrer itself is internal (ChatGPT strips the
+        // referrer on some clients but still appends utm_source).
+        if (AI_SRC.test(host)) return { bucket: 'ai_assistant', host };
+        if (AI_SRC.test(utm)) return { bucket: 'ai_assistant', host: utm };
+        if (host && host === location.hostname) return { bucket: 'internal', host };
+        if (SEARCH_SRC.test(host)) return { bucket: 'search', host };
+        if (SOCIAL_SRC.test(host)) return { bucket: 'social', host };
+        if (!host && INAPP_UA.test(navigator.userAgent)) return { bucket: 'social_inapp', host: '(in-app)' };
+        if (host) return { bucket: 'referral', host };
+        // Empty referrer, clean UA. Inferred by elimination, not detected — with
+        // `operator` and `social_inapp` split out, this is where LLM app traffic lands.
+        return { bucket: 'direct_unattributed', host: '(none)' };
+      }
+
+      // One-time operator tag: visiting /?ms_op=1 marks this browser as ours for
+      // good, so our own visits stop inflating direct_unattributed.
+      try {
+        if (new URLSearchParams(location.search).get('ms_op') === '1') localStorage.setItem('ms_op', '1');
+      } catch {
+        // storage blocked — nothing to persist, fall through
+      }
+
+      // Classify only on the session's first pageview so the entry source, not
+      // the last internal hop, is what gets attributed.
+      let sourceBucket = '';
+      try {
+        sourceBucket = sessionStorage.getItem('ms_src') ?? '';
+      } catch {
+        sourceBucket = '';
+      }
+      if (!sourceBucket) {
+        const c = classifySource();
+        sourceBucket = c.bucket;
+        try {
+          sessionStorage.setItem('ms_src', c.bucket);
+          sessionStorage.setItem('ms_ref', c.host);
+        } catch {
+          // best-effort: classification still fires, it just won't persist
+        }
+        window.dataLayer.push({
+          event: 'traffic_source',
+          source_bucket: c.bucket,
+          raw_referrer: c.host,
+        });
+      }
+
+      // Stamp the session's entry channel onto every /go/ link so the server-side
+      // click log in netlify/functions/go.mjs can attribute clicks by channel.
+      // goLink() resolves at build time, so this has to happen client-side; done
+      // on load rather than on click to avoid racing target="_blank".
+      // Selector is href-based, not [data-affiliate], so ComparisonTable pick
+      // rows are covered too.
+      document.querySelectorAll<HTMLAnchorElement>('a[href^="/go/"]').forEach((a) => {
+        const raw = a.getAttribute('href');
+        if (!raw) return;
+        const u = new URL(raw, location.origin);
+        u.searchParams.set('s', sourceBucket);
+        a.setAttribute('href', u.pathname + u.search);
+      });
+
       document.addEventListener('click', (e) => {
         const el = (e.target as Element | null)?.closest?.('[data-affiliate]');
         if (!(el instanceof HTMLElement)) return;
@@ -309,6 +403,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           event: 'affiliate_click',
           product: el.dataset.product,
           placement: el.dataset.placement,
+          // Comparison-table rows only: which brand in the table was clicked.
+          // `product` stays the page's product slug so it groups with the other
+          // placements; `variant` is undefined elsewhere and GA4 drops it.
+          variant: el.dataset.variant,
         });
       });
       document.addEventListener('submit', (e) => {
