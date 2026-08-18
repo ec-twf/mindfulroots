@@ -22,7 +22,8 @@ venv/bin/python scripts/gsc-pull.py --days 28
 ```
 
 - Writes `data/gsc/<date>.csv` (query, page, clicks, impressions, ctr, position). Gitignored —
-  the rolled-up `*-patterns.csv` is the committed artifact.
+  the rolled-up `*-patterns.csv` (cluster/type scoreboard) and `*-pages.csv` (one row per URL,
+  feeds the indexation proxy) are the committed artifacts.
 - Property defaults to `sc-domain:moodsupplement.net`. Override with `--property` or `GSC_PROPERTY` if that ever changes.
 - **403 error** = the service account isn't granted on the property string being queried. See `scripts/GSC-SETUP.md` (URL-prefix vs Domain property gotcha). Diagnose with the accessible-sites list in that doc.
 - **Key missing error** = one-time setup not done; follow `scripts/GSC-SETUP.md`.
@@ -39,6 +40,12 @@ the newest file is on `main` when you start. Just open the latest one.
   already in `data/keyword-universe.csv`, or an off-topic sense of the seed (pet dosing,
   gardening). What's left needs SERP judgment, which is step 3's job.
 - To force a fresh pull between scheduled runs: `gh workflow run discovery.yml`.
+- `python3 scripts/propose-queue-lines.py` turns that shortlist into ready-made queue lines
+  (TYPE inferred, cluster/product mapped, slug built, collisions dropped) and writes them to
+  `data/discovery/<date>-proposed-queue-lines.txt` **without touching the queue**. Paste in the
+  ones whose SERP you've checked. The optimizer Routine runs the same script, but is only allowed
+  to append automatically when the queue drops under 28 lines — it has no WebSearch, so it can
+  never do the winnability check itself.
 - Running the scripts locally still works (`venv/bin/python scripts/keyword-harvest.py
   data/keyword-harvest-raw.csv` then `venv/bin/python scripts/filter-candidates.py`) but is only
   needed for debugging — the raw dump stays gitignored either way.
