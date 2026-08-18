@@ -17,13 +17,22 @@ interface Props {
 const { title, description = SITE.description, schema, ogType = 'website', image = '/og-default.png' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL(image, Astro.site);
+// Brand suffix policy. On /blog/ and /products/ the SERP title is the only
+// conversion surface we control, and "· MoodSupplement" spends ~17 of the 60
+// available characters on a brand nobody searches for yet — on the affron post
+// that was 17 of 56, exactly the room the branded terms it ranks for needed.
+// Static/marketing pages keep it, where it reads as brand rather than waste.
+const path = Astro.url.pathname;
+const dropsBrandSuffix = path.startsWith('/blog/') || path.startsWith('/products/');
 const suffixedTitle = `${title} · ${SITE.name}`;
 const fullTitle =
   title === SITE.name
     ? `${SITE.name} — ${SITE.seoTagline}`
-    : suffixedTitle.length <= 60
-      ? suffixedTitle
-      : title;
+    : dropsBrandSuffix
+      ? title
+      : suffixedTitle.length <= 60
+        ? suffixedTitle
+        : title;
 
 const year = new Date().getFullYear();
 ---

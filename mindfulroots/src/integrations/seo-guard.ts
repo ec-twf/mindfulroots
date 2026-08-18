@@ -270,10 +270,18 @@ function checkFile(dir: string, file: string, kind: 'blog' | 'product' | 'hub'):
 
   const effectiveTitle = seoTitle ?? title;
   if (effectiveTitle) {
-    // Mirrors the Base.astro rule: the brand suffix is only appended when the
-    // combined title would stay within TITLE_LIMIT, otherwise it's dropped.
+    // Mirrors the Base.astro rule. Blog and product pages never render the brand
+    // suffix (it wastes SERP characters on an unrecognised brand); everything
+    // else appends it only when the combined title stays within TITLE_LIMIT.
+    // These two rules must move together or the build check and the rendered
+    // page disagree about how many characters a title actually has.
+    const keepsSuffix = kind === 'hub';
     const withSuffix = effectiveTitle.length + TITLE_SUFFIX_LEN;
-    const renderedLength = withSuffix <= TITLE_LIMIT ? withSuffix : effectiveTitle.length;
+    const renderedLength = !keepsSuffix
+      ? effectiveTitle.length
+      : withSuffix <= TITLE_LIMIT
+        ? withSuffix
+        : effectiveTitle.length;
     if (renderedLength > TITLE_LIMIT) {
       violations.push({ file, kind: 'title', length: renderedLength, limit: TITLE_LIMIT, text: effectiveTitle });
     }

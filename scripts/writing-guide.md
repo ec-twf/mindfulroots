@@ -20,10 +20,21 @@ b-vitamins posts. Every automated post must follow it.
 
 ## 1. Frontmatter (fill every field)
 
-- `title` — **≤ 45 characters**, keyword near the front. It renders as `Title · MoodSupplement`,
-  so anything longer truncates in Google. (Bad: 63-char sentence titles. Good:
-  "B Vitamins for Stress & Adrenal Support".)
+- `title` — **≤ 60 characters**, keyword near the front. This is the on-page H1. Blog posts no
+  longer render the `· MoodSupplement` suffix, so the full 60 belongs to you — spend it on the
+  terms people search, not on the brand.
 - `description` — **150–158 characters**, keyword-first, no fluff. Never exceed 160.
+- `seoTitle` — **optional but preferred on comparison posts.** Overrides `title` in the SERP only;
+  the H1 stays as `title`. This is the highest-leverage copy on the page: the affron post sits at
+  position 8.9 and converts at 1.6%, roughly half what that position should return, so the title
+  is doing real damage when it is vague. Lead with the entities exactly as searched
+  (`affron vs Saffron Extract: Is the Premium Worth It?`), then the decision the reader is making.
+- `metaDescription` — optional override for `description` in the SERP. **Answer first, then the
+  one differentiating fact, then who it suits.** Never tease: a description that withholds the
+  answer loses to one that gives it and implies there is more.
+- `keyTakeaway` — **required on comparison and brand-comparison posts, recommended everywhere.**
+  2–3 sentences of plain language rendered in a "Short answer" box directly under the H1. This is
+  the verdict, not a summary of the article and not a restatement of `description`. See §3.
 - `pubDate` — today's date (provided).
 - `updatedDate` — today's date. This drives the visible "Updated" line, the Article
   `dateModified` schema, and the sitemap `lastmod`. Recency is a major citation factor — always
@@ -32,8 +43,11 @@ b-vitamins posts. Every automated post must follow it.
   not `magnesium`; `5-htp`, not `5-HTP`). GSC results are rolled up by this field, and a
   fragmented value silently splits one topic across two buckets in the scoreboard.
 - `postType` — copy the queue line's `TYPE:` verbatim (`interaction`, `dosage`, `timing`,
-  `safety`, `duration`, `comparison`, `explainer`, `pillar`). This is the unit of the publishing
-  experiment; a wrong or missing value makes the post unmeasurable.
+  `safety`, `duration`, `comparison`, `brand-comparison`, `explainer`, `pillar`). This is the unit
+  of the publishing experiment; a wrong or missing value makes the post unmeasurable. Use
+  `brand-comparison` whenever the post compares two or more *named, trademarked* extracts or
+  forms (affron vs Satiereal, KSM-66 vs Sensoril, Suntheanine vs generic L-theanine) — it is
+  tracked separately from `comparison` because it is the only pattern earning clicks.
 - `buyIntentTerm` — **required.** The long-tail *commercial* variant this post should also be
   able to satisfy, at **ingredient level**: "best magnesium glycinate for anxiety", "which b
   complex supplement to buy". Never a condition-level term ("best supplements for anxiety") —
@@ -59,16 +73,32 @@ b-vitamins posts. Every automated post must follow it.
 - If `relatedProducts` includes **5-htp**, the post **must** carry the serotonin-syndrome caution
   (5-HTP + SSRIs/SNRIs/MAOIs/other serotonergics → risk of serotonin syndrome; see a doctor).
 
-## 3. Structure (GEO-optimised)
+## 3. Structure (answer-first, then GEO)
 
-- **Definitional opener:** the first sentence is an "X is a…" definition of the supplement, in
-  the first ~60 words. This wins AI-citation for definition queries.
+**Answer first.** The first ~50 words state the verdict in plain language — what to do, or which
+option wins and for whom. This rule used to say "definitional opener, to win AI-citation." The
+data killed it: institution-shaped queries (`nih 5-htp serotonin syndrome`) rank at position 9.4
+and earn **zero clicks** — they are AI grounding fan-out, not people. Optimising the opening
+paragraph for that segment cost the human who actually landed. Keep the definitional sentence, but
+put it in the body where it still earns the citation without blocking the reader.
+
+- **`keyTakeaway` frontmatter** carries the same verdict for the above-the-fold "Short answer"
+  box. Write it to stand alone — someone who reads only that box should have their answer.
+- **Plain language up top.** The answer box and opening paragraph target roughly an 8th-grade
+  reading level: no standardisation percentages, no strain codes, no trial jargon, no hedging
+  stacks. "affron is a saffron extract, not a competing herb" — not "affron® is an HPLC-
+  standardised *Crocus sativus* stigma extract." Readers arrive knowing what the supplement is;
+  what they lack is the decision.
+- **Technical depth goes underneath, not away.** Standardisation markers and %, trial doses,
+  strain codes, RCT designs all belong in the comparison table and the sections below it — in
+  front of anyone who wants them, in front of nobody who doesn't. This is how the site stays
+  evidence-first without reading like a journal.
 - **Self-contained passages** of roughly **134–167 words** — strong AI-citation candidates.
 - Single `H1` (the title); `H2`/`H3` only, no skipped levels.
 - Set the length floor by the top ~5 ranking pages for the keyword; match or exceed, never pad.
-- Mandatory sections: definitional intro → mechanism/body → **evidence summary** → **typical use**
-  → **cautions/interactions** → **sources**. The FAQ and "supplements mentioned" blocks are
-  rendered by the template from frontmatter — do **not** write them as body sections.
+- Mandatory sections: verdict → mechanism/body (definition lands here) → **evidence summary** →
+  **typical use** → **cautions/interactions** → **sources**. The FAQ and "supplements mentioned"
+  blocks are rendered by the template from frontmatter — do **not** write them as body sections.
 
 ## 4. FAQ (frontmatter only — never in the body)
 
@@ -128,6 +158,28 @@ b-vitamins posts. Every automated post must follow it.
   in the opening paragraph — this is a stronger trust signal than pretending a real difference
   exists.
 
+## 8b. Brand-comparison posts (TYPE:brand-comparison)
+
+The highest-value format on this site. Trademarked extracts are a gap the health mega-authorities
+do not cover — Healthline writes about saffron, nobody authoritative writes about affron vs
+Satiereal — and the searcher is mid-purchase. Everything in §8 applies, plus:
+
+- **Name the trademarks exactly as searched**, including the ® on first use and the odd casing the
+  manufacturer uses (`affron®` is lowercase; `Safr'Inside`, `KSM-66`, `Sensoril`, `Shoden`,
+  `Suntheanine`, `Silexan`, `TRAACS`). These strings are the query.
+- **Head-to-head table, one row per brand**, columns: extract name · standardisation marker and %
+  · trial dose · what the trials actually measured · rough price per clinical dose. Never invent a
+  price or a percentage — omit the cell and say why instead.
+- **Verdict names a winner per goal**, not an overall winner: "KSM-66 if you want daytime stress
+  and the deepest trial base; Sensoril if the goal is sleep." Readers arrive with a goal.
+- **A "when the premium is not worth it" subsection is mandatory.** This is the site's structural
+  advantage and the reason to trust it: every competing page ranking for these terms is published
+  by someone selling the ingredient, so none of them can say the generic is fine. We sell no
+  ingredient, so we can. Where the branded and generic forms are the same molecule
+  (Suntheanine vs L-theanine), say so in the first 50 words.
+- **Do not manufacture a difference.** If two extracts differ only in marketing, that *is* the
+  finding, and it is more useful than a fabricated verdict.
+
 ## 9. Buy-intent section (every post, informational ones included)
 
 Every post carries a `buyIntentTerm`, so every post needs one short section that actually
@@ -146,6 +198,11 @@ has to ride on pages that can already rank.
 - Add one `faq:` entry phrased as the buy-intent query itself.
 - Never invent prices, ratings, or specs. The product page owns verified specs; this section
   owns the criteria that lead there.
+- **CTA wording:** name the spec the article just established, not the shop. "See a 28 mg affron
+  supplement" or "See a KSM-66 root extract" beats "View on Amazon", because it continues the
+  decision the reader has already made instead of starting a new one. The retailer still has to
+  be visible before the click (Amazon ToS — the button label and the disclosure microcopy handle
+  that), so name the spec in the link text and let the button name the store.
 
 ## 10. Refresh pass (`refresh-queue.txt`)
 
@@ -173,8 +230,11 @@ Title, slug, `cluster`, `relatedProducts` and `headTerm` are immutable in a refr
 
 ### Quick pre-publish checklist
 - [ ] Starts with `---`; no preamble, no code fences, no build/editorial notes anywhere.
-- [ ] `title` ≤ 45 chars; `description` 150–158 chars; `updatedDate` set; `faq:` array present.
-- [ ] Definitional opener in first ~60 words; support-not-treatment throughout.
+- [ ] `title` ≤ 60 chars; `description` 150–158 chars; `updatedDate` set; `faq:` array present.
+- [ ] `keyTakeaway` set (required on comparison / brand-comparison), 2–3 plain sentences that
+      answer the query on their own — no jargon, no percentages, no strain codes.
+- [ ] Verdict in the first ~50 words; definition moved into the body; support-not-treatment
+      throughout.
 - [ ] 5–8 verified sources, **every one hyperlinked**; no invented citations.
 - [ ] `faq:` frontmatter present; **no `## Frequently asked questions` / `## FAQ` body heading**.
 - [ ] Evidence table if comparing ≥3 items.
@@ -182,6 +242,9 @@ Title, slug, `cluster`, `relatedProducts` and `headTerm` are immutable in a refr
 - [ ] Product link appears high in the article (first couple hundred words), not only at the end.
 - [ ] 5-HTP posts include the serotonin-syndrome caution.
 - [ ] Comparison posts: verdict-first opener, head-to-head table, no false-certainty winner.
+- [ ] Brand-comparison posts (§8b): trademarks spelled exactly, per-brand table row, verdict per
+      goal, and the "when the premium is not worth it" subsection present.
+- [ ] CTA link text names the spec ("a 28 mg affron supplement"), not just the retailer.
 - [ ] `cluster` is the product slug; `postType` matches the queue `TYPE:`.
 - [ ] `buyIntentTerm` set, ingredient-level, not already used by another post.
 - [ ] Buy-intent section present (§9) with selection criteria + a `/products/` or `/guides/` link.

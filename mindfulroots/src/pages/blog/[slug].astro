@@ -6,6 +6,8 @@ import Byline from '../../components/Byline.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 import ProductCTA from '../../components/ProductCTA.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
+import StickyBuyBar from '../../components/StickyBuyBar.astro';
 import EmailCapture from '../../components/EmailCapture.astro';
 import { getCollection, render } from 'astro:content';
 import { hubsForPost } from '../../lib/hubs';
@@ -181,6 +183,7 @@ const schema = {
       <p class="font-mono text-xs text-ink-soft mt-0.5">Updated {data.updatedDate.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}</p>
     )}
     <Byline type="article" />
+    {data.keyTakeaway && <AnswerBox text={data.keyTakeaway} />}
     <TableOfContents headings={headings} />
     <hr class="specimen-rule my-6" />
     <div class="prose-mr"><Content /></div>
@@ -247,4 +250,9 @@ const schema = {
     <EmailCapture source="blog-end" compact />
     <SupportNotice />
   </section>
+
+  {/* Every impression the site earns lands on /blog/, but this was the one
+      template without a persistent CTA — the in-article card sits after the
+      whole article. Reveals once ProductCTA (which owns id="buy") scrolls past. */}
+  {ctaProduct && ctaRec && <StickyBuyBar slug={ctaProduct.id} rec={ctaRec} />}
 </Base>

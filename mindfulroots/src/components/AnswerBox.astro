@@ -1,0 +1,23 @@
+---
+// The answer, above the fold. Comparison and decision queries ("affron vs
+// satiereal", "KSM-66 vs Sensoril") bring a reader who wants the verdict, not a
+// definition — and GSC shows the site converts at roughly half the CTR its
+// positions should return. Everything technical stays below; this is the plain
+// sentence that pays off the click.
+//
+// Deliberately NOT `data-pagefind-ignore`: this is the most quotable passage on
+// the page and should be findable and citable.
+interface Props {
+  /** Plain-language verdict, 2-3 sentences, no jargon. */
+  text: string;
+}
+const { text } = Astro.props;
+---
+<aside
+  class="not-prose border-l-4 border-moss bg-card rounded-r-lg px-5 py-4 mt-5"
+  role="note"
+  aria-label="Short answer"
+>
+  <p class="font-mono text-xs uppercase tracking-wider text-moss-deep mb-1.5">Short answer</p>
+  <p class="text-ink leading-relaxed">{text}</p>
+</aside>

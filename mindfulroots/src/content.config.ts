@@ -106,20 +106,37 @@ const blog = defineCollection({
     // this is the unit of the publishing experiment: gsc-pull.py rolls GSC up
     // by postType so we can see which patterns earn impressions at our current
     // authority. Keep in sync with the TYPE: field in mindfulroots-topic-queue.txt.
+    // Measured on the 2026-08-15 scoreboard (28d). The July numbers that used to
+    // be quoted here as "proven" did not survive scale — recorded honestly so
+    // future decisions aren't made from a flattering snapshot:
     //   pillar / buying-guide / explainer — legacy formats
-    //   interaction  "can you take X with Y"      (proven: position 9-16)
-    //   dosage       "how much X per day"          (proven: position 13-44)
-    //   comparison   "X vs Y"
-    //   timing       "when to take X"
-    //   safety       "X side effects"
-    //   duration     "how long does X take to work"
+    //   brand-comparison  "affron vs Satiereal"   pos 12.3, the only pattern
+    //                     earning clicks — trademarked extracts are a gap the
+    //                     health mega-authorities do not write about
+    //   comparison   "X vs Y"                     pos 53.4 (averages a pos-12
+    //                     branded winner with pos-83 generic losers)
+    //   duration     "how long does X take to work"  pos 46.5
+    //   interaction  "can you take X with Y"      pos 46.9 — ranks acceptably
+    //                     but 19 pages produced 38 impressions total; winnable
+    //                     and near-zero demand
+    //   dosage       "how much X per day"          pos 63.1
+    //   timing       "when to take X"              pos 71.8, zero clicks
+    //   safety       "X side effects"              pos 9.4, but the traffic is
+    //                     institution-shaped AI grounding fan-out — zero clicks
     postType: z
       .enum([
         'pillar', 'buying-guide', 'explainer',
-        'interaction', 'dosage', 'comparison', 'timing', 'safety', 'duration',
+        'interaction', 'dosage', 'comparison', 'brand-comparison', 'timing', 'safety', 'duration',
       ])
       .optional(),
     relatedProducts: z.array(z.string()).default([]),
+    // Plain-language verdict rendered directly under the H1, above the fold.
+    // Separate from `description` on purpose: description is SERP copy written
+    // to earn the click, this is the answer written to satisfy it. GSC shows the
+    // reader arrives already knowing what the supplement is — what they lack is
+    // the decision, and previously they had to scroll past dates, byline and a
+    // table of contents to reach it.
+    keyTakeaway: z.string().optional(),
     draft: z.boolean().default(false),
     faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
     // Per-post share/hero image (path relative to /public). Feeds og:image,
