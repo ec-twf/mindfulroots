@@ -15,7 +15,32 @@ cautions: "Generally well tolerated at supplement doses. Avoid high doses in pre
 iherbKeyword: "saffron extract affron"
 relatedPosts: ["saffron-mood-research"]
 order: 7
-qualityCriterion: "A named, HPLC-standardized extract used in published RCTs — affron® (≥3.5% lepticrosalides, ~28–30 mg/day) or Satiereal® (0.3% safranal, ~88 mg/day) — dosed at the trial-matched level."
+relatedProducts: ["5-htp", "ashwagandha"]
+keyTakeaway: "Our pick is Sports Research Saffron Extract at 30 mg of affron® per softgel. Unusually, all three products here pass our criterion. Sports Research wins on dose precision: the trial that found an effect used 28 mg a day, and a 22 mg arm in the same study showed nothing at all."
+keyEvidence:
+  stat: "A four-week randomised, double-blind trial split 128 adults with self-reported low mood into three arms: affron® at 28 mg/day, affron® at 22 mg/day, and placebo. The 28 mg arm improved on the POMS Total Mood Disturbance scale against placebo (p < 0.001, d = -1.10). The 22 mg arm showed no treatment effect, which is the clearest argument we know of for matching the trial dose rather than approximating it. Two caveats the paper is open about: screening and outcomes were self-reported, and one author works for Pharmactive Biotech, which produces affron®."
+  quote: "affron® increased mood, reduced anxiety and managed stress without side effects, offering a natural alternative to standard treatments."
+  sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/28735826/"
+  sourceLabel: "Kell et al., Complementary Therapies in Medicine, 2017"
+specs:
+  studiedDose: "28 mg/day of affron® for four weeks. A 22 mg/day arm in the same trial showed no effect. Satiereal® trials use roughly 88 mg because it is less concentrated per milligram."
+  doseDelivered: "30 mg of affron® per softgel"
+  standardisedForm: "affron®, HPLC-standardised to ≥3.5% lepticrosalides, named on the label"
+  thirdPartyTested: "Not stated on the label"
+  otherActives: "None"
+  onsetWindow: "Four weeks in the trial above. Saffron mood trials generally run four to eight weeks."
+faq:
+  - q: "How much saffron extract do you need for mood?"
+    a: "Match the branded extract to its own trial dose rather than counting milligrams of saffron. For affron® that means 28 to 30 mg a day. This is not a rounding argument: the [2017 trial](https://pubmed.ncbi.nlm.nih.gov/28735826/) ran a 22 mg arm alongside the 28 mg arm and found nothing at 22 mg. Satiereal® is a different extract with a different concentration and its trials use around 88 mg, so the two numbers are not interchangeable."
+  - q: "Is affron® better than Satiereal®?"
+    a: "Neither is clearly better. Both are HPLC-standardised extracts with their own published human trials on mood, which is more than most botanical supplements can claim. They differ in what they standardise to and therefore in dose: affron® is measured by lepticrosalides at ≥3.5% and dosed at 28 to 30 mg, while Satiereal® is standardised to safranal and dosed near 88 mg. What matters is that the label names one of them and hits that extract's own studied dose. A product listing plain \"saffron extract\" with no named standardisation cannot be checked against any trial."
+  - q: "How long does saffron extract take to work?"
+    a: "The trials that report mood changes run four weeks at minimum, and several run eight. Nobody should expect anything from a single dose. That slow curve is worth planning for, because it means a fair trial of saffron costs about a month before you can judge it. There is more detail in [how long saffron extract takes to work](/blog/how-long-does-saffron-extract-take-to-work/)."
+  - q: "Can you take saffron extract with an antidepressant?"
+    a: "Ask your doctor first. Saffron has been studied specifically for mood, and some trials compared it directly against prescription antidepressants, so combining the two is not a neutral act even though saffron is sold as a supplement. We have written up the specific cases for [saffron with Lexapro](/blog/can-you-take-saffron-extract-with-lexapro/) and [saffron with sertraline](/blog/can-you-take-saffron-extract-with-sertraline/), but neither replaces a conversation with the person who prescribed it."
+  - q: "Does saffron extract have side effects?"
+    a: "The 2017 affron® trial reported no side effects at 28 mg a day over four weeks. That is a small, short study in healthy adults, so it is evidence of good tolerability rather than proof of safety at higher doses or over longer periods. High doses of saffron are not benign, and it should be avoided in pregnancy. Fuller detail in [saffron extract side effects](/blog/saffron-extract-side-effects/)."
+qualityCriterion: "A named, HPLC-standardised extract used in published RCTs, dosed at that extract's own trial level: affron® at 28 to 30 mg/day (≥3.5% lepticrosalides), or Satiereal® at around 88 mg/day (0.3% safranal)."
 criterionRationale: "Saffron's active compounds vary widely by harvest and processing. Both affron® and Satiereal® have standardized their marker compounds and conducted independent human trials specifically on mood and stress outcomes, making them verifiable against the evidence base."
 criterionSourceUrl: "https://pubmed.ncbi.nlm.nih.gov/30029994/"
 recommendedProduct:

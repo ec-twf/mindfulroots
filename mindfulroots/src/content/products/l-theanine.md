@@ -15,7 +15,32 @@ cautions: "Very well tolerated with a strong safety profile. If you take blood-p
 iherbKeyword: "l-theanine 200mg"
 relatedPosts: ["l-theanine-calm-focus"]
 order: 6
-qualityCriterion: "Dose at the trialed level (100–200 mg); ideally Suntheanine® — the enzymatically produced, branded form used in most published trials; no added caffeine unless clearly labeled."
+relatedProducts: ["magnesium-glycinate", "ashwagandha"]
+keyTakeaway: "Our pick is Doctor's Best L-Theanine with Suntheanine®, at 150 mg per capsule. It is the only product in this comparison whose label names Suntheanine®, the branded form used in most of the published trials. If dose matters more to you than provenance, NOW and Jarrow both give 200 mg for less."
+keyEvidence:
+  stat: "A four-week randomised, double-blind crossover trial gave 30 healthy adults 200 mg/day of L-theanine or placebo. Self-rated depression, trait anxiety and sleep-quality scores all fell during the theanine period (p = 0.019, 0.006 and 0.013). Worth knowing when you read it: two of the authors work for Taiyo Kagaku, the company that makes Suntheanine® and supplied the tablets."
+  quote: "Our findings suggest that L-theanine has the potential to promote mental health in the general population with stress-related ailments and cognitive impairments."
+  sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/31623400/"
+  sourceLabel: "Hidese et al., Nutrients, 2019"
+specs:
+  studiedDose: "200 mg/day for four weeks in the stress and sleep trial. Single-dose studies of acute calming use 100 to 200 mg."
+  doseDelivered: "150 mg per capsule, below the 200 mg used in the four-week trial"
+  standardisedForm: "Suntheanine®, named on the label"
+  thirdPartyTested: "Not stated on the label"
+  otherActives: "None"
+  onsetWindow: "About 30 to 60 minutes for acute calming. The sleep and anxiety changes above were measured over 28 days."
+faq:
+  - q: "How much L-theanine do the studies actually use?"
+    a: "Single-dose studies of acute calming generally use 100 to 200 mg. The four-week trial that tracked anxiety, sleep and depression scores used 200 mg a day ([Hidese et al., 2019](https://pubmed.ncbi.nlm.nih.gov/31623400/)). Our pick delivers 150 mg per capsule, which sits inside the acute range but below the four-week dose, so two capsules would overshoot it slightly and one falls short. Neither is a problem at this safety profile. We cover the reasoning in more depth in the [L-theanine dosage guide](/blog/l-theanine-dosage-anxiety/)."
+  - q: "Is Suntheanine® actually better than generic L-theanine?"
+    a: "Chemically they may well be equivalent. The difference is what you can verify. Suntheanine® is an enzymatically produced form made by Taiyo Kagaku, and it is the material used in most published trials, including the 2019 four-week study. A label reading only \"L-theanine\" does not tell you what is in the capsule or how it was made. That is the whole basis for our pick, and it is worth being clear that it is an argument about traceability rather than a claim that generic theanine does not work."
+  - q: "How long does L-theanine take to work?"
+    a: "People generally report the calming effect within 30 to 60 minutes of a single dose, which is why it gets taken before a stressful meeting or alongside coffee. The measured changes in sleep quality and trait anxiety in the 2019 trial came after four weeks of daily use, so the two timescales answer different questions. There is a longer breakdown in [how long L-theanine takes to work](/blog/how-long-does-it-take-for-l-theanine-to-work/)."
+  - q: "Can you take L-theanine with caffeine?"
+    a: "Yes, and that combination is the reason a lot of people take it. Theanine is what makes green tea feel calmer than coffee despite both containing caffeine, and it is commonly used to blunt the jittery edge of a large dose. Check the label before stacking, because some theanine products already include caffeine. Ours does not. See the [caffeine and theanine stack](/blog/l-theanine-caffeine-stack/) for typical ratios."
+  - q: "Does L-theanine make you drowsy?"
+    a: "Not usually. It is one of the few calming compounds that does not act as a sedative, which is why it gets described as relaxed alertness rather than sleepiness. The 2019 trial found improvements in verbal fluency and executive function alongside the anxiety and sleep changes, so cognitive performance held up. If you want it specifically for sleep, see [L-theanine for sleep](/blog/l-theanine-for-sleep/)."
+qualityCriterion: "Dose at the trialled level of 100 to 200 mg, ideally Suntheanine®, the enzymatically produced branded form used in most published trials. No added caffeine unless the label says so."
 criterionRationale: "Most RCT evidence uses Suntheanine® specifically. Generic L-theanine may be equivalent, but Suntheanine has the independent trial record behind it. The 100–200 mg range covers both the acute relaxation and sleep-support applications studied."
 criterionSourceUrl: "https://pubmed.ncbi.nlm.nih.gov/22214254/"
 recommendedProduct:
