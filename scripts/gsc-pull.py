@@ -69,6 +69,119 @@ def post_metadata():
     return meta
 
 
+# ─── Agent-query filter ─────────────────────────────────────────────────────
+# GSC counts an impression whoever issued the query, and a meaningful share of
+# ours are not people. /blog/5-htp-serotonin-safety/ pulled 210 impressions
+# across 75 queries that are combinatorial permutations of one intent with an
+# authority name bolted on: "memorial sloan kettering 5-htp serotonin syndrome",
+# "... nccih ...", "... serotonin syndrome review pmc", "5-htp interactions
+# antidepressants serotonin syndrome official medical source". Nobody types 75
+# of those. It is an LLM agent hunting a citable source, and appending an
+# organisation name or "authoritative source" is exactly what a model does when
+# told to find one.
+#
+# Left unfiltered it poisons the scoreboard the optimizer Routine reads: that
+# single page made postType=safety look like the site's best pattern at avg
+# position 9.4, so the queue would chase a demand curve that has no humans on
+# it. Everything downstream of here selects on human impressions.
+#
+# The rows are kept, not dropped — being retrieved at position ~9 by an agent
+# and never cited is a GEO signal worth tracking. They go to a separate
+# -agents.csv.
+
+# Decisive on their own (score 3): the query names an authority this site is
+# not, or explicitly asks for a source document.
+AGENT_TIER1 = [
+    r"memorial sloan kettering", r"\bmskcc\b", r"\bnccih\b", r"\bnih\b",
+    r"\bpmc\b", r"\bpubmed\b", r"\bcochrane\b", r"poison control",
+    r"\bfda\b", r"mayo clinic", r"\bwebmd\b", r"drugs\.com",
+    r"examine\.com", r"office of dietary supplements", r"\bods\b",
+    r"authoritative source", r"official medical source", r"official health source",
+    r"official source", r"prescribing information", r"package insert",
+    r"\bmonograph\b", r"fact sheet",
+]
+
+# Suggestive, needs corroboration (score 2). A human really might search
+# "ashwagandha meta-analysis", so these never fire alone.
+AGENT_TIER2 = [
+    r"systematic review", r"meta.analysis", r"case report", r"clinical trial",
+    r"peer.reviewed", r"evidence.based", r"\bofficial\b", r"\breview\b",
+]
+
+AGENT_THRESHOLD = 3
+
+
+def _norm(q):
+    return q.lower().strip('"').replace("\u2019", "'")
+
+
+def _burst_pages(rows):
+    """Pages whose query set looks machine-generated rather than paraphrased.
+
+    Deliberately anchored to pages that already show Tier-1 hits. Volume of
+    near-identical queries is NOT sufficient on its own:
+    /blog/vitamin-d3-morning-or-night/ has 94 queries averaging 5 impressions
+    that are all human rewordings of "best time to take d3". The thing that
+    separates permutation from paraphrase is the authority token, so a page
+    only counts as a burst once a large share of its queries carry one.
+    """
+    by_page = {}
+    for r in rows:
+        b = by_page.setdefault(r["page"], {"n": 0, "imps": 0, "tier1": 0})
+        b["n"] += 1
+        b["imps"] += r["impressions"]
+        if any(re.search(p, _norm(r["query"])) for p in AGENT_TIER1):
+            b["tier1"] += 1
+    return {
+        page for page, b in by_page.items()
+        if b["n"] >= 15 and b["imps"] / b["n"] < 4 and b["tier1"] / b["n"] >= 0.4
+    }
+
+
+def classify_rows(rows):
+    """Split query/page rows into (human, agent). Annotates each row in place."""
+    bursts = _burst_pages(rows)
+    human, agent = [], []
+    for r in rows:
+        q = _norm(r["query"])
+        score, why = 0, []
+        for p in AGENT_TIER1:
+            if re.search(p, q):
+                score += 3
+                why.append(f"authority:{p.strip(chr(92) + 'b')}")
+                break
+        for p in AGENT_TIER2:
+            if re.search(p, q):
+                score += 2
+                why.append(f"research-jargon:{p}")
+                break
+        if '"' in r["query"]:
+            # Quoted phrase search — a paper title pasted verbatim, not a person.
+            score += 2
+            why.append("quoted-phrase")
+        if len(q.split()) >= 8:
+            score += 1
+            why.append("long-query")
+        if r["page"] in bursts:
+            score += 1
+            why.append("permutation-burst")
+
+        r["agent_score"] = score
+        r["agent_reasons"] = "|".join(why)
+        (agent if score >= AGENT_THRESHOLD else human).append(r)
+    return human, agent
+
+
+def write_agents(rows, out_path):
+    """Agent-attributed queries, kept as their own GEO signal."""
+    with open(out_path, "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=["query", "page", "clicks", "impressions",
+                                          "ctr", "position", "agent_score", "agent_reasons"])
+        w.writeheader()
+        w.writerows(sorted(rows, key=lambda r: -r["impressions"]))
+    return len(rows)
+
+
 def write_patterns(rows, out_path):
     """Aggregate page-level rows by cluster and by postType."""
     meta = post_metadata()
@@ -104,7 +217,7 @@ def write_patterns(rows, out_path):
     return len(buckets)
 
 
-def write_pages(rows, out_path):
+def write_pages(rows, agent_rows, out_path):
     """One row per URL — the committed artifact the headless optimizer reads.
 
     The full query/page pull is tens of thousands of rows and stays gitignored,
@@ -113,6 +226,11 @@ def write_pages(rows, out_path):
     in no row here is probably not indexed. Collapsing queries away makes that
     answerable from a ~120-row file small enough to keep in git.
     """
+    excluded = {}
+    for r in agent_rows:
+        path = re.sub(r"^https?://[^/]+", "", r["page"])
+        excluded[path] = excluded.get(path, 0) + r["impressions"]
+
     buckets = {}
     for r in rows:
         path = re.sub(r"^https?://[^/]+", "", r["page"])
@@ -122,23 +240,77 @@ def write_pages(rows, out_path):
         b["clicks"] += r["clicks"]
         b["pos_weighted"] += r["position"] * r["impressions"]
         b["queries"] += 1
+    # A page whose impressions were ENTIRELY agent-driven still has to appear
+    # here, or the optimizer's indexation proxy reads it as never-crawled and
+    # queues a rewrite for a page Search Console knows perfectly well.
+    for path in excluded:
+        buckets.setdefault(path, {"impressions": 0, "clicks": 0,
+                                  "pos_weighted": 0.0, "queries": 0})
 
     with open(out_path, "w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["page", "impressions", "clicks", "avg_position", "queries"])
+        w.writerow(["page", "impressions", "clicks", "avg_position", "queries",
+                    "excluded_impressions"])
         for path, b in sorted(buckets.items(), key=lambda kv: -kv[1]["impressions"]):
             w.writerow([
                 path, b["impressions"], b["clicks"],
                 round(b["pos_weighted"] / b["impressions"], 1) if b["impressions"] else "",
-                b["queries"],
+                b["queries"], excluded.get(path, 0),
             ])
     return len(buckets)
+
+
+def emit_outputs(rows, out_path):
+    """Classify, then write every derived artifact. Shared by the live pull and
+    by --reclassify so a re-run over an archived CSV produces identical files."""
+    human, agent = classify_rows(rows)
+
+    agents_path = out_path.replace(".csv", "-agents.csv")
+    write_agents(agent, agents_path)
+    print(f"Wrote {len(agent)} agent-attributed rows "
+          f"({sum(r['impressions'] for r in agent)} impressions) to {agents_path}")
+
+    # Per-cluster / per-longtail-type rollup — the experiment scoreboard.
+    # Human rows only: this is what the optimizer Routine reprioritises from.
+    patterns_path = out_path.replace(".csv", "-patterns.csv")
+    n = write_patterns(human, patterns_path)
+    print(f"Wrote {n} cluster/type buckets to {patterns_path}")
+
+    # Per-URL rollup — feeds the optimizer's indexation proxy. Committed, unlike
+    # the query-level pull.
+    pages_path = out_path.replace(".csv", "-pages.csv")
+    n = write_pages(human, agent, pages_path)
+    print(f"Wrote {n} page rows to {pages_path}")
+
+
+def reclassify(path):
+    """Re-derive the rollups from an already-pulled query CSV. No API call.
+
+    Used to backfill the agent filter across archived snapshots so week-on-week
+    comparisons are like-for-like instead of comparing filtered to unfiltered.
+    """
+    with open(path, newline="") as f:
+        rows = [{
+            "query": r["query"],
+            "page": r["page"],
+            "clicks": int(float(r["clicks"])),
+            "impressions": int(float(r["impressions"])),
+            "ctr": float(r["ctr"]),
+            "position": float(r["position"]),
+        } for r in csv.DictReader(f)]
+    print(f"Reclassifying {len(rows)} rows from {path}")
+    emit_outputs(rows, path)
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--days", type=int, default=28)
     parser.add_argument("--out", default=None)
+    parser.add_argument(
+        "--reclassify", default=None,
+        help="Re-run the rollups over an existing data/gsc/<date>.csv without "
+             "calling the API. Use to backfill archived snapshots.",
+    )
     parser.add_argument(
         "--property",
         default=os.environ.get("GSC_PROPERTY", DEFAULT_SITE_URL),
@@ -149,6 +321,11 @@ def main():
         ),
     )
     args = parser.parse_args()
+
+    if args.reclassify:
+        reclassify(args.reclassify)
+        return
+
     SITE_URL = args.property
 
     if not os.path.isfile(KEY_PATH):
@@ -207,7 +384,11 @@ def main():
 
     print(f"Wrote {len(rows)} query/page rows ({start} to {end}) to {out_path}")
 
-    # Daily series. The impression dip that prompted this loop was only legible
+    # Daily series. NOTE: dimensioned by date only, so the agent filter cannot
+    # apply here — these totals still include agent impressions. Read the curve
+    # for shape, and -pages.csv / -agents.csv for attribution.
+    #
+    # The impression dip that prompted this loop was only legible
     # as a per-day curve — 28-day totals hid a 45% drop because they average the
     # pre-drop peak back in. Always write it alongside the query/page pull.
     daily_path = out_path.replace(".csv", "-daily.csv")
@@ -225,16 +406,7 @@ def main():
                         round(r.get("ctr", 0.0), 4), round(r.get("position", 0.0), 2)])
     print(f"Wrote {len(daily)} daily rows to {daily_path}")
 
-    # Per-cluster / per-longtail-type rollup — the experiment scoreboard.
-    patterns_path = out_path.replace(".csv", "-patterns.csv")
-    n = write_patterns(rows, patterns_path)
-    print(f"Wrote {n} cluster/type buckets to {patterns_path}")
-
-    # Per-URL rollup — feeds the optimizer's indexation proxy. Committed, unlike
-    # the query-level pull above.
-    pages_path = out_path.replace(".csv", "-pages.csv")
-    n = write_pages(rows, pages_path)
-    print(f"Wrote {n} page rows to {pages_path}")
+    emit_outputs(rows, out_path)
 
 
 if __name__ == "__main__":

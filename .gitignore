@@ -8,6 +8,11 @@
 data/gsc/*.csv
 !data/gsc/*-patterns.csv
 !data/gsc/*-pages.csv
+# The agent-query split is a GEO signal in its own right (retrieval bots probing
+# the site), and the optimizer needs it to explain gaps between total and human
+# impressions. Ignoring it would repeat the mistake that left three pipelines
+# green but blind.
+!data/gsc/*-agents.csv
 # Same exception for the discovery shortlist: the optimizer runs headless in the
 # cloud and cannot scrape autocomplete itself, so the committed CSV is its only
 # view of net-new demand. The raw harvest dump stays ignored.
