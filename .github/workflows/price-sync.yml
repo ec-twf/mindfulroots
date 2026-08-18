@@ -30,6 +30,11 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    # Job level, not step level: a step cannot read its own `env:` block from its
+    # own `if:`, so the alert below would never see the token if it lived there.
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
     steps:
       - uses: actions/checkout@v4
 
@@ -59,13 +64,11 @@ jobs:
       # an out-of-stock pick. Both mean a money link needs a human.
       - name: Alert on SKU drift
         if: failure() && env.TELEGRAM_BOT_TOKEN != ''
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           BODY=$(tail -c 3000 /tmp/price-sync.log)
+          TEXT=$(printf '%s\n\n%s' \
+            "⚠️ price-sync failed — an affiliate SKU has drifted. Repoint the murl in src/data/affiliate-links.json." \
+            "$BODY")
           curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d chat_id="${TELEGRAM_CHAT_ID}" \
-            --data-urlencode "text=⚠️ price-sync failed — an affiliate SKU has drifted. Repoint the murl in src/data/affiliate-links.json.
-
-${BODY}"
+            --data-urlencode "text=${TEXT}"

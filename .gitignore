@@ -2,7 +2,10 @@
 .DS_Store
 **/.DS_Store
 
-# Generated data snapshots — regenerated each optimize-content run, not source
+# Generated data snapshots — regenerated each optimize-content run, not source.
+# Exception: the weekly *-patterns.csv scoreboard IS the optimizer's input and
+# must reach the repo, or every /optimize-content fire no-ops with NO_DATA.
 data/gsc/*.csv
+!data/gsc/*-patterns.csv
 data/discovery/*.csv
 data/keyword-harvest-raw.csv
