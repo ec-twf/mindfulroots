@@ -128,17 +128,43 @@ const year = new Date().getFullYear();
         } catch (e) {}
 
         // Classify only on the session's first pageview, so the entry source —
-        // not the last internal hop — is what gets attributed.
+        // not the last internal hop — is what gets attributed. Later pageviews
+        // replay the stored value rather than reclassifying.
         var seen = '';
-        try { seen = sessionStorage.getItem('ms_src') || ''; } catch (e) {}
-        if (!seen) {
+        var seenRef = '';
+        try {
+          seen = sessionStorage.getItem('ms_src') || '';
+          seenRef = sessionStorage.getItem('ms_ref') || '';
+        } catch (e) {}
+
+        var bucket = seen;
+        var host = seenRef;
+        var firstOfSession = !seen;
+        if (firstOfSession) {
           var c = classify();
+          bucket = c.bucket;
+          host = c.host;
           try {
-            sessionStorage.setItem('ms_src', c.bucket);
-            sessionStorage.setItem('ms_ref', c.host);
-          } catch (e) {}
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({ event: 'traffic_source', source_bucket: c.bucket, raw_referrer: c.host });
+            sessionStorage.setItem('ms_src', bucket);
+            sessionStorage.setItem('ms_ref', host);
+          } catch (e) {
+            // storage blocked: the push below still carries this pageview's
+            // classification, it just won't persist to later pages
+          }
+        }
+
+        window.dataLayer = window.dataLayer || [];
+        // Push the bucket on EVERY pageview, not just the first. The data layer
+        // resets on each page load, so a once-per-session push would leave every
+        // later page's tags reading undefined. Deliberately not a Custom
+        // JavaScript variable reading sessionStorage: GTM compiles those with the
+        // Function() constructor, and our CSP has no 'unsafe-eval', so every CJS
+        // variable silently evaluates to undefined. See scripts/GTM-SETUP.md.
+        window.dataLayer.push({ source_bucket: bucket, raw_referrer: host });
+
+        // The event itself stays once per session, so its count is a session count.
+        if (firstOfSession) {
+          window.dataLayer.push({ event: 'traffic_source', source_bucket: bucket, raw_referrer: host });
         }
       })();
     </script>

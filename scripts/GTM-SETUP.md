@@ -25,8 +25,9 @@ being connected. If some pieces already exist, Step 0 tells you which, and you s
 `variant` appears only on comparison-table clicks (the brand of the row clicked); absent
 elsewhere, and GA4 drops absent parameters.
 
-The bucket is also persisted to `sessionStorage.ms_src` for the session's lifetime. That is what
-Step 3 reads, and it is the single most important detail in this document.
+The bucket is persisted to `sessionStorage.ms_src` for the session's lifetime, and re-pushed into
+the data layer on every pageview from there. GTM reads the **data layer**, never `sessionStorage`
+directly — Custom JavaScript variables cannot run under this site's CSP (Step 0c item 2).
 
 **Ordering guarantee.** Classification runs in an `is:inline` script in `<head>`, placed *above*
 the GTM snippet, so `sessionStorage` is already written before GTM initialises. This matters
@@ -96,10 +97,10 @@ Account **The Wise Fool Studio** → container **moodsupplement.net / GTM-M99Z4R
 
 | Name | Type | Verdict |
 |---|---|---|
-| `cjs - source bucket` | Custom JavaScript | Correct — use this one |
-| `cjs - raw referrer` | Custom JavaScript | Correct — use this one |
-| `source_bucket` | Data Layer Variable | **Redundant/harmful — do not reference** |
-| `raw_referrer` | Data Layer Variable | **Redundant/harmful — do not reference** |
+| `source_bucket` | Data Layer Variable | **Correct — use this one** |
+| `raw_referrer` | Data Layer Variable | **Correct — use this one** |
+| `cjs - source bucket` | Custom JavaScript | **Cannot work under our CSP — delete** |
+| `cjs - raw referrer` | Custom JavaScript | **Cannot work under our CSP — delete** |
 | `product`, `placement`, `variant` | Data Layer Variable | Correct |
 | `data-placement` | Data Layer Variable | Leftover from the click-trigger approach |
 
@@ -117,12 +118,29 @@ Two separate things are needed instead, and neither is this tag as configured:
   box. Repoint the trigger and rename the tag, or delete it and build 6b fresh.
 - email signups → build `GA4 - generate_lead` on the `email_signup` custom event (Step 6c).
 
-**2. `source_bucket` and `raw_referrer` exist twice** — once as Data Layer Variables (created
-first) and once as Custom JavaScript (`cjs - …`). Open `GA4 - traffic_source` and confirm its
-parameters reference **`{{cjs - source bucket}}`** and **`{{cjs - raw referrer}}`**, not the
-bare-named Data Layer versions. The DLV versions return `undefined` on every pageview after the
-first in a session — this is exactly the failure mode Step 3a exists to prevent. Delete the two
-DLVs once nothing references them.
+**2. Delete the two `cjs - …` variables — Custom JavaScript cannot work on this site.**
+
+GTM compiles Custom JavaScript variables with the `Function()` constructor. Our CSP
+(`public/_headers`) sets:
+
+```
+script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com
+```
+
+There is no `'unsafe-eval'`, so the browser blocks the compile, GTM swallows the failure, and the
+variable evaluates to `undefined` — always, regardless of its body. Confirmed empirically: a CJS
+variable whose entire body was `return 'TEST';` still returned `undefined` in Preview, while
+`dlv - product` and `dlv - placement` resolved normally on the same event. The tell is the
+**Return Type** column reading `undefined` instead of `string`. CSP violations surface in the
+browser DevTools console, *not* in Tag Assistant's Console tab, which is why it shows 0 messages.
+
+**Do not add `'unsafe-eval'` to fix this.** It permits turning arbitrary strings into executable
+code across the whole site, which is the main path that escalates a minor injection into full
+XSS — a bad trade on a site that handles affiliate clicks.
+
+Instead, the head script pushes `source_bucket` and `raw_referrer` into the data layer on **every**
+pageview, so plain Data Layer Variables work everywhere. Point every tag at `{{source_bucket}}`
+and `{{raw_referrer}}`, then delete both `cjs - …` variables.
 
 **3. Nothing has ever been published.** 14 workspace changes with objects dating back 23 days
 means no version has gone live. Confirm in **Versions** — if the list is empty, GTM has been
@@ -186,53 +204,32 @@ All Pages** → Save. Name it `Google Tag - GA4`.
 
 GTM → **Variables** → *User-Defined Variables* → **New**.
 
-### 3a. `cjs - source bucket` (Custom JavaScript) — the critical one
+### 3a. Everything is a Data Layer Variable — no Custom JavaScript
 
-Read the bucket from `sessionStorage`, **not** from the data layer.
+Custom JavaScript variables cannot execute on this site: our CSP has no `'unsafe-eval'`, and GTM
+compiles CJS with the `Function()` constructor. See Step 0c item 2 for the full diagnosis. Every
+variable below is type **Data Layer Variable**.
 
-The classifier pushes `source_bucket` into the data layer only on the session's *first* pageview.
-On page 2 of the same session there is no push, so a Data Layer Variable returns `undefined` for
-every event on that page — meaning every `affiliate_click` past the landing page would carry no
-channel. Reading `sessionStorage` resolves correctly on every page of the session.
+The head script pushes `source_bucket` and `raw_referrer` on **every** pageview — not only the
+session's first — precisely so plain Data Layer Variables resolve on every page. The data layer
+resets on each page load, so a once-per-session push would leave every page after the landing one
+reading `undefined`. The `traffic_source` *event* still fires only once per session, so its count
+remains a session count.
 
-Type: **Custom JavaScript**. Name: `cjs - source bucket`.
+### 3b. Create these six
 
-```js
-function() {
-  try {
-    return sessionStorage.getItem('ms_src') || 'unknown';
-  } catch (e) {
-    // private mode / storage blocked
-    return 'unavailable';
-  }
-}
-```
+Type **Data Layer Variable**, Version 2, no default value.
 
-### 3b. `cjs - raw referrer` (Custom JavaScript)
+| Variable name | Data Layer Variable Name | Present on |
+|---|---|---|
+| `source_bucket` | `source_bucket` | every pageview |
+| `raw_referrer` | `raw_referrer` | every pageview |
+| `dlv - product` | `product` | `affiliate_click` |
+| `dlv - placement` | `placement` | `affiliate_click` |
+| `dlv - variant` | `variant` | comparison-row clicks only |
+| `dlv - form source` | `source` | `email_signup` |
 
-Same reasoning.
-
-```js
-function() {
-  try {
-    return sessionStorage.getItem('ms_ref') || '(none)';
-  } catch (e) {
-    return 'unavailable';
-  }
-}
-```
-
-### 3c. Data Layer Variables
-
-These are pushed as part of their own event, so they are present in the data layer when the tag
-fires. Type **Data Layer Variable**, Version 2, no default value.
-
-| Variable name | Data Layer Variable Name |
-|---|---|
-| `dlv - product` | `product` |
-| `dlv - placement` | `placement` |
-| `dlv - variant` | `variant` |
-| `dlv - form source` | `source` |
+The first two already exist in your container — reuse them rather than creating duplicates.
 
 ---
 
@@ -256,8 +253,8 @@ parameters** → add two rows:
 
 | Parameter name | Value |
 |---|---|
-| `source_bucket` | `{{cjs - source bucket}}` |
-| `raw_referrer` | `{{cjs - raw referrer}}` |
+| `source_bucket` | `{{source_bucket}}` |
+| `raw_referrer` | `{{raw_referrer}}` |
 
 Shared event parameters are appended to every GA4 event sent through that tag — pageviews,
 `affiliate_click`, `email_signup`, everything. One edit, total coverage.
@@ -280,8 +277,8 @@ All three: **Tags** → **New** → Tag Configuration → **Google Analytics: GA
 
 | Parameter | Value |
 |---|---|
-| `source_bucket` | `{{cjs - source bucket}}` |
-| `raw_referrer` | `{{cjs - raw referrer}}` |
+| `source_bucket` | `{{source_bucket}}` |
+| `raw_referrer` | `{{raw_referrer}}` |
 
 - Triggering: `CE - traffic_source`
 
@@ -340,12 +337,14 @@ be deployed (see "Deploy order" below).
 Walk this exact sequence in Tag Assistant and check each assertion:
 
 1. **Land on the homepage.** A `traffic_source` event appears in the left rail and `GA4 -
-   traffic_source` is under *Tags Fired*. Click the event → **Variables** tab → `cjs - source
-   bucket` has a real value, not `unknown`.
+   traffic_source` is under *Tags Fired*. Click the event → **Variables** tab → `source_bucket`
+   has a real value with **Return Type `string`**. A Return Type of `undefined` on a Data Layer
+   Variable means the value was not in the data layer when the tag fired.
 2. **Navigate to a product page.** `traffic_source` must **not** fire again — once per session by
-   design. Open any event on this page and confirm `cjs - source bucket` still resolves. **If it
-   returns `unknown` here, you used a Data Layer Variable instead of the Custom JavaScript
-   variable in Step 3a.** Go back and fix it. This is the most common way to get this wrong.
+   design. Open any event on this page and confirm `source_bucket` *still* resolves. This is the
+   assertion that catches the once-per-session-push bug: the data layer resets on navigation, so
+   the head script has to re-push the bucket on every page. If it resolves on the landing page but
+   not here, that re-push is missing.
 3. **Click a comparison-table row link.** `GA4 - affiliate_click` fires with `placement:
    comparison` and `variant` equal to that row's brand.
 4. **Click the sidebar buy box.** `GA4 - affiliate_click` fires with `placement: buybox` and no
@@ -414,7 +413,7 @@ is itself a useful number: it measures how much of your audience blocks analytic
 | `social_inapp` | Empty referrer, UA names a host app (Instagram, Threads, TikTok…). |
 | `internal` | Session began mid-site with an on-site referrer. Rare; a spike means sessions are expiring mid-visit. |
 | `search`, `social`, `referral` | Ordinary referrer matches. |
-| `unknown` / `unavailable` | The GTM variable couldn't read `sessionStorage` — private mode or blocked storage. |
+| *(missing / `undefined`)* | The value wasn't in the data layer when the tag fired — see Gotchas. |
 
 There is no positive fingerprint for the ChatGPT or Claude desktop apps — they send an empty
 referrer with a stock Chromium UA. `direct_unattributed` is a residual, not a detection. Its
@@ -441,8 +440,11 @@ on the live site yet.
 ## Gotchas
 
 - **Register dimensions before publishing GTM.** Not retroactive.
-- **Custom JavaScript variable, not Data Layer Variable, for `source_bucket`.** The data layer
-  only holds it on the session's first pageview.
+- **Never use a Custom JavaScript variable in this container.** No `'unsafe-eval'` in the CSP, so
+  GTM cannot compile them and they silently return `undefined` no matter what the body says.
+  A `Return Type` of `undefined` where you expected `string` is the signature.
+- **If you ever change the head script, keep the per-pageview push.** Data Layer Variables go
+  `undefined` on every page after the first the moment that push becomes once-per-session.
 - **Don't create two tags with the same GA4 event name.** They double-count.
 - **`raw_referrer` cardinality is fine** — hostnames only. GA4 collapses a dimension into
   `(other)` past ~500 distinct daily values; expect a dozen.
