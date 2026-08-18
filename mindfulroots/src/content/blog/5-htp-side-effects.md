@@ -5,6 +5,7 @@ pubDate: 2026-08-11
 updatedDate: 2026-08-11
 cluster: "5-htp"
 headTerm: "5-htp side effects"
+keyTakeaway: "The most common 5-HTP side effects are gastrointestinal: nausea, stomach cramps and diarrhoea, worse at higher doses and often easier when taken with food. Drowsiness is common too, which is why many people take it in the evening. The serious concern is serotonin syndrome when 5-HTP is combined with serotonergic medication."
 postType: "safety"
 buyIntentTerm: "best low-dose 5-htp supplement to buy"
 relatedProducts: [5-htp]

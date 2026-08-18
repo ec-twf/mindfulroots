@@ -5,6 +5,7 @@ pubDate: 2026-07-29
 updatedDate: 2026-07-29
 cluster: "ashwagandha"
 headTerm: "dosage of holy basil for anxiety"
+keyTakeaway: "Human trials on stress and anxiety used roughly 300 to 1,200 mg of holy basil leaf extract a day, usually split into two doses. One controlled study used 500 mg twice daily, another a single 1,200 mg extract. No official anxiety dose exists, so these are the amounts research has tested."
 postType: "dosage"
 buyIntentTerm: "best ashwagandha supplement for anxiety"
 relatedProducts: [ashwagandha]

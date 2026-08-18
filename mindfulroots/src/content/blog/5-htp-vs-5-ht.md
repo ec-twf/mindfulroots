@@ -5,6 +5,7 @@ pubDate: 2026-07-07
 updatedDate: 2026-07-07
 cluster: "5-htp"
 headTerm: "5-htp vs 5-ht"
+keyTakeaway: "5-HTP and 5-HT are not the same thing, but they sit one step apart. 5-HTP (5-hydroxytryptophan) is the precursor your body converts into 5-HT (5-hydroxytryptamine), which is serotonin itself. Supplements sell 5-HTP because it crosses into the brain; you cannot buy 5-HT as a supplement."
 postType: "comparison"
 buyIntentTerm: "which 5-htp supplement to buy"
 relatedProducts: [5-htp]

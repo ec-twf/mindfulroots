@@ -5,6 +5,7 @@ pubDate: 2026-08-03
 updatedDate: 2026-08-03
 cluster: "l-theanine"
 headTerm: "l-theanine dosage anxiety"
+keyTakeaway: "Studies of L-theanine for stress and anxiety used 200 to 400 mg a day, often split between morning and afternoon. A single 200 mg dose is a reasonable option before a stressful event; daily use in that range is what the four-week trials tested. Start at the lower end."
 postType: "dosage"
 buyIntentTerm: "best l-theanine supplement for anxiety dosing"
 relatedProducts: [l-theanine]

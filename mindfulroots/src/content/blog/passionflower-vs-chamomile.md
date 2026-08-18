@@ -5,6 +5,7 @@ pubDate: 2026-08-15
 updatedDate: 2026-08-15
 cluster: "l-theanine"
 headTerm: "passionflower vs chamomile"
+keyTakeaway: "Passionflower and chamomile both have small, encouraging trials rather than a decisive winner. Passionflower has been tested for short-term situational anxiety, such as before surgery. Chamomile has the more substantial record for ongoing generalised anxiety over several weeks. Pick passionflower for a one-off tense moment, chamomile for a daily approach."
 postType: "comparison"
 buyIntentTerm: "best l-theanine supplement for daytime calm"
 relatedProducts: [l-theanine]

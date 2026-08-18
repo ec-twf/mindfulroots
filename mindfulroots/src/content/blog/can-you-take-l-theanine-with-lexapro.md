@@ -5,6 +5,7 @@ pubDate: 2026-08-05
 updatedDate: 2026-08-05
 cluster: "l-theanine"
 headTerm: "can you take l-theanine with lexapro"
+keyTakeaway: "No dangerous interaction between L-theanine and escitalopram is documented, and small studies have combined L-theanine with prescription psychiatric drugs without a safety signal. The realistic concern is additive drowsiness, since both are calming. Anyone on an antidepressant should still clear a new supplement with their prescriber first."
 postType: "interaction"
 buyIntentTerm: "best l-theanine supplement to take with an antidepressant"
 relatedProducts: [l-theanine]

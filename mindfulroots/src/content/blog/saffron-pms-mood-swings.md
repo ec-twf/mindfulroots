@@ -5,6 +5,7 @@ pubDate: 2026-08-05
 updatedDate: 2026-08-05
 cluster: "saffron-extract"
 headTerm: "saffron pms mood swings"
+keyTakeaway: "The main premenstrual trial used 30 mg of standardised saffron extract a day, split as 15 mg twice daily and taken across the whole cycle rather than only the luteal phase. That 30 mg figure is what most saffron mood research uses. Saffron has a defined safety ceiling, so more is not better."
 postType: "dosage"
 buyIntentTerm: "best saffron extract supplement for pms mood support"
 relatedProducts: [saffron-extract]

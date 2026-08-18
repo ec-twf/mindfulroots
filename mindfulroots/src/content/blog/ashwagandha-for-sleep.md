@@ -5,6 +5,7 @@ pubDate: 2026-08-09
 updatedDate: 2026-08-09
 cluster: "ashwagandha"
 headTerm: "ashwagandha for sleep"
+keyTakeaway: "Ashwagandha sleep trials used 300 mg of a standardised root extract twice a day, or 600 mg once in the evening. Improvements in sleep quality and time to fall asleep showed up around six to eight weeks, not the first night. Start at the lower end and give it a full cycle before judging it."
 postType: "dosage"
 buyIntentTerm: "best ashwagandha supplement for sleep"
 relatedProducts: [ashwagandha]

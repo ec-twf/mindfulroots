@@ -9,6 +9,7 @@ postType: "explainer"
 buyIntentTerm: "best fish oil supplement for cortisol"
 relatedProducts: [omega-3-fish-oil]
 headTerm: "fish oil cortisol"
+keyTakeaway: "Fish oil blunts the cortisol spike under acute stress in several small human trials, and one study lowered basal levels too. The effect is modest, the samples are small, and no large long-term trial exists. Read it as support for a normal stress response, not a reliable way to lower cortisol."
 draft: false
 faq:
   - q: "Does fish oil actually lower cortisol?"

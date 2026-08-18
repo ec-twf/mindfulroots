@@ -5,6 +5,7 @@ pubDate: 2026-07-21
 updatedDate: 2026-07-21
 cluster: "omega-3-fish-oil"
 headTerm: "can you take omega-3 fish oil with statins"
+keyTakeaway: "For most people omega-3 fish oil and statins are compatible, and prescription omega-3s are sometimes used alongside statins for high triglycerides. Both can affect bleeding and liver enzymes in some people, so confirm your own case with the prescriber who manages your statin before adding a supplement."
 postType: "interaction"
 buyIntentTerm: "best omega 3 fish oil supplement for statin users"
 relatedProducts: [omega-3-fish-oil]

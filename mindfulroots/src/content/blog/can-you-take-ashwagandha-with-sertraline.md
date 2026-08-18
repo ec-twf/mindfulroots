@@ -5,6 +5,7 @@ pubDate: 2026-08-13
 updatedDate: 2026-08-13
 cluster: "ashwagandha"
 headTerm: "can you take ashwagandha with sertraline"
+keyTakeaway: "Ashwagandha and sertraline are often combined, but it is a prescriber's decision. Ashwagandha does not raise serotonin strongly, so the serotonin syndrome concern is largely theoretical. The practical issues are added drowsiness, ashwagandha's effect on thyroid hormones, and rare liver reactions. None rules it out; all are worth a conversation first."
 postType: "interaction"
 buyIntentTerm: "which ashwagandha supplement to take with sertraline"
 relatedProducts: [ashwagandha]

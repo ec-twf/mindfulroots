@@ -5,6 +5,7 @@ pubDate: 2026-08-01
 updatedDate: 2026-08-01
 cluster: "5-htp"
 headTerm: "5-htp vs ashwagandha"
+keyTakeaway: "5-HTP and ashwagandha treat different problems. 5-HTP works on the serotonin pathway, so it suits low mood with flat affect, poor sleep and appetite change. Ashwagandha has the stronger evidence for stress and cortisol, at 300 to 600 mg a day. Match the one to your symptom rather than picking a winner."
 postType: "comparison"
 buyIntentTerm: "best 5-htp supplement for mood support"
 relatedProducts: [5-htp, ashwagandha]

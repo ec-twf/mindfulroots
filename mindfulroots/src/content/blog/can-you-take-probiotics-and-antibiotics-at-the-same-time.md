@@ -5,6 +5,7 @@ pubDate: 2026-08-15
 updatedDate: 2026-08-15
 cluster: "probiotic-gut-brain"
 headTerm: "can you take probiotics and antibiotics at the same time"
+keyTakeaway: "You can take probiotics and antibiotics on the same days, and the trials that reduced antibiotic-associated diarrhoea did exactly that. Separate the two by about two hours so the antibiotic is not at peak concentration when the live cultures arrive. Keep the probiotic going for the full course and one to two weeks afterwards."
 postType: "interaction"
 buyIntentTerm: "best probiotic to take alongside a course of antibiotics"
 relatedProducts: [probiotic-gut-brain]

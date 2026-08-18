@@ -5,6 +5,7 @@ pubDate: 2026-08-01
 updatedDate: 2026-08-01
 cluster: "l-theanine"
 headTerm: "l-theanine for sleep"
+keyTakeaway: "Most L-theanine sleep studies used 200 mg in the evening. Some trials in specific groups, such as boys with ADHD, used 200 mg twice daily. Taking 200 mg about 30 to 60 minutes before bed is the common, well-tolerated approach, and there is no benefit to going higher."
 postType: "dosage"
 buyIntentTerm: "best l-theanine supplement for sleep"
 relatedProducts: [l-theanine]

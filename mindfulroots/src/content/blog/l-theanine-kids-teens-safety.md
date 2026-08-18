@@ -5,6 +5,7 @@ pubDate: 2026-08-05
 updatedDate: 2026-08-05
 cluster: "l-theanine"
 headTerm: "l-theanine kids teens safety"
+keyTakeaway: "L-theanine has a good general safety record and occurs naturally in tea, but human evidence in under-18s is limited to a few small studies, so it cannot be called well established for that age group. It treats no childhood condition. Any use in a child or teen belongs with a paediatrician."
 postType: "safety"
 buyIntentTerm: "best l-theanine supplement for teenage stress"
 relatedProducts: [l-theanine]

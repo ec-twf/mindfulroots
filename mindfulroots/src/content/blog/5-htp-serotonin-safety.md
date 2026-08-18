@@ -10,6 +10,7 @@ buyIntentTerm: "best 5-htp supplement for beginners"
 relatedProducts: ["5-htp"]
 draft: false
 headTerm: "5-htp serotonin syndrome"
+keyTakeaway: "5-HTP raises serotonin, so pairing it with an SSRI, SNRI, MAOI or tramadol carries a theoretical serotonin syndrome risk. Documented cases are rare and usually involve drug combinations rather than 5-HTP alone. A 2002 Cochrane review judged the mood trials too few and too weak to recommend it. Ask your prescriber first."
 faq:
   - q: "Does 5-HTP work for depression?"
     a: "The honest answer is that the evidence is limited and inconclusive. A 2002 Cochrane review found a signal of benefit but judged the trials too few and too low in quality to recommend 5-HTP, advising conventional treatments instead. We rate its mood evidence as emerging."

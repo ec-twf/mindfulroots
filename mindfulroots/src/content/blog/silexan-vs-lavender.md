@@ -5,6 +5,7 @@ pubDate: 2026-08-15
 updatedDate: 2026-08-15
 cluster: "ashwagandha"
 headTerm: "silexan vs lavender"
+keyTakeaway: "Silexan is lavender, not a rival herb. It is a specific standardised lavender essential oil prepared for oral capsules, and what separates it from generic lavender products is the manufacturing standard plus the fact that the anxiety trials were run on this exact preparation at 80 mg a day."
 postType: "comparison"
 buyIntentTerm: "best ashwagandha supplement for anxious tension"
 relatedProducts: [ashwagandha]

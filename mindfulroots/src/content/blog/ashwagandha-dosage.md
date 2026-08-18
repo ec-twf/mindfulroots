@@ -5,6 +5,7 @@ pubDate: 2026-07-21
 updatedDate: 2026-07-21
 cluster: "ashwagandha"
 headTerm: "ashwagandha dosage"
+keyTakeaway: "Ashwagandha trials for stress and sleep used 300 to 600 mg a day of a concentrated root extract, usually split into two doses or taken once in the evening. KSM-66 studies commonly used 300 mg twice daily. Start at the lower end and confirm the amount with your clinician."
 postType: "dosage"
 buyIntentTerm: "best ashwagandha supplement for stress dosing"
 relatedProducts: [ashwagandha]

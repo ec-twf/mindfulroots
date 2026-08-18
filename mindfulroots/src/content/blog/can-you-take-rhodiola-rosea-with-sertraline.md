@@ -5,6 +5,7 @@ pubDate: 2026-08-09
 updatedDate: 2026-08-09
 cluster: "rhodiola-rosea"
 headTerm: "can you take rhodiola rosea with sertraline"
+keyTakeaway: "Do not start rhodiola while taking sertraline without asking your prescriber. No drug interaction is confirmed and documented cases are absent, but rhodiola has shown weak monoamine-oxidase inhibition in the laboratory, which is the mechanism behind the most serious serotonin interactions. The caution is theoretical but not trivial."
 postType: "interaction"
 buyIntentTerm: "best rhodiola rosea supplement for stress while on an ssri"
 relatedProducts: [rhodiola-rosea]

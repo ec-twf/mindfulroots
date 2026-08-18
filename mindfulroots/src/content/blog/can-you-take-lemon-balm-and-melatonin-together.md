@@ -5,6 +5,7 @@ pubDate: 2026-07-25
 updatedDate: 2026-07-25
 cluster: "magnesium-glycinate"
 headTerm: "can you take lemon balm and melatonin together"
+keyTakeaway: "For most healthy adults lemon balm and melatonin are a gentle pairing, because they work by different routes. Lemon balm is a calming herb; melatonin is the hormone that signals night. No dangerous interaction is documented, but both add to drowsiness, so start low and avoid alcohol or sedatives alongside them."
 postType: "interaction"
 buyIntentTerm: "best magnesium glycinate supplement for sleep"
 relatedProducts: [magnesium-glycinate]

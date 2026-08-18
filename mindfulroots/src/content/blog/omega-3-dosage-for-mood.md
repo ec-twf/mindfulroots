@@ -5,6 +5,7 @@ pubDate: 2026-07-31
 updatedDate: 2026-07-31
 cluster: "omega-3-fish-oil"
 headTerm: "omega-3 dosage for mood"
+keyTakeaway: "Trials reporting mood benefits mostly used 1 to 2 grams a day of long-chain omega-3s, with EPA the larger share. That is combined EPA and DHA, not total fish oil, which is the bigger number on the label. General heart and brain maintenance sits lower, around 250 to 500 mg combined."
 postType: "dosage"
 buyIntentTerm: "best high-epa fish oil dose for mood support"
 relatedProducts: [omega-3-fish-oil]

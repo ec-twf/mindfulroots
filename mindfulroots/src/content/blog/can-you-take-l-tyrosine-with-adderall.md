@@ -5,6 +5,7 @@ pubDate: 2026-08-01
 updatedDate: 2026-08-01
 cluster: "l-tyrosine"
 headTerm: "can you take l-tyrosine with adderall"
+keyTakeaway: "No dangerous interaction between L-tyrosine and Adderall is well documented, but there is little reason to take them in the same hour. Tyrosine competes with other amino acids for the same brain transporter, and a stimulant already raises catecholamines. Most people who use both take tyrosine earlier and separately."
 postType: "interaction"
 buyIntentTerm: "which l-tyrosine supplement to buy for focus"
 relatedProducts: []

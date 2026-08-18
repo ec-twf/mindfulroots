@@ -5,6 +5,7 @@ pubDate: 2026-08-13
 updatedDate: 2026-08-13
 cluster: "l-theanine"
 headTerm: "lemon balm vs bee balm"
+keyTakeaway: "Lemon balm and bee balm are different plants that share a citrusy name. Lemon balm is Melissa officinalis, a mint-family herb grown for its calming leaf and the one with human trials on stress and sleep. Bee balm is Monarda, a North American flower used as a culinary tea and pollinator plant."
 postType: "comparison"
 buyIntentTerm: "best lemon balm supplement for calm and sleep"
 relatedProducts: [l-theanine]

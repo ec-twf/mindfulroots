@@ -5,6 +5,7 @@ pubDate: 2026-08-17
 updatedDate: 2026-08-17
 cluster: "magnesium-glycinate"
 headTerm: "valerian root vs catnip"
+keyTakeaway: "Valerian has the stronger case because it has been studied in people. Several human trials and reviews examined valerian for sleep, with mixed but real results. Catnip has a long folk history as a mild relaxant and almost no controlled human research. For an evidence-led choice, valerian is better documented, though neither is a heavyweight."
 postType: "comparison"
 buyIntentTerm: "which magnesium glycinate supplement to buy for sleep"
 relatedProducts: [magnesium-glycinate]

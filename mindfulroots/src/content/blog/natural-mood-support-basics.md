@@ -5,6 +5,7 @@ metaDescription: "Before any supplement earns its place in your routine, five li
 pubDate: 2025-10-14
 cluster: "lifestyle-foundations"
 headTerm: "natural mood support basics"
+keyTakeaway: "Five lifestyle practices carry most of the evidence for mood, stress resilience and sleep: sleep, movement, food, light and connection. Supplements work as additions to that foundation rather than substitutes for it, which is why sequence matters. None of the five is glamorous and all are hard to sustain, but they are what makes everything else work better."
 postType: "pillar"
 buyIntentTerm: "best supplements to start with for mood"
 relatedProducts:

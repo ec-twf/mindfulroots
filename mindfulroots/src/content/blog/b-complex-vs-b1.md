@@ -5,6 +5,7 @@ pubDate: 2026-07-07
 updatedDate: 2026-07-07
 cluster: "b-complex"
 headTerm: "b-complex vs b1"
+keyTakeaway: "A B-complex already contains B1. Thiamine is one of the eight B vitamins in the blend, alongside B2, B3, B5, B6, B7, folate and B12. Buying a separate B1 on top usually just doubles your thiamine, which is worth doing only if a clinician has identified a specific deficiency."
 postType: "comparison"
 buyIntentTerm: "which b complex supplement to buy"
 relatedProducts: [b-complex]

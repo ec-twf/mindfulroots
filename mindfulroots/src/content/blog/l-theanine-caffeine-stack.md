@@ -5,6 +5,7 @@ pubDate: 2026-07-05
 updatedDate: 2026-08-15
 cluster: "l-theanine"
 headTerm: "l-theanine caffeine stack"
+keyTakeaway: "Most controlled trials of the L-theanine and caffeine stack used roughly 2:1, about 200 mg of L-theanine to 100 mg of caffeine. Some used 1:1 at 100 mg each and still saw benefit. Start at 2:1, which gives enough theanine to smooth caffeine's edge while keeping the alertness."
 postType: "explainer"
 buyIntentTerm: "best l-theanine and caffeine supplement"
 relatedProducts: ["l-theanine"]

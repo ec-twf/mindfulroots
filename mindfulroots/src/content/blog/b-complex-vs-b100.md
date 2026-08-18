@@ -5,6 +5,7 @@ pubDate: 2026-07-07
 updatedDate: 2026-07-07
 cluster: "b-complex"
 headTerm: "b-complex vs b100"
+keyTakeaway: "A B-100 is a B-complex. The number refers to potency, roughly 100 mg or 100 mcg of each B vitamin per serving, not to a different formula. Every B-100 is a B-complex; most B-complexes are dosed well below that. The question is how much you need, not which product type."
 postType: "comparison"
 buyIntentTerm: "best b100 complex supplement"
 relatedProducts: [b-complex]

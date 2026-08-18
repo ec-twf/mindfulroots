@@ -5,6 +5,7 @@ pubDate: 2026-08-03
 updatedDate: 2026-08-03
 cluster: "vitamin-d3"
 headTerm: "vitamin-d3 vs calcitriol"
+keyTakeaway: "Vitamin D3 and calcitriol are not the same. D3 (cholecalciferol) is the nutritional form from sun, food and over-the-counter supplements; your body converts it in two steps into calcitriol, the active hormone. Calcitriol is a prescription drug for specific conditions such as kidney disease."
 postType: "comparison"
 buyIntentTerm: "best over-the-counter vitamin d3 supplement"
 relatedProducts: [vitamin-d3]

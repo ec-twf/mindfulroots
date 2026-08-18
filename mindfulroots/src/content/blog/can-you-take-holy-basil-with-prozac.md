@@ -5,6 +5,7 @@ pubDate: 2026-07-29
 updatedDate: 2026-07-29
 cluster: "ashwagandha"
 headTerm: "can you take holy basil with prozac"
+keyTakeaway: "No direct interaction between holy basil and fluoxetine is well documented, but the theoretical case is enough to make this a prescriber's decision. Holy basil shows mild serotonergic activity in preclinical work, which could add to an SSRI's effect, and its blood-thinning action may compound the bleeding risk SSRIs already carry."
 postType: "interaction"
 buyIntentTerm: "best ashwagandha supplement for mood support"
 relatedProducts: [ashwagandha]

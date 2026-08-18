@@ -5,6 +5,7 @@ pubDate: 2026-07-10
 updatedDate: 2026-07-10
 cluster: "saffron-extract"
 headTerm: "saffron extract vs ashwagandha"
+keyTakeaway: "For low mood specifically, saffron has the more directly relevant trial record, with standardised extracts tested against placebo for depressive symptoms in mild to moderate cases. Ashwagandha's evidence centres on stress and anxiety rather than mood itself. If flat mood is the main issue, saffron is the more on-target choice."
 postType: "comparison"
 buyIntentTerm: "saffron or ashwagandha supplement for mood"
 relatedProducts: [saffron-extract]

@@ -5,6 +5,7 @@ pubDate: 2026-08-07
 updatedDate: 2026-08-07
 cluster: "rhodiola-rosea"
 headTerm: "rhodiola dosage cycling"
+keyTakeaway: "Rhodiola trials use 200 to 400 mg a day of a standardised extract, often as a single morning dose. Extracts are typically standardised to about 3% rosavins and 1% salidroside, the ratio in the well-studied SHR-5 extract. Above roughly 600 mg the side-effect risk rises without a proven benefit."
 postType: "dosage"
 buyIntentTerm: "best standardized rhodiola rosea supplement to buy"
 relatedProducts: [rhodiola-rosea]

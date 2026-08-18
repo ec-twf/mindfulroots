@@ -5,6 +5,7 @@ pubDate: 2026-07-23
 updatedDate: 2026-07-23
 cluster: "magnesium-glycinate"
 headTerm: "glycine dosage"
+keyTakeaway: "Glycine sleep trials used 3 grams taken about an hour before bed, and that is the figure to anchor on. Research on other outcomes has gone far higher, up to roughly 0.8 grams per kilogram of body weight, but there is no evidence that more than 3 g improves sleep quality."
 postType: "dosage"
 buyIntentTerm: "best glycine supplement for sleep"
 relatedProducts: [magnesium-glycinate]

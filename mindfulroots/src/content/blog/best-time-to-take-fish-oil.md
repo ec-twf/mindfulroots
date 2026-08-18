@@ -5,6 +5,7 @@ pubDate: 2026-08-01
 updatedDate: 2026-08-01
 cluster: "omega-3-fish-oil"
 headTerm: "best time to take fish oil"
+keyTakeaway: "Neither morning nor night is better for fish oil absorption. What matters is taking it with a meal containing fat, so pick your largest, fattiest meal and stay consistent. Some people take it at night to reduce fishy burps, but no strong evidence shows clock time changes the result."
 postType: "timing"
 buyIntentTerm: "which omega 3 fish oil supplement to buy"
 relatedProducts: [omega-3-fish-oil]

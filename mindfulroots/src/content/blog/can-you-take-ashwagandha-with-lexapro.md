@@ -5,6 +5,7 @@ pubDate: 2026-08-07
 updatedDate: 2026-08-07
 cluster: "ashwagandha"
 headTerm: "can you take ashwagandha with lexapro"
+keyTakeaway: "No dangerous interaction between ashwagandha and escitalopram is documented, and trials have used ashwagandha safely in adults. That is not clearance to combine them. Both can be calming, and ashwagandha affects thyroid and immune activity as well, so anyone on an antidepressant should ask their prescriber before starting it."
 postType: "interaction"
 buyIntentTerm: "best ashwagandha supplement to take with an ssri"
 relatedProducts: [ashwagandha]

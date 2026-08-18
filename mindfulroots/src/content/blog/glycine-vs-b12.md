@@ -5,6 +5,7 @@ pubDate: 2026-08-09
 updatedDate: 2026-08-09
 cluster: "b-complex"
 headTerm: "glycine vs b12"
+keyTakeaway: "For sleep specifically, glycine is the relevant one. It is an amino acid with small trials showing better subjective sleep quality and faster sleep onset when taken before bed, usually at 3 g. B12 has no direct sedative role and matters for sleep only when a deficiency is disrupting your energy or mood."
 postType: "comparison"
 buyIntentTerm: "best vitamin b12 supplement for energy and mood"
 relatedProducts: [b-complex]

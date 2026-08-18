@@ -5,6 +5,7 @@ pubDate: 2026-08-17
 updatedDate: 2026-08-17
 cluster: "saffron-extract"
 headTerm: "can you take saffron extract with sertraline"
+keyTakeaway: "Saffron and sertraline is a prescriber's call. Unlike ashwagandha, saffron does appear to act on serotonin, the same system sertraline works on, so combined serotonergic activity is a plausible concern. Human trials have used saffron alongside an SSRI without serotonin syndrome, but under supervision. Clear it with the clinician who prescribed it."
 postType: "interaction"
 buyIntentTerm: "which saffron extract supplement to take with sertraline"
 relatedProducts: [saffron-extract]

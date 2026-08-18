@@ -5,6 +5,7 @@ pubDate: 2026-07-27
 updatedDate: 2026-07-27
 cluster: "saffron-extract"
 headTerm: "saffron extract side effects"
+keyTakeaway: "At the doses used in mood research, usually around 30 mg a day, saffron extract is generally well tolerated. The most commonly reported side effects are mild: nausea, appetite change, headache, and occasional drowsiness or dry mouth. A safety study in healthy volunteers found normal bloods and vital signs at moderate doses."
 postType: "safety"
 buyIntentTerm: "best saffron extract supplement for daily use"
 relatedProducts: [saffron-extract]

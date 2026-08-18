@@ -5,6 +5,7 @@ pubDate: 2026-07-23
 updatedDate: 2026-07-23
 cluster: "vitamin-d3"
 headTerm: "vitamin-d3 k2 combination"
+keyTakeaway: "Vitamin D3 and K2 work well together and are commonly sold in one softgel. D3 raises how much calcium your gut absorbs, and K2 activates the proteins that direct that calcium into bone rather than soft tissue. The exception is warfarin or another vitamin K antagonist, which K2 can blunt."
 postType: "interaction"
 buyIntentTerm: "best vitamin d3 and k2 supplement"
 relatedProducts: [vitamin-d3]
