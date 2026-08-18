@@ -3,7 +3,7 @@ import { execFileSync } from 'child_process';
 import { join, relative } from 'path';
 import { fileURLToPath } from 'url';
 import type { AstroIntegration } from 'astro';
-import { KEYWORD_MAP } from '../lib/keyword-map.ts';
+import { KEYWORD_MAP, ACCEPTED_KEYWORD_OVERLAPS } from '../lib/keyword-map.ts';
 
 const TITLE_SUFFIX_LEN = 17; // " · MoodSupplement" — mirrors the Base.astro rule
 const TITLE_LIMIT = 60;
@@ -430,7 +430,12 @@ function contentTokens(term: string): Set<string> {
   );
 }
 
+function pairKey(a: string, b: string): string {
+  return [a.trim().toLowerCase(), b.trim().toLowerCase()].sort().join('|||');
+}
+
 export function findNearDuplicateClaims(claims: KeywordClaim[]): string[] {
+  const accepted = new Set(ACCEPTED_KEYWORD_OVERLAPS.map(([a, b]) => pairKey(a, b)));
   const seen = claims
     .map((c) => ({ ...c, tokens: contentTokens(c.term) }))
     .filter((c) => c.tokens.size > 0);
@@ -446,6 +451,7 @@ export function findNearDuplicateClaims(claims: KeywordClaim[]): string[] {
       const union = new Set([...a.tokens, ...b.tokens]).size;
       const jaccard = shared.length / union;
       if (jaccard >= NEAR_DUPLICATE_THRESHOLD) {
+        if (accepted.has(pairKey(a.term, b.term))) continue;
         reports.push(
           `"${a.term}" (${a.file}) vs "${b.term}" (${b.file}) — ${Math.round(jaccard * 100)}% token overlap on {${shared.join(', ')}}`,
         );

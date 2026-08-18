@@ -2,9 +2,10 @@
 title: "Rhodiola vs Ashwagandha for Anxiety"
 description: "Rhodiola rosea vs ashwagandha for anxiety: rhodiola lifts stress-related fatigue, ashwagandha calms and lowers cortisol. Which adaptogen fits which reader."
 pubDate: 2026-07-31
-updatedDate: 2026-07-31
+updatedDate: 2026-08-19
 cluster: "rhodiola-rosea"
 headTerm: "rhodiola rosea vs ashwagandha for anxiety"
+ownsKeywords: ["rhodiola rosea vs ashwagandha"]
 keyTakeaway: "For anxiety with a racing mind and trouble winding down, ashwagandha has the stronger and more direct evidence, and it lowers cortisol. Rhodiola suits stress that shows up as fatigue, low drive and burnout rather than a keyed-up feeling. They tend to solve different problems rather than compete."
 postType: "comparison"
 buyIntentTerm: "rhodiola or ashwagandha supplement for anxiety"
@@ -44,6 +45,14 @@ Ashwagandha (*Withania somnifera*) works more on the calming end. Its withanolid
 | Timing | Morning (can disturb sleep late) | Often evening |
 
 The table makes the split clear. Neither is a false universal winner. If your anxiety is a wired, cannot-switch-off feeling, ashwagandha's calming, cortisol-focused profile is the more logical and better-supported choice. If your stress reads as depletion and burnout, rhodiola's activating profile fits better.
+
+## What the evidence shows
+
+For rhodiola, trials of the standardised SHR-5 extract reported reduced fatigue and improved mental performance in stressed or fatigued adults, including a study in physicians on night duty ([Olsson et al., 2009](https://pubmed.ncbi.nlm.nih.gov/19016404/)). A later trial found rhodiola comparable to a low-dose antidepressant for mild depressive symptoms with fewer side effects, though the effect size was modest ([Mao et al., 2015](https://pubmed.ncbi.nlm.nih.gov/26502953/)).
+
+For ashwagandha, the most-replicated protocol, 300 mg of root extract twice daily, reduced perceived stress and cortisol over eight weeks ([Chandrasekhar et al., 2012](https://pubmed.ncbi.nlm.nih.gov/23439798/)), and the independent [NCCIH overview](https://www.nccih.nih.gov/health/ashwagandha) treats these stress and sleep findings as promising but still developing.
+
+Both bodies of evidence are best described as emerging to moderate: consistent directions, small to medium trials, limited long-term data. Neither herb treats a diagnosed anxiety disorder.
 
 ## Which to buy for anxiety
 

@@ -2,9 +2,10 @@
 title: "L-Tryptophan and Melatonin Together?"
 description: "Can you take L-tryptophan and melatonin together? They sit on the same serotonin pathway, so the pairing is usually gentle. Timing, dosing, and the caveats."
 pubDate: 2026-07-29
-updatedDate: 2026-07-29
+updatedDate: 2026-08-19
 cluster: "5-htp"
 headTerm: "can you take l-tryptophan and melatonin together"
+ownsKeywords: ["l-tryptophan and melatonin together"]
 keyTakeaway: "For most healthy adults there is no known direct interaction between L-tryptophan and melatonin, and they act at different points of one pathway. Tryptophan is the raw material your body converts toward serotonin and then melatonin; supplemental melatonin adds the finished hormone. Watch for additive drowsiness."
 postType: "interaction"
 buyIntentTerm: "best 5-htp supplement for sleep support"
@@ -52,3 +53,10 @@ If the reason you are looking at tryptophan is serotonin support for sleep, most
 The serotonin-syndrome caution is the one that matters most. Because L-tryptophan and 5-HTP raise serotonin activity, combining them with **SSRIs, SNRIs, MAOIs, triptans, tramadol, or other serotonergic drugs** can push serotonin too high, a potentially dangerous reaction ([Boyer & Shannon, 2005](https://doi.org/10.1056/NEJMra041867)). Melatonin has its own interactions, including with blood thinners, blood-pressure medication, diabetes medication, and immunosuppressants. Older L-tryptophan supplements were also linked to an eosinophilia-myalgia outbreak in 1989 traced to a contaminated batch, which is why third-party-tested products matter. If you are pregnant, breastfeeding, or taking any prescription medication, talk to your prescriber before combining these. For mood or sleep struggles that feel persistent, please reach out through our [get-help resources](/get-help/).
 
 *This article is for general education and is not medical advice. See our [full disclaimer](/disclaimer/) and [get-help resources](/get-help/). Always talk to your prescriber before combining supplements with medication.*
+
+## Sources
+
+- Ferracioli-Oda E, et al. *Meta-Analysis: Melatonin for the Treatment of Primary Sleep Disorders.* PLoS One. 2013. [doi:10.1371/journal.pone.0063773](https://doi.org/10.1371/journal.pone.0063773)
+- Shaw K, et al. *Tryptophan and 5-Hydroxytryptophan for Depression.* Cochrane Database Syst Rev. 2002. [doi:10.1002/14651858.CD003198](https://doi.org/10.1002/14651858.CD003198)
+- Boyer EW, Shannon M. *The Serotonin Syndrome.* N Engl J Med. 2005. [PubMed](https://pubmed.ncbi.nlm.nih.gov/15784664/)
+- NCCIH. *Melatonin: What You Need To Know.* [nccih.nih.gov](https://www.nccih.nih.gov/health/melatonin-what-you-need-to-know)

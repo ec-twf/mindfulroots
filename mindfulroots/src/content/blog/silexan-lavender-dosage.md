@@ -4,7 +4,7 @@ description: "Silexan lavender dosage explained: the 80 mg capsule used in anxie
 pubDate: 2026-07-25
 updatedDate: 2026-07-25
 cluster: "ashwagandha"
-headTerm: "silexan lavender dosage"
+headTerm: "silexan dosage"
 keyTakeaway: "Most Silexan trials used 80 mg once daily, as a single oral capsule of the standardised lavender oil. Some studies of more pronounced anxiety symptoms used 160 mg a day. Because 80 mg carries the widest evidence base, it is the usual starting point, with any increase left to a clinician."
 postType: "dosage"
 buyIntentTerm: "best lavender oil supplement for anxiety"

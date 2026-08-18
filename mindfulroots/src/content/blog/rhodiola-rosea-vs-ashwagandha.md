@@ -4,12 +4,11 @@ description: "Rhodiola rosea vs ashwagandha compared: which adaptogen suits stre
 pubDate: 2026-07-21
 updatedDate: 2026-07-21
 cluster: "rhodiola-rosea"
-headTerm: "rhodiola rosea vs ashwagandha"
 keyTakeaway: "Rhodiola and ashwagandha are both adaptogens studied for stress, but they suit different profiles. Ashwagandha helps stress that comes with tension, poor sleep and raised cortisol. Rhodiola helps stress that shows up as fatigue, low drive and mental tiredness. Match the herb to your dominant symptom."
 postType: "comparison"
 buyIntentTerm: "best rhodiola rosea supplement for stress and fatigue"
 relatedProducts: [rhodiola-rosea]
-draft: false
+draft: true
 faq:
   - q: "Is rhodiola or ashwagandha better for stress?"
     a: "Both are adaptogens studied for stress, but they suit different profiles. Ashwagandha tends to help stress that comes with tension, poor sleep, and elevated cortisol. Rhodiola tends to help stress that shows up as fatigue, low drive, and mental tiredness. Many people match the herb to their dominant symptom."

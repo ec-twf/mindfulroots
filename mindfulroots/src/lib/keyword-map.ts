@@ -45,7 +45,7 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: 'vitamin d seasonal depression', owner: '/blog/vitamin-d-winter-mood/', intent: 'informational' },
 
   // Adaptogens
-  { headTerm: 'ashwagandha vs rhodiola', owner: '/blog/adaptogens-ashwagandha-rhodiola/', intent: 'comparison' },
+  { headTerm: 'adaptogens for stress', owner: '/blog/adaptogens-ashwagandha-rhodiola/', intent: 'informational' },
   { headTerm: 'ashwagandha cortisol', owner: '/blog/ashwagandha-cortisol-research/', intent: 'informational' },
 
   // Condition hubs (/guides/*) — commercial-intent middle layer. Each owns a
@@ -74,7 +74,7 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: 'can you take 5-htp with adderall', owner: '/blog/can-you-take-5-htp-with-adderall/', intent: 'informational' },
   { headTerm: 'can you take l-tryptophan and melatonin together', owner: '/blog/can-you-take-l-tryptophan-and-melatonin-together/', intent: 'informational' },
   { headTerm: 'is 5-htp safe to take every day', owner: '/blog/is-5-htp-safe-to-take-every-day/', intent: 'informational' },
-  { headTerm: 'l-tryptophan and melatonin together', owner: '/blog/l-tryptophan-and-melatonin-together/', intent: 'informational' },
+  { headTerm: 'l-tryptophan and melatonin together', owner: '/blog/can-you-take-l-tryptophan-and-melatonin-together/', intent: 'informational' },
   { headTerm: 'l-tryptophan vs 5-htp for anxiety', owner: '/blog/l-tryptophan-vs-5-htp-for-anxiety/', intent: 'comparison' },
 
   // ashwagandha
@@ -87,7 +87,7 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: 'can you take holy basil with prozac', owner: '/blog/can-you-take-holy-basil-with-prozac/', intent: 'informational' },
   { headTerm: 'dosage of holy basil for anxiety', owner: '/blog/dosage-of-holy-basil-for-anxiety/', intent: 'informational' },
   { headTerm: 'lemon balm vs ashwagandha', owner: '/blog/lemon-balm-vs-ashwagandha/', intent: 'comparison' },
-  { headTerm: 'silexan lavender dosage', owner: '/blog/silexan-lavender-dosage/', intent: 'informational' },
+  { headTerm: 'silexan dosage', owner: '/blog/silexan-lavender-dosage/', intent: 'informational' },
   { headTerm: 'silexan vs lavender', owner: '/blog/silexan-vs-lavender/', intent: 'comparison' },
   { headTerm: 'valerian root vs ashwagandha for sleep', owner: '/blog/valerian-root-vs-ashwagandha-for-sleep/', intent: 'comparison' },
 
@@ -131,7 +131,7 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: 'magnesium glycinate dosage for anxiety', owner: '/blog/magnesium-glycinate-dosage-for-anxiety/', intent: 'informational' },
   { headTerm: 'magnesium glycinate morning or night', owner: '/blog/magnesium-glycinate-morning-or-night/', intent: 'informational' },
   { headTerm: 'magnesium glycinate vs bisglycinate', owner: '/blog/magnesium-glycinate-vs-bisglycinate/', intent: 'comparison' },
-  { headTerm: 'magnesium glycinate vs chelate', owner: '/blog/magnesium-glycinate-vs-chelate/', intent: 'comparison' },
+  { headTerm: 'magnesium glycinate vs chelate', owner: '/blog/magnesium-glycinate-vs-bisglycinate/', intent: 'comparison' },
   { headTerm: 'valerian root vs catnip', owner: '/blog/valerian-root-vs-catnip/', intent: 'comparison' },
 
   // omega-3-fish-oil
@@ -152,7 +152,7 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: 'can you take rhodiola rosea with sertraline', owner: '/blog/can-you-take-rhodiola-rosea-with-sertraline/', intent: 'informational' },
   { headTerm: 'how long does rhodiola rosea take to work', owner: '/blog/how-long-does-rhodiola-rosea-take-to-work/', intent: 'informational' },
   { headTerm: 'rhodiola dosage cycling', owner: '/blog/rhodiola-dosage-cycling/', intent: 'informational' },
-  { headTerm: 'rhodiola rosea vs ashwagandha', owner: '/blog/rhodiola-rosea-vs-ashwagandha/', intent: 'comparison' },
+  { headTerm: 'rhodiola rosea vs ashwagandha', owner: '/blog/rhodiola-rosea-vs-ashwagandha-for-anxiety/', intent: 'comparison' },
   { headTerm: 'rhodiola rosea vs ashwagandha for anxiety', owner: '/blog/rhodiola-rosea-vs-ashwagandha-for-anxiety/', intent: 'comparison' },
 
   // saffron-extract
@@ -171,4 +171,66 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: 'vitamin-d3 morning or night', owner: '/blog/vitamin-d3-morning-or-night/', intent: 'informational' },
   { headTerm: 'vitamin-d3 vs b12', owner: '/blog/vitamin-d3-vs-b12/', intent: 'comparison' },
   { headTerm: 'vitamin-d3 vs calcitriol', owner: '/blog/vitamin-d3-vs-calcitriol/', intent: 'comparison' },
+];
+
+// ─── Reviewed overlaps ──────────────────────────────────────────────────────
+// seo-guard's near-duplicate check compares content tokens, which cannot tell
+// "same entity" from "same query": "can you take saffron extract with lexapro"
+// and "saffron extract vs affron" share {saffron, extract} and nothing else.
+// Raising the threshold would drop the magnesium pair, which was the one that
+// mattered, so the threshold stays at 50% and reviewed pairs are listed here
+// instead. Three genuine duplicates were merged and 301'd on 2026-08-19; what
+// remains is entity overlap across different intents.
+//
+// A pair listed here is a decision, not a suppression. Remove the entry if the
+// two pages ever start converging in what they actually answer. Anything NOT
+// listed still warns, so a new post that collides is visible on the next build.
+export const ACCEPTED_KEYWORD_OVERLAPS: ReadonlyArray<readonly [string, string]> = [
+  ['ashwagandha for sleep', 'valerian root vs ashwagandha for sleep'],
+  ['best time to take fish oil', 'fish oil cortisol'],
+  ['can you take lemon balm and melatonin together', 'can you take lemon balm with levothyroxine'],
+  ['can you take lemon balm and melatonin together', 'lemon balm vs ashwagandha'],
+  ['can you take lemon balm and melatonin together', 'lemon balm vs bee balm'],
+  ['can you take lemon balm with levothyroxine', 'lemon balm vs ashwagandha'],
+  ['can you take lemon balm with levothyroxine', 'lemon balm vs bee balm'],
+  ['can you take magnesium glycinate and melatonin together', 'how long does magnesium glycinate take to work'],
+  ['can you take magnesium glycinate and melatonin together', 'magnesium citrate vs glycinate'],
+  ['can you take magnesium glycinate and melatonin together', 'magnesium glycinate or citrate'],
+  ['can you take magnesium glycinate and melatonin together', 'magnesium glycinate vs bisglycinate'],
+  ['can you take magnesium glycinate and melatonin together', 'magnesium glycinate vs chelate'],
+  ['can you take magnesium glycinate and melatonin together', 'magnesium glycinate vs citrate'],
+  ['can you take omega-3 fish oil with statins', 'omega-3 fish oil vs algae'],
+  ['can you take omega-3 fish oil with statins', 'omega-3 fish oil vs cod liver oil'],
+  ['can you take rhodiola rosea with levothyroxine', 'can you take rhodiola rosea with sertraline'],
+  ['can you take rhodiola rosea with levothyroxine', 'how long does rhodiola rosea take to work'],
+  ['can you take rhodiola rosea with levothyroxine', 'rhodiola rosea vs ashwagandha'],
+  ['can you take rhodiola rosea with sertraline', 'how long does rhodiola rosea take to work'],
+  ['can you take rhodiola rosea with sertraline', 'rhodiola rosea vs ashwagandha'],
+  ['can you take saffron extract with lexapro', 'can you take saffron extract with sertraline'],
+  ['can you take saffron extract with lexapro', 'how long does saffron extract take to work'],
+  ['can you take saffron extract with lexapro', 'saffron extract vs affron'],
+  ['can you take saffron extract with lexapro', 'saffron extract vs ashwagandha'],
+  ['can you take saffron extract with sertraline', 'how long does saffron extract take to work'],
+  ['can you take saffron extract with sertraline', 'saffron extract vs affron'],
+  ['can you take saffron extract with sertraline', 'saffron extract vs ashwagandha'],
+  ['can you take valerian root and melatonin together', 'valerian root vs catnip'],
+  ['how long does magnesium glycinate take to work', 'magnesium citrate vs glycinate'],
+  ['how long does magnesium glycinate take to work', 'magnesium glycinate or citrate'],
+  ['how long does magnesium glycinate take to work', 'magnesium glycinate vs bisglycinate'],
+  ['how long does magnesium glycinate take to work', 'magnesium glycinate vs chelate'],
+  ['how long does magnesium glycinate take to work', 'magnesium glycinate vs citrate'],
+  ['how long does rhodiola rosea take to work', 'rhodiola rosea vs ashwagandha'],
+  ['how long does saffron extract take to work', 'saffron extract vs affron'],
+  ['how long does saffron extract take to work', 'saffron extract vs ashwagandha'],
+  ['l-theanine caffeine stack', 'l-theanine vs caffeine'],
+  ['lemon balm vs ashwagandha', 'lemon balm vs bee balm'],
+  ['magnesium glycinate vs bisglycinate', 'magnesium citrate vs glycinate'],
+  ['magnesium glycinate vs bisglycinate', 'magnesium glycinate or citrate'],
+  ['magnesium glycinate vs bisglycinate', 'magnesium glycinate vs citrate'],
+  ['magnesium glycinate vs chelate', 'magnesium citrate vs glycinate'],
+  ['magnesium glycinate vs chelate', 'magnesium glycinate or citrate'],
+  ['magnesium glycinate vs chelate', 'magnesium glycinate vs citrate'],
+  ['omega-3 fish oil vs algae', 'omega-3 fish oil vs cod liver oil'],
+  ['saffron extract vs affron', 'saffron extract vs ashwagandha'],
+  ['vitamin d seasonal depression', 'vitamin d supplement for seasonal depression'],
 ];

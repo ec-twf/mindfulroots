@@ -4,12 +4,11 @@ description: "Can you take L-tryptophan and melatonin together? They sit on one 
 pubDate: 2026-08-03
 updatedDate: 2026-08-03
 cluster: "5-htp"
-headTerm: "l-tryptophan and melatonin together"
 keyTakeaway: "For most healthy adults there is no documented interaction between L-tryptophan and melatonin, and they act at different points of one pathway. Tryptophan is the raw material converted toward serotonin and then melatonin; supplemental melatonin adds the finished hormone. Additive next-day drowsiness is the realistic caution."
 postType: "interaction"
 buyIntentTerm: "best 5-htp supplement to take with melatonin"
 relatedProducts: [5-htp]
-draft: false
+draft: true
 faq:
   - q: "Can you take L-tryptophan and melatonin together?"
     a: "For most healthy adults there is no documented direct interaction, and the two act at different points of the same pathway. Tryptophan is the raw material your body converts toward serotonin and then melatonin, while supplemental melatonin adds the finished hormone. The real cautions are additive next-day drowsiness and tryptophan's clash with serotonergic medication, so clear it with your prescriber if you take an antidepressant."

@@ -10,3 +10,12 @@ https://moodsupplement.net/*     https://www.moodsupplement.net/:splat  301!
 # the pillar; this must fire before the canonical-host rules above would
 # otherwise 404 it post-build.
 /blog/magnesium-glycinate-vs-citrate/  /blog/magnesium-stress-sleep-guide/  301
+
+# Cannibalization cleanup 2026-08-19, from the seo-guard near-duplicate report
+# (data/cannibalization-2026-08-18.md). Each retired page was set draft: true
+# and its unique material carried into the survivor; the survivor claims the
+# retired head term via ownsKeywords so the registry still resolves.
+/blog/magnesium-glycinate-vs-chelate/  /blog/magnesium-glycinate-vs-bisglycinate/  301
+/blog/l-tryptophan-and-melatonin-together/  /blog/can-you-take-l-tryptophan-and-melatonin-together/  301
+/blog/rhodiola-rosea-vs-ashwagandha/  /blog/rhodiola-rosea-vs-ashwagandha-for-anxiety/  301
+

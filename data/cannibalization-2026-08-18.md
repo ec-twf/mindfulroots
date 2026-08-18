@@ -35,3 +35,42 @@ the pair also shares intent, which is the judgement the table above encodes.
 
 Raising the threshold would drop the magnesium pair, which is the one that
 matters most, so the threshold stays at 50% and the noise is accepted.
+
+---
+
+## Outcome, 2026-08-19
+
+Approved and executed. Survivors were chosen on position and impressions, not
+word count.
+
+| Retired (draft: true, 301'd) | Survivor | Before |
+|---|---|---|
+| `magnesium-glycinate-vs-chelate` | `magnesium-glycinate-vs-bisglycinate` | 98 imp @ pos 76 vs 106 imp @ **pos 60.8** |
+| `l-tryptophan-and-melatonin-together` | `can-you-take-l-tryptophan-and-melatonin-together` | 2 imp @ pos 81 vs 0 imp |
+| `rhodiola-rosea-vs-ashwagandha` | `rhodiola-rosea-vs-ashwagandha-for-anxiety` | 10 imp @ pos 78.1 vs 18 imp @ pos 80.3 |
+
+The magnesium pair was the only one with real volume: 204 impressions split
+across two URLs sitting 15 positions apart. Unique material was carried into
+each survivor rather than discarded (the chelation explanation and its two
+absorption citations, the melatonin sources block, the rhodiola SHR-5 and
+Chandrasekhar evidence section), and each survivor claims the retired head term
+via `ownsKeywords` so the registry still resolves after the redirect.
+
+### Differentiated instead of merged
+
+- `adaptogens-ashwagandha-rhodiola` retargeted from `ashwagandha vs rhodiola` to
+  `adaptogens for stress`. It is a 2,870-word pillar with 82 impressions and hub
+  links; a pillar does not get 301'd into a spoke.
+- `silexan-lavender-dosage` retargeted to `silexan dosage`, which drops the
+  overlap with `silexan vs lavender` below the threshold. The two answer "how
+  much" and "is it the same thing", which are different questions.
+- `l-theanine-caffeine-stack` and `l-theanine-vs-caffeine` left alone. The
+  latter has 147 impressions, the most of any l-theanine page, and "what ratio"
+  is not "which one".
+
+### The remaining 47 pairs
+
+Reviewed and recorded in `ACCEPTED_KEYWORD_OVERLAPS` in `src/lib/keyword-map.ts`
+rather than left to warn on every build. A warning that cannot be cleared is one
+people stop reading. Anything not on that list still fires, so a new post that
+collides shows up on the next build.
