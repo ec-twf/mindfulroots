@@ -58,4 +58,8 @@ jobs:
             exit 0
           fi
           git commit -m "data(gsc): weekly pattern scoreboard $(date -u +%Y-%m-%d)"
+          # price-sync writes to main the same morning. Rebase instead of losing
+          # the scoreboard to a fast-forward rejection — the optimizer no-ops
+          # without it, which is the failure this whole job exists to prevent.
+          git pull --rebase origin main
           git push

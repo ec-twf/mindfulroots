@@ -58,6 +58,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add mindfulroots/src/data/product-prices.json
           git commit -m "chore(prices): weekly retailer price refresh"
+          # gsc-patterns writes to main the same morning; rebase over it.
+          git pull --rebase origin main
           git push
 
       # Only fires when sync-sr-prices.mjs exits non-zero — a retired variant or
