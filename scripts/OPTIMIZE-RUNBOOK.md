@@ -13,24 +13,35 @@ cd /Users/ejc/mindfulroots
 
 ## 1. Pull fresh Search Console data
 
+The `gsc-patterns` workflow already commits `data/gsc/<date>-patterns.csv` every Monday — the
+cluster/type scoreboard, and the only GSC view the headless optimizer can see. Read the newest
+one first. Pull the full per-query detail locally only when the scoreboard raises a question:
+
 ```bash
 venv/bin/python scripts/gsc-pull.py --days 28
 ```
 
-- Writes `data/gsc/<date>.csv` (query, page, clicks, impressions, ctr, position).
+- Writes `data/gsc/<date>.csv` (query, page, clicks, impressions, ctr, position). Gitignored —
+  the rolled-up `*-patterns.csv` is the committed artifact.
 - Property defaults to `sc-domain:moodsupplement.net`. Override with `--property` or `GSC_PROPERTY` if that ever changes.
 - **403 error** = the service account isn't granted on the property string being queried. See `scripts/GSC-SETUP.md` (URL-prefix vs Domain property gotcha). Diagnose with the accessible-sites list in that doc.
 - **Key missing error** = one-time setup not done; follow `scripts/GSC-SETUP.md`.
 
-## 2. Run net-new discovery (credential-free)
+## 2. Read the discovery shortlist (already in the repo)
 
-```bash
-venv/bin/python scripts/keyword-harvest.py data/keyword-harvest-raw.csv
-venv/bin/python scripts/filter-candidates.py
-```
+Nothing to run. The `discovery` Actions workflow scrapes Google + Amazon autocomplete on the
+14th and 28th and commits `data/discovery/<date>-candidates.csv` — the day before each pass, so
+the newest file is on `main` when you start. Just open the latest one.
 
-- `keyword-harvest.py` scrapes Google + Amazon autocomplete (seed × modifier matrix). Hits live endpoints — takes a minute, be patient.
-- `filter-candidates.py` drops anything already owned in `mindfulroots/src/lib/keyword-map.ts`, already in the queue, or already in `data/keyword-universe.csv`. Writes `data/discovery/<date>-candidates.csv` (buy-intent rows first).
+- Rows are buy-intent first, then round-robin across the 19 seeds, so the head of the file
+  covers every seed rather than burying 18 of them under the alphabetical winner.
+- Already filtered: anything owned in `mindfulroots/src/lib/keyword-map.ts`, already queued,
+  already in `data/keyword-universe.csv`, or an off-topic sense of the seed (pet dosing,
+  gardening). What's left needs SERP judgment, which is step 3's job.
+- To force a fresh pull between scheduled runs: `gh workflow run discovery.yml`.
+- Running the scripts locally still works (`venv/bin/python scripts/keyword-harvest.py
+  data/keyword-harvest-raw.csv` then `venv/bin/python scripts/filter-candidates.py`) but is only
+  needed for debugging — the raw dump stays gitignored either way.
 
 ## 3. Open Claude Code and run the pass
 
@@ -66,7 +77,9 @@ Before finishing, sanity-check: are posts published since last pass getting inde
 ## 6. Log + commit
 
 - `/optimize-content` appends one paragraph to `data/optimize-log.md` (date, what moved, what changed, what's queued).
-- Commit the queue + log changes on a branch and open a PR (raw `data/gsc/` and `data/discovery/` snapshots are gitignored — they don't get committed):
+- Commit the queue + log changes on a branch and open a PR. The raw `data/gsc/<date>.csv` and
+  `data/keyword-harvest-raw.csv` dumps are gitignored; the `*-patterns.csv` scoreboard and
+  `*-candidates.csv` shortlist are committed by their own workflows, not by you:
 
 ```bash
 git checkout -b optimize/$(date +%Y-%m-%d)

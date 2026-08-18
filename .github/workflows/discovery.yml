@@ -1,0 +1,59 @@
+# Biweekly net-new keyword discovery -> commits the candidate shortlist to
+# data/discovery/. This is GSC's blind spot: GSC only shows queries the site
+# already earns impressions for, so it can never surface demand for a topic
+# with no page yet. Autocomplete can.
+#
+# Why Actions and not the optimizer Routine: scraping two live autocomplete
+# endpoints across a 19-seed x 11-modifier matrix is mechanical and
+# network-heavy, with no judgment in it — same rationale as gsc-patterns.yml.
+# The judgment half (WebSearch the shortlist, keep only winnable SERPs, write
+# queue lines) stays in /optimize-content, which reads the CSV this job commits.
+#
+# Runs the day BEFORE each optimize pass so the shortlist is already on main
+# when that pass clones the repo. Before this existed the scripts were
+# local-only, nobody ran them, and data/discovery/ sat empty for five weeks.
+#
+# No secrets needed — both endpoints are public and the scripts are stdlib-only.
+name: discovery
+
+on:
+  schedule:
+    - cron: '0 2 14,28 * *' # 02:00 UTC = 10:00 HKT, day before the 15th/1st pass
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Deliberately polite: keyword-harvest.py sleeps 300ms between requests,
+      # so the full matrix takes several minutes. Don't parallelise it.
+      - name: Harvest autocomplete candidates
+        run: python3 scripts/keyword-harvest.py data/keyword-harvest-raw.csv
+
+      # Drops anything owned in keyword-map.ts, already queued, already in the
+      # universe CSV, or off-topic (pet/garden senses of the seed words).
+      - name: Filter to a clean shortlist
+        run: python3 scripts/filter-candidates.py
+
+      - name: Commit shortlist
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/discovery/
+          if git diff --cached --quiet; then
+            echo "no new discovery candidates"
+            exit 0
+          fi
+          git commit -m "data(discovery): biweekly candidate shortlist $(date -u +%Y-%m-%d)"
+          git pull --rebase origin main
+          git push

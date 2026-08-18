@@ -27,6 +27,18 @@ BUY_INTENT_MARKERS = [
     "for sleep", "for anxiety", "for stress", "interaction", "with ",
 ]
 
+# Autocomplete returns the whole ambiguity of a seed word: lemon balm and holy
+# basil are also garden plants, and people dose their pets. Neither can map to
+# one of the 10 products, which the review gate requires, so they are noise the
+# judgment pass should never have to read.
+NOISE_MARKERS = [
+    " for dogs", " for cats", " for pets", " for horses", "puppy", "kitten",
+    "veterinary", "fertilizer", "how to grow", " grow ", " growing",
+    " plant ", " plants", " seeds", "seedling", "propagate", "garden", "soil",
+    "prune", " indoors", " outdoors",
+    "essential oil recipe", "candle", "soap",
+]
+
 
 def norm(s: str) -> str:
     """lowercase, strip, collapse internal whitespace, strip surrounding quotes/trailing punctuation."""
@@ -90,6 +102,12 @@ def is_buy_intent(n: str) -> bool:
     return any(marker in n for marker in BUY_INTENT_MARKERS)
 
 
+def is_noise(n: str) -> bool:
+    """Off-topic sense of the seed word — pets, gardening, craft use."""
+    padded = f" {n} "
+    return any(marker in padded for marker in NOISE_MARKERS)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--in", dest="in_path", default="data/keyword-harvest-raw.csv")
@@ -110,6 +128,7 @@ def main():
     raw = 0
     dropped_owned = 0
     dropped_queued_universe = 0
+    dropped_noise = 0
     seen: set[str] = set()
     kept = []
 
@@ -129,6 +148,9 @@ def main():
             if n in queued or n in universe:
                 dropped_queued_universe += 1
                 continue
+            if is_noise(n):
+                dropped_noise += 1
+                continue
 
             kept.append({
                 "candidate_phrase": phrase.strip(),
@@ -137,7 +159,19 @@ def main():
                 "reason_kept": "new (no collision with keyword-map/queue/universe)",
             })
 
+    # Buy-intent first, then round-robin across seeds. Straight alphabetical
+    # ordering buried every seed after the first: the consumer of this file
+    # judges "the top buy-intent rows", and with ~1800 rows that meant it only
+    # ever saw 5-htp. Interleaving makes the head of the file representative.
     kept.sort(key=lambda r: (not r["buy_intent"], r["candidate_phrase"].lower()))
+    rank: dict[tuple[bool, str], int] = {}
+    for r in kept:
+        key = (r["buy_intent"], r["seed"])
+        rank[key] = rank.get(key, -1) + 1
+        r["_rank"] = rank[key]
+    kept.sort(key=lambda r: (not r["buy_intent"], r["_rank"], r["seed"]))
+    for r in kept:
+        del r["_rank"]
 
     with open(out_path, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=["candidate_phrase", "seed", "buy_intent", "reason_kept"])
@@ -146,8 +180,8 @@ def main():
 
     print(
         f"{raw} raw -> {len(kept)} kept "
-        f"(dropped {dropped_owned} owned, {dropped_queued_universe} already-queued/universe) "
-        f"-> {out_path}",
+        f"(dropped {dropped_owned} owned, {dropped_queued_universe} already-queued/universe, "
+        f"{dropped_noise} off-topic) -> {out_path}",
         file=sys.stderr,
     )
 

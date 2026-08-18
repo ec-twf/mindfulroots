@@ -7,5 +7,9 @@
 # must reach the repo, or every /optimize-content fire no-ops with NO_DATA.
 data/gsc/*.csv
 !data/gsc/*-patterns.csv
+# Same exception for the discovery shortlist: the optimizer runs headless in the
+# cloud and cannot scrape autocomplete itself, so the committed CSV is its only
+# view of net-new demand. The raw harvest dump stays ignored.
 data/discovery/*.csv
+!data/discovery/*-candidates.csv
 data/keyword-harvest-raw.csv
