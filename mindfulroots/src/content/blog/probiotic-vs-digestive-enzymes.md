@@ -4,6 +4,7 @@ description: "Probiotic vs digestive enzymes: they do different jobs. Enzymes br
 pubDate: 2026-07-07
 updatedDate: 2026-07-07
 cluster: "probiotic-gut-brain"
+headTerm: "probiotic vs digestive enzymes"
 postType: "comparison"
 buyIntentTerm: "probiotic or digestive enzyme supplement which to buy"
 relatedProducts: [probiotic-gut-brain]

@@ -4,6 +4,7 @@ description: "L-theanine dosage for anxiety: most trials used 200 to 400 mg a da
 pubDate: 2026-08-03
 updatedDate: 2026-08-03
 cluster: "l-theanine"
+headTerm: "l-theanine dosage anxiety"
 postType: "dosage"
 buyIntentTerm: "best l-theanine supplement for anxiety dosing"
 relatedProducts: [l-theanine]

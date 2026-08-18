@@ -4,6 +4,7 @@ description: "Valerian vs ashwagandha for sleep: valerian is a fast bedtime seda
 pubDate: 2026-08-13
 updatedDate: 2026-08-13
 cluster: "ashwagandha"
+headTerm: "valerian root vs ashwagandha for sleep"
 postType: "comparison"
 buyIntentTerm: "valerian or ashwagandha supplement for sleep"
 relatedProducts: [ashwagandha]

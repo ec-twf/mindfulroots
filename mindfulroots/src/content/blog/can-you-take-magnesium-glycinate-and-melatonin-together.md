@@ -4,6 +4,7 @@ description: "Can you take magnesium glycinate and melatonin together? Here's th
 pubDate: 2026-07-05
 updatedDate: 2026-07-05
 cluster: "magnesium-glycinate"
+headTerm: "can you take magnesium glycinate and melatonin together"
 postType: "interaction"
 buyIntentTerm: "best magnesium glycinate and melatonin combination"
 relatedProducts: [magnesium-glycinate]

@@ -4,6 +4,7 @@ description: "Can you take omega-3 fish oil with statins? What the evidence says
 pubDate: 2026-07-21
 updatedDate: 2026-07-21
 cluster: "omega-3-fish-oil"
+headTerm: "can you take omega-3 fish oil with statins"
 postType: "interaction"
 buyIntentTerm: "best omega 3 fish oil supplement for statin users"
 relatedProducts: [omega-3-fish-oil]

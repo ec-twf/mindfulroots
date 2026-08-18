@@ -4,6 +4,7 @@ description: "Best time to take fish oil: the hour matters less than the meal. T
 pubDate: 2026-08-01
 updatedDate: 2026-08-01
 cluster: "omega-3-fish-oil"
+headTerm: "best time to take fish oil"
 postType: "timing"
 buyIntentTerm: "which omega 3 fish oil supplement to buy"
 relatedProducts: [omega-3-fish-oil]

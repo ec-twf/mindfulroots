@@ -5,6 +5,7 @@ metaDescription: "Saffron has surprisingly strong human research behind it for l
 pubDate: 2026-06-22
 updatedDate: 2026-06-30
 cluster: "saffron-extract"
+headTerm: "saffron mood research"
 postType: "explainer"
 buyIntentTerm: "best saffron extract supplement for mood"
 relatedProducts: ["saffron-extract"]

@@ -4,6 +4,7 @@ description: "B-complex vs B100: a B-100 is simply a high-potency B-complex dose
 pubDate: 2026-07-07
 updatedDate: 2026-07-07
 cluster: "b-complex"
+headTerm: "b-complex vs b100"
 postType: "comparison"
 buyIntentTerm: "best b100 complex supplement"
 relatedProducts: [b-complex]

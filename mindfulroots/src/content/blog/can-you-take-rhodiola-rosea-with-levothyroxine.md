@@ -4,6 +4,7 @@ description: "Can you take rhodiola rosea with levothyroxine? No documented inte
 pubDate: 2026-07-06
 updatedDate: 2026-07-06
 cluster: "rhodiola-rosea"
+headTerm: "can you take rhodiola rosea with levothyroxine"
 postType: "interaction"
 buyIntentTerm: "best rhodiola rosea supplement for thyroid patients"
 relatedProducts: [rhodiola-rosea]

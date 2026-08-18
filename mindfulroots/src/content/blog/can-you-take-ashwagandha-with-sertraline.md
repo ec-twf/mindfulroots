@@ -4,6 +4,7 @@ description: "Can you take ashwagandha with sertraline? Usually low-risk, but ad
 pubDate: 2026-08-13
 updatedDate: 2026-08-13
 cluster: "ashwagandha"
+headTerm: "can you take ashwagandha with sertraline"
 postType: "interaction"
 buyIntentTerm: "which ashwagandha supplement to take with sertraline"
 relatedProducts: [ashwagandha]

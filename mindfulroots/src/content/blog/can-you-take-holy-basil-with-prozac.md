@@ -4,6 +4,7 @@ description: "Can you take holy basil with Prozac? The theoretical serotonin and
 pubDate: 2026-07-29
 updatedDate: 2026-07-29
 cluster: "ashwagandha"
+headTerm: "can you take holy basil with prozac"
 postType: "interaction"
 buyIntentTerm: "best ashwagandha supplement for mood support"
 relatedProducts: [ashwagandha]

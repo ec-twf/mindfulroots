@@ -4,6 +4,7 @@ description: "Ashwagandha vs KSM-66: KSM-66 is a branded, standardised extract o
 pubDate: 2026-07-27
 updatedDate: 2026-07-27
 cluster: "ashwagandha"
+headTerm: "ashwagandha vs ksm-66"
 postType: "brand-comparison"
 buyIntentTerm: "best ksm-66 ashwagandha supplement"
 relatedProducts: [ashwagandha]

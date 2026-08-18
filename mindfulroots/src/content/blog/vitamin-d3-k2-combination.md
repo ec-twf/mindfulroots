@@ -4,6 +4,7 @@ description: "Vitamin D3 and K2 together: why the pairing routes calcium into bo
 pubDate: 2026-07-23
 updatedDate: 2026-07-23
 cluster: "vitamin-d3"
+headTerm: "vitamin-d3 k2 combination"
 postType: "interaction"
 buyIntentTerm: "best vitamin d3 and k2 supplement"
 relatedProducts: [vitamin-d3]

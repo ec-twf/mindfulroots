@@ -4,6 +4,7 @@ description: "Vitamin D3 vs B12: they fix different deficiencies, not the same o
 pubDate: 2026-07-23
 updatedDate: 2026-07-23
 cluster: "vitamin-d3"
+headTerm: "vitamin-d3 vs b12"
 postType: "comparison"
 buyIntentTerm: "which vitamin d3 supplement to buy"
 relatedProducts: [vitamin-d3, b-complex]

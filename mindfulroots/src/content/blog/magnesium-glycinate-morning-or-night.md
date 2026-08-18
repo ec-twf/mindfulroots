@@ -4,6 +4,7 @@ description: "Magnesium glycinate morning or night? Either works, but night is t
 pubDate: 2026-08-07
 updatedDate: 2026-08-07
 cluster: "magnesium-glycinate"
+headTerm: "magnesium glycinate morning or night"
 postType: "timing"
 buyIntentTerm: "best magnesium glycinate supplement for nighttime use"
 relatedProducts: [magnesium-glycinate]

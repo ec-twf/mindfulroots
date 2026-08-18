@@ -4,6 +4,7 @@ description: "How long does it take for L-theanine to work? Blood levels peak in
 pubDate: 2026-07-25
 updatedDate: 2026-07-25
 cluster: "l-theanine"
+headTerm: "how long does it take for l-theanine to work"
 postType: "duration"
 buyIntentTerm: "best fast acting l-theanine supplement"
 relatedProducts: [l-theanine]

@@ -4,6 +4,7 @@ description: "Glycine vs B12: they are not really rivals. Glycine is an amino ac
 pubDate: 2026-08-09
 updatedDate: 2026-08-09
 cluster: "b-complex"
+headTerm: "glycine vs b12"
 postType: "comparison"
 buyIntentTerm: "best vitamin b12 supplement for energy and mood"
 relatedProducts: [b-complex]

@@ -4,6 +4,7 @@ description: "Can you take lemon balm and melatonin together? Both support sleep
 pubDate: 2026-07-25
 updatedDate: 2026-07-25
 cluster: "magnesium-glycinate"
+headTerm: "can you take lemon balm and melatonin together"
 postType: "interaction"
 buyIntentTerm: "best magnesium glycinate supplement for sleep"
 relatedProducts: [magnesium-glycinate]

@@ -4,6 +4,7 @@ description: "L-theanine vs caffeine: one calms, one stimulates, and they are of
 pubDate: 2026-07-25
 updatedDate: 2026-07-25
 cluster: "l-theanine"
+headTerm: "l-theanine vs caffeine"
 postType: "comparison"
 buyIntentTerm: "best l-theanine supplement for coffee jitters"
 relatedProducts: [l-theanine]

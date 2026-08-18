@@ -4,6 +4,7 @@ description: "High-dose taurine for anxiety: what the human evidence actually sh
 pubDate: 2026-07-27
 updatedDate: 2026-07-27
 cluster: "l-theanine"
+headTerm: "high dose taurine for anxiety"
 postType: "dosage"
 buyIntentTerm: "best l-theanine supplement for anxiety"
 relatedProducts: [l-theanine]

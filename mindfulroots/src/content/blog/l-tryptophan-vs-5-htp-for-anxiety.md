@@ -4,6 +4,7 @@ description: "L-tryptophan vs 5-HTP for anxiety: both feed serotonin at differen
 pubDate: 2026-08-17
 updatedDate: 2026-08-17
 cluster: "5-htp"
+headTerm: "l-tryptophan vs 5-htp for anxiety"
 postType: "comparison"
 buyIntentTerm: "best 5-htp supplement for anxiety support"
 relatedProducts: [5-htp]

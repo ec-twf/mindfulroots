@@ -4,6 +4,7 @@ description: "Lemon balm vs bee balm: alike in name, different plants. Lemon bal
 pubDate: 2026-08-13
 updatedDate: 2026-08-13
 cluster: "l-theanine"
+headTerm: "lemon balm vs bee balm"
 postType: "comparison"
 buyIntentTerm: "best lemon balm supplement for calm and sleep"
 relatedProducts: [l-theanine]

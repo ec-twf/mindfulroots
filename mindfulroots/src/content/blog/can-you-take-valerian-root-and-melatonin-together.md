@@ -4,6 +4,7 @@ description: "Can you take valerian root and melatonin together? They support sl
 pubDate: 2026-07-27
 updatedDate: 2026-07-27
 cluster: "magnesium-glycinate"
+headTerm: "can you take valerian root and melatonin together"
 postType: "interaction"
 buyIntentTerm: "best magnesium glycinate supplement for calm sleep"
 relatedProducts: [magnesium-glycinate]

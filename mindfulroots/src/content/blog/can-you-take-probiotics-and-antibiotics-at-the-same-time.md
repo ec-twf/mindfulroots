@@ -4,6 +4,7 @@ description: "Can you take probiotics and antibiotics at the same time? Yes, if 
 pubDate: 2026-08-15
 updatedDate: 2026-08-15
 cluster: "probiotic-gut-brain"
+headTerm: "can you take probiotics and antibiotics at the same time"
 postType: "interaction"
 buyIntentTerm: "best probiotic to take alongside a course of antibiotics"
 relatedProducts: [probiotic-gut-brain]

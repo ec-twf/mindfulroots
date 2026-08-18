@@ -4,6 +4,7 @@ description: "Ashwagandha vs ginseng: ashwagandha calms stress and cortisol, gin
 pubDate: 2026-07-10
 updatedDate: 2026-07-10
 cluster: "ashwagandha"
+headTerm: "ashwagandha vs ginseng"
 postType: "comparison"
 buyIntentTerm: "ashwagandha or ginseng supplement which to buy"
 relatedProducts: [ashwagandha]

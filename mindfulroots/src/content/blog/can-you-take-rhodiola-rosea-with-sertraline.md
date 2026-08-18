@@ -4,6 +4,7 @@ description: "Can you take rhodiola rosea with sertraline? There is a theoretica
 pubDate: 2026-08-09
 updatedDate: 2026-08-09
 cluster: "rhodiola-rosea"
+headTerm: "can you take rhodiola rosea with sertraline"
 postType: "interaction"
 buyIntentTerm: "best rhodiola rosea supplement for stress while on an ssri"
 relatedProducts: [rhodiola-rosea]

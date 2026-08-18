@@ -4,6 +4,7 @@ description: "Magnesium dosage for sleep: studies used 200–400 mg of elemental
 pubDate: 2026-08-11
 updatedDate: 2026-08-11
 cluster: "magnesium-glycinate"
+headTerm: "magnesium dosage for sleep"
 postType: "dosage"
 buyIntentTerm: "best magnesium glycinate dosage for sleep"
 relatedProducts: [magnesium-glycinate]

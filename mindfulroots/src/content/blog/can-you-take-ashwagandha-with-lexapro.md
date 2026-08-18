@@ -4,6 +4,7 @@ description: "Can you take ashwagandha with Lexapro? No dangerous interaction is
 pubDate: 2026-08-07
 updatedDate: 2026-08-07
 cluster: "ashwagandha"
+headTerm: "can you take ashwagandha with lexapro"
 postType: "interaction"
 buyIntentTerm: "best ashwagandha supplement to take with an ssri"
 relatedProducts: [ashwagandha]

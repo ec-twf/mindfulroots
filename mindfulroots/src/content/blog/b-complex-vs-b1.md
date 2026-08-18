@@ -4,6 +4,7 @@ description: "B-complex vs B1 (thiamine): a B-complex already contains B1 plus t
 pubDate: 2026-07-07
 updatedDate: 2026-07-07
 cluster: "b-complex"
+headTerm: "b-complex vs b1"
 postType: "comparison"
 buyIntentTerm: "which b complex supplement to buy"
 relatedProducts: [b-complex]

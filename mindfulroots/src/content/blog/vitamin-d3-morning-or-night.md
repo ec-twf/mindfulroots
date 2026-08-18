@@ -4,6 +4,7 @@ description: "Vitamin D3 morning or night? Take it with your largest fat-contain
 pubDate: 2026-07-23
 updatedDate: 2026-07-23
 cluster: "vitamin-d3"
+headTerm: "vitamin-d3 morning or night"
 postType: "timing"
 buyIntentTerm: "best vitamin d3 softgel for daily use"
 relatedProducts: [vitamin-d3]

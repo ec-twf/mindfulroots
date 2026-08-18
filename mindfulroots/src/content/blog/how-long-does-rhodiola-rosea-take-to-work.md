@@ -4,6 +4,7 @@ description: "How long does rhodiola rosea take to work? A mild lift can appear 
 pubDate: 2026-08-03
 updatedDate: 2026-08-03
 cluster: "rhodiola-rosea"
+headTerm: "how long does rhodiola rosea take to work"
 postType: "duration"
 buyIntentTerm: "best fast acting rhodiola rosea supplement"
 relatedProducts: [rhodiola-rosea]

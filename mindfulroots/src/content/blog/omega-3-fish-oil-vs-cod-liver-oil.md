@@ -4,6 +4,7 @@ description: "Omega-3 fish oil vs cod liver oil: both give EPA and DHA, but cod 
 pubDate: 2026-08-11
 updatedDate: 2026-08-11
 cluster: "omega-3-fish-oil"
+headTerm: "omega-3 fish oil vs cod liver oil"
 postType: "comparison"
 buyIntentTerm: "which omega 3 fish oil or cod liver oil to buy"
 relatedProducts: [omega-3-fish-oil]

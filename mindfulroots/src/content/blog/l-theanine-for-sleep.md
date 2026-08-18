@@ -4,6 +4,7 @@ description: "L-theanine for sleep: does it help and what dose works? The eviden
 pubDate: 2026-08-01
 updatedDate: 2026-08-01
 cluster: "l-theanine"
+headTerm: "l-theanine for sleep"
 postType: "dosage"
 buyIntentTerm: "best l-theanine supplement for sleep"
 relatedProducts: [l-theanine]

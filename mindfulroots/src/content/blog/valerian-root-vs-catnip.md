@@ -4,6 +4,7 @@ description: "Valerian root vs catnip for calm and sleep: one has real human tri
 pubDate: 2026-08-17
 updatedDate: 2026-08-17
 cluster: "magnesium-glycinate"
+headTerm: "valerian root vs catnip"
 postType: "comparison"
 buyIntentTerm: "which magnesium glycinate supplement to buy for sleep"
 relatedProducts: [magnesium-glycinate]

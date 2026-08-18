@@ -4,6 +4,7 @@ description: "Probiotic vs fiber isn't a real contest: probiotics add live bacte
 pubDate: 2026-07-17
 updatedDate: 2026-07-17
 cluster: "probiotic-gut-brain"
+headTerm: "probiotic vs fiber"
 postType: "comparison"
 buyIntentTerm: "best probiotic or fiber supplement for gut health"
 relatedProducts: [probiotic-gut-brain]

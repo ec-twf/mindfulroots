@@ -4,6 +4,7 @@ description: "Passionflower vs chamomile: both are gentle calming herbs, but the
 pubDate: 2026-08-15
 updatedDate: 2026-08-15
 cluster: "l-theanine"
+headTerm: "passionflower vs chamomile"
 postType: "comparison"
 buyIntentTerm: "best l-theanine supplement for daytime calm"
 relatedProducts: [l-theanine]

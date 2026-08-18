@@ -4,6 +4,7 @@ description: "Before any supplement earns its place in your routine, five lifest
 metaDescription: "Before any supplement earns its place in your routine, five lifestyle practices do most of the heavy lifting for mood and sleep — what the evidence says."
 pubDate: 2025-10-14
 cluster: "lifestyle-foundations"
+headTerm: "natural mood support basics"
 postType: "pillar"
 buyIntentTerm: "best supplements to start with for mood"
 relatedProducts:

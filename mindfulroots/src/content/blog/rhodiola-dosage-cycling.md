@@ -4,6 +4,7 @@ description: "Rhodiola rosea dosage sits at 200 to 400 mg of a standardised extr
 pubDate: 2026-08-07
 updatedDate: 2026-08-07
 cluster: "rhodiola-rosea"
+headTerm: "rhodiola dosage cycling"
 postType: "dosage"
 buyIntentTerm: "best standardized rhodiola rosea supplement to buy"
 relatedProducts: [rhodiola-rosea]

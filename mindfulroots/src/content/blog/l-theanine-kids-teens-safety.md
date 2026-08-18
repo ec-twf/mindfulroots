@@ -4,6 +4,7 @@ description: "Is L-theanine safe for kids and teens? Human data in minors is lim
 pubDate: 2026-08-05
 updatedDate: 2026-08-05
 cluster: "l-theanine"
+headTerm: "l-theanine kids teens safety"
 postType: "safety"
 buyIntentTerm: "best l-theanine supplement for teenage stress"
 relatedProducts: [l-theanine]

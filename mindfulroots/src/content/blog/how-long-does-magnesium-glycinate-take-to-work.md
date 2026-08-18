@@ -4,6 +4,7 @@ description: "How long does magnesium glycinate take to work? A light calming ef
 pubDate: 2026-07-31
 updatedDate: 2026-07-31
 cluster: "magnesium-glycinate"
+headTerm: "how long does magnesium glycinate take to work"
 postType: "duration"
 buyIntentTerm: "best fast acting magnesium glycinate supplement"
 relatedProducts: [magnesium-glycinate]

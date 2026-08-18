@@ -4,6 +4,7 @@ description: "Saffron extract vs ashwagandha: saffron leans toward low mood, ash
 pubDate: 2026-07-10
 updatedDate: 2026-07-10
 cluster: "saffron-extract"
+headTerm: "saffron extract vs ashwagandha"
 postType: "comparison"
 buyIntentTerm: "saffron or ashwagandha supplement for mood"
 relatedProducts: [saffron-extract]

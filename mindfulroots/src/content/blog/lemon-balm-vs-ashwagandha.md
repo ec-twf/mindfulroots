@@ -4,6 +4,7 @@ description: "Lemon balm vs ashwagandha: one is a fast-acting calming herb, the 
 pubDate: 2026-08-07
 updatedDate: 2026-08-07
 cluster: "ashwagandha"
+headTerm: "lemon balm vs ashwagandha"
 postType: "comparison"
 buyIntentTerm: "lemon balm or ashwagandha supplement which to buy"
 relatedProducts: [ashwagandha]

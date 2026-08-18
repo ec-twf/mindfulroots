@@ -4,6 +4,7 @@ description: "5-HTP vs 5-HT: they sound alike but are two steps in the same path
 pubDate: 2026-07-07
 updatedDate: 2026-07-07
 cluster: "5-htp"
+headTerm: "5-htp vs 5-ht"
 postType: "comparison"
 buyIntentTerm: "which 5-htp supplement to buy"
 relatedProducts: [5-htp]

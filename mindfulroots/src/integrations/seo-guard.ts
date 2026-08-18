@@ -408,6 +408,53 @@ function checkKeywordUniqueness(claims: KeywordClaim[]): Violation[] {
   return violations;
 }
 
+// checkKeywordUniqueness only catches byte-identical claims, which is a much
+// smaller net than it looks. The magnesium cluster cannibalized itself with
+// "magnesium glycinate vs bisglycinate" and "magnesium glycinate vs chelate" —
+// two different strings competing for one SERP, and the exact-match check waves
+// both through. This compares the content tokens instead, so pairs that differ
+// only in the final noun get reported. It is a heuristic, so it warns rather
+// than failing the build; the call on whether to merge or differentiate is a
+// human one and involves 301s.
+const CLAIM_STOPWORDS = new Set([
+  'can', 'you', 'take', 'with', 'and', 'for', 'to', 'the', 'is', 'it', 'a', 'an',
+  'how', 'long', 'does', 'do', 'vs', 'or', 'of', 'in', 'on', 'at', 'be', 'are',
+  'what', 'which', 'when', 'why', 'together', 'safe', 'best', 'my', 'i',
+]);
+
+const NEAR_DUPLICATE_THRESHOLD = 0.5;
+
+function contentTokens(term: string): Set<string> {
+  return new Set(
+    term.toLowerCase().split(/[^a-z0-9-]+/).filter((t) => t && !CLAIM_STOPWORDS.has(t)),
+  );
+}
+
+export function findNearDuplicateClaims(claims: KeywordClaim[]): string[] {
+  const seen = claims
+    .map((c) => ({ ...c, tokens: contentTokens(c.term) }))
+    .filter((c) => c.tokens.size > 0);
+
+  const reports: string[] = [];
+  for (let i = 0; i < seen.length; i++) {
+    for (let j = i + 1; j < seen.length; j++) {
+      const a = seen[i];
+      const b = seen[j];
+      if (a.url === b.url) continue; // one page may legitimately own variants
+      const shared = [...a.tokens].filter((t) => b.tokens.has(t));
+      if (shared.length === 0) continue;
+      const union = new Set([...a.tokens, ...b.tokens]).size;
+      const jaccard = shared.length / union;
+      if (jaccard >= NEAR_DUPLICATE_THRESHOLD) {
+        reports.push(
+          `"${a.term}" (${a.file}) vs "${b.term}" (${b.file}) — ${Math.round(jaccard * 100)}% token overlap on {${shared.join(', ')}}`,
+        );
+      }
+    }
+  }
+  return reports.sort();
+}
+
 function checkKeywordRegistry(claims: KeywordClaim[]): Violation[] {
   const violations: Violation[] = [];
 
@@ -606,6 +653,7 @@ export default function seoGuard(): AstroIntegration {
         ];
         violations.push(...checkKeywordUniqueness(claims));
         violations.push(...checkKeywordRegistry(claims));
+        const nearDuplicates = findNearDuplicateClaims(claims);
 
         if (violations.length > 0) {
           const lines = violations.map((v) => {
@@ -629,8 +677,16 @@ export default function seoGuard(): AstroIntegration {
           );
         }
 
+        if (nearDuplicates.length > 0) {
+          logger.warn(
+            `seo-guard: ${nearDuplicates.length} near-duplicate keyword claim(s) — two pages chasing one SERP is how ` +
+              `the magnesium and omega-3 clusters tanked. Merge the weaker page into the stronger one and 301 it, or ` +
+              `tighten one headTerm until they stop overlapping:\n  ${nearDuplicates.join('\n  ')}`,
+          );
+        }
+
         logger.info(
-          `seo-guard: titles ≤60, descriptions ≤160, no body FAQ headings, ${claims.length} keyword claim(s) unique + registry-consistent, no truncated bodies. ✔`,
+          `seo-guard: titles ≤60, descriptions ≤160, no body FAQ headings, ${claims.length} keyword claim(s) unique + registry-consistent, ${nearDuplicates.length} near-duplicate pair(s), no truncated bodies. ✔`,
         );
       },
     },

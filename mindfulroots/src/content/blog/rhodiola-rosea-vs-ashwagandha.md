@@ -4,6 +4,7 @@ description: "Rhodiola rosea vs ashwagandha compared: which adaptogen suits stre
 pubDate: 2026-07-21
 updatedDate: 2026-07-21
 cluster: "rhodiola-rosea"
+headTerm: "rhodiola rosea vs ashwagandha"
 postType: "comparison"
 buyIntentTerm: "best rhodiola rosea supplement for stress and fatigue"
 relatedProducts: [rhodiola-rosea]

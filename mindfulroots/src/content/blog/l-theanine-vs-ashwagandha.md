@@ -4,6 +4,7 @@ description: "L-theanine vs ashwagandha: theanine calms within an hour for acute
 pubDate: 2026-07-13
 updatedDate: 2026-08-17
 cluster: "l-theanine"
+headTerm: "l-theanine vs ashwagandha"
 postType: "comparison"
 buyIntentTerm: "l-theanine or ashwagandha which to buy"
 relatedProducts: [l-theanine]

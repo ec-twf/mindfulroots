@@ -4,6 +4,7 @@ description: "Vitamin D3 vs calcitriol: one is a nutritional supplement, the oth
 pubDate: 2026-08-03
 updatedDate: 2026-08-03
 cluster: "vitamin-d3"
+headTerm: "vitamin-d3 vs calcitriol"
 postType: "comparison"
 buyIntentTerm: "best over-the-counter vitamin d3 supplement"
 relatedProducts: [vitamin-d3]

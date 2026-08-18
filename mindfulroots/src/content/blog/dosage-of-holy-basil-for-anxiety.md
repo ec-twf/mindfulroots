@@ -4,6 +4,7 @@ description: "Holy basil dosage for anxiety: trials used 300 to 1,200 mg of stan
 pubDate: 2026-07-29
 updatedDate: 2026-07-29
 cluster: "ashwagandha"
+headTerm: "dosage of holy basil for anxiety"
 postType: "dosage"
 buyIntentTerm: "best ashwagandha supplement for anxiety"
 relatedProducts: [ashwagandha]

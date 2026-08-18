@@ -4,6 +4,7 @@ description: "Rhodiola rosea vs ashwagandha for anxiety: rhodiola lifts stress-r
 pubDate: 2026-07-31
 updatedDate: 2026-07-31
 cluster: "rhodiola-rosea"
+headTerm: "rhodiola rosea vs ashwagandha for anxiety"
 postType: "comparison"
 buyIntentTerm: "rhodiola or ashwagandha supplement for anxiety"
 relatedProducts: [rhodiola-rosea, ashwagandha]

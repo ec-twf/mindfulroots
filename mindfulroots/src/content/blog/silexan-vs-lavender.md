@@ -4,6 +4,7 @@ description: "Silexan vs lavender: Silexan is a standardised lavender oil, not a
 pubDate: 2026-08-15
 updatedDate: 2026-08-15
 cluster: "ashwagandha"
+headTerm: "silexan vs lavender"
 postType: "comparison"
 buyIntentTerm: "best ashwagandha supplement for anxious tension"
 relatedProducts: [ashwagandha]

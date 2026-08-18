@@ -4,6 +4,7 @@ description: "Glycine dosage explained: the 3 gram bedtime amount studied for sl
 pubDate: 2026-07-23
 updatedDate: 2026-07-23
 cluster: "magnesium-glycinate"
+headTerm: "glycine dosage"
 postType: "dosage"
 buyIntentTerm: "best glycine supplement for sleep"
 relatedProducts: [magnesium-glycinate]

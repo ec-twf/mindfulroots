@@ -4,6 +4,7 @@ description: "How much omega-3 per day for mood and brain health? Trials that mo
 pubDate: 2026-07-31
 updatedDate: 2026-07-31
 cluster: "omega-3-fish-oil"
+headTerm: "omega-3 dosage for mood"
 postType: "dosage"
 buyIntentTerm: "best high-epa fish oil dose for mood support"
 relatedProducts: [omega-3-fish-oil]

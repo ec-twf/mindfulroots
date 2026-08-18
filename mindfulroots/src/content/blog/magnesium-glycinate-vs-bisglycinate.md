@@ -4,6 +4,7 @@ description: "Magnesium glycinate vs bisglycinate: they are the same compound un
 pubDate: 2026-07-21
 updatedDate: 2026-07-21
 cluster: "magnesium-glycinate"
+headTerm: "magnesium glycinate vs bisglycinate"
 postType: "comparison"
 buyIntentTerm: "best magnesium bisglycinate supplement for anxiety"
 relatedProducts: [magnesium-glycinate]

@@ -4,6 +4,7 @@ description: "Omega-3 fish oil vs algae oil: both deliver EPA and DHA, and algae
 pubDate: 2026-08-05
 updatedDate: 2026-08-05
 cluster: "omega-3-fish-oil"
+headTerm: "omega-3 fish oil vs algae"
 postType: "comparison"
 buyIntentTerm: "best algae omega 3 supplement for mood"
 relatedProducts: [omega-3-fish-oil]

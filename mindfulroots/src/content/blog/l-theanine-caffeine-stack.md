@@ -4,6 +4,7 @@ description: "L-theanine and caffeine together give steady focus without the jit
 pubDate: 2026-07-05
 updatedDate: 2026-08-15
 cluster: "l-theanine"
+headTerm: "l-theanine caffeine stack"
 postType: "explainer"
 buyIntentTerm: "best l-theanine and caffeine supplement"
 relatedProducts: ["l-theanine"]

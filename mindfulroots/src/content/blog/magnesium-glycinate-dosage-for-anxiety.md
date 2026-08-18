@@ -6,6 +6,7 @@ metaDescription: "How much magnesium glycinate people take for anxiety, the dose
 pubDate: 2026-07-04
 updatedDate: 2026-08-11
 cluster: "magnesium-glycinate"
+headTerm: "magnesium glycinate dosage for anxiety"
 postType: "dosage"
 buyIntentTerm: "best magnesium glycinate for anxiety"
 relatedProducts: ["magnesium-glycinate"]

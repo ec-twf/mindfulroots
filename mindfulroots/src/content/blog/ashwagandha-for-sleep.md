@@ -4,6 +4,7 @@ description: "Ashwagandha for sleep: what the RCTs actually used, the 300 to 600
 pubDate: 2026-08-09
 updatedDate: 2026-08-09
 cluster: "ashwagandha"
+headTerm: "ashwagandha for sleep"
 postType: "dosage"
 buyIntentTerm: "best ashwagandha supplement for sleep"
 relatedProducts: [ashwagandha]

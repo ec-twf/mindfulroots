@@ -4,6 +4,7 @@ description: "Glycine vs collagen: collagen is roughly a third glycine, so they 
 pubDate: 2026-08-13
 updatedDate: 2026-08-13
 cluster: "magnesium-glycinate"
+headTerm: "glycine vs collagen"
 postType: "comparison"
 buyIntentTerm: "best glycine supplement for nighttime recovery"
 relatedProducts: [magnesium-glycinate]

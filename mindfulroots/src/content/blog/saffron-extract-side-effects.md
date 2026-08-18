@@ -4,6 +4,7 @@ description: "Saffron extract side effects: what the studies report at typical m
 pubDate: 2026-07-27
 updatedDate: 2026-07-27
 cluster: "saffron-extract"
+headTerm: "saffron extract side effects"
 postType: "safety"
 buyIntentTerm: "best saffron extract supplement for daily use"
 relatedProducts: [saffron-extract]

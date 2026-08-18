@@ -4,6 +4,7 @@ description: "Can you take saffron extract with Lexapro? No major interaction is
 pubDate: 2026-08-11
 updatedDate: 2026-08-11
 cluster: "saffron-extract"
+headTerm: "can you take saffron extract with lexapro"
 postType: "interaction"
 buyIntentTerm: "best saffron extract supplement to take with an ssri"
 relatedProducts: [saffron-extract]

@@ -4,6 +4,7 @@ description: "How long does saffron extract take to work? Most mood trials ran 6
 pubDate: 2026-08-09
 updatedDate: 2026-08-09
 cluster: "saffron-extract"
+headTerm: "how long does saffron extract take to work"
 postType: "duration"
 buyIntentTerm: "best standardised saffron extract supplement to buy"
 relatedProducts: [saffron-extract]

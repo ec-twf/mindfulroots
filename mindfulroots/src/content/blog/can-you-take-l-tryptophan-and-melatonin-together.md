@@ -4,6 +4,7 @@ description: "Can you take L-tryptophan and melatonin together? They sit on the 
 pubDate: 2026-07-29
 updatedDate: 2026-07-29
 cluster: "5-htp"
+headTerm: "can you take l-tryptophan and melatonin together"
 postType: "interaction"
 buyIntentTerm: "best 5-htp supplement for sleep support"
 relatedProducts: [5-htp]

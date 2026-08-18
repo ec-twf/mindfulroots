@@ -4,6 +4,7 @@ description: "Can you take lemon balm with levothyroxine? The herb may nudge thy
 pubDate: 2026-07-31
 updatedDate: 2026-07-31
 cluster: "magnesium-glycinate"
+headTerm: "can you take lemon balm with levothyroxine"
 postType: "interaction"
 buyIntentTerm: "best magnesium glycinate supplement for thyroid patients"
 relatedProducts: [magnesium-glycinate]

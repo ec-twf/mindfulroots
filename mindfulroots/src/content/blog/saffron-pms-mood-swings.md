@@ -4,6 +4,7 @@ description: "Saffron for PMS mood swings: a 30 mg daily dose eased premenstrual
 pubDate: 2026-08-05
 updatedDate: 2026-08-05
 cluster: "saffron-extract"
+headTerm: "saffron pms mood swings"
 postType: "dosage"
 buyIntentTerm: "best saffron extract supplement for pms mood support"
 relatedProducts: [saffron-extract]

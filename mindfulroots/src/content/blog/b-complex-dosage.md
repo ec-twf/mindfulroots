@@ -4,6 +4,7 @@ description: "B-complex dosage explained: how much of each B vitamin you actuall
 pubDate: 2026-07-07
 updatedDate: 2026-07-23
 cluster: "b-complex"
+headTerm: "b-complex dosage"
 postType: "dosage"
 buyIntentTerm: "best b complex supplement for daily use"
 relatedProducts: [b-complex]

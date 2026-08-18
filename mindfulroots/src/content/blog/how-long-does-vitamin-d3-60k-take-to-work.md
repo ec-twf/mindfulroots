@@ -4,6 +4,7 @@ description: "How long does vitamin D3 60k take to work? Blood levels rise withi
 pubDate: 2026-08-15
 updatedDate: 2026-08-15
 cluster: "vitamin-d3"
+headTerm: "how long does vitamin-d3 60k take to work"
 postType: "duration"
 buyIntentTerm: "best vitamin d3 60000 iu supplement to correct deficiency"
 relatedProducts: [vitamin-d3]

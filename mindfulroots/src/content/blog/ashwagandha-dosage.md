@@ -4,6 +4,7 @@ description: "Ashwagandha dosage explained: the amounts used in stress and sleep
 pubDate: 2026-07-21
 updatedDate: 2026-07-21
 cluster: "ashwagandha"
+headTerm: "ashwagandha dosage"
 postType: "dosage"
 buyIntentTerm: "best ashwagandha supplement for stress dosing"
 relatedProducts: [ashwagandha]

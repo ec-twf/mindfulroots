@@ -4,6 +4,7 @@ description: "Silexan lavender dosage explained: the 80 mg capsule used in anxie
 pubDate: 2026-07-25
 updatedDate: 2026-07-25
 cluster: "ashwagandha"
+headTerm: "silexan lavender dosage"
 postType: "dosage"
 buyIntentTerm: "best lavender oil supplement for anxiety"
 relatedProducts: [ashwagandha]

@@ -5,6 +5,7 @@ metaDescription: "L-theanine, the amino acid behind tea's calm, has one of the c
 pubDate: 2025-10-14
 updatedDate: 2026-08-13
 cluster: "l-theanine"
+headTerm: "l-theanine calm focus"
 postType: "explainer"
 buyIntentTerm: "best l-theanine supplement for focus"
 relatedProducts: ["l-theanine"]

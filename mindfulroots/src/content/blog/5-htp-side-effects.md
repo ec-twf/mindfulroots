@@ -4,6 +4,7 @@ description: "5-HTP side effects range from nausea and drowsiness to the serious
 pubDate: 2026-08-11
 updatedDate: 2026-08-11
 cluster: "5-htp"
+headTerm: "5-htp side effects"
 postType: "safety"
 buyIntentTerm: "best low-dose 5-htp supplement to buy"
 relatedProducts: [5-htp]

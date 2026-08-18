@@ -4,6 +4,7 @@ description: "Can you take L-tyrosine with Adderall? No proven dangerous interac
 pubDate: 2026-08-01
 updatedDate: 2026-08-01
 cluster: "l-tyrosine"
+headTerm: "can you take l-tyrosine with adderall"
 postType: "interaction"
 buyIntentTerm: "which l-tyrosine supplement to buy for focus"
 relatedProducts: []

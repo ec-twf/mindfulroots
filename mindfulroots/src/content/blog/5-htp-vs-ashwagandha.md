@@ -4,6 +4,7 @@ description: "5-HTP vs ashwagandha: 5-HTP feeds serotonin for low mood, ashwagan
 pubDate: 2026-08-01
 updatedDate: 2026-08-01
 cluster: "5-htp"
+headTerm: "5-htp vs ashwagandha"
 postType: "comparison"
 buyIntentTerm: "best 5-htp supplement for mood support"
 relatedProducts: [5-htp, ashwagandha]

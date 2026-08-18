@@ -4,6 +4,7 @@ description: "Can you take saffron extract with sertraline? Saffron acts on sero
 pubDate: 2026-08-17
 updatedDate: 2026-08-17
 cluster: "saffron-extract"
+headTerm: "can you take saffron extract with sertraline"
 postType: "interaction"
 buyIntentTerm: "which saffron extract supplement to take with sertraline"
 relatedProducts: [saffron-extract]

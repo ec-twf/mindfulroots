@@ -4,6 +4,7 @@ description: "Is 5-HTP safe to take every day? For most healthy adults short-ter
 pubDate: 2026-08-17
 updatedDate: 2026-08-17
 cluster: "5-htp"
+headTerm: "is 5-htp safe to take every day"
 postType: "safety"
 buyIntentTerm: "best 5-htp supplement for daily use"
 relatedProducts: [5-htp]

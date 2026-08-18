@@ -4,6 +4,7 @@ description: "Can you take L-theanine with Lexapro? There is no known dangerous 
 pubDate: 2026-08-05
 updatedDate: 2026-08-05
 cluster: "l-theanine"
+headTerm: "can you take l-theanine with lexapro"
 postType: "interaction"
 buyIntentTerm: "best l-theanine supplement to take with an antidepressant"
 relatedProducts: [l-theanine]
