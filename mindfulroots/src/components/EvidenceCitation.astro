@@ -1,0 +1,39 @@
+---
+// A real number, a real source, and where the abstract allows it a short direct
+// quote, placed high on the page.
+//
+// The GEO-bench study (arXiv 2311.09735, 10,000 queries) measured quotation,
+// statistics and source citation as the three strongest levers on whether a
+// generative engine reproduces a passage: +41%, +32% and +28%, and +37% for
+// statistics against live Perplexity. Keyword stuffing measured at -9%. Before
+// this component the product pages carried none of the three, and every claim
+// on them was qualitative.
+//
+// The figures here are checked against the paper at `sourceUrl` before they
+// ship. Where no clean trial number exists, `stat` says so and `quote` is left
+// off, which is both accurate and more citable than a vague claim.
+import { renderInlineMarkdown } from '../lib/inline-markdown';
+
+interface Props {
+  stat: string;
+  quote?: string;
+  sourceUrl: string;
+  sourceLabel: string;
+}
+const { stat, quote, sourceUrl, sourceLabel } = Astro.props;
+---
+<section class="not-prose mt-5 border border-mist rounded-lg bg-card px-5 py-4" aria-label="What the research found">
+  <p class="font-mono text-xs uppercase tracking-wider text-moss-deep mb-1.5">What the research found</p>
+  <p class="text-ink leading-relaxed" set:html={renderInlineMarkdown(stat)} />
+  {quote && (
+    <blockquote class="mt-3 border-l-2 border-moss pl-4 text-ink-soft leading-relaxed italic">
+      "{quote}"
+    </blockquote>
+  )}
+  <p class="mt-3 text-xs text-ink-soft">
+    Source:{' '}
+    <a href={sourceUrl} target="_blank" rel="noopener" class="text-moss-deep underline underline-offset-2">
+      {sourceLabel}
+    </a>
+  </p>
+</section>

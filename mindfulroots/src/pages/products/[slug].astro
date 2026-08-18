@@ -8,9 +8,13 @@ import StickyBuyBar from '../../components/StickyBuyBar.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import WarningBox from '../../components/WarningBox.astro';
 import SupportNotice from '../../components/SupportNotice.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
+import EvidenceCitation from '../../components/EvidenceCitation.astro';
+import SpecTable from '../../components/SpecTable.astro';
 import { getCollection, render } from 'astro:content';
 import { hubsForProduct } from '../../lib/hubs';
 import { retailerLink } from '../../config';
+import { renderInlineMarkdown } from '../../lib/inline-markdown';
 
 export async function getStaticPaths() {
   const products = await getCollection('products');
@@ -68,6 +72,13 @@ const itemListElements = comparisonRows.length > 0
     }))
   : [];
 
+// The visible Q&A and the FAQPage node are driven by one flag, so structured
+// data can never describe questions the page doesn't show. Same guard the blog
+// template uses.
+const hasFaq = Boolean(data.faq && data.faq.length > 0);
+
+const pageUrl = new URL(`/products/${product.id}/`, Astro.site).toString();
+
 const schema = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -75,6 +86,34 @@ const schema = {
       '@type': 'ItemList',
       itemListElement: itemListElements,
     }] : []),
+    ...(hasFaq ? [{
+      '@type': 'FAQPage',
+      mainEntity: data.faq!.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.a },
+      })),
+    }] : []),
+    // MedicalWebPage signals YMYL health content, and carries the review date
+    // and reviewer that product pages previously exposed only as visible text.
+    // Ahrefs measured no citation uplift from adding schema (1,885 pages against
+    // 4,000 controls), so this is here for Google and for honesty about when the
+    // page was last checked, not as an AI-visibility play.
+    {
+      '@type': 'MedicalWebPage',
+      '@id': `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: data.seoTitle ?? data.title,
+      description: data.metaDescription ?? data.shortDescription,
+      ...(rec ? { lastReviewed: rec.verifiedDate.toISOString() } : {}),
+      reviewedBy: {
+        '@type': 'Person',
+        name: 'Enoch C.',
+        honorificSuffix: 'MSc',
+        url: new URL('/authors/enoch-c/', Astro.site).toString(),
+        sameAs: ['https://www.linkedin.com/in/enoch-cheung-ec/'],
+      },
+    },
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
@@ -122,7 +161,14 @@ const schema = {
         </p>
       )}
 
-      <p class="mt-5 text-lg text-ink leading-relaxed">{data.shortDescription}</p>
+      {/* The reader arriving from an AI assistant already had the ingredient
+          explained to them before they clicked, so `shortDescription` answers a
+          question they no longer have. Where a verdict exists it takes the slot
+          instead; `shortDescription` still does its real job in the meta
+          description and on the index pages. */}
+      {data.keyTakeaway
+        ? <AnswerBox text={data.keyTakeaway} />
+        : <p class="mt-5 text-lg text-ink leading-relaxed">{data.shortDescription}</p>}
 
       {data.comparison && data.comparison.rows.length > 0 && (
         <p class="mt-3">
@@ -143,6 +189,15 @@ const schema = {
 
     <!-- Body block — sits after the buy box on mobile, left column on desktop -->
     <div class="min-w-0 order-3 md:col-start-1 md:row-start-2">
+      {data.keyEvidence && (
+        <EvidenceCitation
+          stat={data.keyEvidence.stat}
+          quote={data.keyEvidence.quote}
+          sourceUrl={data.keyEvidence.sourceUrl}
+          sourceLabel={data.keyEvidence.sourceLabel}
+        />
+      )}
+
       {data.comparison && data.comparison.rows.length > 0 && (
         <section id="comparison" class="mt-7 scroll-mt-24">
           <p class="eyebrow mb-2">Our pick, and why</p>
@@ -159,11 +214,25 @@ const schema = {
         </section>
       )}
 
+      {data.specs && <SpecTable specs={data.specs} title={data.title} />}
+
       <hr class="specimen-rule my-7" />
 
       <section class="prose-mr max-w-none">
         <Content />
       </section>
+
+      {hasFaq && (
+        <section class="prose-mr max-w-none mt-7">
+          <h2>Common questions about {data.title.toLowerCase()}</h2>
+          {data.faq!.map((item) => (
+            <div class="mt-5">
+              <h3 set:html={renderInlineMarkdown(item.q)} />
+              <p set:html={renderInlineMarkdown(item.a)} />
+            </div>
+          ))}
+        </section>
+      )}
     </div>
 
     <!-- Sidebar: the buy box + at-a-glance -->

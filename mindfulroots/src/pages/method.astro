@@ -1,0 +1,109 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const title = 'How we measure supplements';
+const description =
+  'The six measurements recorded the same way for every supplement on this site, where each value comes from, and what we refuse to guess at.';
+---
+<Base title={title} description={description}>
+  <Breadcrumb crumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Method' },
+  ]} />
+  <section class="mx-auto max-w-3xl px-5 pt-6 pb-16">
+    <p class="eyebrow mb-3">Method</p>
+    <h1 class="font-display text-3xl sm:text-4xl text-moss-deep">How we measure supplements</h1>
+
+    <div class="prose-mr mt-6">
+      <p>
+        Every supplement page on this site records the same six measurements, in the same order, using
+        the same rules. That consistency is the point. If ashwagandha and rhodiola are described by
+        different criteria, you cannot really compare them, and neither can anyone quoting us.
+      </p>
+
+      <h2>The six measurements</h2>
+
+      <h3>Dose used in trials</h3>
+      <p>
+        The daily amount, and the duration, used in the published human trials we cite. Where the
+        trials disagree we give the range rather than picking a flattering number from one of them.
+        If the human evidence is one small study, that is what this line says.
+      </p>
+
+      <h3>Dose in our pick</h3>
+      <p>
+        What the product we recommend actually delivers per serving, read off the current label. A
+        product can sit well below the trialled dose and still be the best available option, and when
+        that happens we say so on the page rather than quietly leaving the gap out.
+      </p>
+
+      <h3>Standardised form</h3>
+      <p>
+        Whether the label names a branded or standardised extract with its own trial record, such as
+        Suntheanine or KSM-66, or whether it simply names the plant. This matters more than most
+        buying guides admit. A trial run on one standardised extract does not automatically transfer
+        to a generic powder from the same plant, because the compound ratios differ.
+      </p>
+      <p>
+        When a label does not state the form, we record "not stated" instead of assuming. Plenty of
+        unnamed material is perfectly good. We just cannot verify it, and we would rather you know
+        which of the two situations you are in.
+      </p>
+
+      <h3>Third-party tested</h3>
+      <p>
+        Whether an independent programme has tested the specific product, and which one. NSF, USP and
+        IFOS are the ones that appear most often in this category. Manufacturer in-house testing does
+        not count here, because the point of the line is independence.
+      </p>
+
+      <h3>Other actives</h3>
+      <p>
+        Anything else in the capsule with a pharmacological effect. A theanine product carrying an
+        undisclosed 100 mg of caffeine is a different product from a plain one, and stacked formulas
+        make it harder to tell what is working when something does work.
+      </p>
+
+      <h3>Reported onset</h3>
+      <p>
+        Roughly how long before effects show up in the trials, since this is the question people ask
+        after they have already bought something. Some ingredients act within an hour. Others need six
+        to eight weeks of daily use before anything is measurable, and knowing that in advance
+        prevents a lot of wasted money.
+      </p>
+
+      <h2>Where the values come from</h2>
+      <p>
+        Dose, form, third-party testing and other actives are read from the live product listing on
+        the day we check it, and the date is printed on the page. Trial doses and onset windows come
+        from the papers we link. Nothing on these pages is generated from a manufacturer's marketing
+        copy.
+      </p>
+
+      <h2>What we do not do</h2>
+      <p>
+        We do not run laboratory assays. We cannot tell you whether the contents of a capsule match
+        its label, and any site claiming otherwise without an accredited lab behind it is
+        overstating what it knows. What we verify is what the label claims, what the evidence
+        supports, and whether those two things line up.
+      </p>
+      <p>
+        We also do not quote prices we cannot keep current. Retailers change prices constantly, and a
+        stale figure is worse than none.
+      </p>
+
+      <h2>Money</h2>
+      <p>
+        Links to retailers are affiliate links, so a purchase can earn us a commission. Nobody pays to
+        appear on a page or to be chosen as a pick, and the criterion for each product is published
+        before the recommendation so you can check our reasoning against it. Where the cheaper option
+        is genuinely fine, the page says that too.
+      </p>
+      <p class="text-sm text-ink-soft">
+        Read the full <a href="/disclosure/">affiliate disclosure</a> or the
+        <a href="/about/">editorial standards</a> behind these pages.
+      </p>
+    </div>
+  </section>
+</Base>

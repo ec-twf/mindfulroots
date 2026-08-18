@@ -11,6 +11,7 @@ import StickyBuyBar from '../../components/StickyBuyBar.astro';
 import EmailCapture from '../../components/EmailCapture.astro';
 import { getCollection, render } from 'astro:content';
 import { hubsForPost } from '../../lib/hubs';
+import { renderInlineMarkdown } from '../../lib/inline-markdown';
 import { SITE } from '../../config';
 
 export async function getStaticPaths() {
@@ -29,36 +30,6 @@ const { Content, headings } = await render(post);
 // These must never diverge (Google penalizes structured data for content
 // that isn't visible on the page), so both consult this one flag.
 const hasFaq = Boolean(data.faq && data.faq.length > 0);
-
-// Minimal, safe inline-markdown renderer for frontmatter-authored FAQ answers
-// (and questions). Frontmatter strings elsewhere in this codebase are either
-// rendered as plain text (e.g. product `shortDescription`/`cautions`) or,
-// for the one existing case with inline formatting (product
-// `interactionWarning` in src/pages/products/[slug].astro), passed through
-// set:html with a **bold** → <strong> regex swap. FAQ answers can also
-// contain inline markdown links (`[text](url)`), which that precedent
-// doesn't cover, so this extends the same approach: escape HTML first, then
-// convert **bold**, *italic*, and [text](url) — never emit raw markdown
-// syntax to the page.
-function escapeHtml(str: string): string {
-  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-}
-// Only same-origin and http(s)/mailto targets become links. Anything else
-// (javascript:, data:, …) renders as plain text — FAQ answers are first-party
-// today, but this file interpolates straight into set:html.
-function safeHref(url: string): string | undefined {
-  return /^(https?:\/\/|mailto:|\/|#)/i.test(url) ? url.replace(/"/g, '&quot;') : undefined;
-}
-function renderInlineMarkdown(str: string): string {
-  let out = escapeHtml(str);
-  out = out.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, text, url) => {
-    const href = safeHref(url);
-    return href ? `<a href="${href}">${text}</a>` : text;
-  });
-  out = out.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-  out = out.replace(/(^|[^*])\*([^*]+)\*(?!\*)/g, '$1<em>$2</em>');
-  return out;
-}
 
 const products = await getCollection('products');
 const related = data.relatedProducts

@@ -3,23 +3,39 @@ Allow: /
 Disallow: /admin/
 Disallow: /go/
 
-# Explicit opt-in for AI crawlers
+# Explicit opt-in for AI crawlers.
+# A crawler obeys exactly one group: the most specific one matching its token.
+# Everything below therefore ignores the User-agent: * block above, so the two
+# Disallow lines have to be repeated in each group or these crawlers are free to
+# hit /go/ and fill the affiliate click log with bot traffic.
 User-agent: GPTBot
 Allow: /
+Disallow: /admin/
+Disallow: /go/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /admin/
+Disallow: /go/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /admin/
+Disallow: /go/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /admin/
+Disallow: /go/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /admin/
+Disallow: /go/
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /admin/
+Disallow: /go/
 
 Sitemap: https://www.moodsupplement.net/sitemap-index.xml

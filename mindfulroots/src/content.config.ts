@@ -21,7 +21,66 @@ const products = defineCollection({
     interactionWarning: z.string().optional(), // rendered as a prominent warning box
     iherbKeyword: z.string(),        // keyword or full iHerb URL for the affiliate link (generic fallback CTA)
     relatedPosts: z.array(z.string()).default([]),
+    // Sibling product slugs for the "Related supplements" sidebar box. This was
+    // read by products/[slug].astro and declared in omega-3-fish-oil.md long
+    // before it was declared here, so Zod stripped it and the box never
+    // rendered on any page.
+    relatedProducts: z.array(z.string()).default([]),
     order: z.number().default(99),
+
+    // ─── Answer-first block (optional) ───────────────────────────────────────
+    // 40-60 words naming the pick, the rule it satisfies, the number, and the
+    // date, in one self-contained passage directly under the H1. Same field and
+    // same job as the blog collection's `keyTakeaway`.
+    //
+    // GA4 says AI assistants are the only source sending humans to these pages,
+    // and those readers arrive already knowing what the ingredient is, because
+    // the assistant told them before they clicked. `shortDescription` answers
+    // the question they no longer have. This answers the one they came with.
+    keyTakeaway: z.string().optional(),
+
+    // ─── Cited evidence (optional) ───────────────────────────────────────────
+    // A real trial number, a real source, and where the abstract permits it a
+    // short direct quote. The GEO-bench study (arXiv 2311.09735) measured
+    // quotation, statistics and source citation as the three strongest levers
+    // on whether generative engines reproduce a passage: +41%, +32% and +28%
+    // respectively, and +37% for statistics against live Perplexity.
+    //
+    // This is a YMYL health site. Every figure here must be verified against
+    // the paper at `sourceUrl` before it ships. Where no clean trial number
+    // exists, say that plainly in `stat` and leave `quote` off. "The human
+    // evidence is two small trials" is itself accurate, citable, and something
+    // a brand-owned page will not write.
+    keyEvidence: z
+      .object({
+        stat: z.string(),               // the finding, with n, dose and duration
+        quote: z.string().optional(),   // verbatim from the abstract, no paraphrase
+        sourceUrl: z.string().url(),
+        sourceLabel: z.string(),        // e.g. "Hidese et al., Nutrients, 2019"
+      })
+      .optional(),
+
+    // ─── Standardised spec block (optional) ──────────────────────────────────
+    // The same measurements, in the same order, on every product. Independent
+    // review sites are 21% of citations on product-recommendation queries and
+    // RTINGS alone is 16%, and what separates them from a blog is that one
+    // method runs across the whole catalogue so results compare. Per-product
+    // criteria cannot do that; this block can.
+    specs: z
+      .object({
+        studiedDose: z.string(),        // range used in the published trials
+        doseDelivered: z.string(),      // what our pick actually provides
+        standardisedForm: z.string(),   // branded/standardised extract, or "not stated"
+        thirdPartyTested: z.string(),   // named programme, or "not stated on label"
+        otherActives: z.string(),
+        onsetWindow: z.string().optional(), // how long before effects are reported
+      })
+      .optional(),
+
+    // Question-shaped Q&A. Each answer stands on its own without the
+    // surrounding page, because that is the unit a generative engine lifts.
+    // Same shape as the blog collection's `faq`.
+    faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
 
     // ─── Evidence-first product recommendation (all optional) ────────────────
     // When present, the buy box shows the criterion + a verified specific

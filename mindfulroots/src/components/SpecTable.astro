@@ -1,0 +1,53 @@
+---
+// The same six measurements, in the same order, on every product page.
+//
+// Independent review sites account for roughly 21% of citations on product
+// recommendation queries, and RTINGS alone for 16%. What separates them from an
+// ordinary blog is not depth on any single page. It is that one method runs
+// across the whole catalogue, so a reader (or a model) can put two products
+// side by side and get a real comparison. A per-product criterion cannot do
+// that, because the criterion itself changes. This block can.
+//
+// Every value is authored in frontmatter and verified against the label or the
+// paper before it ships. "Not stated" is a legitimate and useful answer here.
+import { renderInlineMarkdown } from '../lib/inline-markdown';
+
+interface Specs {
+  studiedDose: string;
+  doseDelivered: string;
+  standardisedForm: string;
+  thirdPartyTested: string;
+  otherActives: string;
+  onsetWindow?: string;
+}
+interface Props {
+  specs: Specs;
+  /** Product title, for the section heading and the aria-label. */
+  title: string;
+}
+const { specs, title } = Astro.props;
+
+const rows: { label: string; value: string }[] = [
+  { label: 'Dose used in trials', value: specs.studiedDose },
+  { label: 'Dose in our pick', value: specs.doseDelivered },
+  { label: 'Standardised form', value: specs.standardisedForm },
+  { label: 'Third-party tested', value: specs.thirdPartyTested },
+  { label: 'Other actives', value: specs.otherActives },
+  ...(specs.onsetWindow ? [{ label: 'Reported onset', value: specs.onsetWindow }] : []),
+];
+---
+<section class="not-prose mt-7" aria-label={`${title} specifications`}>
+  <h2 class="font-display text-2xl text-moss-deep mb-1">{title} at a glance</h2>
+  <p class="text-sm text-ink-soft mb-3">
+    These six measurements are recorded the same way for every supplement on this site, so you can
+    compare across pages. <a href="/method/" class="text-moss-deep underline underline-offset-2">How we measure</a>.
+  </p>
+  <dl class="border border-mist rounded-lg bg-card divide-y divide-mist">
+    {rows.map((r) => (
+      <div class="grid grid-cols-1 sm:grid-cols-[13rem_1fr] gap-x-4 gap-y-1 px-4 py-3">
+        <dt class="font-mono uppercase tracking-wider text-moss text-[0.62rem] pt-0.5">{r.label}</dt>
+        <dd class="text-sm text-ink leading-relaxed" set:html={renderInlineMarkdown(r.value)} />
+      </div>
+    ))}
+  </dl>
+</section>

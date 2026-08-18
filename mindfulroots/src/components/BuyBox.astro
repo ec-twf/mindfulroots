@@ -51,11 +51,23 @@ const priceCheckedLabel = livePrice
             </p>
             <p class="text-[0.68rem] text-ink-soft">Price checked {priceCheckedLabel} — set by the retailer, and it can change.</p>
           </div>
-        ) : rec.priceDisplay && (
+        ) : rec.priceDisplay ? (
           <p class="text-sm font-medium text-moss-deep">{rec.priceDisplay}</p>
+        ) : (
+          /* Amazon sets this price and changes it often. Quoting a hand-entered
+             figure would go stale within days and breaches the Associates terms,
+             so the page says why the number is missing instead of guessing. */
+          <p class="text-[0.68rem] text-ink-soft">Amazon sets the price and changes it often, so we don't quote one here.</p>
         )}
 
         <div><EvidenceTag level={data.evidence} /></div>
+
+        {data.qualityCriterion && (
+          <div class="text-xs text-ink-soft leading-relaxed border border-mist rounded-md bg-paper p-3">
+            <p class="font-mono uppercase tracking-wider text-moss mb-1 text-[0.62rem]">Our criterion</p>
+            <p>{data.qualityCriterion}</p>
+          </div>
+        )}
 
         <AffiliateButton
           keyword={rec.iherbKeyword}
@@ -64,13 +76,9 @@ const priceCheckedLabel = livePrice
           placement="buybox"
           fullWidth
         />
-
-        {data.qualityCriterion && (
-          <div class="text-xs text-ink-soft leading-relaxed border border-mist rounded-md bg-paper p-3">
-            <p class="font-mono uppercase tracking-wider text-moss mb-1 text-[0.62rem]">Our criterion</p>
-            <p>{data.qualityCriterion}</p>
-          </div>
-        )}
+        <p class="text-xs text-ink-soft leading-relaxed">
+          We don't sell supplements and nobody pays for a place on this list.
+        </p>
 
         {(rec.concentrationNote || rec.oxidationNote) && (
           <ul class="text-xs text-ink-soft space-y-1">
@@ -94,14 +102,17 @@ const priceCheckedLabel = livePrice
       <div class="space-y-3">
         <div><EvidenceTag level={data.evidence} /></div>
 
-        <AffiliateButton keyword={data.iherbKeyword} goSlug={slug} placement="buybox" fullWidth />
-
         {data.qualityCriterion && (
           <div class="text-xs text-ink-soft leading-relaxed border border-mist rounded-md bg-paper p-3">
             <p class="font-mono uppercase tracking-wider text-moss mb-1 text-[0.62rem]">Our criterion</p>
             <p>{data.qualityCriterion}</p>
           </div>
         )}
+
+        <AffiliateButton keyword={data.iherbKeyword} goSlug={slug} placement="buybox" fullWidth />
+        <p class="text-xs text-ink-soft leading-relaxed">
+          We don't sell supplements and nobody pays for a place on this list.
+        </p>
       </div>
     )}
   </div>
