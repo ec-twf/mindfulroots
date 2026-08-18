@@ -104,6 +104,37 @@ def write_patterns(rows, out_path):
     return len(buckets)
 
 
+def write_pages(rows, out_path):
+    """One row per URL — the committed artifact the headless optimizer reads.
+
+    The full query/page pull is tens of thousands of rows and stays gitignored,
+    but the optimizer's indexation proxy only needs the SET of URLs Search
+    Console has seen at all: a published post older than 14 days that appears
+    in no row here is probably not indexed. Collapsing queries away makes that
+    answerable from a ~120-row file small enough to keep in git.
+    """
+    buckets = {}
+    for r in rows:
+        path = re.sub(r"^https?://[^/]+", "", r["page"])
+        b = buckets.setdefault(path, {"impressions": 0, "clicks": 0,
+                                      "pos_weighted": 0.0, "queries": 0})
+        b["impressions"] += r["impressions"]
+        b["clicks"] += r["clicks"]
+        b["pos_weighted"] += r["position"] * r["impressions"]
+        b["queries"] += 1
+
+    with open(out_path, "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["page", "impressions", "clicks", "avg_position", "queries"])
+        for path, b in sorted(buckets.items(), key=lambda kv: -kv[1]["impressions"]):
+            w.writerow([
+                path, b["impressions"], b["clicks"],
+                round(b["pos_weighted"] / b["impressions"], 1) if b["impressions"] else "",
+                b["queries"],
+            ])
+    return len(buckets)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--days", type=int, default=28)
@@ -198,6 +229,12 @@ def main():
     patterns_path = out_path.replace(".csv", "-patterns.csv")
     n = write_patterns(rows, patterns_path)
     print(f"Wrote {n} cluster/type buckets to {patterns_path}")
+
+    # Per-URL rollup — feeds the optimizer's indexation proxy. Committed, unlike
+    # the query-level pull above.
+    pages_path = out_path.replace(".csv", "-pages.csv")
+    n = write_pages(rows, pages_path)
+    print(f"Wrote {n} page rows to {pages_path}")
 
 
 if __name__ == "__main__":
