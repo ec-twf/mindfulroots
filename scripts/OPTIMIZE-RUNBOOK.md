@@ -22,7 +22,8 @@ venv/bin/python scripts/gsc-pull.py --days 28
 ```
 
 - Writes `data/gsc/<date>.csv` (query, page, clicks, impressions, ctr, position). Gitignored —
-  the rolled-up `*-patterns.csv` (cluster/type scoreboard) and `*-pages.csv` (one row per URL,
+  the rolled-up `*-patterns.csv` (cluster/type scoreboard), `*-agents.csv` (queries attributed to
+  retrieval bots, held out of both rollups) and `*-pages.csv` (one row per URL,
   feeds the indexation proxy) are the committed artifacts.
 - Property defaults to `sc-domain:moodsupplement.net`. Override with `--property` or `GSC_PROPERTY` if that ever changes.
 - **403 error** = the service account isn't granted on the property string being queried. See `scripts/GSC-SETUP.md` (URL-prefix vs Domain property gotcha). Diagnose with the accessible-sites list in that doc.
@@ -60,7 +61,7 @@ In Claude Code (from the repo), invoke:
 
 It orchestrates steps 1–2, then does the judgment work you can't script:
 
-- **Bucket the GSC pages** — striking-distance (pos 4–15, tune title/H1/FAQ to the exact query), low-CTR (rewrite title/meta only), dormant (retarget or fold in), top-3 (protect + compound).
+- **Bucket the GSC pages** — striking-distance (pos 4–15 **and 25+ human impressions**, tune title/H1/FAQ to the exact query), low-CTR (rewrite title/meta only), dormant (retarget or fold in), agent-retrieved (high `excluded_impressions`, near-zero human — a GEO signal, leave the title alone), top-3 (protect + compound).
 - **Harvest GSC demand** — queries earning impressions with no dedicated page → new queue lines.
 - **Validate discovery candidates** — WebSearch the top buy-intent rows from `data/discovery/`, keep only the ones where the SERP is beatable (small blogs, no big authority).
 - **Append survivors** to `mindfulroots/mindfulroots-topic-queue.txt` (blog) or `mindfulroots/product-page-tasks.txt` (product) in the pipe format:
