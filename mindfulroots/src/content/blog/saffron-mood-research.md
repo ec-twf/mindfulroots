@@ -3,7 +3,7 @@ title: "Saffron for Mood: What Research Shows and How to Spot Fakes"
 description: "Saffron has surprisingly strong human research for low mood and stress. Here's what the trials really found, the honest caveats, and how to buy a standardized extract that isn't adulterated."
 metaDescription: "Saffron has surprisingly strong human research behind it for low mood and stress. The trials, the honest caveats, and how to buy a genuine standardized extract."
 pubDate: 2026-06-22
-updatedDate: 2026-06-30
+updatedDate: 2026-08-19
 cluster: "saffron-extract"
 headTerm: "saffron mood research"
 keyTakeaway: "Saffron works on a scale of weeks, not days. Most trials assessed benefit at four to six weeks of daily use, with an early signal around week five in the largest study. If a properly dosed standardised extract has done nothing after six to eight consistent weeks, stopping is reasonable."
@@ -24,6 +24,8 @@ faq:
     a: "For capsules you can't use the visual tests meant for loose threads. Rely instead on a named, trialed extract (affron® or Safr'Inside™), a stated 28–30 mg standardized dose, declared active markers, and third-party testing or a Certificate of Analysis — adulteration is common enough that verification is worth insisting on."
   - q: "Does the affron® branding actually matter, or is that marketing?"
     a: "A bit of both. The branding matters only because that specific extract is what most of the modern human trials used — so you're buying a known quantity at a known dose. A generic, untested saffron extract might be fine, but you have no trial evidence and no standardization to lean on."
+  - q: "What is the best saffron extract supplement for mood?"
+    a: "For mood, choose a named, trial-backed extract at the studied dose rather than a generic 'saffron extract.' That means affron® (standardised to its Lepticrosalides marker) or Safr'Inside™ at around 28–30 mg a day, with the actives declared on the label and third-party or ISO 3632 testing against adulteration. Our [saffron extract page](/products/saffron-extract/) is built around exactly that spec, and the [low mood guide](/guides/low-mood/) shows where it fits."
 ---
 <!-- humanized -->
 
@@ -61,6 +63,17 @@ The consistency is reassuring, but most of these affron® trials were conducted 
 
 On our evidence scale, saffron sits at **Moderate**, one of the stronger Moderates on this site and just short of "Well-studied." Multiple meta-analyses, large placebo effect sizes, and a robust recent RCT pull it up; publication bias, regional concentration, short durations, and commercial funding ties keep it from the top tier. We'd rather under-claim than overstate it.
 
+### The mood trials at a glance
+
+| Year | Extract & dose | Population | Key finding |
+| --- | --- | --- | --- |
+| 2017 | affron® 28 mg/day | Healthy adults, low mood | Lower total mood disturbance over 4 weeks |
+| 2018 | affron® 28 mg/day | Adolescents, anxious and low mood | Improved self-reported symptoms |
+| 2019 | Saffron vs SSRI | Mild-to-moderate depression | Comparable to fluoxetine or citalopram, fewer side effects |
+| 2025 | affron® 28 mg/day | 202 adults, subclinical low mood | Mood and stress gains by about week 5, over 12 weeks |
+
+The table shows the pattern behind the meta-analyses: a modest, consistent dose of a named extract, measured over weeks, in people with mild or subclinical symptoms rather than severe depression.
+
 ## How much, and how long until it works
 
 Across the mood research, the studied dose is remarkably consistent: **roughly 28–30 mg per day of a standardized extract**, frequently split into a morning and evening dose. More is not obviously better. The trials that work, work at this modest dose, and there's no good reason to chase higher amounts.
@@ -80,6 +93,10 @@ For a *supplement*, you mostly can't eyeball any of this. It's a powder in a cap
 5. Reputable products state where the saffron comes from and use stigma extract rather than undisclosed plant parts.
 
 In short, the buying criterion for saffron is simpler than it looks: **a named, standardized, trial-backed extract at the studied dose, verifiable against adulteration.** Everything else is decoration.
+
+### The best saffron extract for mood, in one line
+
+For a mood goal, the pick is a named, trial-backed extract such as affron® at the studied 28 mg a day, with the actives declared and independent testing against adulteration. That is the same spec our [saffron extract page](/products/saffron-extract/) is built around, and the [low mood guide](/guides/low-mood/) shows where it sits beside sleep, daylight and the other basics. Match the extract to the trials rather than to the price on the front of the jar.
 
 ## Cautions and who should be careful
 

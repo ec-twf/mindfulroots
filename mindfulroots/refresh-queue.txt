@@ -1,4 +1,3 @@
-SLUG:saffron-mood-research | FOCUS:buy-intent,citations,table,faq-audit
 SLUG:saffron-extract-vs-affron | FOCUS:buy-intent,citations,table,faq-audit
 SLUG:saffron-extract-vs-ashwagandha | FOCUS:buy-intent,citations,table,faq-audit
 SLUG:probiotic-vs-digestive-enzymes | FOCUS:buy-intent,citations,table,faq-audit
