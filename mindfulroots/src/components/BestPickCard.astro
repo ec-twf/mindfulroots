@@ -26,9 +26,9 @@ const { slug, title, category, evidence, placement = 'home-pick', rank, rec } = 
 ---
 <article class="group bg-card border border-mist rounded-lg flex flex-col overflow-hidden transition-shadow hover:shadow-card">
   {/* Image, or branded botanical placeholder keyed to rec.image */}
-  <div class="aspect-[16/10] bg-mist/40 border-b border-mist flex items-center justify-center overflow-hidden">
+  <div class="aspect-[4/3] bg-mist/40 border-b border-mist flex items-center justify-center overflow-hidden p-3">
     {rec.image ? (
-      <img src={rec.image} alt={rec.imageAlt ?? `${rec.brand} ${rec.productName}`} loading="lazy" class="w-full h-full object-cover" />
+      <img src={rec.image} alt={rec.imageAlt ?? `${rec.brand} ${rec.productName}`} loading="lazy" class="max-w-full max-h-full w-auto h-auto object-contain" />
     ) : (
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="opacity-40">
         <path d="M12 21V8M12 8c0-3 2-5 5-5 0 3-2 5-5 5Zm0 0c0-3-2-5-5-5 0 3 2 5 5 5Zm0 6c0-2.4 1.6-4 4-4 0 2.4-1.6 4-4 4Zm0 0c0-2.4-1.6-4-4-4 0 2.4 1.6 4 4 4Z"

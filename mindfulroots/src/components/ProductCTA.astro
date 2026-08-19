@@ -23,9 +23,9 @@ const { slug, title, evidence, rec } = Astro.props;
 ---
 <aside id="buy" class="not-prose bg-card border border-mist rounded-lg p-5 my-8 flex flex-col sm:flex-row gap-5">
   {/* Image, or branded botanical placeholder keyed to rec.image */}
-  <div class="sm:w-36 shrink-0 aspect-[16/10] sm:aspect-square bg-mist/40 border border-mist rounded-md flex items-center justify-center overflow-hidden">
+  <div class="sm:w-36 shrink-0 aspect-[4/3] sm:aspect-square bg-mist/40 border border-mist rounded-md flex items-center justify-center overflow-hidden p-2">
     {rec.image ? (
-      <img src={rec.image} alt={rec.imageAlt ?? `${rec.brand} ${rec.productName}`} loading="lazy" class="w-full h-full object-cover" />
+      <img src={rec.image} alt={rec.imageAlt ?? `${rec.brand} ${rec.productName}`} loading="lazy" class="max-w-full max-h-full w-auto h-auto object-contain" />
     ) : (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="opacity-40">
         <path d="M12 21V8M12 8c0-3 2-5 5-5 0 3-2 5-5 5Zm0 0c0-3-2-5-5-5 0 3 2 5 5 5Zm0 6c0-2.4 1.6-4 4-4 0 2.4-1.6 4-4 4Zm0 0c0-2.4-1.6-4-4-4 0 2.4 1.6 4 4 4Z"
