@@ -57,7 +57,12 @@ const year = new Date().getFullYear();
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    {/* .ico first: Googlebot-Image probes /favicon.ico and needs a square
+        raster at a multiple of 48px, which an SVG-only icon never gave it.
+        Modern browsers read past it to the vector. */}
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
@@ -74,6 +79,7 @@ const year = new Date().getFullYear();
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": new URL('/', Astro.site).toString() + '#organization',
       "name": SITE.name,
       "url": String(Astro.site),
       "logo": {

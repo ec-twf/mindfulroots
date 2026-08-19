@@ -15,12 +15,20 @@ const posts = (await getCollection('blog'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
 
+// Google builds the SERP site name from this node, and only from the homepage
+// copy of it. alternateName covers the spellings people and Google both use for
+// the brand; publisher ties it to the sitewide Organization in Base.astro so the
+// name and the logo are read as one entity rather than two loose graphs.
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': `${Astro.site?.href}#website`,
   name: SITE.name,
+  alternateName: ['Mood Supplement', 'moodsupplement.net'],
   description: SITE.description,
   url: Astro.site?.href,
+  inLanguage: 'en',
+  publisher: { '@id': `${Astro.site?.href}#organization` },
 };
 ---
 
