@@ -5,7 +5,7 @@ seoTitle: "affron vs Saffron Extract: Same Herb, Tested at 28 mg"
 metaDescription: "affron is a saffron extract, not a rival herb: standardised to 3.5% lepticrosalides, trialled at 28 mg. When that premium is worth paying, and when it is not."
 keyTakeaway: "affron is a saffron extract, not a competing herb. It is a branded version made to a guaranteed strength and tested in its own trials at 28 mg a day. Pay for it if you want the exact form the research used; a generic extract can work, but you cannot check it against the evidence."
 pubDate: 2026-07-10
-updatedDate: 2026-07-10
+updatedDate: 2026-08-21
 cluster: "saffron-extract"
 headTerm: "saffron extract vs affron"
 postType: "brand-comparison"
@@ -23,6 +23,8 @@ faq:
     a: "Not necessarily, but it's harder to verify. A generic 'saffron extract' with no stated crocin or safranal content gives you no way to check it against the research. Some are perfectly good; the problem is you can't tell from the label, and real saffron is expensive enough that adulteration is a genuine concern."
   - q: "Can I take saffron extract with an antidepressant?"
     a: "Talk to your prescriber first. Saffron has been studied for mood, which is exactly why combining it with a prescribed antidepressant is something to clear with a professional rather than do on your own."
+  - q: "What's the best affron saffron extract supplement?"
+    a: "Look for the affron name stated on the label, a standardisation of at least 3.5% lepticrosalides, and a dose of 28–30 mg per day, the amount used in the trials. Prefer a product with third-party testing for identity and purity, since real saffron is costly and a common target for adulteration. Our saffron extract page covers the standardised options and how to choose one."
 ---
 
 If you're comparing "saffron extract" against "affron," the most useful thing to know up front is that these aren't two competing ingredients. affron® is a saffron extract. It's a specific, branded, standardized extract of the saffron stigma (*Crocus sativus*), produced to a fixed marker-compound level and studied in its own human trials. So the real question isn't which herb to pick. It's whether you want a generic saffron extract or this particular named one, and what the label difference buys you.
@@ -66,6 +68,10 @@ Choose a standardized branded extract if you want your supplement to match the s
 Choose a generic saffron extract only if you trust the brand's sourcing and testing, since you're relying on that reputation instead of a stated marker level. Given how costly real saffron is, a suspiciously cheap "saffron extract" is a reason to be skeptical rather than a bargain.
 
 Either way, this is one ingredient, not two. The decision is about standardization and evidence-matching, not about picking the right plant.
+
+## What to look for in an affron saffron extract supplement
+
+Once you have decided on a standardized extract, a few label checks separate a trial-matched product from a vague one. Look for the affron name stated explicitly, not just "saffron extract," so you know you are getting the studied material. Check that the standardization is given as at least 3.5% lepticrosalides; a product that states no marker compound gives you nothing to verify. Match the dose to the research: 28–30 mg per day, sometimes split morning and evening, is the studied range, so a capsule delivering that in one or two servings is ideal. Prefer third-party testing for identity and purity, because genuine saffron is expensive and adulteration with cheaper plant material or dyes is a real concern. Our [saffron extract page](/products/saffron-extract/) sets out the standardized options and where to find them, and the [low-mood guide](/guides/low-mood/) shows how saffron sits alongside other everyday mood supports. A stated marker level and a trial-matched dose tell you far more than a "high strength" claim. If you want the researched form, look for a 28 mg affron extract rather than an unlabelled generic.
 
 ## Typical use
 
