@@ -2,7 +2,7 @@
 title: "Saffron Extract vs Ashwagandha: Which?"
 description: "Saffron extract vs ashwagandha: saffron leans toward low mood, ashwagandha toward stress and cortisol. A verdict-first guide to which one fits your goal."
 pubDate: 2026-07-10
-updatedDate: 2026-07-10
+updatedDate: 2026-08-23
 cluster: "saffron-extract"
 headTerm: "saffron extract vs ashwagandha"
 keyTakeaway: "For low mood specifically, saffron has the more directly relevant trial record, with standardised extracts tested against placebo for depressive symptoms in mild to moderate cases. Ashwagandha's evidence centres on stress and anxiety rather than mood itself. If flat mood is the main issue, saffron is the more on-target choice."
@@ -21,6 +21,8 @@ faq:
     a: "Neither is fast. Both are assessed over weeks, not hours. Ashwagandha trials typically run 6–8 weeks; saffron trials 4–8 weeks. If you want something you can feel the same day, neither of these is it."
   - q: "Which is safer?"
     a: "Both are generally well tolerated at studied doses. Ashwagandha carries specific cautions around thyroid conditions, pregnancy, and rare liver reactions. Saffron should be kept to supplement doses and avoided at high doses in pregnancy. Match the caution to your own health situation and check with a clinician."
+  - q: "Should I buy a saffron or ashwagandha supplement for mood?"
+    a: "For flat or low mood specifically, a standardised saffron extract is the more on-target buy, since the depressive-symptom trials used saffron at about 28 to 30 mg a day. If your main problem is ongoing stress or feeling wired and tired, a standardised ashwagandha root extract such as KSM-66 at 300 to 600 mg is the better match. Either way, look for a named standardised extract and third-party testing, and clear it with a clinician if you take psychiatric medication."
 ---
 
 If you're choosing between saffron extract and ashwagandha, the quickest way to decide is by your main goal. Saffron leans toward **low mood**: standardized extracts have been studied against placebo for depressive symptoms in mild-to-moderate cases. Ashwagandha leans toward **stress and cortisol**: its trials center on stressed-but-healthy adults, where standardized root extracts lower perceived-stress scores and morning cortisol. They overlap, and some people stack them, but that split is the fastest way to pick.
@@ -64,6 +66,14 @@ Stress and low mood aren't cleanly separable, so there's real overlap. Ease chro
 ## Typical use
 
 Saffron: 28–30 mg per day of a standardized extract, often split into two doses, for four to eight weeks. Ashwagandha: 300–600 mg per day of a standardized root extract (such as KSM-66), taken consistently for six to eight weeks. Adaptogens and mood botanicals both reward steady daily use over a course of weeks rather than occasional dosing.
+
+## Choosing a saffron or ashwagandha supplement for mood
+
+Once you know which herb fits your goal, the label decides whether you get the version that was actually studied. For saffron, the criterion that matters is a **standardised extract at the trial dose**: look for around 28 to 30 mg a day, ideally a named extract such as affron standardised to its active compounds, rather than raw saffron powder of unknown strength. For ashwagandha, look for a **root-only standardised extract** such as KSM-66, with its withanolide percentage stated, at 300 to 600 mg a day. In both cases insist on **third-party testing** for identity and contaminants, since saffron is among the most adulterated botanicals and ashwagandha quality varies widely. Avoid blends that stack several other actives, which make it impossible to tell what is doing the work. Our [saffron extract page](/products/saffron-extract/) and [ashwagandha page](/products/ashwagandha/) list forms that match the studies, and the [low mood guide](/guides/low-mood/) shows where each fits. If mood is the goal, choose a 28 mg standardised saffron extract; if stress is, a KSM-66 root extract.
+
+## Who should skip each one
+
+Some people should not reach for either without medical advice. Skip ashwagandha if you are pregnant, have a thyroid condition or take thyroid medication, have an autoimmune condition, or have liver problems, and stop it before surgery. Saffron should be kept to supplement doses and avoided at high doses in pregnancy. Neither belongs on top of an antidepressant or other psychiatric medication without your prescriber's input, because both have been studied for mental-health outcomes and the interaction picture is not fully mapped. A safety review indexed on [PubMed](https://pubmed.ncbi.nlm.nih.gov/32305638/) found ashwagandha's adverse effects were mostly mild in trials, but the groups above are the exception. When in doubt, ask a clinician first.
 
 ## Cautions and interactions
 
