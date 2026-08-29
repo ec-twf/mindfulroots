@@ -1,4 +1,3 @@
-SLUG:b-complex-vs-b100 | FOCUS:buy-intent,citations,table,faq-audit
 SLUG:5-htp-vs-5-ht | FOCUS:buy-intent,citations,table,faq-audit
 SLUG:natural-mood-support-basics | FOCUS:buy-intent,citations,table,faq-audit
 SLUG:can-you-take-magnesium-glycinate-and-melatonin-together | FOCUS:buy-intent,citations,faq-audit
