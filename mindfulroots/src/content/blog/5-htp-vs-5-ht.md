@@ -2,7 +2,7 @@
 title: "5-HTP vs 5-HT: What's the Difference?"
 description: "5-HTP vs 5-HT: they sound alike but are two steps in the same pathway. One is a supplement, the other is serotonin itself. Here is the real difference."
 pubDate: 2026-07-07
-updatedDate: 2026-07-07
+updatedDate: 2026-08-31
 cluster: "5-htp"
 headTerm: "5-htp vs 5-ht"
 keyTakeaway: "5-HTP and 5-HT are not the same thing, but they sit one step apart. 5-HTP (5-hydroxytryptophan) is the precursor your body converts into 5-HT (5-hydroxytryptamine), which is serotonin itself. Supplements sell 5-HTP because it crosses into the brain; you cannot buy 5-HT as a supplement."
@@ -21,6 +21,8 @@ faq:
     a: "It matters because the marketing around serotonin can be misleading. You cannot supplement serotonin directly and expect a brain effect, so any product implying it delivers serotonin to your brain is overstating things. Understanding that 5-HTP is the precursor, and 5-HT is what your body makes from it, helps you read labels honestly."
   - q: "Does 5-HTP raise serotonin too much?"
     a: "It can contribute to excess serotonin activity when combined with serotonergic drugs, which is the basis for serotonin syndrome. On its own at typical doses it is usually well tolerated, but the interaction risk is real. This is why 5-HTP is best used only with medical guidance if you take any mood, migraine, or pain medication."
+  - q: "Which 5-HTP supplement should I buy?"
+    a: "Look for a product that states the 5-HTP dose per capsule, usually 50 to 100 mg, sourced from Griffonia simplicifolia seed extract, with third-party testing and no added serotonergic ingredients. Some pair it with vitamin B6, the cofactor for the conversion step. Our 5-HTP page covers what to check before you buy."
 ---
 
 5-HTP (5-hydroxytryptophan) is a compound your body makes from tryptophan and converts into serotonin. 5-HT (5-hydroxytryptamine) is the formal chemical name for serotonin itself. So if you are comparing them as two products to choose between, the short answer is that you cannot: they are two consecutive steps in the same pathway, not rivals. 5-HTP is what you can take. 5-HT is what your body makes from it. One is a supplement, the other is a neurotransmitter, and only the precursor is something you buy.
@@ -60,6 +62,10 @@ The naming clarity does not settle whether 5-HTP helps mood, so it is worth bein
 ## Typical use
 
 Where people use 5-HTP, common practice is 50 to 100 mg, sometimes with vitamin B6 as a cofactor, because B6 is needed for the conversion step. Because of the interaction cautions below, 5-HTP is best used only under the guidance of a doctor or pharmacist rather than self-prescribed, especially if you take any prescription medication. There is no equivalent dosing conversation for oral 5-HT, because it is not a supplement that reaches the brain.
+
+## Which 5-HTP supplement to buy
+
+If you and your clinician have decided a serotonin precursor is worth trying, a few label checks separate a sensible 5-HTP product from a vague one. Look for the 5-HTP dose stated per capsule, commonly 50 to 100 mg, so you can start low rather than guess from a proprietary blend. Check the source is Griffonia simplicifolia seed extract, the natural origin of supplemental 5-HTP, and prefer a product with third-party testing for purity, since amino-acid supplements have had contamination scares in the past. Some formulas add vitamin B6 (pyridoxal-5-phosphate), the cofactor the body needs to convert 5-HTP into serotonin, which is a reasonable inclusion. Avoid products that stack 5-HTP with other serotonergic ingredients, because that only compounds the interaction risk covered below. The [5-HTP page](/products/5-htp/) sets out what to check, and the [low-mood guide](/guides/low-mood/) puts it in context with other options.
 
 ## Cautions and interactions
 
