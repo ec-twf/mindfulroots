@@ -1,4 +1,3 @@
-SLUG:natural-mood-support-basics | FOCUS:buy-intent,citations,table,faq-audit
 SLUG:can-you-take-magnesium-glycinate-and-melatonin-together | FOCUS:buy-intent,citations,faq-audit
 SLUG:can-you-take-5-htp-with-adderall | FOCUS:buy-intent,citations,faq-audit
 SLUG:b-complex-vs-b1 | FOCUS:ranking-winner,buy-intent-additive-only,citations,faq-audit
