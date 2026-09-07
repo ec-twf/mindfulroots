@@ -2,7 +2,7 @@
 title: "B-Complex vs B1: Which Do You Need?"
 description: "B-complex vs B1 (thiamine): a B-complex already contains B1 plus the full B-vitamin group, so here is when a standalone thiamine supplement is worth taking."
 pubDate: 2026-07-07
-updatedDate: 2026-07-07
+updatedDate: 2026-09-07
 cluster: "b-complex"
 headTerm: "b-complex vs b1"
 keyTakeaway: "A B-complex already contains B1. Thiamine is one of the eight B vitamins in the blend, alongside B2, B3, B5, B6, B7, folate and B12. Buying a separate B1 on top usually just doubles your thiamine, which is worth doing only if a clinician has identified a specific deficiency."
@@ -21,6 +21,8 @@ faq:
     a: "High-dose thiamine, sometimes as benfotiamine, is studied for situations linked to poor thiamine status, including alcohol use disorder and certain nerve concerns. These are targeted uses guided by a clinician, not a general daily strategy."
   - q: "Which is better for energy and mood?"
     a: "A B-complex has the broader evidence base for mood and stress, because folate, B6 and B12 all feed neurotransmitter synthesis alongside B1. Thiamine alone helps mainly when you are actually low in thiamine."
+  - q: "Which B-complex supplement should I buy?"
+    a: "Look for one that carries all eight B vitamins in active forms, especially B12 as methylcobalamin and folate as 5-MTHF, since these are ready for the body to use without a conversion step. A sensible daily potency beats a megadose, and third-party testing plus minimal fillers are worth checking. Our B-complex product page sets out what a well-formulated blend looks like."
 ---
 
 Thiamine (vitamin B1) is a water-soluble vitamin your body uses to turn carbohydrates into usable energy and to keep nerve and brain cells working normally. A B-complex is a single supplement that combines all eight B vitamins, thiamine included. So the honest starting point for anyone comparing "B-complex vs B1" is that these are not two rival products. One contains the other.
@@ -62,6 +64,10 @@ None of these are do-it-yourself decisions on a hunch. If you think your thiamin
 If you decide a B-complex covers you, check its thiamine content before adding anything separate. Many B-complex products, especially high-potency ones, already supply thiamine at many times the roughly 1.1 to 1.2 mg adult RDA. Adding a standalone B1 on top is usually redundant. Thiamine is water-soluble and has no established upper limit, so surplus is generally excreted rather than stored, but redundancy still costs money for no clear gain.
 
 The reverse also holds. If a clinician has you on high-dose thiamine, a B-complex sitting underneath it does no harm and keeps the rest of the group topped up. Just make sure the total is deliberate rather than accidental.
+
+## Which B-complex supplement to buy
+
+If you have decided the full group suits you better than standalone thiamine, a few label details separate a good B-complex from a padded one. Favour a blend that carries **all eight B vitamins in active forms**: B12 as methylcobalamin rather than cyanocobalamin, folate as **5-MTHF** rather than folic acid, and B6 as **P5P**. These are the forms the body can use directly, which matters most if you convert folic acid poorly. Look for a **sensible daily potency** rather than the biggest numbers on the shelf, since water-soluble excess is largely excreted, and check the **thiamine amount** so you are not tempted to double up with a separate B1. Prefer products with **third-party testing** and minimal fillers. Our [B-complex product page](/products/b-complex/) lays out these criteria, and the [stress support guide](/guides/stress/) shows where a daily B-complex fits alongside other options.
 
 ## Supplements mentioned
 
