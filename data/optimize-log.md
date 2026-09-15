@@ -69,3 +69,32 @@ low, left for human review; no append).
 Next action: HUMAN — (1) SERP-check and add brand-comparison targets to the queue (winner type, 0 runway),
 and (2) act on the 87% indexation warning: cut cadence to 2 new posts/fire per PUBLISHING-CADENCE.md
 until the backlog indexes.
+
+## 2026-09-15
+
+Scoreboard: 2026-09-11-patterns.csv vs 2026-09-04 delta available. WINNER: cluster
+**saffron-extract** (pos 18.6, ipp 78.0, imp 390) — the only WINNER, no WINNER type this cycle.
+PROMISING: type duration, type safety (2.0 ipp/2 imp, clean-filtered not bot-poisoned), cluster
+b-complex (pos 12.3, ipp 18.7). LAGGING: types pillar/dosage/explainer, cluster omega-3-fish-oil
+(pos 69.6, newest post 2026-08-25 = 21d). NOTE: type **brand-comparison lost WINNER** — it fell
+167.7→93.8 ipp and pos 32.6→30.3, landing just over the <30 line into NEUTRAL. It still has
+**zero queue lines** (BRAND_COMPARISON_DEPTH=0 → BRAND_COMPARISON_LOW); two brand-comparison
+slots/fire keep starving.
+
+Queue (67 lines, down from 88 as the generator consumed ~21 in 2wk; count unchanged this run,
+C3 OK): duration→P1 top, neutral (comparison/timing/interaction)→P2, explainer→P3 with the two
+saffron-extract explainer lines lifted within the P3 band. PRIORITY is documentation only — file
+order is the real lever.
+
+Indexation (pages 2026-09-11, 4d fresh, gate passed): **72 of 45 posts from the last 28d absent**
+from the GSC page rollup → LIKELY_UNINDEXED 72, INDEXATION_WARNING **160%** (up from 87% on 08-28)
+→ cadence scale gate says drop to 2 new posts/fire. Backlog is growing faster than it indexes.
+CTR: 6 CTR_UNDERPERFORM, all root+anchors of /blog/saffron-extract-vs-affron/ (pos ~8-14, ~0.6%)
+— the winner is under-monetized at the SERP; highest-leverage title/meta rewrites, report-only.
+Agent retrieval: 120 imp, one page (5-htp-serotonin-safety, 107 imp, pos 9.1) pulled into LLM
+retrieval uncited — GEO signal, no action. Buy-intent + answer-box coverage both complete (0 missing).
+Discovery proposed 40 lines (queue not low, left for human review; no append).
+
+Next action: HUMAN — the 160% indexation warning is the priority: cut cadence to 2 new posts/fire
+per PUBLISHING-CADENCE.md until the backlog indexes (volume is now actively hurting). Secondary:
+SERP-check and add brand-comparison targets (still 0 runway on a type that just left WINNER).
