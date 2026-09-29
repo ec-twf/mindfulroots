@@ -98,3 +98,35 @@ Discovery proposed 40 lines (queue not low, left for human review; no append).
 Next action: HUMAN — the 160% indexation warning is the priority: cut cadence to 2 new posts/fire
 per PUBLISHING-CADENCE.md until the backlog indexes (volume is now actively hurting). Secondary:
 SERP-check and add brand-comparison targets (still 0 runway on a type that just left WINNER).
+
+## 2026-09-29
+
+Scoreboard: 2026-09-25-patterns.csv vs 2026-09-18 delta available. WINNERS: type **brand-comparison**
+(pos 21.3, ipp 109.2, imp 655 — RE-ENTERED WINNER, was NEUTRAL last cycle as pos crossed back under 30
+from 26.8→21.3, ipp 98.3→109.2); cluster **saffron-extract** (pos 16.1, ipp 127.0, imp 381 — ipp jumped
++52.6 as page count fell 5→3); cluster **b-complex** (pos 12.8, ipp 28.2, imp 113). PROMISING: type
+interaction (pos 24.9, ipp 16.0), cluster probiotic-gut-brain (pos 11.3, ipp 3.0). LAGGING: types
+pillar/explainer/dosage; clusters omega-3-fish-oil (pos 66.4, newest 2026-08-25) and rhodiola-rosea
+(pos 84.2, newest 2026-09-01). comparison/magnesium/vitamin-d3/l-theanine sit pos>=60 but escaped
+LAGGING on the age gate (newest posts <21d).
+
+Queue (46 lines, C3 OK, count unchanged): no brand-comparison OR interaction lines exist to promote, so
+bands are neutral (comparison/timing)→P2 and explainer→P3 only. Within P2 the three b-complex timing
+lines lifted to top; within P3 the two saffron-extract + four b-complex explainer lines lifted (winner
+clusters). File order is the real lever; PRIORITY is documentation.
+
+Indexation (pages 2026-09-25, 4d fresh, gate passed): **99 posts absent** from the GSC page rollup
+(only 35 of 152 published URLs have any human impressions) → LIKELY_UNINDEXED 99, INDEXATION_WARNING
+**220%** (up from 160% on 09-15, 87% on 08-28) → cadence scale gate says drop to 2 new posts/fire.
+The backlog is indexing slower than it grows; three cycles of worsening. CTR: 7 CTR_UNDERPERFORM, all
+root+anchors of /blog/saffron-extract-vs-affron/ (pos ~7.5-14.6, ~0-1.1%) plus /blog/shoden-vs-ksm-66/
+(pos 11.2, 0%) — the saffron winner is under-monetized at the SERP; title/meta rewrites are highest
+leverage, report-only. Agent retrieval: 52 imp/23 rows, one page (5-htp-serotonin-safety, 45 imp,
+pos 8.7) pulled into LLM retrieval uncited — GEO signal, no action, correctly held out of rollups.
+Buy-intent + answer-box coverage both complete (0 missing). Discovery proposed 40 lines (queue not low
+at 46, left for human review; no append).
+
+Next action: HUMAN — the 220% indexation warning is now three cycles worsening and is the priority: cut
+cadence to 2 new posts/fire per PUBLISHING-CADENCE.md until the backlog indexes (raw volume is actively
+hurting coverage). Secondary: SERP-check and add brand-comparison targets — the type just re-entered
+WINNER yet still has 0 queue lines (BRAND_COMPARISON_LOW), so two slots/fire keep starving.
