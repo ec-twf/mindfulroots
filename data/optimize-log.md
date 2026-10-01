@@ -130,3 +130,33 @@ Next action: HUMAN — the 220% indexation warning is now three cycles worsening
 cadence to 2 new posts/fire per PUBLISHING-CADENCE.md until the backlog indexes (raw volume is actively
 hurting coverage). Secondary: SERP-check and add brand-comparison targets — the type just re-entered
 WINNER yet still has 0 queue lines (BRAND_COMPARISON_LOW), so two slots/fire keep starving.
+
+## 2026-10-01 — brand-comparison WINNER (0 queue lines), 227% indexation warning (4th worsening cycle)
+
+WINNER: type brand-comparison (pos 21.3, ipp 109.2, imp 655); clusters saffron-extract (pos 16.1,
+ipp 127.0, imp 381) and b-complex (pos 12.8, ipp 28.2, imp 113). PROMISING: type interaction
+(pos 24.9, ipp 16.0), cluster probiotic-gut-brain (pos 11.3). LAGGING types: pillar/explainer/dosage.
+comparison sits pos 69.8 but escaped LAGGING on the age gate (newest post 2d old).
+
+Queue (43 lines, C3 OK, count unchanged, zero diff): no brand-comparison OR interaction lines exist to
+promote, and the winner-cluster (saffron/b-complex) explainer lines already sit at the P3 band front, so
+the mechanical reorder was a no-op. Bands: comparison/timing→P2, explainer→P3.
+
+Indexation (pages 2026-09-25, 6d fresh, gate passed): **102 posts absent** from the GSC page rollup —
+only 35 of 155 published URLs show any human impression, and unique indexed blog pages have declined
+49→47→45→39→41→40→35 over seven weekly snapshots while the catalog grew. LIKELY_UNINDEXED 102,
+INDEXATION_WARNING **227%** (up from 220% on 09-25, 160% on 09-15, 87% on 08-28) → cadence scale gate
+says drop to 2 new posts/fire. Fourth consecutive worsening cycle; publishing volume is actively
+shrinking indexed coverage. CTR: 7 CTR_UNDERPERFORM, all root+anchors of /blog/saffron-extract-vs-affron/
+(pos 7.5-14.6, 0-1.1%) plus /blog/shoden-vs-ksm-66/ (pos 11.2, 0%) — the saffron winner is
+under-monetized at the SERP; title/meta rewrites are highest leverage, report-only. Agent retrieval:
+52 imp/23 rows, one page (5-htp-serotonin-safety, 45 imp, pos 8.7) pulled into LLM retrieval uncited —
+GEO signal, no action, correctly held out of rollups. Buy-intent + answer-box both complete (0 missing).
+Discovery proposed 40 lines (23 interaction, 11 dosage, 5 safety, 1 comparison — 0 brand-comparison);
+queue not low at 43, so left for human review, no append.
+
+Next action: HUMAN — the 227% indexation warning is now four cycles worsening and indexed coverage is
+falling in absolute terms; cut cadence to 2 new posts/fire per PUBLISHING-CADENCE.md until the backlog
+indexes. Secondary: brand-comparison is a WINNER type with 0 queue lines (BRAND_COMPARISON_LOW) and
+discovery surfaced no brand-comparison targets — two slots/fire will keep starving until a human
+SERP-checks and adds targets.
