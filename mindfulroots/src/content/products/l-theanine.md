@@ -13,7 +13,7 @@ benefits:
 typicalUse: "Commonly taken as 100–200 mg, either on its own during stressful stretches or alongside coffee/tea to take the edge off caffeine. Effects are felt within an hour for most people."
 cautions: "Very well tolerated with a strong safety profile. If you take blood-pressure medication, mention it to your doctor, as theanine may have a mild lowering effect."
 iherbKeyword: "l-theanine 200mg"
-relatedPosts: ["l-theanine-calm-focus"]
+relatedPosts: ["l-theanine-calm-focus", "supplements-safe-to-take-every-day"]
 order: 6
 relatedProducts: ["magnesium-glycinate", "ashwagandha"]
 keyTakeaway: "Our pick is Doctor's Best L-Theanine with Suntheanine®, at 150 mg per capsule. It is the only product in this comparison whose label names Suntheanine®, the branded form used in most of the published trials. If dose matters more to you than provenance, NOW and Jarrow both give 200 mg for less."

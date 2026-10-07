@@ -1,4 +1,11 @@
 ---
+# Retired 2026-10-07: merged into /blog/supplements-safe-to-take-every-day/.
+# Seven near-identical "is X safe to take every day" posts were published between
+# 2026-08-17 and 2026-09-09; GSC's 2026-10-07 coverage export showed all seven
+# stuck in "Discovered - currently not indexed", never once fetched. The unique
+# evidence from this file lives in the survivor; a 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "Is Saffron Extract Safe to Take Every Day?"
 description: "Is saffron extract safe to take every day? At the studied 28-30 mg dose, daily use is well tolerated in trials up to eight weeks. Who should skip it, and why."
 keyTakeaway: "For most healthy adults, taking a standardised saffron extract every day at the doses used in studies appears safe and well tolerated. The research so far runs for weeks to a few months rather than years, so long-term daily use is less certain. People who take antidepressants, are pregnant, or have a bleeding risk should check with a clinician first."
@@ -8,7 +15,7 @@ cluster: "saffron-extract"
 postType: "safety"
 buyIntentTerm: "best saffron extract supplement for long-term daily use"
 relatedProducts: [saffron-extract]
-draft: false
+draft: true
 faq:
   - q: "Is saffron extract safe to take every day?"
     a: "For most healthy adults, yes, at the doses used in research, which is usually 28 to 30 mg a day of a standardised extract. Human trials at this dose ran for six to twelve weeks and reported side effects no more common than with placebo. The gap is long-term data: there is little evidence on continuous use beyond a few months, so many people cycle it or reassess periodically."

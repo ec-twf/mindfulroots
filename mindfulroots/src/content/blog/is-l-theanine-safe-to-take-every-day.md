@@ -1,4 +1,11 @@
 ---
+# Retired 2026-10-07: merged into /blog/supplements-safe-to-take-every-day/.
+# Seven near-identical "is X safe to take every day" posts were published between
+# 2026-08-17 and 2026-09-09; GSC's 2026-10-07 coverage export showed all seven
+# stuck in "Discovered - currently not indexed", never once fetched. The unique
+# evidence from this file lives in the survivor; a 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "Is L-Theanine Safe to Take Every Day?"
 description: "Is L-theanine safe to take every day? For most healthy adults, yes: 100–200 mg a day is well tolerated. What the data shows and who should check first."
 metaDescription: "For most healthy adults, L-theanine is safe daily at 100–200 mg. Trials ran for weeks with no build-up of side effects; watch blood-pressure medicine."
@@ -9,7 +16,7 @@ cluster: "l-theanine"
 postType: "safety"
 buyIntentTerm: "best l-theanine supplement for daily use"
 relatedProducts: [l-theanine]
-draft: false
+draft: true
 faq:
   - q: "Is it safe to take L-theanine every day?"
     a: "For most healthy adults, yes. Trials have given 100–200 mg daily for weeks at a time with a strong safety record and no build-up of side effects. L-theanine is not sedating like a sleep medication and there is no established dependence or withdrawal. The main groups who should check first are people on blood-pressure medication and those who are pregnant or breastfeeding."

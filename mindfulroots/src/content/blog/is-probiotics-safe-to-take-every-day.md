@@ -1,4 +1,11 @@
 ---
+# Retired 2026-10-07: merged into /blog/supplements-safe-to-take-every-day/.
+# Seven near-identical "is X safe to take every day" posts were published between
+# 2026-08-17 and 2026-09-09; GSC's 2026-10-07 coverage export showed all seven
+# stuck in "Discovered - currently not indexed", never once fetched. The unique
+# evidence from this file lives in the survivor; a 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "Is Probiotics Safe to Take Every Day?"
 description: "Is it safe to take probiotics every day? For most healthy adults, yes. Here is what the long-term data shows, who should be cautious, and when to cycle."
 metaDescription: "Daily probiotics are safe for most healthy adults, and long-term daily use is normal. The exception is people who are seriously ill or immunocompromised."
@@ -9,7 +16,7 @@ cluster: "probiotic-gut-brain"
 postType: "safety"
 buyIntentTerm: "best probiotic supplement for daily long-term use"
 relatedProducts: [probiotic-gut-brain]
-draft: false
+draft: true
 faq:
   - q: "Is it safe to take probiotics every day?"
     a: "For most healthy adults, yes. Probiotics have a long record of safe daily use, and reviews of the evidence report that side effects in healthy people are usually mild and short-lived, such as a few days of gas or bloating. The main exceptions are people who are critically ill, immunocompromised, or recovering from major surgery, who should speak to a doctor before starting."

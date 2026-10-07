@@ -73,7 +73,20 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: '5-htp vs ashwagandha', owner: '/blog/5-htp-vs-ashwagandha/', intent: 'comparison' },
   { headTerm: 'can you take 5-htp with adderall', owner: '/blog/can-you-take-5-htp-with-adderall/', intent: 'informational' },
   { headTerm: 'can you take l-tryptophan and melatonin together', owner: '/blog/can-you-take-l-tryptophan-and-melatonin-together/', intent: 'informational' },
-  { headTerm: 'is 5-htp safe to take every day', owner: '/blog/is-5-htp-safe-to-take-every-day/', intent: 'informational' },
+  // Daily-safety family — seven near-identical "is X safe to take every day"
+  // posts (2026-08-17 to 2026-09-09) were merged into one page on 2026-10-07.
+  // GSC's coverage export had all seven in "Discovered - currently not indexed"
+  // with Last crawled 1970-01-01: Google saw the pattern, judged each new URL
+  // redundant with the ones it had already skipped, and never fetched any of
+  // them. One page that answers all seven is one URL to crawl instead of seven.
+  { headTerm: 'is it safe to take supplements every day', owner: '/blog/supplements-safe-to-take-every-day/', intent: 'informational' },
+  { headTerm: 'is 5-htp safe to take every day', owner: '/blog/supplements-safe-to-take-every-day/', intent: 'informational' },
+  { headTerm: 'is ashwagandha safe to take every day', owner: '/blog/supplements-safe-to-take-every-day/', intent: 'informational' },
+  { headTerm: 'is l-theanine safe to take every day', owner: '/blog/supplements-safe-to-take-every-day/', intent: 'informational' },
+  { headTerm: 'is magnesium glycinate safe to take every day', owner: '/blog/supplements-safe-to-take-every-day/', intent: 'informational' },
+  { headTerm: 'is it safe to take probiotics every day', owner: '/blog/supplements-safe-to-take-every-day/', intent: 'informational' },
+  { headTerm: 'is rhodiola rosea safe to take every day', owner: '/blog/supplements-safe-to-take-every-day/', intent: 'informational' },
+  { headTerm: 'is saffron extract safe to take every day', owner: '/blog/supplements-safe-to-take-every-day/', intent: 'informational' },
   { headTerm: 'l-tryptophan and melatonin together', owner: '/blog/can-you-take-l-tryptophan-and-melatonin-together/', intent: 'informational' },
   { headTerm: 'l-tryptophan vs 5-htp for anxiety', owner: '/blog/l-tryptophan-vs-5-htp-for-anxiety/', intent: 'comparison' },
 

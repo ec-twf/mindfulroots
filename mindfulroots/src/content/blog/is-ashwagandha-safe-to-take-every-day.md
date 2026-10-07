@@ -1,4 +1,11 @@
 ---
+# Retired 2026-10-07: merged into /blog/supplements-safe-to-take-every-day/.
+# Seven near-identical "is X safe to take every day" posts were published between
+# 2026-08-17 and 2026-09-09; GSC's 2026-10-07 coverage export showed all seven
+# stuck in "Discovered - currently not indexed", never once fetched. The unique
+# evidence from this file lives in the survivor; a 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "Is Ashwagandha Safe to Take Every Day?"
 description: "Is ashwagandha safe to take every day? For most healthy adults, daily use up to about three months is well tolerated. Who should skip it and when to cycle."
 metaDescription: "For most healthy adults, daily ashwagandha up to about three months is well tolerated in trials. Longer-term safety is less certain; some should skip it."
@@ -9,7 +16,7 @@ cluster: "ashwagandha"
 postType: "safety"
 buyIntentTerm: "best ashwagandha supplement for long-term daily use"
 relatedProducts: [ashwagandha]
-draft: false
+draft: true
 faq:
   - q: "How long can you take ashwagandha continuously?"
     a: "Most clinical trials ran for eight to twelve weeks, so daily use for up to about three months is the best-supported window. There is no strong evidence that longer continuous use is harmful for healthy adults, but there is also little long-term trial data, which is why some people cycle it, for example a few weeks on then a week or two off. If you plan to take it daily for many months, it is worth a periodic check-in with a clinician, especially for liver and thyroid."

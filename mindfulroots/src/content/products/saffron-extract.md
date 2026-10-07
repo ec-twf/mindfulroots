@@ -13,7 +13,7 @@ benefits:
 typicalUse: "Trials commonly use 28–30 mg per day of a standardized extract (such as affron®), often split into two doses, for 4–8 weeks."
 cautions: "Generally well tolerated at supplement doses. Avoid high doses in pregnancy. Because it has been studied for mood, talk to your doctor before combining it with prescribed antidepressants."
 iherbKeyword: "saffron extract affron"
-relatedPosts: ["saffron-mood-research"]
+relatedPosts: ["saffron-mood-research", "supplements-safe-to-take-every-day"]
 order: 7
 relatedProducts: ["5-htp", "ashwagandha"]
 keyTakeaway: "Our pick is Sports Research Saffron Extract at 30 mg of affron® per softgel. Unusually, all three products here pass our criterion. Sports Research wins on dose precision: the trial that found an effect used 28 mg a day, and a 22 mg arm in the same study showed nothing at all."

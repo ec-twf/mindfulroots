@@ -1,4 +1,11 @@
 ---
+# Retired 2026-10-07: merged into /blog/supplements-safe-to-take-every-day/.
+# Seven near-identical "is X safe to take every day" posts were published between
+# 2026-08-17 and 2026-09-09; GSC's 2026-10-07 coverage export showed all seven
+# stuck in "Discovered - currently not indexed", never once fetched. The unique
+# evidence from this file lives in the survivor; a 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "Is 5-HTP Safe to Take Every Day?"
 description: "Is 5-HTP safe to take every day? For most healthy adults short-term daily use is well tolerated, but long-term data are thin and one drug rule is absolute."
 pubDate: 2026-08-17
@@ -9,7 +16,7 @@ keyTakeaway: "For healthy adults not on serotonergic medication, daily 5-HTP at 
 postType: "safety"
 buyIntentTerm: "best 5-htp supplement for daily use"
 relatedProducts: [5-htp]
-draft: false
+draft: true
 faq:
   - q: "Is 5-HTP safe to take every day?"
     a: "For most healthy adults not on serotonergic medication, short-term daily use at typical doses of 50 mg to 300 mg is generally tolerated. The real gaps are long-term safety, which has not been well studied beyond a few months, and the absolute rule against combining it with antidepressants or other serotonergic drugs. Daily use is reasonable for a defined period, but it is best kept under a clinician's eye rather than taken open-endedly on your own."

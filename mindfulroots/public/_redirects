@@ -19,3 +19,16 @@ https://moodsupplement.net/*     https://www.moodsupplement.net/:splat  301!
 /blog/l-tryptophan-and-melatonin-together/  /blog/can-you-take-l-tryptophan-and-melatonin-together/  301
 /blog/rhodiola-rosea-vs-ashwagandha/  /blog/rhodiola-rosea-vs-ashwagandha-for-anxiety/  301
 
+
+# Daily-safety family merge, 2026-10-07. Seven near-identical
+# "is X safe to take every day" posts published 2026-08-17 to 2026-09-09 all sat
+# in GSC's "Discovered - currently not indexed" with Last crawled 1970-01-01 --
+# Google never fetched a single one. Each page's unique evidence was carried into
+# one survivor that answers all seven questions; the originals are draft: true.
+/blog/is-5-htp-safe-to-take-every-day/  /blog/supplements-safe-to-take-every-day/  301
+/blog/is-ashwagandha-safe-to-take-every-day/  /blog/supplements-safe-to-take-every-day/  301
+/blog/is-l-theanine-safe-to-take-every-day/  /blog/supplements-safe-to-take-every-day/  301
+/blog/is-magnesium-glycinate-safe-to-take-every-day/  /blog/supplements-safe-to-take-every-day/  301
+/blog/is-probiotics-safe-to-take-every-day/  /blog/supplements-safe-to-take-every-day/  301
+/blog/is-rhodiola-rosea-safe-to-take-every-day/  /blog/supplements-safe-to-take-every-day/  301
+/blog/is-saffron-extract-safe-to-take-every-day/  /blog/supplements-safe-to-take-every-day/  301

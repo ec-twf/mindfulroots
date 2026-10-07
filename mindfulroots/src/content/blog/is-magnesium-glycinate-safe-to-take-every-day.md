@@ -1,4 +1,11 @@
 ---
+# Retired 2026-10-07: merged into /blog/supplements-safe-to-take-every-day/.
+# Seven near-identical "is X safe to take every day" posts were published between
+# 2026-08-17 and 2026-09-09; GSC's 2026-10-07 coverage export showed all seven
+# stuck in "Discovered - currently not indexed", never once fetched. The unique
+# evidence from this file lives in the survivor; a 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "Is Magnesium Glycinate Safe to Take Every Day?"
 description: "Is magnesium glycinate safe to take every day? For most healthy adults, yes, within the 350 mg supplemental limit. Here is the evidence, plus who should not."
 metaDescription: "For most healthy adults, daily magnesium glycinate is safe within the 350 mg supplement limit. Kidney disease is the main reason to check with a clinician."
@@ -9,7 +16,7 @@ cluster: "magnesium-glycinate"
 postType: "safety"
 buyIntentTerm: "best magnesium glycinate supplement for everyday long-term use"
 relatedProducts: ["magnesium-glycinate"]
-draft: false
+draft: true
 faq:
   - q: "Can you take magnesium glycinate every day long term?"
     a: "For most healthy adults, yes. Magnesium is an essential mineral the body uses daily, and many people do not get enough from food, so steady daily intake is reasonable. Keep supplemental magnesium at or below 350 mg of elemental magnesium a day, and let food make up the rest. There is no established need to cycle it, though a clinician can advise on your situation."

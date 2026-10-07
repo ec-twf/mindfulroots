@@ -1,4 +1,11 @@
 ---
+# Retired 2026-10-07: merged into /blog/supplements-safe-to-take-every-day/.
+# Seven near-identical "is X safe to take every day" posts were published between
+# 2026-08-17 and 2026-09-09; GSC's 2026-10-07 coverage export showed all seven
+# stuck in "Discovered - currently not indexed", never once fetched. The unique
+# evidence from this file lives in the survivor; a 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "Is Rhodiola Rosea Safe to Take Every Day?"
 description: "Is rhodiola rosea safe to take every day? At 200-600 mg of standardised extract, daily use is well tolerated in trials. Who should skip it, and how to cycle."
 keyTakeaway: "For most healthy adults, taking a standardised rhodiola rosea extract every day at the studied dose appears safe and well tolerated, with mild, uncommon side effects. Trials are mostly short, so long-term daily use is less certain, and many people take it earlier in the day and pause periodically. People on antidepressants, who are pregnant, or with bipolar disorder should check with a clinician first."
@@ -8,7 +15,7 @@ cluster: "rhodiola-rosea"
 postType: "safety"
 buyIntentTerm: "best rhodiola rosea supplement for long-term daily use"
 relatedProducts: [rhodiola-rosea]
-draft: false
+draft: true
 faq:
   - q: "Is rhodiola rosea safe to take every day?"
     a: "For most healthy adults, yes, at the doses used in research, which is roughly 200 to 600 mg a day of a standardised extract. Trials at these doses reported side effects that were mild and no more common than with placebo. The main gap is duration: most studies ran for a few weeks to a few months, so there is little evidence on continuous use over years."
