@@ -7,10 +7,12 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 import ProductCTA from '../../components/ProductCTA.astro';
 import AnswerBox from '../../components/AnswerBox.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
 import StickyBuyBar from '../../components/StickyBuyBar.astro';
 import EmailCapture from '../../components/EmailCapture.astro';
 import { getCollection, render } from 'astro:content';
 import { hubsForPost } from '../../lib/hubs';
+import { relatedPosts } from '../../lib/related';
 import { renderInlineMarkdown } from '../../lib/inline-markdown';
 import { SITE } from '../../config';
 
@@ -30,6 +32,12 @@ const { Content, headings } = await render(post);
 // These must never diverge (Google penalizes structured data for content
 // that isn't visible on the page), so both consult this one flag.
 const hasFaq = Boolean(data.faq && data.faq.length > 0);
+
+// Sibling posts, picked as a ring over the cluster so every post both gives and
+// receives the same number of links (see src/lib/related.ts for why recency
+// ordering would make the orphaning worse, not better).
+const allPosts = await getCollection('blog');
+const siblings = relatedPosts(post, allPosts);
 
 const products = await getCollection('products');
 const related = data.relatedProducts
@@ -216,6 +224,8 @@ const schema = {
       </div>
     </section>
   )}
+
+  <RelatedPosts posts={siblings} />
 
   <section class="mx-auto max-w-3xl px-5 py-6">
     <EmailCapture source="blog-end" compact />

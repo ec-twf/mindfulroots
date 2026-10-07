@@ -9,6 +9,8 @@ import EvidenceTag from '../../components/EvidenceTag.astro';
 import SupportNotice from '../../components/SupportNotice.astro';
 import EmailCapture from '../../components/EmailCapture.astro';
 import { getCollection, render } from 'astro:content';
+import { postsInCluster } from '../../lib/related';
+import RelatedPosts from '../../components/RelatedPosts.astro';
 import { SITE } from '../../config';
 
 export async function getStaticPaths() {
@@ -42,6 +44,24 @@ const allPosts = await getCollection('blog');
 const supportingPosts = data.supportingPosts
   .map((slug) => allPosts.find((p) => !p.data.draft && p.id === slug))
   .filter((p): p is NonNullable<typeof p> => Boolean(p));
+
+// Beyond the hand-listed evidence, surface more posts from the clusters this
+// hub's picks belong to. Capped so the hub stays a guide rather than becoming a
+// second /blog — the 165-link archive page is what failed to get these posts
+// crawled in the first place. Newest first here (unlike the per-post ring),
+// because a reader arriving at a condition guide wants the current evidence and
+// the back catalogue already gets its links from the product pages.
+const MORE_READING_LIMIT = 12;
+const listedIds = new Set(supportingPosts.map((p) => p.id));
+const byId = new Map(
+  data.products
+    .flatMap((slug) => postsInCluster(allPosts, slug))
+    .filter((p) => !listedIds.has(p.id))
+    .map((p) => [p.id, p] as const),
+);
+const moreReading = [...byId.values()]
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, MORE_READING_LIMIT);
 
 const allHubs = await getCollection('hubs');
 const relatedHubs = data.relatedHubs
@@ -197,6 +217,8 @@ const schema = {
       </div>
     </section>
   )}
+
+  <RelatedPosts posts={moreReading} heading="More on these supplements" />
 
   {hasFaq && (
     <section class="mx-auto max-w-3xl px-5 py-4">

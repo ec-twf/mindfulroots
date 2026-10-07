@@ -12,6 +12,8 @@ import AnswerBox from '../../components/AnswerBox.astro';
 import EvidenceCitation from '../../components/EvidenceCitation.astro';
 import SpecTable from '../../components/SpecTable.astro';
 import { getCollection, render } from 'astro:content';
+import { postsInCluster } from '../../lib/related';
+import { normalizeCluster } from '../../lib/taxonomy';
 import { hubsForProduct } from '../../lib/hubs';
 import { retailerLink } from '../../config';
 import { renderInlineMarkdown } from '../../lib/inline-markdown';
@@ -28,11 +30,22 @@ const { product } = Astro.props;
 const { data } = product;
 const { Content } = await render(product);
 
-// Resolve related blog posts (the cluster "spokes")
+// Resolve related blog posts (the cluster "spokes").
+//
+// The hand-curated `relatedPosts` list leads, then EVERY remaining post in this
+// supplement's cluster follows. Before this, a product page linked only the
+// three or four posts someone remembered to list, which left the rest of the
+// cluster reachable from /blog alone — the link starvation that put 74 posts in
+// "Discovered - currently not indexed" (see src/lib/related.ts). A product page
+// is the most topically relevant hub a post can be linked from, so it carries
+// the whole cluster rather than a sample of it.
 const allPosts = await getCollection('blog');
-const related = data.relatedPosts
+const curated = data.relatedPosts
   .map((slug) => allPosts.find((p) => p.id === slug))
-  .filter(Boolean);
+  .filter((p): p is NonNullable<typeof p> => Boolean(p) && !p!.data.draft);
+const curatedIds = new Set(curated.map((p) => p.id));
+const clusterPosts = postsInCluster(allPosts, product.id).filter((p) => !curatedIds.has(p.id));
+const related = [...curated, ...clusterPosts];
 
 // Resolve related product hubs (sibling internal links)
 const allProducts = await getCollection('products');
@@ -260,10 +273,10 @@ const schema = {
       <p class="eyebrow mb-3">Keep reading</p>
       <div class="grid gap-4 sm:grid-cols-2">
         {related.map((post) => (
-          <a href={`/blog/${post!.id}/`} class="block bg-card border border-mist rounded-lg p-5 hover:shadow-card transition-shadow">
-            <p class="eyebrow mb-1">{post!.data.cluster}</p>
-            <h3 class="text-lg text-moss-deep leading-snug">{post!.data.title}</h3>
-            <p class="text-sm text-ink-soft mt-1.5 leading-relaxed">{post!.data.description}</p>
+          <a href={`/blog/${post.id}/`} class="block bg-card border border-mist rounded-lg p-5 hover:shadow-card transition-shadow">
+            <p class="eyebrow mb-1">{normalizeCluster(post.data.cluster)}</p>
+            <h3 class="text-lg text-moss-deep leading-snug">{post.data.title}</h3>
+            <p class="text-sm text-ink-soft mt-1.5 leading-relaxed">{post.data.description}</p>
           </a>
         ))}
       </div>
