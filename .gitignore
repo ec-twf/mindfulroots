@@ -13,6 +13,11 @@ data/gsc/*.csv
 # impressions. Ignoring it would repeat the mistake that left three pipelines
 # green but blind.
 !data/gsc/*-agents.csv
+# The rewrite triage sheet is a decision record, not a regenerated snapshot: it
+# names which posts get merged, retargeted or left alone, and Phase C edits are
+# audited against it. Losing it would mean re-deriving the buckets from two data
+# sources that have both moved on.
+!data/gsc/*-rewrite-triage.csv
 # Same exception for the discovery shortlist: the optimizer runs headless in the
 # cloud and cannot scrape autocomplete itself, so the committed CSV is its only
 # view of net-new demand. The raw harvest dump stays ignored.

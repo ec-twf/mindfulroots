@@ -1,0 +1,152 @@
+slug,cluster,postType,headTerm,views_30d,gsc_imp_90d,gsc_clicks_90d,avg_position_90d,queries_90d,excluded_imp_90d,gsc_imp_28d,pubDate,bucket,action
+shoden-vs-ksm-66,ashwagandha,brand-comparison,,3,137,1,10.8,11,0,105,2026-08-21,STRIKING,title+FAQ+internal link
+silexan-vs-lavender-oil,ashwagandha,comparison,,3,71,1,6.6,13,0,44,2026-08-27,STRIKING,title+FAQ+internal link
+glycine-vs-b12,b-complex,comparison,glycine vs b12,2,31,1,6.2,3,0,10,2026-08-09,STRIKING,title+FAQ+internal link
+vitamin-d3-morning-or-night,vitamin-d3,timing,vitamin-d3 morning or night,2,476,0,73.4,94,0,0,2026-07-23,INDEXED_DEEP,"retarget in place, keep URL"
+vitamin-d3-vs-b12,vitamin-d3,comparison,vitamin-d3 vs b12,1,422,0,65.1,113,0,113,2026-07-23,INDEXED_DEEP,"retarget in place, keep URL"
+omega-3-fish-oil-vs-cod-liver-oil,omega-3-fish-oil,comparison,omega-3 fish oil vs cod liver oil,1,416,0,66.2,154,1,166,2026-08-11,INDEXED_DEEP,"retarget in place, keep URL"
+l-theanine-vs-caffeine,l-theanine,comparison,l-theanine vs caffeine,0,344,0,84.0,110,0,52,2026-07-25,INDEXED_DEEP,"retarget in place, keep URL"
+ashwagandha-vs-ginseng,ashwagandha,comparison,ashwagandha vs ginseng,1,276,0,65.4,53,0,54,2026-07-10,INDEXED_DEEP,"retarget in place, keep URL"
+ashwagandha-vs-ksm-66,ashwagandha,brand-comparison,ashwagandha vs ksm-66,1,252,0,64.7,96,0,44,2026-07-27,INDEXED_DEEP,"retarget in place, keep URL"
+magnesium-glycinate-morning-or-night,magnesium-glycinate,timing,magnesium glycinate morning or night,0,122,0,62.5,86,0,0,2026-08-07,INDEXED_DEEP,"retarget in place, keep URL"
+magnesium-glycinate-vs-bisglycinate,magnesium-glycinate,comparison,magnesium glycinate vs bisglycinate,0,106,0,60.8,37,0,0,2026-07-21,INDEXED_DEEP,"retarget in place, keep URL"
+rhodiola-rosea-vs-ashwagandha-for-anxiety,rhodiola-rosea,comparison,rhodiola rosea vs ashwagandha for anxiety,0,77,0,82.2,26,0,22,2026-07-31,INDEXED_DEEP,"retarget in place, keep URL"
+omega-3-fish-oil-vs-algae,omega-3-fish-oil,comparison,omega-3 fish oil vs algae,0,72,0,82.0,21,0,5,2026-08-05,INDEXED_DEEP,"retarget in place, keep URL"
+ashwagandha-cortisol-research,ashwagandha,explainer,ashwagandha cortisol,0,69,0,78.9,27,1,4,2026-07-03,INDEXED_DEEP,"retarget in place, keep URL"
+ksm-66-vs-sensoril,ashwagandha,brand-comparison,,4,68,0,25.0,17,0,53,2026-08-19,INDEXED_DEEP,"retarget in place, keep URL"
+rhodiola-dosage-cycling,rhodiola-rosea,dosage,rhodiola dosage cycling,2,67,0,66.6,47,0,0,2026-08-07,INDEXED_DEEP,"retarget in place, keep URL"
+saffron-extract-vs-ashwagandha,saffron-extract,comparison,saffron extract vs ashwagandha,1,65,0,60.5,19,0,11,2026-07-10,INDEXED_DEEP,"retarget in place, keep URL"
+how-long-does-it-take-for-l-theanine-to-work,l-theanine,duration,how long does it take for l-theanine to work,0,51,0,42.7,39,0,2,2026-07-25,INDEXED_DEEP,"retarget in place, keep URL"
+vitamin-d3-vs-calcitriol,vitamin-d3,comparison,vitamin-d3 vs calcitriol,0,48,0,44.6,27,0,0,2026-08-03,INDEXED_DEEP,"retarget in place, keep URL"
+5-htp-vs-ashwagandha,5-htp,comparison,5-htp vs ashwagandha,0,43,0,52.4,20,0,15,2026-08-01,INDEXED_DEEP,"retarget in place, keep URL"
+can-you-take-ashwagandha-with-lexapro,ashwagandha,interaction,can you take ashwagandha with lexapro,0,36,0,50.3,26,0,0,2026-08-07,INDEXED_DEEP,"retarget in place, keep URL"
+how-long-does-magnesium-glycinate-take-to-work,magnesium-glycinate,duration,how long does magnesium glycinate take to work,0,26,0,54.5,15,0,0,2026-07-31,INDEXED_DEEP,"retarget in place, keep URL"
+fish-oil-and-cortisol,omega-3-fish-oil,explainer,fish oil cortisol,4,25,0,44.5,9,0,0,2026-06-30,INDEXED_DEEP,"retarget in place, keep URL"
+can-you-take-rhodiola-rosea-with-levothyroxine,rhodiola-rosea,interaction,can you take rhodiola rosea with levothyroxine,3,22,0,9.8,8,0,1,2026-07-06,INDEXED_THIN,"retarget or merge, judge per cluster"
+gut-brain-axis-probiotics,probiotic-gut-brain,explainer,gut brain axis probiotics,0,17,0,72.7,8,0,0,2026-03-01,INDEXED_THIN,"retarget or merge, judge per cluster"
+valerian-root-vs-catnip,magnesium-glycinate,comparison,valerian root vs catnip,2,15,0,17.0,6,0,11,2026-08-17,INDEXED_THIN,"retarget or merge, judge per cluster"
+lemon-balm-vs-ashwagandha,ashwagandha,comparison,lemon balm vs ashwagandha,1,15,0,62.3,7,2,2,2026-08-07,INDEXED_THIN,"retarget or merge, judge per cluster"
+how-long-does-omega-3-fish-oil-take-to-work,omega-3-fish-oil,duration,,0,14,0,48.1,12,0,14,2026-08-21,INDEXED_THIN,"retarget or merge, judge per cluster"
+l-theanine-dosage-anxiety,l-theanine,dosage,l-theanine dosage anxiety,1,12,0,69.6,10,0,0,2026-08-03,INDEXED_THIN,"retarget or merge, judge per cluster"
+how-long-does-saffron-extract-take-to-work,saffron-extract,duration,how long does saffron extract take to work,1,12,0,24.7,10,0,0,2026-08-09,INDEXED_THIN,"retarget or merge, judge per cluster"
+glycine-dosage,magnesium-glycinate,dosage,glycine dosage,0,10,0,62.4,8,0,0,2026-07-23,INDEXED_THIN,"retarget or merge, judge per cluster"
+saffron-pms-mood-swings,saffron-extract,dosage,saffron pms mood swings,0,10,0,72.3,8,0,0,2026-08-05,INDEXED_THIN,"retarget or merge, judge per cluster"
+traacs-vs-magnesium-bisglycinate,magnesium-glycinate,brand-comparison,,2,9,0,30.0,5,0,9,2026-08-23,INDEXED_THIN,"retarget or merge, judge per cluster"
+can-you-take-omega-3-fish-oil-with-statins,omega-3-fish-oil,interaction,can you take omega-3 fish oil with statins,2,7,0,46.3,5,0,0,2026-07-21,INDEXED_THIN,"retarget or merge, judge per cluster"
+can-you-take-5-htp-with-adderall,5-htp,interaction,can you take 5-htp with adderall,1,6,0,19.7,5,0,0,2026-07-07,INDEXED_THIN,"retarget or merge, judge per cluster"
+l-theanine-vs-ashwagandha,l-theanine,comparison,l-theanine vs ashwagandha,0,5,0,76.2,4,0,0,2026-07-13,INDEXED_THIN,"retarget or merge, judge per cluster"
+5-htp-serotonin-safety,5-htp,safety,5-htp serotonin syndrome,2,4,0,9.5,4,443,0,2026-02-23,INDEXED_THIN,"retarget or merge, judge per cluster"
+probiotic-vs-fiber,probiotic-gut-brain,comparison,probiotic vs fiber,0,4,0,23.2,2,0,3,2026-07-17,INDEXED_THIN,"retarget or merge, judge per cluster"
+l-theanine-for-sleep,l-theanine,dosage,l-theanine for sleep,0,4,0,62.5,4,0,0,2026-08-01,INDEXED_THIN,"retarget or merge, judge per cluster"
+can-you-take-l-theanine-with-lexapro,l-theanine,interaction,can you take l-theanine with lexapro,2,3,0,37.7,3,0,0,2026-08-05,INDEXED_THIN,"retarget or merge, judge per cluster"
+can-you-take-magnesium-glycinate-and-melatonin-together,magnesium-glycinate,interaction,can you take magnesium glycinate and melatonin together,1,3,0,60.0,3,1,0,2026-07-05,INDEXED_THIN,"retarget or merge, judge per cluster"
+l-theanine-kids-teens-safety,l-theanine,safety,l-theanine kids teens safety,1,3,0,38.7,3,1,1,2026-08-05,INDEXED_THIN,"retarget or merge, judge per cluster"
+probiotic-vs-digestive-enzymes,probiotic-gut-brain,comparison,probiotic vs digestive enzymes,0,3,0,67.7,2,0,0,2026-07-07,INDEXED_THIN,"retarget or merge, judge per cluster"
+best-time-to-take-fish-oil,omega-3-fish-oil,timing,best time to take fish oil,0,3,0,60.3,3,0,0,2026-08-01,INDEXED_THIN,"retarget or merge, judge per cluster"
+how-long-does-rhodiola-rosea-take-to-work,rhodiola-rosea,duration,how long does rhodiola rosea take to work,0,3,0,13.3,3,0,2,2026-08-03,INDEXED_THIN,"retarget or merge, judge per cluster"
+omega-3-dosage-for-mood,omega-3-fish-oil,dosage,omega-3 dosage for mood,0,2,0,68.5,2,0,0,2026-07-31,INDEXED_THIN,"retarget or merge, judge per cluster"
+saffron-mood-research,saffron-extract,explainer,saffron mood research,0,2,0,60.0,2,0,0,2026-06-22,INDEXED_THIN,"retarget or merge, judge per cluster"
+can-you-take-l-tyrosine-with-adderall,l-tyrosine,interaction,can you take l-tyrosine with adderall,1,1,0,50.0,1,0,0,2026-08-01,INDEXED_THIN,"retarget or merge, judge per cluster"
+can-you-take-holy-basil-with-prozac,ashwagandha,interaction,can you take holy basil with prozac,0,1,0,46.0,1,0,0,2026-07-29,INDEXED_THIN,"retarget or merge, judge per cluster"
+can-you-take-saffron-extract-with-sertraline,saffron-extract,interaction,can you take saffron extract with sertraline,4,0,0,,0,0,0,2026-08-17,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+saffron-vs-st-johns-wort,saffron-extract,comparison,,3,0,0,,0,0,0,2026-09-11,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+affron-vs-satiereal,saffron-extract,brand-comparison,,3,0,0,,0,0,0,2026-08-19,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+silexan-vs-lavender,ashwagandha,comparison,silexan vs lavender,3,0,0,,0,0,0,2026-08-15,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+ashwagandha-dosage,ashwagandha,dosage,ashwagandha dosage,3,0,0,,0,0,0,2026-07-21,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+b-complex-vs-b100,b-complex,comparison,b-complex vs b100,3,0,0,,0,0,0,2026-07-07,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+l-tryptophan-vs-d-tryptophan,5-htp,comparison,,2,0,0,,0,0,0,2026-08-27,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+affron-vs-standard-saffron,saffron-extract,comparison,,2,0,0,,0,0,0,2026-09-09,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+5-htp-morning-or-night,5-htp,timing,,2,0,0,,0,0,0,2026-09-27,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+when-to-take-ashwagandha,ashwagandha,timing,,2,0,0,,0,0,0,2026-09-15,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+when-to-take-l-theanine,l-theanine,timing,,2,0,0,,0,0,0,2026-10-05,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+ashwagandha-morning-or-night,ashwagandha,timing,,2,0,0,,0,0,0,2026-09-09,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+5-htp-vs-sertraline,5-htp,comparison,,1,0,0,,0,0,0,2026-09-19,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+how-long-does-l-tryptophan-take-to-work,l-tryptophan,duration,,1,0,0,,0,0,0,2026-09-15,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+high-dose-taurine-for-anxiety,l-theanine,dosage,high dose taurine for anxiety,1,0,0,,0,0,0,2026-07-27,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+should-i-take-ashwagandha-with-food,ashwagandha,timing,,1,0,0,,0,0,0,2026-09-21,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+can-you-take-valerian-root-with-sertraline,l-theanine,interaction,,1,0,0,,0,0,0,2026-09-21,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+when-to-take-5-htp,5-htp,timing,,1,0,0,,0,0,0,2026-10-03,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+can-you-take-valerian-root-and-melatonin-together,magnesium-glycinate,interaction,can you take valerian root and melatonin together,1,0,0,,0,0,0,2026-07-27,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+probiotic-vs-antibiotic,probiotic-gut-brain,comparison,,1,0,0,,0,0,0,2026-09-21,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+lemon-balm-vs-bee-balm,l-theanine,comparison,lemon balm vs bee balm,1,0,0,,0,0,0,2026-08-13,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+passionflower-vs-chamomile,l-theanine,comparison,passionflower vs chamomile,1,0,0,,0,0,0,2026-08-15,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+can-you-take-passionflower-with-sertraline,l-theanine,interaction,,1,0,0,,0,0,0,2026-09-25,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+how-long-does-passionflower-take-to-work,passionflower,duration,,1,0,0,,0,0,0,2026-09-15,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+magnesium-foods-vs-supplements,magnesium-glycinate,comparison,,1,0,0,,0,0,0,2026-10-03,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+can-you-take-lemon-balm-with-zoloft,l-theanine,interaction,,1,0,0,,0,0,0,2026-09-19,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+how-long-does-valerian-root-extract-take-to-work,magnesium-glycinate,duration,,1,0,0,,0,0,0,2026-09-11,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+l-tyrosine-vs-l-dopa,l-tyrosine,comparison,,1,0,0,,0,0,0,2026-09-01,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+should-i-take-l-theanine-with-food,l-theanine,timing,,1,0,0,,0,0,0,2026-10-07,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+when-to-take-vitamin-d3,vitamin-d3,timing,,1,0,0,,0,0,0,2026-10-07,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+magnesium-glycinate-side-effects,magnesium-glycinate,safety,,1,0,0,,0,0,0,2026-09-07,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+5-htp-vs-ssri,5-htp,comparison,,1,0,0,,0,0,0,2026-09-19,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+can-you-take-lemon-balm-and-melatonin-together,magnesium-glycinate,interaction,can you take lemon balm and melatonin together,1,0,0,,0,0,0,2026-07-25,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+l-tryptophan-vs-5-htp-for-anxiety,5-htp,comparison,l-tryptophan vs 5-htp for anxiety,1,0,0,,0,0,0,2026-08-17,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+can-you-take-l-tyrosine-with-sertraline,l-theanine,interaction,,1,0,0,,0,0,0,2026-09-25,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+saffron-vs-5-htp-for-mood,5-htp,comparison,,0,0,0,,0,0,0,2026-10-03,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+how-long-does-a-probiotic-take-to-start-working,probiotic-gut-brain,duration,,0,0,0,,0,0,0,2026-08-27,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+can-you-take-probiotics-and-antibiotics-at-the-same-time,probiotic-gut-brain,interaction,can you take probiotics and antibiotics at the same time,0,0,0,,0,0,0,2026-08-15,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+valerian-root-vs-ashwagandha-for-sleep,ashwagandha,comparison,valerian root vs ashwagandha for sleep,0,0,0,,0,0,0,2026-08-13,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+can-you-take-l-tryptophan-with-sertraline,magnesium-glycinate,interaction,,0,0,0,,0,0,0,2026-09-23,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+can-you-take-saffron-extract-with-ssri,saffron-extract,interaction,,0,0,0,,0,0,0,2026-09-11,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+l-theanine-vs-gaba,l-theanine,comparison,,0,0,0,,0,0,0,2026-09-29,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+b-complex-morning-or-night,b-complex,timing,,0,0,0,,0,0,0,2026-10-01,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+vitamin-d3-vs-d2-mental-health,vitamin-d3,comparison,,0,0,0,,0,0,0,2026-09-25,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+how-long-does-vitamin-d3-60k-take-to-work,vitamin-d3,duration,how long does vitamin-d3 60k take to work,0,0,0,,0,0,0,2026-08-15,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+holy-basil-vs-ashwagandha,ashwagandha,comparison,,0,0,0,,0,0,0,2026-09-01,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+methylfolate-vs-folic-acid-mood,b-complex,comparison,,0,0,0,,0,0,0,2026-09-27,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+ashwagandha-vs-holy-basil-for-stress,ashwagandha,comparison,,0,0,0,,0,0,0,2026-08-29,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+glycine-vs-taurine-for-anxiety,l-theanine,comparison,,0,0,0,,0,0,0,2026-08-29,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+when-to-take-b-complex,b-complex,timing,,0,0,0,,0,0,0,2026-10-01,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+saffron-extract-side-effects,saffron-extract,safety,saffron extract side effects,0,0,0,,0,0,0,2026-07-27,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+can-you-take-passionflower-with-lexapro,l-theanine,interaction,,0,0,0,,0,0,0,2026-09-23,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+rhodiola-rosea-side-effects,rhodiola-rosea,safety,,0,0,0,,0,0,0,2026-09-01,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+natural-mood-support-basics,lifestyle-foundations,pillar,natural mood support basics,0,0,0,,0,0,0,2025-10-14,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+can-you-take-ashwagandha-with-sertraline,ashwagandha,interaction,can you take ashwagandha with sertraline,0,0,0,,0,0,0,2026-08-13,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+when-to-take-magnesium-glycinate,magnesium-glycinate,timing,,0,0,0,,0,0,0,2026-08-31,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+can-you-take-rhodiola-rosea-with-sertraline,rhodiola-rosea,interaction,can you take rhodiola rosea with sertraline,0,0,0,,0,0,0,2026-08-09,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+should-i-take-b-complex-with-food,b-complex,timing,,0,0,0,,0,0,0,2026-10-01,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+can-you-take-l-tryptophan-and-melatonin-together,5-htp,interaction,can you take l-tryptophan and melatonin together,0,0,0,,0,0,0,2026-07-29,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+l-theanine-caffeine-stack,l-theanine,explainer,l-theanine caffeine stack,0,0,0,,0,0,0,2026-07-05,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+passionflower-vs-chamomile-for-sleep,passionflower,comparison,,0,0,0,,0,0,0,2026-08-25,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+magnesium-glycinate-vs-threonate,magnesium-glycinate,comparison,,0,0,0,,0,0,0,2026-09-29,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+probiotics-side-effects,probiotic-gut-brain,safety,,0,0,0,,0,0,0,2026-09-07,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+l-theanine-morning-or-night,l-theanine,timing,,0,0,0,,0,0,0,2026-10-05,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+vitamin-d3-k2-combination,vitamin-d3,interaction,vitamin-d3 k2 combination,0,0,0,,0,0,0,2026-07-23,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+l-theanine-side-effects,l-theanine,safety,,0,0,0,,0,0,0,2026-09-05,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+ashwagandha-side-effects,ashwagandha,safety,,0,0,0,,0,0,0,2026-08-23,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+how-long-does-l-tyrosine-take-to-work-for-adhd,l-tyrosine,duration,,0,0,0,,0,0,0,2026-09-17,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+dosage-of-holy-basil-for-anxiety,ashwagandha,dosage,dosage of holy basil for anxiety,0,0,0,,0,0,0,2026-07-29,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+l-theanine-calm-focus,l-theanine,explainer,l-theanine calm focus,0,0,0,,0,0,0,2025-10-14,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+probiotics-how-long-mood,probiotic-gut-brain,duration,,0,0,0,,0,0,0,2026-09-17,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+how-long-does-lemon-balm-extract-take-to-work,l-theanine,duration,,0,0,0,,0,0,0,2026-09-05,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+should-i-take-5-htp-with-food,5-htp,timing,,0,0,0,,0,0,0,2026-10-05,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+glycine-vs-collagen,magnesium-glycinate,comparison,glycine vs collagen,0,0,0,,0,0,0,2026-08-13,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+taurine-vs-caffeine,l-theanine,comparison,,0,0,0,,0,0,0,2026-08-31,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+can-you-take-l-tyrosine-with-lexapro,l-theanine,interaction,,0,0,0,,0,0,0,2026-09-23,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+ashwagandha-how-long-anxiety,ashwagandha,duration,,0,0,0,,0,0,0,2026-09-13,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+suntheanine-vs-l-theanine,l-theanine,brand-comparison,,0,0,0,,0,0,0,2026-08-21,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+supplements-safe-to-take-every-day,lifestyle-foundations,safety,is it safe to take supplements every day,0,0,0,,0,0,0,2026-10-07,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+magtein-vs-magnesium-glycinate,magnesium-glycinate,brand-comparison,,0,0,0,,0,0,0,2026-08-23,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+magnesium-dosage-for-sleep,magnesium-glycinate,dosage,magnesium dosage for sleep,0,0,0,,0,0,0,2026-08-11,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+ksm66-vs-sensoril-ashwagandha,ashwagandha,comparison,,0,0,0,,0,0,0,2026-09-27,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+how-long-vitamin-d-mood,vitamin-d3,duration,,0,0,0,,0,0,0,2026-09-13,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+rtg-vs-ethyl-ester-fish-oil,omega-3-fish-oil,brand-comparison,,0,0,0,,0,0,0,2026-08-25,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+l-tyrosine-vs-ashwagandha,ashwagandha,comparison,,0,0,0,,0,0,0,2026-08-31,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+magnesium-glycinate-how-long-anxiety,magnesium-glycinate,duration,,0,0,0,,0,0,0,2026-09-13,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+5-htp-side-effects,5-htp,safety,5-htp side effects,0,0,0,,0,0,0,2026-08-11,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+should-i-take-vitamin-d3-with-food,vitamin-d3,timing,,0,0,0,,0,0,0,2026-10-07,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+5-htp-how-long-to-work,5-htp,duration,,0,0,0,,0,0,0,2026-09-17,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+probiotic-vs-prebiotic-mental-health,probiotic-gut-brain,comparison,,0,0,0,,0,0,0,2026-09-29,DEAD_CONSOLIDATE,merge into cluster pillar + 301
+saffron-extract-vs-affron,saffron-extract,brand-comparison,saffron extract vs affron,25,990,11,12.6,40,0,401,2026-07-10,EXCLUDED_VIEWS,none - has traffic
+b-complex-dosage,b-complex,dosage,b-complex dosage,25,174,0,51.6,95,0,0,2026-07-07,EXCLUDED_VIEWS,none - has traffic
+quatrefolic-vs-metafolin,b-complex,brand-comparison,,6,153,4,10.7,15,0,134,2026-08-25,EXCLUDED_VIEWS,none - has traffic
+b-complex-vs-b1,b-complex,comparison,b-complex vs b1,5,29,0,23.2,16,0,0,2026-07-07,EXCLUDED_VIEWS,none - has traffic
+can-you-take-saffron-extract-with-lexapro,saffron-extract,interaction,can you take saffron extract with lexapro,5,25,0,29.7,15,5,13,2026-08-11,EXCLUDED_VIEWS,none - has traffic
+silexan-lavender-dosage,ashwagandha,dosage,silexan dosage,8,1,0,66.0,1,0,0,2026-07-25,EXCLUDED_VIEWS,none - has traffic
+can-you-take-lemon-balm-with-levothyroxine,magnesium-glycinate,interaction,can you take lemon balm with levothyroxine,20,0,0,,0,3,0,2026-07-31,EXCLUDED_VIEWS,none - has traffic
+should-i-take-magnesium-glycinate-with-food,magnesium-glycinate,timing,,11,0,0,,0,0,0,2026-09-03,EXCLUDED_VIEWS,none - has traffic
+ashwagandha-for-sleep,ashwagandha,dosage,ashwagandha for sleep,8,0,0,,0,0,0,2026-08-09,EXCLUDED_VIEWS,none - has traffic
+safr-inside-vs-affron,saffron-extract,brand-comparison,,6,0,0,,0,0,0,2026-08-19,EXCLUDED_VIEWS,none - has traffic
+magnesium-glycinate-dosage-for-anxiety,magnesium-glycinate,dosage,magnesium glycinate dosage for anxiety,5,0,0,,0,0,0,2026-07-04,EXCLUDED_VIEWS,none - has traffic
+5-htp-vs-5-ht,5-htp,comparison,5-htp vs 5-ht,5,0,0,,0,0,0,2026-07-07,EXCLUDED_VIEWS,none - has traffic
