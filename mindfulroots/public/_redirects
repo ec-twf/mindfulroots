@@ -32,3 +32,17 @@ https://moodsupplement.net/*     https://www.moodsupplement.net/:splat  301!
 /blog/is-probiotics-safe-to-take-every-day/  /blog/supplements-safe-to-take-every-day/  301
 /blog/is-rhodiola-rosea-safe-to-take-every-day/  /blog/supplements-safe-to-take-every-day/  301
 /blog/is-saffron-extract-safe-to-take-every-day/  /blog/supplements-safe-to-take-every-day/  301
+
+
+# Side-effects family merge, 2026-10-11. Seven "<ingredient> side effects" posts
+# published 2026-07-27 to 2026-09-07 to one template drew zero GSC impressions and
+# zero GA4 views over the 90 days to 2026-10-08, and five never declared a headTerm.
+# Each page's unique evidence was carried into one survivor that sorts effects into
+# dosing signals, timing signals and the three that mean stop; originals draft: true.
+/blog/5-htp-side-effects/  /blog/supplement-side-effects-what-to-expect/  301
+/blog/ashwagandha-side-effects/  /blog/supplement-side-effects-what-to-expect/  301
+/blog/l-theanine-side-effects/  /blog/supplement-side-effects-what-to-expect/  301
+/blog/magnesium-glycinate-side-effects/  /blog/supplement-side-effects-what-to-expect/  301
+/blog/probiotics-side-effects/  /blog/supplement-side-effects-what-to-expect/  301
+/blog/rhodiola-rosea-side-effects/  /blog/supplement-side-effects-what-to-expect/  301
+/blog/saffron-extract-side-effects/  /blog/supplement-side-effects-what-to-expect/  301

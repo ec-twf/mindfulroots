@@ -13,7 +13,7 @@ benefits:
 typicalUse: "Trials commonly use 28–30 mg per day of a standardized extract (such as affron®), often split into two doses, for 4–8 weeks."
 cautions: "Generally well tolerated at supplement doses. Avoid high doses in pregnancy. Because it has been studied for mood, talk to your doctor before combining it with prescribed antidepressants."
 iherbKeyword: "saffron extract affron"
-relatedPosts: ["saffron-mood-research", "supplements-safe-to-take-every-day"]
+relatedPosts: ["saffron-mood-research", "supplements-safe-to-take-every-day", "supplement-side-effects-what-to-expect"]
 order: 7
 relatedProducts: ["5-htp", "ashwagandha"]
 keyTakeaway: "Our pick is Sports Research Saffron Extract at 30 mg of affron® per softgel. Unusually, all three products here pass our criterion. Sports Research wins on dose precision: the trial that found an effect used 28 mg a day, and a 22 mg arm in the same study showed nothing at all."
@@ -39,7 +39,7 @@ faq:
   - q: "Can you take saffron extract with an antidepressant?"
     a: "Ask your doctor first. Saffron has been studied specifically for mood, and some trials compared it directly against prescription antidepressants, so combining the two is not a neutral act even though saffron is sold as a supplement. We have written up the specific cases for [saffron with Lexapro](/blog/can-you-take-saffron-extract-with-lexapro/) and [saffron with sertraline](/blog/can-you-take-saffron-extract-with-sertraline/), but neither replaces a conversation with the person who prescribed it."
   - q: "Does saffron extract have side effects?"
-    a: "The 2017 affron® trial reported no side effects at 28 mg a day over four weeks. That is a small, short study in healthy adults, so it is evidence of good tolerability rather than proof of safety at higher doses or over longer periods. High doses of saffron are not benign, and it should be avoided in pregnancy. Fuller detail in [saffron extract side effects](/blog/saffron-extract-side-effects/)."
+    a: "The 2017 affron® trial reported no side effects at 28 mg a day over four weeks. That is a small, short study in healthy adults, so it is evidence of good tolerability rather than proof of safety at higher doses or over longer periods. High doses of saffron are not benign, and it should be avoided in pregnancy. Fuller detail in [supplement side effects](/blog/supplement-side-effects-what-to-expect/)."
 qualityCriterion: "A named, HPLC-standardised extract used in published RCTs, dosed at that extract's own trial level: affron® at 28 to 30 mg/day (≥3.5% lepticrosalides), or Satiereal® at around 88 mg/day (0.3% safranal)."
 criterionRationale: "Saffron's active compounds vary widely by harvest and processing. Both affron® and Satiereal® have standardized their marker compounds and conducted independent human trials specifically on mood and stress outcomes, making them verifiable against the evidence base."
 criterionSourceUrl: "https://pubmed.ncbi.nlm.nih.gov/30029994/"

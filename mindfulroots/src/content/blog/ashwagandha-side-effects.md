@@ -1,4 +1,13 @@
 ---
+# Retired 2026-10-11: merged into /blog/supplement-side-effects-what-to-expect/.
+# Seven "<ingredient> side effects" posts were published to the same template
+# between 2026-07-27 and 2026-09-07. Over the 90 days to 2026-10-08 the family
+# drew zero Search Console impressions and zero GA4 views, and five of the seven
+# never declared a headTerm, so the cannibalization guard could not see them.
+# The unique evidence from this file lives in the survivor, which sorts effects
+# into dosing signals, timing signals and the three that mean stop; a 301 is
+# registered in public/_redirects. Kept on disk rather than deleted so the
+# material is recoverable.
 title: "Ashwagandha Side Effects: What to Know"
 description: "Ashwagandha side effects are usually mild, like drowsiness and stomach upset, but rare liver injury and thyroid effects matter. Who should skip it, and why."
 metaDescription: "Most ashwagandha side effects are mild: drowsiness, nausea, loose stools. The serious concerns are rare liver injury and thyroid effects. Who should skip it."
@@ -9,7 +18,7 @@ cluster: "ashwagandha"
 postType: "safety"
 buyIntentTerm: "safest ashwagandha supplement for daily use"
 relatedProducts: [ashwagandha]
-draft: false
+draft: true
 faq:
   - q: "What are the most common ashwagandha side effects?"
     a: "The effects most people notice are mild and dose-related: drowsiness or a sedated feeling, an upset stomach, nausea, and loose stools. They tend to appear at higher doses and often ease when the dose is lowered or the supplement is taken with food. Because drowsiness is common, many people take ashwagandha in the evening. These mild effects are the usual reason someone stops, not the rare serious ones."

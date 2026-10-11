@@ -13,7 +13,7 @@ benefits:
 typicalUse: "Look for products naming specific studied strains (e.g. Lactobacillus helveticus R0052 and Bifidobacterium longum R0175) rather than just a high CFU count, taken daily with consistency."
 cautions: "Generally safe for healthy people. Those who are immunocompromised or seriously ill should check with a doctor before taking any probiotic."
 iherbKeyword: "probiotic gut brain mood"
-relatedPosts: ["gut-brain-axis-probiotics", "supplements-safe-to-take-every-day"]
+relatedPosts: ["gut-brain-axis-probiotics", "supplements-safe-to-take-every-day", "supplement-side-effects-what-to-expect"]
 order: 10
 relatedProducts: ["omega-3-fish-oil", "b-complex"]
 keyTakeaway: "Our pick is InnovixLabs Mood Probiotic. It carries both strains from the published gut-brain trial, L. helveticus R0052 and B. longum R0175, with strain IDs printed on the label and 3 billion CFU guaranteed through expiry. The one gap is that it does not publish the strain-to-strain ratio the trial used."

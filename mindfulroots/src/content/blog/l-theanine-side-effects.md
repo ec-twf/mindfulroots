@@ -1,4 +1,13 @@
 ---
+# Retired 2026-10-11: merged into /blog/supplement-side-effects-what-to-expect/.
+# Seven "<ingredient> side effects" posts were published to the same template
+# between 2026-07-27 and 2026-09-07. Over the 90 days to 2026-10-08 the family
+# drew zero Search Console impressions and zero GA4 views, and five of the seven
+# never declared a headTerm, so the cannibalization guard could not see them.
+# The unique evidence from this file lives in the survivor, which sorts effects
+# into dosing signals, timing signals and the three that mean stop; a 301 is
+# registered in public/_redirects. Kept on disk rather than deleted so the
+# material is recoverable.
 title: "L-Theanine Side Effects: What to Know"
 description: "L-theanine side effects are rare and mild: an occasional headache, dizziness or drowsiness. Who should be cautious, and how to take it safely."
 metaDescription: "L-theanine is one of the best-tolerated calming supplements, so side effects are rare and mild. Main caution: a mild blood-pressure drop with some drugs."
@@ -9,7 +18,7 @@ cluster: "l-theanine"
 postType: "safety"
 buyIntentTerm: "best single-ingredient l-theanine supplement to buy"
 relatedProducts: [l-theanine]
-draft: false
+draft: true
 faq:
   - q: "What are the most common L-theanine side effects?"
     a: "For most people there are none noticeable. When effects do occur they are mild and infrequent: a slight headache, lightheadedness, or drowsiness, and these are more likely at higher doses. Lowering the dose usually settles them. L-theanine is not sedating in the way a sleeping pill is, and it is not habit-forming."

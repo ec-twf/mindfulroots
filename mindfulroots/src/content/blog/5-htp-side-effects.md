@@ -1,4 +1,13 @@
 ---
+# Retired 2026-10-11: merged into /blog/supplement-side-effects-what-to-expect/.
+# Seven "<ingredient> side effects" posts were published to the same template
+# between 2026-07-27 and 2026-09-07. Over the 90 days to 2026-10-08 the family
+# drew zero Search Console impressions and zero GA4 views, and five of the seven
+# never declared a headTerm, so the cannibalization guard could not see them.
+# The unique evidence from this file lives in the survivor, which sorts effects
+# into dosing signals, timing signals and the three that mean stop; a 301 is
+# registered in public/_redirects. Kept on disk rather than deleted so the
+# material is recoverable.
 title: "5-HTP Side Effects: What to Know"
 description: "5-HTP side effects range from nausea and drowsiness to the serious risk of serotonin syndrome when combined with antidepressants. Who should skip it, and why."
 pubDate: 2026-08-11
@@ -9,7 +18,7 @@ keyTakeaway: "The most common 5-HTP side effects are gastrointestinal: nausea, s
 postType: "safety"
 buyIntentTerm: "best low-dose 5-htp supplement to buy"
 relatedProducts: [5-htp]
-draft: false
+draft: true
 faq:
   - q: "What are the most common 5-HTP side effects?"
     a: "The most frequently reported effects are gastrointestinal: nausea, stomach cramps, and diarrhoea, which tend to be worse at higher doses and often ease when the dose is lowered or taken with food. Drowsiness is also common, which is why some people take it in the evening. These effects are usually mild, but the serious concern is serotonin syndrome when 5-HTP is combined with serotonergic medication."

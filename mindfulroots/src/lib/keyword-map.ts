@@ -48,6 +48,17 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: 'adaptogens for stress', owner: '/blog/adaptogens-ashwagandha-rhodiola/', intent: 'informational' },
   { headTerm: 'ashwagandha cortisol', owner: '/blog/ashwagandha-cortisol-research/', intent: 'informational' },
 
+  // Side-effects family merge, 2026-10-11. Seven "<ingredient> side effects"
+  // posts earned zero impressions and zero views over 90 days; five of the seven
+  // never declared a head term at all, so the cannibalization guard never saw the
+  // family. One survivor now owns all seven terms via ownsKeywords.
+  { headTerm: 'supplement side effects', owner: '/blog/supplement-side-effects-what-to-expect/', intent: 'informational' },
+  { headTerm: 'ashwagandha side effects', owner: '/blog/supplement-side-effects-what-to-expect/', intent: 'informational' },
+  { headTerm: 'l-theanine side effects', owner: '/blog/supplement-side-effects-what-to-expect/', intent: 'informational' },
+  { headTerm: 'magnesium glycinate side effects', owner: '/blog/supplement-side-effects-what-to-expect/', intent: 'informational' },
+  { headTerm: 'probiotics side effects', owner: '/blog/supplement-side-effects-what-to-expect/', intent: 'informational' },
+  { headTerm: 'rhodiola rosea side effects', owner: '/blog/supplement-side-effects-what-to-expect/', intent: 'informational' },
+
   // Condition hubs (/guides/*) — commercial-intent middle layer. Each owns a
   // "best supplements for <condition>" head term; the underlying evidence posts
   // own the informational terms, so the two layers don't cannibalize.
@@ -68,7 +79,7 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   // near-duplicate check reports the ones that overlap too far to coexist.
 
   // 5-htp
-  { headTerm: '5-htp side effects', owner: '/blog/5-htp-side-effects/', intent: 'informational' },
+  { headTerm: '5-htp side effects', owner: '/blog/supplement-side-effects-what-to-expect/', intent: 'informational' },
   { headTerm: '5-htp vs 5-ht', owner: '/blog/5-htp-vs-5-ht/', intent: 'comparison' },
   { headTerm: '5-htp vs ashwagandha', owner: '/blog/5-htp-vs-ashwagandha/', intent: 'comparison' },
   { headTerm: 'can you take 5-htp with adderall', owner: '/blog/can-you-take-5-htp-with-adderall/', intent: 'informational' },
@@ -172,7 +183,7 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: 'can you take saffron extract with lexapro', owner: '/blog/can-you-take-saffron-extract-with-lexapro/', intent: 'informational' },
   { headTerm: 'can you take saffron extract with sertraline', owner: '/blog/can-you-take-saffron-extract-with-sertraline/', intent: 'informational' },
   { headTerm: 'how long does saffron extract take to work', owner: '/blog/how-long-does-saffron-extract-take-to-work/', intent: 'informational' },
-  { headTerm: 'saffron extract side effects', owner: '/blog/saffron-extract-side-effects/', intent: 'informational' },
+  { headTerm: 'saffron extract side effects', owner: '/blog/supplement-side-effects-what-to-expect/', intent: 'informational' },
   { headTerm: 'saffron extract vs affron', owner: '/blog/saffron-extract-vs-affron/', intent: 'comparison' },
   { headTerm: 'saffron extract vs ashwagandha', owner: '/blog/saffron-extract-vs-ashwagandha/', intent: 'comparison' },
   { headTerm: 'saffron mood research', owner: '/blog/saffron-mood-research/', intent: 'informational' },

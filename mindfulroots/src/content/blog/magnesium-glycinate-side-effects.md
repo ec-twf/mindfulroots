@@ -1,4 +1,13 @@
 ---
+# Retired 2026-10-11: merged into /blog/supplement-side-effects-what-to-expect/.
+# Seven "<ingredient> side effects" posts were published to the same template
+# between 2026-07-27 and 2026-09-07. Over the 90 days to 2026-10-08 the family
+# drew zero Search Console impressions and zero GA4 views, and five of the seven
+# never declared a headTerm, so the cannibalization guard could not see them.
+# The unique evidence from this file lives in the survivor, which sorts effects
+# into dosing signals, timing signals and the three that mean stop; a 301 is
+# registered in public/_redirects. Kept on disk rather than deleted so the
+# material is recoverable.
 title: "Magnesium Glycinate Side Effects: What to Know"
 description: "Magnesium glycinate side effects are usually mild, and loose stools are the most common. What the evidence shows, safe dose limits, and who should skip it."
 metaDescription: "Magnesium glycinate side effects are usually mild and dose-related. People with kidney disease should not take a supplement without medical guidance first."
@@ -9,7 +18,7 @@ cluster: "magnesium-glycinate"
 postType: "safety"
 buyIntentTerm: "best gentle magnesium glycinate supplement for a sensitive stomach"
 relatedProducts: ["magnesium-glycinate"]
-draft: false
+draft: true
 faq:
   - q: "What are the most common side effects of magnesium glycinate?"
     a: "Loose stools, mild diarrhoea and occasional stomach upset are the most common, and they are usually dose-related. The glycinate form is chelated to the amino acid glycine, which makes it gentler on digestion than magnesium oxide or citrate. Lowering the dose or splitting it across the day usually settles the issue."

@@ -13,7 +13,7 @@ benefits:
 typicalUse: "Studies typically use 300–600 mg per day of a standardized root extract (e.g. KSM-66), taken consistently for 6–8 weeks — adaptogens are about steady use, not instant effects."
 cautions: "Not recommended during pregnancy. Use caution with thyroid conditions or thyroid medication (ashwagandha can nudge thyroid hormones), and discuss with a doctor if you take sedatives or immunosuppressants. Rare liver reactions have been reported — buy reputable, tested brands."
 iherbKeyword: "ashwagandha KSM-66"
-relatedPosts: ["adaptogens-ashwagandha-rhodiola", "supplements-safe-to-take-every-day"]
+relatedPosts: ["adaptogens-ashwagandha-rhodiola", "supplements-safe-to-take-every-day", "supplement-side-effects-what-to-expect"]
 order: 5
 qualityCriterion: "A named, clinically-trialed standardized extract (KSM-66, Sensoril or Shoden) with the withanolide content stated on the label, dosed within that extract's studied range and taken consistently for 8+ weeks. Generic, unbranded 'root powder' with no named extract or stated withanolides is not the product the trials tested."
 criterionRationale: "Across the RCT literature the stress and cortisol effects come from these specific standardized extracts, not generic powder. KSM-66 (root-only, ≥5% withanolides, 300–600 mg/day) is the most-published; Sensoril (root+leaf, ~10%) and Shoden (~35% withanolide glycosides) are concentrated enough to work at lower doses. A 2024 systematic review of 15 RCTs found consistent stress, anxiety and cortisol reductions for standardized extracts used for 8+ weeks."

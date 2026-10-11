@@ -14,7 +14,7 @@ typicalUse: "Often used at 50–100 mg, but because of the serotonin-related cau
 cautions: "Strong cautions apply."
 interactionWarning: "Do **not** combine 5-HTP with SSRIs, SNRIs, MAOIs, triptans, tramadol, or other serotonergic drugs without medical supervision — the combination risks **serotonin syndrome**, which can be dangerous. Avoid in pregnancy. Because 5-HTP acts directly on serotonin, this is the one supplement on this site we strongly recommend you discuss with a doctor or pharmacist *before* trying, especially if you take any prescription medication for mood, migraine or pain."
 iherbKeyword: "5-htp griffonia"
-relatedPosts: ["5-htp-serotonin-safety", "supplements-safe-to-take-every-day"]
+relatedPosts: ["5-htp-serotonin-safety", "supplements-safe-to-take-every-day", "supplement-side-effects-what-to-expect"]
 order: 9
 qualityCriterion: "Purity and source transparency (Griffonia simplicifolia seed, the standard research source); dose at 100 mg for careful titration; minimal fillers; no co-formulation that obscures the 5-HTP dose or complicates interactions."
 criterionRationale: "5-HTP carries real interaction risk (serotonin syndrome with certain medications). A simple, clearly-dosed product allows precise titration under clinical guidance. Co-formulations with active cofactors add variables that complicate interaction assessment."

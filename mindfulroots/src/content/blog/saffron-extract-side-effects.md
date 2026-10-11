@@ -1,4 +1,13 @@
 ---
+# Retired 2026-10-11: merged into /blog/supplement-side-effects-what-to-expect/.
+# Seven "<ingredient> side effects" posts were published to the same template
+# between 2026-07-27 and 2026-09-07. Over the 90 days to 2026-10-08 the family
+# drew zero Search Console impressions and zero GA4 views, and five of the seven
+# never declared a headTerm, so the cannibalization guard could not see them.
+# The unique evidence from this file lives in the survivor, which sorts effects
+# into dosing signals, timing signals and the three that mean stop; a 301 is
+# registered in public/_redirects. Kept on disk rather than deleted so the
+# material is recoverable.
 title: "Saffron Extract Side Effects"
 description: "Saffron extract side effects: what the studies report at typical mood doses, the dose-dependent risks, who should skip it, and when to see a clinician."
 pubDate: 2026-07-27
@@ -9,7 +18,7 @@ keyTakeaway: "At the doses used in mood research, usually around 30 mg a day, sa
 postType: "safety"
 buyIntentTerm: "best saffron extract supplement for daily use"
 relatedProducts: [saffron-extract]
-draft: false
+draft: true
 faq:
   - q: "What are the common side effects of saffron extract?"
     a: "At the doses used in mood research, usually around 30 mg a day, saffron is generally well tolerated. The side effects reported most often are mild: nausea, changes in appetite, headache, and occasional drowsiness or dry mouth. A safety study in healthy volunteers found normal blood and vital-sign results at moderate doses, which is reassuring but not a reason to exceed them."

@@ -1,4 +1,13 @@
 ---
+# Retired 2026-10-11: merged into /blog/supplement-side-effects-what-to-expect/.
+# Seven "<ingredient> side effects" posts were published to the same template
+# between 2026-07-27 and 2026-09-07. Over the 90 days to 2026-10-08 the family
+# drew zero Search Console impressions and zero GA4 views, and five of the seven
+# never declared a headTerm, so the cannibalization guard could not see them.
+# The unique evidence from this file lives in the survivor, which sorts effects
+# into dosing signals, timing signals and the three that mean stop; a 301 is
+# registered in public/_redirects. Kept on disk rather than deleted so the
+# material is recoverable.
 title: "Rhodiola Rosea Side Effects: What to Know"
 description: "Rhodiola rosea side effects are usually mild: jitteriness, dizziness, dry mouth, and disturbed sleep if taken late. Who should skip it, and when to stop."
 metaDescription: "Rhodiola side effects are usually mild and short-lived: overstimulation, dizziness, dry mouth, and poor sleep if taken late. Who should avoid it entirely."
@@ -9,7 +18,7 @@ cluster: "rhodiola-rosea"
 postType: "safety"
 buyIntentTerm: "best rhodiola rosea supplement for daily use"
 relatedProducts: [rhodiola-rosea]
-draft: false
+draft: true
 faq:
   - q: "What are the most common rhodiola side effects?"
     a: "The ones people report most are a wired or jittery feeling, dizziness, dry mouth, and trouble sleeping when it is taken in the afternoon or evening. Some notice irritability or unusually vivid dreams. These effects are usually mild and tend to settle if you lower the dose or take it earlier in the day. Serious reactions are uncommon in the published trials."

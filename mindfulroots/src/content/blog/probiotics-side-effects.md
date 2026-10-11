@@ -1,4 +1,13 @@
 ---
+# Retired 2026-10-11: merged into /blog/supplement-side-effects-what-to-expect/.
+# Seven "<ingredient> side effects" posts were published to the same template
+# between 2026-07-27 and 2026-09-07. Over the 90 days to 2026-10-08 the family
+# drew zero Search Console impressions and zero GA4 views, and five of the seven
+# never declared a headTerm, so the cannibalization guard could not see them.
+# The unique evidence from this file lives in the survivor, which sorts effects
+# into dosing signals, timing signals and the three that mean stop; a 301 is
+# registered in public/_redirects. Kept on disk rather than deleted so the
+# material is recoverable.
 title: "Probiotics Side Effects: What to Know Before You Start"
 description: "Probiotics side effects are usually mild and short-lived, like gas and bloating early on. Here is what the evidence shows, and who should be more cautious."
 metaDescription: "Probiotics side effects are usually mild and temporary, such as gas and bloating early on. People who are seriously ill or immunocompromised should ask first."
@@ -9,7 +18,7 @@ cluster: "probiotic-gut-brain"
 postType: "safety"
 buyIntentTerm: "best gentle probiotic supplement for a sensitive gut"
 relatedProducts: ["probiotic-gut-brain"]
-draft: false
+draft: true
 faq:
   - q: "What are the most common side effects of probiotics?"
     a: "The most common are mild and digestive: gas, bloating, mild cramping and small changes in bowel habits, usually in the first one to two weeks. They tend to settle as the gut adjusts. Starting with a lower dose and building up can reduce them. If symptoms are severe or persistent, stop and speak to a clinician."
