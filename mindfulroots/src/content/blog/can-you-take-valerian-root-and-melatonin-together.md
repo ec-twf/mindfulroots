@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/supplements-and-antidepressants/.
+# Fifteen "can you take X with <SSRI>" posts drew 65 Search Console impressions
+# and zero clicks across the 90 days to 2026-10-08, and four of them carried
+# near-identical conclusions ("no documented interaction, most likely added
+# drowsiness, ask your prescriber") for four different herbs. On a topic where
+# one combination is genuinely dangerous, four interchangeable reassurances read
+# as safety when they are really thin evidence. The survivor sorts supplements
+# into three risk classes by mechanism instead, so the serotonergic ones are
+# visibly separated from the merely sedating ones. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted.
 title: "Valerian Root and Melatonin Together?"
 description: "Can you take valerian root and melatonin together? They support sleep through different routes, so the pairing is usually gentle. What the evidence shows."
 pubDate: 2026-07-27
@@ -9,7 +19,7 @@ keyTakeaway: "For most healthy adults valerian root and melatonin are a gentle p
 postType: "interaction"
 buyIntentTerm: "best magnesium glycinate supplement for calm sleep"
 relatedProducts: [magnesium-glycinate]
-draft: false
+draft: true
 faq:
   - q: "Can you take valerian root and melatonin together?"
     a: "For most healthy adults the pairing is generally considered gentle, because the two support sleep in different ways. Valerian is a calming herb that works on the GABA system, while melatonin is the hormone that signals night to your body. There is no well-documented dangerous interaction between them, but both add to drowsiness, so start with the lowest sensible dose of each and keep them away from alcohol or prescription sedatives unless a clinician says otherwise."

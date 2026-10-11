@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/supplements-and-antidepressants/.
+# Fifteen "can you take X with <SSRI>" posts drew 65 Search Console impressions
+# and zero clicks across the 90 days to 2026-10-08, and four of them carried
+# near-identical conclusions ("no documented interaction, most likely added
+# drowsiness, ask your prescriber") for four different herbs. On a topic where
+# one combination is genuinely dangerous, four interchangeable reassurances read
+# as safety when they are really thin evidence. The survivor sorts supplements
+# into three risk classes by mechanism instead, so the serotonergic ones are
+# visibly separated from the merely sedating ones. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted.
 title: "L-Tryptophan and Melatonin Together?"
 description: "Can you take L-tryptophan and melatonin together? They sit on the same serotonin pathway, so the pairing is usually gentle. Timing, dosing, and the caveats."
 pubDate: 2026-07-29
@@ -10,7 +20,7 @@ keyTakeaway: "For most healthy adults there is no known direct interaction betwe
 postType: "interaction"
 buyIntentTerm: "best 5-htp supplement for sleep support"
 relatedProducts: [5-htp]
-draft: false
+draft: true
 faq:
   - q: "Can you take L-tryptophan and melatonin together?"
     a: "For most healthy adults there is no known direct interaction, and the two act at different points of the same pathway. Tryptophan is the raw material your body converts toward serotonin and then melatonin; supplemental melatonin adds the finished hormone. The main cautions are additive drowsiness and tryptophan's interaction with serotonergic medication, so clear it with your prescriber if you take antidepressants."

@@ -1,4 +1,10 @@
 ---
+# Retired 2026-10-11: merged into /blog/can-you-take-saffron-extract-with-lexapro/.
+# This post and its surviving in-cluster sibling answered the same question about
+# the same supplement for a different SSRI, which is one SERP split across two
+# URLs rather than two topics: the class of antidepressant decides the answer,
+# not the brand name. The survivor holds the cluster's demand and now claims
+# both terms. A 301 is registered in public/_redirects.
 title: "Can You Take Saffron Extract With an SSRI?"
 description: "Can you take saffron extract with an SSRI? Only with your prescriber's sign-off, because both raise serotonin and the combination is a medical decision."
 metaDescription: "Saffron and SSRIs both act on serotonin, so combining them is a prescriber's call, not a DIY move. Here is what the trials show and the caution that matters."
@@ -9,7 +15,7 @@ cluster: "saffron-extract"
 postType: "interaction"
 buyIntentTerm: "best saffron extract supplement to take alongside an antidepressant"
 relatedProducts: [saffron-extract]
-draft: false
+draft: true
 faq:
   - q: "Is it safe to take saffron with an SSRI like sertraline or fluoxetine?"
     a: "It is not something to decide on your own. Both saffron and SSRIs increase serotonin activity, so combining them theoretically adds to the serotonergic load your body is handling. Some supervised trials have added saffron to an antidepressant without a spike in serious side effects, but those were monitored studies with defined doses. Talk to the prescriber who manages your antidepressant before adding it."

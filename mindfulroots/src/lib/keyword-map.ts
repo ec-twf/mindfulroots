@@ -91,6 +91,15 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: 'can you take vitamin d at night', owner: '/blog/vitamin-d3-morning-or-night/', intent: 'informational' },
   { headTerm: 'vitamin d on an empty stomach', owner: '/blog/vitamin-d3-morning-or-night/', intent: 'informational' },
 
+  // SSRI-interaction family merge, 2026-10-11. Fifteen "can you take X with
+  // <SSRI>" posts drew 65 impressions and zero clicks over 90 days; four gave
+  // interchangeable answers for four different herbs. One survivor now owns the
+  // family, sorted by mechanism rather than by drug brand name.
+  { headTerm: 'supplements and antidepressants interactions', owner: '/blog/supplements-and-antidepressants/', intent: 'informational' },
+  { headTerm: 'can you take passionflower with sertraline', owner: '/blog/supplements-and-antidepressants/', intent: 'informational' },
+  { headTerm: 'can you take l-tyrosine with sertraline', owner: '/blog/supplements-and-antidepressants/', intent: 'informational' },
+  { headTerm: 'can you take l-tryptophan with sertraline', owner: '/blog/supplements-and-antidepressants/', intent: 'informational' },
+
   // Condition hubs (/guides/*) — commercial-intent middle layer. Each owns a
   // "best supplements for <condition>" head term; the underlying evidence posts
   // own the informational terms, so the two layers don't cannibalize.
@@ -115,7 +124,7 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: '5-htp vs 5-ht', owner: '/blog/5-htp-vs-5-ht/', intent: 'comparison' },
   { headTerm: '5-htp vs ashwagandha', owner: '/blog/5-htp-vs-ashwagandha/', intent: 'comparison' },
   { headTerm: 'can you take 5-htp with adderall', owner: '/blog/can-you-take-5-htp-with-adderall/', intent: 'informational' },
-  { headTerm: 'can you take l-tryptophan and melatonin together', owner: '/blog/can-you-take-l-tryptophan-and-melatonin-together/', intent: 'informational' },
+  { headTerm: 'can you take l-tryptophan and melatonin together', owner: '/blog/supplements-and-antidepressants/', intent: 'informational' },
   // Daily-safety family — seven near-identical "is X safe to take every day"
   // posts (2026-08-17 to 2026-09-09) were merged into one page on 2026-10-07.
   // GSC's coverage export had all seven in "Discovered - currently not indexed"
@@ -130,7 +139,7 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: 'is it safe to take probiotics every day', owner: '/blog/supplements-safe-to-take-every-day/', intent: 'informational' },
   { headTerm: 'is rhodiola rosea safe to take every day', owner: '/blog/supplements-safe-to-take-every-day/', intent: 'informational' },
   { headTerm: 'is saffron extract safe to take every day', owner: '/blog/supplements-safe-to-take-every-day/', intent: 'informational' },
-  { headTerm: 'l-tryptophan and melatonin together', owner: '/blog/can-you-take-l-tryptophan-and-melatonin-together/', intent: 'informational' },
+  { headTerm: 'l-tryptophan and melatonin together', owner: '/blog/supplements-and-antidepressants/', intent: 'informational' },
   { headTerm: 'l-tryptophan vs 5-htp for anxiety', owner: '/blog/l-tryptophan-vs-5-htp-for-anxiety/', intent: 'comparison' },
 
   // ashwagandha
@@ -139,8 +148,8 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: 'ashwagandha vs ginseng', owner: '/blog/ashwagandha-vs-ginseng/', intent: 'comparison' },
   { headTerm: 'ashwagandha vs ksm-66', owner: '/blog/ashwagandha-vs-ksm-66/', intent: 'comparison' },
   { headTerm: 'can you take ashwagandha with lexapro', owner: '/blog/can-you-take-ashwagandha-with-lexapro/', intent: 'informational' },
-  { headTerm: 'can you take ashwagandha with sertraline', owner: '/blog/can-you-take-ashwagandha-with-sertraline/', intent: 'informational' },
-  { headTerm: 'can you take holy basil with prozac', owner: '/blog/can-you-take-holy-basil-with-prozac/', intent: 'informational' },
+  { headTerm: 'can you take ashwagandha with sertraline', owner: '/blog/can-you-take-ashwagandha-with-lexapro/', intent: 'informational' },
+  { headTerm: 'can you take holy basil with prozac', owner: '/blog/supplements-and-antidepressants/', intent: 'informational' },
   { headTerm: 'dosage of holy basil for anxiety', owner: '/blog/dosage-of-holy-basil-for-anxiety/', intent: 'informational' },
   { headTerm: 'lemon balm vs ashwagandha', owner: '/blog/lemon-balm-vs-ashwagandha/', intent: 'comparison' },
   { headTerm: 'silexan dosage', owner: '/blog/silexan-lavender-dosage/', intent: 'informational' },
@@ -156,7 +165,7 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: 'glycine vs b12', owner: '/blog/glycine-vs-b12/', intent: 'comparison' },
 
   // l-theanine
-  { headTerm: 'can you take l-theanine with lexapro', owner: '/blog/can-you-take-l-theanine-with-lexapro/', intent: 'informational' },
+  { headTerm: 'can you take l-theanine with lexapro', owner: '/blog/supplements-and-antidepressants/', intent: 'informational' },
   { headTerm: 'high dose taurine for anxiety', owner: '/blog/high-dose-taurine-for-anxiety/', intent: 'informational' },
   { headTerm: 'how long does it take for l-theanine to work', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
   { headTerm: 'l-theanine caffeine stack', owner: '/blog/l-theanine-caffeine-stack/', intent: 'informational' },
@@ -176,10 +185,10 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: 'natural mood support basics', owner: '/blog/natural-mood-support-basics/', intent: 'informational' },
 
   // magnesium-glycinate
-  { headTerm: 'can you take lemon balm and melatonin together', owner: '/blog/can-you-take-lemon-balm-and-melatonin-together/', intent: 'informational' },
+  { headTerm: 'can you take lemon balm and melatonin together', owner: '/blog/supplements-and-antidepressants/', intent: 'informational' },
   { headTerm: 'can you take lemon balm with levothyroxine', owner: '/blog/can-you-take-lemon-balm-with-levothyroxine/', intent: 'informational' },
   { headTerm: 'can you take magnesium glycinate and melatonin together', owner: '/blog/can-you-take-magnesium-glycinate-and-melatonin-together/', intent: 'informational' },
-  { headTerm: 'can you take valerian root and melatonin together', owner: '/blog/can-you-take-valerian-root-and-melatonin-together/', intent: 'informational' },
+  { headTerm: 'can you take valerian root and melatonin together', owner: '/blog/supplements-and-antidepressants/', intent: 'informational' },
   { headTerm: 'glycine dosage', owner: '/blog/glycine-dosage/', intent: 'informational' },
   { headTerm: 'glycine vs collagen', owner: '/blog/glycine-vs-collagen/', intent: 'comparison' },
   { headTerm: 'how long does magnesium glycinate take to work', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
@@ -205,7 +214,7 @@ export const KEYWORD_MAP: KeywordOwner[] = [
 
   // rhodiola-rosea
   { headTerm: 'can you take rhodiola rosea with levothyroxine', owner: '/blog/can-you-take-rhodiola-rosea-with-levothyroxine/', intent: 'informational' },
-  { headTerm: 'can you take rhodiola rosea with sertraline', owner: '/blog/can-you-take-rhodiola-rosea-with-sertraline/', intent: 'informational' },
+  { headTerm: 'can you take rhodiola rosea with sertraline', owner: '/blog/supplements-and-antidepressants/', intent: 'informational' },
   { headTerm: 'how long does rhodiola rosea take to work', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
   { headTerm: 'rhodiola dosage cycling', owner: '/blog/rhodiola-dosage-cycling/', intent: 'informational' },
   { headTerm: 'rhodiola rosea vs ashwagandha', owner: '/blog/rhodiola-rosea-vs-ashwagandha-for-anxiety/', intent: 'comparison' },
@@ -213,7 +222,7 @@ export const KEYWORD_MAP: KeywordOwner[] = [
 
   // saffron-extract
   { headTerm: 'can you take saffron extract with lexapro', owner: '/blog/can-you-take-saffron-extract-with-lexapro/', intent: 'informational' },
-  { headTerm: 'can you take saffron extract with sertraline', owner: '/blog/can-you-take-saffron-extract-with-sertraline/', intent: 'informational' },
+  { headTerm: 'can you take saffron extract with sertraline', owner: '/blog/can-you-take-saffron-extract-with-lexapro/', intent: 'informational' },
   { headTerm: 'how long does saffron extract take to work', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
   { headTerm: 'saffron extract side effects', owner: '/blog/supplement-side-effects-what-to-expect/', intent: 'informational' },
   { headTerm: 'saffron extract vs affron', owner: '/blog/saffron-extract-vs-affron/', intent: 'comparison' },

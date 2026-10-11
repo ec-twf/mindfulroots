@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/supplements-and-antidepressants/.
+# Fifteen "can you take X with <SSRI>" posts drew 65 Search Console impressions
+# and zero clicks across the 90 days to 2026-10-08, and four of them carried
+# near-identical conclusions ("no documented interaction, most likely added
+# drowsiness, ask your prescriber") for four different herbs. On a topic where
+# one combination is genuinely dangerous, four interchangeable reassurances read
+# as safety when they are really thin evidence. The survivor sorts supplements
+# into three risk classes by mechanism instead, so the serotonergic ones are
+# visibly separated from the merely sedating ones. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted.
 title: "L-Theanine and Lexapro: Is It Safe?"
 description: "Can you take L-theanine with Lexapro? There is no known dangerous interaction, but escitalopram raises serotonin and adds sedation. What the evidence says."
 pubDate: 2026-08-05
@@ -9,7 +19,7 @@ keyTakeaway: "No dangerous interaction between L-theanine and escitalopram is do
 postType: "interaction"
 buyIntentTerm: "best l-theanine supplement to take with an antidepressant"
 relatedProducts: [l-theanine]
-draft: false
+draft: true
 faq:
   - q: "Can you take L-theanine with Lexapro?"
     a: "There is no documented dangerous interaction between L-theanine and escitalopram (Lexapro), and small studies have combined L-theanine with prescription psychiatric drugs without a safety signal. That is not the same as a green light. Both can be calming, so added drowsiness is the realistic concern, and anyone on an antidepressant should clear a new supplement with the prescriber first."

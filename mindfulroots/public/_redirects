@@ -99,3 +99,29 @@ https://moodsupplement.net/*     https://www.moodsupplement.net/:splat  301!
 /blog/when-to-take-vitamin-d3/  /blog/vitamin-d3-morning-or-night/  301
 /blog/should-i-take-vitamin-d3-with-food/  /blog/vitamin-d3-morning-or-night/  301
 /blog/when-to-take-magnesium-glycinate/  /blog/magnesium-glycinate-morning-or-night/  301
+
+
+# SSRI-interaction family merge, 2026-10-11. Fifteen "can you take X with <SSRI>"
+# posts drew 65 GSC impressions and zero clicks over the 90 days to 2026-10-08, and
+# four gave near-identical reassurances for four different herbs. Merged into one
+# survivor that sorts supplements by mechanism into three risk classes, so the
+# serotonergic combinations are visibly separated from the merely sedating ones.
+/blog/can-you-take-valerian-root-with-sertraline/  /blog/supplements-and-antidepressants/  301
+/blog/can-you-take-passionflower-with-sertraline/  /blog/supplements-and-antidepressants/  301
+/blog/can-you-take-lemon-balm-with-zoloft/  /blog/supplements-and-antidepressants/  301
+/blog/can-you-take-l-tyrosine-with-sertraline/  /blog/supplements-and-antidepressants/  301
+/blog/can-you-take-l-tryptophan-with-sertraline/  /blog/supplements-and-antidepressants/  301
+/blog/can-you-take-rhodiola-rosea-with-sertraline/  /blog/supplements-and-antidepressants/  301
+/blog/can-you-take-l-theanine-with-lexapro/  /blog/supplements-and-antidepressants/  301
+/blog/can-you-take-holy-basil-with-prozac/  /blog/supplements-and-antidepressants/  301
+/blog/can-you-take-passionflower-with-lexapro/  /blog/supplements-and-antidepressants/  301
+/blog/can-you-take-l-tyrosine-with-lexapro/  /blog/supplements-and-antidepressants/  301
+/blog/can-you-take-valerian-root-and-melatonin-together/  /blog/supplements-and-antidepressants/  301
+/blog/can-you-take-lemon-balm-and-melatonin-together/  /blog/supplements-and-antidepressants/  301
+/blog/can-you-take-l-tryptophan-and-melatonin-together/  /blog/supplements-and-antidepressants/  301
+
+# These three 301 to their surviving in-cluster sibling: same supplement, different
+# SSRI brand name, which is one SERP split across two URLs.
+/blog/can-you-take-saffron-extract-with-sertraline/  /blog/can-you-take-saffron-extract-with-lexapro/  301
+/blog/can-you-take-saffron-extract-with-ssri/  /blog/can-you-take-saffron-extract-with-lexapro/  301
+/blog/can-you-take-ashwagandha-with-sertraline/  /blog/can-you-take-ashwagandha-with-lexapro/  301

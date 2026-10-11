@@ -1,4 +1,10 @@
 ---
+# Retired 2026-10-11: merged into /blog/can-you-take-ashwagandha-with-lexapro/.
+# This post and its surviving in-cluster sibling answered the same question about
+# the same supplement for a different SSRI, which is one SERP split across two
+# URLs rather than two topics: the class of antidepressant decides the answer,
+# not the brand name. The survivor holds the cluster's demand and now claims
+# both terms. A 301 is registered in public/_redirects.
 title: "Ashwagandha and Sertraline: Safe?"
 description: "Can you take ashwagandha with sertraline? Usually low-risk, but added sedation and thyroid effects make a quick check with your prescriber worth it first."
 pubDate: 2026-08-13
@@ -9,7 +15,7 @@ keyTakeaway: "Ashwagandha and sertraline are often combined, but it is a prescri
 postType: "interaction"
 buyIntentTerm: "which ashwagandha supplement to take with sertraline"
 relatedProducts: [ashwagandha]
-draft: false
+draft: true
 faq:
   - q: "Can you take ashwagandha with sertraline?"
     a: "Often, but it is a conversation for your prescriber, not a self-serve decision. Ashwagandha is not a strong serotonin-raising agent, so the classic serotonin-syndrome concern is largely theoretical. The more practical issues are added drowsiness, ashwagandha's effect on thyroid hormones, and rare liver reactions. None of that rules it out, but it is why you clear it with the clinician who prescribed your sertraline."

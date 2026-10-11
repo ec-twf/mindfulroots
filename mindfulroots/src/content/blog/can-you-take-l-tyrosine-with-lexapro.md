@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/supplements-and-antidepressants/.
+# Fifteen "can you take X with <SSRI>" posts drew 65 Search Console impressions
+# and zero clicks across the 90 days to 2026-10-08, and four of them carried
+# near-identical conclusions ("no documented interaction, most likely added
+# drowsiness, ask your prescriber") for four different herbs. On a topic where
+# one combination is genuinely dangerous, four interchangeable reassurances read
+# as safety when they are really thin evidence. The survivor sorts supplements
+# into three risk classes by mechanism instead, so the serotonergic ones are
+# visibly separated from the merely sedating ones. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted.
 title: "Can You Take L-Tyrosine With Lexapro? Safety Guide"
 description: "Can you take L-tyrosine with Lexapro (escitalopram)? There is no well-documented serotonin interaction, but data are thin, so clear it with your prescriber."
 metaDescription: "L-tyrosine feeds dopamine, not serotonin, so it is a lower serotonin-syndrome risk with Lexapro. But the pairing is understudied. Ask your prescriber first."
@@ -9,7 +19,7 @@ cluster: "l-theanine"
 postType: "interaction"
 buyIntentTerm: "best l-theanine supplement for focus while on lexapro"
 relatedProducts: [l-theanine]
-draft: false
+draft: true
 faq:
   - q: "Is it dangerous to take L-tyrosine with Lexapro?"
     a: "There is no well-documented dangerous interaction between L-tyrosine and escitalopram. L-tyrosine feeds the dopamine and noradrenaline pathways rather than serotonin, so it does not carry the serotonin-syndrome risk that a serotonin precursor would. The pairing is understudied, though, and tyrosine can be stimulating, so check with your prescriber before combining them."

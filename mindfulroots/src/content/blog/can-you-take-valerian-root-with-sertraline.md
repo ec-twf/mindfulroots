@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/supplements-and-antidepressants/.
+# Fifteen "can you take X with <SSRI>" posts drew 65 Search Console impressions
+# and zero clicks across the 90 days to 2026-10-08, and four of them carried
+# near-identical conclusions ("no documented interaction, most likely added
+# drowsiness, ask your prescriber") for four different herbs. On a topic where
+# one combination is genuinely dangerous, four interchangeable reassurances read
+# as safety when they are really thin evidence. The survivor sorts supplements
+# into three risk classes by mechanism instead, so the serotonergic ones are
+# visibly separated from the merely sedating ones. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted.
 title: "Can You Take Valerian Root With Sertraline?"
 description: "Can you take valerian root with sertraline? No dangerous interaction is well documented, but evidence is thin and drowsiness can add up. Ask your doctor."
 metaDescription: "No well-documented interaction between valerian root and sertraline, but the pair is unstudied and both can sedate. Clear it with your prescriber first."
@@ -9,7 +19,7 @@ cluster: "l-theanine"
 postType: "interaction"
 buyIntentTerm: "best l-theanine supplement for calm alongside sertraline"
 relatedProducts: [l-theanine]
-draft: false
+draft: true
 faq:
   - q: "Is it dangerous to take valerian root with sertraline?"
     a: "No serious interaction between valerian root and sertraline is well documented in the medical literature. The realistic concern is additive drowsiness, since valerian is mildly sedating and some people feel tired on sertraline. Even so, the combination has not been formally trialled, so the safe move is to check with your prescriber before taking them together, especially if you also take other sedating medicines."

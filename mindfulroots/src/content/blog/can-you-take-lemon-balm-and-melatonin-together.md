@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/supplements-and-antidepressants/.
+# Fifteen "can you take X with <SSRI>" posts drew 65 Search Console impressions
+# and zero clicks across the 90 days to 2026-10-08, and four of them carried
+# near-identical conclusions ("no documented interaction, most likely added
+# drowsiness, ask your prescriber") for four different herbs. On a topic where
+# one combination is genuinely dangerous, four interchangeable reassurances read
+# as safety when they are really thin evidence. The survivor sorts supplements
+# into three risk classes by mechanism instead, so the serotonergic ones are
+# visibly separated from the merely sedating ones. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted.
 title: "Can You Take Lemon Balm and Melatonin?"
 description: "Can you take lemon balm and melatonin together? Both support sleep through different routes, so the pairing is usually gentle. What the evidence shows."
 pubDate: 2026-07-25
@@ -9,7 +19,7 @@ keyTakeaway: "For most healthy adults lemon balm and melatonin are a gentle pair
 postType: "interaction"
 buyIntentTerm: "best magnesium glycinate supplement for sleep"
 relatedProducts: [magnesium-glycinate]
-draft: false
+draft: true
 faq:
   - q: "Can you take lemon balm and melatonin together?"
     a: "For most healthy adults the pairing is generally considered gentle, because the two work through different routes. Lemon balm is a calming herb that supports relaxation, while melatonin is the hormone that signals your body it is night. There is no well-documented dangerous interaction between them, but both can add to drowsiness, so start low and do not combine either with alcohol or sedatives without medical advice."

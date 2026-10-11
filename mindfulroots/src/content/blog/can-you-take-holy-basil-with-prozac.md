@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/supplements-and-antidepressants/.
+# Fifteen "can you take X with <SSRI>" posts drew 65 Search Console impressions
+# and zero clicks across the 90 days to 2026-10-08, and four of them carried
+# near-identical conclusions ("no documented interaction, most likely added
+# drowsiness, ask your prescriber") for four different herbs. On a topic where
+# one combination is genuinely dangerous, four interchangeable reassurances read
+# as safety when they are really thin evidence. The survivor sorts supplements
+# into three risk classes by mechanism instead, so the serotonergic ones are
+# visibly separated from the merely sedating ones. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted.
 title: "Holy Basil and Prozac: Safe Together?"
 description: "Can you take holy basil with Prozac? The theoretical serotonin and bleeding risks matter here, so this pairing is one to clear with your prescriber first."
 pubDate: 2026-07-29
@@ -9,7 +19,7 @@ keyTakeaway: "No direct interaction between holy basil and fluoxetine is well do
 postType: "interaction"
 buyIntentTerm: "best ashwagandha supplement for mood support"
 relatedProducts: [ashwagandha]
-draft: false
+draft: true
 faq:
   - q: "Can you take holy basil with Prozac?"
     a: "There is no well-documented direct interaction, but there is a theoretical one, so this is a prescriber's call rather than a self-experiment. Prozac (fluoxetine) is an SSRI that raises serotonin, and holy basil has shown mild serotonergic and antidepressant-like activity in preclinical studies. Layering the two could in theory add to serotonin activity, and holy basil's blood-thinning effect may compound the bleeding risk SSRIs already carry."

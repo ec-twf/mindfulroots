@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/supplements-and-antidepressants/.
+# Fifteen "can you take X with <SSRI>" posts drew 65 Search Console impressions
+# and zero clicks across the 90 days to 2026-10-08, and four of them carried
+# near-identical conclusions ("no documented interaction, most likely added
+# drowsiness, ask your prescriber") for four different herbs. On a topic where
+# one combination is genuinely dangerous, four interchangeable reassurances read
+# as safety when they are really thin evidence. The survivor sorts supplements
+# into three risk classes by mechanism instead, so the serotonergic ones are
+# visibly separated from the merely sedating ones. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted.
 title: "Can You Take L-Tryptophan With Sertraline? Safety"
 description: "Can you take L-tryptophan with sertraline (Zoloft)? Both raise serotonin, so combining them adds to serotonin-syndrome risk. Ask your prescriber first."
 metaDescription: "L-tryptophan and sertraline both raise serotonin, so combining them adds to serotonin-syndrome risk. Do not stack them without your prescriber's guidance."
@@ -9,7 +19,7 @@ cluster: "magnesium-glycinate"
 postType: "interaction"
 buyIntentTerm: "best magnesium glycinate supplement for calm while on an ssri"
 relatedProducts: [magnesium-glycinate]
-draft: false
+draft: true
 faq:
   - q: "Is it safe to take L-tryptophan with sertraline?"
     a: "Not without medical supervision. L-tryptophan is a direct precursor to serotonin and sertraline is an SSRI that raises serotonin, so combining them can drive serotonin activity too high. This pairing is one of the classic triggers for serotonin syndrome. Do not stack them on your own; if you are considering it, speak to your prescriber first."
