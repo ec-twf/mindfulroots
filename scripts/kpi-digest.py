@@ -4,7 +4,7 @@
 The dashboard comes to you: one message every Monday, ~15 lines, each with a
 week-over-week arrow. Designed for the pre-traffic phase — leading indicators
 (impressions slope, non-navigational query count, tracked-keyword positions,
-indexation) sit above lagging ones (clicks, affiliate clicks, email subs).
+indexation) sit above lagging ones (clicks, affiliate clicks).
 
 Stateless by design: pulls two 7-day GSC windows (this week vs prior week) in
 one run, so it needs no snapshot files and can run on a fresh CI runner.
@@ -15,7 +15,6 @@ Env (optional — section prints "n/a" when unset):
   GSC_KEY_PATH        service-account key path (default ~/.config/moodsupplement/gsc-key.json)
   GSC_PROPERTY        default sc-domain:moodsupplement.net
   NETLIFY_AUTH_TOKEN, NETLIFY_SITE_ID   -> /go/ click counts from Netlify Blobs
-  BUTTONDOWN_API_KEY                    -> email subscriber count
 
 Usage:
   pip install google-api-python-client google-auth requests
@@ -137,21 +136,6 @@ def go_clicks(days=7):
     return total
 
 
-def email_subs():
-    key = os.environ.get("BUTTONDOWN_API_KEY")
-    if not key:
-        return None
-    req = urllib.request.Request(
-        "https://api.buttondown.email/v1/subscribers?page_size=1",
-        headers={"Authorization": f"Token {key}"},
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            return json.load(resp).get("count")
-    except Exception:
-        return None
-
-
 def fmt(n):
     return "n/a" if n is None else str(n)
 
@@ -171,7 +155,6 @@ def build_digest():
     pos = tracked_positions(gsc_window(service, cur_start, end), set(terms))
 
     clicks7 = go_clicks(7)
-    subs = email_subs()
 
     lines = [
         f"📊 MoodSupplement KPI — week to {end.isoformat()}",
@@ -198,7 +181,6 @@ def build_digest():
 
     lines += [
         f"• /go/ affiliate clicks (7d): {fmt(clicks7)}",
-        f"• Email subscribers: {fmt(subs)}",
         "",
         "Rule: every content/pin decision this week cites a line above.",
     ]

@@ -7,7 +7,6 @@
 #   TELEGRAM_CHAT_ID     your chat with that bot
 # Optional (lines show "n/a" until set):
 #   NETLIFY_AUTH_TOKEN, NETLIFY_SITE_ID   -> /go/ affiliate click counts
-#   BUTTONDOWN_API_KEY                    -> email subscriber count
 name: kpi-digest
 
 on:
@@ -50,4 +49,3 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
