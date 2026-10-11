@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/how-long-supplements-take-to-work/.
+# Seventeen "how long does X take to work" posts drew 106 Search Console
+# impressions and zero clicks across the 90 days to 2026-10-08, and two of them
+# (magnesium-glycinate-how-long-anxiety and
+# how-long-does-magnesium-glycinate-take-to-work) were competing inside one
+# cluster for the same question. The unique evidence from this file lives in the
+# survivor, which groups onset by the mechanism that sets the clock: acute
+# actives, repletion nutrients and adaptation supplements. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "How Long Does Lemon Balm Extract Take to Work?"
 description: "How long does lemon balm extract take to work? Calm arrives within 1–3 hours of a single dose; sleep and anxiety benefits build over two weeks of daily use."
 metaDescription: "Lemon balm's calming effect shows up within about 1–3 hours of a single dose. Sleep and ongoing anxiety benefits build over roughly two weeks of daily use."
@@ -9,7 +19,7 @@ cluster: "l-theanine"
 postType: "duration"
 buyIntentTerm: "best lemon balm extract supplement for calm"
 relatedProducts: [l-theanine]
-draft: false
+draft: true
 faq:
   - q: "How long does lemon balm take to work for anxiety?"
     a: "Acutely, a single dose can take the edge off within one to three hours — that is the window in which controlled trials measured calmer mood and steadier stress responses. For persistent anxiety and disturbed sleep, the more relevant evidence used daily dosing over about two weeks, with benefits accumulating rather than arriving all at once. Give it a fortnight of consistent use before judging it for ongoing symptoms."

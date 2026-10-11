@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/how-long-supplements-take-to-work/.
+# Seventeen "how long does X take to work" posts drew 106 Search Console
+# impressions and zero clicks across the 90 days to 2026-10-08, and two of them
+# (magnesium-glycinate-how-long-anxiety and
+# how-long-does-magnesium-glycinate-take-to-work) were competing inside one
+# cluster for the same question. The unique evidence from this file lives in the
+# survivor, which groups onset by the mechanism that sets the clock: acute
+# actives, repletion nutrients and adaptation supplements. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "How Long Does Omega-3 Fish Oil Take to Work?"
 description: "How long omega-3 fish oil takes to work: triglycerides shift in about 4 weeks, mood support usually needs 8–12 weeks of a high-EPA dose taken consistently."
 metaDescription: "Omega-3 fish oil takes about 4 weeks for blood fats and 8–12 weeks for mood support, if you take enough EPA daily and stay consistent. What drives the timeline."
@@ -9,7 +19,7 @@ cluster: "omega-3-fish-oil"
 postType: "duration"
 buyIntentTerm: "best omega 3 fish oil supplement for low mood"
 relatedProducts: [omega-3-fish-oil]
-draft: false
+draft: true
 faq:
   - q: "How long does omega-3 fish oil take to work for mood?"
     a: "Most mood and stress trials run for 8 to 12 weeks before measuring a benefit, and many people notice little in the first month. The timeline reflects how long it takes EPA and DHA to build up in cell membranes and act on inflammation and signalling. Give a high-EPA dose at least eight weeks of consistent daily use before judging it."

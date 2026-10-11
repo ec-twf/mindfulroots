@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/how-long-supplements-take-to-work/.
+# Seventeen "how long does X take to work" posts drew 106 Search Console
+# impressions and zero clicks across the 90 days to 2026-10-08, and two of them
+# (magnesium-glycinate-how-long-anxiety and
+# how-long-does-magnesium-glycinate-take-to-work) were competing inside one
+# cluster for the same question. The unique evidence from this file lives in the
+# survivor, which groups onset by the mechanism that sets the clock: acute
+# actives, repletion nutrients and adaptation supplements. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "How Long Does a Probiotic Take to Start Working?"
 description: "How long does a probiotic take to start working? Digestive changes can show in days, while mood and gut-brain effects usually need 4 to 8 weeks of daily use."
 keyTakeaway: "Most people notice digestive changes, such as less bloating or more regular stools, within a few days to two weeks of taking a probiotic every day. Effects linked to the gut-brain axis, like mood or stress support, usually take longer, often four to eight weeks. Probiotics also work only while you keep taking them, because most strains do not permanently settle in the gut."
@@ -8,7 +18,7 @@ cluster: "probiotic-gut-brain"
 postType: "duration"
 buyIntentTerm: "best probiotic supplement for gut-brain support"
 relatedProducts: [probiotic-gut-brain]
-draft: false
+draft: true
 faq:
   - q: "How long does a probiotic take to start working?"
     a: "It depends on what you are measuring. Digestive changes, such as less bloating, gas, or more regular stools, often appear within a few days to two weeks. Effects tied to the gut-brain axis, like mood or stress support, are slower and usually need four to eight weeks of daily use. If nothing has shifted after eight to twelve weeks on a consistent dose, the strain may not be right for you."

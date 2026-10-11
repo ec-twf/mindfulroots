@@ -13,7 +13,7 @@ benefits:
 typicalUse: "Commonly taken as 100–200 mg, either on its own during stressful stretches or alongside coffee/tea to take the edge off caffeine. Effects are felt within an hour for most people."
 cautions: "Very well tolerated with a strong safety profile. If you take blood-pressure medication, mention it to your doctor, as theanine may have a mild lowering effect."
 iherbKeyword: "l-theanine 200mg"
-relatedPosts: ["l-theanine-calm-focus", "supplements-safe-to-take-every-day", "supplement-side-effects-what-to-expect"]
+relatedPosts: ["l-theanine-calm-focus", "supplements-safe-to-take-every-day", "supplement-side-effects-what-to-expect", "how-long-supplements-take-to-work"]
 order: 6
 relatedProducts: ["magnesium-glycinate", "ashwagandha"]
 keyTakeaway: "Our pick is Doctor's Best L-Theanine with Suntheanine®, at 150 mg per capsule. It is the only product in this comparison whose label names Suntheanine®, the branded form used in most of the published trials. If dose matters more to you than provenance, NOW and Jarrow both give 200 mg for less."
@@ -35,7 +35,7 @@ faq:
   - q: "Is Suntheanine® actually better than generic L-theanine?"
     a: "Chemically they may well be equivalent. The difference is what you can verify. Suntheanine® is an enzymatically produced form made by Taiyo Kagaku, and it is the material used in most published trials, including the 2019 four-week study. A label reading only \"L-theanine\" does not tell you what is in the capsule or how it was made. That is the whole basis for our pick, and it is worth being clear that it is an argument about traceability rather than a claim that generic theanine does not work."
   - q: "How long does L-theanine take to work?"
-    a: "People generally report the calming effect within 30 to 60 minutes of a single dose, which is why it gets taken before a stressful meeting or alongside coffee. The measured changes in sleep quality and trait anxiety in the 2019 trial came after four weeks of daily use, so the two timescales answer different questions. There is a longer breakdown in [how long L-theanine takes to work](/blog/how-long-does-it-take-for-l-theanine-to-work/)."
+    a: "People generally report the calming effect within 30 to 60 minutes of a single dose, which is why it gets taken before a stressful meeting or alongside coffee. The measured changes in sleep quality and trait anxiety in the 2019 trial came after four weeks of daily use, so the two timescales answer different questions. There is a longer breakdown in [how long supplements take to work](/blog/how-long-supplements-take-to-work/)."
   - q: "Can you take L-theanine with caffeine?"
     a: "Yes, and that combination is the reason a lot of people take it. Theanine is what makes green tea feel calmer than coffee despite both containing caffeine, and it is commonly used to blunt the jittery edge of a large dose. Check the label before stacking, because some theanine products already include caffeine. Ours does not. See the [caffeine and theanine stack](/blog/l-theanine-caffeine-stack/) for typical ratios."
   - q: "Does L-theanine make you drowsy?"

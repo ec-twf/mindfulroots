@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/how-long-supplements-take-to-work/.
+# Seventeen "how long does X take to work" posts drew 106 Search Console
+# impressions and zero clicks across the 90 days to 2026-10-08, and two of them
+# (magnesium-glycinate-how-long-anxiety and
+# how-long-does-magnesium-glycinate-take-to-work) were competing inside one
+# cluster for the same question. The unique evidence from this file lives in the
+# survivor, which groups onset by the mechanism that sets the clock: acute
+# actives, repletion nutrients and adaptation supplements. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "How Long for L-Theanine to Work?"
 description: "How long does it take for L-theanine to work? Blood levels peak in about 30 to 50 minutes and most people feel calm focus within an hour. What affects it."
 pubDate: 2026-07-25
@@ -9,7 +19,7 @@ keyTakeaway: "Most people feel L-theanine within 30 to 60 minutes of a dose on a
 postType: "duration"
 buyIntentTerm: "best fast acting l-theanine supplement"
 relatedProducts: [l-theanine]
-draft: false
+draft: true
 faq:
   - q: "How long does it take for L-theanine to work?"
     a: "For most people the calming effect is felt within about 30 to 60 minutes of taking it on an empty or lightly filled stomach. Blood levels of L-theanine peak roughly 30 to 50 minutes after a dose, which lines up with when people tend to notice a relaxed, focused state. It is a same-session supplement rather than one that needs weeks to build up."

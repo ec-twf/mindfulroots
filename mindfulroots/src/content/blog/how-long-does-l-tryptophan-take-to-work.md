@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/how-long-supplements-take-to-work/.
+# Seventeen "how long does X take to work" posts drew 106 Search Console
+# impressions and zero clicks across the 90 days to 2026-10-08, and two of them
+# (magnesium-glycinate-how-long-anxiety and
+# how-long-does-magnesium-glycinate-take-to-work) were competing inside one
+# cluster for the same question. The unique evidence from this file lives in the
+# survivor, which groups onset by the mechanism that sets the clock: acute
+# actives, repletion nutrients and adaptation supplements. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "How Long Does L-Tryptophan Take to Work?"
 description: "L-tryptophan may support sleep the same night at higher doses, while its mood support builds gradually over one to three weeks of consistent daily use."
 seoTitle: "How Long Does L-Tryptophan Take to Work? Timeline"
@@ -10,7 +20,7 @@ cluster: "l-tryptophan"
 postType: "duration"
 buyIntentTerm: "best l-tryptophan supplement for sleep"
 relatedProducts: []
-draft: false
+draft: true
 faq:
   - q: "How long does L-tryptophan take to work for sleep?"
     a: "Taken at bedtime, higher doses of L-tryptophan can shorten the time it takes some people to fall asleep, an effect that appears the same night, usually within one to two hours. The response is modest and varies a lot between individuals. Lower doses and daytime use are far less likely to produce a noticeable sleep effect, so timing and dose both matter."

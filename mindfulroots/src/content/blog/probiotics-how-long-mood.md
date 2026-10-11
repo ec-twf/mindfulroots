@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/how-long-supplements-take-to-work/.
+# Seventeen "how long does X take to work" posts drew 106 Search Console
+# impressions and zero clicks across the 90 days to 2026-10-08, and two of them
+# (magnesium-glycinate-how-long-anxiety and
+# how-long-does-magnesium-glycinate-take-to-work) were competing inside one
+# cluster for the same question. The unique evidence from this file lives in the
+# survivor, which groups onset by the mechanism that sets the clock: acute
+# actives, repletion nutrients and adaptation supplements. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "How Long Do Probiotics Take to Affect Mood?"
 description: "How long does it take for probiotics to affect mood? The trials that saw a benefit ran about 4 to 8 weeks of daily use, so plan for weeks, not a few days."
 keyTakeaway: "Any mood-related effect from a probiotic builds slowly. The trials that reported a benefit generally ran for four to eight weeks of daily use, so this is a matter of weeks, not days. Digestion can change much faster, but calmer mood or lower stress runs through a longer gut-brain chain and needs consistency. If nothing has shifted after eight to twelve weeks on a named-strain product, the strain may not be right for you."
@@ -8,7 +18,7 @@ cluster: "probiotic-gut-brain"
 postType: "duration"
 buyIntentTerm: "best probiotic supplement for mood support"
 relatedProducts: [probiotic-gut-brain]
-draft: false
+draft: true
 faq:
   - q: "How long does it take for probiotics to affect mood?"
     a: "Longer than most people expect. The gut-brain trials that reported a mood or stress benefit ran for about four to eight weeks of daily use, so you should plan for weeks rather than days. Digestive changes like less bloating can appear within days, but anything involving mood works through a slower chain from the gut to the brain. Give a named-strain product a consistent eight-week trial before deciding it did nothing."

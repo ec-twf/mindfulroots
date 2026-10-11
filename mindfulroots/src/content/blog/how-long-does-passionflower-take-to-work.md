@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/how-long-supplements-take-to-work/.
+# Seventeen "how long does X take to work" posts drew 106 Search Console
+# impressions and zero clicks across the 90 days to 2026-10-08, and two of them
+# (magnesium-glycinate-how-long-anxiety and
+# how-long-does-magnesium-glycinate-take-to-work) were competing inside one
+# cluster for the same question. The unique evidence from this file lives in the
+# survivor, which groups onset by the mechanism that sets the clock: acute
+# actives, repletion nutrients and adaptation supplements. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "How Long Does Passionflower Take to Work?"
 description: "Passionflower can calm nerves within 30 to 60 minutes, but its support for sleep and everyday anxiety builds over one to four weeks of steady daily use."
 seoTitle: "How Long Does Passionflower Take to Work? Timeline"
@@ -10,7 +20,7 @@ cluster: "passionflower"
 postType: "duration"
 buyIntentTerm: "best passionflower supplement for anxiety"
 relatedProducts: []
-draft: false
+draft: true
 faq:
   - q: "How long does passionflower take to work for anxiety?"
     a: "For situational nerves, such as before a presentation or a dental visit, passionflower tends to take the edge off within about 30 to 60 minutes of a single dose. That acute, calming effect is what the pre-surgery trials measured. For ongoing, day-to-day anxiety support, give it longer: most people notice a steadier baseline after one to four weeks of taking it consistently rather than only when they feel stressed."

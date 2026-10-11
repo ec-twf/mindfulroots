@@ -59,6 +59,23 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: 'probiotics side effects', owner: '/blog/supplement-side-effects-what-to-expect/', intent: 'informational' },
   { headTerm: 'rhodiola rosea side effects', owner: '/blog/supplement-side-effects-what-to-expect/', intent: 'informational' },
 
+  // Duration family merge, 2026-10-11. Seventeen "how long does X take to work"
+  // posts drew 106 impressions and zero clicks across 90 days. One survivor now
+  // owns the family via ownsKeywords; the terms below had no row before because
+  // the posts never declared a head term.
+  { headTerm: 'how long do supplements take to work', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
+  { headTerm: 'how long does valerian root extract take to work', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
+  { headTerm: 'how long does l-tyrosine take to work for adhd', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
+  { headTerm: 'how long does lemon balm extract take to work', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
+  { headTerm: 'how long until omega-3 starts working', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
+  { headTerm: 'how long does l-tryptophan take to work', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
+  { headTerm: 'how long does passionflower take to work', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
+  { headTerm: 'how long does a probiotic take to start working', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
+  { headTerm: 'how long does vitamin d take to improve mood', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
+  { headTerm: 'how long do probiotics take to improve mood', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
+  { headTerm: 'how long does ashwagandha take to work for anxiety', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
+  { headTerm: 'how long does 5-htp take to work', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
+
   // Condition hubs (/guides/*) — commercial-intent middle layer. Each owns a
   // "best supplements for <condition>" head term; the underlying evidence posts
   // own the informational terms, so the two layers don't cannibalize.
@@ -126,7 +143,7 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   // l-theanine
   { headTerm: 'can you take l-theanine with lexapro', owner: '/blog/can-you-take-l-theanine-with-lexapro/', intent: 'informational' },
   { headTerm: 'high dose taurine for anxiety', owner: '/blog/high-dose-taurine-for-anxiety/', intent: 'informational' },
-  { headTerm: 'how long does it take for l-theanine to work', owner: '/blog/how-long-does-it-take-for-l-theanine-to-work/', intent: 'informational' },
+  { headTerm: 'how long does it take for l-theanine to work', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
   { headTerm: 'l-theanine caffeine stack', owner: '/blog/l-theanine-caffeine-stack/', intent: 'informational' },
   { headTerm: 'l-theanine calm focus', owner: '/blog/l-theanine-calm-focus/', intent: 'informational' },
   { headTerm: 'l-theanine dosage anxiety', owner: '/blog/l-theanine-dosage-anxiety/', intent: 'informational' },
@@ -150,7 +167,7 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: 'can you take valerian root and melatonin together', owner: '/blog/can-you-take-valerian-root-and-melatonin-together/', intent: 'informational' },
   { headTerm: 'glycine dosage', owner: '/blog/glycine-dosage/', intent: 'informational' },
   { headTerm: 'glycine vs collagen', owner: '/blog/glycine-vs-collagen/', intent: 'comparison' },
-  { headTerm: 'how long does magnesium glycinate take to work', owner: '/blog/how-long-does-magnesium-glycinate-take-to-work/', intent: 'informational' },
+  { headTerm: 'how long does magnesium glycinate take to work', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
   { headTerm: 'magnesium dosage for sleep', owner: '/blog/magnesium-dosage-for-sleep/', intent: 'informational' },
   { headTerm: 'magnesium glycinate dosage for anxiety', owner: '/blog/magnesium-glycinate-dosage-for-anxiety/', intent: 'informational' },
   { headTerm: 'magnesium glycinate morning or night', owner: '/blog/magnesium-glycinate-morning-or-night/', intent: 'informational' },
@@ -174,7 +191,7 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   // rhodiola-rosea
   { headTerm: 'can you take rhodiola rosea with levothyroxine', owner: '/blog/can-you-take-rhodiola-rosea-with-levothyroxine/', intent: 'informational' },
   { headTerm: 'can you take rhodiola rosea with sertraline', owner: '/blog/can-you-take-rhodiola-rosea-with-sertraline/', intent: 'informational' },
-  { headTerm: 'how long does rhodiola rosea take to work', owner: '/blog/how-long-does-rhodiola-rosea-take-to-work/', intent: 'informational' },
+  { headTerm: 'how long does rhodiola rosea take to work', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
   { headTerm: 'rhodiola dosage cycling', owner: '/blog/rhodiola-dosage-cycling/', intent: 'informational' },
   { headTerm: 'rhodiola rosea vs ashwagandha', owner: '/blog/rhodiola-rosea-vs-ashwagandha-for-anxiety/', intent: 'comparison' },
   { headTerm: 'rhodiola rosea vs ashwagandha for anxiety', owner: '/blog/rhodiola-rosea-vs-ashwagandha-for-anxiety/', intent: 'comparison' },
@@ -182,7 +199,7 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   // saffron-extract
   { headTerm: 'can you take saffron extract with lexapro', owner: '/blog/can-you-take-saffron-extract-with-lexapro/', intent: 'informational' },
   { headTerm: 'can you take saffron extract with sertraline', owner: '/blog/can-you-take-saffron-extract-with-sertraline/', intent: 'informational' },
-  { headTerm: 'how long does saffron extract take to work', owner: '/blog/how-long-does-saffron-extract-take-to-work/', intent: 'informational' },
+  { headTerm: 'how long does saffron extract take to work', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
   { headTerm: 'saffron extract side effects', owner: '/blog/supplement-side-effects-what-to-expect/', intent: 'informational' },
   { headTerm: 'saffron extract vs affron', owner: '/blog/saffron-extract-vs-affron/', intent: 'comparison' },
   { headTerm: 'saffron extract vs ashwagandha', owner: '/blog/saffron-extract-vs-ashwagandha/', intent: 'comparison' },
@@ -190,7 +207,7 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: 'saffron pms mood swings', owner: '/blog/saffron-pms-mood-swings/', intent: 'informational' },
 
   // vitamin-d3
-  { headTerm: 'how long does vitamin-d3 60k take to work', owner: '/blog/how-long-does-vitamin-d3-60k-take-to-work/', intent: 'informational' },
+  { headTerm: 'how long does vitamin-d3 60k take to work', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
   { headTerm: 'vitamin-d3 k2 combination', owner: '/blog/vitamin-d3-k2-combination/', intent: 'informational' },
   { headTerm: 'vitamin-d3 morning or night', owner: '/blog/vitamin-d3-morning-or-night/', intent: 'informational' },
   { headTerm: 'vitamin-d3 vs b12', owner: '/blog/vitamin-d3-vs-b12/', intent: 'comparison' },

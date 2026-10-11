@@ -13,7 +13,7 @@ benefits:
 typicalUse: "Trials commonly use 200–400 mg per day of an extract standardized to rosavins and salidroside, taken in the morning. Best for fatigue-dominant stress rather than wired anxiety."
 cautions: "Can feel stimulating — take earlier in the day to avoid sleep disruption. Discuss with your doctor if you take antidepressants, stimulants, or have bipolar disorder."
 iherbKeyword: "rhodiola rosea extract"
-relatedPosts: ["adaptogens-ashwagandha-rhodiola", "supplements-safe-to-take-every-day", "supplement-side-effects-what-to-expect"]
+relatedPosts: ["adaptogens-ashwagandha-rhodiola", "supplements-safe-to-take-every-day", "supplement-side-effects-what-to-expect", "how-long-supplements-take-to-work"]
 order: 8
 qualityCriterion: "Standardized to 3% rosavins and 1% salidroside — the ratio used in the SHR-5 extract trials — species verified as R. rosea (not R. crenulata), dose in the 200–500 mg studied range."
 criterionRationale: "The stress, fatigue, and burnout trials that built rhodiola's evidence base used SHR-5 extract standardized to this specific ratio. R. crenulata is sometimes sold as rhodiola but has a different alkaloid profile. Dose below 200 mg is outside the studied range."

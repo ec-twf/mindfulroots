@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/how-long-supplements-take-to-work/.
+# Seventeen "how long does X take to work" posts drew 106 Search Console
+# impressions and zero clicks across the 90 days to 2026-10-08, and two of them
+# (magnesium-glycinate-how-long-anxiety and
+# how-long-does-magnesium-glycinate-take-to-work) were competing inside one
+# cluster for the same question. The unique evidence from this file lives in the
+# survivor, which groups onset by the mechanism that sets the clock: acute
+# actives, repletion nutrients and adaptation supplements. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "How Long Does L-Tyrosine Take to Work for ADHD?"
 description: "How long does L-tyrosine take to work for ADHD? A dose acts within an hour, not over weeks, and the evidence for ADHD itself stays thin and largely unproven."
 keyTakeaway: "L-tyrosine is an acute supplement, not a slow-building one. If it does anything for focus, it happens within about 30 to 90 minutes of a dose taken before a demanding task, mainly when you are stressed, sleep-deprived, or under heavy mental load. It does not accumulate over weeks the way an ADHD medication is titrated, and the evidence for using it in ADHD specifically is thin, with early daily-use attempts suggesting any effect fades."
@@ -8,7 +18,7 @@ cluster: "l-tyrosine"
 postType: "duration"
 buyIntentTerm: "best l-tyrosine supplement for adhd focus"
 relatedProducts: []
-draft: false
+draft: true
 faq:
   - q: "How long does L-tyrosine take to work for ADHD?"
     a: "It works acutely, not cumulatively. In the studies where tyrosine helped thinking, the dose was taken 30 to 60 minutes before a mentally demanding task and the effect showed up within that same session. There is no evidence that daily tyrosine builds a steady ADHD benefit over weeks the way a prescribed stimulant is titrated. If a single dose before focused work does nothing for you, taking it every day for a month is unlikely to change that."

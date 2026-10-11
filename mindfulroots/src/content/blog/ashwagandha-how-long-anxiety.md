@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/how-long-supplements-take-to-work/.
+# Seventeen "how long does X take to work" posts drew 106 Search Console
+# impressions and zero clicks across the 90 days to 2026-10-08, and two of them
+# (magnesium-glycinate-how-long-anxiety and
+# how-long-does-magnesium-glycinate-take-to-work) were competing inside one
+# cluster for the same question. The unique evidence from this file lives in the
+# survivor, which groups onset by the mechanism that sets the clock: acute
+# actives, repletion nutrients and adaptation supplements. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "How Long Does Ashwagandha Take to Work for Anxiety?"
 description: "How long ashwagandha takes to work for anxiety: most people need 4 to 8 weeks of daily use, and the trials that lowered stress and cortisol ran about 60 days."
 seoTitle: "How Long Does Ashwagandha Take to Work for Anxiety?"
@@ -10,7 +20,7 @@ cluster: "ashwagandha"
 postType: "duration"
 buyIntentTerm: "best ashwagandha supplement for anxiety relief"
 relatedProducts: [ashwagandha]
-draft: false
+draft: true
 faq:
   - q: "How long does ashwagandha take to work for anxiety?"
     a: "Most people need 4 to 8 weeks of daily use. The randomized trials that reported lower stress and anxiety scores, along with reduced cortisol, ran for about 60 days, so a fair trial is roughly two months rather than a few doses."

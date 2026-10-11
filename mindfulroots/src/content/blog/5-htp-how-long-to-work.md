@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/how-long-supplements-take-to-work/.
+# Seventeen "how long does X take to work" posts drew 106 Search Console
+# impressions and zero clicks across the 90 days to 2026-10-08, and two of them
+# (magnesium-glycinate-how-long-anxiety and
+# how-long-does-magnesium-glycinate-take-to-work) were competing inside one
+# cluster for the same question. The unique evidence from this file lives in the
+# survivor, which groups onset by the mechanism that sets the clock: acute
+# actives, repletion nutrients and adaptation supplements. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "How Long Does 5-HTP Take to Work for Mood?"
 description: "How long does 5-HTP take to work for mood? A calming effect can show the same day, but mood benefits in trials build gradually over about 2 to 6 weeks."
 keyTakeaway: "5-HTP acts on two different timelines. A single dose reaches its peak in the blood within a few hours and some people notice a calming or sleepy effect the same day. A real change in mood, though, builds over weeks: the trials that reported a benefit generally assessed it at around two to six weeks of daily use, similar to how antidepressants are timed. Because it raises serotonin, 5-HTP must never be combined with SSRIs, SNRIs, MAOIs, or other serotonergic drugs."
@@ -8,7 +18,7 @@ cluster: "5-htp"
 postType: "duration"
 buyIntentTerm: "best 5-htp supplement for low mood"
 relatedProducts: [5-htp]
-draft: false
+draft: true
 faq:
   - q: "How long does 5-HTP take to work for mood?"
     a: "There are two answers. A single dose peaks in the blood within about one and a half to three hours, and some people feel a mild calming or drowsy effect the same day, which is why it is often taken for sleep. A genuine mood benefit is slower: the trials that measured mood generally looked at two to six weeks of consistent daily use. So for mood, plan for weeks, and give it a fair trial before deciding."

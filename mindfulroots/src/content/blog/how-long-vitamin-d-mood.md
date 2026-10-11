@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/how-long-supplements-take-to-work/.
+# Seventeen "how long does X take to work" posts drew 106 Search Console
+# impressions and zero clicks across the 90 days to 2026-10-08, and two of them
+# (magnesium-glycinate-how-long-anxiety and
+# how-long-does-magnesium-glycinate-take-to-work) were competing inside one
+# cluster for the same question. The unique evidence from this file lives in the
+# survivor, which groups onset by the mechanism that sets the clock: acute
+# actives, repletion nutrients and adaptation supplements. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "How Long Does Vitamin D Take to Work for Mood?"
 description: "How long vitamin D takes to work for mood: blood levels rise over 8 to 12 weeks, and the trials that helped low mood measured change at that same mark."
 seoTitle: "How Long Does Vitamin D Take to Work for Mood?"
@@ -10,7 +20,7 @@ cluster: "vitamin-d3"
 postType: "duration"
 buyIntentTerm: "best vitamin d3 supplement for low mood"
 relatedProducts: [vitamin-d3]
-draft: false
+draft: true
 faq:
   - q: "How long does vitamin D take to work for mood?"
     a: "Most people should give it 8 to 12 weeks. Blood levels of 25(OH)D rise gradually and take roughly two to three months to reach a steady state, and the supplementation trials that reported a mood benefit measured it around that point rather than in the first few days."

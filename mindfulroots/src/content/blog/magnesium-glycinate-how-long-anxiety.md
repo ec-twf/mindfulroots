@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/how-long-supplements-take-to-work/.
+# Seventeen "how long does X take to work" posts drew 106 Search Console
+# impressions and zero clicks across the 90 days to 2026-10-08, and two of them
+# (magnesium-glycinate-how-long-anxiety and
+# how-long-does-magnesium-glycinate-take-to-work) were competing inside one
+# cluster for the same question. The unique evidence from this file lives in the
+# survivor, which groups onset by the mechanism that sets the clock: acute
+# actives, repletion nutrients and adaptation supplements. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "How Long Does Magnesium Glycinate Take to Work?"
 description: "How long magnesium glycinate takes to work for anxiety: some feel calmer within a week or two, but refilling low stores takes about 4 to 8 weeks of use."
 seoTitle: "How Long Does Magnesium Glycinate Take for Anxiety?"
@@ -10,7 +20,7 @@ cluster: "magnesium-glycinate"
 postType: "duration"
 buyIntentTerm: "best magnesium glycinate supplement for anxiety relief"
 relatedProducts: [magnesium-glycinate]
-draft: false
+draft: true
 faq:
   - q: "How long does magnesium glycinate take to work for anxiety?"
     a: "Two timelines run at once. A mild same-week effect on sleep or muscle tension is common in the first one to two weeks, while the steadier benefit from refilling low magnesium stores usually takes 4 to 8 weeks. Judge it over about two months, not two days."

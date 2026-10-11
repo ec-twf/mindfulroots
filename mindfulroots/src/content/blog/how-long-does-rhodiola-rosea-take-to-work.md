@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/how-long-supplements-take-to-work/.
+# Seventeen "how long does X take to work" posts drew 106 Search Console
+# impressions and zero clicks across the 90 days to 2026-10-08, and two of them
+# (magnesium-glycinate-how-long-anxiety and
+# how-long-does-magnesium-glycinate-take-to-work) were competing inside one
+# cluster for the same question. The unique evidence from this file lives in the
+# survivor, which groups onset by the mechanism that sets the clock: acute
+# actives, repletion nutrients and adaptation supplements. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "How Long Rhodiola Rosea Takes"
 description: "How long does rhodiola rosea take to work? A mild lift can appear within days, but the steadier effect on stress and fatigue builds over several weeks."
 pubDate: 2026-08-03
@@ -9,7 +19,7 @@ keyTakeaway: "Rhodiola has two timelines. A mild lift in energy can arrive withi
 postType: "duration"
 buyIntentTerm: "best fast acting rhodiola rosea supplement"
 relatedProducts: [rhodiola-rosea]
-draft: false
+draft: true
 faq:
   - q: "How long does rhodiola rosea take to work?"
     a: "There are two timelines. Some people notice a mild lift in energy or a lighter head within a few days, sometimes even after a single dose in the acute-fatigue studies. The steadier effect on stress, mood, and persistent tiredness is what the multi-week trials measured, so give it a consistent two to four weeks before judging it."

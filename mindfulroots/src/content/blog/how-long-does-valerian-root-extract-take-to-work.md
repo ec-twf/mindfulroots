@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/how-long-supplements-take-to-work/.
+# Seventeen "how long does X take to work" posts drew 106 Search Console
+# impressions and zero clicks across the 90 days to 2026-10-08, and two of them
+# (magnesium-glycinate-how-long-anxiety and
+# how-long-does-magnesium-glycinate-take-to-work) were competing inside one
+# cluster for the same question. The unique evidence from this file lives in the
+# survivor, which groups onset by the mechanism that sets the clock: acute
+# actives, repletion nutrients and adaptation supplements. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "How Long Does Valerian Root Extract Take to Work?"
 description: "How long does valerian root extract take to work? A single dose may bring drowsiness within 1-2 hours; the fuller sleep benefit builds over 2-4 weeks."
 metaDescription: "A single valerian dose may bring drowsiness within one to two hours, but the clearer sleep benefit tends to build over two to four weeks of nightly use."
@@ -9,7 +19,7 @@ cluster: "magnesium-glycinate"
 postType: "duration"
 buyIntentTerm: "best valerian root extract supplement for sleep"
 relatedProducts: [magnesium-glycinate]
-draft: false
+draft: true
 faq:
   - q: "How long before bed should I take valerian root?"
     a: "Most traditional and trial use puts the dose about 30 minutes to two hours before bed, because any acute drowsiness tends to appear in that window. If you are using it for ongoing sleep quality rather than a single night, timing matters less than consistency — take it at roughly the same time each night for a couple of weeks to give it a fair trial."

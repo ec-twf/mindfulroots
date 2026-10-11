@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/how-long-supplements-take-to-work/.
+# Seventeen "how long does X take to work" posts drew 106 Search Console
+# impressions and zero clicks across the 90 days to 2026-10-08, and two of them
+# (magnesium-glycinate-how-long-anxiety and
+# how-long-does-magnesium-glycinate-take-to-work) were competing inside one
+# cluster for the same question. The unique evidence from this file lives in the
+# survivor, which groups onset by the mechanism that sets the clock: acute
+# actives, repletion nutrients and adaptation supplements. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "How Long Does Vitamin D3 60k Take?"
 description: "How long does vitamin D3 60k take to work? Blood levels rise within days, but mood benefits take weeks. Here is a realistic timeline and the evidence."
 pubDate: 2026-08-15
@@ -9,7 +19,7 @@ keyTakeaway: "A 60,000 IU vitamin D3 dose starts raising your blood level within
 postType: "duration"
 buyIntentTerm: "best vitamin d3 60000 iu supplement to correct deficiency"
 relatedProducts: [vitamin-d3]
-draft: false
+draft: true
 faq:
   - q: "How long does vitamin D3 60k take to work?"
     a: "Your blood level of vitamin D starts climbing within a few days of a 60,000 IU dose, and a weekly regimen typically corrects a deficiency over about six to eight weeks. Any effect on mood, energy, or muscle symptoms lags behind the blood number, usually appearing over one to three months rather than in the first week. The timeline depends on how low you started."

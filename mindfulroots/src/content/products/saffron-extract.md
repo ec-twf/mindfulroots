@@ -13,7 +13,7 @@ benefits:
 typicalUse: "Trials commonly use 28–30 mg per day of a standardized extract (such as affron®), often split into two doses, for 4–8 weeks."
 cautions: "Generally well tolerated at supplement doses. Avoid high doses in pregnancy. Because it has been studied for mood, talk to your doctor before combining it with prescribed antidepressants."
 iherbKeyword: "saffron extract affron"
-relatedPosts: ["saffron-mood-research", "supplements-safe-to-take-every-day", "supplement-side-effects-what-to-expect"]
+relatedPosts: ["saffron-mood-research", "supplements-safe-to-take-every-day", "supplement-side-effects-what-to-expect", "how-long-supplements-take-to-work"]
 order: 7
 relatedProducts: ["5-htp", "ashwagandha"]
 keyTakeaway: "Our pick is Sports Research Saffron Extract at 30 mg of affron® per softgel. Unusually, all three products here pass our criterion. Sports Research wins on dose precision: the trial that found an effect used 28 mg a day, and a 22 mg arm in the same study showed nothing at all."
@@ -35,7 +35,7 @@ faq:
   - q: "Is affron® better than Satiereal®?"
     a: "Neither is clearly better. Both are HPLC-standardised extracts with their own published human trials on mood, which is more than most botanical supplements can claim. They differ in what they standardise to and therefore in dose: affron® is measured by lepticrosalides at ≥3.5% and dosed at 28 to 30 mg, while Satiereal® is standardised to safranal and dosed near 88 mg. What matters is that the label names one of them and hits that extract's own studied dose. A product listing plain \"saffron extract\" with no named standardisation cannot be checked against any trial."
   - q: "How long does saffron extract take to work?"
-    a: "The trials that report mood changes run four weeks at minimum, and several run eight. Nobody should expect anything from a single dose. That slow curve is worth planning for, because it means a fair trial of saffron costs about a month before you can judge it. There is more detail in [how long saffron extract takes to work](/blog/how-long-does-saffron-extract-take-to-work/)."
+    a: "The trials that report mood changes run four weeks at minimum, and several run eight. Nobody should expect anything from a single dose. That slow curve is worth planning for, because it means a fair trial of saffron costs about a month before you can judge it. There is more detail in [how long supplements take to work](/blog/how-long-supplements-take-to-work/)."
   - q: "Can you take saffron extract with an antidepressant?"
     a: "Ask your doctor first. Saffron has been studied specifically for mood, and some trials compared it directly against prescription antidepressants, so combining the two is not a neutral act even though saffron is sold as a supplement. We have written up the specific cases for [saffron with Lexapro](/blog/can-you-take-saffron-extract-with-lexapro/) and [saffron with sertraline](/blog/can-you-take-saffron-extract-with-sertraline/), but neither replaces a conversation with the person who prescribed it."
   - q: "Does saffron extract have side effects?"

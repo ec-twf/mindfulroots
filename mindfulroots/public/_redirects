@@ -46,3 +46,27 @@ https://moodsupplement.net/*     https://www.moodsupplement.net/:splat  301!
 /blog/probiotics-side-effects/  /blog/supplement-side-effects-what-to-expect/  301
 /blog/rhodiola-rosea-side-effects/  /blog/supplement-side-effects-what-to-expect/  301
 /blog/saffron-extract-side-effects/  /blog/supplement-side-effects-what-to-expect/  301
+
+
+# Duration family merge, 2026-10-11. Seventeen "how long does X take to work" posts
+# drew 106 GSC impressions and zero clicks over the 90 days to 2026-10-08, and two
+# were competing inside the magnesium cluster for the same question. Each page's
+# unique evidence was carried into one survivor that groups onset by mechanism
+# (acute actives, repletion nutrients, adaptation supplements); originals draft: true.
+/blog/how-long-does-it-take-for-l-theanine-to-work/  /blog/how-long-supplements-take-to-work/  301
+/blog/how-long-does-magnesium-glycinate-take-to-work/  /blog/how-long-supplements-take-to-work/  301
+/blog/how-long-does-omega-3-fish-oil-take-to-work/  /blog/how-long-supplements-take-to-work/  301
+/blog/how-long-does-saffron-extract-take-to-work/  /blog/how-long-supplements-take-to-work/  301
+/blog/how-long-does-rhodiola-rosea-take-to-work/  /blog/how-long-supplements-take-to-work/  301
+/blog/how-long-does-l-tryptophan-take-to-work/  /blog/how-long-supplements-take-to-work/  301
+/blog/how-long-does-passionflower-take-to-work/  /blog/how-long-supplements-take-to-work/  301
+/blog/how-long-does-valerian-root-extract-take-to-work/  /blog/how-long-supplements-take-to-work/  301
+/blog/how-long-does-a-probiotic-take-to-start-working/  /blog/how-long-supplements-take-to-work/  301
+/blog/how-long-does-vitamin-d3-60k-take-to-work/  /blog/how-long-supplements-take-to-work/  301
+/blog/how-long-vitamin-d-mood/  /blog/how-long-supplements-take-to-work/  301
+/blog/how-long-does-l-tyrosine-take-to-work-for-adhd/  /blog/how-long-supplements-take-to-work/  301
+/blog/probiotics-how-long-mood/  /blog/how-long-supplements-take-to-work/  301
+/blog/how-long-does-lemon-balm-extract-take-to-work/  /blog/how-long-supplements-take-to-work/  301
+/blog/ashwagandha-how-long-anxiety/  /blog/how-long-supplements-take-to-work/  301
+/blog/magnesium-glycinate-how-long-anxiety/  /blog/how-long-supplements-take-to-work/  301
+/blog/5-htp-how-long-to-work/  /blog/how-long-supplements-take-to-work/  301
