@@ -100,6 +100,19 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: 'can you take l-tyrosine with sertraline', owner: '/blog/supplements-and-antidepressants/', intent: 'informational' },
   { headTerm: 'can you take l-tryptophan with sertraline', owner: '/blog/supplements-and-antidepressants/', intent: 'informational' },
 
+  // Brand-comparison claims, 2026-10-11. The site's four best brand-comparison
+  // pages declared no head term at all, so the pattern earning 16 of 18 clicks
+  // was invisible to the cannibalization guard. Terms are the exact GSC phrasings.
+  { headTerm: 'shoden vs ksm 66', owner: '/blog/shoden-vs-ksm-66/', intent: 'comparison' },
+  { headTerm: 'shoden vs ksm-66', owner: '/blog/shoden-vs-ksm-66/', intent: 'comparison' },
+  { headTerm: 'ksm-66 vs sensoril', owner: '/blog/ksm-66-vs-sensoril/', intent: 'comparison' },
+  { headTerm: 'sensoril vs ksm-66', owner: '/blog/ksm-66-vs-sensoril/', intent: 'comparison' },
+  { headTerm: 'sensoril ashwagandha', owner: '/blog/ksm-66-vs-sensoril/', intent: 'comparison' },
+  { headTerm: 'what is the difference between ksm 66 and ashwagandha', owner: '/blog/ashwagandha-vs-ksm-66/', intent: 'comparison' },
+  { headTerm: 'ksm 66 vs organic ashwagandha', owner: '/blog/ashwagandha-vs-ksm-66/', intent: 'comparison' },
+  { headTerm: 'suntheanine vs l-theanine', owner: '/blog/suntheanine-vs-l-theanine/', intent: 'comparison' },
+  { headTerm: 'suntheanine or l-theanine', owner: '/blog/suntheanine-vs-l-theanine/', intent: 'comparison' },
+
   // Condition hubs (/guides/*) — commercial-intent middle layer. Each owns a
   // "best supplements for <condition>" head term; the underlying evidence posts
   // own the informational terms, so the two layers don't cannibalize.

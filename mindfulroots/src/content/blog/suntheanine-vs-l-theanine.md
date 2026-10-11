@@ -8,6 +8,9 @@ pubDate: 2026-08-21
 updatedDate: 2026-08-21
 cluster: "l-theanine"
 postType: "brand-comparison"
+headTerm: "suntheanine vs l-theanine"
+ownsKeywords:
+  - "suntheanine or l-theanine"
 buyIntentTerm: "suntheanine or l-theanine which to buy"
 relatedProducts: [l-theanine]
 draft: false

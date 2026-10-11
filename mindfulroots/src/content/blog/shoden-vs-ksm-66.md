@@ -1,13 +1,16 @@
 ---
 title: "Shoden vs KSM-66: Which Ashwagandha to Pick"
 description: "Shoden vs KSM-66: both are standardised ashwagandha, but their headline percentages measure different molecules. KSM-66 has the deeper trial base. How to choose."
-seoTitle: "Shoden vs KSM-66: Which Ashwagandha Extract Wins?"
-metaDescription: "Shoden vs KSM-66, the same herb standardised two ways. Their 35% and 5% count different molecules, so they don't compare directly. How to pick by goal."
+seoTitle: "Shoden vs KSM-66: Why 35% Beats 5% Only on Paper"
+metaDescription: "Shoden's 35% and KSM-66's 5% count different molecules, so the bigger number is not the stronger extract. Which one matches your goal, and the trial base."
 keyTakeaway: "Shoden and KSM-66 are both branded ashwagandha extracts of the same plant, standardised in different ways. Shoden is a low-dose, highly concentrated extract with a small but promising set of studies, often used for sleep. KSM-66 is a root-only extract taken at a higher dose, with by far the larger trial base for daytime stress. Their headline percentages measure different molecules, so a bigger number does not mean a stronger product."
 pubDate: 2026-08-21
 updatedDate: 2026-08-21
 cluster: "ashwagandha"
 postType: "brand-comparison"
+headTerm: "shoden vs ksm 66"
+ownsKeywords:
+  - "shoden vs ksm-66"
 buyIntentTerm: "shoden or ksm-66 ashwagandha which to buy"
 relatedProducts: [ashwagandha]
 draft: false
