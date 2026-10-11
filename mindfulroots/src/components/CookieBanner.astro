@@ -1,0 +1,61 @@
+---
+/**
+ * Consent banner loader. Self-hosted (vanilla-cookieconsent, MIT): no
+ * third-party request, no page quota, no vendor account, and it stays inside
+ * the existing `script-src 'self'` CSP.
+ *
+ * The banner is owed to visitors in a consent region. Region comes from the
+ * Netlify edge function's ms_geo cookie; if that cookie is missing for any
+ * reason we fail closed and show the banner, because showing it to a US
+ * visitor costs one dismissed dialog while hiding it from an EU visitor costs
+ * a GDPR violation.
+ *
+ * The UI itself sits behind a dynamic import. Visitors who already answered —
+ * and everyone outside the consent regions — never download it; their stored
+ * choice is replayed inline by ConsentInit.astro, ahead of GTM.
+ */
+---
+<script>
+  const inConsentRegion = !/(?:^|;\s*)ms_geo=row(?:;|$)/.test(document.cookie);
+  const hasAnswered = /(?:^|;\s*)cc_cookie=/.test(document.cookie);
+
+  async function load(autoShow: boolean) {
+    const { initConsent } = await import('../lib/consent-ui');
+    // Outside the consent regions the unscoped Consent Mode default already
+    // granted analytics, so the toggle must open pre-enabled or the modal
+    // would misreport what is happening. A stored choice overrides it.
+    return initConsent({ autoShow, analyticsDefault: !inConsentRegion });
+  }
+
+  if (inConsentRegion && !hasAnswered) {
+    // The only case that needs the dialog up front.
+    load(true);
+  } else {
+    // Everyone else gets nothing until they ask for it: a returning visitor's
+    // choice was already replayed inline by ConsentInit, and a visitor outside
+    // the consent regions is owed no dialog at all. Neither should pay for the
+    // chunk.
+    //
+    // Footer "Cookie settings" opens it on demand. The library binds [data-cc]
+    // attributes itself, but only after run() — until the chunk is loaded, this
+    // listener stands in for it.
+    document.addEventListener('click', async (e) => {
+      const el = (e.target as Element | null)?.closest?.('[data-cc="show-preferencesModal"]');
+      if (!el) return;
+      e.preventDefault();
+      const cc = await load(false);
+      cc.showPreferences();
+    });
+  }
+</script>
+
+<style is:global>
+  /* Match the library's shell to the site's tokens so the banner does not read
+     as a bolted-on third-party widget. */
+  #cc-main {
+    --cc-font-family: inherit;
+    --cc-btn-border-radius: 0.5rem;
+    --cc-modal-border-radius: 0.75rem;
+    --cc-z-index: 60;
+  }
+</style>

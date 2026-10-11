@@ -1,0 +1,149 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const updated = 'October 11, 2026';
+---
+<Base
+  title="Privacy & cookies"
+  description="What MoodSupplement collects, why, how long we keep it, and how to change your cookie choice."
+>
+  <Breadcrumb crumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Privacy & cookies' },
+  ]} />
+  <section class="mx-auto max-w-3xl px-5 pt-6 pb-16">
+    <p class="eyebrow mb-3">Trust</p>
+    <h1 class="font-display text-3xl sm:text-4xl text-moss-deep">Privacy &amp; cookies</h1>
+    <p class="mt-2 text-sm text-ink-soft">Last updated {updated}</p>
+    <div class="prose-mr mt-6">
+      <p>
+        Short version: we run Google Analytics to see which articles get read, and nothing else.
+        We do not sell data, we do not run ad networks, and we do not build profiles. If you are in
+        the EEA, the UK or Switzerland, analytics stays switched off until you say yes.
+      </p>
+
+      <h2>Who we are</h2>
+      <p>
+        MoodSupplement (moodsupplement.net) is the data controller for this site. Reach us at
+        <a href="mailto:hello@moodsupplement.net">hello@moodsupplement.net</a> or through our
+        <a href="/contact/">contact page</a>.
+      </p>
+
+      <h2>Change your cookie choice</h2>
+      <p>
+        Use the <button type="button" data-cc="show-preferencesModal" class="underline underline-offset-2">Cookie settings</button>
+        link, here or in the footer of every page. Withdrawing consent is one click, exactly like
+        giving it, and takes effect immediately.
+      </p>
+
+      <h2>Cookies and similar storage</h2>
+      <h3>Strictly necessary</h3>
+      <p>These are set no matter what, because without them the site cannot do its job. No consent is required for them, and none of them identify you.</p>
+      <ul>
+        <li><strong>theme</strong>: browser local storage, not a cookie. Remembers light or dark mode. Kept until you clear your browser.</li>
+        <li><strong>cc_cookie</strong>: your answer to the cookie banner, so we stop asking. Six months.</li>
+        <li><strong>ms_geo</strong>: one of two values, <code>eu</code> or <code>row</code>, so we know whether to show you the banner. Derived from your IP address at our hosting edge and immediately discarded; the country itself is never stored. One day.</li>
+        <li><strong>ms_op</strong>: set only if you visit a link ending <code>?ms_op=1</code>. Marks a browser as ours so our own visits do not pollute the stats.</li>
+      </ul>
+
+      <h3>Analytics (your choice)</h3>
+      <p>
+        Google Analytics 4, loaded through Google Tag Manager. It tells us which pages get read,
+        roughly where readers come from, and which links get clicked. Aggregate reporting only.
+      </p>
+      <ul>
+        <li><strong>_ga, _ga_*</strong>: distinguish one browser from another and hold session state. Two years.</li>
+        <li><strong>ms_src, ms_ref</strong>: session storage, not cookies. Record how this visit started (search, an AI assistant, a social app, direct) so we can tell those channels apart. Cleared when you close the tab.</li>
+      </ul>
+      <p>
+        We use Google Consent Mode v2. If you decline, or before you answer, Google receives a
+        cookieless signal that a page was viewed and nothing is written to your device. That signal
+        carries no identifier and cannot be linked to you across visits or sites. Ad storage and ad
+        personalisation are denied for everyone, everywhere, always, because we do not run ads.
+      </p>
+
+      <h2>What else we collect</h2>
+      <h3>When you click a product link</h3>
+      <p>
+        Product buttons route through <code>/go/</code> on our own domain before forwarding you to
+        the retailer. We log the product, where on the page you clicked, the channel that brought
+        you to the site, your browser's user-agent string, and the referring page. We do not log IP
+        addresses and we set no cookie for this. The purpose is knowing which recommendations are
+        useful; the legal basis is our legitimate interest in understanding that, and the data
+        cannot be used to single you out.
+      </p>
+      <p>
+        Once you land on Amazon, a brand's own store, or Rakuten Advertising, you are on their site
+        under their privacy policy, and they will set their own cookies, including the affiliate
+        cookie that credits us for a purchase. We never see your order, your name, or your payment
+        details. See our <a href="/disclosure/">affiliate disclosure</a> for how that arrangement works.
+      </p>
+
+      <h3>When you email us or sign up</h3>
+      <p>
+        The contact form and the cheat-sheet signup are processed by Netlify Forms. We receive what
+        you type: your name and email on the contact form, your email on the signup. We use it to
+        reply to you, or to send you the occasional email you asked for, and for nothing else. Ask
+        us to delete it and we will. Every email we send carries an unsubscribe link.
+      </p>
+
+      <h3>Server logs</h3>
+      <p>
+        Our host, Netlify, keeps standard access logs (IP address, timestamp, requested URL,
+        user-agent) for security and troubleshooting. That is Netlify's processing under their own
+        retention schedule; we do not use those logs for analytics.
+      </p>
+
+      <h2>Who your data reaches</h2>
+      <ul>
+        <li><strong>Google</strong> (Ireland/US): analytics, if you consent.</li>
+        <li><strong>Netlify</strong> (US): hosting, forms, and our click log.</li>
+      </ul>
+      <p>
+        Both are US-based, so analytics and form data may be processed outside the EEA. Transfers
+        rely on the EU-US Data Privacy Framework and, where that does not apply, Standard
+        Contractual Clauses.
+      </p>
+
+      <h2>How long we keep things</h2>
+      <ul>
+        <li>Analytics data in GA4: 14 months, then deleted automatically.</li>
+        <li>Click log: 13 months.</li>
+        <li>Form submissions and email replies: until you ask us to delete them, or three years after our last exchange.</li>
+      </ul>
+
+      <h2>Your rights</h2>
+      <p>
+        If the GDPR or UK GDPR applies to you, you can ask us for a copy of your data, ask us to
+        correct or delete it, object to processing based on legitimate interest, or ask us to
+        restrict it. Email <a href="mailto:hello@moodsupplement.net">hello@moodsupplement.net</a>
+        and we will answer within 30 days. You can also complain to your national data protection
+        authority. California residents have comparable rights under the CCPA/CPRA, including the
+        right to know and to delete; we do not sell or share personal information, so there is no
+        opt-out to exercise.
+      </p>
+      <p>
+        One honest caveat: analytics data is not tied to your name, so for most requests we have no
+        way to find "your" rows and nothing to hand over. Deleting the cookies in your browser,
+        or declining analytics, is the effective remedy there.
+      </p>
+
+      <h2>Children</h2>
+      <p>This site is not aimed at anyone under 16 and we do not knowingly collect their data.</p>
+
+      <h2>Health information</h2>
+      <p>
+        We do not ask about your health and you should not send us health details. Reading an
+        article about a supplement tells our analytics that a page was viewed, not anything about
+        you. If you email us something personal, we keep it to the conversation.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        If we change what we collect, the date at the top of this page moves and the banner asks
+        again where consent is needed.
+      </p>
+    </div>
+  </section>
+</Base>

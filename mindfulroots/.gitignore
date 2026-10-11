@@ -11,3 +11,6 @@ claude-outputs/
 claude-seo/
 *.pdf
 .claude/
+
+# Copied from node_modules by scripts/copy-consent-css.mjs on prebuild/predev
+public/vendor/

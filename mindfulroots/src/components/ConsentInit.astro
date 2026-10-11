@@ -1,0 +1,75 @@
+---
+/**
+ * Google Consent Mode v2 defaults. MUST render before the GTM snippet: a
+ * `consent default` that arrives after gtm.js has already loaded is too late,
+ * and GA4 will have written _ga before the visitor was asked anything.
+ *
+ * Two defaults are declared. The unscoped one grants analytics (rest of world);
+ * the region-scoped one denies it across the EEA, UK and Switzerland. Google
+ * resolves these by IP server-side and the most specific matching region wins,
+ * so the regional rule applies regardless of declaration order. That is the
+ * part that makes the setup compliant even if the banner never renders.
+ *
+ * Also exposes window.__msAnalyticsOK, which the traffic classifier below
+ * checks before touching sessionStorage. Writing attribution state to storage
+ * is itself an analytics purpose, so it waits for consent too.
+ */
+---
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = gtag;
+
+  // EEA (27 + IS/LI/NO) plus GB and CH.
+  var CONSENT_REGIONS = [
+    'AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT',
+    'LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE',
+    'IS','LI','NO','GB','CH',
+  ];
+
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'granted',
+    functionality_storage: 'granted',
+    personalization_storage: 'granted',
+    security_storage: 'granted',
+  });
+
+  gtag('consent', 'default', {
+    region: CONSENT_REGIONS,
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    functionality_storage: 'granted',
+    security_storage: 'granted',
+    // Hold tags for 500ms so a returning visitor's restored consent (below)
+    // or a fast banner click lands before the first pageview fires.
+    wait_for_update: 500,
+  });
+
+  // Keep GA4 able to join a session across pages without analytics cookies,
+  // and strip ad identifiers from any denied-state ping.
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+
+  // Returning visitor: replay their stored choice now rather than waiting for
+  // the consent library to boot. The library re-emits the same update when it
+  // initialises; a duplicate update is a no-op.
+  var analyticsOK = false;
+  try {
+    var raw = document.cookie.match(/(?:^|;\s*)cc_cookie=([^;]*)/);
+    if (raw) {
+      var stored = JSON.parse(decodeURIComponent(raw[1]));
+      analyticsOK = Array.isArray(stored.categories) && stored.categories.indexOf('analytics') !== -1;
+      gtag('consent', 'update', { analytics_storage: analyticsOK ? 'granted' : 'denied' });
+    } else {
+      // No stored choice. Outside the consent regions the unscoped default
+      // already granted analytics, so storage is allowed there.
+      analyticsOK = document.cookie.indexOf('ms_geo=row') !== -1;
+    }
+  } catch (e) {}
+  window.__msAnalyticsOK = analyticsOK;
+</script>

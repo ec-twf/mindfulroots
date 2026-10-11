@@ -8,3 +8,9 @@
   # Skip the deploy when a push only touched data/, scripts/ or .github/ — the
   # weekly GSC report commits CSVs that change nothing the site renders.
   ignore = "bash ../scripts/netlify-should-build.sh"
+
+[[edge_functions]]
+  # Sets the ms_geo region flag the consent banner reads. Path/exclusions live
+  # in the function's own `export const config`.
+  function = "geo-consent"
+  path = "/*"

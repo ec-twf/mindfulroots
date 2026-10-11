@@ -3,6 +3,8 @@ import '../styles/global.css';
 import { SITE } from '../config';
 import { CATEGORY_GROUPS } from '../lib/taxonomy';
 import ThemeToggle from '../components/ThemeToggle.astro';
+import ConsentInit from '../components/ConsentInit.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 
 interface Props {
   title: string;
@@ -92,6 +94,11 @@ const year = new Date().getFullYear();
     })} />
     {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
 
+    {/* Consent Mode v2 defaults. Must come before BOTH the classifier (which
+        checks window.__msAnalyticsOK before writing anything to storage) and
+        the GTM snippet (a `consent default` after gtm.js loads is too late). */}
+    <ConsentInit />
+
     {/* Traffic-source classification. Deliberately inline and ahead of the GTM
         snippet: the classifier must win the race against GTM's Initialization
         trigger, or the entry pageview reports an empty bucket. A deferred module
@@ -159,12 +166,17 @@ const year = new Date().getFullYear();
           var c = classify();
           bucket = c.bucket;
           host = c.host;
-          try {
-            sessionStorage.setItem('ms_src', bucket);
-            sessionStorage.setItem('ms_ref', host);
-          } catch (e) {
-            // storage blocked: the push below still carries this pageview's
-            // classification, it just won't persist to later pages
+          // Persisting attribution is itself an analytics purpose, so it waits
+          // for consent. Pre-consent the bucket is still pushed below, where
+          // Consent Mode holds it; CookieBanner backfills storage on accept.
+          if (window.__msAnalyticsOK) {
+            try {
+              sessionStorage.setItem('ms_src', bucket);
+              sessionStorage.setItem('ms_ref', host);
+            } catch (e) {
+              // storage blocked: the push below still carries this pageview's
+              // classification, it just won't persist to later pages
+            }
           }
         }
 
@@ -482,6 +494,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><a href="/disclosure/" class="hover:underline">Affiliate disclosure</a></li>
             <li><a href="/disclaimer/" class="hover:underline">Medical disclaimer</a></li>
             <li><a href="/get-help/" class="hover:underline">Crisis &amp; professional support</a></li>
+            <li><a href="/privacy/" class="hover:underline">Privacy &amp; cookies</a></li>
+            <li>
+              {/* Handled natively by the consent library's data-cc binding, so
+                  it works without shipping a listener of our own. */}
+              <button type="button" data-cc="show-preferencesModal" class="hover:underline">
+                Cookie settings
+              </button>
+            </li>
           </ul>
         </div>
       </div>
@@ -499,5 +519,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>© {year} {SITE.name}. These statements have not been evaluated by the FDA.</p>
       </div>
     </footer>
+
+    <CookieBanner />
   </body>
 </html>
