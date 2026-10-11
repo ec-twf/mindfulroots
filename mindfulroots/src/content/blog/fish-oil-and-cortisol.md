@@ -1,6 +1,7 @@
 ---
 title: "Fish Oil and Cortisol: Does Omega-3 Actually Reduce Your Stress Hormones?"
-seoTitle: "Fish Oil and Cortisol: Does It Lower Stress?"
+seoTitle: "Fish Oil and Cortisol: A Modest, Short-Term Effect"
+metaDescription: "Fish oil blunts the cortisol spike under acute stress in several small trials. The effect is modest and no large long-term trial exists. Read it accordingly."
 description: "A mechanism-first look at how omega-3 fish oil may influence cortisol and the HPA axis—what the cortisol-blunting trials show, and where the evidence stops."
 pubDate: 2026-06-30
 updatedDate: 2026-07-21

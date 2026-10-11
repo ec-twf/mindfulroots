@@ -1,5 +1,7 @@
 ---
 title: "Ashwagandha and Lexapro: Is It Safe?"
+seoTitle: "Ashwagandha and Lexapro: Undocumented, Not Cleared"
+metaDescription: "No dangerous interaction with escitalopram is documented and trials used ashwagandha safely. That is not clearance: both are calming and it moves thyroid."
 description: "Can you take ashwagandha with Lexapro? No dangerous interaction is documented, but escitalopram plus an adaptogen can add sedation. What the evidence says."
 pubDate: 2026-08-07
 updatedDate: 2026-08-07

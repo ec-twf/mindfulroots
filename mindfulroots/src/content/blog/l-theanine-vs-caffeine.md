@@ -1,5 +1,7 @@
 ---
 title: "L-Theanine vs Caffeine: Which Calms?"
+seoTitle: "L-Theanine and Caffeine: Why the Pair Beats Either"
+metaDescription: "Caffeine brings the alertness, L-theanine takes the jitter off it without making you sleepy. Why the pair works better than either on its own."
 description: "L-theanine vs caffeine: one calms, one stimulates, and they are often taken together. How each affects focus and jitters, and how to pair them for calm."
 pubDate: 2026-07-25
 updatedDate: 2026-07-25

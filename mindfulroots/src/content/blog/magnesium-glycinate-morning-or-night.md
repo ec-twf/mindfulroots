@@ -1,5 +1,7 @@
 ---
 title: "Magnesium Glycinate: Morning or Night?"
+seoTitle: "Best Time to Take Magnesium Glycinate: Why Evening"
+metaDescription: "Either time works and consistency beats the hour, but evening is the default: magnesium glycinate is gentle and mildly calming, which suits a wind-down."
 description: "Magnesium glycinate morning or night? Either works, but night is the sensible default for sleep. Why timing matters less than a consistent daily dose."
 pubDate: 2026-08-07
 updatedDate: 2026-08-07
