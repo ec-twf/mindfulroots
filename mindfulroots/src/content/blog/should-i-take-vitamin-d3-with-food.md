@@ -1,4 +1,11 @@
 ---
+# Retired 2026-10-11: merged into /blog/vitamin-d3-morning-or-night/.
+# This post and its surviving sibling answered the same question from the same
+# three sources and reached the same conclusion, which is self-cannibalization
+# rather than coverage: the survivor holds the cluster's real demand and was
+# sitting at position 73 on 476 impressions while two sibling URLs competed with
+# it for the identical intent. The unique material lives in the survivor and a
+# 301 is registered in public/_redirects. Kept on disk rather than deleted.
 title: "Should I Take Vitamin D3 With Food? Yes, Here's Why"
 description: "Should you take vitamin D3 with food? Yes. It is fat-soluble, so a meal with some fat improves absorption. Here is the simple rule and the evidence behind it."
 metaDescription: "Take vitamin D3 with food, ideally a fatty meal. It is fat-soluble, so dietary fat improves absorption, while an empty stomach absorbs less of the same dose."
@@ -9,7 +16,7 @@ cluster: "vitamin-d3"
 postType: "timing"
 buyIntentTerm: "best vitamin d3 supplement to take with a meal"
 relatedProducts: [vitamin-d3]
-draft: false
+draft: true
 faq:
   - q: "Should I take vitamin D3 with food or on an empty stomach?"
     a: "With food. Vitamin D3 is fat-soluble, and research shows absorption improves when it is taken with a meal that contains fat rather than on an empty stomach. The same dose is used more fully, so pairing it with food is a simple, free way to get more benefit from each capsule."

@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/when-to-take-supplements/.
+# The timing family ran three near-identical posts per ingredient
+# (when-to-take-X, X-morning-or-night, should-i-take-X-with-food) across six
+# ingredients. Over the 90 days to 2026-10-08 the whole family drew 601 Search
+# Console impressions and zero clicks, and 598 of those impressions belonged to
+# two pages. The unique evidence from this file lives in the survivor, which
+# decides timing from three questions (acute or cumulative, fat-soluble or not,
+# sedating or activating) rather than per ingredient. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "B-Complex Morning or Night? A Simple Timing Guide"
 description: "B-complex morning or night? Morning with breakfast is the sensible default, because B vitamins support daytime energy and can disturb some people's sleep."
 metaDescription: "Take a B-complex in the morning with breakfast: B vitamins fuel daytime energy metabolism and, in a minority of people, can feel mildly activating at night."
@@ -9,7 +19,7 @@ cluster: "b-complex"
 postType: "timing"
 buyIntentTerm: "best b complex supplement for morning energy"
 relatedProducts: [b-complex]
-draft: false
+draft: true
 faq:
   - q: "Should I take a B-complex in the morning or at night?"
     a: "Morning is the sensible default for most people. B vitamins are cofactors in the pathways that turn food into usable energy, so a daytime dose lines up with when you draw on that support. Take it with breakfast to soften the mild nausea some people notice on an empty stomach. If you are among the minority who feel slightly activated by B vitamins, a late dose is worth avoiding."

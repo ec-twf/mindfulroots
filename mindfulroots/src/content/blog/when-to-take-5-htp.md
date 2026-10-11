@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/when-to-take-supplements/.
+# The timing family ran three near-identical posts per ingredient
+# (when-to-take-X, X-morning-or-night, should-i-take-X-with-food) across six
+# ingredients. Over the 90 days to 2026-10-08 the whole family drew 601 Search
+# Console impressions and zero clicks, and 598 of those impressions belonged to
+# two pages. The unique evidence from this file lives in the survivor, which
+# decides timing from three questions (acute or cumulative, fat-soluble or not,
+# sedating or activating) rather than per ingredient. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "When to Take 5-HTP: Timing, Food, and Why"
 description: "When to take 5-HTP: for most people the evening with a little food works best, since it supports sleep-related serotonin and eases the nausea 5-HTP can cause."
 seoTitle: "When to Take 5-HTP: Best Time of Day and With Food"
@@ -10,7 +20,7 @@ cluster: "5-htp"
 postType: "timing"
 buyIntentTerm: "best 5-htp supplement for an evening routine"
 relatedProducts: [5-htp]
-draft: false
+draft: true
 faq:
   - q: "What is the best time of day to take 5-HTP?"
     a: "For most people, the evening. Serotonin is a precursor to melatonin, so evening dosing fits the wind-down toward sleep that many people use 5-HTP for. If your goal is daytime mood support instead, a smaller dose earlier in the day, or a split morning-and-evening schedule, can suit better. Consistency matters more than the exact hour, so pick a time you can keep to."

@@ -70,3 +70,32 @@ https://moodsupplement.net/*     https://www.moodsupplement.net/:splat  301!
 /blog/ashwagandha-how-long-anxiety/  /blog/how-long-supplements-take-to-work/  301
 /blog/magnesium-glycinate-how-long-anxiety/  /blog/how-long-supplements-take-to-work/  301
 /blog/5-htp-how-long-to-work/  /blog/how-long-supplements-take-to-work/  301
+
+
+# Timing family merge, 2026-10-11. The family ran three near-identical posts per
+# ingredient (when-to-take-X, X-morning-or-night, should-i-take-X-with-food) across
+# six ingredients: 601 GSC impressions and zero clicks over the 90 days to
+# 2026-10-08, with 598 of those impressions on just two pages. Thirteen with no
+# demand merged into one survivor that decides timing from three questions rather
+# than per ingredient; originals draft: true.
+/blog/when-to-take-l-theanine/  /blog/when-to-take-supplements/  301
+/blog/l-theanine-morning-or-night/  /blog/when-to-take-supplements/  301
+/blog/should-i-take-l-theanine-with-food/  /blog/when-to-take-supplements/  301
+/blog/when-to-take-5-htp/  /blog/when-to-take-supplements/  301
+/blog/5-htp-morning-or-night/  /blog/when-to-take-supplements/  301
+/blog/should-i-take-5-htp-with-food/  /blog/when-to-take-supplements/  301
+/blog/when-to-take-ashwagandha/  /blog/when-to-take-supplements/  301
+/blog/ashwagandha-morning-or-night/  /blog/when-to-take-supplements/  301
+/blog/should-i-take-ashwagandha-with-food/  /blog/when-to-take-supplements/  301
+/blog/when-to-take-b-complex/  /blog/when-to-take-supplements/  301
+/blog/b-complex-morning-or-night/  /blog/when-to-take-supplements/  301
+/blog/should-i-take-b-complex-with-food/  /blog/when-to-take-supplements/  301
+/blog/best-time-to-take-fish-oil/  /blog/when-to-take-supplements/  301
+
+# The vitamin D and magnesium timing siblings 301 to their strong in-cluster
+# sibling instead of the hub, so the equity lands on the page that already holds
+# the demand (vitamin-d3-morning-or-night: 476 impressions, 94 distinct queries,
+# position 73.4) rather than being diluted into a generic page.
+/blog/when-to-take-vitamin-d3/  /blog/vitamin-d3-morning-or-night/  301
+/blog/should-i-take-vitamin-d3-with-food/  /blog/vitamin-d3-morning-or-night/  301
+/blog/when-to-take-magnesium-glycinate/  /blog/magnesium-glycinate-morning-or-night/  301

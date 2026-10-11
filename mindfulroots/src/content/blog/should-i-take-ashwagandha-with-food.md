@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/when-to-take-supplements/.
+# The timing family ran three near-identical posts per ingredient
+# (when-to-take-X, X-morning-or-night, should-i-take-X-with-food) across six
+# ingredients. Over the 90 days to 2026-10-08 the whole family drew 601 Search
+# Console impressions and zero clicks, and 598 of those impressions belonged to
+# two pages. The unique evidence from this file lives in the survivor, which
+# decides timing from three questions (acute or cumulative, fat-soluble or not,
+# sedating or activating) rather than per ingredient. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "Should I Take Ashwagandha With Food?"
 description: "Should you take ashwagandha with food? Yes, with a meal, ideally one with a little fat, to ease stomach upset and absorb its fat-soluble withanolides."
 metaDescription: "Take ashwagandha with a meal. Food, especially a little fat, reduces the nausea it can cause on an empty stomach and suits its fat-soluble active compounds."
@@ -8,7 +18,7 @@ cluster: "ashwagandha"
 postType: "timing"
 buyIntentTerm: "best ashwagandha supplement to take with food"
 relatedProducts: [ashwagandha]
-draft: false
+draft: true
 faq:
   - q: "Should I take ashwagandha with food or on an empty stomach?"
     a: "With food is the more comfortable default. The most common side effect people report is mild stomach upset or nausea, and it tends to show up when ashwagandha is taken on an empty stomach. Its active withanolides are fat-soluble, so a meal with a little fat is a sensible pairing. Most clinical trials dosed it with or shortly after meals, which is a reasonable habit to copy."

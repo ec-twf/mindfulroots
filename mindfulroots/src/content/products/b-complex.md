@@ -13,7 +13,7 @@ benefits:
 typicalUse: "A balanced B-complex taken with breakfast is the usual approach. Vegans, vegetarians, older adults, and people on acid-reducing medication are particularly likely to run low on B12."
 cautions: "Very high-dose B6 taken for long periods can cause nerve tingling — stay within label guidance. Bright yellow urine after a B-complex is harmless riboflavin."
 iherbKeyword: "b complex methylated"
-relatedPosts: ["b-vitamins-energy-mood"]
+relatedPosts: ["b-vitamins-energy-mood", "when-to-take-supplements"]
 order: 4
 qualityCriterion: "B12 as methylcobalamin, folate as methylfolate or 5-MTHF, B6 in an active form — these are the forms the body uses directly without conversion, important for anyone with impaired methylation."
 criterionRationale: "Up to 15% of people carry MTHFR variants that impair conversion of folic acid to active 5-MTHF. Cyanocobalamin requires conversion steps that some people handle poorly. Active forms bypass these bottlenecks."

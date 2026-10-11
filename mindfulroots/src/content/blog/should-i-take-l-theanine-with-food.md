@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/when-to-take-supplements/.
+# The timing family ran three near-identical posts per ingredient
+# (when-to-take-X, X-morning-or-night, should-i-take-X-with-food) across six
+# ingredients. Over the 90 days to 2026-10-08 the whole family drew 601 Search
+# Console impressions and zero clicks, and 598 of those impressions belonged to
+# two pages. The unique evidence from this file lives in the survivor, which
+# decides timing from three questions (acute or cumulative, fat-soluble or not,
+# sedating or activating) rather than per ingredient. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "Should I Take L-Theanine With Food? A Simple Guide"
 description: "Should you take L-theanine with food? It is water-soluble, so food is not required for absorption. Here is the simple default and when food still helps."
 metaDescription: "L-theanine is water-soluble, so you can take it with or without food. Food is not needed for absorption; a snack helps only if a dose unsettles your gut."
@@ -9,7 +19,7 @@ cluster: "l-theanine"
 postType: "timing"
 buyIntentTerm: "best l-theanine supplement to take with food"
 relatedProducts: [l-theanine]
-draft: false
+draft: true
 faq:
   - q: "Should I take L-theanine with or without food?"
     a: "Either works. L-theanine is a water-soluble amino acid, so it does not depend on dietary fat for absorption the way vitamin D or omega-3 does. Take it whenever fits your day. A small snack is only worth bothering with if a dose on an empty stomach feels slightly unsettling, which is uncommon."

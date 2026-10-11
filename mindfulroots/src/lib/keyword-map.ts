@@ -76,6 +76,21 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: 'how long does ashwagandha take to work for anxiety', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
   { headTerm: 'how long does 5-htp take to work', owner: '/blog/how-long-supplements-take-to-work/', intent: 'informational' },
 
+  // Timing family merge, 2026-10-11. Three near-identical posts per ingredient
+  // across six ingredients: 601 impressions, zero clicks over 90 days. Thirteen
+  // merged into one survivor; the vitamin D and magnesium siblings 301'd to their
+  // strong in-cluster sibling instead, which is where the demand already was.
+  { headTerm: 'supplement timing with food', owner: '/blog/when-to-take-supplements/', intent: 'informational' },
+  { headTerm: 'should i take l-theanine with food', owner: '/blog/when-to-take-supplements/', intent: 'informational' },
+  { headTerm: 'should i take 5-htp with food', owner: '/blog/when-to-take-supplements/', intent: 'informational' },
+  { headTerm: 'should i take ashwagandha with food', owner: '/blog/when-to-take-supplements/', intent: 'informational' },
+  { headTerm: 'should i take b-complex with food', owner: '/blog/when-to-take-supplements/', intent: 'informational' },
+  { headTerm: 'when to take vitamin d3', owner: '/blog/vitamin-d3-morning-or-night/', intent: 'informational' },
+  { headTerm: 'should i take vitamin d3 with food', owner: '/blog/vitamin-d3-morning-or-night/', intent: 'informational' },
+  { headTerm: 'best time to take d3', owner: '/blog/vitamin-d3-morning-or-night/', intent: 'informational' },
+  { headTerm: 'can you take vitamin d at night', owner: '/blog/vitamin-d3-morning-or-night/', intent: 'informational' },
+  { headTerm: 'vitamin d on an empty stomach', owner: '/blog/vitamin-d3-morning-or-night/', intent: 'informational' },
+
   // Condition hubs (/guides/*) — commercial-intent middle layer. Each owns a
   // "best supplements for <condition>" head term; the underlying evidence posts
   // own the informational terms, so the two layers don't cannibalize.
@@ -176,7 +191,7 @@ export const KEYWORD_MAP: KeywordOwner[] = [
   { headTerm: 'valerian root vs catnip', owner: '/blog/valerian-root-vs-catnip/', intent: 'comparison' },
 
   // omega-3-fish-oil
-  { headTerm: 'best time to take fish oil', owner: '/blog/best-time-to-take-fish-oil/', intent: 'informational' },
+  { headTerm: 'best time to take fish oil', owner: '/blog/when-to-take-supplements/', intent: 'informational' },
   { headTerm: 'can you take omega-3 fish oil with statins', owner: '/blog/can-you-take-omega-3-fish-oil-with-statins/', intent: 'informational' },
   { headTerm: 'omega-3 dosage for mood', owner: '/blog/omega-3-dosage-for-mood/', intent: 'informational' },
   { headTerm: 'omega-3 fish oil vs algae', owner: '/blog/omega-3-fish-oil-vs-algae/', intent: 'comparison' },

@@ -1,4 +1,11 @@
 ---
+# Retired 2026-10-11: merged into /blog/magnesium-glycinate-morning-or-night/.
+# This post and its surviving sibling answered the same question from the same
+# three sources and reached the same conclusion, which is self-cannibalization
+# rather than coverage: the survivor holds the cluster's real demand and was
+# sitting at position 73 on 476 impressions while two sibling URLs competed with
+# it for the identical intent. The unique material lives in the survivor and a
+# 301 is registered in public/_redirects. Kept on disk rather than deleted.
 title: "When to Take Magnesium Glycinate"
 description: "When to take magnesium glycinate: any time works, but evening is the sensible default for calm and sleep. With or without food, plus how to space the dose."
 metaDescription: "Any time of day works for magnesium glycinate; evening is the sensible default for calm and sleep. Consistency beats timing. With or without food is fine."
@@ -9,7 +16,7 @@ cluster: "magnesium-glycinate"
 postType: "timing"
 buyIntentTerm: "best magnesium glycinate to take before bed"
 relatedProducts: [magnesium-glycinate]
-draft: false
+draft: true
 faq:
   - q: "When is the best time to take magnesium glycinate?"
     a: "Any time of day works, and being consistent matters more than the exact hour. Evening is the sensible default because magnesium glycinate is gentle and mildly calming, which fits a wind-down routine and the sleep support most people are after. If you take it for daytime tension, or split a larger dose, a morning portion is fine too."

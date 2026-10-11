@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/when-to-take-supplements/.
+# The timing family ran three near-identical posts per ingredient
+# (when-to-take-X, X-morning-or-night, should-i-take-X-with-food) across six
+# ingredients. Over the 90 days to 2026-10-08 the whole family drew 601 Search
+# Console impressions and zero clicks, and 598 of those impressions belonged to
+# two pages. The unique evidence from this file lives in the survivor, which
+# decides timing from three questions (acute or cumulative, fat-soluble or not,
+# sedating or activating) rather than per ingredient. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "L-Theanine Morning or Night? How to Choose"
 description: "L-theanine morning or night? Take it when you want the effect: mornings for calm focus, evenings to wind down. A short half-life means timing follows you."
 seoTitle: "L-Theanine Morning or Night: Which Is Better?"
@@ -10,7 +20,7 @@ cluster: "l-theanine"
 postType: "timing"
 buyIntentTerm: "best l-theanine supplement for evening wind-down"
 relatedProducts: [l-theanine]
-draft: false
+draft: true
 faq:
   - q: "Is it better to take L-theanine in the morning or at night?"
     a: "Both are fine; the right time is whenever you want the effect. L-theanine is felt within about an hour and does not accumulate over days, so morning suits calm focus and smoothing caffeine, while evening suits winding down before bed. If you use it twice a day, taking it morning and night is a common pattern. Pick the time that matches your goal rather than a rule."

@@ -1,4 +1,11 @@
 ---
+# Retired 2026-10-11: merged into /blog/vitamin-d3-morning-or-night/.
+# This post and its surviving sibling answered the same question from the same
+# three sources and reached the same conclusion, which is self-cannibalization
+# rather than coverage: the survivor holds the cluster's real demand and was
+# sitting at position 73 on 476 impressions while two sibling URLs competed with
+# it for the identical intent. The unique material lives in the survivor and a
+# 301 is registered in public/_redirects. Kept on disk rather than deleted.
 title: "When to Take Vitamin D3: Time of Day and Meals"
 description: "When to take vitamin D3? The time of day barely matters, but taking it with your largest, fattiest meal does. Here is the simple default and the evidence."
 metaDescription: "Time of day barely affects vitamin D3. What matters is taking it with your largest, fatty meal, which improves absorption, and taking it consistently."
@@ -9,7 +16,7 @@ cluster: "vitamin-d3"
 postType: "timing"
 buyIntentTerm: "best vitamin d3 supplement for a morning routine"
 relatedProducts: [vitamin-d3]
-draft: false
+draft: true
 faq:
   - q: "When is the best time of day to take vitamin D3?"
     a: "There is no strongly evidenced best hour. Vitamin D3 is fat-soluble and stored in the body, so it works over weeks, not across a single day, which makes the exact time far less important than consistency. The one timing factor that does matter is food: take it with a meal that contains some fat. Choose a meal you reliably eat, morning or evening, and keep to it."

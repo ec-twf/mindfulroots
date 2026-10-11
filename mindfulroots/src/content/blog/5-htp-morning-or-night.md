@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/when-to-take-supplements/.
+# The timing family ran three near-identical posts per ingredient
+# (when-to-take-X, X-morning-or-night, should-i-take-X-with-food) across six
+# ingredients. Over the 90 days to 2026-10-08 the whole family drew 601 Search
+# Console impressions and zero clicks, and 598 of those impressions belonged to
+# two pages. The unique evidence from this file lives in the survivor, which
+# decides timing from three questions (acute or cumulative, fat-soluble or not,
+# sedating or activating) rather than per ingredient. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "5-HTP Morning or Night? A Simple Timing Guide"
 description: "5-HTP morning or night? Evening is the sensible default for most people, taken with a light snack. Here is why, and when a morning dose makes sense."
 metaDescription: "For most people, take 5-HTP in the evening with a light snack: its short half-life and calming, serotonin-linked effect suit wind-down and sleep."
@@ -9,7 +19,7 @@ cluster: "5-htp"
 postType: "timing"
 buyIntentTerm: "best 5-htp supplement for nighttime use"
 relatedProducts: [5-htp]
-draft: false
+draft: true
 faq:
   - q: "Should I take 5-HTP in the morning or at night?"
     a: "For most people, evening is the better default. 5-HTP has a short half-life and its serotonin-linked effect tends to feel calming, so it fits the hours before bed and can support sleep. Take it with a light snack to reduce nausea. A morning dose is reasonable if your goal is daytime mood support and 5-HTP does not make you drowsy, but night suits the majority."

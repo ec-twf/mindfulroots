@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/when-to-take-supplements/.
+# The timing family ran three near-identical posts per ingredient
+# (when-to-take-X, X-morning-or-night, should-i-take-X-with-food) across six
+# ingredients. Over the 90 days to 2026-10-08 the whole family drew 601 Search
+# Console impressions and zero clicks, and 598 of those impressions belonged to
+# two pages. The unique evidence from this file lives in the survivor, which
+# decides timing from three questions (acute or cumulative, fat-soluble or not,
+# sedating or activating) rather than per ingredient. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "Best Time to Take Fish Oil"
 description: "Best time to take fish oil: the hour matters less than the meal. Taking omega-3 with your largest, fattiest meal is what actually improves EPA and DHA uptake."
 pubDate: 2026-08-01
@@ -9,7 +19,7 @@ keyTakeaway: "Neither morning nor night is better for fish oil absorption. What 
 postType: "timing"
 buyIntentTerm: "which omega 3 fish oil supplement to buy"
 relatedProducts: [omega-3-fish-oil]
-draft: false
+draft: true
 faq:
   - q: "Is it better to take fish oil in the morning or at night?"
     a: "Neither time is clearly better for absorption on its own. What matters far more is taking it with food that contains fat. Pick the meal in your day that is largest and fattiest, whether that is breakfast or dinner, and be consistent. Some people take it at night to reduce fishy burps; there is no strong evidence that either clock time changes results."

@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/when-to-take-supplements/.
+# The timing family ran three near-identical posts per ingredient
+# (when-to-take-X, X-morning-or-night, should-i-take-X-with-food) across six
+# ingredients. Over the 90 days to 2026-10-08 the whole family drew 601 Search
+# Console impressions and zero clicks, and 598 of those impressions belonged to
+# two pages. The unique evidence from this file lives in the survivor, which
+# decides timing from three questions (acute or cumulative, fat-soluble or not,
+# sedating or activating) rather than per ingredient. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "When to Take Ashwagandha: Morning, Night, or Both"
 description: "When to take ashwagandha depends on your goal: split doses with meals for stress, or take it in the evening for sleep. Consistency matters more than timing."
 seoTitle: "When to Take Ashwagandha: Morning or Night?"
@@ -10,7 +20,7 @@ cluster: "ashwagandha"
 postType: "timing"
 buyIntentTerm: "best ashwagandha supplement to take at night"
 relatedProducts: [ashwagandha]
-draft: false
+draft: true
 faq:
   - q: "Is it better to take ashwagandha in the morning or at night?"
     a: "It depends on your goal. For general stress and cortisol support, many trials used a twice-daily schedule, so morning and evening with meals is a reasonable default. If your main reason for taking it is sleep, a single evening dose makes more sense because that is when you want the wind-down effect. Ashwagandha is not a fast sedative, so night-time dosing is about routine rather than an immediate knockout."

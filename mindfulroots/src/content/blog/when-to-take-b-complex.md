@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/when-to-take-supplements/.
+# The timing family ran three near-identical posts per ingredient
+# (when-to-take-X, X-morning-or-night, should-i-take-X-with-food) across six
+# ingredients. Over the 90 days to 2026-10-08 the whole family drew 601 Search
+# Console impressions and zero clicks, and 598 of those impressions belonged to
+# two pages. The unique evidence from this file lives in the survivor, which
+# decides timing from three questions (acute or cumulative, fat-soluble or not,
+# sedating or activating) rather than per ingredient. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "When to Take B-Complex: Time of Day and Food"
 description: "When to take a B-complex? Morning with breakfast is the practical default. Here is why the time of day and food matter less than a steady daily habit."
 metaDescription: "Take a B-complex in the morning with breakfast. Food reduces mild nausea, morning matches daytime energy needs, and a steady daily habit matters most."
@@ -9,7 +19,7 @@ cluster: "b-complex"
 postType: "timing"
 buyIntentTerm: "best b complex supplement to take with breakfast"
 relatedProducts: [b-complex]
-draft: false
+draft: true
 faq:
   - q: "When is the best time to take a B-complex?"
     a: "Morning with breakfast is the practical default. Taking it with food reduces the mild nausea a dose can cause on an empty stomach, and the morning lines up with the daytime hours when your body draws most on B vitamins for energy metabolism. More important than the exact hour is taking it consistently every day."

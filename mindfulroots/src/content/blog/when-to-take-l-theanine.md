@@ -1,4 +1,14 @@
 ---
+# Retired 2026-10-11: merged into /blog/when-to-take-supplements/.
+# The timing family ran three near-identical posts per ingredient
+# (when-to-take-X, X-morning-or-night, should-i-take-X-with-food) across six
+# ingredients. Over the 90 days to 2026-10-08 the whole family drew 601 Search
+# Console impressions and zero clicks, and 598 of those impressions belonged to
+# two pages. The unique evidence from this file lives in the survivor, which
+# decides timing from three questions (acute or cumulative, fat-soluble or not,
+# sedating or activating) rather than per ingredient. A 301 is registered in
+# public/_redirects. Kept on disk rather than deleted so the material is
+# recoverable.
 title: "When to Take L-Theanine: Timing and Food"
 description: "When to take L-theanine: whenever you want the calm, since it works within an hour. Food is optional, and you can take it before stressful moments on demand."
 seoTitle: "When to Take L-Theanine: Best Time and With Food?"
@@ -10,7 +20,7 @@ cluster: "l-theanine"
 postType: "timing"
 buyIntentTerm: "which l-theanine supplement to buy for everyday use"
 relatedProducts: [l-theanine]
-draft: false
+draft: true
 faq:
   - q: "When is the best time to take L-theanine?"
     a: "Whenever you want to feel calm. L-theanine acts within about an hour and does not build up over days, so there is no single required time. For steady, background calm, a consistent daily time works well. For a specific stressful moment, taking it 30 to 60 minutes beforehand is effective. Many people split it morning and evening. Match the timing to your goal rather than a fixed rule."
