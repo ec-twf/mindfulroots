@@ -1,0 +1,642 @@
+{
+  "window": {
+    "start": "2026-09-24",
+    "end": "2026-10-08",
+    "days": 14
+  },
+  "change_shipped": "2026-10-11",
+  "arms": {
+    "saffron-extract-vs-affron": {
+      "arm": "loss-framed",
+      "impressions": 245,
+      "clicks": 3,
+      "ctr_pct": 1.224,
+      "bands": {
+        "1-10": {
+          "imp": 181,
+          "clicks": 3,
+          "ctr_pct": 1.657
+        },
+        "11-20": {
+          "imp": 36,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        },
+        "21-50": {
+          "imp": 28,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        }
+      },
+      "top_queries": [
+        {
+          "q": "affron vs saffron",
+          "imp": 96,
+          "clicks": 0,
+          "pos": 6.0
+        },
+        {
+          "q": "safr'inside vs affron",
+          "imp": 27,
+          "clicks": 1,
+          "pos": 7.04
+        },
+        {
+          "q": "affron saffron supplement",
+          "imp": 23,
+          "clicks": 0,
+          "pos": 31.43
+        },
+        {
+          "q": "affron",
+          "imp": 17,
+          "clicks": 0,
+          "pos": 17.35
+        },
+        {
+          "q": "saffron vs affron",
+          "imp": 13,
+          "clicks": 1,
+          "pos": 5.0
+        },
+        {
+          "q": "safr inside vs affron",
+          "imp": 12,
+          "clicks": 0,
+          "pos": 8.08
+        },
+        {
+          "q": "safranal vs affron",
+          "imp": 8,
+          "clicks": 0,
+          "pos": 3.25
+        },
+        {
+          "q": "affron vs safr inside",
+          "imp": 6,
+          "clicks": 1,
+          "pos": 4.5
+        }
+      ]
+    },
+    "silexan-vs-lavender-oil": {
+      "arm": "loss-framed",
+      "impressions": 58,
+      "clicks": 0,
+      "ctr_pct": 0.0,
+      "bands": {
+        "1-10": {
+          "imp": 57,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        },
+        "21-50": {
+          "imp": 1,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        }
+      },
+      "top_queries": [
+        {
+          "q": "what is silexan?",
+          "imp": 27,
+          "clicks": 0,
+          "pos": 5.44
+        },
+        {
+          "q": "silexan lavender",
+          "imp": 10,
+          "clicks": 0,
+          "pos": 3.1
+        },
+        {
+          "q": "silexan vs lavender oil",
+          "imp": 8,
+          "clicks": 0,
+          "pos": 6.62
+        },
+        {
+          "q": "silexan",
+          "imp": 3,
+          "clicks": 0,
+          "pos": 2.67
+        },
+        {
+          "q": "silexan uk",
+          "imp": 3,
+          "clicks": 0,
+          "pos": 3.67
+        },
+        {
+          "q": "silexan iherb",
+          "imp": 2,
+          "clicks": 0,
+          "pos": 7.0
+        },
+        {
+          "q": "no hay gen\u00e9rico?",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 2.0
+        },
+        {
+          "q": "silexan oil",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 3.0
+        }
+      ]
+    },
+    "glycine-vs-b12": {
+      "arm": "loss-framed",
+      "impressions": 10,
+      "clicks": 0,
+      "ctr_pct": 0.0,
+      "bands": {
+        "1-10": {
+          "imp": 10,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        }
+      },
+      "top_queries": [
+        {
+          "q": "is glycine the same as b12",
+          "imp": 10,
+          "clicks": 0,
+          "pos": 2.5
+        }
+      ]
+    },
+    "quatrefolic-vs-metafolin": {
+      "arm": "control-untouched",
+      "impressions": 61,
+      "clicks": 2,
+      "ctr_pct": 3.279,
+      "bands": {
+        "1-10": {
+          "imp": 58,
+          "clicks": 2,
+          "ctr_pct": 3.448
+        },
+        "11-20": {
+          "imp": 1,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        },
+        "21-50": {
+          "imp": 1,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        },
+        "51+": {
+          "imp": 1,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        }
+      },
+      "top_queries": [
+        {
+          "q": "quatrefolic vs methylfolate",
+          "imp": 19,
+          "clicks": 0,
+          "pos": 7.89
+        },
+        {
+          "q": "quatrefolic oder metafolin",
+          "imp": 16,
+          "clicks": 1,
+          "pos": 7.56
+        },
+        {
+          "q": "metafolin oder quatrefolic",
+          "imp": 7,
+          "clicks": 1,
+          "pos": 7.57
+        },
+        {
+          "q": "quatrefolic vs metafolin",
+          "imp": 7,
+          "clicks": 0,
+          "pos": 6.57
+        },
+        {
+          "q": "metafolin vs quatrefolic",
+          "imp": 6,
+          "clicks": 0,
+          "pos": 3.83
+        },
+        {
+          "q": "how much salt?",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 2.0
+        },
+        {
+          "q": "metafolin\u00ae",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 14.0
+        },
+        {
+          "q": "quatrefolic",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 7.0
+        }
+      ]
+    },
+    "shoden-vs-ksm-66": {
+      "arm": "answer-stating",
+      "impressions": 72,
+      "clicks": 1,
+      "ctr_pct": 1.389,
+      "bands": {
+        "1-10": {
+          "imp": 55,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        },
+        "11-20": {
+          "imp": 16,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        },
+        "21-50": {
+          "imp": 1,
+          "clicks": 1,
+          "ctr_pct": 100.0
+        }
+      },
+      "top_queries": [
+        {
+          "q": "shoden vs ksm 66",
+          "imp": 29,
+          "clicks": 0,
+          "pos": 9.41
+        },
+        {
+          "q": "shoden ashwagandha vs ksm-66",
+          "imp": 20,
+          "clicks": 0,
+          "pos": 10.0
+        },
+        {
+          "q": "ashwagandha shoden vs ksm-66",
+          "imp": 8,
+          "clicks": 0,
+          "pos": 10.38
+        },
+        {
+          "q": "shoden vs ksm-66",
+          "imp": 7,
+          "clicks": 0,
+          "pos": 14.14
+        },
+        {
+          "q": "shoden vs ksm66",
+          "imp": 3,
+          "clicks": 0,
+          "pos": 10.0
+        },
+        {
+          "q": "ksm 66 vs shoden",
+          "imp": 1,
+          "clicks": 1,
+          "pos": 25.0
+        },
+        {
+          "q": "ashwagandha shoden vs ksm 66",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 11.0
+        },
+        {
+          "q": "ksm-66 vs sensoril vs shoden ashwagandha comparison",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 6.0
+        }
+      ]
+    },
+    "ksm-66-vs-sensoril": {
+      "arm": "answer-stating",
+      "impressions": 45,
+      "clicks": 0,
+      "ctr_pct": 0.0,
+      "bands": {
+        "1-10": {
+          "imp": 35,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        },
+        "11-20": {
+          "imp": 1,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        },
+        "21-50": {
+          "imp": 7,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        },
+        "51+": {
+          "imp": 2,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        }
+      },
+      "top_queries": [
+        {
+          "q": "sensoril vs ksm-66",
+          "imp": 24,
+          "clicks": 0,
+          "pos": 8.79
+        },
+        {
+          "q": "how do i choose between ksm\u201166 vs. sensoril ashwagandha extracts?",
+          "imp": 5,
+          "clicks": 0,
+          "pos": 7.0
+        },
+        {
+          "q": "sensoril vs ksm 66",
+          "imp": 5,
+          "clicks": 0,
+          "pos": 35.2
+        },
+        {
+          "q": "ksm 66 sensoril \u5dee\u7570",
+          "imp": 3,
+          "clicks": 0,
+          "pos": 4.0
+        },
+        {
+          "q": "sensoril ashwagandha",
+          "imp": 2,
+          "clicks": 0,
+          "pos": 61.0
+        },
+        {
+          "q": "sensoril ashwagandha vs ksm-66",
+          "imp": 2,
+          "clicks": 0,
+          "pos": 31.5
+        },
+        {
+          "q": "ksm-66 vs sensoril ashwagandha which is better",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 4.0
+        },
+        {
+          "q": "ksm-66 vs sensoril difference",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 2.0
+        }
+      ]
+    },
+    "ashwagandha-vs-ksm-66": {
+      "arm": "retargeted",
+      "impressions": 19,
+      "clicks": 0,
+      "ctr_pct": 0.0,
+      "bands": {
+        "1-10": {
+          "imp": 2,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        },
+        "11-20": {
+          "imp": 1,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        },
+        "21-50": {
+          "imp": 5,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        },
+        "51+": {
+          "imp": 11,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        }
+      },
+      "top_queries": [
+        {
+          "q": "ashwagandha vs ashwagandha root",
+          "imp": 2,
+          "clicks": 0,
+          "pos": 64.0
+        },
+        {
+          "q": "ksm 66 ashwagandha vs ashwagandha",
+          "imp": 2,
+          "clicks": 0,
+          "pos": 39.0
+        },
+        {
+          "q": "ksm 66 vs organic ashwagandha",
+          "imp": 2,
+          "clicks": 0,
+          "pos": 52.0
+        },
+        {
+          "q": "ksm-66 vs ashwagandha",
+          "imp": 2,
+          "clicks": 0,
+          "pos": 71.0
+        },
+        {
+          "q": "what is the difference between ksm 66 and ashwagandha",
+          "imp": 2,
+          "clicks": 0,
+          "pos": 45.5
+        },
+        {
+          "q": "ashwagandha ksm 66 vs ashwagandha",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 68.0
+        },
+        {
+          "q": "ashwagandha ksm 66 vs normal",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 66.0
+        },
+        {
+          "q": "ashwagandha vs ksm 66",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 16.0
+        }
+      ]
+    },
+    "suntheanine-vs-l-theanine": {
+      "arm": "claim-declared-only",
+      "impressions": 0,
+      "clicks": 0,
+      "ctr_pct": null,
+      "bands": {},
+      "top_queries": []
+    },
+    "l-theanine-vs-caffeine": {
+      "arm": "retargeted",
+      "impressions": 0,
+      "clicks": 0,
+      "ctr_pct": null,
+      "bands": {},
+      "top_queries": []
+    },
+    "ashwagandha-vs-ginseng": {
+      "arm": "answer-stating",
+      "impressions": 17,
+      "clicks": 0,
+      "ctr_pct": 0.0,
+      "bands": {
+        "51+": {
+          "imp": 17,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        }
+      },
+      "top_queries": [
+        {
+          "q": "ashwagandha vs ginseng",
+          "imp": 10,
+          "clicks": 0,
+          "pos": 78.5
+        },
+        {
+          "q": "ashwa ginseng",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 67.0
+        },
+        {
+          "q": "ashwagandha and ginseng",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 92.0
+        },
+        {
+          "q": "ashwagandha and ginseng together",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 54.0
+        },
+        {
+          "q": "ashwagandha or ginseng",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 96.0
+        },
+        {
+          "q": "ginseng and ashwagandha",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 96.0
+        },
+        {
+          "q": "ginseng and ashwagandha benefits",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 87.0
+        },
+        {
+          "q": "is ginseng and ashwagandha same",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 72.0
+        }
+      ]
+    },
+    "magnesium-glycinate-morning-or-night": {
+      "arm": "answer-stating",
+      "impressions": 0,
+      "clicks": 0,
+      "ctr_pct": null,
+      "bands": {},
+      "top_queries": []
+    },
+    "saffron-extract-vs-ashwagandha": {
+      "arm": "answer-stating",
+      "impressions": 7,
+      "clicks": 0,
+      "ctr_pct": 0.0,
+      "bands": {
+        "1-10": {
+          "imp": 2,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        },
+        "21-50": {
+          "imp": 5,
+          "clicks": 0,
+          "ctr_pct": 0.0
+        }
+      },
+      "top_queries": [
+        {
+          "q": "saffron and ashwagandha",
+          "imp": 3,
+          "clicks": 0,
+          "pos": 50.0
+        },
+        {
+          "q": "ashwagandha and saffron together",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 48.0
+        },
+        {
+          "q": "ashwagandha vs saffron",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 45.0
+        },
+        {
+          "q": "saffron ashwagandha",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 4.0
+        },
+        {
+          "q": "saffron vs ashwagandha",
+          "imp": 1,
+          "clicks": 0,
+          "pos": 1.0
+        }
+      ]
+    },
+    "fish-oil-and-cortisol": {
+      "arm": "answer-stating",
+      "impressions": 0,
+      "clicks": 0,
+      "ctr_pct": null,
+      "bands": {},
+      "top_queries": []
+    },
+    "can-you-take-ashwagandha-with-lexapro": {
+      "arm": "answer-stating",
+      "impressions": 0,
+      "clicks": 0,
+      "ctr_pct": null,
+      "bands": {},
+      "top_queries": []
+    },
+    "vitamin-d3-morning-or-night": {
+      "arm": "answer-stating",
+      "impressions": 0,
+      "clicks": 0,
+      "ctr_pct": null,
+      "bands": {},
+      "top_queries": []
+    }
+  },
+  "indexed_blog_pages": 21,
+  "note": "indexed_blog_pages is window-length dependent: compare only against a pull of the same --days. Seven-snapshot 28d trend before the change was 49>47>45>39>41>40>35."
+}

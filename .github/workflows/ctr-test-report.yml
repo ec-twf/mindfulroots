@@ -1,0 +1,89 @@
+# Tracks the 2026-10-11 change (52 URLs retired, 15 titles rewritten) against the
+# frozen baseline in data/ctr-test-baseline-2026-10-11.json.
+#
+# Lives in Actions, not a Routine, for two reasons. The GSC service-account key is
+# already a repo secret here (GSC_SA_KEY) and does NOT exist in a cloud Routine, so
+# a Routine physically cannot pull this data. And the comparison is arithmetic with
+# a fixed baseline, so there is nothing for a model to decide: putting judgment in
+# the loop would only let the numbers drift between runs.
+#
+# Runs WEEKLY rather than once at the two-week mark. A single reading cannot settle
+# the CTR question (see the POWER section the report prints: months of impressions
+# are needed at current volume), but a series shows the trend and catches harm early.
+# The first genuinely clean reading is 2026-10-27, the first Monday whose whole
+# 14-day window starts after the change shipped.
+#
+# Commits only touch data/, so scripts/netlify-should-build.sh skips the deploy.
+name: ctr-test-report
+
+on:
+  schedule:
+    # Monday 03:00 UTC, an hour after gsc-patterns, so the weekly scoreboard has
+    # landed first and the two reports never race for the same push.
+    - cron: '0 3 * * 1'
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'Follow-up window in days (14 = match the baseline)'
+        required: false
+        default: '14'
+
+permissions:
+  contents: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install --quiet google-api-python-client google-auth
+
+      - name: Write GSC service-account key
+        run: |
+          mkdir -p ~/.config/moodsupplement
+          KEY=~/.config/moodsupplement/gsc-key.json
+          printf '%s' "$GSC_SA_KEY" > "$KEY"
+          # Accept either raw JSON or base64, same as gsc-patterns.yml.
+          if ! python3 -c "import json,sys; json.load(open(sys.argv[1]))" "$KEY" 2>/dev/null; then
+            base64 -d "$KEY" > "$KEY.dec" && mv "$KEY.dec" "$KEY"
+            python3 -c "import json,sys; json.load(open(sys.argv[1]))" "$KEY" \
+              || { echo "::error::GSC_SA_KEY is neither valid JSON nor base64-encoded JSON"; exit 1; }
+          fi
+        env:
+          GSC_SA_KEY: ${{ secrets.GSC_SA_KEY }}
+
+      - name: Build report
+        run: python3 scripts/ctr-test-report.py --days "${{ github.event.inputs.days || 14 }}"
+
+      - name: Surface the headline in the run summary
+        run: |
+          LATEST=$(ls -t data/ctr-test-*.md | head -1)
+          {
+            echo "### $(basename "$LATEST")"
+            echo
+            sed -n '1,14p' "$LATEST"
+            echo
+            sed -n '/## Harm check/,/^$/p' "$LATEST"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "no change in the report"
+            exit 0
+          fi
+          git commit -m "data(ctr-test): impact report $(date -u +%Y-%m-%d)"
+          # gsc-patterns and price-sync also write to main; rebase rather than
+          # lose the report to a fast-forward rejection.
+          git pull --rebase origin main
+          git push
