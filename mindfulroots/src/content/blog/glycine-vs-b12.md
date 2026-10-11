@@ -1,5 +1,7 @@
 ---
 title: "Glycine vs B12"
+seoTitle: "Glycine vs B12: Only One Has Sleep Evidence"
+metaDescription: "Glycine and B12 are not rivals and only one has sleep trials behind it. Which to take for sleep, which for energy, and why swapping them wastes the dose."
 description: "Glycine vs B12: they are not really rivals. Glycine is an amino acid for sleep and calm; B12 is a vitamin that supports energy and mood. Here is the split."
 pubDate: 2026-08-09
 updatedDate: 2026-08-09

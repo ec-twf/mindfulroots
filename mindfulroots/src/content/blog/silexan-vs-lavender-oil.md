@@ -1,7 +1,8 @@
 ---
 title: "Silexan vs Lavender Oil: Are They the Same?"
 description: "Silexan vs lavender oil: Silexan is a standardised lavender oil, not a rival herb. Here is what that means for anxiety, dosing, and which form was studied."
-seoTitle: "Silexan vs Lavender Oil: Same Herb, Different Grade"
+seoTitle: "Silexan vs Lavender Oil: Why Shop-Bought Won't Do"
+metaDescription: "Silexan is lavender oil, but it is the one specific capsule grade the anxiety trials used. What you lose by substituting an essential oil off the shelf."
 keyTakeaway: "Silexan is lavender oil, not a competing herb. It is one specific lavender oil, standardised to a fixed recipe and put into capsules, and it is the version that went through the anxiety trials at 80 mg a day. Generic lavender oil, tea, or aromatherapy may feel pleasant, but it was not what the studies tested, so you cannot assume the same result."
 pubDate: 2026-08-27
 updatedDate: 2026-08-27

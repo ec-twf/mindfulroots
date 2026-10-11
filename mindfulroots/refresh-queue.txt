@@ -1,0 +1,14 @@
+SLUG:saffron-extract-vs-affron | FOCUS:buy-intent-additive-only
+SLUG:b-complex-dosage | FOCUS:table
+SLUG:5-htp-serotonin-safety | FOCUS:table
+SLUG:supplements-safe-to-take-every-day | FOCUS:table
+SLUG:magnesium-glycinate-dosage-for-anxiety | FOCUS:table
+SLUG:vitamin-d3-morning-or-night | FOCUS:table
+SLUG:magnesium-glycinate-morning-or-night | FOCUS:table
+SLUG:ksm-66-vs-sensoril | FOCUS:table
+SLUG:gut-brain-axis-probiotics | FOCUS:table
+SLUG:omega-3-fish-oil-vs-cod-liver-oil | FOCUS:buy-intent
+SLUG:vitamin-d3-morning-or-night | FOCUS:buy-intent
+SLUG:magnesium-glycinate-dosage-for-anxiety | FOCUS:buy-intent
+SLUG:shoden-vs-ksm-66 | FOCUS:buy-intent-additive-only
+SLUG:rhodiola-dosage-cycling | FOCUS:buy-intent
