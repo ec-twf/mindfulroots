@@ -1,0 +1,8 @@
+query,page,clicks,impressions,ctr,position,agent_score,agent_reasons
+"%site.mskcc.org ""5-htp"" ""serotonin""",https://www.moodsupplement.net/blog/5-htp-serotonin-safety/,0,3,0,6,5,authority:mskcc|quoted-phrase
+"""what is the difference between omega-3, fish oil, and cod liver oil supplements?"" please provide uk sources",https://www.moodsupplement.net/blog/omega-3-fish-oil-vs-cod-liver-oil/,0,2,0,2,3,quoted-phrase|long-query
+ashwagandha vs rhodiola for mood and depression clinical trials,https://www.moodsupplement.net/blog/adaptogens-ashwagandha-rhodiola/,0,2,0,31,3,research-jargon:clinical trial|long-query
+memorial sloan kettering 5-htp antidepressants serotonin syndrome,https://www.moodsupplement.net/blog/5-htp-serotonin-safety/,0,2,0,9.5,3,authority:memorial sloan kettering
+"+site.mskcc.org ""5-htp"" ""serotonin""",https://www.moodsupplement.net/blog/5-htp-serotonin-safety/,0,1,0,6,5,authority:mskcc|quoted-phrase
+nccih lemon balm anxiety sleep evidence,https://www.moodsupplement.net/blog/lemon-balm-vs-ashwagandha/,0,1,0,8,3,authority:nccih
+nccih lemon balm anxiety sleep evidence safety,https://www.moodsupplement.net/blog/lemon-balm-vs-ashwagandha/,0,1,0,8,3,authority:nccih
