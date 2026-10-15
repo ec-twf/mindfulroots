@@ -160,3 +160,30 @@ falling in absolute terms; cut cadence to 2 new posts/fire per PUBLISHING-CADENC
 indexes. Secondary: brand-comparison is a WINNER type with 0 queue lines (BRAND_COMPARISON_LOW) and
 discovery surfaced no brand-comparison targets — two slots/fire will keep starving until a human
 SERP-checks and adds targets.
+
+## 2026-10-15 — brand-comparison WINNER, queue topped up (7→19), indexed coverage still falling (5th cycle)
+
+WINNER: type brand-comparison (pos 13.8, ipp 131.7, imp 790; strengthening from 124.3/15.7);
+clusters saffron-extract (pos 12.3, ipp 149.7, imp 449) and b-complex (pos 11.3, ipp 37.2, imp 149).
+PROMISING: type interaction (pos 13.2), clusters 5-htp (pos 26.9) + probiotic-gut-brain (pos 11.3).
+LAGGING: types pillar (pos 72.9, 252d) + explainer (pos 63.7, 102d), cluster omega-3-fish-oil
+(pos 61.9, 51d). magnesium-glycinate/l-theanine escaped LAGGING on the 21d age gate (newest 12d/16d).
+
+Queue (C3 OK, 7 lines unchanged through reorder): 4 brand-comparison→P1 (b-complex + saffron winner
+clusters front), 3 explainer→P3. QUEUE_LOW (<21) and BRAND_COMPARISON_LOW (4<14) both fired, so D4
+appended 12 SERP-unvalidated P3 lines (7→19). Still 0 net-new brand-comparison targets from discovery.
+
+Indexation (pages 2026-10-09, 6d fresh, gate passed): **72 LIKELY_UNINDEXED**, INDEXATION_WARNING
+**450%** (absolute unindexed fell 102→72, but denominator is only 16 recent posts). The real signal:
+distinct indexed blog slugs **40→35→32** over three snapshots — coverage still shrinking in absolute
+terms, only 32 of 106 published posts indexed (~30%). 5th consecutive worsening cycle. CTR: 8
+CTR_UNDERPERFORM, all saffron-extract-vs-affron root+anchors (pos 6.8-11.5, 0-1.2%) plus shoden-vs-ksm-66
+and silexan-vs-lavender-oil — SERP title/meta rewrites highest leverage, report-only. Agent retrieval:
+12 imp/7 rows, no page >=10 (5-htp-serotonin-safety bot traffic correctly held out). Buy-intent +
+answer-box both complete (0 missing).
+
+Next action: HUMAN — indexation is ~30% and indexed blog coverage has fallen 40→35→32; this meets the
+PUBLISHING-CADENCE.md **kill-switch** (<50% indexed), so cadence should drop to 2 new posts/fire. This
+recommendation has now stood unactioned for 5 cycles while the cadence doc still says 4/fire. Scale gate
+must NOT fire. Secondary: brand-comparison WINNER still starved (two slots/fire, no discovery targets);
+needs a human SERP check to add brand-comparison lines.
