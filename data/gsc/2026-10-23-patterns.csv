@@ -1,0 +1,17 @@
+dimension,value,pages,pages_with_buy_intent,impressions,clicks,impressions_per_page,avg_position
+type,brand-comparison,5,5,862,13,172.4,12.5
+type,comparison,10,10,638,0,63.8,50.7
+cluster,saffron-extract,3,3,504,6,168.0,9.3
+cluster,ashwagandha,7,7,424,1,60.6,29.5
+cluster,magnesium-glycinate,2,2,267,0,133.5,62.8
+cluster,b-complex,3,3,145,6,48.3,9.3
+cluster,omega-3-fish-oil,1,1,120,0,120.0,59.3
+cluster,vitamin-d3,1,1,76,0,76.0,41.8
+type,pillar,1,1,56,0,56.0,67.6
+cluster,rhodiola-rosea,3,3,29,0,9.7,50.1
+type,interaction,3,3,17,0,5.7,27.2
+cluster,lifestyle-foundations,1,1,13,0,13.0,34.1
+type,duration,2,2,4,0,2.0,14.8
+type,explainer,1,1,2,0,2.0,53.5
+cluster,l-theanine,2,2,2,0,1.0,24.0
+type,safety,1,1,1,0,1.0,9.0
