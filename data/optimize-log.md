@@ -187,3 +187,32 @@ PUBLISHING-CADENCE.md **kill-switch** (<50% indexed), so cadence should drop to 
 recommendation has now stood unactioned for 5 cycles while the cadence doc still says 4/fire. Scale gate
 must NOT fire. Secondary: brand-comparison WINNER still starved (two slots/fire, no discovery targets);
 needs a human SERP check to add brand-comparison lines.
+
+## 2026-10-29
+
+WINNER: type brand-comparison (pos 12.5, ipp 172.4, imp 862; +4.8 ipp WoW); clusters saffron-extract
+(pos 9.3, ipp 168.0, imp 504), ashwagandha (pos 29.5, ipp 60.6, imp 424 — just inside the <30 gate),
+b-complex (pos 9.3, ipp 48.3, imp 145). PROMISING: types interaction (pos 27.2), duration (14.8),
+safety (9.0, imp 1 — bot filter holding, no inflation); cluster l-theanine (pos 24.0). LAGGING:
+type pillar (pos 67.6, newest 266d) + cluster magnesium-glycinate (pos 62.8, newest 26d; it had escaped
+last cycle, now over the 21d gate). comparison/omega-3/vitamin-d3/rhodiola all NEUTRAL.
+
+Queue (C3 OK, 19 lines unchanged through reorder): 4 brand-comparison→P1 (b-complex, saffron, ashwa
+winner clusters front; probiotic last), 7 interaction/safety→P1, 8 dosage/explainer→P2, no pillar lines
+so no P3 band. QUEUE_LOW (19<21) and BRAND_COMPARISON_LOW (4<14) both fired → D4 appended 12
+SERP-unvalidated P3 lines (19→31). FLAG for human: appended `b-complex-dosage-for-cattle` is a
+mis-harvested autocomplete term (livestock, not human mood) — kill it on review. Still 0 net-new
+brand-comparison targets from discovery; the pivot keeps starving.
+
+Indexation (pages 2026-10-23, 6d fresh, gate passed): **85 LIKELY_UNINDEXED**, INDEXATION_WARNING fired
+(denominator is 7 recent posts). Real figure: only **21 of 106 published posts indexed = ~20%**, and
+distinct indexed blog slugs fell **32→27→24** over the last three snapshots — 6th straight worsening
+cycle. Site impressions flat (1572→1580). CTR: 8 CTR_UNDERPERFORM, all saffron-extract-vs-affron
+root+anchors (pos 5.9-9.0, 0-1.2%) plus shoden-vs-ksm-66 (10.6) and silexan-vs-lavender-oil (5.6) —
+title/meta rewrites are the highest-leverage report-only lever. Agent retrieval: 14 imp/5 rows, none
+>=10. Buy-intent + answer-box both complete (0 missing), refresh-queue untouched.
+
+Next action: HUMAN — indexation ~20% is far under the PUBLISHING-CADENCE.md **kill-switch (<50% at 7d)**;
+cadence must drop to **2 new posts/fire**, yet the doc still reads 4/fire. This has now stood unactioned
+for 6 cycles while coverage shrinks 32→27→24. Scale gate (needs ≥70% indexed) must NOT fire. Secondary:
+add human-SERP-checked brand-comparison lines — the two-per-fire WINNER shape has no runway.
