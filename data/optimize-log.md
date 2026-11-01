@@ -216,3 +216,36 @@ Next action: HUMAN — indexation ~20% is far under the PUBLISHING-CADENCE.md **
 cadence must drop to **2 new posts/fire**, yet the doc still reads 4/fire. This has now stood unactioned
 for 6 cycles while coverage shrinks 32→27→24. Scale gate (needs ≥70% indexed) must NOT fire. Secondary:
 add human-SERP-checked brand-comparison lines — the two-per-fire WINNER shape has no runway.
+
+## 2026-11-01
+
+NOTE: no new GSC data since last run — newest patterns & pages are still 2026-10-23 (9d old, D1 gate
+passes at <14d). The weekly gsc-patterns.yml output for ~10-30 never landed; the feed is stalled, so
+every number below repeats the 2026-10-29 cycle. I only re-ran the mechanical reorder.
+
+WINNER: type brand-comparison (pos 12.5, ipp 172.4, imp 862); clusters saffron-extract (9.3/168.0/504),
+ashwagandha (29.5/60.6/424, just inside the <30 gate), b-complex (9.3/48.3/145). PROMISING: types
+interaction (27.2), duration (14.8), safety (9.0, imp 1 — bot filter holding); cluster l-theanine (24.0).
+LAGGING: type pillar (67.6, newest 2026-02-05) + cluster magnesium-glycinate (62.8, newest 2026-10-03).
+comparison/omega-3(59.3)/vitamin-d3/rhodiola/lifestyle NEUTRAL.
+
+Queue (C3 OK, 31 lines unchanged): 4 brand-comparison→P1 (b-complex/saffron/ashwa winner clusters
+front, probiotic last); 14 interaction/safety→P1 (3 ashwa winner-cluster lines front); 13
+dosage/explainer/comparison→P2; no pillar lines → no P3 band. The 12 SERP-unvalidated lines appended
+last cycle re-sorted into P1/P2 by TYPE (angles still flag them unvalidated). QUEUE_DEPTH 31 (no
+QUEUE_LOW). BRAND_COMPARISON_LOW fired (4<14) — the 2-of-3 WINNER slot still has no runway and discovery
+proposed 0 new brand-comparison targets (needs human SERP check).
+
+Indexation (pages 2026-10-23, gate passed): 85 LIKELY_UNINDEXED; INDEXATION_WARNING fired mechanically
+(85 > 30% of 5 recent posts). Real figure unchanged: 21/106 published indexed ≈ 20%; distinct indexed
+blog slugs still 32→27→24 across the last 3 snapshots. Below PUBLISHING-CADENCE.md kill-switch (<50%).
+CTR: CTR_UNDERPERFORM on saffron-extract-vs-affron (root 1.2%@9.0 + 5 anchors 0%@5.9), shoden-vs-ksm-66
+(0.76%@10.6), silexan-vs-lavender-oil (0%@5.6) — report-only title/meta leverage. Agent retrieval 14
+imp/5 rows, none ≥10. Buy-intent + answer-box both 0 missing; refresh-queue untouched. DISCOVERY 40
+proposed / 0 appended (left for human review).
+
+Next action: HUMAN — two items. (1) The GSC feed is stalled (no file since 10-23); check
+gsc-patterns.yml before the snapshot ages past the 14d D1 gate (~2026-11-06) and D1 blinds itself. (2)
+Indexation ~20% has now stood below the kill-switch for 7 run-cycles with no cadence change; cadence
+should be 2 new posts/fire, doc still reads 4. Scale gate (needs ≥70% indexed) must NOT fire. I cannot
+touch cadence or post bodies by design — this needs a person.
