@@ -249,3 +249,33 @@ gsc-patterns.yml before the snapshot ages past the 14d D1 gate (~2026-11-06) and
 Indexation ~20% has now stood below the kill-switch for 7 run-cycles with no cadence change; cadence
 should be 2 new posts/fire, doc still reads 4. Scale gate (needs ≥70% indexed) must NOT fire. I cannot
 touch cadence or post bodies by design — this needs a person.
+
+## 2026-11-15
+
+Patterns 2026-11-06 vs 10-30. WINNER types: brand-comparison (pos 14.6, ipp 206.0, imp 1030).
+WINNER clusters: saffron-extract (7.7/168.3/505), ashwagandha (29.4/83.6/585), b-complex (14.9/84.2/337,
+up from 50.5 ipp last week). PROMISING: safety type (6.5/2.0) + l-theanine cluster (6.3/1.5) — both tiny,
+not bot-contaminated (agents feed clean, see below). No postType at pos≥60 → LAGGING band empty, no P3.
+
+Queue (C3 OK, 31 lines, count unchanged): 4 brand-comparison→P1 top (b-complex/saffron/ashwa winner
+clusters front, probiotic last); 1 safety→P1; 26 interaction/dosage/explainer/comparison→P2 (7 ashwa+
+b-complex winner-cluster lines pulled to band front). Content fields untouched. BRAND_COMPARISON_DEPTH 4
+→ BRAND_COMPARISON_LOW fired (4<14): the 2-of-3 WINNER slot has ~2 fires of runway; discovery proposed
+0 brand-comparison targets. QUEUE_DEPTH 31, no QUEUE_LOW.
+
+Indexation (pages 2026-11-06, 9d, gate passed — GSC feed recovered from the 10-23 stall). 82/106
+LIKELY_UNINDEXED = 24/106 ≈ 22.6% indexed, holding the ~20% trend; distinct GSC-seen blog URLs 37 this
+snapshot. Still far below the 50% kill-switch; Scale gate (needs ≥70%) must NOT fire. INDEXATION_WARNING
+NOT fired: its denominator is posts-published-last-28d, which is **0** — publishing has halted since
+2026-10-11 (35 days, no new posts), so the mechanical % is undefined and a new-post cadence cut is moot.
+
+CTR_UNDERPERFORM (report-only, title/meta leverage): saffron-extract-vs-affron root 1.0%@7.5 + 5 anchors
+0%@5.2, shoden-vs-ksm-66 0%@10.8, b-complex-vs-b1 0.8%@14.7 (8 total). Agent retrieval 16 imp/3 rows, all
+MSKCC-authority bot queries, filter holding them out correctly, none ≥10 — no GEO action. Buy-intent and
+answer-box both 0 missing; refresh-queue untouched. DISCOVERY 40 proposed / 0 appended (queue not low).
+
+Next action: HUMAN — the generate Routine has produced nothing for 35 days (last post 2026-10-11, 0 in
+last 28d). That is the live problem, bigger than queue order: check trig moodsupplement-generate is still
+firing. Standing issues unchanged: indexation ~23% keeps the kill-switch engaged (should be 2 new/fire,
+doc still reads 4) and BRAND_COMPARISON_LOW needs human-SERP-checked targets. I touch neither cadence nor
+post bodies by design.
