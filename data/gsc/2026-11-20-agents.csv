@@ -1,0 +1,4 @@
+query,page,clicks,impressions,ctr,position,agent_score,agent_reasons
+"site.mskcc.org ""5-htp"" ""serotonin syndrome""",https://www.moodsupplement.net/blog/5-htp-serotonin-safety/,0,4,0,10.25,5,authority:mskcc|quoted-phrase
+site.mskcc.org rhodiola antidepressants serotonin,https://www.moodsupplement.net/blog/supplements-and-antidepressants/,0,2,0,11,3,authority:mskcc
+"""what is the difference between omega-3, fish oil, and cod liver oil supplements?"" please provide uk sources",https://www.moodsupplement.net/blog/omega-3-fish-oil-vs-cod-liver-oil/,0,1,0,10,3,quoted-phrase|long-query
